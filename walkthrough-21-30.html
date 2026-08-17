@@ -1,0 +1,3100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Volume III: Beast Tribals & Palaces (Ch. 21–30) - Radiant Historia Walkthrough</title>
+  
+  <!-- Google Fonts: Ornate Serifs, Clean UI & Monospace -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@500;600;700;800&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      /* Cosmic / Historia Canvas */
+      --bg-deep: #06090f;
+      --bg-surface: rgba(12, 18, 29, 0.92);
+      --bg-surface-elevated: rgba(19, 28, 45, 0.92);
+      --bg-surface-card: rgba(24, 35, 55, 0.92);
+      --bg-surface-hover: rgba(30, 44, 69, 0.95);
+
+      /* Chronicle & Mana Accents */
+      --gold-primary: #fbbf24;
+      --gold-glow: #f59e0b;
+      --gold-muted: #b48c36;
+      --gold-border: rgba(251, 191, 36, 0.35);
+
+      /* Temporal Flux (Historia Glow) */
+      --mana-cyan: #06b6d4;
+      --mana-cyan-glow: rgba(6, 182, 212, 0.4);
+      --mana-teal: #14b8a6;
+      --mana-green: #10b981;
+
+      /* Timeline Signatures */
+      --timeline-standard: #3b82f6;       /* Standard History (Specint) */
+      --timeline-standard-bg: rgba(59, 130, 246, 0.14);
+      --timeline-alternate: #f43f5e;      /* Alternate History (Rosch Brigade) */
+      --timeline-alternate-bg: rgba(244, 63, 94, 0.14);
+      --timeline-prologue: #a855f7;       /* Shared Beginning */
+      --timeline-prologue-bg: rgba(168, 85, 247, 0.14);
+      --timeline-final: #eab308;          /* Convergent Climax */
+
+      /* Text & Readability */
+      --text-bright: #ffffff;
+      --text-primary: #f1f5f9;
+      --text-secondary: #94a3b8;
+      --text-muted: #64748b;
+
+      /* Borders & Dividers */
+      --border-subtle: rgba(148, 163, 184, 0.18);
+      --border-active: rgba(251, 191, 36, 0.6);
+      --border-standard: rgba(59, 130, 246, 0.4);
+      --border-alternate: rgba(244, 63, 94, 0.4);
+      --border-prologue: rgba(168, 85, 247, 0.4);
+
+      /* Callouts */
+      --callout-warning-bg: rgba(245, 158, 11, 0.08);
+      --callout-warning-border: rgba(245, 158, 11, 0.5);
+      --callout-danger-bg: rgba(244, 63, 94, 0.08);
+      --callout-danger-border: rgba(244, 63, 94, 0.5);
+      --callout-discovery-bg: rgba(6, 182, 212, 0.08);
+      --callout-discovery-border: rgba(6, 182, 212, 0.5);
+      --callout-quest-bg: rgba(16, 185, 129, 0.08);
+      --callout-quest-border: rgba(16, 185, 129, 0.5);
+
+      /* Shadows & Radii */
+      --radius-sm: 4px;
+      --radius-md: 8px;
+      --radius-lg: 14px;
+      --shadow-card: 0 8px 24px -4px rgba(0, 0, 0, 0.7), 0 2px 6px -1px rgba(0, 0, 0, 0.5);
+      --shadow-glow-gold: 0 0 20px rgba(251, 191, 36, 0.25);
+      --shadow-glow-cyan: 0 0 20px rgba(6, 182, 212, 0.25);
+      --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Reset & Base */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+      width: 100%;
+      max-width: 100vw;
+      overflow-x: hidden;
+    }
+
+    body {
+      background-color: var(--bg-deep);
+      background-image: 
+        linear-gradient(rgba(6, 9, 15, 0.84), rgba(6, 9, 15, 0.88)),
+        url('assets/background.jpg');
+      background-attachment: fixed;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      color: var(--text-primary);
+      font-family: 'Crimson Pro', serif;
+      font-size: 1.15rem;
+      line-height: 1.75;
+      min-height: 100vh;
+      width: 100%;
+      max-width: 100vw;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: var(--bg-deep);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #1e293b;
+      border-radius: 4px;
+      border: 1px solid var(--gold-muted);
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--gold-muted);
+    }
+
+    /* Typography Utilities */
+    h1, h2, h3, h4, .cinzel {
+      font-family: 'Cinzel', serif;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      color: var(--gold-primary);
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+    }
+
+    .cinzel-decorative {
+      font-family: 'Cinzel Decorative', serif;
+    }
+
+    .sans-ui {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    .mono-code {
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    /* Top Navigation Bar */
+    .nav-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      background: rgba(6, 9, 15, 0.94);
+      border-bottom: 1px solid var(--border-subtle);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+      width: 100%;
+    }
+
+    .nav-container {
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 0.65rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      width: 100%;
+      min-width: 0;
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      text-decoration: none;
+      color: var(--gold-primary);
+      font-family: 'Cinzel', serif;
+      font-weight: 700;
+      font-size: 1.12rem;
+      letter-spacing: 0.06em;
+      transition: var(--transition);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .nav-brand span {
+      white-space: nowrap;
+    }
+
+    .nav-brand:hover {
+      text-shadow: 0 0 12px rgba(251, 191, 36, 0.6);
+    }
+
+    .nav-logo {
+      height: 30px;
+      width: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.8)) drop-shadow(0 0 6px rgba(251, 191, 36, 0.4));
+      transition: var(--transition);
+      flex-shrink: 0;
+    }
+
+    .nav-brand:hover .nav-logo {
+      transform: scale(1.06);
+      filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.95)) drop-shadow(0 0 14px rgba(251, 191, 36, 0.75));
+    }
+
+    nav, .nav-menu {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex: 1 1 auto;
+      min-width: 0;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      white-space: nowrap;
+    }
+
+    .nav-links li {
+      flex-shrink: 0;
+      list-style: none;
+      position: relative;
+    }
+
+    .nav-links a,
+    .nav-dropdown-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.84rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: var(--transition);
+      padding: 0.35rem 0.65rem;
+      border-radius: var(--radius-sm);
+      white-space: nowrap;
+      line-height: 1.2;
+      background: transparent;
+      border: 1px solid transparent;
+      cursor: pointer;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active,
+    .nav-dropdown-toggle:hover,
+    .nav-dropdown-toggle.active,
+    .nav-dropdown:hover .nav-dropdown-toggle,
+    .nav-dropdown.is-open .nav-dropdown-toggle {
+      color: var(--gold-primary);
+      background: rgba(251, 191, 36, 0.1);
+    }
+
+    .nav-links a.active,
+    .nav-dropdown-toggle.active {
+      border-color: var(--gold-border);
+      color: var(--gold-primary);
+      font-weight: 700;
+    }
+
+    .nav-chevron {
+      font-size: 0.62rem;
+      transition: transform 0.22s ease;
+      display: inline-block;
+      color: var(--gold-muted);
+      margin-left: 0.15rem;
+    }
+
+    .nav-dropdown:hover .nav-chevron,
+    .nav-dropdown.is-open .nav-chevron {
+      transform: rotate(180deg);
+      color: var(--gold-primary);
+    }
+
+    /* Nav Dropdown Panel */
+    .nav-dropdown {
+      position: relative;
+    }
+
+    .nav-dropdown-menu {
+      position: absolute;
+      top: calc(100% + 8px);
+      left: 0;
+      min-width: 290px;
+      background: rgba(8, 13, 22, 0.97);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(251, 191, 36, 0.3);
+      border-radius: 10px;
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.85), 0 0 20px rgba(251, 191, 36, 0.1);
+      padding: 0.5rem;
+      z-index: 1100;
+      opacity: 0;
+      pointer-events: none;
+      visibility: hidden;
+      transform: translateY(6px);
+      transition: opacity 0.2s cubic-bezier(0.16, 1, 0.3, 1), transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.2s;
+    }
+
+    .nav-dropdown-menu::before {
+      content: '';
+      position: absolute;
+      top: -10px;
+      left: 0;
+      right: 0;
+      height: 10px;
+    }
+
+    .nav-dropdown-menu.nav-dd-right {
+      left: auto;
+      right: 0;
+    }
+
+    .nav-dropdown:hover .nav-dropdown-menu,
+    .nav-dropdown:focus-within .nav-dropdown-menu,
+    .nav-dropdown.is-open .nav-dropdown-menu {
+      opacity: 1;
+      pointer-events: auto;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .nav-dropdown-menu.nav-dd-compact {
+      min-width: 240px;
+    }
+
+    .nav-dd-section-title {
+      font-family: 'Cinzel', serif;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: var(--gold-muted);
+      text-transform: uppercase;
+      padding: 0.35rem 0.6rem 0.2rem;
+    }
+
+    .nav-dropdown-item {
+      display: flex !important;
+      align-items: center;
+      gap: 0.65rem;
+      padding: 0.48rem 0.65rem !important;
+      border-radius: 6px;
+      text-decoration: none;
+      color: var(--text-primary) !important;
+      transition: all 0.16s ease;
+      background: transparent !important;
+      border: 1px solid transparent !important;
+      font-weight: 500 !important;
+    }
+
+    .nav-dropdown-item:hover {
+      background: rgba(251, 191, 36, 0.12) !important;
+      border-color: rgba(251, 191, 36, 0.2) !important;
+      transform: translateX(3px);
+    }
+
+    .nav-dropdown-item.active {
+      background: rgba(251, 191, 36, 0.15) !important;
+      border-left: 3px solid var(--gold-primary) !important;
+      border-color: rgba(251, 191, 36, 0.35) !important;
+    }
+
+    .nav-dd-icon {
+      font-size: 1.05rem;
+      line-height: 1;
+      flex-shrink: 0;
+    }
+
+    .nav-dd-badge {
+      font-family: 'Cinzel', serif;
+      font-size: 0.68rem;
+      font-weight: 700;
+      padding: 0.15rem 0.45rem;
+      border-radius: 4px;
+      flex-shrink: 0;
+      line-height: 1.2;
+    }
+
+    .nav-dd-badge.vol-cyan {
+      background: rgba(6, 182, 212, 0.2);
+      color: var(--mana-cyan);
+      border: 1px solid rgba(6, 182, 212, 0.45);
+    }
+
+    .nav-dd-badge.vol-blue {
+      background: rgba(59, 130, 246, 0.2);
+      color: #60a5fa;
+      border: 1px solid rgba(59, 130, 246, 0.45);
+    }
+
+    .nav-dd-badge.vol-green {
+      background: rgba(16, 185, 129, 0.2);
+      color: var(--mana-green);
+      border: 1px solid rgba(16, 185, 129, 0.45);
+    }
+
+    .nav-dd-text {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      flex: 1;
+    }
+
+    .nav-dd-name {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      line-height: 1.25;
+    }
+
+    .nav-dropdown-item:hover .nav-dd-name,
+    .nav-dropdown-item.active .nav-dd-name {
+      color: var(--gold-primary);
+    }
+
+    .nav-dd-desc {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      line-height: 1.2;
+      margin-top: 0.1rem;
+      white-space: normal;
+    }
+
+    .nav-dd-divider {
+      height: 1px;
+      background: rgba(148, 163, 184, 0.15);
+      margin: 0.35rem 0.3rem;
+    }
+
+    .nav-progress-indicator {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.78rem;
+      color: var(--mana-cyan);
+      background: rgba(6, 182, 212, 0.1);
+      border: 1px solid rgba(6, 182, 212, 0.3);
+      padding: 0.3rem 0.7rem;
+      border-radius: 20px;
+      white-space: nowrap;
+      flex-shrink: 0;
+      line-height: 1;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .nav-progress-indicator:hover {
+      background: rgba(6, 182, 212, 0.2);
+      border-color: rgba(6, 182, 212, 0.5);
+      box-shadow: 0 0 12px rgba(6, 182, 212, 0.3);
+      transform: translateY(-1px);
+    }
+
+    .nav-progress-indicator span,
+    .nav-progress-indicator b {
+      white-space: nowrap;
+      line-height: 1;
+    }
+
+    /* Container & Breadcrumbs */
+    .container {
+      width: 100%;
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 2rem 1.25rem 5rem 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2.75rem;
+      min-width: 0;
+    }
+
+    .breadcrumb-nav {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: -1rem;
+      flex-wrap: wrap;
+    }
+
+    .breadcrumb-nav a {
+      color: var(--mana-cyan);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .breadcrumb-nav a:hover {
+      color: var(--gold-primary);
+      text-decoration: underline;
+    }
+
+    /* Ornate Frames */
+    .ornate-frame {
+      background: var(--bg-surface);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid var(--border-subtle);
+      position: relative;
+      padding: 2.25rem;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-card);
+      width: 100%;
+      max-width: 100%;
+      min-width: 0;
+      overflow: hidden;
+    }
+
+    .ornate-frame::before {
+      content: '';
+      position: absolute;
+      inset: -2px;
+      border: 1px solid var(--gold-border);
+      border-radius: calc(var(--radius-md) + 2px);
+      pointer-events: none;
+    }
+
+    /* Hero Banner */
+    .vol-header-banner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 3rem 1.5rem;
+      background: 
+        radial-gradient(ellipse at top, rgba(16, 185, 129, 0.16) 0%, rgba(12, 18, 29, 0.95) 75%),
+        url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 0l20 20-20 20L0 20z' fill='%23fbbf24' fill-opacity='0.02'/%3E%3C/svg%3E");
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid var(--gold-muted);
+      border-radius: var(--radius-md);
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow-card);
+      width: 100%;
+      max-width: 100%;
+      min-width: 0;
+    }
+
+    .vol-logo-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1.1rem 2rem;
+      margin: 0 auto 1.25rem auto;
+      background: radial-gradient(ellipse at center, rgba(24, 35, 55, 0.85) 0%, rgba(12, 18, 29, 0.6) 65%, rgba(6, 9, 15, 0) 100%);
+      border: 1px solid rgba(251, 191, 36, 0.25);
+      border-radius: 18px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), 0 0 35px rgba(251, 191, 36, 0.15), inset 0 0 20px rgba(6, 182, 212, 0.08);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      max-width: min(420px, 92vw);
+      width: 100%;
+    }
+
+    .vol-logo {
+      max-width: 360px;
+      width: 100%;
+      height: auto;
+      display: block;
+      filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.75)) drop-shadow(0 0 16px rgba(251, 191, 36, 0.3));
+      transition: transform 0.3s ease, filter 0.3s ease;
+    }
+
+    .vol-logo:hover {
+      transform: scale(1.03);
+      filter: drop-shadow(0 6px 18px rgba(0, 0, 0, 0.9)) drop-shadow(0 0 24px rgba(251, 191, 36, 0.55));
+    }
+
+    .guide-meta-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold-primary);
+      background: rgba(251, 191, 36, 0.12);
+      border: 1px solid var(--gold-border);
+      padding: 0.35rem 1.25rem;
+      border-radius: 20px;
+      margin: 0 auto 1.25rem auto;
+      box-shadow: 0 0 12px rgba(251, 191, 36, 0.2);
+    }
+
+    .page-title {
+      font-size: clamp(1.75rem, 4.5vw, 2.9rem);
+      color: #ffffff;
+      text-shadow: 0 0 30px rgba(16, 185, 129, 0.5), 0 2px 6px rgba(0, 0, 0, 0.9);
+      margin-bottom: 0.5rem;
+      line-height: 1.2;
+      word-break: break-word;
+    }
+
+    .author-subline {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      margin-bottom: 1.5rem;
+    }
+
+    .author-subline b {
+      color: var(--gold-primary);
+    }
+
+    .header-pills-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.6rem;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.85rem;
+      margin-top: 0.5rem;
+      width: 100%;
+    }
+
+    .info-pill {
+      background: var(--bg-surface-elevated);
+      border: 1px solid var(--border-subtle);
+      padding: 0.35rem 0.85rem;
+      border-radius: 20px;
+      color: var(--text-primary);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .info-pill b {
+      color: var(--gold-primary);
+    }
+
+    /* Quick Jump Navigation */
+    .quick-jump-bar {
+      background: var(--bg-surface-elevated);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 1.1rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      width: 100%;
+      min-width: 0;
+    }
+
+    .quick-jump-title {
+      font-family: 'Cinzel', serif;
+      font-size: 0.95rem;
+      color: var(--gold-primary);
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .quick-jump-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+    }
+
+    .jump-chip {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      background: var(--bg-surface-card);
+      border: 1px solid var(--border-subtle);
+      padding: 0.35rem 0.75rem;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .jump-chip:hover {
+      border-color: var(--gold-primary);
+      color: var(--gold-primary);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    }
+
+    .jump-chip.standard {
+      border-left: 3px solid var(--timeline-standard);
+    }
+    .jump-chip.alternate {
+      border-left: 3px solid var(--timeline-alternate);
+    }
+
+    /* Chapter Section Card */
+    .chapter-section {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 2.25rem;
+      position: relative;
+      box-shadow: var(--shadow-card);
+      scroll-margin-top: 5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.75rem;
+      width: 100%;
+      max-width: 100%;
+      min-width: 0;
+      overflow: hidden;
+    }
+
+    .chapter-section.standard {
+      border-left: 5px solid var(--timeline-standard);
+    }
+    .chapter-section.alternate {
+      border-left: 5px solid var(--timeline-alternate);
+    }
+
+    .chapter-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-bottom: 1px solid var(--border-subtle);
+      padding-bottom: 1.25rem;
+      gap: 1rem;
+      flex-wrap: wrap;
+      width: 100%;
+      min-width: 0;
+    }
+
+    .chapter-title-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      min-width: 0;
+      flex: 1;
+    }
+
+    .chapter-num-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--gold-primary);
+      background: rgba(251, 191, 36, 0.12);
+      border: 1px solid var(--gold-border);
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      align-self: flex-start;
+    }
+
+    .chapter-heading {
+      font-size: clamp(1.4rem, 3.2vw, 2.1rem);
+      color: var(--text-bright);
+      line-height: 1.25;
+      word-break: break-word;
+    }
+
+    .chapter-meta-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.35rem;
+    }
+
+    .branch-badge {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 0.25rem 0.65rem;
+      border-radius: 4px;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .branch-badge.standard {
+      background: var(--timeline-standard-bg);
+      color: #60a5fa;
+      border: 1px solid var(--border-standard);
+    }
+
+    .branch-badge.alternate {
+      background: var(--timeline-alternate-bg);
+      color: #fb7185;
+      border: 1px solid var(--border-alternate);
+    }
+
+    .jump-code-badge {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--mana-cyan);
+      background: rgba(6, 182, 212, 0.1);
+      padding: 0.25rem 0.6rem;
+      border-radius: 4px;
+      border: 1px solid rgba(6, 182, 212, 0.25);
+    }
+
+    .chapter-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      flex-shrink: 0;
+    }
+
+    .chapter-check-btn {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      background: var(--bg-surface-elevated);
+      color: var(--text-secondary);
+      border: 1px solid var(--border-subtle);
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      user-select: none;
+      transition: var(--transition);
+      white-space: nowrap;
+    }
+
+    .chapter-check-btn:hover {
+      border-color: var(--gold-primary);
+      color: var(--text-bright);
+    }
+
+    .chapter-check-btn input {
+      accent-color: var(--gold-primary);
+      width: 18px;
+      height: 18px;
+      cursor: pointer;
+    }
+
+    .chapter-check-btn.checked {
+      background: rgba(16, 185, 129, 0.12);
+      border-color: rgba(16, 185, 129, 0.4);
+      color: #34d399;
+    }
+
+    /* Briefing Box */
+    .briefing-box {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      background: var(--bg-surface-elevated);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 1rem 1.25rem;
+      width: 100%;
+      min-width: 0;
+    }
+
+    .briefing-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+      min-width: 0;
+    }
+
+    .briefing-label {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .briefing-val {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-bright);
+      word-break: break-word;
+    }
+
+    /* Shop Tables */
+    .shop-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+      margin: 0.5rem 0;
+      width: 100%;
+      min-width: 0;
+    }
+
+    .shop-card {
+      background: var(--bg-surface-elevated);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      width: 100%;
+      min-width: 0;
+    }
+
+    .shop-header {
+      background: #090e17;
+      border-bottom: 1px solid var(--gold-border);
+      padding: 0.75rem 1rem;
+      font-family: 'Cinzel', serif;
+      font-size: 1.05rem;
+      color: var(--gold-primary);
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .shop-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.9rem;
+    }
+
+    .shop-table td {
+      padding: 0.55rem 1rem;
+      border-bottom: 1px solid rgba(148, 163, 184, 0.06);
+    }
+
+    .shop-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .shop-price {
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--gold-primary);
+      text-align: right;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .shop-tip {
+      font-size: 0.8rem;
+      color: var(--mana-cyan);
+      font-style: italic;
+      margin-left: 0.35rem;
+      display: inline-block;
+    }
+
+    /* Map Box */
+    .map-box {
+      background: #05080f;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      margin: 1rem 0;
+      width: 100%;
+      max-width: 100%;
+      min-width: 0;
+    }
+
+    .map-header {
+      background: rgba(19, 28, 45, 0.9);
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 0.6rem 1rem;
+      font-family: 'Cinzel', serif;
+      font-size: 0.95rem;
+      color: var(--mana-cyan);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .map-content {
+      padding: 1.25rem;
+      width: 100%;
+      max-width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .map-pre {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.82rem;
+      line-height: 1.35;
+      color: #93c5fd;
+      white-space: pre;
+      display: block;
+      min-width: max-content;
+    }
+
+    /* Callouts & Alerts */
+    .callout {
+      border-radius: var(--radius-md);
+      padding: 1.25rem 1.5rem;
+      margin: 1rem 0;
+      border-left: 4px solid;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      width: 100%;
+      max-width: 100%;
+      min-width: 0;
+      word-break: break-word;
+    }
+
+    .callout-header {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      flex-wrap: wrap;
+    }
+
+    .callout p {
+      font-size: 1.05rem;
+      line-height: 1.65;
+      color: var(--text-secondary);
+      margin: 0;
+    }
+
+    .callout-node {
+      background: rgba(6, 182, 212, 0.08);
+      border-color: var(--mana-cyan);
+    }
+    .callout-node .callout-header {
+      color: var(--mana-cyan);
+    }
+
+    .callout-warning {
+      background: var(--callout-warning-bg);
+      border-color: var(--gold-glow);
+    }
+    .callout-warning .callout-header {
+      color: var(--gold-primary);
+    }
+
+    .callout-danger {
+      background: var(--callout-danger-bg);
+      border-color: var(--timeline-alternate);
+    }
+    .callout-danger .callout-header {
+      color: #fb7185;
+    }
+
+    .callout-quest {
+      background: var(--callout-quest-bg);
+      border-color: var(--mana-green);
+    }
+    .callout-quest .callout-header {
+      color: #34d399;
+    }
+
+    .callout-discovery {
+      background: var(--callout-discovery-bg);
+      border-color: var(--mana-cyan);
+    }
+    .callout-discovery .callout-header {
+      color: var(--mana-cyan);
+    }
+
+    /* Boss Encounter Card */
+    .boss-card {
+      background: linear-gradient(145deg, #1f1116 0%, #0d121d 100%);
+      border: 1px solid rgba(244, 63, 94, 0.4);
+      border-left: 4px solid var(--timeline-alternate);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      margin: 1.25rem 0;
+      box-shadow: 0 8px 24px rgba(244, 63, 94, 0.15);
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      width: 100%;
+      max-width: 100%;
+      min-width: 0;
+    }
+
+    .boss-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(244, 63, 94, 0.2);
+      padding-bottom: 0.6rem;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .boss-name {
+      font-family: 'Cinzel', serif;
+      font-size: 1.35rem;
+      color: #fda4af;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      word-break: break-word;
+    }
+
+    .boss-badge {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      background: #e11d48;
+      color: #fff;
+      padding: 0.25rem 0.6rem;
+      border-radius: 4px;
+      letter-spacing: 0.08em;
+      white-space: nowrap;
+    }
+
+    .boss-weakness {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.95rem;
+      color: var(--text-primary);
+    }
+    .boss-weakness b {
+      color: var(--gold-primary);
+    }
+
+    .boss-strategy {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      line-height: 1.65;
+    }
+
+    /* Recommended Equipment Card */
+    .gear-card {
+      background: var(--bg-surface-elevated);
+      border: 1px solid var(--border-subtle);
+      border-left: 4px solid var(--gold-primary);
+      border-radius: var(--radius-md);
+      padding: 1.25rem 1.5rem;
+      margin-top: 1rem;
+      width: 100%;
+      max-width: 100%;
+      min-width: 0;
+    }
+
+    .gear-title {
+      font-family: 'Cinzel', serif;
+      font-size: 1.05rem;
+      color: var(--gold-primary);
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .gear-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 0.75rem;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.92rem;
+      width: 100%;
+      min-width: 0;
+    }
+
+    .gear-char-entry {
+      background: var(--bg-surface-card);
+      padding: 0.6rem 0.85rem;
+      border-radius: 6px;
+      border: 1px solid rgba(148, 163, 184, 0.1);
+      min-width: 0;
+    }
+
+    .gear-char-name {
+      font-weight: 700;
+      color: var(--text-bright);
+      margin-bottom: 0.2rem;
+    }
+
+    .gear-char-items {
+      color: var(--text-secondary);
+      font-size: 0.88rem;
+      word-break: break-word;
+    }
+
+    /* Volume Footer Navigation */
+    .vol-nav-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+      width: 100%;
+    }
+
+    .vol-nav-btn {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--gold-primary);
+      background: var(--bg-surface-elevated);
+      border: 1px solid var(--gold-border);
+      padding: 0.75rem 1.5rem;
+      border-radius: var(--radius-md);
+      text-decoration: none;
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      white-space: nowrap;
+    }
+
+    .vol-nav-btn:hover {
+      background: var(--gold-primary);
+      color: #000;
+      box-shadow: var(--shadow-glow-gold);
+      transform: translateY(-2px);
+    }
+
+    /* Footer */
+    .site-footer {
+      background: #04060a;
+      border-top: 1px solid var(--border-subtle);
+      padding: 3.5rem 1.5rem 2.5rem 1.5rem;
+      text-align: center;
+      color: var(--text-muted);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.95rem;
+      width: 100%;
+    }
+
+    .footer-container {
+      max-width: 800px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.25rem;
+    }
+
+    .footer-logo-wrap {
+      padding: 0.75rem 1.5rem;
+      background: radial-gradient(ellipse at center, rgba(251, 191, 36, 0.1) 0%, rgba(0, 0, 0, 0) 70%);
+      border-radius: 12px;
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-logo {
+      height: 48px;
+      width: auto;
+      filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.9)) drop-shadow(0 0 10px rgba(251, 191, 36, 0.3));
+    }
+
+    .footer-divider {
+      width: 60px;
+      height: 2px;
+      background: var(--gold-border);
+      margin: 0.5rem 0;
+    }
+
+    /* Back to Top */
+    .back-to-top {
+      position: fixed;
+      bottom: 1.5rem;
+      right: 1.5rem;
+      z-index: 90;
+      background: var(--bg-surface-elevated);
+      border: 1px solid var(--gold-border);
+      color: var(--gold-primary);
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6);
+      transition: var(--transition);
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(10px);
+    }
+
+    .back-to-top.visible {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+
+    .back-to-top:hover {
+      background: var(--gold-primary);
+      color: #000;
+      box-shadow: var(--shadow-glow-gold);
+    }
+
+    /* Responsive Breakpoints */
+    @media (max-width: 1120px) {
+      .nav-container {
+        padding: 0.55rem 1rem;
+        gap: 0.6rem;
+      }
+      .nav-links a,
+      .nav-dropdown-toggle {
+        font-size: 0.8rem;
+        padding: 0.3rem 0.5rem;
+      }
+      .nav-links {
+        gap: 0.25rem;
+      }
+      .nav-brand {
+        font-size: 1.05rem;
+      }
+      .nav-progress-indicator {
+        font-size: 0.75rem;
+        padding: 0.25rem 0.6rem;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .nav-container {
+        flex-wrap: wrap;
+        padding: 0.5rem 0.85rem;
+        gap: 0.4rem;
+        justify-content: space-between;
+      }
+      .nav-brand {
+        font-size: 1rem;
+      }
+      nav, .nav-menu {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        padding-top: 0.35rem;
+        margin-top: 0.1rem;
+        border-top: 1px solid rgba(148, 163, 184, 0.12);
+      }
+      .nav-links {
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.35rem;
+      }
+      .nav-links a,
+      .nav-dropdown-toggle {
+        padding: 0.3rem 0.55rem;
+        font-size: 0.8rem;
+      }
+      .nav-progress-indicator {
+        order: 2;
+        font-size: 0.74rem;
+        padding: 0.22rem 0.55rem;
+      }
+      .nav-dropdown-menu {
+        position: fixed;
+        left: 50% !important;
+        right: auto !important;
+        transform: translateX(-50%) translateY(6px);
+        width: calc(100vw - 32px);
+        max-width: 340px;
+      }
+      .nav-dropdown:hover .nav-dropdown-menu,
+      .nav-dropdown.is-open .nav-dropdown-menu {
+        transform: translateX(-50%) translateY(0);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .page-title {
+        font-size: 1.6rem;
+      }
+      .vol-header-banner {
+        padding: 2rem 1rem;
+      }
+      .header-pills-row {
+        gap: 0.4rem;
+      }
+      .info-pill {
+        font-size: 0.75rem;
+        padding: 0.25rem 0.6rem;
+      }
+      .quick-jump-bar {
+        padding: 0.85rem;
+      }
+      .quick-jump-chips {
+        gap: 0.35rem;
+      }
+      .jump-chip {
+        font-size: 0.74rem;
+        padding: 0.25rem 0.5rem;
+      }
+      .chapter-section {
+        padding: 1.25rem 0.85rem;
+        gap: 1.25rem;
+        border-radius: var(--radius-md);
+      }
+      .chapter-header {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.75rem;
+      }
+      .chapter-heading {
+        font-size: 1.35rem;
+      }
+      .chapter-actions {
+        width: 100%;
+      }
+      .chapter-check-btn {
+        width: 100%;
+        justify-content: center;
+        padding: 0.6rem 1rem;
+      }
+      .briefing-box {
+        grid-template-columns: 1fr;
+        gap: 0.6rem;
+        padding: 0.75rem 1rem;
+      }
+      .shop-container {
+        grid-template-columns: 1fr;
+      }
+      .shop-table td {
+        padding: 0.45rem 0.75rem;
+        font-size: 0.85rem;
+      }
+      .map-content {
+        padding: 0.75rem;
+      }
+      .callout {
+        padding: 1rem 1rem;
+      }
+      .callout-header {
+        font-size: 0.92rem;
+      }
+      .callout p {
+        font-size: 0.98rem;
+      }
+      .boss-card {
+        padding: 1.1rem;
+      }
+      .boss-card-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.4rem;
+      }
+      .boss-name {
+        font-size: 1.15rem;
+      }
+      .boss-strategy {
+        font-size: 0.98rem;
+      }
+      .gear-card {
+        padding: 1rem;
+      }
+      .gear-list {
+        grid-template-columns: 1fr;
+      }
+      .vol-nav-footer {
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+      .vol-nav-btn {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+        font-size: 0.88rem;
+        padding: 0.65rem 1rem;
+      }
+      .back-to-top {
+        bottom: 1rem;
+        right: 1rem;
+        width: 38px;
+        height: 38px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sticky Top Navigation -->
+  <header class="nav-header">
+    <div class="nav-container">
+      <a href="index.html" class="nav-brand">
+        <img src="assets/logo.png" alt="Radiant Historia Logo" class="nav-logo">
+        <span>Radiant Historia</span>
+      </a>
+
+      <nav class="nav-menu">
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-item">Home</a></li>
+          
+          <li class="nav-dropdown">
+            <button type="button" class="nav-dropdown-toggle active" aria-haspopup="true" aria-expanded="false">
+              Walkthrough <span class="nav-chevron">▾</span>
+            </button>
+            <div class="nav-dropdown-menu">
+              <div class="nav-dd-section-title">Directory &amp; Overview</div>
+              <a href="introduction.html" class="nav-dropdown-item">
+                <span class="nav-dd-icon">📖</span>
+                <div class="nav-dd-text">
+                  <span class="nav-dd-name">Intro &amp; Table of Contents</span>
+                  <span class="nav-dd-desc">Game systems, battle grid &amp; chapter index</span>
+                </div>
+              </a>
+              <a href="index.html#walkthrough" class="nav-dropdown-item">
+                <span class="nav-dd-icon">🗺️</span>
+                <div class="nav-dd-text">
+                  <span class="nav-dd-name">Walkthrough Hub</span>
+                  <span class="nav-dd-desc">Volume roadmap &amp; progression guide</span>
+                </div>
+              </a>
+
+              <div class="nav-dd-divider"></div>
+              <div class="nav-dd-section-title">Story Volumes</div>
+
+              <a href="walkthrough-01-10.html" class="nav-dropdown-item">
+                <span class="nav-dd-badge vol-cyan">Vol I</span>
+                <div class="nav-dd-text">
+                  <span class="nav-dd-name">Chapters 01–10</span>
+                  <span class="nav-dd-desc">Prologue, First Jump &amp; Alistel Path</span>
+                </div>
+              </a>
+              <a href="walkthrough-11-20.html" class="nav-dropdown-item">
+                <span class="nav-dd-badge vol-blue">Vol II</span>
+                <div class="nav-dd-text">
+                  <span class="nav-dd-name">Chapters 11–20</span>
+                  <span class="nav-dd-desc">Gran Plain, Sand Fortress &amp; Dual Paths</span>
+                </div>
+              </a>
+              <a href="walkthrough-21-30.html" class="nav-dropdown-item active">
+                <span class="nav-dd-badge vol-green">Vol III</span>
+                <div class="nav-dd-text">
+                  <span class="nav-dd-name">Chapters 21–30</span>
+                  <span class="nav-dd-desc">Celestia Pact &amp; Beastkind Alliance</span>
+                </div>
+              </a>
+            </div>
+          </li>
+
+          <li><a href="index.html#timelines" class="nav-item">Timelines</a></li>
+          <li><a href="index.html#tactics" class="nav-item">3×3 Grid</a></li>
+          <li><a href="index.html#nodes" class="nav-item">Nodes</a></li>
+
+          <li class="nav-dropdown">
+            <button type="button" class="nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+              Compendium <span class="nav-chevron">▾</span>
+            </button>
+            <div class="nav-dropdown-menu nav-dd-right nav-dd-compact">
+              <div class="nav-dd-section-title">Database &amp; Lore</div>
+              <a href="index.html#characters" class="nav-dropdown-item">
+                <span class="nav-dd-icon">👥</span>
+                <div class="nav-dd-text">
+                  <span class="nav-dd-name">Characters &amp; Cast</span>
+                  <span class="nav-dd-desc">Party members, profiles &amp; abilities</span>
+                </div>
+              </a>
+              <a href="index.html#lore" class="nav-dropdown-item">
+                <span class="nav-dd-icon">📜</span>
+                <div class="nav-dd-text">
+                  <span class="nav-dd-name">World Lore &amp; Factions</span>
+                  <span class="nav-dd-desc">Nations of Vainqueur &amp; Mana history</span>
+                </div>
+              </a>
+            </div>
+          </li>
+        </ul>
+      </nav>
+
+      <a href="index.html#nodes" class="nav-progress-indicator" id="navProgressBadge" title="Jump to Historia Node Checklist">
+        <span>Completed:</span>
+        <b id="navProgressText">0 / 66</b>
+      </a>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- Breadcrumb Navigation -->
+    <nav class="breadcrumb-nav">
+      <a href="index.html">Compendium Hub</a>
+      <span>&rsaquo;</span>
+      <a href="introduction.html">Walkthrough Directory</a>
+      <span>&rsaquo;</span>
+      <span style="color: var(--text-bright);">Volume III: Chapters 21–30</span>
+    </nav>
+
+    <!-- Header Banner -->
+    <section class="vol-header-banner">
+      <div class="vol-logo-container">
+        <img src="assets/logo.png" alt="Radiant Historia Logo" class="vol-logo">
+      </div>
+      <div class="guide-meta-badge">
+        <span>🌿 Walkthrough Compendium &bull; Volume III</span>
+      </div>
+      <h1 class="page-title cinzel-decorative">Beast Tribals &amp; Palace Infiltration</h1>
+      <div class="author-subline">
+        Chapters <b>21 through 30</b> &bull; From Sand Fortress Sabotage &amp; Celestia Sanctuary to the Royal Palace of Granorg
+      </div>
+
+      <div class="header-pills-row">
+        <div class="info-pill">📖 <b>10</b> Walkthrough Chapters</div>
+        <div class="info-pill">⏳ <b>31</b> Historia Nodes</div>
+        <div class="info-pill">⚠️ <b>4</b> Dead Ends (Bad Endings)</div>
+        <div class="info-pill">📜 <b>8</b> Sidequests Handled</div>
+        <div class="info-pill">⚔️ <b>8</b> Major Boss Encounters</div>
+      </div>
+    </section>
+
+    <!-- Quick Jump Bar -->
+    <section class="quick-jump-bar">
+      <div class="quick-jump-title">
+        <span>⚡ Quick Jump to Chapter</span>
+        <span style="font-size: 0.8rem; color: var(--text-muted);">Chapters 21 – 30</span>
+      </div>
+      <div class="quick-jump-chips">
+        <a href="#ch21" class="jump-chip alternate"><span>#21</span> Sand Fortress [SAND3]</a>
+        <a href="#ch22" class="jump-chip alternate"><span>#22</span> Sand Fortress [SAND4]</a>
+        <a href="#ch23" class="jump-chip alternate"><span>#23</span> Gran Plain [GRAN3]</a>
+        <a href="#ch24" class="jump-chip alternate"><span>#24</span> Alistel [ALST6]</a>
+        <a href="#ch25" class="jump-chip alternate"><span>#25</span> Celestia [CLST1]</a>
+        <a href="#ch26" class="jump-chip alternate"><span>#26</span> Lazvil Hills [LZVL5]</a>
+        <a href="#ch27" class="jump-chip alternate"><span>#27</span> Alistel [ALST7]</a>
+        <a href="#ch28" class="jump-chip alternate"><span>#28</span> Celestia [CLST2]</a>
+        <a href="#ch29" class="jump-chip standard"><span>#29</span> Granorg Palace [GPLC1]</a>
+        <a href="#ch30" class="jump-chip standard"><span>#30</span> Granorg [GRNG3]</a>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- CHAPTER 21 -->
+    <!-- ========================================================================= -->
+    <section class="chapter-section alternate" id="ch21">
+      <div class="chapter-header">
+        <div class="chapter-title-group">
+          <span class="chapter-num-tag">CHAPTER 21</span>
+          <h2 class="chapter-heading cinzel">Sand Fortress (Alternate Chapter 1)</h2>
+          <div class="chapter-meta-badges">
+            <span class="branch-badge alternate">⏳ Alternate History</span>
+            <span class="jump-code-badge">[SAND3]</span>
+            <span class="info-pill" style="padding: 0.2rem 0.6rem; font-size: 0.78rem;">📍 Sand Fortress Garrisons</span>
+          </div>
+        </div>
+        <div class="chapter-actions">
+          <label class="chapter-check-btn" id="check-btn-21">
+            <input type="checkbox" onchange="toggleChapter(21)" id="ch-box-21">
+            <span>Mark Completed</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="briefing-box">
+        <div class="briefing-item">
+          <span class="briefing-label">Recommended Level</span>
+          <span class="briefing-val" style="color: var(--mana-cyan);">Level 24</span>
+        </div>
+        <div class="briefing-item">
+          <span class="briefing-label">Recommended Party</span>
+          <span class="briefing-val">Stocke, Raynie, Rosch</span>
+        </div>
+        <div class="briefing-item">
+          <span class="briefing-label">Enemies Encountered</span>
+          <span class="briefing-val">Granorg Archer, Light Granorgite, Red Cap</span>
+        </div>
+        <div class="briefing-item">
+          <span class="briefing-label">Inn / Bed Resting</span>
+          <span class="briefing-val" style="color: var(--gold-primary);">Free (2F Barracks)</span>
+        </div>
+      </div>
+
+      <!-- Map -->
+      <div class="map-box">
+        <div class="map-header">
+          <span>🗺️ Area Map: Sand Fortress (1F, 2F, 3F &amp; North)</span>
+          <span style="font-size: 0.8rem; color: var(--text-muted);">S - Save | X - Obstacle | B - Bomb | 1-7 - Chests</span>
+        </div>
+        <div class="map-content">
+          <pre class="map-pre">
+                           _________________
+   Sand Fortress N     2F |     B           |     S - Save Point
+                          |   ___ ___ ___   |     X - Obstacle
+    __       |  |        _|  |   |   |   |  |_    B - Bomb Sparkle
+   /  \     /    \      |    |   |   |B  |  X |   1 - Emerald (Poison Res +6)
+  |    |   /      |     |    |   |___|   |  X4|   2 - 2000 G
+  |XXXX|  |      /      |_   | 3 |   |   |  X_|   3 - Panacea Plus
+  |    |__|     |___      |  |_ _|   |_ _|  |     4 - Mana Crystal x2
+  |                7\     |          S      |     5 - Leaf Ring
+   \_____     ______/     |______     ______|     6 - Darkshield Scroll
+         |   |                   |   |            7 - 2000 G
+
+      ___|   |___          _____ ___________
+  3F |           |     1F |   X2|     | B   |
+     |          6|        |__ X_|__ __|__ __|
+     |___     ___|        | B               |
+   ______|   |______      |_____________ ___|     If you have learned the Mana
+  |5X   _______     |     |     |     |     |     Sight ability, you can
+  |_X___ _____   ___|     |     |_| |_|     |     continue with the plot from
+  |B    |_____|     |     |      S        1 |     here. In addition to the
+  |______     ______|     |______     ______|     bombs, you can also find much
+         |   |                   |   |            hidden treasure here.</pre>
+        </div>
+      </div>
+
+      <!-- Walkthrough Content -->
+      <div style="display: flex; flex-direction: column; gap: 1rem;">
+        <p>
+          If you have learned the <b>Mana Sight</b> ability, you can detect invisible objects and hidden treasure. In addition to disarming all enemy sabotage bombs planted throughout the fortress, there is substantial hidden treasure to uncover across all three floors.
+        </p>
+
+        <h3 class="cinzel" style="color: var(--gold-primary); font-size: 1.2rem; margin-top: 0.5rem;">Floor-by-Floor Bomb &amp; Treasure Sweep:</h3>
+        <ol style="margin-left: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem; font-size: 1.05rem;">
+          <li>
+            <b>First Floor (1F):</b> Search the lower right corner for a hidden chest containing an <b>EMERALD</b> (<code>Poison Res +6</code>, sell for gold). Head to the upper right room and examine the upper left corner for the first white sparkle &mdash; <b>Bomb #1 Disarmed</b>. Go left into the main hallway to find <b>Bomb #2 Disarmed</b>. In the upper left room, pull the crates out of the way to reach a hidden chest containing <b>2,000 G</b>. Climb the stairs to 2F.
+          </li>
+          <li>
+            <b>Second Floor (2F):</b> Search the room on the right for <b>Bomb #3 Disarmed</b> in its upper left corner. The room on the left holds a hidden chest with a <b>PANACEA PLUS</b>. Exit the room and walk around the northern corridor to disarm <b>Bomb #4 Disarmed</b>. On the far right corridor, pull the obstructing crates aside to reveal a hidden chest containing <b>2 MANA CRYSTALS</b>. Climb to 3F.
+          </li>
+          <li>
+            <b>Third Floor (3F):</b> In the upper left corner is <b>Bomb #5 Disarmed (Final Bomb)</b>. Walk around to the right (do not head up the center stairs yet), and pull the crates on the left away from a chest containing a <b>LEAF RING</b> (<code>HP+10 / MP+10</code>). Now climb the stairs up into the large upper hall. Search the right wall with Mana Sight for a hidden chest containing the valuable <b>DARKSHIELD SCROLL</b> for Raynie. <i>Do not teach it to Raynie just yet</i>, or you will reset the bomb disarming objective.
+          </li>
+          <li>
+            <b>Sand Fortress North:</b> Proceed out through the north exit. In the lower right corner of the outer path is a hidden chest containing another <b>2,000 G</b>.
+          </li>
+        </ol>
+
+        <p>
+          Once all five bombs are neutralized, report back to Rosch in the 1F command room. Choose to <b>"Prioritize the Mission"</b> to advance the plot!
+        </p>
+
+        <!-- Recommended Gear Checkpoint 1 -->
+        <div class="gear-card">
+          <div class="gear-title"><span>🛡️</span> Recommended Equipment (Pre-Defense)</div>
+          <div class="gear-list">
+            <div class="gear-char-entry">
+              <div class="gear-char-name">Stocke</div>
+              <div class="gear-char-items">Rune Edge, Heavy Mail, Fang Charm x3</div>
+            </div>
+            <div class="gear-char-entry">
+              <div class="gear-char-name">Raynie</div>
+              <div class="gear-char-items">Rune Spear, Heavy Mail, Horn Charm x3</div>
+            </div>
+            <div class="gear-char-entry">
+              <div class="gear-char-name">Marco</div>
+              <div class="gear-char-items">Wisp Blade, Heavy Mail, Bishop Stud, Knight Stud x2</div>
+            </div>
+            <div class="gear-char-entry">
+              <div class="gear-char-name">Rosch</div>
+              <div class="gear-char-items">P.Thauma Spear, Mail Vest, Wind Armlet, Fang Charm x2</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Node -->
+        <div class="callout callout-node">
+          <div class="callout-header">
+            <span>⏳</span> Historia Node Checkpoint: <b>[Sand Fortress Battle]</b>
+          </div>
+          <p>
+            You should know your way around here very well by now. Fight all soldiers on all three floors for exp (note that enemy soldiers never spawn inside enclosed rooms). When ready, ascend to the 3F upper hall for your last stand. Transfer Raynie's <i>Horn Charms</i> to Stocke, swap Marco into the active party, and unequip Rosch's <i>Wind Armlet</i> so you retain it for later.
+          </p>
+        </div>
+
+        <!-- Boss -->
+        <div class="boss-card">
+          <div class="boss-card-header">
+            <div class="boss-name">
+              <span>⚔️ Boss: Grey Shadow, Granorg Archer x2, Light Granorgite</span>
+            </div>
+            <span class="boss-badge">Major Boss</span>
+          </div>
+          <div class="boss-weakness">Elemental Weakness: <b>None</b></div>
+          <div class="boss-strategy">
+            The Grey Shadow will always open the battle by setting up a lethal <b>Power Zone</b>. If any Granorg soldier or the boss occupies this tile, immediately push or assault them off of it, or their boosted strikes will wipe your party! Your top priority is eliminating Grey Shadow, which permanently dispels the Power Zone. If you have full Mana Burst gauges, execute <b>Turn Break</b> on Grey Shadow before he acts. In turn 1, have Marco cast <b>Magic Boost</b> on Stocke or Raynie. Stack elemental spells and physical strikes to quickly bring Grey Shadow down, then clean up the archers.
+          </div>
+        </div>
+
+        <!-- Node -->
+        <div class="callout callout-node">
+          <div class="callout-header">
+            <span>⏳</span> Historia Node Checkpoint: <b>[A Message from Home]</b>
+          </div>
+          <p>After the defensive victory and ensuing cutscenes, Stocke receives urgent dispatches from Alistel regarding the frontline war effort.</p>
+        </div>
+
+        <!-- Recommended Gear Checkpoint 2 -->
+        <div class="gear-card">
+          <div class="gear-title"><span>🛡️</span> Recommended Equipment (Post-Battle)</div>
+          <div class="gear-list">
+            <div class="gear-char-entry">
+              <div class="gear-char-name">Stocke</div>
+              <div class="gear-char-items">Rune Edge, Heavy Mail, Fang Charm x3</div>
+            </div>
+            <div class="gear-char-entry">
+              <div class="gear-char-name">Raynie</div>
+              <div class="gear-char-items">Rune Spear, Heavy Mail, Horn Charm x3</div>
+            </div>
+            <div class="gear-char-entry">
+              <div class="gear-char-name">Marco</div>
+              <div class="gear-char-items">Wisp Blade, Heavy Mail, Bishop Stud, Knight Stud x2</div>
+            </div>
+            <div class="gear-char-entry">
+              <div class="gear-char-name">Reserve Storage</div>
+              <div class="gear-char-items">Rhapsody, Rune Claw, Wind Armlet, Leaf Ring</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- CHAPTER 22 -->
+    <!-- ========================================================================= -->
+    <section class="chapter-section alternate" id="ch22">
+      <div class="chapter-header">
+        <div class="chapter-title-group">
+          <span class="chapter-num-tag">CHAPTER 22</span>
+          <h2 class="chapter-heading cinzel">Sand Fortress (Alternate Chapter 2)</h2>
+          <div class="chapter-meta-badges">
+            <span class="branch-badge alternate">⏳ Alternate History</span>
+            <span class="jump-code-badge">[SAND4]</span>
+            <span class="info-pill" style="padding: 0.2rem 0.6rem; font-size: 0.78rem;">📍 Fortress Command &amp; Time Warp</span>
+          </div>
+        </div>
+        <div class="chapter-actions">
+          <label class="chapter-check-btn" id="check-btn-22">
+            <input type="checkbox" onchange="toggleChapter(22)" id="ch-box-22">
+            <span>Mark Completed</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="briefing-box">
+        <div class="briefing-item">
+          <span class="briefing-label">Recommended Level</span>
+          <span class="briefing-val" style="color: var(--mana-cyan);">Level 27</span>
+        </div>
+        <div class="briefing-item">
+          <span class="briefing-label">Recommended Party</span>
+          <span class="briefing-val">Stocke, Raynie, Marco</span>
+        </div>
+        <div class="briefing-item">
+          <span class="briefing-label">Enemies Encountered</span>
+          <span class="briefing-val" style="color: var(--text-muted);">None (Peaceful Garrison)</span>
+        </div>
+        <div class="briefing-item">
+          <span class="briefing-label">Resting</span>
+          <span class="briefing-val" style="color: var(--gold-primary);">Free (2F Barracks Bed)</span>
+        </div>
+      </div>
+
+      <!-- Walkthrough Content -->
+      <div style="display: flex; flex-direction: column; gap: 1rem;">
+        <!-- Node -->
+        <div class="callout callout-node">
+          <div class="callout-header">
+            <span>⏳</span> Historia Node Checkpoint: <b>[Alistel's Offensive]</b>
+          </div>
+          <p>
+            After receiving your destination briefing, speak with <b>General Viola</b> again in the command post to advance the <b>[A Letter to Tomorrow]</b> sidequest.
+          </p>
+        </div>
+
+        <!-- Sidequest & Bad Ending -->
+        <div class="callout callout-quest">
+          <div class="callout-header">
+            <span>📜</span> Sidequest Resolution: <b>[A Letter to Tomorrow]</b> &amp; Bad Ending Divergence
+          </div>
+          <p>
+            Use Historia to time-jump back to the <b>"A New Mission"</b> node in Alistel:
+          </p>
+          <ol style="margin-left: 1.5rem; display: flex; flex-direction: column; gap: 0.4rem; font-size: 1rem; margin-top: 0.5rem;">
+            <li>While here in Alistel, visit the soldier in the castle right wing to teach the <b>Darkshield Scroll</b> to Raynie (unlocking <i>Darkshield</i>).</li>
+            <li>Head to the Second Ward and speak to <b>Cedric</b> on the upper platform next to the tavern.</li>
+            <li>
+              <b>⚠️ Bad Ending Warning:</b> Choosing <i>"Don't show journal"</i> will unlock the <b>[A Voice Unheard]</b> Possible History (Bad Ending).
+            </li>
+            <li>
+              Choosing <b>"Show Journal"</b> successfully completes the <b>[A Letter to Tomorrow]</b> sidequest! Reward: <b>NOAH AMULET</b> (<code>Poison/Sleep/Paralysis Res +4</code>, sell for 5,000 G). This quest is also a strict prerequisite for the true ending epilogue <i>"Valkyrie in Repose"</i>!
+            </li>
+          </ol>
+        </div>
+
+        <p>
+          Once finished, time-warp back to the <b>"Alistel's Offensive"</b> node at the Sand Fortress. Rest up in the 2F barracks bed to restore all HP/MP, climb to 3F, and take the northern exit out to the <b>Gran Plain</b>.
+        </p>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- CHAPTER 23 -->
+    <!-- ========================================================================= -->
+    <section class="chapter-section alternate" id="ch23">
+      <div class="chapter-header">
+        <div class="chapter-title-group">
+          <span class="chapter-num-tag">CHAPTER 23</span>
+          <h2 class="chapter-heading cinzel">Gran Plain (Alternate Chapter 2)</h2>
+          <div class="chapter-meta-badges">
+            <span class="branch-badge alternate">⏳ Alternate History</span>
+            <span class="jump-code-badge">[GRAN3]</span>
+            <span class="info-pill" style="padding: 0.2rem 0.6rem; font-size: 0.78rem;">📍 Gran Plain Frontlines</span>
+          </div>
+        </div>
+        <div class="chapter-actions">
+          <label class="chapter-check-btn" id="check-btn-23">
+            <input type="checkbox" onchange="toggleChapter(23)" id="ch-box-23">
+            <span>Mark Completed</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="briefing-box">
+        <div class="briefing-item">
+          <span class="briefing-label">Recommended Level</span>
+          <span class="briefing-val" style="color: var(--mana-cyan);">Level 27</span>
+        </div>
+        <div class="briefing-item">
+          <span class="briefing-label">Recommended Party</span>
+          <span class="briefing-val">Stocke, Raynie, Marco</span>
+        </div>
+        <div class="briefing-item">
+          <span class="briefing-label">Enemies Encountered</span>
+          <span class="briefing-val">Blue Granorg Archer (Sleep), Granorg Defender, Hunter (Sleep), Rose Balsam (Poison/Stone/Fire), Sabertooth Tiger, Wood Shield (Fire)</span>
+        </div>
+        <div class="briefing-item">
+          <span class="briefing-label">Terrain Hazard</span>
+          <span class="briefing-val" style="color: var(--timeline-alternate);">Dense Sandstorms &amp; Ambush Patrols</span>
+        </div>
+      </div>
+
+      <!-- Walkthrough Content -->
+      <div style="display: flex; flex-direction: column; gap: 1rem;">
+        <!-- Node -->
+        <div class="callout callout-node">
+          <div class="callout-header">
+            <span>⏳</span> Historia Node Checkpoint: <b>[Battle of Gran Plain]</b>
+          </div>
+          <p>
+            From the Sand Fortress North exit, head north one screen and west two screens. Continue marching west across the war-torn plains until you receive a scout dispatch regarding the chaotic battle conditions.
+          </p>
+        </div>
+
+        <!-- Bad Ending -->
+        <div class="callout callout-danger">
+          <div class="callout-header">
+            <span>⚠️</span> Temporal Choice Point &mdash; Bad Ending Warning
+          </div>
+          <p>
+            When prompted with how to respond to the frontline crisis:<br>
+            Choosing to <b>"Go north"</b> results in Rosch's brigade being overrun, unlocking <b>[The Lion General]</b> Possible History (Bad Ending).
+          </p>
+        </div>
+
+        <!-- Node -->
+        <div class="callout callout-node">
+          <div class="callout-header">
+            <span>⏳</span> Historia Node Checkpoint: <b>[A Meeting Too Late]</b>
+          </div>
+          <p>
+            Return to this node (make sure you've rested at the 2F Sand Fortress bed). Choose <b>"Look for Rosch"</b> to locate his encircled vanguard unit in time!
+          </p>
+        </div>
+
+        <!-- Boss -->
+        <div class="boss-card">
+          <div class="boss-card-header">
+            <div class="boss-name">
+              <span>⚔️ Boss: Paelzan, Blue Granorg Archer x3, Wood Shield x3</span>
+            </div>
+            <span class="boss-badge">Frontline Boss</span>
+          </div>
+          <div class="boss-weakness">Weaknesses: Paelzan: <b>None</b> | Blue Archer: <b>Sleep</b> | Wood Shield: <b>Fire</b></div>
+          <div class="boss-strategy">
+            In Turn 1, have Marco cast <b>Magic Boost</b> on Raynie, Raynie cast <b>Fire</b> on the central Wood Shield, and Stocke cast <b>Magic Boost</b> on himself. In Turn 2, have Stocke use <b>Push Assault</b> to shove Paelzan directly into the Blue Granorg Archer behind him, then unleash two boosted Fire spells to incinerate both targets at once. Next, have Marco heal any wounded allies while Stocke and Raynie burn down the flanking Wood Shields. Finally, use <b>Right Assault</b> to cluster the remaining archers into a single grid tile and wipe them with area magic.
+          </div>
+        </div>
+
+        <!-- Nodes -->
+        <div class="callout callout-node">
+          <div class="callout-header">
+            <span>⏳</span> Historia Node Checkpoints: <b>[Rosch in Crisis]</b> &amp; <b>[Wolf in the Fold]</b>
+          </div>
+          <p>
+            Following the battle, Rosch is gravely wounded and General Hugo's sinister political agenda begins to surface. To break through this timeline impasse, jump back to <b>"Alistel's Offensive"</b> and speak with Viola to unlock the <b>[Viola's Decision]</b> node.
+          </p>
+        </div>
+
+        <!-- Prerequisite -->
+        <div class="callout callout-quest">
+          <div class="callout-header">
+            <span>📜</span> True Ending Prerequisite Choice
+          </div>
+          <p>
+            Return to the <b>"A Meeting Too Late"</b> node and replay the scene up to the dialogue prompt. Choose <b>"I leave it to you."</b> &mdash; this is a mandatory condition to unlock the true ending sidequest <b>[At Journey's End]</b> later in the game!
+          </p>
+        </div>
+
+        <!-- Node -->
+        <div class="callout callout-node">
+          <div class="callout-header">
+            <span>⏳</span> Historia Node Checkpoint: <b>[Lives Entrusted]</b>
+          </div>
+          <p>With Rosch hospitalized and the battlefield stabilized, Stocke's party is recalled to the capital of Alistel.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- CHAPTER 24 -->
+    <!-- ========================================================================= -->
+    <section class="chapter-section alternate" id="ch24">
+      <div class="chapter-header">
+        <div class="chapter-title-group">
+          <span class="chapter-num-tag">CHAPTER 24</span>
+          <h2 class="chapter-heading cinzel">Alistel (Alternate Chapter 2)</h2>
+          <div class="chapter-meta-badges">
+            <span class="branch-badge alternate">⏳ Alternate History</span>
+            <span class="jump-code-badge">[ALST6]</span>
+            <span class="info-pill" style="padding: 0.2rem 0.6rem; font-size: 0.78rem;">📍 Alistel Castle Infiltration</span>
+          </div>
+        </div>
+        <div class="chapter-actions">
+          <label class="chapter-check-btn" id="check-btn-24">
+            <input type="checkbox" onchange="toggleChapter(24)" id="ch-box-24">
+            <span>Mark Completed</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="briefing-box">
+        <div class="briefing-item">
+          <span class="briefing-label">Recommended Level</span>
+          <span class="briefing-val" style="color: var(--mana-cyan);">Level 30</span>
+        </div>
+        <div class="briefing-item">
+          <span class="briefing-label">Party Configuration</span>
+          <span class="briefing-val" style="color: var(--gold-primary);">Stocke (Solo)</span>
+        </div>
+        <div class="briefing-item">
+          <span class="briefing-label">Enemies Encountered</span>
+          <span class="briefing-val" style="color: var(--text-muted);">None (Palace Guards on alert)</span>
+        </div>
+        <div class="briefing-item">
+          <span class="briefing-label">Key Technique Unlocked</span>
+          <span class="briefing-val" style="color: var(--mana-green);">Vanish (Invisibility)</span>
+        </div>
+      </div>
+
+      <!-- Walkthrough Content -->
+      <div style="display: flex; flex-direction: column; gap: 1rem;">
+        <!-- Node -->
+        <div class="callout callout-node">
+          <div class="callout-header">
+            <span>⏳</span> Historia Node Checkpoint: <b>[Homecoming]</b>
+          </div>
+          <p>
+            Upon arriving in Alistel Castle, <b>do not</b> inspect General Hugo's office immediately! Take the central elevator down to the 1st floor first. Speak to the receptionist behind the left desk to initiate two lucrative long-term recruit sidequests:
+          </p>
+          <ul style="margin-left: 1.5rem; display: flex; flex-direction: column; gap: 0.35rem; font-size: 1rem; margin-top: 0.35rem;">
+            <li><b>[Swordsman Recruit]</b> &mdash; Completed later in Cygnus / In Pursuit for <b>8,000 G</b>.</li>
+            <li><b>[Mercenary Recruit]</b> &mdash; Completed later in Skalla / In Pursuit for <b>15,000 G</b>.</li>
+          </ul>
+        </div>
+
+        <p>
+          Take the elevator back up to 3F and enter Hugo's office on the left. Instead of General Hugo, you encounter a chillingly familiar figure waiting in the shadows...
+        </p>
+
+        <!-- Boss 1 -->
+        <div class="boss-card">
+          <div class="boss-card-header">
+            <div class="boss-name">
+              <span>⚔️ Boss: Heiss (Shadow Duel)</span>
+            </div>
+            <span class="boss-badge">Solo Duel</span>
+          </div>
+          <div class="boss-weakness">Elemental Weakness: <b>None</b></div>
+          <div class="boss-strategy">
+            This is a 1-on-1 duel between Stocke and Heiss. Use the <b>Change</b> command repeatedly to manipulate the turn grid until you string together four consecutive turns for Stocke. Unleash four continuous <b>Fire</b> spells in a single uninterrupted combo chain to overwhelm Heiss before he can retaliate.
+          </div>
+        </div>
+
+        <!-- Node & Vanish -->
+        <div class="callout callout-discovery">
+          <div class="callout-header">
+            <span>✨</span> Secret Technique Learned: <b>Vanish</b> &amp; <b>[Parting Ways]</b> Node
+          </div>
+          <p>
+            For surviving the confrontation, Stocke masters the <b>Vanish</b> field technique! By pressing <code>Y</code> (or action key), Stocke turns completely invisible to enemy patrols, allowing him to sneak past heavy guard posts undetected &mdash; including the royal checkpoints at Granorg Palace.
+          </p>
+        </div>
+
+        <!-- Node & Boss 2 -->
+        <div class="callout callout-node">
+          <div class="callout-header">
+            <span>⏳</span> Historia Node Checkpoints: <b>[Flight]</b> &amp; <b>[Fiendish]</b>
+          </div>
+          <p>
+            Head into the infirmary to consult with Sonja and arrange a clandestine escape before Hugo's death squad seals the castle exits. As you flee, Special Intelligence agents intercept you:
+          </p>
+        </div>
+
+        <div class="boss-card">
+          <div class="boss-card-header">
+            <div class="boss-name">
+              <span>⚔️ Boss: Special Forces x2</span>
+            </div>
+            <span class="boss-badge">Encounter</span>
+          </div>
+          <div class="boss-weakness">Elemental Weakness: <b>None</b></div>
+          <div class="boss-strategy">
+            One of the agents immediately establishes a <b>Power Zone</b>. Prioritize using Push Assault or directional attacks to keep both operatives off of the boosted tile. As long as you deny them the zone, their damage output remains negligible. Cast Fire 2–3 times on each agent to quickly dispose of them.
+          </div>
+        </div>
+
+        <p>
+          After the battle, Stocke collapses from exhaustion and is rescued by enigmatic beastkind travelers, carrying him away to a realm beyond human borders.
+        </p>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- CHAPTER 25 -->
+    <!-- ========================================================================= -->
+    <section class="chapter-section alternate" id="ch25">
+      <div class="chapter-header">
+        <div class="chapter-title-group">
+          <span class="chapter-num-tag">CHAPTER 25</span>
+          <h2 class="chapter-heading cinzel">Celestia (Alternate Chapter 3)</h2>
+          <div class="chapter-meta-badges">
+            <span class="branch-badge alternate">⏳ Alternate History</span>
+            <span class="jump-code-badge">[CLST1]</span>
+            <span class="info-pill" style="padding: 0.2rem 0.6rem; font-size: 0.78rem;">📍 Satyros Woodland Haven</span>
+          </div>
+        </div>
+        <div class="chapter-actions">
+          <label class="chapter-check-btn" id="check-btn-25">
+            <input type="checkbox" onchange="toggleChapter(25)" id="ch-box-25">
+            <span>Mark Completed</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="briefing-box">
+        <div class="briefing-item">
+          <span class="briefing-label">Recommended Level</span>
+          <span class="briefing-val" style="color: var(--mana-cyan);">Level 30</span>
+        </div>
+        <div class="briefing-item">
+          <span class="briefing-label">Party Recruits</span>
+          <span class="briefing-val" style="color: var(--mana-green);">Aht (Shaman) &amp; Gafka (Gutral) Join!</span>
+        </div>
+        <div class="briefing-item">
+          <span class="briefing-label">Enemies Encountered</span>
+          <span class="briefing-val" style="color: var(--text-muted);">None (Sanctuary Village)</span>
+        </div>
+        <div class="briefing-item">
+          <span class="briefing-label">Inn Cost</span>
+          <span class="briefing-val" style="color: var(--gold-primary);">Free (Satyros Shelter)</span>
+        </div>
+      </div>
+
+      <!-- Map -->
+      <div class="map-box">
+        <div class="map-header">
+          <span>🗺️ Area Map: Celestia (Sanctuary of the Beastkind)</span>
+          <span style="font-size: 0.8rem; color: var(--text-muted);">S - Save | 1 - Crystal Charm | 2 - Anti-Paralytic x2 | 3 - 3000 G</span>
+        </div>
+        <div class="map-content">
+          <pre class="map-pre">
+   Boundary Tree
+       ____
+      |2   |           S - Save Point
+      |__  |           1 - Crystal Charm (MAG+6, hidden)
+         | |           2 - Anti-Paralytic x2 (hidden)
+                       3 - 3000 G (hidden)
+    _____| |_
+   |  _   _  | Plaza
+   |1|_   _| |_
+   |___  S_____|
+       | |
+
+     __| |__
+    |3      | Celestia
+    |       | Entrance</pre>
+        </div>
+      </div>
+
+      <!-- Shops -->
+      <div class="shop-container">
+        <div class="shop-card">
+          <div class="shop-header">
+            <span>🌿 Celestia Item Shop</span>
+            <span style="font-size: 0.8rem; color: var(--text-muted);">Supplies &amp; Wings</span>
+          </div>
+          <table class="shop-table">
+            <tbody>
+              <tr><td>Soothing Balm</td><td class="shop-price">100 G</td></tr>
+              <tr><td>First Aid Kit</td><td class="shop-price">400 G</td></tr>
+              <tr><td>Herbal Tea</td><td class="shop-price">350 G</td></tr>
+              <tr><td>Healing Herb</td><td class="shop-price">500 G</td></tr>
+              <tr><td>Holy Water</td><td class="shop-price">500 G</td></tr>
+              <tr><td>Anti-Poison / Fear / Paralytic / Curse / Sleep / Stone</td><td class="shop-price">50 G</td></tr>
+              <tr><td>Poison / Paralysis / Curse Wing</td><td class="shop-price">350 G</td></tr>
+              <tr><td>Sleep Wing <span class="shop-tip">(Buy 5)</span></td><td class="shop-price">500 G</td></tr>
+              <tr><td>Stone Wing</td><td class="shop-price">500 G</td></tr>
+              <tr><td>Power Down / Might Herb</td><td class="shop-price">500 G</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="shop-card">
+          <div class="shop-header">
+            <span>⚔️ Celestia Equipment Armory</span>
+            <span style="font-size: 0.8rem; color: var(--text-muted);">Weapons &amp; Accessories</span>
+          </div>
+          <table class="shop-table">
+            <tbody>
+              <tr><td>Rune Edge / Rune Spear</td><td class="shop-price">5000 / 2500 G</td></tr>
+              <tr><td>Copper Gauntlet / Red Dagger / Custom Knife</td><td class="shop-price">1700 / 2000 / 2800 G</td></tr>
+              <tr><td>Leather Cuirass <span class="shop-tip">(Buy 1 for Gafka)</span></td><td class="shop-price">2000 G</td></tr>
+              <tr><td>Reinforced Cape <span class="shop-tip">(Buy 1 for Aht)</span></td><td class="shop-price">1200 G</td></tr>
+              <tr><td>Silver Cape / Hymnal Cape / Silver Dress</td><td class="shop-price">2800 / 3700 / 2000 G</td></tr>
+              <tr><td>Horn Charm <span class="shop-tip">(Buy 4)</span></td><td class="shop-price">1000 G</td></tr>
+              <tr><td>Fang Charm <span class="shop-tip">(Buy 3)</span></td><td class="shop-price">1000 G</td></tr>
+              <tr><td>Bishop Stud <span class="shop-tip">(Buy 5 - Top Magic DEF)</span></td><td class="shop-price">3000 G</td></tr>
+              <tr><td>Wind Armlet / Amber / Amazonite</td><td class="shop-price">5000 / 1750 / 1750 G</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Walkthrough Content -->
+      <div style="display: flex; flex-direction: column; gap: 1rem;">
+        <!-- Node -->
+        <div class="callout callout-node">
+          <div class="callout-header">
+            <span>⏳</span> Historia Node Checkpoint: <b>[The Beastkind Forest]</b>
+          </div>
+          <p>
+            Upon waking up in the Satyros village of Celestia, leave the inn. Search the left side of the plaza with Mana Sight for a hidden chest containing a <b>CRYSTAL CHARM</b> (<code>MAG+6</code>, save for later). Talk to the Satyros standing just above the save point to receive a <b>FLOWER BUD</b> for the <b>[A Flower of Promise]</b> sidequest.
+          </p>
+        </div>
+
+        <!-- Sidequest -->
+        <div class="callout callout-quest">
+          <div class="callout-header">
+            <span>📜</span> Sidequest Resolution: <b>[A Flower of Promise]</b>
+          </div>
+          <p>
+            Use Historia to return to <b>"The Beginning"</b> node in Alistel. Give the Flower Bud to the young girl tending flowers on the castle 1F. Skip ahead to the <b>"A New Mission"</b> node and speak to her again to complete <b>[A Flower of Promise]</b> &rarr; Reward: <b>THAUMATECH ORB</b> (<code>MAG+5 / MDF+5</code>). Warp back to <b>"The Beastkind Forest"</b> node and head north to speak with Rosch.
+          </p>
+        </div>
+
+        <!-- Nodes & Party Recruits -->
+        <div class="callout callout-node">
+          <div class="callout-header">
+            <span>⏳</span> Historia Node Checkpoints: <b>[Unacceptable Loss]</b>, <b>[Gauntlet]</b>, &amp; <b>[Beastkind's Favor]</b>
+          </div>
+          <p>
+            After receiving your audience with Patriarch Barranca, <b>Aht</b> (Satyros Trap Shaman) and <b>Gafka</b> (Gutral Warrior) officially join your active combat party!
+          </p>
+        </div>
+
+        <p>
+          <b>Equipment Optimizations:</b> Equip the <i>Rhapsody</i> dagger on Aht and <i>Rune Claw</i> on Gafka. Buy a <i>Leather Cuirass</i> for Gafka and a <i>Reinforced Cape</i> for Aht. Purchase <b>4 Horn Charms</b>, <b>3 Fang Charms</b>, and <b>5 Bishop Studs</b>. Equip defensive accessories on Aht &mdash; while her elemental traps scale on Magic, her natural damage is already enormous, and she has low base HP. Buy 5 Sleep Wings and 5 Curse Wings from the item merchant.
+        </p>
+
+        <p>
+          Before departing, head north to the <b>Boundary Tree</b> and search the left wall for <b>2 ANTI-PARALYTICS</b>. Head south to the village entrance and search the left side for a hidden chest with <b>3,000 G</b>. Exit south toward Lazvil Hills.
+        </p>
+
+        <!-- Recommended Gear -->
+        <div class="gear-card">
+          <div class="gear-title"><span>🛡️</span> Recommended Equipment (Beast Alliance)</div>
+          <div class="gear-list">
+            <div class="gear-char-entry">
+              <div class="gear-char-name">Stocke</div>
+              <div class="gear-char-items">Rune Edge, Heavy Mail, Crystal Charm, Thaumatech Orb, Horn Charm</div>
+            </div>
+            <div class="gear-char-entry">
+              <div class="gear-char-name">Aht</div>
+              <div class="gear-char-items">Rhapsody, Reinforced Cape, Bishop Stud x3</div>
+            </div>
+            <div class="gear-char-entry">
+              <div class="gear-char-name">Gafka</div>
+              <div class="gear-char-items">Rune Claw, Leather Cuirass, Fang Charm x3</div>
+            </div>
+            <div class="gear-char-entry">
+              <div class="gear-char-name">Reserve Storage</div>
+              <div class="gear-char-items">Bishop Stud x2, Fang Charm x3, Horn Charm x3</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- CHAPTER 26 -->
+    <!-- ========================================================================= -->
+    <section class="chapter-section alternate" id="ch26">
+      <div class="chapter-header">
+        <div class="chapter-title-group">
+          <span class="chapter-num-tag">CHAPTER 26</span>
+          <h2 class="chapter-heading cinzel">Lazvil Hills (Alternate Chapter 3)</h2>
+          <div class="chapter-meta-badges">
+            <span class="branch-badge alternate">⏳ Alternate History</span>
+            <span class="jump-code-badge">[LZVL5]</span>
+            <span class="info-pill" style="padding: 0.2rem 0.6rem; font-size: 0.78rem;">📍 Woodland Beast Extermination</span>
+          </div>
+        </div>
+        <div class="chapter-actions">
+          <label class="chapter-check-btn" id="check-btn-26">
+            <input type="checkbox" onchange="toggleChapter(26)" id="ch-box-26">
+            <span>Mark Completed</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="briefing-box">
+        <div class="briefing-item">
+          <span class="briefing-label">Recommended Level</span>
+          <span class="briefing-val" style="color: var(--mana-cyan);">Level 30</span>
+        </div>
+        <div class="briefing-item">
+          <span class="briefing-label">Recommended Party</span>
+          <span class="briefing-val">Stocke, Aht, Gafka</span>
+        </div>
+        <div class="briefing-item">
+          <span class="briefing-label">Enemies Encountered</span>
+          <span class="briefing-val">Cloudy (Lightning), Green Leech (Fire), Rafflesia (Fire), Stompy (Fire)</span>
+        </div>
+        <div class="briefing-item">
+          <span class="briefing-label">Combat Role</span>
+          <span class="briefing-val" style="color: var(--mana-green);">Trap Setup &amp; Central Clumping</span>
+        </div>
+      </div>
+
+      <!-- Map -->
+      <div class="map-box">
+        <div class="map-header">
+          <span>🗺️ Area Map: Lazvil Hills (Celestia Border Pass)</span>
+          <span style="font-size: 0.8rem; color: var(--text-muted);">S - Save | X - Roadblocks</span>
+        </div>
+        <div class="map-content">
+          <pre class="map-pre">
+         Highway         Highway E    Your goal is to defeat the monsters here
+                                      that threaten Celestia. It's a little
+                            |X|       tricky, because Aht's speed is so high
+          ____________   __/   \      that she throws off combo orders and has
+         X_______   __   _      |     no Assaults for some time. In pre-emptive
+    ___   |    ____/      |     |     strikes, lay a trap during extra turns.
+   |   |   \  |            \   /      Against Cloudys, cast Polaris to negate
+    \  |    | |             |X|       poison. With magic gear, Stocke can
+     | |    | |             | |       one-shot any monster with Fire.
+                                      
+    _| |    | |            _| |_      There is no more treasure here if cleared
+   |   |   /  |Woodland   |     |     earlier. Follow path to the open area,
+    \  |__|   | Path E    | | | |     go north 2 screens, west and south 1
+     |_   ____|          _|/   \|_    screen to a save point. Equip Horn Charms
+_______| |      Southern|___   ___|   on Stocke, give magic gear to Aht, and
+_________|        Path      |X|       head west into the clearing.
+
+                           _| |_
+S - Save Point    Seaside |     |__
+X - Roadblock      Road   |      __
+                          |_____|</pre>
+        </div>
+      </div>
+
+      <!-- Walkthrough Content -->
+      <div style="display: flex; flex-direction: column; gap: 1rem;">
+        <p>
+          Your objective is neutralizing the rampaging beast horde threatening the Celestian border. Because Aht possesses extremely high speed, she frequently acts first before turn combos can be stacked. In pre-emptive strikes, use her opening turn to plant an elemental trap on an empty tile, then use Gafka or Stocke's Assault skills to knock enemies into it! If fighting Cloudys, have Aht cast <b>Polaris</b> to grant party-wide immunity against poison.
+        </p>
+
+        <p>
+          Follow the woodland route east into the open clearing, head north two screens, then west and south to reach the save point. Equip <i>Horn Charms</i> on Stocke, transfer the magic accessories (<i>Crystal Charm</i>, <i>Thaumatech Orb</i>) to Aht, and proceed west to trigger the boss fight.
+        </p>
+
+        <!-- Boss -->
+        <div class="boss-card">
+          <div class="boss-card-header">
+            <div class="boss-name">
+              <span>⚔️ Boss: Forest Bear, Stompy x2</span>
+            </div>
+            <span class="boss-badge">Encounter</span>
+          </div>
+          <div class="boss-weakness">Weaknesses: Forest Bear: <b>Ice</b> | Stompy: <b>Fire</b></div>
+          <div class="boss-strategy">
+            Have Aht open by laying an <b>Ice Trap</b>. Eliminate the two Stompys immediately before they can summon additional reinforcements: a <b>Push Assault</b> from Gafka combined with Stocke's <b>Fire</b> will incinerate them. Next, shove the Forest Bear directly onto Aht's Ice Trap. Use the <b>Change</b> command to gather consecutive party turns, then finish the Forest Bear with two additional Ice Traps!
+          </div>
+        </div>
+
+        <!-- Node -->
+        <div class="callout callout-node">
+          <div class="callout-header">
+            <span>⏳</span> Historia Node Checkpoint: <b>[Report from Vanoss]</b>
+          </div>
+          <p>
+            Return to Celestia. After reporting your victory to Patriarch Barranca at the Boundary Tree, speak with Vanoss at the inn to prepare for your covert diplomatic journey into Alistel.
+          </p>
+        </div>
+
+        <!-- Recommended Gear -->
+        <div class="gear-card">
+          <div class="gear-title"><span>🛡️</span> Recommended Equipment (Pre-Infiltration)</div>
+          <div class="gear-list">
+            <div class="gear-char-entry">
+              <div class="gear-char-name">Stocke</div>
+              <div class="gear-char-items">Rune Edge, Heavy Mail, Fang Charm x3</div>
+            </div>
+            <div class="gear-char-entry">
+              <div class="gear-char-name">Aht</div>
+              <div class="gear-char-items">Rhapsody, Reinforced Cape, Bishop Stud x3</div>
+            </div>
+            <div class="gear-char-entry">
+              <div class="gear-char-name">Gafka</div>
+              <div class="gear-char-items">Rune Claw, Leather Cuirass, Fang Charm x3</div>
+            </div>
+            <div class="gear-char-entry">
+              <div class="gear-char-name">Reserve Storage</div>
+              <div class="gear-char-items">Bishop Stud x2, Crystal Charm, Thaumatech Orb, Horn Charm x4</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- CHAPTER 27 -->
+    <!-- ========================================================================= -->
+    <section class="chapter-section alternate" id="ch27">
+      <div class="chapter-header">
+        <div class="chapter-title-group">
+          <span class="chapter-num-tag">CHAPTER 27</span>
+          <h2 class="chapter-heading cinzel">Alistel (Alternate Chapter 3)</h2>
+          <div class="chapter-meta-badges">
+            <span class="branch-badge alternate">⏳ Alternate History</span>
+            <span class="jump-code-badge">[ALST7]</span>
+            <span class="info-pill" style="padding: 0.2rem 0.6rem; font-size: 0.78rem;">📍 Capital City Undercover</span>
+          </div>
+        </div>
+        <div class="chapter-actions">
+          <label class="chapter-check-btn" id="check-btn-27">
+            <input type="checkbox" onchange="toggleChapter(27)" id="ch-box-27">
+            <span>Mark Completed</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="briefing-box">
+        <div class="briefing-item">
+          <span class="briefing-label">Recommended Level</span>
+          <span class="briefing-val" style="color: var(--mana-cyan);">Level 31</span>
+        </div>
+        <div class="briefing-item">
+          <span class="briefing-label">Recommended Party</span>
+          <span class="briefing-val">Stocke, Aht, Gafka</span>
+        </div>
+        <div class="briefing-item">
+          <span class="briefing-label">Enemies Encountered</span>
+          <span class="briefing-val">Alistel Grunt (Sleep)</span>
+        </div>
+        <div class="briefing-item">
+          <span class="briefing-label">Key Purchases</span>
+          <span class="briefing-val" style="color: var(--gold-primary);">Sorcery Epee &amp; Magic Spear</span>
+        </div>
+      </div>
+
+      <!-- Shops -->
+      <div class="shop-container">
+        <div class="shop-card">
+          <div class="shop-header">
+            <span>🧪 Alistel Item Supplies</span>
+            <span style="font-size: 0.8rem; color: var(--text-muted);">Remedies</span>
+          </div>
+          <table class="shop-table">
+            <tbody>
+              <tr><td>Soothing Balm / First Aid Kit</td><td class="shop-price">100 / 400 G</td></tr>
+              <tr><td>Herbal Tea / Healing Herb / Holy Water</td><td class="shop-price">350 / 500 / 500 G</td></tr>
+              <tr><td>Anti-Poison / Fear / Paralytic / Curse / Sleep / Stone</td><td class="shop-price">50 G</td></tr>
+              <tr><td>Panacea / Poison Wing / Sleep Wing</td><td class="shop-price">800 / 350 / 500 G</td></tr>
+              <tr><td>Power Down / Might Herb</td><td class="shop-price">500 / 500 G</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="shop-card">
+          <div class="shop-header">
+            <span>⚔️ Alistel Weapon &amp; Armor Shop</span>
+            <span style="font-size: 0.8rem; color: var(--text-muted);">New Inventory</span>
+          </div>
+          <table class="shop-table">
+            <tbody>
+              <tr><td>Sorcery Epee <span class="shop-tip">(Buy for Stocke - MAG+18)</span></td><td class="shop-price">4600 G</td></tr>
+              <tr><td>Magic Spear <span class="shop-tip">(Buy for Raynie - MAG+14)</span></td><td class="shop-price">3200 G</td></tr>
+              <tr><td>Silver Edge / Silver Spear / Iron Sword / Lance</td><td class="shop-price">3000 / 2000 / 2400 / 2100 G</td></tr>
+              <tr><td>Heavy Mail / Silver Mail / Silver Cape</td><td class="shop-price">1500 / 1100 / 2800 G</td></tr>
+              <tr><td>Gold Clothes / Reinforced Cape</td><td class="shop-price">3200 / 1200 G</td></tr>
+              <tr><td>Horn Charm / Knight Stud / Breeze Armlet</td><td class="shop-price">1000 / 1500 / 1500 G</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Walkthrough Content -->
+      <div style="display: flex; flex-direction: column; gap: 1rem;">
+        <!-- Node & Sidequest Initiation -->
+        <div class="callout callout-node">
+          <div class="callout-header">
+            <span>⏳</span> Historia Node Checkpoint: <b>[Darkness in Alistel]</b>
+          </div>
+          <p>
+            Upon entering Alistel, Vanoss arrives. Speak with him again to initiate the <b>[Wandering Soul]</b> sidequest. Then explore the city to log two more essential quests:
+          </p>
+          <ul style="margin-left: 1.5rem; display: flex; flex-direction: column; gap: 0.35rem; font-size: 1rem; margin-top: 0.35rem;">
+            <li>In the <b>Second Ward</b>, climb the two left staircases and speak to the woman to receive <b>[Second Opinion]</b> (leads to Raynie's <i>Slumbering Scroll</i>).</li>
+            <li>Outside the weapon shop on the right side of the Second Ward, speak to the young boy to receive <b>[Battlefield Missive]</b> (leads to Stocke's <i>Death Pact</i>).</li>
+          </ul>
+        </div>
+
+        <p>
+          Visit the equipment shop: purchase the <b>Sorcery Epee</b> for Stocke and the <b>Magic Spear</b> for Raynie. When ready, head north into the castle to meet secretly with General Raul.
+        </p>
+
+        <!-- Node -->
+        <div class="callout callout-node">
+          <div class="callout-header">
+            <span>⏳</span> Historia Node Checkpoint: <b>[Reunion with Raul]</b>
+          </div>
+          <p>
+            After coordinating defense plans with Raul, keep Aht and Gafka in your party. Equip Aht with the magic-boosting setup (<i>Crystal Charm</i>, <i>Thaumatech Orb</i>, <i>Horn Charm</i>) and attempt to exit Alistel through the main gates.
+          </p>
+        </div>
+
+        <!-- Boss -->
+        <div class="boss-card">
+          <div class="boss-card-header">
+            <div class="boss-name">
+              <span>⚔️ Boss: Shadow x3 (Hugo's Assassins)</span>
+            </div>
+            <span class="boss-badge">Ambush</span>
+          </div>
+          <div class="boss-weakness">Elemental Weakness: <b>None</b></div>
+          <div class="boss-strategy">
+            Aht should lead immediately with <b>Polaris</b> to make your entire party immune to their debilitating <b>Paralysis</b> attacks. The Shadows will attempt to coordinate a lethal battle formation; use Stocke's or Gafka's Assault skills to shatter their grid alignment. Two of any elemental trap from Aht will kill them &mdash; knock multiple Shadows onto a single trap tile to destroy them simultaneously!
+          </div>
+        </div>
+
+        <p>
+          Fight the patrol soldiers on your way out of Alistel, traverse Lazvil Hills, and retrace your steps back to Celestia.
+        </p>
+
+        <!-- Recommended Gear -->
+        <div class="gear-card">
+          <div class="gear-title"><span>🛡️</span> Recommended Equipment (Return to Celestia)</div>
+          <div class="gear-list">
+            <div class="gear-char-entry">
+              <div class="gear-char-name">Stocke</div>
+              <div class="gear-char-items">Sorcery Epee, Heavy Mail, Horn Charm x3</div>
+            </div>
+            <div class="gear-char-entry">
+              <div class="gear-char-name">Raynie</div>
+              <div class="gear-char-items">Magic Spear, Heavy Mail, Crystal Charm, Thaumatech Orb, Horn Charm</div>
+            </div>
+            <div class="gear-char-entry">
+              <div class="gear-char-name">Marco</div>
+              <div class="gear-char-items">Wisp Blade, Heavy Mail, Bishop Stud x3</div>
+            </div>
+            <div class="gear-char-entry">
+              <div class="gear-char-name">Aht / Gafka</div>
+              <div class="gear-char-items">Rhapsody, Reinforced Cape, Bishop Stud x3 / Rune Claw, Leather Cuirass, Fang Charm x3</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- CHAPTER 28 -->
+    <!-- ========================================================================= -->
+    <section class="chapter-section alternate" id="ch28">
+      <div class="chapter-header">
+        <div class="chapter-title-group">
+          <span class="chapter-num-tag">CHAPTER 28</span>
+          <h2 class="chapter-heading cinzel">Celestia (Alternate Chapter 3)</h2>
+          <div class="chapter-meta-badges">
+            <span class="branch-badge alternate">⏳ Alternate History</span>
+            <span class="jump-code-badge">[CLST2]</span>
+            <span class="info-pill" style="padding: 0.2rem 0.6rem; font-size: 0.78rem;">📍 Siege of Celestia &amp; Time Warp</span>
+          </div>
+        </div>
+        <div class="chapter-actions">
+          <label class="chapter-check-btn" id="check-btn-28">
+            <input type="checkbox" onchange="toggleChapter(28)" id="ch-box-28">
+            <span>Mark Completed</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="briefing-box">
+        <div class="briefing-item">
+          <span class="briefing-label">Recommended Level</span>
+          <span class="briefing-val" style="color: var(--mana-cyan);">Level 33</span>
+        </div>
+        <div class="briefing-item">
+          <span class="briefing-label">Recommended Party</span>
+          <span class="briefing-val">Stocke, Raynie, Marco</span>
+        </div>
+        <div class="briefing-item">
+          <span class="briefing-label">Enemies Encountered</span>
+          <span class="briefing-val" style="color: var(--text-muted);">None (Sanctuary under assault)</span>
+        </div>
+        <div class="briefing-item">
+          <span class="briefing-label">Crucial Skill</span>
+          <span class="briefing-val" style="color: var(--gold-primary);">Raynie Level 30 (G-Fire)</span>
+        </div>
+      </div>
+
+      <!-- Walkthrough Content -->
+      <div style="display: flex; flex-direction: column; gap: 1rem;">
+        <p>
+          Upon arriving back in Celestia, you find Alistel shock troops and Thaumatech automaton defenses breaching the outer barrier!
+        </p>
+
+        <!-- Boss -->
+        <div class="boss-card">
+          <div class="boss-card-header">
+            <div class="boss-name">
+              <span>⚔️ Boss: Alistel Soldier x2, Auto Defender x2</span>
+            </div>
+            <span class="boss-badge">Siege Boss</span>
+          </div>
+          <div class="boss-weakness">Weaknesses: Alistel Soldier: <b>Sleep</b> | Auto Defender: <b>Fire</b> (Immovable)</div>
+          <div class="boss-strategy">
+            Use two <b>Sleep Wings</b> immediately to lock down both Alistel Soldiers. The Auto Defenders cannot be moved or pushed. Have Marco cast <b>Magic Boost</b> on both Raynie and Stocke. Use Stocke's <b>Air Assault</b> to launch one Auto Defender into the air, followed immediately by Raynie's <b>G-Fire</b> to destroy it in one shot! Repeat this combo on the second Auto Defender. Finally, string together Push Assault, Air Assault, and G-Fire with the Change command to finish off the sleeping soldiers.
+          </div>
+        </div>
+
+        <!-- Node & Bad Ending / Dead End -->
+        <div class="callout callout-node">
+          <div class="callout-header">
+            <span>⏳</span> Historia Node Checkpoint: <b>[Premonition of War]</b>
+          </div>
+          <p>
+            Speak with Rosch at the Boundary Tree, then confer with Raul and Patriarch Barranca to decide Alistel's political succession:
+          </p>
+          <ul style="margin-left: 1.5rem; display: flex; flex-direction: column; gap: 0.35rem; font-size: 1rem; margin-top: 0.35rem;">
+            <li><b>⚠️ Bad Ending:</b> Choosing to <b>"Nominate Raul"</b> unlocks the tragic <b>[Assassination of Raul]</b> Possible History (Bad Ending).</li>
+            <li><b>⚠️ Dead End:</b> Rewinding to <b>[Shattered Steel Arm]</b> and choosing <b>"Nominate Rosch"</b> leads to an immediate roadblock due to Rosch's severed arm.</li>
+          </ul>
+        </div>
+
+        <!-- Node -->
+        <div class="callout callout-node">
+          <div class="callout-header">
+            <span>⏳</span> Historia Node Checkpoint: <b>[Rosch in Agony]</b>
+          </div>
+          <p>
+            To resolve this timeline roadblock, Stocke must switch over to the <b>Standard History</b> timeline at the <b>"How to Disappear"</b> node to infiltrate Granorg Palace using his new <b>Vanish</b> ability!
+          </p>
+        </div>
+
+        <!-- Comprehensive Sidequest Resolution Detour -->
+        <div class="callout callout-quest">
+          <div class="callout-header">
+            <span>📜</span> Major Sidequest Resolution Sweep Across Timelines
+          </div>
+          <p>
+            Before crossing over to Standard History, execute this highly rewarding sidequest loop:
+          </p>
+          <ol style="margin-left: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem; font-size: 1rem; margin-top: 0.4rem;">
+            <li>Warp to <b>"A New Mission"</b> node: Climb the stairs beside the tavern in Alistel and speak to the sick man to advance <b>[Second Opinion]</b>.</li>
+            <li>Warp to <b>"The Valkyrie"</b> node: Ascend to the Sand Fortress mess hall and speak to the soldier on the bench to advance <b>[Battlefield Missive]</b> &rarr; Receive the <b>DEATH PACT</b> for Stocke (needed for <i>The Blades Trial</i>).</li>
+            <li>Warp to <b>"The Beastkind Forest"</b> node and advance the story to <b>"Darkness in Alistel"</b>: Speak to the boy outside the weapon shop to complete <b>[Battlefield Missive]</b> &rarr; Reward: <b>CELESTIAL OIL</b>.</li>
+            <li>Head left to the Alistel tavern: The man is now saved! Speak to him to complete <b>[Second Opinion]</b> &rarr; Reward: <b>SLUMBERING SCROLL</b> (teach to Raynie immediately to unlock <i>Sleep Break</i>).</li>
+            <li>Warp to <b>"How to Disappear"</b> node in Standard History to continue the main campaign.</li>
+          </ol>
+        </div>
+
+        <!-- Recommended Gear -->
+        <div class="gear-card">
+          <div class="gear-title"><span>🛡️</span> Recommended Equipment (Timeline Shift)</div>
+          <div class="gear-list">
+            <div class="gear-char-entry">
+              <div class="gear-char-name">Stocke</div>
+              <div class="gear-char-items">Sorcery Epee, Heavy Mail, Fang Charm x3</div>
+            </div>
+            <div class="gear-char-entry">
+              <div class="gear-char-name">Raynie</div>
+              <div class="gear-char-items">Magic Spear, Heavy Mail, Crystal Charm, Thaumatech Orb, Horn Charm</div>
+            </div>
+            <div class="gear-char-entry">
+              <div class="gear-char-name">Marco</div>
+              <div class="gear-char-items">Wisp Blade, Heavy Mail, Bishop Stud x3</div>
+            </div>
+            <div class="gear-char-entry">
+              <div class="gear-char-name">Aht / Gafka</div>
+              <div class="gear-char-items">Rhapsody, Reinforced Cape, Bishop Stud x3 / Rune Claw, Leather Cuirass, Fang Charm x3</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- CHAPTER 29 -->
+    <!-- ========================================================================= -->
+    <section class="chapter-section standard" id="ch29">
+      <div class="chapter-header">
+        <div class="chapter-title-group">
+          <span class="chapter-num-tag">CHAPTER 29</span>
+          <h2 class="chapter-heading cinzel">Granorg Palace (Standard Chapter 2)</h2>
+          <div class="chapter-meta-badges">
+            <span class="branch-badge standard">⏳ Standard History</span>
+            <span class="jump-code-badge">[GPLC1]</span>
+            <span class="info-pill" style="padding: 0.2rem 0.6rem; font-size: 0.78rem;">📍 Royal Palace Infiltration</span>
+          </div>
+        </div>
+        <div class="chapter-actions">
+          <label class="chapter-check-btn" id="check-btn-29">
+            <input type="checkbox" onchange="toggleChapter(29)" id="ch-box-29">
+            <span>Mark Completed</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="briefing-box">
+        <div class="briefing-item">
+          <span class="briefing-label">Recommended Level</span>
+          <span class="briefing-val" style="color: var(--mana-cyan);">Level 33</span>
+        </div>
+        <div class="briefing-item">
+          <span class="briefing-label">Recommended Party</span>
+          <span class="briefing-val">Stocke, Raynie, Marco</span>
+        </div>
+        <div class="briefing-item">
+          <span class="briefing-label">Enemies Encountered</span>
+          <span class="briefing-val">Blue Granorg Archer (Sleep), Granorg Defender, Heavy Granorgite (Poison/Lightning), Sand Hunter (Sleep)</span>
+        </div>
+        <div class="briefing-item">
+          <span class="briefing-label">Required Ability</span>
+          <span class="briefing-val" style="color: var(--mana-cyan);">Vanish (from Alternate Chapter 2)</span>
+        </div>
+      </div>
+
+      <!-- Map -->
+      <div class="map-box">
+        <div class="map-header">
+          <span>🗺️ Area Map: Granorg Palace Interior &amp; Underground Passages</span>
+          <span style="font-size: 0.8rem; color: var(--text-muted);">S - Save | A - Sewer Connect | 1, 2 - 2000 G | 3 - Cocktail Dress</span>
+        </div>
+        <div class="map-content">
+          <pre class="map-pre">
+                        Meeting   Underground   Underground
+                         Room       Library        Cell
+        Audience  _       ___      ______         ____
+          Hall   | |     /   \    |   _  |       |S __|     S - Save Point
+                 | |     |  1|    |  | | |       | |        A - Connects to A
+                 | |     \  _/    |_3|                      1 - 2000 G (hidden)
+    Palace               / /           | |_______| |        2 - 2000 G (hidden)
+   Interior    __| |_                  |____ S ____|        3 - Cocktail Dress
+      ____    /      \__| |                 | |
+     |    |  |          __|  Hall          _| |
+     |  _ |  |  _____  |                  |   |__
+     | | \ \ | |     | |  ____            |______A
+ ____                    A___ |
+|  S | | | |_| |_____| |_/ ___|         Underground
+|      | |______     _____/               Passage
+|2_____|       _|   |_
+              |       |  Hall      If you've learned the Vanish ability, then
+Training      |_     _|            you can continue the plot from here. Choose
+  Area          |   |              to "Stick to stealth" when prompted.</pre>
+        </div>
+      </div>
+
+      <!-- Walkthrough Content -->
+      <div style="display: flex; flex-direction: column; gap: 1rem;">
+        <p>
+          Armed with the <b>Vanish</b> ability, approach the palace gates in Granorg and choose <b>"Stick to stealth"</b> when prompted.
+        </p>
+
+        <!-- Node -->
+        <div class="callout callout-node">
+          <div class="callout-header">
+            <span>⏳</span> Historia Node Checkpoint: <b>[Successful Infiltration]</b>
+          </div>
+          <p>
+            Eerily enough, the palace corridors are deserted. Walk left, up the stairs, and into the <b>Meeting Room</b> on the right: search the right wall with Mana Sight for a hidden chest containing <b>2,000 G</b>. Head back down the stairs and west two rooms to the <b>Training Area</b> where a save point is located. Search the lower left corner for another hidden chest containing <b>2,000 G</b>. Walk up to the save point and climb the vines to trigger the ambush!
+          </p>
+        </div>
+
+        <!-- Boss -->
+        <div class="boss-card">
+          <div class="boss-card-header">
+            <div class="boss-name">
+              <span>⚔️ Boss: Blue Granorg Archer x3, Granorg Defender x3</span>
+            </div>
+            <span class="boss-badge">Palace Guard</span>
+          </div>
+          <div class="boss-weakness">Elemental Weakness: <b>None</b> (Archer: Low Magic DEF)</div>
+          <div class="boss-strategy">
+            The palace garrison attempts to disrupt your turn combos &mdash; rely heavily on the <b>Change</b> command to assemble contiguous attack blocks. Have Marco cast <b>Magic Boost</b> on Raynie. Raynie can one-shot any Archer with basic magic, but requires <b>G-Fire</b> or an Assault assist to one-shot the heavily armored Defenders. Focus on picking off the enemy unit that sits between your party turns to secure uninterrupted combo chains. Wipe them out two by two.
+          </div>
+        </div>
+
+        <p>
+          After defeating the royal ambush, retreat back down through the castle basement into the <b>Underground Passage</b>. You can now explore the sewer halls freely. Follow the hallway north to the fork: take the left path into the <b>Underground Library</b> to claim a chest containing the <b>COCKTAIL DRESS</b> (<code>DEF+6 / MDF+15</code>, sell for gold). Then take the right path at the fork to make your clean escape into the city.
+        </p>
+
+        <!-- Node -->
+        <div class="callout callout-node">
+          <div class="callout-header">
+            <span>⏳</span> Historia Node Checkpoint: <b>[Princess of Light]</b>
+          </div>
+          <p>Stocke successfully delivers his intelligence report to Princess Eruca and regroups in the city of Granorg.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- CHAPTER 30 -->
+    <!-- ========================================================================= -->
+    <section class="chapter-section standard" id="ch30">
+      <div class="chapter-header">
+        <div class="chapter-title-group">
+          <span class="chapter-num-tag">CHAPTER 30</span>
+          <h2 class="chapter-heading cinzel">Granorg (Standard Chapter 3)</h2>
+          <div class="chapter-meta-badges">
+            <span class="branch-badge standard">⏳ Standard History</span>
+            <span class="jump-code-badge">[GRNG3]</span>
+            <span class="info-pill" style="padding: 0.2rem 0.6rem; font-size: 0.78rem;">📍 Capital Resistance &amp; Sidequest Hub</span>
+          </div>
+        </div>
+        <div class="chapter-actions">
+          <label class="chapter-check-btn" id="check-btn-30">
+            <input type="checkbox" onchange="toggleChapter(30)" id="ch-box-30">
+            <span>Mark Completed</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="briefing-box">
+        <div class="briefing-item">
+          <span class="briefing-label">Recommended Level</span>
+          <span class="briefing-val" style="color: var(--mana-cyan);">Level 35</span>
+        </div>
+        <div class="briefing-item">
+          <span class="briefing-label">Recommended Party</span>
+          <span class="briefing-val">Stocke, Raynie, Marco</span>
+        </div>
+        <div class="briefing-item">
+          <span class="briefing-label">Enemies Encountered</span>
+          <span class="briefing-val" style="color: var(--text-muted);">None (City Hub)</span>
+        </div>
+        <div class="briefing-item">
+          <span class="briefing-label">Key Weapon Upgrades</span>
+          <span class="briefing-val" style="color: var(--gold-primary);">Soul Eater &amp; Bloody Pike</span>
+        </div>
+      </div>
+
+      <!-- Shops -->
+      <div class="shop-container">
+        <div class="shop-card">
+          <div class="shop-header">
+            <span>🧪 Granorg Commercial Supplies</span>
+            <span style="font-size: 0.8rem; color: var(--text-muted);">Sundries &amp; Status</span>
+          </div>
+          <table class="shop-table">
+            <tbody>
+              <tr><td>Soothing Balm / First Aid Kit</td><td class="shop-price">100 / 400 G</td></tr>
+              <tr><td>Herbal Tea / Healing Herb / Holy Water</td><td class="shop-price">350 / 500 / 500 G</td></tr>
+              <tr><td>Anti-Poison / Fear / Paralytic / Curse / Sleep / Stone</td><td class="shop-price">50 G</td></tr>
+              <tr><td>Poison Wing / Sleep Wing</td><td class="shop-price">350 / 500 G</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="shop-card">
+          <div class="shop-header">
+            <span>⚔️ Granorg Advanced Armory</span>
+            <span style="font-size: 0.8rem; color: var(--text-muted);">Top Mid-Game Gear</span>
+          </div>
+          <table class="shop-table">
+            <tbody>
+              <tr><td>Soul Eater <span class="shop-tip">(Buy 1 for Stocke - ATK+38)</span></td><td class="shop-price">4800 G</td></tr>
+              <tr><td>Bloody Pike <span class="shop-tip">(Buy 1 for Rosch - ATK+34)</span></td><td class="shop-price">3700 G</td></tr>
+              <tr><td>Blitz Epee / Silver Edge / Rune Edge</td><td class="shop-price">2000 / 3000 / 5000 G</td></tr>
+              <tr><td>Silver Spear / Bronze Spear / Custom Shell</td><td class="shop-price">2000 / 1000 / 1400 G</td></tr>
+              <tr><td>Chainmail Dress / Hymnal Cape / Mail Vest</td><td class="shop-price">3800 / 3700 / 1200 G</td></tr>
+              <tr><td>Bronze Mail / Silver Mail / Silver Cape</td><td class="shop-price">900 / 1100 / 2800 G</td></tr>
+              <tr><td>Horn Charm / Fang Charm / Knight Stud</td><td class="shop-price">1000 / 1000 / 1500 G</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Walkthrough Content -->
+      <div style="display: flex; flex-direction: column; gap: 1rem;">
+        <!-- Node & Sand Sword -->
+        <div class="callout callout-node">
+          <div class="callout-header">
+            <span>⏳</span> Historia Node Checkpoint: <b>[The Resistance]</b> &amp; <b>[Sand Sword]</b>
+          </div>
+          <p>
+            After briefing the underground resistance, speak with <b>Will</b> at the bar to unlock the <b>[Sand Sword]</b> node. While not strictly required right this second, it is an absolute requirement to save resistance lives in future chapters!
+          </p>
+        </div>
+
+        <!-- Bad Ending -->
+        <div class="callout callout-danger">
+          <div class="callout-header">
+            <span>⚠️</span> Temporal Choice Point &mdash; Bad Ending Warning
+          </div>
+          <p>
+            Head east into the <b>Downtown</b> area. Hidden by the central tree, you will spot Princess Eruca in her cloak. When speaking with her:<br>
+            Choosing <b>"Don't push yourself"</b> unlocks the <b>[Princess' Charge]</b> Possible History (Bad Ending).<br>
+            Choosing <b>"Fulfill your duty"</b> correctly advances <b>[The King's Daughter]</b> sidequest!
+          </p>
+        </div>
+
+        <p>
+          Head east and north one screen: speak to the woman dressed in pink to initiate the <b>[Despairing Young Man]</b> sidequest. Then visit the Downtown armory to purchase the <b>Soul Eater</b> for Stocke (enormous physical ATK boost, though retain the <i>Sorcery Epee</i> for magic setups) and the <b>Bloody Pike</b> for Rosch.
+        </p>
+
+        <!-- Sidequest Resolutions -->
+        <div class="callout callout-quest">
+          <div class="callout-header">
+            <span>📜</span> Rapid Sidequest Completions
+          </div>
+          <ol style="margin-left: 1.5rem; display: flex; flex-direction: column; gap: 0.45rem; font-size: 1rem; margin-top: 0.35rem;">
+            <li>
+              <b>[The King's Daughter]:</b> Warp to the <b>"To Granorg"</b> node. Speak to Anna in the upper left corner of the Second Ward in Alistel to complete the quest &rarr; Reward: <b>RABBIT'S FOOT</b> (<code>MP+10 / LUC+15</code>).
+            </li>
+            <li>
+              <b>[Despairing Young Man]:</b> Warp to the <b>"Castle Sewers"</b> node and go to the Palace-Front Plaza. Speak to the cloaked man. Then warp back to <b>"The Resistance"</b> node and speak to him again to complete the quest &rarr; Reward: <b>LEFT-CUT SCROLL</b> (teach to Marco immediately to learn <i>Left Cut</i>).
+            </li>
+          </ol>
+        </div>
+
+        <p>
+          With your equipment optimized and sidequests completed, exit Granorg and march across the Gran Plain toward <b>Cornet Village</b>!
+        </p>
+
+        <!-- Recommended Gear -->
+        <div class="gear-card">
+          <div class="gear-title"><span>🛡️</span> Recommended Equipment (Volume III Climax)</div>
+          <div class="gear-list">
+            <div class="gear-char-entry">
+              <div class="gear-char-name">Stocke</div>
+              <div class="gear-char-items">Soul Eater, Heavy Mail, Fang Charm x3</div>
+            </div>
+            <div class="gear-char-entry">
+              <div class="gear-char-name">Raynie</div>
+              <div class="gear-char-items">Magic Spear, Heavy Mail, Crystal Charm, Thaumatech Orb, Horn Charm</div>
+            </div>
+            <div class="gear-char-entry">
+              <div class="gear-char-name">Marco</div>
+              <div class="gear-char-items">Wisp Blade, Heavy Mail, Bishop Stud x3</div>
+            </div>
+            <div class="gear-char-entry">
+              <div class="gear-char-name">Reserve Arsenal</div>
+              <div class="gear-char-items">Sorcery Epee, Bloody Pike, Rabbit's Foot, Horn Charm x6</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Volume Navigation Footer -->
+    <div class="vol-nav-footer">
+      <a href="walkthrough-11-20.html" class="vol-nav-btn">
+        <span>&larr; Volume II: Chapters 11–20</span>
+      </a>
+      <a href="index.html" class="vol-nav-btn">
+        <span>Compendium Hub ☖</span>
+      </a>
+      <a href="text-walkthrough/31-40.txt" class="vol-nav-btn" style="border-color: var(--gold-primary); color: var(--gold-primary);">
+        <span>Volume IV: Ch. 31–40 (Desert Crossroads) &rarr;</span>
+      </a>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-logo-wrap">
+        <img src="assets/logo.png" alt="Radiant Historia Logo" class="footer-logo">
+      </div>
+      <div class="cinzel" style="color: var(--gold-primary); font-size: 1.25rem;">
+        Radiant Historia Walkthrough Compendium &bull; Volume III
+      </div>
+      <p>Original Comprehensive Guide Version 1.04 by <b>Henri "HC" Bailly</b> (HCBailly@hotmail.com). Game &copy; ATLUS / SEGA.</p>
+      <div class="footer-divider"></div>
+      <p style="font-size: 0.85rem;">Designed according to <a href="DESIGN.md" style="color: var(--mana-cyan); text-decoration: none;">DESIGN.md</a> specifications. Synchronized with the 236 Historia Node System.</p>
+    </div>
+  </footer>
+
+  <!-- Floating Back to Top Button -->
+  <button class="back-to-top" id="backToTop" title="Back to Top">▲</button>
+
+  <!-- JavaScript: LocalStorage Progress Tracker & Interactivity -->
+  <script>
+    const STORAGE_KEY = 'rh-guide-completed-chapters';
+    let completedChapters = new Set(JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]'));
+
+    function updateProgressUI() {
+      const total = 66;
+      const done = completedChapters.size;
+      document.getElementById('navProgressText').textContent = `${done} / ${total}`;
+
+      // Update checkboxes in chapters 21-30
+      for (let i = 21; i <= 30; i++) {
+        const box = document.getElementById(`ch-box-${i}`);
+        const btn = document.getElementById(`check-btn-${i}`);
+        if (box && btn) {
+          const isChecked = completedChapters.has(i);
+          box.checked = isChecked;
+          if (isChecked) {
+            btn.classList.add('checked');
+            btn.querySelector('span').textContent = 'Completed ✓';
+          } else {
+            btn.classList.remove('checked');
+            btn.querySelector('span').textContent = 'Mark Completed';
+          }
+        }
+      }
+    }
+
+    function toggleChapter(num) {
+      if (completedChapters.has(num)) {
+        completedChapters.delete(num);
+      } else {
+        completedChapters.add(num);
+      }
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(Array.from(completedChapters)));
+      updateProgressUI();
+    }
+
+    // Back to top
+    const btt = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 400) {
+        btt.classList.add('visible');
+      } else {
+        btt.classList.remove('visible');
+      }
+    });
+    btt.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Dropdown Click / Touch Interaction
+    document.querySelectorAll('.nav-dropdown-toggle').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const dropdown = btn.closest('.nav-dropdown');
+        const wasOpen = dropdown.classList.contains('is-open');
+        document.querySelectorAll('.nav-dropdown.is-open').forEach(d => {
+          if (d !== dropdown) d.classList.remove('is-open');
+        });
+        dropdown.classList.toggle('is-open', !wasOpen);
+        btn.setAttribute('aria-expanded', !wasOpen);
+      });
+    });
+
+    document.querySelectorAll('.nav-dropdown-item').forEach(item => {
+      item.addEventListener('click', () => {
+        document.querySelectorAll('.nav-dropdown.is-open').forEach(d => d.classList.remove('is-open'));
+      });
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.nav-dropdown')) {
+        document.querySelectorAll('.nav-dropdown.is-open').forEach(d => {
+          d.classList.remove('is-open');
+          const toggle = d.querySelector('.nav-dropdown-toggle');
+          if (toggle) toggle.setAttribute('aria-expanded', 'false');
+        });
+      }
+    });
+
+    // Init UI
+    updateProgressUI();
+  </script>
+</body>
+</html>

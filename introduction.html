@@ -207,60 +207,232 @@
     nav, .nav-menu {
       display: flex;
       align-items: center;
-      min-width: 0;
-      flex: 1 1 auto;
       justify-content: center;
+      flex: 1 1 auto;
+      min-width: 0;
     }
 
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 0.35rem;
+      gap: 0.4rem;
       list-style: none;
       margin: 0;
-      padding: 0.1rem 0.2rem;
+      padding: 0;
       white-space: nowrap;
-      overflow-x: auto;
-      scrollbar-width: none;
-      -ms-overflow-style: none;
-      -webkit-overflow-scrolling: touch;
-      max-width: 100%;
-    }
-
-    .nav-links::-webkit-scrollbar {
-      display: none;
     }
 
     .nav-links li {
       flex-shrink: 0;
       list-style: none;
+      position: relative;
     }
 
-    .nav-links a {
+    .nav-links a,
+    .nav-dropdown-toggle {
       display: inline-flex;
       align-items: center;
+      gap: 0.35rem;
       font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: 0.82rem;
+      font-size: 0.84rem;
       font-weight: 600;
       color: var(--text-secondary);
       text-decoration: none;
       transition: var(--transition);
-      padding: 0.32rem 0.55rem;
+      padding: 0.35rem 0.65rem;
       border-radius: var(--radius-sm);
       white-space: nowrap;
       line-height: 1.2;
+      background: transparent;
+      border: 1px solid transparent;
+      cursor: pointer;
     }
 
     .nav-links a:hover,
-    .nav-links a.active {
+    .nav-links a.active,
+    .nav-dropdown-toggle:hover,
+    .nav-dropdown-toggle.active,
+    .nav-dropdown:hover .nav-dropdown-toggle,
+    .nav-dropdown.is-open .nav-dropdown-toggle {
       color: var(--gold-primary);
       background: rgba(251, 191, 36, 0.1);
     }
 
-    .nav-links a.active {
-      border: 1px solid var(--gold-border);
+    .nav-links a.active,
+    .nav-dropdown-toggle.active {
+      border-color: var(--gold-border);
       color: var(--gold-primary);
       font-weight: 700;
+    }
+
+    .nav-chevron {
+      font-size: 0.62rem;
+      transition: transform 0.22s ease;
+      display: inline-block;
+      color: var(--gold-muted);
+      margin-left: 0.15rem;
+    }
+
+    .nav-dropdown:hover .nav-chevron,
+    .nav-dropdown.is-open .nav-chevron {
+      transform: rotate(180deg);
+      color: var(--gold-primary);
+    }
+
+    /* Nav Dropdown Panel */
+    .nav-dropdown {
+      position: relative;
+    }
+
+    .nav-dropdown-menu {
+      position: absolute;
+      top: calc(100% + 8px);
+      left: 0;
+      min-width: 290px;
+      background: rgba(8, 13, 22, 0.97);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(251, 191, 36, 0.3);
+      border-radius: 10px;
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.85), 0 0 20px rgba(251, 191, 36, 0.1);
+      padding: 0.5rem;
+      z-index: 1100;
+      opacity: 0;
+      pointer-events: none;
+      visibility: hidden;
+      transform: translateY(6px);
+      transition: opacity 0.2s cubic-bezier(0.16, 1, 0.3, 1), transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.2s;
+    }
+
+    .nav-dropdown-menu::before {
+      content: '';
+      position: absolute;
+      top: -10px;
+      left: 0;
+      right: 0;
+      height: 10px;
+    }
+
+    .nav-dropdown-menu.nav-dd-right {
+      left: auto;
+      right: 0;
+    }
+
+    .nav-dropdown:hover .nav-dropdown-menu,
+    .nav-dropdown:focus-within .nav-dropdown-menu,
+    .nav-dropdown.is-open .nav-dropdown-menu {
+      opacity: 1;
+      pointer-events: auto;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .nav-dropdown-menu.nav-dd-compact {
+      min-width: 240px;
+    }
+
+    .nav-dd-section-title {
+      font-family: 'Cinzel', serif;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: var(--gold-muted);
+      text-transform: uppercase;
+      padding: 0.35rem 0.6rem 0.2rem;
+    }
+
+    .nav-dropdown-item {
+      display: flex !important;
+      align-items: center;
+      gap: 0.65rem;
+      padding: 0.48rem 0.65rem !important;
+      border-radius: 6px;
+      text-decoration: none;
+      color: var(--text-primary) !important;
+      transition: all 0.16s ease;
+      background: transparent !important;
+      border: 1px solid transparent !important;
+      font-weight: 500 !important;
+    }
+
+    .nav-dropdown-item:hover {
+      background: rgba(251, 191, 36, 0.12) !important;
+      border-color: rgba(251, 191, 36, 0.2) !important;
+      transform: translateX(3px);
+    }
+
+    .nav-dropdown-item.active {
+      background: rgba(251, 191, 36, 0.15) !important;
+      border-left: 3px solid var(--gold-primary) !important;
+      border-color: rgba(251, 191, 36, 0.35) !important;
+    }
+
+    .nav-dd-icon {
+      font-size: 1.05rem;
+      line-height: 1;
+      flex-shrink: 0;
+    }
+
+    .nav-dd-badge {
+      font-family: 'Cinzel', serif;
+      font-size: 0.68rem;
+      font-weight: 700;
+      padding: 0.15rem 0.45rem;
+      border-radius: 4px;
+      flex-shrink: 0;
+      line-height: 1.2;
+    }
+
+    .nav-dd-badge.vol-cyan {
+      background: rgba(6, 182, 212, 0.2);
+      color: var(--mana-cyan);
+      border: 1px solid rgba(6, 182, 212, 0.45);
+    }
+
+    .nav-dd-badge.vol-blue {
+      background: rgba(59, 130, 246, 0.2);
+      color: #60a5fa;
+      border: 1px solid rgba(59, 130, 246, 0.45);
+    }
+
+    .nav-dd-badge.vol-green {
+      background: rgba(16, 185, 129, 0.2);
+      color: var(--mana-green);
+      border: 1px solid rgba(16, 185, 129, 0.45);
+    }
+
+    .nav-dd-text {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      flex: 1;
+    }
+
+    .nav-dd-name {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      line-height: 1.25;
+    }
+
+    .nav-dropdown-item:hover .nav-dd-name,
+    .nav-dropdown-item.active .nav-dd-name {
+      color: var(--gold-primary);
+    }
+
+    .nav-dd-desc {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      line-height: 1.2;
+      margin-top: 0.1rem;
+      white-space: normal;
+    }
+
+    .nav-dd-divider {
+      height: 1px;
+      background: rgba(148, 163, 184, 0.15);
+      margin: 0.35rem 0.3rem;
     }
 
     .nav-progress-indicator {
@@ -277,6 +449,15 @@
       white-space: nowrap;
       flex-shrink: 0;
       line-height: 1;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .nav-progress-indicator:hover {
+      background: rgba(6, 182, 212, 0.2);
+      border-color: rgba(6, 182, 212, 0.5);
+      box-shadow: 0 0 12px rgba(6, 182, 212, 0.3);
+      transform: translateY(-1px);
     }
 
     .nav-progress-indicator span,
@@ -1019,11 +1200,12 @@
     @media (max-width: 1120px) {
       .nav-container {
         padding: 0.55rem 1rem;
-        gap: 0.5rem;
+        gap: 0.6rem;
       }
-      .nav-links a {
-        font-size: 0.78rem;
-        padding: 0.28rem 0.45rem;
+      .nav-links a,
+      .nav-dropdown-toggle {
+        font-size: 0.8rem;
+        padding: 0.3rem 0.5rem;
       }
       .nav-links {
         gap: 0.25rem;
@@ -1050,32 +1232,38 @@
       nav, .nav-menu {
         order: 3;
         width: 100%;
-        justify-content: flex-start;
-        overflow-x: auto;
+        justify-content: center;
         padding-top: 0.35rem;
         margin-top: 0.1rem;
         border-top: 1px solid rgba(148, 163, 184, 0.12);
       }
       .nav-links {
         width: 100%;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: none;
-        padding-bottom: 0.2rem;
+        flex-wrap: wrap;
+        justify-content: center;
         gap: 0.35rem;
       }
-      .nav-links::-webkit-scrollbar {
-        display: none;
-      }
-      .nav-links a {
+      .nav-links a,
+      .nav-dropdown-toggle {
         padding: 0.3rem 0.55rem;
         font-size: 0.8rem;
-        flex-shrink: 0;
       }
       .nav-progress-indicator {
         order: 2;
         font-size: 0.74rem;
         padding: 0.22rem 0.55rem;
+      }
+      .nav-dropdown-menu {
+        position: fixed;
+        left: 50% !important;
+        right: auto !important;
+        transform: translateX(-50%) translateY(6px);
+        width: calc(100vw - 32px);
+        max-width: 340px;
+      }
+      .nav-dropdown:hover .nav-dropdown-menu,
+      .nav-dropdown.is-open .nav-dropdown-menu {
+        transform: translateX(-50%) translateY(0);
       }
     }
 
@@ -1162,23 +1350,89 @@
 
       <nav class="nav-menu">
         <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="introduction.html" class="active">Intro &amp; TOC</a></li>
-          <li><a href="walkthrough-01-10.html">Vol I (Ch. 01–10)</a></li>
-          <li><a href="walkthrough-11-20.html" style="color: var(--mana-cyan);">Vol II (Ch. 11–20)</a></li>
-          <li><a href="index.html#timelines">Timelines</a></li>
-          <li><a href="index.html#walkthrough">Walkthrough</a></li>
-          <li><a href="index.html#tactics">3x3 Grid</a></li>
-          <li><a href="index.html#nodes">Nodes</a></li>
-          <li><a href="index.html#characters">Characters</a></li>
-          <li><a href="index.html#lore">Lore</a></li>
+          <li><a href="index.html" class="nav-item">Home</a></li>
+          
+          <li class="nav-dropdown">
+            <button type="button" class="nav-dropdown-toggle active" aria-haspopup="true" aria-expanded="false">
+              Walkthrough <span class="nav-chevron">▾</span>
+            </button>
+            <div class="nav-dropdown-menu">
+              <div class="nav-dd-section-title">Directory &amp; Overview</div>
+              <a href="introduction.html" class="nav-dropdown-item active">
+                <span class="nav-dd-icon">📖</span>
+                <div class="nav-dd-text">
+                  <span class="nav-dd-name">Intro &amp; Table of Contents</span>
+                  <span class="nav-dd-desc">Game systems, battle grid &amp; chapter index</span>
+                </div>
+              </a>
+              <a href="index.html#walkthrough" class="nav-dropdown-item">
+                <span class="nav-dd-icon">🗺️</span>
+                <div class="nav-dd-text">
+                  <span class="nav-dd-name">Walkthrough Hub</span>
+                  <span class="nav-dd-desc">Volume roadmap &amp; progression guide</span>
+                </div>
+              </a>
+
+              <div class="nav-dd-divider"></div>
+              <div class="nav-dd-section-title">Story Volumes</div>
+
+              <a href="walkthrough-01-10.html" class="nav-dropdown-item">
+                <span class="nav-dd-badge vol-cyan">Vol I</span>
+                <div class="nav-dd-text">
+                  <span class="nav-dd-name">Chapters 01–10</span>
+                  <span class="nav-dd-desc">Prologue, First Jump &amp; Alistel Path</span>
+                </div>
+              </a>
+              <a href="walkthrough-11-20.html" class="nav-dropdown-item">
+                <span class="nav-dd-badge vol-blue">Vol II</span>
+                <div class="nav-dd-text">
+                  <span class="nav-dd-name">Chapters 11–20</span>
+                  <span class="nav-dd-desc">Gran Plain, Sand Fortress &amp; Dual Paths</span>
+                </div>
+              </a>
+              <a href="walkthrough-21-30.html" class="nav-dropdown-item">
+                <span class="nav-dd-badge vol-green">Vol III</span>
+                <div class="nav-dd-text">
+                  <span class="nav-dd-name">Chapters 21–30</span>
+                  <span class="nav-dd-desc">Celestia Pact &amp; Beastkind Alliance</span>
+                </div>
+              </a>
+            </div>
+          </li>
+
+          <li><a href="index.html#timelines" class="nav-item">Timelines</a></li>
+          <li><a href="index.html#tactics" class="nav-item">3×3 Grid</a></li>
+          <li><a href="index.html#nodes" class="nav-item">Nodes</a></li>
+
+          <li class="nav-dropdown">
+            <button type="button" class="nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+              Compendium <span class="nav-chevron">▾</span>
+            </button>
+            <div class="nav-dropdown-menu nav-dd-right nav-dd-compact">
+              <div class="nav-dd-section-title">Database &amp; Lore</div>
+              <a href="index.html#characters" class="nav-dropdown-item">
+                <span class="nav-dd-icon">👥</span>
+                <div class="nav-dd-text">
+                  <span class="nav-dd-name">Characters &amp; Cast</span>
+                  <span class="nav-dd-desc">Party members, profiles &amp; abilities</span>
+                </div>
+              </a>
+              <a href="index.html#lore" class="nav-dropdown-item">
+                <span class="nav-dd-icon">📜</span>
+                <div class="nav-dd-text">
+                  <span class="nav-dd-name">World Lore &amp; Factions</span>
+                  <span class="nav-dd-desc">Nations of Vainqueur &amp; Mana history</span>
+                </div>
+              </a>
+            </div>
+          </li>
         </ul>
       </nav>
 
-      <div class="nav-progress-indicator" id="navProgressBadge">
+      <a href="index.html#nodes" class="nav-progress-indicator" id="navProgressBadge" title="Jump to Historia Node Checklist">
         <span>Completed:</span>
         <b id="navProgressText">0 / 66</b>
-      </div>
+      </a>
     </div>
   </header>
 
@@ -1368,9 +1622,9 @@
       </div>
 
       <!-- Featured Volume Guide Callout -->
-      <div style="margin-bottom: 1.25rem; display: flex; justify-content: space-between; align-items: center; background: rgba(6, 182, 212, 0.08); border: 1px solid rgba(6, 182, 212, 0.3); border-radius: var(--radius-md); padding: 0.75rem 1.25rem; flex-wrap: wrap; gap: 0.75rem;">
+      <div style="margin-bottom: 1.25rem; display: flex; justify-content: space-between; align-items: center; background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: var(--radius-md); padding: 0.75rem 1.25rem; flex-wrap: wrap; gap: 0.75rem;">
         <span style="font-size: 0.95rem; color: var(--text-primary); font-family: 'Plus Jakarta Sans', sans-serif;">
-          ✨ <b>Interactive Volume Guides:</b> Chapters 01–10 (Vol I) &amp; Chapters 11–20 (Vol II) are now live!
+          ✨ <b>Interactive Volume Guides:</b> Chapters 01–10 (Vol I), Chapters 11–20 (Vol II), and Chapters 21–30 (Vol III) are now live!
         </span>
         <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
           <a href="walkthrough-01-10.html" class="action-guide-link" style="padding: 0.4rem 0.85rem; font-size: 0.85rem; background: rgba(251, 191, 36, 0.15); border-color: var(--gold-primary); color: var(--gold-primary);">
@@ -1378,6 +1632,9 @@
           </a>
           <a href="walkthrough-11-20.html" class="action-guide-link" style="padding: 0.4rem 0.85rem; font-size: 0.85rem; background: rgba(6, 182, 212, 0.18); border-color: var(--mana-cyan); color: var(--mana-cyan);">
             <span>Vol II (Ch. 11–20)</span> ➔
+          </a>
+          <a href="walkthrough-21-30.html" class="action-guide-link" style="padding: 0.4rem 0.85rem; font-size: 0.85rem; background: rgba(16, 185, 129, 0.18); border-color: var(--mana-green); color: var(--mana-green);">
+            <span>Vol III (Ch. 21–30)</span> ➔
           </a>
         </div>
       </div>
@@ -1582,6 +1839,9 @@
         } else if (ch.chunk === '11-20') {
           guideUrl = `walkthrough-11-20.html#ch${ch.num.toString().padStart(2, '0')}`;
           guideBtnText = 'Vol II Guide';
+        } else if (ch.chunk === '21-30') {
+          guideUrl = `walkthrough-21-30.html#ch${ch.num.toString().padStart(2, '0')}`;
+          guideBtnText = 'Vol III Guide';
         }
 
         tr.innerHTML = `
@@ -1664,6 +1924,36 @@
     });
     btt.addEventListener('click', () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Dropdown Click / Touch Interaction
+    document.querySelectorAll('.nav-dropdown-toggle').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const dropdown = btn.closest('.nav-dropdown');
+        const wasOpen = dropdown.classList.contains('is-open');
+        document.querySelectorAll('.nav-dropdown.is-open').forEach(d => {
+          if (d !== dropdown) d.classList.remove('is-open');
+        });
+        dropdown.classList.toggle('is-open', !wasOpen);
+        btn.setAttribute('aria-expanded', !wasOpen);
+      });
+    });
+
+    document.querySelectorAll('.nav-dropdown-item').forEach(item => {
+      item.addEventListener('click', () => {
+        document.querySelectorAll('.nav-dropdown.is-open').forEach(d => d.classList.remove('is-open'));
+      });
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.nav-dropdown')) {
+        document.querySelectorAll('.nav-dropdown.is-open').forEach(d => {
+          d.classList.remove('is-open');
+          const toggle = d.querySelector('.nav-dropdown-toggle');
+          if (toggle) toggle.setAttribute('aria-expanded', 'false');
+        });
+      }
     });
 
     // Initial Table Render

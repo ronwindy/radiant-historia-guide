@@ -1,4 +1,4 @@
-﻿# ⚔️ Radiant Historia - The White Chronicle Master Walkthrough Compendium
+# ⚔️ Radiant Historia - The White Chronicle Master Walkthrough Compendium
 
 An interactive, responsive web walkthrough and tactical compendium for **Radiant Historia** (Nintendo DS / Perfect Chronology).
 
@@ -30,6 +30,7 @@ radiant-historia-guide/
 ├── introduction.html              # Walkthrough Directory & Master TOC
 ├── walkthrough-01-10.html         # Volume I: Chapters 01 - 10
 ├── walkthrough-11-20.html         # Volume II: Chapters 11 - 20
+├── walkthrough-21-30.html         # Volume III: Chapters 21 - 30
 ├── text-walkthrough/              # Original source walkthrough transcripts
 │   ├── 01-10.txt ... 61-66.txt
 │   ├── ability.txt, credit.txt, etc.
