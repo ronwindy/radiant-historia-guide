@@ -1,0 +1,787 @@
+
+==============================================================================
+11) Gran Plain (Standard Chapter 1) [GRAN1]
+==============================================================================
+
+GRAN PLAIN (Standard Chapter 1) [GRAN1]
+Recommended Level: 14
+Recommended Party: Stocke, Raynie, Marco
+Enemies: Blue Flame (Ice), Goblin Foot (Lightning), Wood Goblin (Lightning)
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+    Gran          There's no treasure here either, so just head north to the
+   Plain E        Gran Plain East, and west to the checkpoint.  Yet again,
+   _______        you'll be distracted by someone in distress back east.
+  |       |       Make sure to choose "Let's go save her now.", as this is a
+  |       |       requirement to unlocking the [At Journey's End] sidequest
+  |__   __|       later.  Either way, you'll have to deal with the source of
+  ___| |__        the disturbance.
+    S     |
+  _       |       *************************************************************
+   \     /        BOSS TIME: Sabertooth Tiger x2
+    \   /         WEAKNESS: None
+     | |          STRATEGY: Have Marco cast Magic Boost on Raynie, while Stocke
+			and she Push Assault the tigers into the back row.  Then, use
+     | |__        two combos of Left Assault, any spell, and an attack from
+    /     |       Marco to finish them off quickly.
+   /    __|       *************************************************************
+  |    |___
+  |        |      For defeating them, you will meet Aht, Liese, and Vanoss, all
+  |     ___|      Beastkind of the Satyros, and the former of which who will
+  |    |          join your party.  I would recommend handing Stocke's Beast
+                  Skins down to Aht, as I'm going to purchase something new for
+Gran Plain SE     him soon enough, anway.
+
+[Beastkind node]
+Now, return west to the checkpoint where you have another decision to make.
+Choosing to "Force your way through" will unlock [A Sealed Path] ending.
+
+[Stocke's Display node]
+Return to this node, even though trying to "Abandon the idea" will only lead to
+a dead end for now.
+
+[Sword Dancing node]
+There's nothing we can do here for now.  If you have already resolved this
+roadblock, then skip to GRAN2.  Otherwise, this would be a good time to wrap
+up some sidequests.
+
+Return to "The Beginning" node and choose to Join the Rosch Brigade.  If you
+have at least 5300 G, then go ahead and buy a Custom Lance for Rosch.  Head
+down to the first ward and give the two Anti-Sleeps you purchased earlier to
+the soldier on the left to complete the [Night Watch] sidequest and receive the
+Alistel Edge (ATK+16/MAG+6, equip on Marco).
+
+Continue on with the plot as before and return to the site of the cave-in.  For
+those who don't remember, go west and south one screen.  Then, hug the river
+clockwise until it turns north to where you met the spy in Standard History.
+At this point, the soldier is still alive, so use the barrel to blow away the
+rocks.  Talk to the soldier to complete the [Accident in the Cave] sidequest
+and receive the Right-Cut Scroll for Marco, though you can't use it for now.
+You can either walk to Alma Mine or use Historia to skip ahead to [The Closed
+Mine] node.
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+
+==============================================================================
+12) Alma Mine (Alternate Prologue) [ALMA2]
+==============================================================================
+
+ALMA MINE (Alternate Prologue) [ALMA2]
+Recommended Level: 16
+Recommended Party: Stocke, Raynie, Rosch
+Enemies: Amber Leech (Poison/Fire), Basilisk (Lightning),
+     Goblin Knight (Poison/Lightning)
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+      _| |  ___      S - Save Point     X - Roadblock     1 - Heavy Mail
+     /   |_|  4|     2 - 800 G     3 - Royal Jelly x4     4 - Healing Herb
+    |   __X__|
+  __|XX|_____
+ |3____ S _  |       If you have resolved saving the merchant in Alternate
+       | |_| |       History, then you can continue with the plot here.  Don't
+       |___  |       think about it too much.  Just pretend it makes sense.
+           | |       Choose to "Send Scouts" and you will gain access to the
+ _____               Alma Mine.
+|2   _|    | |
+  | |_____/  |       [Duel in the Dark node]
+  |_______   |       Before beginning the battle, leave the mine, and talk to
+   _______|XX|       the merchant outside the house there.  Buy 3 Silver Mails
+  |  _   _   |       for Stocke, Raynie, & Rosch.  I'd also recommend buying
+  | |_| |_|  |       3 Pawn Studs for Marco, since none of his abilities rely
+  |___   ___/        on strength or magic that much.  Then, arrange your
+   ___| |_           equipment as follows:
+  |  _____|
+  | |                Recommended Equipment at this point in the game
+                     Stocke: Rune Edge, Silver Mail, Fang Charm x3
+  | |__   __         Raynie: Rune Spear, Silver Mail, Horn Charm x3
+  |  __| |1 |        Marco: Alistel Edge, Bronze Mail, Pawn Stud x3
+  |X|_    | |        Rosch: Custom Lance, Silver Mail, Fang Charm x3
+  |  _|   |X|
+  | |____/ /         Don't worry if your levels aren't nearly what I have,
+  |       /          since the dungeon isn't very long or hard.  Take the left
+   \_   _/           path until you find some barrels.  Pull it all the way
+     | |             around to the right path to blow away the rocks blocking
+                     a chest which contains a HEAVY MAIL (DEF+21/MDF+15/SPD-2,
+equip on Marco).  Don't worry about the loss of speed.  Physical defense is
+king in this game.  Return to the barrels, and blow up the nearby boulders to
+gain access to the next area.
+
+Go right to the fork, up, and left to find a barrel.  Pull it to the right to
+blow up the rocks over there.  After a cutscene, head left to a room with a
+chest which contains 800G.  Return to where you blew up the rock, and walk up
+to the next area.
+
+Take either path around to a save point.  Go left to a couple barrels.  Pull
+one of them back, so you don't end up blowing them both up at the same time.
+You'll need both of them to get through the boulders.  To the left is a chest
+which contains 4 ROYAL JELLIES.  Blow up the boulders and pull one of the
+barrels to the right to blow up some more.  Follow the path to the right to a
+chest which contains a HEALING HERB.
+
+You may want to return to the save point to heal up and/or use some Royal
+Jellies on Raynie.  For the next part, if you're not going to use Raynie, then
+give her Horn Charms to Stocke.  In either case, you will reach the end of the
+mine to the north, and find what you were looking for.
+
+*******************************************************************************
+BOSS TIME: Granorg Archer x3, Light Granorgite x4
+WEAKNESS: None
+STRATEGY: You'll definitely want Marco for this fight, starting by casting
+Magic Boost on your primary magic user for this fight.  Any combination of
+Assaults and a spell should be able to take them out.  Otherwise, maybe casting
+Guard Boost would be a good idea with so many of them around.  They're not
+particularly dangerous, if you've been following the walkthrough up to now.
+*******************************************************************************
+
+Afterwards, everyone returns home to Alistel after a job well done.
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+
+==============================================================================
+13) Alistel (Alternate Chapter 1) [ALST5]
+==============================================================================
+
+ALISTEL (Alternate Chapter 1) [ALST5]
+Recommended Level: 18
+Recommended Party: Stocke, Raynie, Rosch
+Enemies: None
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+   _____   _ ___                    Equipment Shop          Item Shop
+  | _|  | | |__ |  Second Ward      **************          *********
+  |  _  |S|   _ |                   Silver Edge     3000    Soothing Balm   100
+  | |  _| |_  | |                   Blitz Edge      2000    First Aid Kit   400
+  | |___   _ _| |                   Silver Spear    2000    Herbal Tea      350
+  |_  |_   _|___|                   Iron Spear      1800    Holy Water      500
+    | | | |                         Red Dagger      2000    Anti-Poison      50
+                                    Bronze Mail      900    Anti-Fear        50
+ ___| |_| |____                     Silver Mail     1100    Anti-Paralytic   50
+|  ____1| |___ |_  First Ward       Beast Skins      500    Anti-Curse       50
+| |_____   ____  |                  Silver Cape     2800    Anti-Sleep       50
+|  _____| |____| | 1 - Seed Ring    Charm            350    Anti-Stone       50
+| |_____   ____| | 2 - 1500 G       Horn Charm      1000    Poison Wing     350
+|______2| |______|                  Pawn Stud        750    Sleep Wing      500
+        | |                         Seed Ring       1000
+                                    Breeze Armlet   1500
+
+[A New Mission node]
+When you regain control of Stocke, you'll be outside the tavern.  Climb the
+stairs to the left and talk to the man all the way at the bottom.  His name is
+Cedric and he will give you the [A Letter to Tomorrow] sidequest.  Now that the
+road is fixed, you have access to the left upper level of the First Ward below.
+Open the two chests there which contain a SEED RING (HP+10/MP+5, sell) and
+1500 G.  Now, head back up to the castle.
+
+Talk to the receptionist to the left to receive the [Engineer Recruit]
+sidequest.  In the lower right of the first floor is a woman tending to the
+flowers.  Talk to her to receive the [A Flower of Promise] sidequest.  Above
+her are two rooms.  Enter the left room and talk to the blue soldier who wasn't
+there before to receive the [Raynie the Active] & [Marco the Calm] sidequests.
+If you completed the Accident in the Cave sidequest, then talk to him again and
+choose "Teach it to Marco" to use the Right-Cut Scroll, so he can learn Right
+Assault for himself.
+
+Leave and enter the door to the right.  Before talking to Sonja in the
+infirmary, enter the Laboratory to the left.  Talk to the woman there named
+Meese to receive the [Red-Letter Day] sidequest.  Now go to the infirmary in
+the room to the right and talk to Sonja.
+
+[Summoned by Raul node]
+Head back downstairs and talk to Sonja to advance the [Red-Letter Day]
+sidequest.  Now's as good a time as any to jump around time.  Return to "The
+Beginning" node and talk to Rosch on the first floor.  Choosing to "Chase
+after" Sonja will unlock [A Knight's End] ending.  Otherwise, choosing to "Send
+Rosch" will advance the [Red-Letter Day] sidequest.
+
+Before turning in the sidequest, return to "The Closed Mine" node.  Enter the
+house and talk to the engineer, Berman, to advance the [Engineer Recuit]
+sidequest.  Return to the [A New Mission node].  Remember, you can press start
+to skip all the cutscenes.
+
+Return to the receptionist at the castle to complete the [Engineer Recruit]
+sidequest and receive 3000 G.  Then, head downstairs and talk to Meese at the
+laboratory to complete the [Red-Letter Day] sidequest and receive the
+P.Thauma Spear (ATK+23/DEF+2, equip on Rosch).  Continue the plot as before,
+then take the elevator up to the third floor and talk to Lt. General Raul at
+his office on the right.
+
+[Through Lazvil node]
+Afterwards, leave Alistel and head south to Lazvil Hills.
+
+Recommended Equipment at this point in the game
+Stocke: Rune Edge, Silver Mail, Fang Charm x3
+Raynie: Rune Spear, Silver Mail, Horn Charm x3
+Marco: Alistel Edge, Heavy Mail, Pawn Stud x3
+Rosch: P.Thauma Spear, Silver Mail, Fang Charm x3
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+
+==============================================================================
+14) Lazvil Hills (Alternate Chapter 1) [LZVL4]
+==============================================================================
+
+LAZVIL HILLS (Alternate Chapter 1) [LZVL4]
+Recommended Level: 18
+Recommended Party: Stocke, Raynie, Rosch
+Enemies: Bush Lizard (Ice), Hush Mushroom (Fire), Ripper (Ice), Searcher (Ice)
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+                Highway W               Highway         Highway E
+
+                                    ___                     | |
+           __________________   ___/C  \______________   __/   \
+          X____________    __   ___     __ ______   __   _      |
+                 |   _____/        \___/  |    ____/      |     |
+                  \  __|           |   |   \  |            \   /
+Woodland          | |               \  |    | |             |X|
+ Path W           | |                | |    | |             | |
+
+   _____   _______| |               _| |    | |            _| |_
+ _|  S _   _   _   _|              |   |   /  | Woodland  |     |
+|     |     \_/ | |    Woodland     \  |__|   |  Path E   |C| | |  Southern
+|      X       /   \____ Path        |_   ____|           |/   \|    Path
+ \_   /       /   S     \____   _______| |                 \   /
+   | |       /_______________   _________|                  |X|
+
+S - Save Point   X - Inaccessible   C - Chest you can't get yet
+
+There's no new treasure to find, so just head straight to your destinations.
+Head west and you'll find that the bridge has been fixed.  If you continue west
+you'll find that you can't go to Alma Mine in this time period, so just go
+south to the Woodland Path.  If you headed south from the Highway, then go west
+to the Woodland Path.  In either case, proceed west to the rendezvous point.
+
+[Heiss' Intentions node]
+Follow the informant to Judgement Cliff.
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+
+==============================================================================
+15) Judgement Cliff (Alternate Chapter 1) [JUDG2]
+==============================================================================
+
+JUDGEMENT CLIFF (Alternate Chapter 1) [JUDG2]
+Recommended Level: 19
+Recommended Party: Stocke, Raynie, Marco
+Enemies: Cactus Blow (Poison), Red Hot, Ripper (Ice), Searcher (Ice), Stampede,
+     Walder (Ice)
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+No new treasure here, unless you haven't been through here in Standard History
+yet.  If not, refer to section JUDG1.  As before, the enemies to the west are
+very powerful, so just head north two screens to find the spy.
+
+*******************************************************************************
+BOSS TIME: Shadow
+WEAKNESS: None
+STRATEGY: He'll start with Heal Zone.  Whenever an enemy uses something like
+that, immediately get them off of it.  Marco should use Magic Boost on Raynie,
+followed by a spell and Stocke pushing Shadow into the back row.  Then, use
+Magic Boost on Stocke, and wail on him with spells to finish him off.
+*******************************************************************************
+
+[Reporting to Viola]
+After discussing recent events, you can head to the Sand Fortress.
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+
+==============================================================================
+16) Sand Fortress (Alternate Chapter 1) [SAND2]
+==============================================================================
+
+SAND FORTRESS (Alternate Chapter 1) [SAND2]
+Recommended Level: 20
+Recommended Party: Stocke, Raynie, Rosch
+Enemies: None
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+                           _________________
+   Sand Fortress N     2F |                 |       Traveling Merchant
+                          |   ___ ___ ___   |       ******************
+    __       |  |        _|  |   |   |   |  |_      Soothing Balm   100
+   / 2\     /    \      |    |   |   |   |    |     First Aid Kit   400
+  | 1  |   /      |     |    |   |___|   |    |     Herbal Tea      350
+  |XXXX|  |      /      |_   |   |   |   |   _|     Holy Water      500
+  |    |__|     |___      |  |_ _|   |_ _|  |       Anti-Poison      50
+  |                 \     |          S      |       Anti-Fear        50
+   \_____     ______/     |______     ______|       Anti-Paralytic   50
+         |   |                   |   |              Anti-Curse       50
+                                                    Anti-Sleep       50
+      ___|   |___          _____ ___________        Anti-Stone       50
+  3F |           |     1F |     |     |     |       Poison Wing     350
+     |           |        |__ __|__ __|__ __|       Sleep Wing      500
+     |___     ___|        |                 |       Rune Edge      5000
+   ______|   |______      |_____________ ___|       Rune Spear     2500
+  |     _______     |     |     |     |     |       Hymnal Cape    3700
+  |_____ _____   ___|     |     |_| |_|     |       Horn Charm     1000
+  |     |_____|     |     |      S          |       Fang Charm     1000
+  |______     ______|     |______     ______|       Knight Stud    1500 (buy 2)
+         |   |                   |   |              Seed Ring      1000
+
+  S - Save Point     X - Obstacle     1 - Wisp Blade     2 - Herbal Tea x2
+
+Walk along the western edge of the Sand Fortress South area to avoid any hidden
+traps up the middle.  Enter the Fortress and report to Viola.
+
+[The Valkyrie node]
+First, go outside and buy two Knight Studs from the merchant for Marco.  It's
+not a big upgrade at all, but you should have plenty of money to spend.  You'll
+find something better later, which is why I say only buy two. Rosch & Viola are
+in the upper middle room on the first floor, but I recommend checking out the
+rest of the fortress first.
+
+Walk up the middle of the first floor to the second floor.  In the left room
+above, you can rest up in a bed for free.  Outside the room, you can find Kiel
+training to the left.  Talk to him to learn sword-dancing from him and upgrade
+your Strike ability to be able to cut down tall grass.  Return to the stairs
+and continue up to the third floor.
+
+Head around to the right, up the stairs, and proceed up to go outside to the
+Sand Fortress North area.  In the upper left area is some tall grass that you
+can now cut down to access two chests which contains 2 HERBAL TEAS and the
+WISP BLADE (ATK+18/MAG+12/HP+50, equip on Marco).
+
+Return to the first floor, walk around to the right and into the upper middle
+room.  Talk to Viola first to advance the [A Letter to Tomorrow] sidequest.
+Then, talk to Rosch and go with him to inform the brigade of your new orders.
+As the battle begins, you will have another decision to make.  Choosing to
+"Send reinforcements" will unlock the [Front of Despair] ending.
+
+[Conditions Worsen node]
+Return to "The Valkyrie" and advance the plot up to the same decision.
+However, choosing to "Prioritize the mission" will only lead to a dead end.
+
+[Ambush Tactics node]
+If you have already resolved this roadblock, then skip to SAND3.  Otherwise,
+this would be a good time to put that sword-dancing skill to use.  I would
+recommend waiting until later to use it at Lazvil Hills.  Instead, return to
+"Stocke's Display" node in Standard History.
+
+Recommended Equipment at this point in the game
+Stocke: Rune Edge, Silver Mail, Fang Charm x3
+Raynie: Rune Spear, Silver Mail, Horn Charm x3
+Marco: Wisp Blade, Heavy Mail, Knight Stud x2, Pawn Stud
+Rosch: P.Thauma Spear, Silver Mail, Fang Charm x3
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+
+==============================================================================
+17) Gran Plain (Standard Chapter 1) [GRAN2]
+==============================================================================
+
+GRAN PLAIN (Standard Chapter 1) [GRAN2]
+Recommended Level: 20
+Recommended Party: Stocke, Aht, Marco
+Enemies: Blue Flame (Ice), Goblin Foot (Lightning), Sabertooth Tiger,
+     Wood Goblin (Lightning)
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+                          | |
+                         /  |
+               Gran    _|   |_
+             Plain NW | S    *|
+                      |__   /             Gran
+                         | |             Plain E
+                                         _______
+                    Gran | |    /X/     |     X |     S - Save Point
+                   Plain |*|___| |      |     X1|     X - Roadblock
+                         |  X2X  |      |__   X_|     1 - First Aid Kit
+       Gran Plain W      |  / \   \__   ___| |__      2 - Bishop Stud
+       ___      ____   __| |   |          S     |     3 - Holy Water
+      |3 *|    /   _   __   \_/   ___   _       |     4 - Anti-Poison x3
+      |   |__ /   /      \  S    /       \     /      * - Withered Branch
+      |__X__ S __/        \_    /         \   /
+            | |             |  |           | |
+
+         ___| |__        ___|  |___        | |__
+        |4     S |      |          |      /     |
+        |___   __|      |       *  |     /    __|
+         ___| |         |__________|    |    |___
+        |      |                        |        |
+        |______|           South        |     ___|
+                           Hill         |    |
+         Forest
+        Clearing                      Gran Plain SE
+
+If you have already learned sword-dancing, then you can continue with the plot
+from here.  Before doing so, head north of the save point, and cut the tall
+grass to the east to gain access to a chest which contains a FIRST AID KIT.
+From the save point, head west to the decision from before and choose "Abandon
+the idea" to proceed onward this time.
+
+Even though she's a bit of a liability at this point, replace Raynie with Aht,
+as she could use the experience, and give her Raynie's Horn Charms.  She can
+use elemental traps during battle.  The way they work is that you lay a trap on
+an empty tile, then move an enemy or group of enemies onto them for massive
+damage.  You can also set a trap on an enemy, if the tile was empty when you
+entered the command, and you moved the enemy onto the tile before laying the
+trap.  Since she doesn't have any assaults right now, and she's rather frail,
+it's more trouble than it's worth right now, but I'd still recommend using her
+for the experience.  Against Goblins, it may not be a bad idea to have her cast
+Polaris in a pre-emptive strike, to protect against poison.
+
+To the northwest are some rocks, and a barrel above them.  You know what to do.
+Blow them up to access a chest which contains a BISHOP STUD (DEF+6/MDF+6,
+equip on Marco).  If you want, blow up the wood or rocks to the west and go
+west to Gran Plain West.
+
+Before going south, cut the tall grass to the west to gain access to a chest
+which contains a HOLY WATER.  Then, head south to the Forest Clearing.  Go left
+of the save point to find a chest which contains 3 ANTI-POISONS.  Keep going
+south to where you will set up camp.
+
+[Collecting Wood node]
+Return north and Aht will teach Stocke the Mana Sight ability that will let you
+see hidden objects, including the first of five WITHERED BRANCHES that you must
+find.  This includes the bombs back at the Sand Fortress.  If you want to go
+back there now, then skip to SAND3, but I wouldn't do that.  Also, there is a
+lot of hidden treasure in previous areas that we could get now.  Again, I will
+wait until it is more convenient to do so.
+
+[Preparing a Meal node]
+Go west and cut through the tall grass again.  In the upper right corner of the
+area, you will find a WITHERED BRANCH.  Head east to the central Gran Plan area
+and north to find another WITHERED BRANCH.  Proceed north to the Gran Plain
+Northwest area, and hug the east wall until you find yet another WITHERED
+BRANCH.  Follow Aht's direction, and walk south two screens to the South Hill.
+
+At this time, I would recommend switching Raynie in to replace Aht, as well as
+giving her back the Horn Charms.  Search by the tree on the right to find the
+last WITHERED BRANCH and something else will find you.
+
+*******************************************************************************
+BOSS TIME: Fumble, Rare Mushroom
+WEAKNESSS: Poison, Fire
+STRATEGY: FINALLY!  A boss fight with elemental weaknesses we can exploit!
+Start with Marco's Push Assault on Fumble, Fire from Stocke to also take out
+the mushroom, and Poison Break on Fumble.  In the next round, have Marco use
+Magic Boost on Raynie, Stocke uses Right Assault on the mushroom, and Raynie
+casts Fire on the two.  Once they're all out of the way, I would use the Change
+command to string together six consecutive turns of alternating between
+physical attacks and spells to finish off the Fumble before he can call for
+more mushroom backup.
+*******************************************************************************
+
+For defeating him, you will get some Fresh Meat for dinner.  Return to the
+Forest Clearing and talk to Vanoss or Liese to sleep the night there.  Aht will
+also give Stocke the White Page.  In the morning, use the save point to return
+to Historia.  With the White Page, Lippti and Teo will unlock your first Mana
+Burst: Turn Break, which can delete an enemy's turn panel.  You can fill up the
+Mana Burst gauge by either dealing or receiving damage.
+
+Now, we can begin heading to Granorg.  Head north, east, and north one screen
+to return to the Gran Plain Northwest area.  Continue north for a small scene.
+
+[Aht's Prayer node]
+Afterwards, exit north to reach Granorg.  I would strongly recommend maxing out
+at least one characters' Mana Burst gauge for one of the upcoming sidequests.
+
+Recommended Equipment at this point in the game
+Stocke: Rune Edge, Silver Mail, Fang Charm x3
+Raynie: Rune Spear, Silver Mail, Horn Charm x3
+Marco: Wisp Blade, Heavy Mail, Bishop Stud, Knight Stud x2
+Aht: Petty Knife, Beast Skins
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+
+==============================================================================
+18) Granorg (Standard Chapter 1) [GRNG1]
+==============================================================================
+
+GRANORG (Standard Chapter 1) [GRNG1]
+Recommended Level: 22
+Recommended Party: Stocke, Raynie, Marco
+Enemies: None
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Inn - 50 G
+
+Item Shop               Equipment Shop
+*********               **************
+Soothing Balm   100     Iron Sword        2400
+First Aid Kit   400     Silver Edge       3000
+Herbal Tea      350     Iron Lance        2100
+Holy Water      500     Silver Spear      2000
+Anti-Poison      50     Knife             1800
+Poison Wing     350     Heavy Mail        1500 (buy for Stocke & Raynie)
+                        Silver Mail       1100
+                        Reinforced Cape   1200
+                        Charm              350
+                        Pawn Stud          750
+                        Knight Stud       1500
+                        Seed Ring         1000
+                                                                 ______
+                                           Palace               | _    |
+                    ______ __            Front Plaza         ___|  |_  |
+           _       |    _ |_1|_            |XXXX|           |       _ _|
+         _| |      |___|  ___  |           |    |          _| |__| |2| |
+        |_  |      |   | |   | |_                         |            |
+          | |_   __|     |___|   |       __|    |__       |   ________/
+          |___   __     _____ _  |_   __/ _      _ \__   _|  /
+                   \___/       |___   ___/ |    | \___   ___|  Commercial
+         Back                             /      \              District
+         Alley         Downtown         _|S       |_
+                                       |            |
+                                       |___      ___| Main Street
+                                           |    |
+
+ S - Save Point    X - Inaccessible    1 - Anti-Paralytic    2 - Might Herb x2
+
+[An Ancient City node]
+Your contact is in the Commercial District to the east.  So naturally, we
+should head west first.  Follow the path north and west to Downtown Granorg.
+Go up the stairs to the inn where you should rest up.  In one of the rooms
+upstairs is a chest which contains an ANTI-PARALYTIC.
+
+Leave the inn, go down the stairs to the shops, and talk to the man in green,
+named Hilster/Hilstar (typo in the game.  I'll use Hilster) to receive
+[The Ultimate Dish] sidequest.  Talk to the merchant on the right to get some
+more information on conuts for the [What Was Inherited] sidequest, though I'm
+not sure if that's a mandatory requirement.  If you continue west, you'll find
+a tavern and a small alley behind it.
+
+Return to the Main Street area and head east to the Commercial District.
+Stocke will point out your contact, but you should not talk to him just yet.
+Go right to the item shop, where just outside to the left of it, you will find
+a chest which contains 2 MIGHT HERBS.  Enter the item shop and talk to the
+merchant to advance [The King's Daughter] sidequest.
+
+Climb the stairs next to the item shop and head left to the equipment shop.  I
+would ignore the speed handicap and buy two Heavy Mails for Stocke & Raynie.
+Afterwards, talk to the man in the robe below and between the two staircases.
+
+Recommended Equipment at this point in the game
+Stocke: Rune Edge, Heavy Mail, Fang Charm x3
+Raynie: Rune Spear, Heavy Mail, Horn Charm x3
+Marco: Wisp Blade, Heavy Mail, Bishop Stud, Knight Stud x2
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+
+==============================================================================
+19) Granorg (Standard Chapter 2) [GRNG2]
+==============================================================================
+
+GRANORG (Standard Chapter 2) [GRNG2]
+Recommended Level: 22
+Recommended Party: Stocke, Raynie, Marco
+Enemies: None
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+[Duty Revealed node]
+After receiving your mission, head west to Main Street, and south to the guard
+by the save point.  Talk to him twice to receive the [Mankind & Beastkind]
+sidequest.  Go west to the inn, upstairs, and into the right room.  Talk to the
+man there, whose name is Kaizan, to receive the [One & Only] sidequest.
+Leave the inn, walk around its left side, and up the stairs to the west to find
+Liese.  Talk to her to advance the [Mankind & Beastkind] sidequest.  Return to
+the guard who gave you the sidequest to advance it again.
+
+Head west two screens to the Back Alley, where you will run into some old
+friends who disappear.  Enter the tavern, and talk to the bartender to get some
+information on where they might have gone.
+
+[Castle Sewers node]
+You could proceed with the plot, but I think this is a good time to do
+sidequests and collect some new treasure with our Mana Sight ability.  If you
+really want to just continue with the plot, then skip to UGWW.  Return to
+"The Closed Mine" node.  Enter the house and talk to the miner to advance the
+[One & Only] sidequest.  Search around the house with Mana Sight to reveal
+a chest which contains the IMPALE CORE for Rosch later.  If you climb the ramp
+to the right of the house, you can now find a hidden chest which contains
+2 MANA CRYSTALS.  Now, return to "The Beginning" node and choose to Join the
+Rosch Brigade.
+
+  __       __             _____   _ ___
+ |1 |__E__| 2|    3F     | _|  | | |5_ |   Second Ward    S - Save Point
+ |__  ___  __|           |  _  |S|   _ |                  E - Elevator
+   /S/ | \ \             | |  _| |_  | |                  X - Inaccessible
+   \/  |  \/             | |___   _ _| |                  1 - 2000 G
+  __   |   __            |__ |_   _|___|                  2 - Panacea Plus
+ |3 |__E__| 4|    2F        X  | |                        3 - Shield Seed
+ |__  ___  __|          ____ __   ____                    4 - Rhapsody
+   / / | \ \           |  _____| |7__ |_   First Ward     5 - 2000 G
+   \/  |  \/           | |6____   ____  |                 6 - Fire Pact
+  __   |   __          | |_____| |__ _| |                 7 - Mana Crystal x2
+ |  |__E__|  |    1F   | |_____   ____| |                 8 - 2000 G
+ |__       __|X|       |8______| |______|
+|       S      |               | |
+|____     _____|
+     |   |
+       |
+ To Second Ward
+
+Start by searching Hugo's office for a hidden chest which contains 2000 G.  In
+Raul's office on the right is a hidden chest which contains a PANACEA PLUS.
+Take the elevator down to the second floor, and search Viola's office on the
+left for a hidden chest which contains a SHIELD SEED.  Search Heiss' office on
+the right for a hidden chest which contains the RHAPSODY (ATK+12/MAG+18/SPD+5),
+which you should save for Aht later.  Leave the castle.
+
+Climb the stairs on the right side of the second ward, and the next set too.
+On the upper platform to the left is a hidden chest which contains 2000 G.
+Head down to the first ward, and search the alley behind the item shop for a
+hidden chest which contains the FIRE PACT for Stocke later.  Go up the stairs
+on the right, and search left on the upper platform for a hidden chest which
+contains 2 MANA CRYSTALS.
+
+On the second floor of the inn, you can find Kaizan.  Talk to him to advance
+the [One & Only] sidequest.  If you go to the "A New Mission" node, you could
+also access the upper platform on the left side of the First Ward and find a
+hidden chest which contains 2000 G.  Instead, I would stay here and go to
+Lazvil Hills.
+
+                 Highway W               Highway         Highway E
+
+                                    ___                     | |
+           __________________   ___/6  \_ ____________   __/   \
+          X____________    __   ___     _X ______   __   _      |
+                 |   _____/        \___/  |    ____/      |     |
+                  \  __|           |   |   \  |            \   /
+                  | |               \  |    | |             |X|
+Woodland          | |                | |    | |             | |
+ Path W
+   _____   _______| |               _| |    | |            _| |_
+ _|  S _   _ 4 _   _|              |   |   /  | Woodland  |     |
+|     |_    \_/ | |    Woodland     \  |__|   |  Path E   |1| | |  Southern
+|     X5|      /   \____ Path        |_   ____|          _|/   \|_    Path
+ \_   /       /   S     \____   _______| |              |2__   _*_|
+   | |       /_______________   _________|                  |X|
+
+                                                           _| |_
+S - Save Point        X - Roadblock   * - Barrel          |     |_____  Seaside
+1 - Healing Herb x2   2 - Rune Claw   3 - Herbal Tea x2   |      _____   Road
+4 - Superior Tea      5 - Panacea     6 - Panacea x3      |_3___|
+
+Use the barrel on the right to blow up the rocks below you to access the
+Southern Path.  Cut through the tall grass on the left to reach a chest which
+contains 2 HEALING HERBS.  Go down the middle path and search the left side for
+a hidden chest which contains a RUNE CLAW (ATK+41/MDF+5) that you should save
+for later.  There is a hidden barrel on the right that you can use to blow up
+the rocks below.  At the bottom of the Seaside Road is a chest which contains
+2 HERBAL TEAS.
+
+Return to the entrance at Highway East, head west one screen, south one, and
+west one.  Definitely use the save point before going near the huge monster.
+
+*******************************************************************************
+BOSS TIME: Giant Boar
+WEAKNESS: Fire
+STRATEGY: He will start by casting Kiai Charge.  If you want to play it safe,
+use some Shield Herbs that you may have won from enemies earlier.  Usually, he
+will spend his second turn also using Kiai Charge.  In any case, you want to
+string together 8-9 consecutive turns using either Change or your new Mana
+Burst: Turn Break.  Simply use it to select the enemy's turn to delete it and
+without sacrificing your own turn!  Once you have done that, use Magic Boost on
+Stocke and Raynie, then use six Fire spells to defeat him.
+*******************************************************************************
+
+For defeating the Giant Boar, you will win the SAVORY BOAR MEAT and advance
+[The Ultimate Dish] sidequest.  Go north and west at the fork.  Search the
+upper wall for a hidden chest which contains a SUPERIOR TEA.  Proceed west to
+the next area, and cut through the tall grass on the right side to find a chest
+which contains a PANACEA.  Go back to the fork, head north and east one screen.
+Cut through the tall grass above to find a chest which contains 3 PANACEAS.
+
+Return to the "Castle Sewers" node and talk to Kaizan at the inn to advance the
+[One & Only] sidequest.  Talk to Kaizan back at Alistel again to advance the
+[One & Only] sidequest.  Finally, talk to Kaizan at Granorg to complete the
+[One & Only] sidequest and receive the FIRESTAR PACT for Aht later.  By the
+way, do NOT talk to Hilster about The Ultimate Dish sidequest yet or you will
+lose your Savory Boar Meat and have to start over.
+
+Rest up at the inn and return to the tavern.  Search behind it to find the
+secret passage that leads to the palace.
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+
+==============================================================================
+20) Underground Waterway (Standard Chapter 2) [UGWW1]
+==============================================================================
+
+UNDERGROUND WATERWAY (Standard Chapter 2) [UGWW1]
+Recommended Level: 22
+Recommended Party: Stocke, Raynie, Marco
+Enemies: Bloody, Blue Leech (Poison/Fire), Fly Eater (Poison/Lightning),
+     Sting (Sleep)
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+                     _   _         _   _          [Secret of the Sewers node]
+B - Begin here      | |_| |       | | | |         There are a few new mechanics
+S - Save Point     /       \__   _| |_| |_|E|_    to this dungeon.  First, some
+L - Lever         |         D_   _____________|   enemies can drop from the
+D - Drawbridge    |      * |__   _____________    ceiling and get a sneak
+C - Claire        |         D_   ____________9|   attack on your party.  Their
+* - Sneak attacks  \   _   /                      locations are fixed, and I
+E - End here        |L| | |                       have denoted them on the map.
+1 - Herbal Tea x2   |_| | |                       Second, you will need to pull
+2 - Special Tea x2                                levers throughout the dungeon
+3 - Mail Vest           | |                       in order to lower drawbridges
+4 - 2000 G              | |___   _____________    for you to cross.  Each lever
+5 - Wind Armlet         |_____   ___   _______|   corresponds to the drawbridge
+6 - Panacea x2                    __| |  _____    on the same screen.
+7 - Mana Crystal x2              |8_  | |  __7|
+8 - Medicloth                       | | | |       After some initial dialogue,
+9 - 2000 G                                        follow the path up to the
+                                    | |_| |       next screen and either path
+ ____________   ______________   __/       \__    right.  Walk down to the next
+|_   ___*  __   _   __________   _D         D_|   screen to find a level to
+ _| |_  | |__   _| |__   _____   __|       |__    lower the nearby drawbridges.
+|___  | |  __   ____  | |  ___   _D      *  DS|   Hug the left wall around
+    | | | |         | | | |        \ _   _ /      until you reach a large, open
+    | | | |         | | | |         | | |L|       area.  Go along the lower
+                                                  path on the left side to find
+    | | | |         |L| |_|         | | | |       a chest which contains
+|B|_| | | |__   ___/|_|    \__   ___| |_| |___    2 HERBAL TEAS.
+|_____| |____   _D_         __   _____________|
+         ____   ___|       |__   _____________    Return to the open area, and
+        |1___   _D_         __   ____________2|   take the upper path on the
+                   \   _   /                      right side.  Head up the
+                    | | | |                       second path to a level to
+                                     _   _        lower some drawbridges.  Go
+                    | | | |         | |_| |       back to the open area and
+                 ___| | | |___   __/       \__    follow the lower path on the
+                |3__  | |_____   _L|        _5|   right to a chest which
+                 ___| |_______   __|   C   |__    contains 2 SPECIAL TEAS.
+                |4____________   _D         _6|   From the open area, walk down
+                                   \   _   /      the right path on the lower
+                                    |_| |_|       side to find another lever.
+
+Finally, from the open area, take the left path on the lower side.  Go left at
+the fork to a chest which contains a MAIL VEST (DEF+22/MDF+17, equip on Stocke)
+but save his Heavy Mail for Rosch.  Walk down from the fork and left to a chest
+which contains 2000 G.  Head right to find a girl named Claire, who you should
+escort out of here, eventually.  You can skip this for now to get some optional
+scenes, but eventually, you will have to do this, which will unlock the
+[Escort] node to receive the SMALL SATCHEL and HOLY WATER. On the two paths on
+the right are two chests which contain a WIND ARMLET (SPD+3, save for later)
+and 2 PANACEAS.  Now, escort Claire out of the dungeon, rest up at the inn, and
+get ready for a trip to the end.
+
+From the entrance, go up one screen and right two screens.  Go up the right
+path on the upper side to a chest which contains 2 MANA CRYSTALS.  Then, head
+up the left path to a chest which contains a MEDICLOTH.  Continue up, left, and
+up one screen to another open area.  Pull the lever (Kronk) to lower the
+drawbridges and take the lower path on the right to a chest which contains
+2000 G.  Head right along the upper path on the right side to a ladder which
+leads inside the Granorg Palace.
+
+Go left to the Underground Passage, where you will be prompted for a decision.
+Choosing "I'll be the decoy" will unlock the [Fated Assassination] ending.
+
+[How to Disappear node]
+Return to this node and advance the plot up to the same decision.  However,
+choose to "Stick to stealth" will only lead to a dead end.
+
+[High Alert node]
+If you have already resolved this roadblock, then skip to GPLC1.  Otherwise,
+you will need to return to "The Valkyrie" node in Alternate History to put the
+Mana Sight ability to use at the Sand Fortress.
+
+Recommended Equipment at this point in the game
+Stocke: Rune Edge, Mail Vest, Fang Charm x3
+Raynie: Rune Spear, Heavy Mail, Horn Charm x3
+Marco: Wisp Blade, Heavy Mail, Bishop Stud, Knight Stud x2
+Extra: Rhapsody, Rune Claw, Heavy Mail, Wind Armlet
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+

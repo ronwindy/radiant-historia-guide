@@ -1,0 +1,2257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Radiant Historia - The White Chronicle Master Walkthrough Compendium</title>
+  
+  <!-- Google Fonts: Ornate Serifs, Clean UI & Monospace -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@500;600;700;800&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      /* Cosmic / Historia Canvas */
+      --bg-deep: #06090f;
+      --bg-surface: rgba(12, 18, 29, 0.88);
+      --bg-surface-elevated: rgba(19, 28, 45, 0.90);
+      --bg-surface-card: rgba(24, 35, 55, 0.90);
+      --bg-surface-hover: rgba(30, 44, 69, 0.94);
+
+      /* Chronicle & Mana Accents */
+      --gold-primary: #fbbf24;
+      --gold-glow: #f59e0b;
+      --gold-muted: #b48c36;
+      --gold-border: rgba(251, 191, 36, 0.35);
+
+      /* Temporal Flux (Historia Glow) */
+      --mana-cyan: #06b6d4;
+      --mana-cyan-glow: rgba(6, 182, 212, 0.4);
+      --mana-teal: #14b8a6;
+      --mana-green: #10b981;
+
+      /* Timeline Signatures */
+      --timeline-standard: #3b82f6;       /* Standard History (Specint) */
+      --timeline-standard-bg: rgba(59, 130, 246, 0.15);
+      --timeline-alternate: #f43f5e;      /* Alternate History (Rosch Brigade) */
+      --timeline-alternate-bg: rgba(244, 63, 94, 0.15);
+      --timeline-prologue: #a855f7;       /* Shared Beginning */
+      --timeline-final: #eab308;          /* Convergent Climax */
+
+      /* Text & Readability */
+      --text-bright: #ffffff;
+      --text-primary: #f1f5f9;
+      --text-secondary: #94a3b8;
+      --text-muted: #64748b;
+
+      /* Borders & Dividers */
+      --border-subtle: rgba(148, 163, 184, 0.18);
+      --border-active: rgba(251, 191, 36, 0.6);
+      --border-standard: rgba(59, 130, 246, 0.4);
+      --border-alternate: rgba(244, 63, 94, 0.4);
+
+      /* Tactical Elements */
+      --elem-fire: #ef4444;
+      --elem-ice: #38bdf8;
+      --elem-thunder: #eab308;
+      --elem-physical: #94a3b8;
+      --elem-poison: #a855f7;
+      --elem-holy: #fef08a;
+
+      /* Shadows & Radii */
+      --radius-sm: 4px;
+      --radius-md: 8px;
+      --radius-lg: 14px;
+      --shadow-card: 0 8px 24px -4px rgba(0, 0, 0, 0.7), 0 2px 6px -1px rgba(0, 0, 0, 0.5);
+      --shadow-glow-gold: 0 0 20px rgba(251, 191, 36, 0.25);
+      --shadow-glow-cyan: 0 0 20px rgba(6, 182, 212, 0.25);
+      --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Reset & Base */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+      width: 100%;
+      max-width: 100vw;
+      overflow-x: hidden;
+    }
+
+    body {
+      background-color: var(--bg-deep);
+      background-image: 
+        linear-gradient(rgba(6, 9, 15, 0.84), rgba(6, 9, 15, 0.88)),
+        url('assets/background.jpg');
+      background-attachment: fixed;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      color: var(--text-primary);
+      font-family: 'Crimson Pro', serif;
+      font-size: 1.15rem;
+      line-height: 1.7;
+      min-height: 100vh;
+      width: 100%;
+      max-width: 100vw;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+      background: var(--bg-deep);
+      border-left: 1px solid var(--border-subtle);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #1e293b;
+      border-radius: 5px;
+      border: 1px solid var(--gold-muted);
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--gold-muted);
+    }
+
+    /* Typography Utilities */
+    h1, h2, h3, h4, .cinzel {
+      font-family: 'Cinzel', serif;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      color: var(--gold-primary);
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+    }
+
+    .cinzel-decorative {
+      font-family: 'Cinzel Decorative', serif;
+    }
+
+    .sans-ui {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    .mono-code {
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    /* Top Navigation Bar */
+    .nav-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      background: rgba(6, 9, 15, 0.94);
+      border-bottom: 1px solid var(--border-subtle);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+      width: 100%;
+    }
+
+    .nav-container {
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 0.65rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      width: 100%;
+      min-width: 0;
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      text-decoration: none;
+      color: var(--gold-primary);
+      font-family: 'Cinzel', serif;
+      font-weight: 700;
+      font-size: 1.12rem;
+      letter-spacing: 0.06em;
+      transition: var(--transition);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .nav-brand span {
+      white-space: nowrap;
+    }
+
+    .nav-brand:hover {
+      text-shadow: 0 0 12px rgba(251, 191, 36, 0.6);
+    }
+
+    .nav-logo {
+      height: 30px;
+      width: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.8)) drop-shadow(0 0 6px rgba(251, 191, 36, 0.4));
+      transition: var(--transition);
+      flex-shrink: 0;
+    }
+
+    .nav-brand:hover .nav-logo {
+      transform: scale(1.06);
+      filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.95)) drop-shadow(0 0 14px rgba(251, 191, 36, 0.75));
+    }
+
+    nav, .nav-menu {
+      display: flex;
+      align-items: center;
+      min-width: 0;
+      flex: 1 1 auto;
+      justify-content: center;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      list-style: none;
+      margin: 0;
+      padding: 0.1rem 0.2rem;
+      white-space: nowrap;
+      overflow-x: auto;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      -webkit-overflow-scrolling: touch;
+      max-width: 100%;
+    }
+
+    .nav-links::-webkit-scrollbar {
+      display: none;
+    }
+
+    .nav-links li {
+      flex-shrink: 0;
+      list-style: none;
+    }
+
+    .nav-links a {
+      display: inline-flex;
+      align-items: center;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: var(--transition);
+      padding: 0.32rem 0.55rem;
+      border-radius: var(--radius-sm);
+      white-space: nowrap;
+      line-height: 1.2;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--gold-primary);
+      background: rgba(251, 191, 36, 0.1);
+    }
+
+    .nav-links a.active {
+      border: 1px solid var(--gold-border);
+      color: var(--gold-primary);
+      font-weight: 700;
+    }
+
+    .nav-progress-indicator {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.78rem;
+      color: var(--mana-cyan);
+      background: rgba(6, 182, 212, 0.1);
+      border: 1px solid rgba(6, 182, 212, 0.3);
+      padding: 0.3rem 0.7rem;
+      border-radius: 20px;
+      white-space: nowrap;
+      flex-shrink: 0;
+      line-height: 1;
+    }
+
+    .nav-progress-indicator span,
+    .nav-progress-indicator b {
+      white-space: nowrap;
+      line-height: 1;
+    }
+
+    /* Main Container */
+    .container {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 5rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 3.5rem;
+    }
+
+    /* Ornate Frames */
+    .ornate-frame {
+      background: var(--bg-surface);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid var(--border-subtle);
+      position: relative;
+      padding: 2.25rem;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-card);
+    }
+
+    .ornate-frame::before {
+      content: '';
+      position: absolute;
+      inset: -2px;
+      border: 1px solid var(--gold-border);
+      border-radius: calc(var(--radius-md) + 2px);
+      pointer-events: none;
+    }
+
+    /* Hero Banner */
+    .hero-banner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 3.5rem 2rem;
+      background: 
+        radial-gradient(ellipse at center, rgba(6, 182, 212, 0.18) 0%, rgba(12, 18, 29, 0.95) 75%),
+        url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 0l20 20-20 20L0 20z' fill='%23fbbf24' fill-opacity='0.02'/%3E%3C/svg%3E");
+      border: 1px solid var(--gold-muted);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-logo-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1.25rem 2.5rem;
+      margin: 0 auto 1.5rem auto;
+      background: radial-gradient(ellipse at center, rgba(24, 35, 55, 0.85) 0%, rgba(12, 18, 29, 0.6) 65%, rgba(6, 9, 15, 0) 100%);
+      border: 1px solid rgba(251, 191, 36, 0.25);
+      border-radius: 20px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), 0 0 35px rgba(251, 191, 36, 0.15), inset 0 0 20px rgba(6, 182, 212, 0.08);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      max-width: 480px;
+      width: 100%;
+    }
+
+    .hero-logo {
+      max-width: 440px;
+      width: 100%;
+      height: auto;
+      display: block;
+      filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.75)) drop-shadow(0 0 16px rgba(251, 191, 36, 0.3));
+      transition: transform 0.3s ease, filter 0.3s ease;
+    }
+
+    .hero-logo:hover {
+      transform: scale(1.03);
+      filter: drop-shadow(0 6px 18px rgba(0, 0, 0, 0.9)) drop-shadow(0 0 24px rgba(251, 191, 36, 0.55));
+    }
+
+    .hero-banner::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 10%;
+      right: 10%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--mana-cyan), transparent);
+    }
+
+    .game-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold-primary);
+      background: rgba(251, 191, 36, 0.12);
+      border: 1px solid var(--gold-border);
+      padding: 0.3rem 1.25rem;
+      border-radius: 20px;
+      margin: 0 auto 1.25rem auto;
+      box-shadow: 0 0 12px rgba(251, 191, 36, 0.2);
+    }
+
+    .main-title {
+      font-size: clamp(2rem, 5vw, 3.25rem);
+      color: #ffffff;
+      text-shadow: 0 0 30px rgba(6, 182, 212, 0.6), 0 2px 6px rgba(0, 0, 0, 0.9);
+      margin-bottom: 0.5rem;
+      line-height: 1.2;
+    }
+
+    .sub-title {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(1rem, 2.5vw, 1.35rem);
+      color: var(--gold-primary);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .hero-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      margin: 1.75rem auto 1.25rem;
+      max-width: 480px;
+      color: var(--gold-muted);
+    }
+    .hero-divider::before, .hero-divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold-muted), transparent);
+    }
+
+    .hero-meta-stats {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      margin-top: 1rem;
+    }
+
+    .stat-pill {
+      background: var(--bg-surface-elevated);
+      border: 1px solid var(--border-subtle);
+      padding: 0.4rem 1rem;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+    }
+
+    .stat-pill b {
+      color: var(--gold-primary);
+    }
+
+    /* Overall Progress Bar Card */
+    .progress-tracker-card {
+      background: linear-gradient(135deg, #131c2d 0%, #0c121d 100%);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 1.25rem 1.75rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .progress-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .progress-bar-track {
+      width: 100%;
+      height: 8px;
+      background: #1e293b;
+      border-radius: 4px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .progress-bar-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, var(--mana-cyan), var(--gold-primary));
+      border-radius: 4px;
+      transition: width 0.4s ease;
+      box-shadow: 0 0 10px rgba(6, 182, 212, 0.6);
+    }
+
+    /* Section Title Wrappers */
+    .section-title-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 1.75rem;
+      border-bottom: 1px solid var(--border-subtle);
+      padding-bottom: 0.75rem;
+    }
+
+    .section-heading {
+      font-size: 1.75rem;
+      color: var(--gold-primary);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .section-tagline {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    /* Timeline Dual-Branch Diagram / Matrix Hub */
+    .timeline-branch-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    @media (max-width: 860px) {
+      .timeline-branch-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .branch-card {
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--border-subtle);
+      transition: var(--transition);
+    }
+
+    .branch-card.standard {
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.08) 0%, rgba(12, 18, 29, 0.95) 100%);
+      border-left: 4px solid var(--timeline-standard);
+    }
+
+    .branch-card.alternate {
+      background: linear-gradient(135deg, rgba(244, 63, 94, 0.08) 0%, rgba(12, 18, 29, 0.95) 100%);
+      border-left: 4px solid var(--timeline-alternate);
+    }
+
+    .branch-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+    }
+
+    .branch-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 0.75rem;
+    }
+
+    .branch-badge {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      padding: 0.25rem 0.75rem;
+      border-radius: 4px;
+    }
+
+    .branch-badge.standard {
+      background: var(--timeline-standard-bg);
+      color: #60a5fa;
+      border: 1px solid var(--border-standard);
+    }
+
+    .branch-badge.alternate {
+      background: var(--timeline-alternate-bg);
+      color: #fb7185;
+      border: 1px solid var(--border-alternate);
+    }
+
+    .branch-badge.prologue {
+      background: rgba(168, 85, 247, 0.15);
+      color: #c084fc;
+      border: 1px solid rgba(168, 85, 247, 0.4);
+    }
+
+    .branch-badge.final {
+      background: rgba(234, 179, 8, 0.15);
+      color: #facc15;
+      border: 1px solid rgba(234, 179, 8, 0.4);
+    }
+
+    .branch-desc {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    .branch-meta-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.78rem;
+    }
+
+    .branch-pill {
+      background: var(--bg-surface-elevated);
+      border: 1px solid var(--border-subtle);
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      color: var(--text-muted);
+    }
+
+    /* Filter & Search Bar */
+    .walkthrough-controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--bg-surface-elevated);
+      padding: 1rem 1.25rem;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-subtle);
+    }
+
+    .filter-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .filter-btn {
+      background: var(--bg-surface-card);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-secondary);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 0.45rem 0.9rem;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .filter-btn:hover {
+      color: var(--text-bright);
+      border-color: var(--gold-muted);
+    }
+
+    .filter-btn.active {
+      background: var(--gold-primary);
+      color: #000;
+      border-color: var(--gold-primary);
+      font-weight: 700;
+      box-shadow: 0 0 12px rgba(251, 191, 36, 0.4);
+    }
+
+    .search-input-wrap {
+      position: relative;
+      min-width: 260px;
+      flex: 1;
+      max-width: 380px;
+    }
+
+    .search-input {
+      width: 100%;
+      background: var(--bg-surface-card);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-bright);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.88rem;
+      padding: 0.5rem 1rem 0.5rem 2.2rem;
+      border-radius: 6px;
+      outline: none;
+      transition: var(--transition);
+    }
+
+    .search-input:focus {
+      border-color: var(--mana-cyan);
+      box-shadow: 0 0 10px rgba(6, 182, 212, 0.3);
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 0.75rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+      pointer-events: none;
+    }
+
+    /* Chapter Volumes / Chunks Grid */
+    .volume-chunk-banner {
+      background: linear-gradient(90deg, #182337 0%, rgba(24, 35, 55, 0.4) 100%);
+      border-left: 4px solid var(--gold-primary);
+      padding: 0.75rem 1.25rem;
+      margin: 2rem 0 1rem 0;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .volume-chunk-title {
+      font-family: 'Cinzel', serif;
+      font-size: 1.15rem;
+      color: var(--gold-primary);
+      font-weight: 700;
+    }
+
+    .volume-file-badge {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      color: var(--mana-cyan);
+      background: rgba(6, 182, 212, 0.1);
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      border: 1px solid rgba(6, 182, 212, 0.25);
+    }
+
+    /* Chapter Directory Cards Grid */
+    .chapters-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 1.25rem;
+    }
+
+    @media (max-width: 480px) {
+      .chapters-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .chapter-card {
+      background: linear-gradient(145deg, #131c2d 0%, #0c121d 100%);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 0.75rem;
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .chapter-card.standard {
+      border-left: 4px solid var(--timeline-standard);
+    }
+
+    .chapter-card.alternate {
+      border-left: 4px solid var(--timeline-alternate);
+    }
+
+    .chapter-card.prologue {
+      border-left: 4px solid var(--timeline-prologue);
+    }
+
+    .chapter-card.final {
+      border-left: 4px solid var(--timeline-final);
+    }
+
+    .chapter-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.7);
+      border-color: rgba(251, 191, 36, 0.4);
+    }
+
+    .chapter-card.completed {
+      opacity: 0.7;
+      background: linear-gradient(145deg, #0d1624 0%, #080d14 100%);
+    }
+
+    .chapter-card.completed .chapter-title {
+      text-decoration: line-through;
+      color: var(--text-muted);
+    }
+
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+
+    .chapter-num-badge {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--gold-primary);
+      background: rgba(251, 191, 36, 0.12);
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      border: 1px solid var(--gold-border);
+    }
+
+    .jump-code {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      color: var(--mana-cyan);
+      background: rgba(6, 182, 212, 0.1);
+      padding: 0.15rem 0.45rem;
+      border-radius: 4px;
+      border: 1px solid rgba(6, 182, 212, 0.2);
+    }
+
+    .chapter-title {
+      font-size: 1.15rem;
+      color: var(--text-bright);
+      line-height: 1.35;
+      margin: 0.25rem 0;
+    }
+
+    .chapter-location-tag {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .card-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid rgba(148, 163, 184, 0.08);
+      padding-top: 0.75rem;
+      margin-top: 0.25rem;
+    }
+
+    .card-check-label {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .card-check-input {
+      accent-color: var(--gold-primary);
+      width: 16px;
+      height: 16px;
+      cursor: pointer;
+    }
+
+    .read-btn {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--gold-primary);
+      background: rgba(251, 191, 36, 0.1);
+      border: 1px solid var(--gold-border);
+      padding: 0.35rem 0.75rem;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .read-btn:hover {
+      background: var(--gold-primary);
+      color: #000;
+      box-shadow: 0 0 10px rgba(251, 191, 36, 0.4);
+    }
+
+    /* 3x3 Battle Grid Interactive Tactics Hub */
+    .tactics-grid-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    @media (max-width: 900px) {
+      .tactics-grid-container {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .battle-grid-visualizer {
+      background: #090e17;
+      border: 2px solid var(--gold-muted);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      box-shadow: inset 0 0 25px rgba(0, 0, 0, 0.8), 0 8px 24px rgba(0, 0, 0, 0.6);
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .grid-header-labels {
+      display: grid;
+      grid-template-columns: repeat(3, 80px);
+      gap: 8px;
+      text-align: center;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+    }
+
+    .grid-arena {
+      display: grid;
+      grid-template-columns: repeat(3, 80px);
+      grid-template-rows: repeat(3, 80px);
+      gap: 8px;
+      background: #060a12;
+      padding: 8px;
+      border-radius: 8px;
+      border: 1px solid var(--border-subtle);
+    }
+
+    .grid-cell {
+      background: var(--bg-surface-elevated);
+      border: 1px solid rgba(148, 163, 184, 0.2);
+      border-radius: 6px;
+      display: grid;
+      place-items: center;
+      position: relative;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .grid-cell:hover {
+      border-color: var(--mana-cyan);
+      background: rgba(6, 182, 212, 0.1);
+    }
+
+    .grid-cell.has-enemy {
+      background: radial-gradient(circle, rgba(239, 68, 68, 0.25) 0%, rgba(19, 28, 45, 0.95) 100%);
+      border-color: #ef4444;
+      box-shadow: 0 0 12px rgba(239, 68, 68, 0.35);
+    }
+
+    .grid-cell.stacked {
+      background: radial-gradient(circle, rgba(251, 191, 36, 0.3) 0%, rgba(19, 28, 45, 0.95) 100%);
+      border-color: var(--gold-primary);
+      box-shadow: 0 0 16px rgba(251, 191, 36, 0.5);
+    }
+
+    .enemy-token {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #ef4444 0%, #991b1b 100%);
+      border: 2px solid #fff;
+      display: grid;
+      place-items: center;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 800;
+      font-size: 0.8rem;
+      color: #fff;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+      animation: pulseEnemy 2s infinite ease-in-out;
+    }
+
+    @keyframes pulseEnemy {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+
+    .enemy-token.combo {
+      background: linear-gradient(135deg, var(--gold-primary) 0%, #b45309 100%);
+    }
+
+    .grid-controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      justify-content: center;
+    }
+
+    .skill-btn {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      background: var(--bg-surface-elevated);
+      color: var(--text-primary);
+      border: 1px solid var(--border-subtle);
+      padding: 0.4rem 0.8rem;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .skill-btn:hover {
+      background: var(--mana-cyan);
+      color: #000;
+      border-color: var(--mana-cyan);
+      box-shadow: 0 0 10px rgba(6, 182, 212, 0.4);
+    }
+
+    .tactics-info {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .tactics-rule-card {
+      background: var(--bg-surface-elevated);
+      border: 1px solid var(--border-subtle);
+      border-left: 3px solid var(--mana-cyan);
+      padding: 1rem 1.25rem;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    }
+
+    .tactics-rule-card h4 {
+      font-size: 1.05rem;
+      color: var(--mana-cyan);
+      margin-bottom: 0.35rem;
+    }
+
+    .tactics-rule-card p {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* Node Matrix & Sidequest Compendium Cards */
+    .node-hub-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .node-stat-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      text-align: center;
+      transition: var(--transition);
+    }
+
+    .node-stat-card:hover {
+      border-color: var(--gold-muted);
+      transform: translateY(-2px);
+    }
+
+    .node-stat-count {
+      font-family: 'Cinzel', serif;
+      font-size: 2.75rem;
+      color: var(--gold-primary);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    .node-stat-label {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.88rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-primary);
+      margin-bottom: 0.35rem;
+    }
+
+    .node-stat-desc {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    /* Characters Roster */
+    .party-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .party-card {
+      background: linear-gradient(145deg, #131c2d 0%, #0c121d 100%);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .party-card:hover {
+      border-color: var(--gold-primary);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.6);
+      transform: translateY(-2px);
+    }
+
+    .party-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .party-role-badge {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 0.25rem 0.6rem;
+      border-radius: 4px;
+      background: rgba(251, 191, 36, 0.12);
+      color: var(--gold-primary);
+      border: 1px solid var(--gold-border);
+      white-space: nowrap;
+    }
+
+    .party-name {
+      font-size: 1.45rem;
+      color: var(--text-bright);
+      line-height: 1.2;
+      margin: 0;
+    }
+
+    .party-weapon {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.8rem;
+      color: var(--mana-cyan);
+      font-weight: 600;
+    }
+
+    .party-desc {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.55;
+    }
+
+    .party-skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: auto;
+      padding-top: 0.75rem;
+      border-top: 1px solid rgba(148, 163, 184, 0.1);
+    }
+
+    .party-skill-pill {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem;
+      background: var(--bg-surface-card);
+      border: 1px solid var(--border-subtle);
+      padding: 0.2rem 0.45rem;
+      border-radius: 4px;
+      color: var(--text-primary);
+    }
+
+    /* World Lore & Factions */
+    .lore-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .lore-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .lore-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .lore-title {
+      font-size: 1.3rem;
+      color: var(--gold-primary);
+    }
+
+    .lore-leader {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    .lore-text {
+      font-size: 0.98rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* Footer & Attributions */
+    .site-footer {
+      background: #04060a;
+      border-top: 1px solid var(--border-subtle);
+      padding: 3rem 1.5rem 4rem 1.5rem;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    .footer-container {
+      max-width: 1240px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      text-align: center;
+      align-items: center;
+    }
+
+    .footer-logo-wrap {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0.75rem 1.75rem;
+      background: radial-gradient(ellipse at center, rgba(24, 35, 55, 0.8) 0%, rgba(12, 18, 29, 0.45) 65%, transparent 100%);
+      border: 1px solid rgba(251, 191, 36, 0.18);
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4), 0 0 20px rgba(251, 191, 36, 0.1);
+      margin-bottom: 0.25rem;
+    }
+
+    .footer-logo {
+      height: 40px;
+      width: auto;
+      object-fit: contain;
+      display: block;
+      filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.7)) drop-shadow(0 0 8px rgba(251, 191, 36, 0.25));
+      transition: var(--transition);
+    }
+
+    .footer-logo:hover {
+      transform: scale(1.05);
+      filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.85)) drop-shadow(0 0 14px rgba(251, 191, 36, 0.5));
+    }
+
+    .footer-divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border-subtle), transparent);
+    }
+
+    /* Back to top button */
+    .back-to-top {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: var(--bg-surface-elevated);
+      color: var(--gold-primary);
+      border: 1px solid var(--gold-muted);
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+      transition: var(--transition);
+      opacity: 0;
+      visibility: hidden;
+      z-index: 90;
+    }
+
+    .back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .back-to-top:hover {
+      background: var(--gold-primary);
+      color: #000;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(251, 191, 36, 0.4);
+    }
+
+    @media (max-width: 1120px) {
+      .nav-container {
+        padding: 0.55rem 1rem;
+        gap: 0.5rem;
+      }
+      .nav-links a {
+        font-size: 0.78rem;
+        padding: 0.28rem 0.45rem;
+      }
+      .nav-links {
+        gap: 0.25rem;
+      }
+      .nav-brand {
+        font-size: 1.05rem;
+      }
+      .nav-progress-indicator {
+        font-size: 0.75rem;
+        padding: 0.25rem 0.6rem;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .nav-container {
+        flex-wrap: wrap;
+        padding: 0.5rem 0.85rem;
+        gap: 0.4rem;
+        justify-content: space-between;
+      }
+      .nav-brand {
+        font-size: 1rem;
+      }
+      nav, .nav-menu {
+        order: 3;
+        width: 100%;
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding-top: 0.35rem;
+        margin-top: 0.1rem;
+        border-top: 1px solid rgba(148, 163, 184, 0.12);
+      }
+      .nav-links {
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        padding-bottom: 0.2rem;
+        gap: 0.35rem;
+      }
+      .nav-links::-webkit-scrollbar {
+        display: none;
+      }
+      .nav-links a {
+        padding: 0.3rem 0.55rem;
+        font-size: 0.8rem;
+        flex-shrink: 0;
+      }
+      .nav-progress-indicator {
+        order: 2;
+        font-size: 0.74rem;
+        padding: 0.22rem 0.55rem;
+      }
+    }
+
+    @media (max-width: 640px) {
+      html {
+        font-size: 15px;
+      }
+      .nav-brand span {
+        font-size: 0.95rem;
+      }
+      .nav-logo {
+        height: 26px;
+      }
+      .container {
+        padding: 1.25rem 0.75rem 4rem 0.75rem;
+        gap: 2rem;
+      }
+      .hero-banner {
+        padding: 2rem 1rem;
+      }
+      .hero-logo-container {
+        padding: 0.6rem 1rem;
+        max-width: 260px;
+      }
+      .hero-logo {
+        max-width: 220px;
+      }
+      .main-title {
+        font-size: 1.75rem;
+      }
+      .hero-meta-stats {
+        gap: 0.4rem;
+      }
+      .stat-pill {
+        font-size: 0.75rem;
+        padding: 0.25rem 0.65rem;
+      }
+      .walkthrough-controls {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .filter-group {
+        overflow-x: auto;
+        width: 100%;
+        padding-bottom: 0.3rem;
+        scrollbar-width: none;
+      }
+      .filter-group::-webkit-scrollbar {
+        display: none;
+      }
+      .filter-btn {
+        flex-shrink: 0;
+        font-size: 0.78rem;
+        padding: 0.35rem 0.7rem;
+      }
+      .search-input-wrap {
+        min-width: 100%;
+      }
+      .chapters-grid {
+        grid-template-columns: 1fr;
+      }
+      .tactics-grid-container {
+        grid-template-columns: 1fr;
+      }
+      .tactics-visualizer {
+        padding: 1rem 0.5rem;
+      }
+      .grid-arena {
+        gap: 6px;
+      }
+      .grid-cell {
+        height: 65px;
+        font-size: 0.75rem;
+      }
+      .char-grid {
+        grid-template-columns: 1fr;
+      }
+      .node-stat-cards {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sticky Top Navigation -->
+  <header class="nav-header">
+    <div class="nav-container">
+      <a href="#hero" class="nav-brand">
+        <img src="assets/logo.png" alt="Radiant Historia Logo" class="nav-logo">
+        <span>Radiant Historia</span>
+      </a>
+
+      <nav class="nav-menu">
+        <ul class="nav-links">
+          <li><a href="#hero" class="active">Home</a></li>
+          <li><a href="introduction.html">Intro &amp; TOC</a></li>
+          <li><a href="walkthrough-01-10.html" style="color: var(--mana-cyan);">Vol I (Ch. 01–10)</a></li>
+          <li><a href="walkthrough-11-20.html" style="color: var(--mana-cyan);">Vol II (Ch. 11–20)</a></li>
+          <li><a href="#timelines">Timelines</a></li>
+          <li><a href="#walkthrough">Walkthrough</a></li>
+          <li><a href="#tactics">3x3 Grid</a></li>
+          <li><a href="#nodes">Nodes</a></li>
+          <li><a href="#characters">Characters</a></li>
+          <li><a href="#lore">Lore</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-progress-indicator" id="navProgressBadge">
+        <span>Completed:</span>
+        <b id="navProgressText">0 / 66</b>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- Hero Banner -->
+    <section class="hero-banner ornate-frame" id="hero">
+      <div class="hero-logo-container">
+        <img src="assets/logo.png" alt="Radiant Historia Logo" class="hero-logo">
+      </div>
+      <div class="game-badge">
+        <span>⏳ The White Chronicle Archive</span>
+      </div>
+      <h1 class="main-title cinzel-decorative">Radiant Historia</h1>
+      <div class="sub-title">Complete Master Walkthrough & Temporal Compendium</div>
+      
+      <div class="hero-divider">✦ ❖ ✦</div>
+
+      <p style="max-width: 780px; margin: 0 auto 1.5rem auto; color: var(--text-secondary); font-size: 1.08rem;">
+        Traverse the parallel timelines of Vainqueur with Stocke and the White Chronicle. Master the 3x3 tactical battle grid, unlock all 236 Historia nodes, discover every missable treasure, and achieve the True Ending.
+      </p>
+
+      <div class="hero-meta-stats">
+        <a href="introduction.html" class="stat-pill" style="text-decoration: none; color: inherit; border-color: var(--gold-border); background: rgba(251, 191, 36, 0.1); cursor: pointer;">📜 <b>Intro & TOC</b> ➔</a>
+        <a href="walkthrough-01-10.html" class="stat-pill" style="text-decoration: none; color: inherit; border-color: var(--mana-cyan); background: rgba(6, 182, 212, 0.12); cursor: pointer;">✨ <b>Vol I Guide (01–10)</b> ➔</a>
+        <a href="walkthrough-11-20.html" class="stat-pill" style="text-decoration: none; color: inherit; border-color: var(--mana-cyan); background: rgba(6, 182, 212, 0.18); cursor: pointer;">⚡ <b>Vol II Guide (11–20)</b> ➔</a>
+        <div class="stat-pill">📖 <b>66</b> Walkthrough Chapters</div>
+        <div class="stat-pill">⏳ <b>236</b> Historia Nodes</div>
+        <div class="stat-pill">⚔️ <b>7</b> Playable Heroes</div>
+        <div class="stat-pill">💎 <b>100%</b> Treasures & Weaknesses</div>
+        <div class="stat-pill">✍️ Guide by <b>Henri "HC" Bailly</b></div>
+      </div>
+    </section>
+
+    <!-- Global Progress Tracker Card -->
+    <section class="progress-tracker-card">
+      <div class="progress-meta">
+        <span style="color: var(--text-primary);">Overall Walkthrough Completion</span>
+        <span style="color: var(--gold-primary);" id="progressPercentLabel">0% Complete (0/66 Chapters)</span>
+      </div>
+      <div class="progress-bar-track">
+        <div class="progress-bar-fill" id="progressBarFill"></div>
+      </div>
+    </section>
+
+    <!-- Timelines Dual-Branch Matrix -->
+    <section id="timelines">
+      <div class="section-title-wrap">
+        <h2 class="section-heading">
+          <span>⏳</span> Parallel Timelines Matrix
+        </h2>
+        <span class="section-tagline">Choose your path at the temporal crossroads</span>
+      </div>
+
+      <div class="timeline-branch-grid">
+        <!-- Standard History -->
+        <div class="branch-card standard">
+          <div class="branch-header">
+            <h3 class="cinzel" style="color: #60a5fa; font-size: 1.35rem;">Standard History (SH)</h3>
+            <span class="branch-badge standard">Specint Intelligence</span>
+          </div>
+          <p class="branch-desc">
+            Stocke remains in Special Intelligence under First Lieutenant Heiss. Focuses on espionage, covert infiltration into Granorg, undercover royal contacts, and uncovering the deep political conspiracy behind Alistel's war machine.
+          </p>
+          <div class="branch-meta-list">
+            <span class="branch-pill">Chapters 01–06 + Final</span>
+            <span class="branch-pill">Allies: Raynie, Marco, Eruca, Aht</span>
+            <span class="branch-pill">Focus: Espionage & Granorg Resistance</span>
+          </div>
+        </div>
+
+        <!-- Alternate History -->
+        <div class="branch-card alternate">
+          <div class="branch-header">
+            <h3 class="cinzel" style="color: #fb7185; font-size: 1.35rem;">Alternate History (AH)</h3>
+            <span class="branch-badge alternate">Rosch Brigade</span>
+          </div>
+          <p class="branch-desc">
+            Stocke transfers to the military frontlines to serve in his best friend Rosch's Brigade under General Dias. Focuses on full-scale battlefield warfare, defending the Sand Fortress, forming alliances with Celestia and Forgia, and confronting Alistel's corruption.
+          </p>
+          <div class="branch-meta-list">
+            <span class="branch-pill">Chapters 01–06 + Final</span>
+            <span class="branch-pill">Allies: Rosch, Gafka, Sonja, Kiel</span>
+            <span class="branch-pill">Focus: Frontline Battles & Beast Tribes</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Walkthrough Directory (All 66 Chapters across 7 Volumes) -->
+    <section id="walkthrough">
+      <div class="section-title-wrap">
+        <div>
+          <h2 class="section-heading">
+            <span>📜</span> Master Walkthrough Directory
+          </h2>
+          <span class="section-tagline">Complete 66-chapter chronological guide</span>
+        </div>
+        <a href="introduction.html" class="read-btn" style="font-size: 0.85rem; padding: 0.45rem 1rem;">
+          <span>📖 Guide Intro & TOC</span> ➔
+        </a>
+      </div>
+
+      <!-- Controls: Filter & Search -->
+      <div class="walkthrough-controls">
+        <div class="filter-group">
+          <button class="filter-btn active" data-filter="all">All (66)</button>
+          <button class="filter-btn" data-filter="prologue">Prologue (8)</button>
+          <button class="filter-btn" data-filter="standard">Standard History (26)</button>
+          <button class="filter-btn" data-filter="alternate">Alternate History (30)</button>
+          <button class="filter-btn" data-filter="final">Final Chapters (2)</button>
+        </div>
+
+        <div class="search-input-wrap">
+          <span class="search-icon">🔍</span>
+          <input type="text" class="search-input" id="chapterSearch" placeholder="Search by chapter, code [ALST1], location...">
+        </div>
+      </div>
+
+      <!-- Chapter Directory Container -->
+      <div id="chaptersContainer">
+        <!-- Chapters are dynamically rendered with full data and checkboxes below -->
+      </div>
+    </section>
+
+    <!-- Interactive 3x3 Battle Grid Tactics Section -->
+    <section id="tactics" class="ornate-frame">
+      <div class="section-title-wrap">
+        <h2 class="section-heading">
+          <span>⚔️</span> 3x3 Grid Battle Mechanics
+        </h2>
+        <span class="section-tagline">Grid manipulation, enemy stacking, and combo chains</span>
+      </div>
+
+      <div class="tactics-grid-container">
+        <div class="battle-grid-visualizer">
+          <div class="grid-header-labels">
+            <span>Left</span>
+            <span>Center</span>
+            <span>Right</span>
+          </div>
+
+          <div class="grid-arena" id="gridArena">
+            <!-- 9 Cells -->
+            <div class="grid-cell" data-row="0" data-col="0" id="cell-0-0"></div>
+            <div class="grid-cell has-enemy" data-row="0" data-col="1" id="cell-0-1"><div class="enemy-token" id="tokenA">A</div></div>
+            <div class="grid-cell" data-row="0" data-col="2" id="cell-0-2"></div>
+            
+            <div class="grid-cell has-enemy" data-row="1" data-col="0" id="cell-1-0"><div class="enemy-token" id="tokenB">B</div></div>
+            <div class="grid-cell" data-row="1" data-col="1" id="cell-1-1"></div>
+            <div class="grid-cell has-enemy" data-row="1" data-col="2" id="cell-1-2"><div class="enemy-token" id="tokenC">C</div></div>
+
+            <div class="grid-cell" data-row="2" data-col="0" id="cell-2-0"></div>
+            <div class="grid-cell" data-row="2" data-col="1" id="cell-2-1"></div>
+            <div class="grid-cell" data-row="2" data-col="2" id="cell-2-2"></div>
+          </div>
+
+          <div style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.8rem; color: var(--text-muted);">
+            Enemy Position: <span style="color: var(--mana-cyan);" id="gridStatus">3 enemies scattered on grid</span>
+          </div>
+
+          <div class="grid-controls">
+            <button class="skill-btn" onclick="simulateSkill('push')">Push Assault (Push Back)</button>
+            <button class="skill-btn" onclick="simulateSkill('left')">Left Assault</button>
+            <button class="skill-btn" onclick="simulateSkill('right')">Right Assault</button>
+            <button class="skill-btn" onclick="simulateSkill('air')">Air Assault (Launch)</button>
+            <button class="skill-btn" onclick="simulateSkill('stack')">Stack All on Center</button>
+            <button class="skill-btn" onclick="resetGrid()">Reset Grid</button>
+          </div>
+        </div>
+
+        <div class="tactics-info">
+          <div class="tactics-rule-card">
+            <h4>1. Grid Row Modifiers</h4>
+            <p>Enemies in the <b>Front Row</b> deal 100% physical damage but take 100% damage. Enemies in the <b>Back Row</b> deal only 60% physical damage and take 60% damage. Push high-threat melee enemies to the back row to survive!</p>
+          </div>
+
+          <div class="tactics-rule-card">
+            <h4>2. Enemy Stacking & Area Nukes</h4>
+            <p>Use movement skills (<i>Push Assault, Left/Right Assault, Grapple</i>) to shove multiple enemies onto the exact same grid tile. Once stacked, any single-target spell (e.g. <i>Fire, G-Frost, Thunder</i>) hits <b>all stacked enemies simultaneously</b> for massive combo multiplier bonuses!</p>
+          </div>
+
+          <div class="tactics-rule-card">
+            <h4>3. Turn Swapping ("Change" Command)</h4>
+            <p>Stocke and allies can use the <b>Change</b> command to trade turn slots with any enemy or party member. This lets you align all 3 party members consecutively to unleash 10+ hit combo chains before enemies can react.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Node Completion & Sidequest Matrix -->
+    <section id="nodes">
+      <div class="section-title-wrap">
+        <h2 class="section-heading">
+          <span>🌐</span> 236 Historia Nodes Compendium
+        </h2>
+        <span class="section-tagline">Flowcharts, branching checkpoints, and sidequest trackers</span>
+      </div>
+
+      <div class="node-hub-grid">
+        <div class="node-stat-card">
+          <div class="node-stat-count">236</div>
+          <div class="node-stat-label">Total Nodes</div>
+          <div class="node-stat-desc">Complete timeline tree across Prologue through Final Chapters.</div>
+        </div>
+
+        <div class="node-stat-card">
+          <div class="node-stat-count" style="color: #60a5fa;">118</div>
+          <div class="node-stat-label">Standard History</div>
+          <div class="node-stat-desc">Specint espionage nodes, Granorg infiltration, and Eruca's route.</div>
+        </div>
+
+        <div class="node-stat-card">
+          <div class="node-stat-count" style="color: #fb7185;">118</div>
+          <div class="node-stat-label">Alternate History</div>
+          <div class="node-stat-desc">Rosch Brigade military nodes, Celestia, and Forgia alliances.</div>
+        </div>
+
+        <div class="node-stat-card">
+          <div class="node-stat-count" style="color: #f59e0b;">35+</div>
+          <div class="node-stat-label">Dead Ends (Bad Endings)</div>
+          <div class="node-stat-desc">"Possible Histories" with fatal consequences to log into Historia.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Party Characters & Abilities -->
+    <section id="characters">
+      <div class="section-title-wrap">
+        <h2 class="section-heading">
+          <span>👥</span> Party Heroes & Ability Mastery
+        </h2>
+        <span class="section-tagline">Combat roles, weapon affinities, and signature techniques</span>
+      </div>
+
+      <div class="party-grid">
+        <!-- Stocke -->
+        <div class="party-card">
+          <div class="party-card-header">
+            <h3 class="party-name">Stocke</h3>
+            <span class="party-role-badge">Time-Traveling Agent</span>
+          </div>
+          <div class="party-weapon">⚔️ Weapon: One-Handed Sword | Element: Fire</div>
+          <p class="party-desc">The master protagonist of the White Chronicle. Exceptional versatility with physical assaults, spatial grid displacement skills, fire magic, and party healing.</p>
+          <div class="party-skills-list">
+            <span class="party-skill-pill">Push Assault</span>
+            <span class="party-skill-pill">Left/Right Assault</span>
+            <span class="party-skill-pill">Air Assault</span>
+            <span class="party-skill-pill">Steal</span>
+            <span class="party-skill-pill">Fire Storm</span>
+          </div>
+        </div>
+
+        <!-- Raynie -->
+        <div class="party-card">
+          <div class="party-card-header">
+            <h3 class="party-name">Raynie</h3>
+            <span class="party-role-badge">Elemental Sorceress</span>
+          </div>
+          <div class="party-weapon">🔱 Weapon: Spear | Elements: Fire, Ice, Thunder</div>
+          <p class="party-desc">Stocke's loyal Specint subordinate. The party's premier offensive elemental nuker capable of exploiting every magic weakness and sustaining regeneration.</p>
+          <div class="party-skills-list">
+            <span class="party-skill-pill">Thunder</span>
+            <span class="party-skill-pill">Frost</span>
+            <span class="party-skill-pill">G-Fire</span>
+            <span class="party-skill-pill">Mana Regen</span>
+            <span class="party-skill-pill">Cross Thunder</span>
+          </div>
+        </div>
+
+        <!-- Marco -->
+        <div class="party-card">
+          <div class="party-card-header">
+            <h3 class="party-name">Marco</h3>
+            <span class="party-role-badge">Support & Grid Shifter</span>
+          </div>
+          <div class="party-weapon">🗡️ Weapon: Short Sword & Shield | Role: Buffs & Heals</div>
+          <p class="party-desc">Stocke's tactical Specint partner. Essential for party buffs, area recovery, turn manipulation via Trans-turn, and dragging rear enemies forward with Grapple.</p>
+          <div class="party-skills-list">
+            <span class="party-skill-pill">Grapple</span>
+            <span class="party-skill-pill">Magic Boost</span>
+            <span class="party-skill-pill">Trans-turn</span>
+            <span class="party-skill-pill">Area Heal</span>
+            <span class="party-skill-pill">Super Heal</span>
+          </div>
+        </div>
+
+        <!-- Rosch -->
+        <div class="party-card">
+          <div class="party-card-header">
+            <h3 class="party-name">Rosch</h3>
+            <span class="party-role-badge">Heavy Demolisher</span>
+          </div>
+          <div class="party-weapon">🦾 Weapon: Gauntlet Cannon (Gauntlet) | Element: Physical</div>
+          <p class="party-desc">Stocke's closest friend and Alistel Brigade Captain. High HP juggernaut capable of hitting entire columns and rows with devastating physical concussions.</p>
+          <div class="party-skills-list">
+            <span class="party-skill-pill">Gull Swing</span>
+            <span class="party-skill-pill">Grapple Buster</span>
+            <span class="party-skill-pill">Cross Spike</span>
+            <span class="party-skill-pill">Burn Spread</span>
+            <span class="party-skill-pill">Big Bang Wave</span>
+          </div>
+        </div>
+
+        <!-- Aht -->
+        <div class="party-card">
+          <div class="party-card-header">
+            <h3 class="party-name">Aht</h3>
+            <span class="party-role-badge">Trap Specialist & Healer</span>
+          </div>
+          <div class="party-weapon">🗡️ Weapon: Dagger | Element: Traps / Holy / Lightning</div>
+          <p class="party-desc">A young Satyros shaman with innocent charm. Places deadly elemental traps on empty grid tiles. Shoving enemies into her traps triggers cataclysmic damage!</p>
+          <div class="party-skills-list">
+            <span class="party-skill-pill">Fire Trap</span>
+            <span class="party-skill-pill">Ice Trap</span>
+            <span class="party-skill-pill">Volt Trap</span>
+            <span class="party-skill-pill">Starlight</span>
+            <span class="party-skill-pill">Lunatic</span>
+          </div>
+        </div>
+
+        <!-- Eruca -->
+        <div class="party-card">
+          <div class="party-card-header">
+            <h3 class="party-name">Eruca</h3>
+            <span class="party-role-badge">Royal Gunner & Buffer</span>
+          </div>
+          <div class="party-weapon">🔫 Weapon: Gun / Pistol | Element: Holy & Mana</div>
+          <p class="party-desc">The rightful Princess of Granorg. Possesses exceptional single-target and multi-target holy magic, turn manipulation, and the invincible Divine Light barrier.</p>
+          <div class="party-skills-list">
+            <span class="party-skill-pill">Aim Bullet</span>
+            <span class="party-skill-pill">Holy Arrow</span>
+            <span class="party-skill-pill">Divine Light</span>
+            <span class="party-skill-pill">Burst Light</span>
+            <span class="party-skill-pill">Shine</span>
+          </div>
+        </div>
+
+        <!-- Gafka -->
+        <div class="party-card">
+          <div class="party-card-header">
+            <h3 class="party-name">Gafka</h3>
+            <span class="party-role-badge">Gutral Champion</span>
+          </div>
+          <div class="party-weapon">🥊 Weapon: Heavy Claws | Role: Central Clumping & Combos</div>
+          <p class="party-desc">A mighty warrior exile from Forgia. His signature skill *Wind God Strike* sucks all 9 grid enemies into the exact center tile for instantaneous combo stacking!</p>
+          <div class="party-skills-list">
+            <span class="party-skill-pill">Wind God Strike</span>
+            <span class="party-skill-pill">Doppelganger</span>
+            <span class="party-skill-pill">Air Buster</span>
+            <span class="party-skill-pill">Waxing Slice</span>
+            <span class="party-skill-pill">Qigong Wave</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- World Lore & Factions -->
+    <section id="lore">
+      <div class="section-title-wrap">
+        <h2 class="section-heading">
+          <span>🏰</span> The Nations of Vainqueur
+        </h2>
+        <span class="section-tagline">Geopolitics, Mana decline, and desertification</span>
+      </div>
+
+      <div class="lore-grid">
+        <div class="lore-card">
+          <div class="lore-card-header">
+            <h3 class="lore-title">Alistel</h3>
+            <span class="lore-leader">Leader: Prophet Noah & General Hugo</span>
+          </div>
+          <p class="lore-text">A technologically advanced mountain nation powered by Thaumatech mana engines. Threatened by sand encroachment, Alistel wages a desperate religious war against Granorg.</p>
+        </div>
+
+        <div class="lore-card">
+          <div class="lore-card-header">
+            <h3 class="lore-title">Granorg</h3>
+            <span class="lore-leader">Leader: Queen Protea (Tyrant)</span>
+          </div>
+          <p class="lore-text">An ancient kingdom blessed with fertile land, now languishing under the ruthless tyranny of Queen Protea after the assassination of King Victor.</p>
+        </div>
+
+        <div class="lore-card">
+          <div class="lore-card-header">
+            <h3 class="lore-title">Celestia</h3>
+            <span class="lore-leader">Leader: Patriarch Barranca</span>
+          </div>
+          <p class="lore-text">A secluded woodland haven protected by powerful sacred barriers, inhabited by the goat-horned Satyros beast tribe who revere Mana and trees.</p>
+        </div>
+
+        <div class="lore-card">
+          <div class="lore-card-header">
+            <h3 class="lore-title">Forgia</h3>
+            <span class="lore-leader">Leader: Elder Galva</span>
+          </div>
+          <p class="lore-text">The rugged mountainous homeland of the proud, powerhouse Gutral beast tribe, renowned for unyielding physical might and deep honor.</p>
+        </div>
+
+        <div class="lore-card">
+          <div class="lore-card-header">
+            <h3 class="lore-title">Cygnus</h3>
+            <span class="lore-leader">Leader: King Garland (Desert Gladiator)</span>
+          </div>
+          <p class="lore-text">A bustling desert haven and free oasis city-state that welcomes wandering mercenaries, outlaws, and traders escaping the war.</p>
+        </div>
+
+        <div class="lore-card">
+          <div class="lore-card-header">
+            <h3 class="lore-title">Sand Fortress</h3>
+            <span class="lore-leader">Strategic Chokepoint</span>
+          </div>
+          <p class="lore-text">A massive three-story military barrier guarding the border pass between Gran Plain and Judgement Cliff. The site of brutal sieges throughout both timelines.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-logo-wrap">
+        <img src="assets/logo.png" alt="Radiant Historia Logo" class="footer-logo">
+      </div>
+      <div class="cinzel" style="color: var(--gold-primary); font-size: 1.25rem;">
+        Radiant Historia Walkthrough Compendium
+      </div>
+      <p>Original Comprehensive Guide Version 1.04 by <b>Henri "HC" Bailly</b> (HCBailly@hotmail.com). Game &copy; ATLUS / SEGA.</p>
+      <div class="footer-divider"></div>
+      <p style="font-size: 0.85rem;">Designed according to <a href="DESIGN.md" style="color: var(--mana-cyan); text-decoration: none;">DESIGN.md</a> specifications. Crafted for ultimate RPG clarity & tactical mastery.</p>
+    </div>
+  </footer>
+
+  <!-- Floating Back to Top Button -->
+  <button class="back-to-top" id="backToTop" title="Back to Top">▲</button>
+
+  <!-- JavaScript: Data, Filters, Progress Tracker & Grid Simulator -->
+  <script>
+    // Chapter Data (All 66 Chapters with Volume Chunks, Jump Codes, Timelines, Locations)
+    const CHAPTERS_DATA = [
+      // Chunk 1: 01 - 10
+      { num: 1, title: "Alistel (Prologue)", code: "ALST1", timeline: "prologue", location: "Alistel", chunk: "01-10", desc: "Stocke receives the White Chronicle from Heiss and meets Raynie & Marco." },
+      { num: 2, title: "Lazvil Hills (Prologue)", code: "LZVL1", timeline: "prologue", location: "Lazvil Hills", chunk: "01-10", desc: "First escort mission. Ambush at the bridge leading to the temporal awakening in Historia." },
+      { num: 3, title: "Alistel (Alternate Prologue)", code: "ALST2", timeline: "alternate", location: "Alistel", chunk: "01-10", desc: "Stocke chooses to join Rosch's Brigade in the military division." },
+      { num: 4, title: "Lazvil Hills (Alternate Prologue)", code: "LZVL2", timeline: "alternate", location: "Lazvil Hills", chunk: "01-10", desc: "Marching with Rosch's brigade to secure the pass toward Alma Mine." },
+      { num: 5, title: "Alma Mine (Alternate Prologue)", code: "ALMA1", timeline: "alternate", location: "Alma Mine", chunk: "01-10", desc: "Confronting Granorg ambushers in the mines and dealing with the bomb trap." },
+      { num: 6, title: "Alistel (Standard Prologue)", code: "ALST3", timeline: "standard", location: "Alistel", chunk: "01-10", desc: "Stocke chooses to remain with Heiss in Special Intelligence." },
+      { num: 7, title: "Alistel (Standard Chapter 1)", code: "ALST4", timeline: "standard", location: "Alistel", chunk: "01-10", desc: "Securing mission clearance to infiltrate Granorg territory." },
+      { num: 8, title: "Lazvil Hills (Standard Chapter 1)", code: "LZVL3", timeline: "standard", location: "Lazvil Hills", chunk: "01-10", desc: "Traversing the patrolled woodlands toward Judgement Cliff." },
+      { num: 9, title: "Judgement Cliff (Standard Chapter 1)", code: "JUDG1", timeline: "standard", location: "Judgement Cliff", chunk: "01-10", desc: "Navigating the rocky precipice and dealing with bandit ambushes." },
+      { num: 10, title: "Sand Fortress (Standard Chapter 1)", code: "SAND1", timeline: "standard", location: "Sand Fortress", chunk: "01-10", desc: "Sneaking past Alistel/Granorg border patrols inside the fortress." },
+
+      // Chunk 2: 11 - 20
+      { num: 11, title: "Gran Plain (Standard Chapter 1)", code: "GRAN1", timeline: "standard", location: "Gran Plain", chunk: "11-20", desc: "Crossing the vast desertified plains and encountering Satyros travelers." },
+      { num: 12, title: "Alma Mine (Alternate Prologue)", code: "ALMA2", timeline: "alternate", location: "Alma Mine", chunk: "11-20", desc: "Revisiting the mine node with newly acquired demolition knowledge." },
+      { num: 13, title: "Alistel (Alternate Chapter 1)", code: "ALST5", timeline: "alternate", location: "Alistel", chunk: "11-20", desc: "Reporting the Alma Mine victory and receiving orders for the frontlines." },
+      { num: 14, title: "Lazvil Hills (Alternate Chapter 1)", code: "LZVL4", timeline: "alternate", location: "Lazvil Hills", chunk: "11-20", desc: "Securing supply convoys against Granorg vanguard units." },
+      { num: 15, title: "Judgement Cliff (Alternate Chapter 1)", code: "JUDG2", timeline: "alternate", location: "Judgement Cliff", chunk: "11-20", desc: "Crossing the ridge under heavy enemy surveillance." },
+      { num: 16, title: "Sand Fortress (Alternate Chapter 1)", code: "SAND2", timeline: "alternate", location: "Sand Fortress", chunk: "11-20", desc: "Reinforcing Rosch Brigade defenses against Granorg assault." },
+      { num: 17, title: "Gran Plain (Standard Chapter 1)", code: "GRAN2", timeline: "standard", location: "Gran Plain", chunk: "11-20", desc: "Tracking down clues on the Granorg resistance network." },
+      { num: 18, title: "Granorg (Standard Chapter 1)", code: "GRNG1", timeline: "standard", location: "Granorg", chunk: "11-20", desc: "Undercover infiltration into the capital city of Queen Protea." },
+      { num: 19, title: "Granorg (Standard Chapter 2)", code: "GRNG2", timeline: "standard", location: "Granorg", chunk: "11-20", desc: "Making contact with Princess Eruca and the underground resistance." },
+      { num: 20, title: "Underground Waterway (Standard Chapter 2)", code: "UGWW1", timeline: "standard", location: "Underground Waterway", chunk: "11-20", desc: "Navigating the labyrinthine sewers beneath the royal palace." },
+
+      // Chunk 3: 21 - 30
+      { num: 21, title: "Sand Fortress (Alternate Chapter 1)", code: "SAND3", timeline: "alternate", location: "Sand Fortress", chunk: "21-30", desc: "Uncovering espionage sabotage inside the fortress garrison." },
+      { num: 22, title: "Sand Fortress (Alternate Chapter 2)", code: "SAND4", timeline: "alternate", location: "Sand Fortress", chunk: "21-30", desc: "Holding the line against General Dias's mechanized blitzkrieg." },
+      { num: 23, title: "Gran Plain (Alternate Chapter 2)", code: "GRAN3", timeline: "alternate", location: "Gran Plain", chunk: "21-30", desc: "A desperate tactical retreat across the desolate plains." },
+      { num: 24, title: "Alistel (Alternate Chapter 2)", code: "ALST6", timeline: "alternate", location: "Alistel", chunk: "21-30", desc: "Uncovering Hugo's sinister political purge of military officers." },
+      { num: 25, title: "Celestia (Alternate Chapter 3)", code: "CLST1", timeline: "alternate", location: "Celestia", chunk: "21-30", desc: "Seeking asylum among the Satyros beast tribe in the sacred forest." },
+      { num: 26, title: "Lazvil Hills (Alternate Chapter 3)", code: "LZVL5", timeline: "alternate", location: "Lazvil Hills", chunk: "21-30", desc: "Countering Hugo's Thaumatech purifiers at the woodland border." },
+      { num: 27, title: "Alistel (Alternate Chapter 3)", code: "ALST7", timeline: "alternate", location: "Alistel", chunk: "21-30", desc: "Infiltrating the capital to rescue captured comrades." },
+      { num: 28, title: "Celestia (Alternate Chapter 3)", code: "CLST2", timeline: "alternate", location: "Celestia", chunk: "21-30", desc: "Strengthening the Satyros holy barrier with Mana rituals." },
+      { num: 29, title: "Granorg Palace (Standard Chapter 2)", code: "GPLC1", timeline: "standard", location: "Granorg Palace", chunk: "21-30", desc: "Infiltrating the royal throne room to deliver secret intelligence." },
+      { num: 30, title: "Granorg (Standard Chapter 3)", code: "GRNG3", timeline: "standard", location: "Granorg", chunk: "21-30", desc: "Escaping the city amidst martial law lockdown." },
+
+      // Chunk 4: 31 - 40
+      { num: 31, title: "Gran Plain (Standard Chapter 3)", code: "GRAN4", timeline: "standard", location: "Gran Plain", chunk: "31-40", desc: "Eluding royal pursuit teams while escorting refugees." },
+      { num: 32, title: "Cornet Village (Standard Chapter 3)", code: "CRNT1", timeline: "standard", location: "Cornet Village", chunk: "31-40", desc: "Investigating the tragic mystery of the ruined village." },
+      { num: 33, title: "Granorg (Standard Chapter 3)", code: "GRNG4", timeline: "standard", location: "Granorg", chunk: "31-40", desc: "Returning to liberate captured resistance leaders." },
+      { num: 34, title: "Sand Fortress (Standard Chapter 3)", code: "SAND5", timeline: "standard", location: "Sand Fortress", chunk: "31-40", desc: "Infiltrating the fortress during changing guard shifts." },
+      { num: 35, title: "Judgement Cliff (Standard Chapter 3)", code: "JUDG3", timeline: "standard", location: "Judgement Cliff", chunk: "31-40", desc: "Confronting Rosch on the windswept canyon precipice." },
+      { num: 36, title: "Celestia (Alternate Chapter 3)", code: "CLST3", timeline: "alternate", location: "Celestia", chunk: "31-40", desc: "Negotiating military alliance terms with Patriarch Barranca." },
+      { num: 37, title: "Celestia (Alternate Chapter 4)", code: "CLST4", timeline: "alternate", location: "Celestia", chunk: "31-40", desc: "Preparing joint beast-tribe defense plans for the upcoming clash." },
+      { num: 38, title: "Lazvil Hills (Alternate Chapter 4)", code: "LZVL6", timeline: "alternate", location: "Lazvil Hills", chunk: "31-40", desc: "Repelling Alistel's mechanized battalion vanguard." },
+      { num: 39, title: "Judgement Cliff (Standard Chapter 3)", code: "JUDG4", timeline: "standard", location: "Judgement Cliff", chunk: "31-40", desc: "Acquiring Rosch's broken limb to unlock the Force Core node." },
+      { num: 40, title: "Cygnus (Standard Chapter 4)", code: "CGNS1", timeline: "standard", location: "Cygnus", chunk: "31-40", desc: "Arriving at the desert gladiator city and meeting King Garland." },
+
+      // Chunk 5: 41 - 50
+      { num: 41, title: "Cygnus (Standard Chapter 5)", code: "CGNS2", timeline: "standard", location: "Cygnus", chunk: "41-50", desc: "Participating in the arena tournament to gain political support." },
+      { num: 42, title: "Itolia Wasteland (Standard Chapter 5)", code: "ITOL1", timeline: "standard", location: "Itolia Wasteland", chunk: "41-50", desc: "Crossing the scorching dunes while battling desert terrors." },
+      { num: 43, title: "Itolia Wasteland (Standard Chapter 6)", code: "ITOL2", timeline: "standard", location: "Itolia Wasteland", chunk: "41-50", desc: "Securing the holy pass leading toward the beast sanctuaries." },
+      { num: 44, title: "Skalla (Standard Chapter 6)", code: "SKLA1", timeline: "standard", location: "Skalla", chunk: "41-50", desc: "Liberating the merchant town from occupying Granorg troops." },
+      { num: 45, title: "Abyssia Forest (Standard Chapter 6)", code: "ABYS1", timeline: "standard", location: "Abyssia Forest", chunk: "41-50", desc: "Navigating misty beast paths to reach the ancient Gutrals." },
+      { num: 46, title: "Holff Ruins (Standard Chapter 6)", code: "HOLF1", timeline: "standard", location: "Holff Ruins", chunk: "41-50", desc: "Exploring ancient ruins holding secrets to the world's desertification." },
+      { num: 47, title: "Granorg (Standard Chapter 6)", code: "GRNG5", timeline: "standard", location: "Granorg", chunk: "41-50", desc: "The grand assault on Granorg to overthrow Queen Protea." },
+      { num: 48, title: "Celestia (Alternate Chapter 4)", code: "CLST5", timeline: "alternate", location: "Celestia", chunk: "41-50", desc: "Coordinating with Aht to harness the divine Satyros tree." },
+      { num: 49, title: "Lazvil Hills (Alternate Chapter 4)", code: "LZVL7", timeline: "alternate", location: "Lazvil Hills", chunk: "41-50", desc: "Decisive woodland counterattack against Alistel purifiers." },
+      { num: 50, title: "Judgement Cliff (Alternate Chapter 4)", code: "JUDG5", timeline: "alternate", location: "Judgement Cliff", chunk: "41-50", desc: "Crossing the gorge into beast territories." },
+
+      // Chunk 6: 51 - 60
+      { num: 51, title: "Skalla (Alternate Chapter 4)", code: "SKLA2", timeline: "alternate", location: "Skalla", chunk: "51-60", desc: "Rescuing merchant convoys and establishing supply channels." },
+      { num: 52, title: "Itolia Wasteland (Alternate Chapter 4)", code: "ITOL3", timeline: "alternate", location: "Itolia Wasteland", chunk: "51-60", desc: "Tracking Gutral warriors across the desolate wastelands." },
+      { num: 53, title: "Abyssia Forest (Alternate Chapter 4)", code: "ABYS2", timeline: "alternate", location: "Abyssia Forest", chunk: "51-60", desc: "Proving strength to Gafka and the beast elder." },
+      { num: 54, title: "Forgia (Alternate Chapter 4)", code: "FORG1", timeline: "alternate", location: "Forgia", chunk: "51-60", desc: "Entering the Gutral mountain stronghold and forging an alliance." },
+      { num: 55, title: "Skalla (Alternate Chapter 5)", code: "SKLA3", timeline: "alternate", location: "Skalla", chunk: "51-60", desc: "Defending Skalla from combined enemy counter-offensives." },
+      { num: 56, title: "Forgia (Alternate Chapter 5)", code: "FORG2", timeline: "alternate", location: "Forgia", chunk: "51-60", desc: "Marshalling the Gutral vanguard army for the march on Granorg." },
+      { num: 57, title: "Sand Fortress (Alternate Chapter 5)", code: "SAND6", timeline: "alternate", location: "Sand Fortress", chunk: "51-60", desc: "Storming and reclaiming the Sand Fortress from Hugo's army." },
+      { num: 58, title: "Gran Plain (Alternate Chapter 6)", code: "GRAN5", timeline: "alternate", location: "Gran Plain", chunk: "51-60", desc: "The grand unified army marches across the plains toward Granorg." },
+      { num: 59, title: "Granorg (Alternate Chapter 6)", code: "GRNG6", timeline: "alternate", location: "Granorg", chunk: "51-60", desc: "Breaching the outer gates of Granorg alongside beast allies." },
+      { num: 60, title: "Underground Waterway (Alternate Chapter 6)", code: "UGWW2", timeline: "alternate", location: "Underground Waterway", chunk: "51-60", desc: "Sneaking into the palace underbelly during the citywide battle." },
+
+      // Chunk 7: 61 - 66
+      { num: 61, title: "Granorg Palace (Alternate Chapter 6)", code: "GPLC2", timeline: "alternate", location: "Granorg Palace", chunk: "61-66", desc: "Confronting Queen Protea and exposing the Black Chronicle." },
+      { num: 62, title: "Alistel (Alternate Chapter 6)", code: "ALST8", timeline: "alternate", location: "Alistel", chunk: "61-66", desc: "Returning to Alistel to overthrow General Hugo's regime." },
+      { num: 63, title: "Underground Lab (Alternate Chapter 6)", code: "ULAB1", timeline: "alternate", location: "Underground Lab", chunk: "61-66", desc: "Infiltrating Hugo's secret lab and confronting the Thaumatech core." },
+      { num: 64, title: "Granorg (Alternate Final Chapter)", code: "GRNG7", timeline: "alternate", location: "Granorg", chunk: "61-66", desc: "Preparing the royal ceremony and uniting the twin chronicles." },
+      { num: 65, title: "Imperial Ruins (Alternate Final Chapter)", code: "IMPR1", timeline: "final", location: "Imperial Ruins", chunk: "61-66", desc: "Alternate timeline climax: delving into the Imperial Ruins." },
+      { num: 66, title: "Royal Hall (Standard Final Chapter)", code: "HALL1", timeline: "final", location: "Royal Hall", chunk: "61-66", desc: "The Grand Finale: Confronting the Master of Historia in the Royal Hall." }
+    ];
+
+    // LocalStorage Tracking Key
+    const STORAGE_KEY = 'rh-guide-completed-chapters';
+    let completedChapters = new Set(JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]'));
+
+    // Render Chapters
+    function renderChapters(filter = 'all', search = '') {
+      const container = document.getElementById('chaptersContainer');
+      container.innerHTML = '';
+
+      const query = search.trim().toLowerCase();
+
+      // Group by Volume Chunks
+      const chunks = [
+        { id: "01-10", label: "Volume I: Prologue & Early Conflicts (Ch. 01–10)", file: "01-10.txt", html: "walkthrough-01-10.html", guideName: "Vol I Guide" },
+        { id: "11-20", label: "Volume II: Resistance & Waterways (Ch. 11–20)", file: "11-20.txt", html: "walkthrough-11-20.html", guideName: "Vol II Guide" },
+        { id: "21-30", label: "Volume III: Beast Tribals & Palaces (Ch. 21–30)", file: "21-30.txt" },
+        { id: "31-40", label: "Volume IV: Desert Crossroads & Cygnus (Ch. 31–40)", file: "31-40.txt" },
+        { id: "41-50", label: "Volume V: Wastelands & Skalla Liberation (Ch. 41–50)", file: "41-50.txt" },
+        { id: "51-60", label: "Volume VI: Beast Alliances & Fortresses (Ch. 51–60)", file: "51-60.txt" },
+        { id: "61-66", label: "Volume VII: Royal Hall & Climax (Ch. 61–66)", file: "61-66.txt" }
+      ];
+
+      let matchCount = 0;
+
+      chunks.forEach(chunk => {
+        const chunkChapters = CHAPTERS_DATA.filter(ch => {
+          if (ch.chunk !== chunk.id) return false;
+
+          // Filter by timeline
+          if (filter !== 'all') {
+            if (filter === 'prologue' && ch.timeline !== 'prologue') return false;
+            if (filter === 'standard' && ch.timeline !== 'standard') return false;
+            if (filter === 'alternate' && ch.timeline !== 'alternate') return false;
+            if (filter === 'final' && ch.timeline !== 'final') return false;
+          }
+
+          // Search query
+          if (query) {
+            const matchesTitle = ch.title.toLowerCase().includes(query);
+            const matchesCode = ch.code.toLowerCase().includes(query);
+            const matchesLoc = ch.location.toLowerCase().includes(query);
+            const matchesNum = ch.num.toString() === query || ch.num.toString().padStart(2, '0') === query;
+            return matchesTitle || matchesCode || matchesLoc || matchesNum;
+          }
+
+          return true;
+        });
+
+        if (chunkChapters.length === 0) return;
+
+        matchCount += chunkChapters.length;
+
+        // Chunk Banner
+        const banner = document.createElement('div');
+        banner.className = 'volume-chunk-banner';
+        const badgeContent = chunk.html 
+          ? `<a href="${chunk.html}" class="volume-file-badge" style="text-decoration: none; color: var(--gold-primary); border-color: var(--gold-border); background: rgba(251, 191, 36, 0.15);">✨ ${chunk.guideName} ➔</a>` 
+          : `<span class="volume-file-badge">${chunk.file}</span>`;
+        banner.innerHTML = `
+          <div class="volume-chunk-title">${chunk.label}</div>
+          ${badgeContent}
+        `;
+        container.appendChild(banner);
+
+        // Chunk Grid
+        const grid = document.createElement('div');
+        grid.className = 'chapters-grid';
+
+        chunkChapters.forEach(ch => {
+          const isDone = completedChapters.has(ch.num);
+          const card = document.createElement('div');
+          card.className = `chapter-card ${ch.timeline} ${isDone ? 'completed' : ''}`;
+          card.id = `chapter-card-${ch.num}`;
+
+          let timelineBadge = '';
+          if (ch.timeline === 'standard') timelineBadge = '<span class="branch-badge standard">Standard History</span>';
+          else if (ch.timeline === 'alternate') timelineBadge = '<span class="branch-badge alternate">Alternate History</span>';
+          else if (ch.timeline === 'prologue') timelineBadge = '<span class="branch-badge prologue">Prologue</span>';
+          else if (ch.timeline === 'final') timelineBadge = '<span class="branch-badge final">Final Climax</span>';
+
+          let guideUrl = `text-walkthrough/${ch.chunk}.txt`;
+          let guideBtnText = 'Guide';
+          if (ch.chunk === '01-10') {
+            guideUrl = `walkthrough-01-10.html#ch${ch.num.toString().padStart(2, '0')}`;
+            guideBtnText = 'Vol I Guide';
+          } else if (ch.chunk === '11-20') {
+            guideUrl = `walkthrough-11-20.html#ch${ch.num.toString().padStart(2, '0')}`;
+            guideBtnText = 'Vol II Guide';
+          }
+
+          card.innerHTML = `
+            <div>
+              <div class="card-top">
+                <span class="chapter-num-badge">#${ch.num.toString().padStart(2, '0')}</span>
+                <span class="jump-code">[${ch.code}]</span>
+              </div>
+              <h3 class="chapter-title cinzel">${ch.title}</h3>
+              <div class="chapter-location-tag">📍 ${ch.location} &bull; ${timelineBadge}</div>
+              <p style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 0.5rem; line-height: 1.5;">
+                ${ch.desc}
+              </p>
+            </div>
+            <div class="card-bottom">
+              <label class="card-check-label">
+                <input type="checkbox" class="card-check-input" ${isDone ? 'checked' : ''} onchange="toggleChapter(${ch.num})">
+                <span>Completed</span>
+              </label>
+              <a href="${guideUrl}" class="read-btn" title="View chapter guide">
+                <span>${guideBtnText}</span> ➔
+              </a>
+            </div>
+          `;
+          grid.appendChild(card);
+        });
+
+        container.appendChild(grid);
+      });
+
+      if (matchCount === 0) {
+        container.innerHTML = `
+          <div style="text-align: center; padding: 3rem; color: var(--text-muted);">
+            <h3>No chapters matched your search filter.</h3>
+            <p>Try searching for a different keyword, chapter number, or reset filters.</p>
+          </div>
+        `;
+      }
+
+      updateProgressUI();
+    }
+
+    // Toggle Chapter Completion
+    function toggleChapter(num) {
+      if (completedChapters.has(num)) {
+        completedChapters.delete(num);
+      } else {
+        completedChapters.add(num);
+      }
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(Array.from(completedChapters)));
+
+      const card = document.getElementById(`chapter-card-${num}`);
+      if (card) {
+        if (completedChapters.has(num)) {
+          card.classList.add('completed');
+        } else {
+          card.classList.remove('completed');
+        }
+      }
+
+      updateProgressUI();
+    }
+
+    // Update Progress Indicator
+    function updateProgressUI() {
+      const total = 66;
+      const done = completedChapters.size;
+      const percent = Math.round((done / total) * 100);
+
+      document.getElementById('navProgressText').textContent = `${done} / ${total}`;
+      document.getElementById('progressPercentLabel').textContent = `${percent}% Complete (${done}/${total} Chapters)`;
+      document.getElementById('progressBarFill').style.width = `${percent}%`;
+    }
+
+    // Interactive Filter Buttons
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.getAttribute('data-filter');
+        const search = document.getElementById('chapterSearch').value;
+        renderChapters(filter, search);
+      });
+    });
+
+    // Real-time Search Input
+    document.getElementById('chapterSearch').addEventListener('input', (e) => {
+      const activeBtn = document.querySelector('.filter-btn.active');
+      const filter = activeBtn ? activeBtn.getAttribute('data-filter') : 'all';
+      renderChapters(filter, e.target.value);
+    });
+
+    // 3x3 Grid Simulator Logic
+    let gridState = [
+      [null, 'A', null],
+      ['B', null, 'C'],
+      [null, null, null]
+    ];
+
+    function renderBattleGrid() {
+      for (let r = 0; r < 3; r++) {
+        for (let c = 0; c < 3; c++) {
+          const cell = document.getElementById(`cell-${r}-${c}`);
+          cell.innerHTML = '';
+          cell.className = 'grid-cell';
+
+          const val = gridState[r][c];
+          if (val) {
+            cell.classList.add('has-enemy');
+            if (val.length > 1) cell.classList.add('stacked');
+
+            const token = document.createElement('div');
+            token.className = `enemy-token ${val.length > 1 ? 'combo' : ''}`;
+            token.textContent = val;
+            cell.appendChild(token);
+          }
+        }
+      }
+    }
+
+    function simulateSkill(action) {
+      const status = document.getElementById('gridStatus');
+      if (action === 'push') {
+        // Push all to back row
+        let backRow = (gridState[2][1] || '') + (gridState[0][1] || '') + (gridState[1][0] || '') + (gridState[1][2] || '');
+        gridState = [
+          [null, null, null],
+          [null, null, null],
+          ['B', 'A', 'C']
+        ];
+        status.textContent = "Push Assault: All enemies pushed to back row (60% dmg received)";
+      } else if (action === 'left') {
+        gridState = [
+          ['A', null, null],
+          ['B+C', null, null],
+          [null, null, null]
+        ];
+        status.textContent = "Left Assault: Enemies slid into column 1, stacking B+C!";
+      } else if (action === 'right') {
+        gridState = [
+          [null, null, 'A'],
+          [null, null, 'B+C'],
+          [null, null, null]
+        ];
+        status.textContent = "Right Assault: Enemies shoved to column 3!";
+      } else if (action === 'air') {
+        gridState = [
+          [null, 'A (Air)', null],
+          ['B', null, 'C'],
+          [null, null, null]
+        ];
+        status.textContent = "Air Assault: Enemy A launched into air! Hits from Raynie/Marco deal +50% combo dmg!";
+      } else if (action === 'stack') {
+        gridState = [
+          [null, null, null],
+          [null, 'A+B+C', null],
+          [null, null, null]
+        ];
+        status.textContent = "Wind God Strike / Grapple: All 3 enemies stacked on 1 tile! Area magic hits all 3x!";
+      }
+      renderBattleGrid();
+    }
+
+    function resetGrid() {
+      gridState = [
+        [null, 'A', null],
+        ['B', null, 'C'],
+        [null, null, null]
+      ];
+      document.getElementById('gridStatus').textContent = "Grid reset to standard 3-enemy layout.";
+      renderBattleGrid();
+    }
+
+    // Back to Top Button
+    const btt = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 400) {
+        btt.classList.add('visible');
+      } else {
+        btt.classList.remove('visible');
+      }
+    });
+    btt.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Initial Render
+    renderChapters('all', '');
+  </script>
+</body>
+</html>
