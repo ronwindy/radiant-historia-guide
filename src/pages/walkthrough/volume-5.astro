@@ -6,6 +6,7 @@ import AsciiMap from '../../components/AsciiMap.astro';
 import BossCard from '../../components/BossCard.astro';
 import ShopMatrix from '../../components/ShopMatrix.astro';
 import Callout from '../../components/Callout.astro';
+import Tag from '../../components/Tag.astro';
 
 const baseUrl = import.meta.env.BASE_URL;
 
@@ -80,13 +81,13 @@ const stats = {
   bosses: 5
 };
 
-const prevVol = { num: 4, title: 'Desert City Cygnus &amp; Gladiator Trials', href: `${baseUrl}walkthrough/volume-4/` };
-const nextVol = { num: 6, title: 'Granorg Liberation &amp; Shadow of Dias', href: `${baseUrl}walkthrough/volume-6/` };
+const prevVol = { num: 4, title: 'Desert City Cygnus & Gladiator Trials', href: `${baseUrl}walkthrough/volume-4/` };
+const nextVol = { num: 6, title: 'Granorg Liberation & Shadow of Dias', href: `${baseUrl}walkthrough/volume-6/` };
 ---
 
 <WalkthroughLayout
   volume={5}
-  volumeTitle="Beastkind Stronghold &amp; Skalla Infiltration"
+  volumeTitle="Beastkind Stronghold & Skalla Infiltration"
   chapterRange="Chapters 41–50"
   description="Forgia's elder council, Itolia Wasteland skirmishes, uncovering Dias's conspiracy, and Beastkind unification."
   stats={stats}
@@ -108,15 +109,15 @@ const nextVol = { num: 6, title: 'Granorg Liberation &amp; Shadow of Dias', href
 
     <div class="chapter-walkthrough-prose">
       <Callout type="node" title="Historia Milestone: Scorching Battlefield">
-        <p>After resting at the inn, head west to the plaza, and look for Ricky along the main road. Talk to him to receive the [An Unwanted Reunion] sidequest. Head to the tavern and talk to the green-haired girl, Mimel, twice. Return to the "Chi-Clad Warrior" node and talk to the bartender. Return to the "Scorching Battlefield" node and talk to Mimel again to be prompted for a decision. Choosing to "Capture Mimel" will unlock the [Simmering Fury] ending.</p>
+        <p>After resting at the inn, head west to the plaza, and look for <Tag type="char">Ricky</Tag> along the main road. Talk to him to receive the [An Unwanted Reunion] sidequest. Head to the tavern and talk to the green-haired girl, <Tag type="char">Mimel</Tag>, twice. Return to the &quot;Chi-Clad Warrior&quot; node and talk to the bartender. Return to the &quot;Scorching Battlefield&quot; node and talk to Mimel again to be prompted for a decision. Choosing to &quot;Capture Mimel&quot; will unlock the [Simmering Fury] ending.</p>
       </Callout>
-      <p>Otherwise, choosing to "Let Mimel go" will advance [An Unwanted Reunion].  Talk to Ricky again to complete the [An Unwanted Reunion] sidequest and receive the SABLE LARME (DEF+33/MDF+25/MAG+5, equip on Raynie).</p>
-      <p>Head up to Cygnus HQ and talk to Garland to be prompted for a decision. Choosing to "Stay in Cygnus" will unlock the [A Mighty King's Death] ending.</p>
+      <p>Otherwise, choosing to &quot;Let Mimel go&quot; will advance [An Unwanted Reunion]. Talk to Ricky again to complete the [An Unwanted Reunion] sidequest and receive the <Tag type="armor">Sable Larme</Tag> (DEF+33/MDF+25/MAG+5, equip on <Tag type="char">Raynie</Tag>).</p>
+      <p>Head up to <Tag type="place">Cygnus HQ</Tag> and talk to <Tag type="char">Garland</Tag> to be prompted for a decision. Choosing to &quot;Stay in Cygnus&quot; will unlock the [A Mighty King&#x27;s Death] ending.</p>
       <Callout type="node" title="Historia Milestone: Warlord's Request">
-        <p>Instead, return to this node and choose to "Lead the way". After some events, you will receive the BLOODIED ARMLET.</p>
+        <p>Instead, return to this node and choose to &quot;Lead the way&quot;. After some events, you will receive the <Tag type="key">Bloodied Armlet</Tag>.</p>
       </Callout>
       <Callout type="node" title="Historia Milestone: Dias Strikes">
-        <p>Return to the "Desert City Messiah" node and proceed with events as before. This time, you will get an extra scene that will unlock the [Hedge in Exile] node. Return to the "Warlord's Request" node, choose to "Lead the way" and events will proceed more favorably this time.</p>
+        <p>Return to the &quot;Desert City Messiah&quot; node and proceed with events as before. This time, you will get an extra scene that will unlock the [Hedge in Exile] node. Return to the &quot;Warlord&#x27;s Request&quot; node, choose to &quot;Lead the way&quot; and events will proceed more favorably this time.</p>
       </Callout>
     </div>
   </ChapterCard>
@@ -135,47 +136,47 @@ const nextVol = { num: 6, title: 'Granorg Liberation &amp; Shadow of Dias', href
     <div class="chapter-walkthrough-prose">
       <ShopMatrix title="Traveling Merchant" items={[{"name": "First Aid Kit       400     Bastard Sword", "price": 4000}, {"name": "Tourniquet         1000     Goldy Lance", "price": 4300}, {"name": "Special Tea        1200     Steel Gauntlet", "price": 3400}, {"name": "Holy Water          500     Mueke Knife", "price": 3800}, {"name": "Anti-Poison          50     Solid Slugs", "price": 3800}, {"name": "Anti-Fear            50     Iron Mail", "price": 2400}, {"name": "Anti-Paralytic       50     Chain Kimono", "price": 1900}, {"name": "Anti-Curse           50     Gold Clothes", "price": 3200}, {"name": "Anti-Sleep           50     Iron Breastplate", "price": 6500}, {"name": "Anti-Stone           50     Gold Dress", "price": 5100}, {"name": "Panacea             800     Iron Charm", "price": 2500, "note": "buy 4"}, {"name": "Poison Wing         350     Crystal Charm", "price": 2500, "note": "buy 8"}, {"name": "Sleep Wing          500     Bishop Stud", "price": 3000}, {"name": "Divine Water       1500     Sprig Ring", "price": 5000}]} itemTitle="Inventory" />
       <Callout type="node" title="Historia Milestone: Stocke Strikes">
-        <p>To the left is a traveling merchant with new accessories. Buy 8 Crystal Charms for Stocke, Raynie, &amp; Eruca. If you have the money, buy 4 Iron Charms for Rosch &amp; Gafka later. Stocke should pretty much be a full-time mage for the remainder of the game, since his physical attacks don't deal as much damage.</p>
+        <p>To the left is a traveling merchant with new accessories. Buy <Tag type="acc">8 Crystal Charms</Tag> for <Tag type="char">Stocke</Tag>, <Tag type="char">Raynie</Tag>, &amp; <Tag type="char">Eruca</Tag>. If you have the money, buy <Tag type="acc">4 Iron Charms</Tag> for <Tag type="char">Rosch</Tag> &amp; <Tag type="char">Gafka</Tag> later. Stocke should pretty much be a full-time mage for the remainder of the game, since his physical attacks don&#x27;t deal as much damage.</p>
       </Callout>
       <Callout type="note" title="Recommended Equipment">
-        <p>Recommended Equipment at this point in the game<br/>
-        <strong>Stocke:</strong> Pieti Edge, Gospel Armor, Crystal Charm x3<br/>
-        <strong>Raynie:</strong> Magic Spear, Sable Larme, Crystal Charm x3<br/>
-        <strong>Marco:</strong> Madre Blade, Iron Mail, Bishop Stud x3<br/>
-        <strong>Aht:</strong> Silver Dagger, Life Robe, Bishop Stud x3<br/>
-        <strong>Eruca:</strong> Solid Slugs, Rune Dress, Crystal Charm x3<br/>
-        <strong>Extra:</strong> Moirae Manteau, 4 Iron Charms</p>
+        <p>Recommended Equipment at this point in the game:<br/>
+        <strong>Stocke:</strong> <Tag type="weapon">Pieti Edge</Tag>, <Tag type="armor">Gospel Armor</Tag>, <Tag type="acc">Crystal Charm x3</Tag><br/>
+        <strong>Raynie:</strong> <Tag type="weapon">Magic Spear</Tag>, <Tag type="armor">Sable Larme</Tag>, <Tag type="acc">Crystal Charm x3</Tag><br/>
+        <strong>Marco:</strong> <Tag type="weapon">Madre Blade</Tag>, <Tag type="armor">Iron Mail</Tag>, <Tag type="acc">Bishop Stud x3</Tag><br/>
+        <strong>Aht:</strong> <Tag type="weapon">Silver Dagger</Tag>, <Tag type="armor">Life Robe</Tag>, <Tag type="acc">Bishop Stud x3</Tag><br/>
+        <strong>Eruca:</strong> <Tag type="weapon">Solid Slugs</Tag>, <Tag type="armor">Rune Dress</Tag>, <Tag type="acc">Crystal Charm x3</Tag><br/>
+        <strong>Extra:</strong> <Tag type="armor">Moirae Manteau</Tag>, <Tag type="acc">4 Iron Charms</Tag></p>
       </Callout>
       <Callout type="node" title="Historia Milestone: Secret Weapons">
-        <p>Go north to begin taking out the Ballistas. Head right to find a chest which contains 3 SPECIAL TEAS. The other paths are blocked for now, so head west to find your first batch of ballistas. Let's take out the one in the upper left corner first. Then, the one in the lower left corner.</p>
+        <p>Go north to begin taking out the Ballistas. Head right to find a chest which contains <Tag type="item">3 Special Teas</Tag>. The other paths are blocked for now, so head west to find your first batch of ballistas. Let&#x27;s take out the one in the upper left corner first. Then, the one in the lower left corner.</p>
       </Callout>
       <BossCard name="Ballista, Granorg Blitzer x3" weakness="Fire, Sleep">
-        <p><strong>Strategy:</strong> You can use Sleep Gas to crowd control the Blitzers.  If you have enough starting turns, use two Left Assaults and a G-Frost to take them out. Use the Change command to string together all 10 turns.  Have Marco use all of his turns casting Trans-turn on Stocke.  Then, arrange your turns like so: Double Slash, Mana Shot, Double Slash, Mana Shot, Double Slash, Mana Shot, Steal, Steal, Steal, Steal, to boost the combo bonus, hopefully allowing you to steal the FREIKUGEL KREUZ (ATK+4/MAG+35/DEF-3) for Eruca.  Equipping him with the Gospel Armor to boost his Luck will help immensely.</p>
+        <p><strong>Strategy:</strong> You can use <Tag type="skill">Sleep Gas</Tag> to crowd control the Blitzers. If you have enough starting turns, use two <Tag type="skill">Left Assaults</Tag> and a <Tag type="skill">G-Frost</Tag> to take them out. Use the <Tag type="skill">Change</Tag> command to string together all 10 turns. Have <Tag type="char">Marco</Tag> use all of his turns casting <Tag type="skill">Trans-turn</Tag> on <Tag type="char">Stocke</Tag>. Then, arrange your turns like so: <Tag type="skill">Double Slash</Tag>, <Tag type="skill">Mana Shot</Tag>, Double Slash, Mana Shot, Double Slash, Mana Shot, <Tag type="skill">Steal</Tag>, Steal, Steal, Steal, to boost the combo bonus, hopefully allowing you to steal the <Tag type="weapon">Freikugel Kreuz</Tag> (ATK+4/MAG+35/DEF-3) for <Tag type="char">Eruca</Tag>. Equipping him with the <Tag type="armor">Gospel Armor</Tag> to boost his Luck will help immensely.</p>
       </BossCard>
-      <p>You can equip Stocke with his Moirae Manteau and hand down the Gospel Armor to Marco after stealing the new gun for Eruca.  Before heading back, check out the well in the area to the west.  Climb down the well to find a chest which contains a CELESTIAL OIL.  The man here appears to have been waiting for you, but won't say why.  Remember that for later.  Return back two screens.</p>
+      <p>You can equip <Tag type="char">Stocke</Tag> with his <Tag type="armor">Moirae Manteau</Tag> and hand down the <Tag type="armor">Gospel Armor</Tag> to <Tag type="char">Marco</Tag> after stealing the new gun for <Tag type="char">Eruca</Tag>. Before heading back, check out the well in the area to the west. Climb down the well to find a chest which contains a <Tag type="item">Celestial Oil</Tag>. The man here appears to have been waiting for you, but won&#x27;t say why. Remember that for later. Return back two screens.</p>
       <Callout type="node" title="Historia Milestone: Garland's Arrival">
-        <p>Garland will arrive with explosives. Unfortunately, they do not work on the northern barricades, so drag a barrel to blow up the eastern rocks. Go east two screens and search the upper right corner for a hidden chest which contains 3000 G. Head back west, then north, and west a screen to find a chest which contains an IRON CHARM. Return east and head north.</p>
+        <p><Tag type="char">Garland</Tag> will arrive with explosives. Unfortunately, they do not work on the northern barricades, so drag a barrel to blow up the eastern rocks. Go east two screens and search the upper right corner for a hidden chest which contains <Tag type="gold">3000 G</Tag>. Head back west, then north, and west a screen to find a chest which contains an <Tag type="acc">Iron Charm</Tag>. Return east and head north.</p>
       </Callout>
       <Callout type="node" title="Historia Milestone: Destroy the Ballistas">
-        <p>Search along the upper wall to find a hidden chest which contains the POISONER'S SCROLL for Raynie. Then, take out the two ballista in the upper right and lower right corners, where you can apply the same strategies as the before. Temporarily give Raynie's Crystal Charms to Aht, bring her in to replace Marco, and head back to talk to Garland.</p>
+        <p>Search along the upper wall to find a hidden chest which contains the <Tag type="key">Poisoner's Scroll</Tag> for <Tag type="char">Raynie</Tag>. Then, take out the two ballistas in the upper right and lower right corners, where you can apply the same strategies as before. Temporarily give Raynie&#x27;s <Tag type="acc">Crystal Charms</Tag> to <Tag type="char">Aht</Tag>, bring her in to replace <Tag type="char">Marco</Tag>, and head back to talk to <Tag type="char">Garland</Tag>.</p>
       </Callout>
       <Callout type="node" title="Historia Milestone: Terrain Advantage">
-        <p>With the ballistas destroyed, there's only one more enemy to take care of, as well as an old friend.</p>
+        <p>With the ballistas destroyed, there&#x27;s only one more enemy to take care of, as well as an old friend.</p>
       </Callout>
       <BossCard name="Gardner, Palomides" weakness="Lightning">
-        <p><strong>Strategy:</strong> Use a Magic Herb on Aht and have Eruca cast Regenerate.  Gardner can cast support and healing spells, so you want to take him out first.  I would avoid using the Change command to set up combos, as their attacks can really hurt.  Your main source of damage will be Electric Traps, but don't worry so much about getting both of them onto the same one, as taking out Gardner first. You could steal a Giant Armor from Palomides, but you already have better.</p>
+        <p><strong>Strategy:</strong> Use a <Tag type="item">Magic Herb</Tag> on <Tag type="char">Aht</Tag> and have <Tag type="char">Eruca</Tag> cast <Tag type="skill">Regenerate</Tag>. <Tag type="boss">Gardner</Tag> can cast support and healing spells, so you want to take him out first. I would avoid using the <Tag type="skill">Change</Tag> command to set up combos, as their attacks can really hurt. Your main source of damage will be <Tag type="skill">Electric Traps</Tag>, but don&#x27;t worry so much about getting both of them onto the same one, as taking out Gardner first. You could steal a <Tag type="armor">Giant Armor</Tag> from <Tag type="boss">Palomides</Tag>, but you already have better.</p>
       </BossCard>
       <Callout type="node" title="Historia Milestone: A New Journey">
-        <p>After returning to Cygnus, leave the city to proceed to Chapter 6.</p>
+        <p>After returning to <Tag type="place">Cygnus</Tag>, leave the city to proceed to Chapter 6.</p>
       </Callout>
       <Callout type="note" title="Recommended Equipment">
-        <p>Recommended Equipment at this point in the game<br/>
-        <strong>Stocke:</strong> Pieti Edge, Moirae Manteau, Crystal Charm x3<br/>
-        <strong>Raynie:</strong> Magic Spear, Sable Larme, Crystal Charm x3<br/>
-        <strong>Marco:</strong> Madre Blade, Gospel Armor, Bishop Stud x3<br/>
-        <strong>Aht:</strong> Silver Dagger, Life Robe, Bishop Stud x3<br/>
-        <strong>Eruca:</strong> Freikugel Kreuz, Rune Dress, Crystal Charm x3<br/>
-        <strong>Extra:</strong> 5 Iron Charms</p>
+        <p>Recommended Equipment at this point in the game:<br/>
+        <strong>Stocke:</strong> <Tag type="weapon">Pieti Edge</Tag>, <Tag type="armor">Moirae Manteau</Tag>, <Tag type="acc">Crystal Charm x3</Tag><br/>
+        <strong>Raynie:</strong> <Tag type="weapon">Magic Spear</Tag>, <Tag type="armor">Sable Larme</Tag>, <Tag type="acc">Crystal Charm x3</Tag><br/>
+        <strong>Marco:</strong> <Tag type="weapon">Madre Blade</Tag>, <Tag type="armor">Gospel Armor</Tag>, <Tag type="acc">Bishop Stud x3</Tag><br/>
+        <strong>Aht:</strong> <Tag type="weapon">Silver Dagger</Tag>, <Tag type="armor">Life Robe</Tag>, <Tag type="acc">Bishop Stud x3</Tag><br/>
+        <strong>Eruca:</strong> <Tag type="weapon">Freikugel Kreuz</Tag>, <Tag type="armor">Rune Dress</Tag>, <Tag type="acc">Crystal Charm x3</Tag><br/>
+        <strong>Extra:</strong> <Tag type="acc">5 Iron Charms</Tag></p>
       </Callout>
     </div>
   </ChapterCard>
@@ -220,18 +221,18 @@ const nextVol = { num: 6, title: 'Granorg Liberation &amp; Shadow of Dias', href
                             |  |</pre>
       </AsciiMap>
       <Callout type="node" title="Historia Milestone: Waiting at Skalla">
-        <p>Before heading to Skalla, we've got a lot of sidequests to do. First, return to Cygnus and talk to Garland to receive the [Moon Armlet] sidequest. Then, head over to the equipment shops. Talk to Hertz &amp; Bram over there to receive [The Good Thief's Way] sidequest. Go back to the Itolia Wasteland.</p>
+        <p>Before heading to <Tag type="place">Skalla</Tag>, we&#x27;ve got a lot of sidequests to do. First, return to <Tag type="place">Cygnus</Tag> and talk to <Tag type="char">Garland</Tag> to receive the [Moon Armlet] sidequest. Then, head over to the equipment shops. Talk to <Tag type="char">Hertz</Tag> &amp; <Tag type="char">Bram</Tag> over there to receive [The Good Thief&#x27;s Way] sidequest. Go back to the <Tag type="place">Itolia Wasteland</Tag>.</p>
       </Callout>
-      <p>At this point, Aht should have learned Cross Star and Eruca should have learned Blizzard.  If so, you really shouldn't have to worry about using traps for now. Just use Assault and those two spells to deal with all the enemies.</p>
-      <p>Return to the well that is north, west, and north one screen from the initial save point.  Go down the well and the man, named Sword, is ready to talk to you now and give you [The Living Legend] sidequest.  Leave the well area, then walk east two screens and north two screens.  You should see a small rock formation in the middle.  Search around there for the hidden MOON ARMLET.</p>
-      <p>Head west to find some rocks you'll need to blow away.  Go past them, and west again.  You can find a hidden barrel along the lower cliff that you will need in addition to the two visible ones, in order to get past the rocks to the north, but if you do, you'll be well rewarded with a chest which contains the TUNGSTEN MAIL (DEF+42/MDF+24/SPD-2, equip on Marco).  Save the Gospel Armor for later.  Talk to Garland at Cygnus to complete the [MOON ARMLET] sidequest and receive the SUNA-WATARI (ATK+42/SPD-4, sell).</p>
-      <p>Return to "The Beginning" node.  Talk to Wand, the boy at the weapon shop, and choose "Hope" to advance [The Living Legend] sidequest.  While you are here, talk to the child by the tavern to advance [The Good Thief's Way] sidequest.</p>
-      <p>Return to "The Messenger's News" node and search the upper right corner for the hidden SHADE PACT for Stocke.  Return to the "Castle Sewers" node.  Talk to a man in the lower left corner named Pentacle, and choose "The Past" to advance [The Living Legend] sidequest.  While you are here, talk to the boy to the left of the inn to advance [The Good Thief's Way] sidequest.</p>
-      <p>Return to the "How to Disappear" node, go down the sewers, and head west one screen.  Search the left of the upper paths to find the hidden SUNLIGHT PACT for Eruca.</p>
-      <p>Return to "The Beastkind Forest" node and talk to Chalice, the lady by the equipment shop.  Choose "All Things" to advance [The Living Legend] sidequest. Search to the left of the sparkling bushes at the center of town to find the hidden METEORITE PACT for Aht.</p>
-      <p>Return to the "Waiting at Skalla" node and talk to Sword at the well to complete [The Living Legend] sidequest.  He will introduce you to Vainqueur, who can teach new abilities to Stocke, Aht, and Eruca.  Talk to him again to receive [The Blades Trial], [The Starlit Trial], [The Light Trial], and [The Three Contracts] sidequests.  If you've followed the walkthrough up to now, you should be able to teach 3 abilities to Stocke, 2 abilities to Aht, and 3 abilities to Eruca.</p>
-      <p>Go back to Cygnus and talk to Bram to complete [The Good Thief's Way] and receive the PIERCING SCROLL from Hertz for Raynie.  This would also be a good time to return to "A New Mission" to teach those new scrolls to Raynie.</p>
-      <p>When you are ready, return to the Itolia Wasteland.  Simply head straight north and blow up all the rocks along the way to reach the northern exit that will lead you to Skalla.</p>
+      <p>At this point, <Tag type="char">Aht</Tag> should have learned <Tag type="skill">Cross Star</Tag> and <Tag type="char">Eruca</Tag> should have learned <Tag type="skill">Blizzard</Tag>. If so, you really shouldn&#x27;t have to worry about using traps for now. Just use Assault and those two spells to deal with all the enemies.</p>
+      <p>Return to the well that is north, west, and north one screen from the initial save point. Go down the well and the man, named <Tag type="char">Sword</Tag>, is ready to talk to you now and give you [The Living Legend] sidequest. Leave the well area, then walk east two screens and north two screens. You should see a small rock formation in the middle. Search around there for the hidden <Tag type="key">Moon Armlet</Tag>.</p>
+      <p>Head west to find some rocks you&#x27;ll need to blow away. Go past them, and west again. You can find a hidden barrel along the lower cliff that you will need in addition to the two visible ones, in order to get past the rocks to the north, but if you do, you&#x27;ll be well rewarded with a chest which contains the <Tag type="armor">Tungsten Mail</Tag> (DEF+42/MDF+24/SPD-2, equip on <Tag type="char">Marco</Tag>). Save the Gospel Armor for later. Talk to <Tag type="char">Garland</Tag> at <Tag type="place">Cygnus</Tag> to complete the [Moon Armlet] sidequest and receive the <Tag type="weapon">Suna-Watari</Tag> (ATK+42/SPD-4, sell).</p>
+      <p>Return to &quot;The Beginning&quot; node. Talk to <Tag type="char">Wand</Tag>, the boy at the weapon shop, and choose &quot;Hope&quot; to advance [The Living Legend] sidequest. While you are here, talk to the child by the tavern to advance [The Good Thief&#x27;s Way] sidequest.</p>
+      <p>Return to &quot;The Messenger&#x27;s News&quot; node and search the upper right corner for the hidden <Tag type="key">Shade Pact</Tag> for <Tag type="char">Stocke</Tag>. Return to the &quot;Castle Sewers&quot; node. Talk to a man in the lower left corner named <Tag type="char">Pentacle</Tag>, and choose &quot;The Past&quot; to advance [The Living Legend] sidequest. While you are here, talk to the boy to the left of the inn to advance [The Good Thief&#x27;s Way] sidequest.</p>
+      <p>Return to the &quot;How to Disappear&quot; node, go down the sewers, and head west one screen. Search the left of the upper paths to find the hidden <Tag type="key">Sunlight Pact</Tag> for <Tag type="char">Eruca</Tag>.</p>
+      <p>Return to &quot;The Beastkind Forest&quot; node and talk to <Tag type="char">Chalice</Tag>, the lady by the equipment shop. Choose &quot;All Things&quot; to advance [The Living Legend] sidequest. Search to the left of the sparkling bushes at the center of town to find the hidden <Tag type="key">Meteorite Pact</Tag> for <Tag type="char">Aht</Tag>.</p>
+      <p>Return to the &quot;Waiting at Skalla&quot; node and talk to <Tag type="char">Sword</Tag> at the well to complete [The Living Legend] sidequest. He will introduce you to <Tag type="char">Vainqueur</Tag>, who can teach new abilities to Stocke, Aht, and Eruca. Talk to him again to receive [The Blades Trial], [The Starlit Trial], [The Light Trial], and [The Three Contracts] sidequests. If you&#x27;ve followed the walkthrough up to now, you should be able to teach 3 abilities to Stocke, 2 abilities to Aht, and 3 abilities to Eruca.</p>
+      <p>Go back to <Tag type="place">Cygnus</Tag> and talk to <Tag type="char">Bram</Tag> to complete [The Good Thief&#x27;s Way] and receive the <Tag type="key">Piercing Scroll</Tag> from <Tag type="char">Hertz</Tag> for <Tag type="char">Raynie</Tag>. This would also be a good time to return to &quot;A New Mission&quot; to teach those new scrolls to Raynie.</p>
+      <p>When you are ready, return to the <Tag type="place">Itolia Wasteland</Tag>. Simply head straight north and blow up all the rocks along the way to reach the northern exit that will lead you to <Tag type="place">Skalla</Tag>.</p>
     </div>
   </ChapterCard>
 
@@ -249,19 +250,19 @@ const nextVol = { num: 6, title: 'Granorg Liberation &amp; Shadow of Dias', href
     <div class="chapter-walkthrough-prose">
       <ShopMatrix title="Skalla (Standard Chapter 6) Merchant" items={[{"name": "Soothing Balm", "price": 100}, {"name": "First Aid Kit", "price": 400}, {"name": "Tourniquet", "price": 1000}, {"name": "Herbal Tea", "price": 350}, {"name": "Special Tea", "price": 1200}, {"name": "Healing Herb", "price": 500}, {"name": "Holy Water", "price": 500}, {"name": "Anti-Poison", "price": 50}, {"name": "Anti-Fear", "price": 50}, {"name": "Anti-Paralytic", "price": 50}, {"name": "Anti-Curse", "price": 50}, {"name": "Anti-Sleep", "price": 50}, {"name": "Anti-Stone", "price": 50}, {"name": "Panacea", "price": 800}, {"name": "Panacea Plus", "price": 2000}, {"name": "Poison Wing", "price": 350}, {"name": "Sleep Wing", "price": 500}, {"name": "Power Down", "price": 500}, {"name": "Might Herb", "price": 500}, {"name": "Divine Water", "price": 1500}]} equipment={[{"name": "Bastard Sword", "price": 4000}, {"name": "Alchemy Edge", "price": 9500}, {"name": "Goldy Lance", "price": 4300}, {"name": "Witch Spear", "price": 4800, "note": "buy for Raynie"}, {"name": "Steel Gauntlet", "price": 3400}, {"name": "Mueke Knife", "price": 3800}, {"name": "Death Dagger", "price": 5200}, {"name": "Solid Slugs", "price": 3800}, {"name": "Iron Mail", "price": 2400}, {"name": "Gold Clothes", "price": 3200}, {"name": "Iron Breastplate", "price": 6500}, {"name": "Running Sand", "price": 3800}, {"name": "Gold Dress", "price": 5100}, {"name": "Shadowrun Dress", "price": 5600}, {"name": "Iron Charm", "price": 2500}, {"name": "Crystal Charm", "price": 2500}, {"name": "Bishop Stud", "price": 3000}, {"name": "Sprig Ring", "price": 5000}, {"name": "Peridot", "price": 1750}, {"name": "Amazonite", "price": 1750}]} itemTitle="Item Shop" equipmentTitle="Equipment Shop" />
       <Callout type="node" title="Historia Milestone: An Introduction">
-        <p>After some initial dialogue, head to the weapon shop to the right where you should buy a Witch Spear for Raynie. Below the weapon shop is a hidden chest which contains the THUNDERSTAR PACT for Aht. Enter the center house to talk to Tarquin again. He will give you the SAND SWORD to advance the [Sand Sword] sidequest and unlock the [Merchant Tarquin] node. Talk to him again to advance the [Mercenary Recruit] sidequest. Head to the inn to meet Eruca's contact.</p>
+        <p>After some initial dialogue, head to the weapon shop to the right where you should buy a <Tag type="weapon">Witch Spear</Tag> for <Tag type="char">Raynie</Tag>. Below the weapon shop is a hidden chest which contains the <Tag type="key">Thunderstar Pact</Tag> for <Tag type="char">Aht</Tag>. Enter the center house to talk to <Tag type="char">Tarquin</Tag> again. He will give you the <Tag type="key">Sand Sword</Tag> to advance the [Sand Sword] sidequest and unlock the [Merchant Tarquin] node. Talk to him again to advance the [Mercenary Recruit] sidequest. Head to the inn to meet <Tag type="char">Eruca</Tag>&#x27;s contact.</p>
       </Callout>
       <Callout type="node" title="Historia Milestone: To Holff Ruins">
-        <p>You will need to pass through the Itolia Wasteland and Abyssia Forest in order to reach the ruins. From the northern entrance of the Itolia Wasteland, head east one screen, south two, and east one. Pass the Gutrals to the east to make it to the Abyssia Forest.</p>
+        <p>You will need to pass through the <Tag type="place">Itolia Wasteland</Tag> and <Tag type="place">Abyssia Forest</Tag> in order to reach the ruins. From the northern entrance of the Itolia Wasteland, head east one screen, south two, and east one. Pass the Gutrals to the east to make it to the Abyssia Forest.</p>
       </Callout>
       <Callout type="note" title="Recommended Equipment">
-        <p>Recommended Equipment at this point in the game<br/>
-        <strong>Stocke:</strong> Pieti Edge, Moirae Manteau, Crystal Charm x3<br/>
-        <strong>Raynie:</strong> Witch Spear, Sable Larme, Crystal Charm x3<br/>
-        <strong>Marco:</strong> Madre Blade, Tungsten Mail, Bishop Stud x3<br/>
-        <strong>Aht:</strong> Silver Dagger, Life Robe, Bishop Stud x3<br/>
-        <strong>Eruca:</strong> Freikugel Kreuz, Rune Dress, Crystal Charm x3<br/>
-        <strong>Extra:</strong> Gospel Armor, 5 Iron Charms</p>
+        <p>Recommended Equipment at this point in the game:<br/>
+        <strong>Stocke:</strong> <Tag type="weapon">Pieti Edge</Tag>, <Tag type="armor">Moirae Manteau</Tag>, <Tag type="acc">Crystal Charm x3</Tag><br/>
+        <strong>Raynie:</strong> <Tag type="weapon">Witch Spear</Tag>, <Tag type="armor">Sable Larme</Tag>, <Tag type="acc">Crystal Charm x3</Tag><br/>
+        <strong>Marco:</strong> <Tag type="weapon">Madre Blade</Tag>, <Tag type="armor">Tungsten Mail</Tag>, <Tag type="acc">Bishop Stud x3</Tag><br/>
+        <strong>Aht:</strong> <Tag type="weapon">Silver Dagger</Tag>, <Tag type="armor">Life Robe</Tag>, <Tag type="acc">Bishop Stud x3</Tag><br/>
+        <strong>Eruca:</strong> <Tag type="weapon">Freikugel Kreuz</Tag>, <Tag type="armor">Rune Dress</Tag>, <Tag type="acc">Crystal Charm x3</Tag><br/>
+        <strong>Extra:</strong> <Tag type="armor">Gospel Armor</Tag>, <Tag type="acc">5 Iron Charms</Tag></p>
       </Callout>
     </div>
   </ChapterCard>
@@ -303,24 +304,24 @@ __  |                            |  __
              | |_|  __   _________*/
              |_____|</pre>
       </AsciiMap>
-      <p>Many enemies here are weak to fire, so Stocke's new Wisp Blade can be very useful in the right battles.  Eruca's Burst Light can also be quite obscene. At the fork, head south, then east two screens where you will bump into Liese. Talk to her to advance the [Mankind &amp; Beastkind] sidequest.</p>
-      <p>Return to the entrance and follow the northern path to the next screen until you reach an open area.  In the lower left corner is a chest which contains a BEAST CHARM (ATK+10) that you should save for later.  Examine the corpse in the upper right corner to advance the [Mankind &amp; Beastkind] sidequest.  Open the hidden chest next to him which contains the ROLL-CUT SCROLL for Marco.  Return to Liese once more to advance the [Mankind &amp; Beastkind] sidequest.</p>
-      <p>I would strongly recommend leaving and completing some sidequests at this time, since the rewards are really good, and the next couple areas are a little tough.  Return to "A New Mission" to teach that new scroll to Marco and to "The Three Contracts" to teach the new Pact to Aht.  Return to the "Echoing Hills" node and defeat the bandits again.  Talk to Tarquin to advance the [Mercenary Recruit] sidequest.</p>
-      <p>Return to the "Castle Sewers" node and talk to Liese in the northwest corner of the Downtown area to be prompted for a decision.  Choosing to "Leave it to her" will unlock the [Chains of Hatred] ending.  Instead, return to the decision point and choose to "Believe in him" to advance the [Mankind &amp; Beastkind] sidequest.  Talk to the soldier by the save point on Main Street to complete the [Mankind &amp; Beastkind] sidequest and receive the PROMISED KNIFE (ATK+27/MAG+75/HP-30, equip on Aht).  Aht should now be able to one shot almost everything with her Cross Star spell.</p>
-      <p>Return to "The Resistance" node and talk to Will, giving him the Sand Sword and receiving 1500 G.  Like with the Escort event earlier, you don't have to do it now, but if you don't, you will have to do it sooner or later anyway.  This will also enable you to unlock two rather obscure nodes, as well.</p>
-      <p>Continue the plot to the "Capital in Flames" node at Granorg.  Walk north until you automatically talk to Will to unlock the [Will's Sword] node.  Return to the "Wounded Otto" node and continue the plot through the Sand Fortress to unlock the [Will to the Rescue] node.</p>
-      <p>Return to the "Waiting at Skalla" node and proceed to Skalla, as before.  Talk to Tarquin to advance the [Mercenary Recruit] sidequest.  Proceed with events as before until you make it back to the Abyssia Forest.</p>
-      <p>Follow the lower path east one screen to a fork.  If you like, head east to see how Liese's relationship is going.  Otherwise, head north.  Follow the left path to the next area where there is a chest which contains a HEALING FRUIT. Go back to the fork and take the right path to the next area.</p>
-      <p>There is another fork ahead.  After clearing the enemies, search behind the trees on the lower left side for a barrel.  Move it down to the rocks along the lower path to gain access to another small area.  Search around for a hidden chest which contains the GAIA BLADE (ATK+30/MAG+25/HP+100, equip on Marco).</p>
-      <p>Continue east to a long road of tall grass.  At the end of the path is a dead end with a chest which contains 2 TORNIQUETS.  Return to the last fork and follow the northern path to the ruins.  You should rest up at Skalla before entering, first.</p>
+      <p>Many enemies here are weak to fire, so Stocke&#x27;s new <Tag type="weapon">Wisp Blade</Tag> can be very useful in the right battles. Eruca&#x27;s <Tag type="skill">Burst Light</Tag> can also be quite obscene. At the fork, head south, then east two screens where you will bump into <Tag type="char">Liese</Tag>. Talk to her to advance the [Mankind &amp; Beastkind] sidequest.</p>
+      <p>Return to the entrance and follow the northern path to the next screen until you reach an open area. In the lower left corner is a chest which contains a <Tag type="acc">Beast Charm</Tag> (ATK+10) that you should save for later. Examine the corpse in the upper right corner to advance the [Mankind &amp; Beastkind] sidequest. Open the hidden chest next to him which contains the <Tag type="key">Roll-Cut Scroll</Tag> for <Tag type="char">Marco</Tag>. Return to Liese once more to advance the [Mankind &amp; Beastkind] sidequest.</p>
+      <p>I would strongly recommend leaving and completing some sidequests at this time, since the rewards are really good, and the next couple areas are a little tough. Return to &quot;A New Mission&quot; to teach that new scroll to <Tag type="char">Marco</Tag> and to &quot;The Three Contracts&quot; to teach the new Pact to <Tag type="char">Aht</Tag>. Return to the &quot;Echoing Hills&quot; node and defeat the bandits again. Talk to <Tag type="char">Tarquin</Tag> to advance the [Mercenary Recruit] sidequest.</p>
+      <p>Return to the &quot;Castle Sewers&quot; node and talk to <Tag type="char">Liese</Tag> in the northwest corner of the Downtown area to be prompted for a decision. Choosing to &quot;Leave it to her&quot; will unlock the [Chains of Hatred] ending. Instead, return to the decision point and choose to &quot;Believe in him&quot; to advance the [Mankind &amp; Beastkind] sidequest. Talk to the soldier by the save point on Main Street to complete the [Mankind &amp; Beastkind] sidequest and receive the <Tag type="weapon">Promised Knife</Tag> (ATK+27/MAG+75/HP-30, equip on <Tag type="char">Aht</Tag>). Aht should now be able to one shot almost everything with her <Tag type="skill">Cross Star</Tag> spell.</p>
+      <p>Return to &quot;The Resistance&quot; node and talk to <Tag type="char">Will</Tag>, giving him the <Tag type="key">Sand Sword</Tag> and receiving <Tag type="gold">1500 G</Tag>. Like with the Escort event earlier, you don&#x27;t have to do it now, but if you don&#x27;t, you will have to do it sooner or later anyway. This will also enable you to unlock two rather obscure nodes, as well.</p>
+      <p>Continue the plot to the &quot;Capital in Flames&quot; node at <Tag type="place">Granorg</Tag>. Walk north until you automatically talk to Will to unlock the [Will&#x27;s Sword] node. Return to the &quot;Wounded Otto&quot; node and continue the plot through the <Tag type="place">Sand Fortress</Tag> to unlock the [Will to the Rescue] node.</p>
+      <p>Return to the &quot;Waiting at Skalla&quot; node and proceed to <Tag type="place">Skalla</Tag>, as before. Talk to Tarquin to advance the [Mercenary Recruit] sidequest. Proceed with events as before until you make it back to the <Tag type="place">Abyssia Forest</Tag>.</p>
+      <p>Follow the lower path east one screen to a fork. If you like, head east to see how Liese&#x27;s relationship is going. Otherwise, head north. Follow the left path to the next area where there is a chest which contains a <Tag type="item">Healing Fruit</Tag>. Go back to the fork and take the right path to the next area.</p>
+      <p>There is another fork ahead. After clearing the enemies, search behind the trees on the lower left side for a barrel. Move it down to the rocks along the lower path to gain access to another small area. Search around for a hidden chest which contains the <Tag type="weapon">Gaia Blade</Tag> (ATK+30/MAG+25/HP+100, equip on <Tag type="char">Marco</Tag>).</p>
+      <p>Continue east to a long road of tall grass. At the end of the path is a dead end with a chest which contains <Tag type="item">2 Tourniquets</Tag>. Return to the last fork and follow the northern path to the ruins. You should rest up at <Tag type="place">Skalla</Tag> before entering, first.</p>
       <Callout type="note" title="Recommended Equipment">
-        <p>Recommended Equipment at this point in the game<br/>
-        <strong>Stocke:</strong> Pieti Edge, Moirae Manteau, Crystal Charm x3<br/>
-        <strong>Raynie:</strong> Witch Spear, Sable Larme, Crystal Charm x3<br/>
-        <strong>Marco:</strong> Gaia Blade, Tungsten Mail, Bishop Stud x3<br/>
-        <strong>Aht:</strong> Promised Knife, Life Robe, Bishop Stud x3<br/>
-        <strong>Eruca:</strong> Freikugel Kreuz, Rune Dress, Crystal Charm x3<br/>
-        <strong>Extra:</strong> Gospel Armor, Beast Charm, 5 Iron Charms</p>
+        <p>Recommended Equipment at this point in the game:<br/>
+        <strong>Stocke:</strong> <Tag type="weapon">Pieti Edge</Tag>, <Tag type="armor">Moirae Manteau</Tag>, <Tag type="acc">Crystal Charm x3</Tag><br/>
+        <strong>Raynie:</strong> <Tag type="weapon">Witch Spear</Tag>, <Tag type="armor">Sable Larme</Tag>, <Tag type="acc">Crystal Charm x3</Tag><br/>
+        <strong>Marco:</strong> <Tag type="weapon">Gaia Blade</Tag>, <Tag type="armor">Tungsten Mail</Tag>, <Tag type="acc">Bishop Stud x3</Tag><br/>
+        <strong>Aht:</strong> <Tag type="weapon">Promised Knife</Tag>, <Tag type="armor">Life Robe</Tag>, <Tag type="acc">Bishop Stud x3</Tag><br/>
+        <strong>Eruca:</strong> <Tag type="weapon">Freikugel Kreuz</Tag>, <Tag type="armor">Rune Dress</Tag>, <Tag type="acc">Crystal Charm x3</Tag><br/>
+        <strong>Extra:</strong> <Tag type="armor">Gospel Armor</Tag>, <Tag type="acc">Beast Charm</Tag>, <Tag type="acc">5 Iron Charms</Tag></p>
       </Callout>
     </div>
   </ChapterCard>
@@ -380,20 +381,20 @@ __  |                            |  __
             |   |                     chest which contains the EXPERT FIST
                                       (ATK+44/MP+20/LUC+10).</pre>
       </AsciiMap>
-      <p>Finally, return to the four-way intersection and take the left path.  Proceed up the steps to the left, and search above for a hidden chest which contains a CELESTIAL DEW.  Go back down the steps and up through another tiny, dark passage until you reach a wide open area.  Search the center of the area for a hidden chest which contains the DIVINE PACT for Eruca.  Head right along the path to a tiny room with a chest which contains a DIVINE WATER.</p>
-      <p>Return to the open area and take the upper path to the next room.  Follow path up, then left two rooms to a fork.  The lower path leads to an isolated chest which contains 2 SPECIAL TEAS.  Go back to the fork, and follow the right path until you reach a + shaped area.  At the top is another floor panel with a switch that will open the door above.  I would strongly recommend having two maxed out Mana Burst gauges before moving on.  Then, return to the save point and head up to find the Beast Mark and your next test.</p>
+      <p>Finally, return to the four-way intersection and take the left path. Proceed up the steps to the left, and search above for a hidden chest which contains a <Tag type="item">Celestial Dew</Tag>. Go back down the steps and up through another tiny, dark passage until you reach a wide open area. Search the center of the area for a hidden chest which contains the <Tag type="key">Divine Pact</Tag> for <Tag type="char">Eruca</Tag>. Head right along the path to a tiny room with a chest which contains a <Tag type="item">Divine Water</Tag>.</p>
+      <p>Return to the open area and take the upper path to the next room. Follow path up, then left two rooms to a fork. The lower path leads to an isolated chest which contains <Tag type="item">2 Special Teas</Tag>. Go back to the fork, and follow the right path until you reach a + shaped area. At the top is another floor panel with a switch that will open the door above. I would strongly recommend having two maxed out Mana Burst gauges before moving on. Then, return to the save point and head up to find the <Tag type="key">Beast Mark</Tag> and your next test.</p>
       <BossCard name="Shadow" weakness="Fire">
-        <p><strong>Strategy:</strong> Have Eruca cast Magic Boost on Aht.  Have her lay Flamestar Traps in the back row.  Then use Push Assault and Right Assault to defeat him quickly.</p>
+        <p><strong>Strategy:</strong> Have <Tag type="char">Eruca</Tag> cast <Tag type="skill">Magic Boost</Tag> on <Tag type="char">Aht</Tag>. Have her lay <Tag type="skill">Flamestar Traps</Tag> in the back row. Then use <Tag type="skill">Push Assault</Tag> and <Tag type="skill">Right Assault</Tag> to defeat him quickly.</p>
       </BossCard>
-      <p>For defeating him, you will win the BEAST MARK.  That's it.  Everything's done. Might as well pack our bags and go home.  Or I could be speaking too soon.</p>
+      <p>For defeating him, you will win the <Tag type="key">Beast Mark</Tag>. That&#x27;s it. Everything&#x27;s done. Might as well pack our bags and go home. Or I could be speaking too soon.</p>
       <BossCard name="Guardian" weakness="None">
-        <p><strong>Strategy:</strong> Another giant spider, except this one can kill you in one turn.  This is why I recommended having your maxed out Mana Burst gauges.  Use two of them to use Turn Break on its first two turns, giving you nine consecutive turns. Stocke should lead by using a Magic Herb on Eruca for casting G-Frost.  This is where Aht will really shine.  Her new Dancing Death ability can REALLY drive up the combo bonus.  Arrange the remaining 8 turns as follows: Dancing Death, Fire, Dancing Death, Fire, Dancing Death, G-Frost, G-Frost, G-Frost to defeat the Guardian.</p>
+        <p><strong>Strategy:</strong> Another giant spider, except this one can kill you in one turn. This is why I recommended having your maxed out Mana Burst gauges. Use two of them to use <Tag type="skill">Turn Break</Tag> on its first two turns, giving you nine consecutive turns. <Tag type="char">Stocke</Tag> should lead by using a <Tag type="item">Magic Herb</Tag> on <Tag type="char">Eruca</Tag> for casting <Tag type="skill">G-Frost</Tag>. This is where <Tag type="char">Aht</Tag> will really shine. Her new <Tag type="skill">Dancing Death</Tag> ability can REALLY drive up the combo bonus. Arrange the remaining 8 turns as follows: Dancing Death, Fire, Dancing Death, Fire, Dancing Death, G-Frost, G-Frost, G-Frost to defeat the <Tag type="boss">Guardian</Tag>.</p>
       </BossCard>
       <Callout type="node" title="Historia Milestone: Overcoming the Trial">
-        <p>With the Beast Mark, you could get past the roadblock in Alternate History, but since we're almost done here, we might as well wrap things up. Talk to Bergas to be prompted for a decision on how to assault Granorg. Choosing to "Lead the way" will unlock the [Premature Invasion] ending.</p>
+        <p>With the <Tag type="key">Beast Mark</Tag>, you could get past the roadblock in Alternate History, but since we&#x27;re almost done here, we might as well wrap things up. Talk to <Tag type="char">Bergas</Tag> to be prompted for a decision on how to assault <Tag type="place">Granorg</Tag>. Choosing to &quot;Lead the way&quot; will unlock the [Premature Invasion] ending.</p>
       </Callout>
       <Callout type="node" title="Historia Milestone: The Final Defense">
-        <p>Before moving on, return to Historia with the Beast Mark to unlock your final Mana Burst. Return to "The Three Contracts" and teach the new Pact to Eruca. Then, return to the previous decision point, choose to "Wait for the Gutrals", and events will proceed more favorably this time.</p>
+        <p>Before moving on, return to Historia with the <Tag type="key">Beast Mark</Tag> to unlock your final Mana Burst. Return to &quot;The Three Contracts&quot; and teach the new Pact to <Tag type="char">Eruca</Tag>. Then, return to the previous decision point, choose to &quot;Wait for the Gutrals&quot;, and events will proceed more favorably this time.</p>
       </Callout>
     </div>
   </ChapterCard>
@@ -411,22 +412,21 @@ __  |                            |  __
 
     <div class="chapter-walkthrough-prose">
       <ShopMatrix title="Granorg (Standard Chapter 6) Merchant" items={[{"name": "Soothing Balm", "price": 100}, {"name": "First Aid Kit", "price": 400}, {"name": "Tourniquet", "price": 1000}, {"name": "Herbal Tea", "price": 350}, {"name": "Special Tea", "price": 1200}, {"name": "Holy Water", "price": 500}, {"name": "Anti-Poison", "price": 50}, {"name": "Anti-Fear", "price": 50}, {"name": "Anti-Paralytic", "price": 50}, {"name": "Anti-Curse", "price": 50}, {"name": "Anti-Sleep", "price": 50}, {"name": "Anti-Stone", "price": 50}, {"name": "Panacea", "price": 800}, {"name": "Poison Wing", "price": 350}, {"name": "Sleep Wing", "price": 500}, {"name": "Power Down", "price": 500}, {"name": "Might Herb", "price": 500}]} equipment={[{"name": "Blitz Epee", "price": 2000}, {"name": "Silver Edge", "price": 3000}, {"name": "Rune Edge", "price": 5000}, {"name": "Soul Eater", "price": 4800}, {"name": "Titanium Sword", "price": 6500}, {"name": "Iron Spear", "price": 1800}, {"name": "Silver Spear", "price": 2000}, {"name": "Bloody Pike", "price": 3700}, {"name": "Bronze Spear", "price": 1000}, {"name": "Titanium Lance", "price": 6700, "note": "buy for Rosch"}, {"name": "Red Dagger", "price": 2000}, {"name": "Knife", "price": 1800}, {"name": "Titanium Knife", "price": 7200}, {"name": "Alloy Gauntlet", "price": 5800, "note": "buy for Gafka"}, {"name": "Custom Shell", "price": 1400}, {"name": "FMJ Rounds", "price": 5300, "note": "buy for Eruca"}, {"name": "Bronze Mail", "price": 900}, {"name": "Silver Mail", "price": 1100}, {"name": "Silver Cape", "price": 2800}, {"name": "Mail Vest", "price": 1200}, {"name": "Titanium Mail", "price": 5300}, {"name": "Alloy Plate", "price": 8640, "note": "buy for Gafka"}, {"name": "Hymnal Cape", "price": 3700}, {"name": "Chainmail Dress", "price": 3800}, {"name": "Jeweled Gown", "price": 6900, "note": "buy for Eruca"}, {"name": "Charm", "price": 350}, {"name": "Horn Charm", "price": 1000}, {"name": "Fang Charm", "price": 1000}, {"name": "Bishop Stud", "price": 3000}, {"name": "Flower Ring", "price": 10000}]} itemTitle="Item Shop" equipmentTitle="Equipment Shop" />
-      <p>With those obstacles cleared, you can enter the city.  First, head east to make the recommended purchases listed above.  Then, I'd strongly recommend scouring the city for every last soldier you can find and kill.  They come in large groups and give great experience.</p>
-      <p>Besides Stocke and Eruca, use whoever you want in the third slot, as Eruca can one-shot almost anything with her Burst Light.  For BIG enemies, you may want to launch them with Air Assault or Cross Star first.  I would try to keep my levels pretty even between the others, though keeping Aht a couple levels ahead of the others is good, since she learns her final spells two levels after them.</p>
-      <p>When you're ready, rest up at the inn, and walk right in the front gate of the castle.  Balsy.  Just walk straight up to the throne room to help Eruca claim her destiny.</p>
+      <p>With those obstacles cleared, you can enter the city. First, head east to make the recommended purchases listed above. Then, I&#x27;d strongly recommend scouring the city for every last soldier you can find and kill. They come in large groups and give great experience.</p>
+      <p>Besides <Tag type="char">Stocke</Tag> and <Tag type="char">Eruca</Tag>, use whoever you want in the third slot, as Eruca can one-shot almost anything with her <Tag type="skill">Burst Light</Tag>. For BIG enemies, you may want to launch them with <Tag type="skill">Air Assault</Tag> or <Tag type="skill">Cross Star</Tag> first. I would try to keep my levels pretty even between the others, though keeping <Tag type="char">Aht</Tag> a couple levels ahead of the others is good, since she learns her final spells two levels after them.</p>
+      <p>When you&#x27;re ready, rest up at the inn, and walk right in the front gate of the castle. Ballsy. Just walk straight up to the throne room to help Eruca claim her destiny.</p>
       <BossCard name="Heavy Granorgite x2, Protea Guards x2" weakness="Lightning, None">
-        <p><strong>Strategy:</strong> You don't even need buffs for this fight, it's so easy.  Have Aht lay a Volt Star trap in the lower left corner.  Then, use Push Assault and Left Assault on the two Granorgites to kill them quickly.  The blue Protea Guard may lay down a Heal Zone, which may slow things down, so kill her next.  Use any Star trap and Assaults twice to take down each Guard, one by one.</p>
+        <p><strong>Strategy:</strong> You don&#x27;t even need buffs for this fight, it&#x27;s so easy. Have <Tag type="char">Aht</Tag> lay a <Tag type="skill">Volt Star</Tag> trap in the lower left corner. Then, use <Tag type="skill">Push Assault</Tag> and <Tag type="skill">Left Assault</Tag> on the two Granorgites to kill them quickly. The blue Protea Guard may lay down a <Tag type="skill">Heal Zone</Tag>, which may slow things down, so kill her next. Use any Star trap and Assaults twice to take down each Guard, one by one.</p>
       </BossCard>
-      <p>For defeating them, you will have completed your business in Standard History. Now, it is time to return to the "A New Alliance" node in Alternate History.</p>
+      <p>For defeating them, you will have completed your business in Standard History. Now, it is time to return to the &quot;A New Alliance&quot; node in Alternate History.</p>
       <Callout type="note" title="Recommended Equipment">
-        <p>Recommended Equipment at this point in the game<br/>
-        <strong>Stocke:</strong> Pieti Edge, Moirae Manteau, Crystal Charm x3<br/>
-        <strong>Raynie:</strong> Witch Spear, Sable Larme, Crystal Charm x3<br/>
-        <strong>Marco:</strong> Gaia Blade, Tungsten Mail, Bishop Stud x3<br/>
-        <strong>Aht:</strong> Promised Knife, Life Robe, Bishop Stud x3<br/>
-        <strong>Eruca:</strong> FMJ Rounds, Jeweled Gown, Crystal Charm x3<br/>
-        <strong>Extra:</strong> Titanium Lance, Alloy Gauntlet, Gospel Armor, Alloy Plate, Beast Charm,<br/>
-        5 Iron Charms</p>
+        <p>Recommended Equipment at this point in the game:<br/>
+        <strong>Stocke:</strong> <Tag type="weapon">Pieti Edge</Tag>, <Tag type="armor">Moirae Manteau</Tag>, <Tag type="acc">Crystal Charm x3</Tag><br/>
+        <strong>Raynie:</strong> <Tag type="weapon">Witch Spear</Tag>, <Tag type="armor">Sable Larme</Tag>, <Tag type="acc">Crystal Charm x3</Tag><br/>
+        <strong>Marco:</strong> <Tag type="weapon">Gaia Blade</Tag>, <Tag type="armor">Tungsten Mail</Tag>, <Tag type="acc">Bishop Stud x3</Tag><br/>
+        <strong>Aht:</strong> <Tag type="weapon">Promised Knife</Tag>, <Tag type="armor">Life Robe</Tag>, <Tag type="acc">Bishop Stud x3</Tag><br/>
+        <strong>Eruca:</strong> <Tag type="weapon">FMJ Rounds</Tag>, <Tag type="armor">Jeweled Gown</Tag>, <Tag type="acc">Crystal Charm x3</Tag><br/>
+        <strong>Extra:</strong> <Tag type="weapon">Titanium Lance</Tag>, <Tag type="weapon">Alloy Gauntlet</Tag>, <Tag type="armor">Gospel Armor</Tag>, <Tag type="armor">Alloy Plate</Tag>, <Tag type="acc">Beast Charm</Tag>, <Tag type="acc">5 Iron Charms</Tag></p>
       </Callout>
     </div>
   </ChapterCard>
@@ -443,18 +443,18 @@ __  |                            |  __
     />
 
     <div class="chapter-walkthrough-prose">
-      <p>Talk to Raul and choose to "Team up with Forgia".  Now that you have the Beast Mark, you can begin the long journey to Forgia.</p>
+      <p>Talk to <Tag type="char">Raul</Tag> and choose to &quot;Team up with Forgia&quot;. Now that you have the <Tag type="key">Beast Mark</Tag>, you can begin the long journey to <Tag type="place">Forgia</Tag>.</p>
       <Callout type="node" title="Historia Milestone: Southbound">
-        <p>[Road to Forgia node] Despite being a rather imbalanced party, I would strongly recommend using both Gafka and Rosch to help them catch up on levels. Arrange your equipment as follows, leave Celestia, and head for Lazvil Hills.</p>
+        <p>[Road to Forgia node] Despite being a rather imbalanced party, I would strongly recommend using both <Tag type="char">Gafka</Tag> and <Tag type="char">Rosch</Tag> to help them catch up on levels. Arrange your equipment as follows, leave <Tag type="place">Celestia</Tag>, and head for <Tag type="place">Lazvil Hills</Tag>.</p>
       </Callout>
       <Callout type="note" title="Recommended Equipment">
-        <p>Recommended Equipment at this point in the game<br/>
-        <strong>Stocke:</strong> Pieti Edge, Moirae Manteau, Crystal Charm x3<br/>
-        <strong>Raynie:</strong> Witch Spear, Sable Larme, Crystal Charm x3<br/>
-        <strong>Marco:</strong> Gaia Blade, Gospel Armor, Bishop Stud x3<br/>
-        <strong>Rosch:</strong> Titanium Lance, Tungsten Mail, Beast Charm, Iron Charm x2<br/>
-        <strong>Aht:</strong> Promised Knife, Life Robe, Bishop Stud x3<br/>
-        <strong>Gafka:</strong> Alloy Gauntlet, Alloy Plate, Iron Charm x3</p>
+        <p>Recommended Equipment at this point in the game:<br/>
+        <strong>Stocke:</strong> <Tag type="weapon">Pieti Edge</Tag>, <Tag type="armor">Moirae Manteau</Tag>, <Tag type="acc">Crystal Charm x3</Tag><br/>
+        <strong>Raynie:</strong> <Tag type="weapon">Witch Spear</Tag>, <Tag type="armor">Sable Larme</Tag>, <Tag type="acc">Crystal Charm x3</Tag><br/>
+        <strong>Marco:</strong> <Tag type="weapon">Gaia Blade</Tag>, <Tag type="armor">Gospel Armor</Tag>, <Tag type="acc">Bishop Stud x3</Tag><br/>
+        <strong>Rosch:</strong> <Tag type="weapon">Titanium Lance</Tag>, <Tag type="armor">Tungsten Mail</Tag>, <Tag type="acc">Beast Charm</Tag>, <Tag type="acc">Iron Charm x2</Tag><br/>
+        <strong>Aht:</strong> <Tag type="weapon">Promised Knife</Tag>, <Tag type="armor">Life Robe</Tag>, <Tag type="acc">Bishop Stud x3</Tag><br/>
+        <strong>Gafka:</strong> <Tag type="weapon">Alloy Gauntlet</Tag>, <Tag type="armor">Alloy Plate</Tag>, <Tag type="acc">Iron Charm x3</Tag></p>
       </Callout>
     </div>
   </ChapterCard>
@@ -471,7 +471,7 @@ __  |                            |  __
     />
 
     <div class="chapter-walkthrough-prose">
-      <p>Highway W               Highway         Highway E</p>
+      <p>Highway W Highway Highway E</p>
       <AsciiMap>
 <pre>___                     |X|
            __________________   ___/   \______________   __/   \
@@ -495,7 +495,7 @@ Woodland          | |               \  |    | |             |X|
                                 X - Roadblock      Road   |      __
                                                           |_____|</pre>
       </AsciiMap>
-      <p>Stocke is going to be your magic-user for awhile with his Fire spell able to kill anything in one shot, except an Adept.  Try to use your Assaults to conserve Stocke's MP.  However, if there is a large enough group of enemies, his Will o' Wisp is also very effective.  The path through here is pretty straight-forward with no new treasure.  Go north two screens, west two, south one, west one, and take the southern exit.  You should rest up back at Celestia before venturing through Judgement Cliff.</p>
+      <p><Tag type="char">Stocke</Tag> is going to be your magic-user for awhile with his Fire spell able to kill anything in one shot, except an Adept. Try to use your Assaults to conserve Stocke&#x27;s MP. However, if there is a large enough group of enemies, his <Tag type="skill">Will o&#x27; Wisp</Tag> is also very effective. The path through here is pretty straight-forward with no new treasure. Go north two screens, west two, south one, west one, and take the southern exit. You should rest up back at <Tag type="place">Celestia</Tag> before venturing through <Tag type="place">Judgement Cliff</Tag>.</p>
     </div>
   </ChapterCard>
 

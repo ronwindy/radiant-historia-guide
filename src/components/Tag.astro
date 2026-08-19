@@ -1,0 +1,58 @@
+---
+interface Props {
+  type?: 'item' | 'equip' | 'weapon' | 'armor' | 'acc' | 'key' | 'place' | 'location' | 'gold' | 'skill' | 'ability' | 'char' | 'npc' | 'enemy' | 'boss';
+  icon?: string;
+  name?: string;
+  title?: string;
+  class?: string;
+}
+
+const {
+  type = 'item',
+  icon,
+  name,
+  title,
+  class: className = ''
+} = Astro.props;
+
+function getTagMeta(t: string) {
+  switch (t) {
+    case 'item':
+      return { cssClass: 'hl-item', defaultIcon: '🧪', label: 'Item' };
+    case 'equip':
+    case 'weapon':
+      return { cssClass: 'hl-equip', defaultIcon: '⚔️', label: 'Equipment' };
+    case 'armor':
+      return { cssClass: 'hl-armor', defaultIcon: '🛡️', label: 'Armor' };
+    case 'acc':
+      return { cssClass: 'hl-acc', defaultIcon: '💍', label: 'Accessory' };
+    case 'key':
+      return { cssClass: 'hl-key', defaultIcon: '🗝️', label: 'Key Item' };
+    case 'place':
+    case 'location':
+      return { cssClass: 'hl-place', defaultIcon: '📍', label: 'Location' };
+    case 'gold':
+      return { cssClass: 'hl-gold', defaultIcon: '🪙', label: 'Gold' };
+    case 'skill':
+    case 'ability':
+      return { cssClass: 'hl-skill', defaultIcon: '⚡', label: 'Ability / Skill' };
+    case 'char':
+    case 'npc':
+      return { cssClass: 'hl-char', defaultIcon: '👤', label: 'Character' };
+    case 'enemy':
+    case 'boss':
+      return { cssClass: 'hl-enemy', defaultIcon: '💀', label: 'Enemy / Boss' };
+    default:
+      return { cssClass: 'hl-item', defaultIcon: '✨', label: 'Entity' };
+  }
+}
+
+const meta = getTagMeta(type);
+const resolvedIcon = icon !== undefined ? icon : meta.defaultIcon;
+const tooltip = title || meta.label;
+---
+
+<span class={`hl-tag ${meta.cssClass} ${className}`.trim()} title={tooltip}>
+  {resolvedIcon && <span class="hl-icon" aria-hidden="true">{resolvedIcon}</span>}
+  <span class="hl-text"><slot>{name}</slot></span>
+</span>

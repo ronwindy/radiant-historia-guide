@@ -6,6 +6,7 @@ import AsciiMap from '../../components/AsciiMap.astro';
 import BossCard from '../../components/BossCard.astro';
 import ShopMatrix from '../../components/ShopMatrix.astro';
 import Callout from '../../components/Callout.astro';
+import Tag from '../../components/Tag.astro';
 
 const baseUrl = import.meta.env.BASE_URL;
 
@@ -80,13 +81,13 @@ const stats = {
   bosses: 8
 };
 
-const prevVol = { num: 2, title: 'Specint Espionage &amp; Underground Passages', href: `${baseUrl}walkthrough/volume-2/` };
-const nextVol = { num: 4, title: 'Desert City Cygnus &amp; Gladiator Trials', href: `${baseUrl}walkthrough/volume-4/` };
+const prevVol = { num: 2, title: 'Specint Espionage & Underground Passages', href: `${baseUrl}walkthrough/volume-2/` };
+const nextVol = { num: 4, title: 'Desert City Cygnus & Gladiator Trials', href: `${baseUrl}walkthrough/volume-4/` };
 ---
 
 <WalkthroughLayout
   volume={3}
-  volumeTitle="Celestia Alliance &amp; Fortress Battles"
+  volumeTitle="Celestia Alliance & Fortress Battles"
   chapterRange="Chapters 21–30"
   description="Journey through Celestia, battles at Sand Fortress and Judgement Cliff, alliance negotiations, and confrontation with Thaumatech weapons."
   stats={stats}
@@ -132,33 +133,33 @@ const nextVol = { num: 4, title: 'Desert City Cygnus &amp; Gladiator Trials', hr
   |______     ______|     |______     ______|     bombs, you can also find much
          |   |                   |   |            hidden treasure here.</pre>
       </AsciiMap>
-      <p>On the first floor, search the lower right corner for a chest which contains an EMERALD (Poison Res +6).  I'm not a fan of status resisting equipment, so I would just sell it.  Head to the upper right room and search the upper left corner for a white sparkle that is your first bomb to disarm.  Go left in the hallway until you find the second bomb.  In the upper left room, pull the crates out that block a hidden chest which contains 2000 G.  Now, head up to the second floor.</p>
-      <p>Search the room on the right for a bomb in the upper left corner.  The room to the left holds a hidden chest which contains a PANACEA PLUS.  Leave the room and walk around the back side to find the fourth bomb.  On the right side of the floor are some crates that you can pull, blocking a hidden chest which contains 2 MANA CRYSTALS.  Head up to the third floor.</p>
-      <p>In the upper left corner is the last bomb, but you should still collect some more treasure.  Walk around to the right, but don't go up the stairs.  Pull the crates to the left out of the way that are blocking a chest which contains a LEAF RING (HP+10/MP+10, sell).  Climb the stairs and go up to the large room. Search the right side for a hidden chest which contains the DARKSHIELD SCROLL for Raynie.  Don't teach to Raynie right now, or you will have the find the bombs all over again.</p>
-      <p>Proceed up to the Sand Fortress North area.  In the lower right corner is a hidden chest which contains 2000 G.  Now, you should report to Rosch and choose to "Prioritize the Mission" to proceed with the plot, now that the bombs are out of the way.</p>
+      <p>On the <Tag type="place">1st Floor</Tag>, search the lower right corner for a chest which contains an <Tag type="acc">Emerald</Tag> (Poison Res +6). I&#x27;m not a fan of status resisting equipment, so I would just sell it. Head to the upper right room and search the upper left corner for a white sparkle that is your first bomb to disarm. Go left in the hallway until you find the second bomb. In the upper left room, pull the crates out that block a hidden chest which contains <Tag type="gold">2000 G</Tag>. Now, head up to the <Tag type="place">2nd Floor</Tag>.</p>
+      <p>Search the room on the right for a bomb in the upper left corner. The room to the left holds a hidden chest which contains a <Tag type="item">Panacea Plus</Tag>. Leave the room and walk around the back side to find the fourth bomb. On the right side of the floor are some crates that you can pull, blocking a hidden chest which contains <Tag type="item">2 Mana Crystals</Tag>. Head up to the <Tag type="place">3rd Floor</Tag>.</p>
+      <p>In the upper left corner is the last bomb, but you should still collect some more treasure. Walk around to the right, but don&#x27;t go up the stairs. Pull the crates to the left out of the way that are blocking a chest which contains a <Tag type="acc">Leaf Ring</Tag> (HP+10/MP+10, sell). Climb the stairs and go up to the large room. Search the right side for a hidden chest which contains the <Tag type="key">Darkshield Scroll</Tag> for <Tag type="char">Raynie</Tag>. Don&#x27;t teach to Raynie right now, or you will have to find the bombs all over again.</p>
+      <p>Proceed up to the <Tag type="place">Sand Fortress North</Tag> area. In the lower right corner is a hidden chest which contains <Tag type="gold">2000 G</Tag>. Now, you should report to <Tag type="char">Rosch</Tag> and choose to &quot;Prioritize the Mission&quot; to proceed with the plot, now that the bombs are out of the way.</p>
       <Callout type="note" title="Recommended Equipment">
-        <p>Recommended Equipment at this point in the game<br/>
-        <strong>Stocke:</strong> Rune Edge, Heavy Mail, Fang Charm x3<br/>
-        <strong>Raynie:</strong> Rune Spear, Heavy Mail, Horn Charm x3<br/>
-        <strong>Marco:</strong> Wisp Blade, Heavy Mail, Bishop Stud, Knight Stud x2<br/>
-        <strong>Rosch:</strong> P.Thauma Spear, Mail Vest, Wind Armlet, Fang Charm x2<br/>
-        <strong>Extra:</strong> Rhapsody, Rune Claw</p>
+        <p>Recommended Equipment at this point in the game:<br/>
+        <strong>Stocke:</strong> <Tag type="weapon">Rune Edge</Tag>, <Tag type="armor">Heavy Mail</Tag>, <Tag type="acc">Fang Charm x3</Tag><br/>
+        <strong>Raynie:</strong> <Tag type="weapon">Rune Spear</Tag>, <Tag type="armor">Heavy Mail</Tag>, <Tag type="acc">Horn Charm x3</Tag><br/>
+        <strong>Marco:</strong> <Tag type="weapon">Wisp Blade</Tag>, <Tag type="armor">Heavy Mail</Tag>, <Tag type="acc">Bishop Stud</Tag>, <Tag type="acc">Knight Stud x2</Tag><br/>
+        <strong>Rosch:</strong> <Tag type="weapon">P.Thauma Spear</Tag>, <Tag type="armor">Mail Vest</Tag>, <Tag type="acc">Wind Armlet</Tag>, <Tag type="acc">Fang Charm x2</Tag><br/>
+        <strong>Extra:</strong> <Tag type="weapon">Rhapsody</Tag>, <Tag type="weapon">Rune Claw</Tag></p>
       </Callout>
       <Callout type="node" title="Historia Milestone: Sand Fortress Battle">
-        <p>You should know your way around here pretty well by now. I'd recommend fighting all the enemies you can find on all three floors. Note the soldiers will never spawn in a room. When you've killed enough of them to satisfy your bloodlust, make your way up to the upper room on the third floor to make your last stand. I'd recommend giving Raynie's Horn Charms to Stocke, and having Marco replace her. You may also want to remove Rosch's Wind Armlet, since you won't have a chance to equip it on someone else later.</p>
+        <p>You should know your way around here pretty well by now. I&#x27;d recommend fighting all the enemies you can find on all three floors. Note the soldiers will never spawn in a room. When you&#x27;ve killed enough of them to satisfy your bloodlust, make your way up to the upper room on the third floor to make your last stand. I&#x27;d recommend giving Raynie&#x27;s <Tag type="acc">Horn Charms</Tag> to <Tag type="char">Stocke</Tag>, and having <Tag type="char">Marco</Tag> replace her. You may also want to remove Rosch&#x27;s <Tag type="acc">Wind Armlet</Tag>, since you won&#x27;t have a chance to equip it on someone else later.</p>
       </Callout>
       <BossCard name="Grey Shadow, Granorg Archer x2, Light Granorgite" weakness="None">
-        <p><strong>Strategy:</strong> The Grey Shadow will always start the battle with a Power Zone.  If anyone steps on it, absolutely get them off of it as quickly as possible or they will kill you.  Your first priority should be to take out the Grey Shadow, since that will clear the Power Zone.  If you have any full Mana Burst gauges, use Turn Break on the Grey Shadow, whenever his turn comes around.  In the first round, have Marco use Magic Boost on either Stocke or Raynie.  A couple spells and physical attacks should finish him off.  The rest can be handled easily without the need for further buffing or healing.</p>
+        <p><strong>Strategy:</strong> The <Tag type="boss">Grey Shadow</Tag> will always start the battle with a <Tag type="skill">Power Zone</Tag>. If anyone steps on it, absolutely get them off of it as quickly as possible or they will kill you. Your first priority should be to take out the Grey Shadow, since that will clear the Power Zone. If you have any full Mana Burst gauges, use <Tag type="skill">Turn Break</Tag> on the Grey Shadow, whenever his turn comes around. In the first round, have <Tag type="char">Marco</Tag> use <Tag type="skill">Magic Boost</Tag> on either <Tag type="char">Stocke</Tag> or <Tag type="char">Raynie</Tag>. A couple spells and physical attacks should finish him off. The rest can be handled easily without the need for further buffing or healing.</p>
       </BossCard>
       <Callout type="node" title="Historia Milestone: A Message from Home">
         <p>After some cutscenes, you will hear about your next mission.</p>
       </Callout>
       <Callout type="note" title="Recommended Equipment">
-        <p>Recommended Equipment at this point in the game<br/>
-        <strong>Stocke:</strong> Rune Edge, Heavy Mail, Fang Charm x3<br/>
-        <strong>Raynie:</strong> Rune Spear, Heavy Mail, Horn Charm x3<br/>
-        <strong>Marco:</strong> Wisp Blade, Heavy Mail, Bishop Stud, Knight Stud x2<br/>
-        <strong>Extra:</strong> Rhapsody, Rune Claw</p>
+        <p>Recommended Equipment at this point in the game:<br/>
+        <strong>Stocke:</strong> <Tag type="weapon">Rune Edge</Tag>, <Tag type="armor">Heavy Mail</Tag>, <Tag type="acc">Fang Charm x3</Tag><br/>
+        <strong>Raynie:</strong> <Tag type="weapon">Rune Spear</Tag>, <Tag type="armor">Heavy Mail</Tag>, <Tag type="acc">Horn Charm x3</Tag><br/>
+        <strong>Marco:</strong> <Tag type="weapon">Wisp Blade</Tag>, <Tag type="armor">Heavy Mail</Tag>, <Tag type="acc">Bishop Stud</Tag>, <Tag type="acc">Knight Stud x2</Tag><br/>
+        <strong>Extra:</strong> <Tag type="weapon">Rhapsody</Tag>, <Tag type="weapon">Rune Claw</Tag></p>
       </Callout>
     </div>
   </ChapterCard>
@@ -176,9 +177,9 @@ const nextVol = { num: 4, title: 'Desert City Cygnus &amp; Gladiator Trials', hr
 
     <div class="chapter-walkthrough-prose">
       <Callout type="node" title="Historia Milestone: Alistel's Offensive">
-        <p>After receiving your objective and destination, talk to Viola again to advance the [A Letter to Tomorrow] sidequest. Return to the "A New Mission" node. As long as we're here, you can teach the Darkshield Scroll to Raynie. Talk to Cedric, who is on the upper platform next to the tavern. Choosing "Don't show journal" will unlock the the [A Voice Unheard] ending. Otherwise, choosing to "Show Journal" will complete the [A Letter to Tomorrow] sidequest and you will receive the NOAH AMULET (Poison/Sleep/Paralysis Res+4, sell).</p>
+        <p>After receiving your objective and destination, talk to <Tag type="char">Viola</Tag> again to advance the [A Letter to Tomorrow] sidequest. Return to the &quot;A New Mission&quot; node. As long as we&#x27;re here, you can teach the <Tag type="key">Darkshield Scroll</Tag> to <Tag type="char">Raynie</Tag>. Talk to <Tag type="char">Cedric</Tag>, who is on the upper platform next to the tavern. Choosing &quot;Don&#x27;t show journal&quot; will unlock the [A Voice Unheard] ending. Otherwise, choosing to &quot;Show Journal&quot; will complete the [A Letter to Tomorrow] sidequest and you will receive the <Tag type="acc">Noah Amulet</Tag> (Poison/Sleep/Paralysis Res+4, sell).</p>
       </Callout>
-      <p>Return to "Alistel's Offensive" node.  Climb up to the third floor and take the north exit to the Gran Plain.</p>
+      <p>Return to &quot;Alistel&#x27;s Offensive&quot; node. Climb up to the third floor and take the north exit to the <Tag type="place">Gran Plain</Tag>.</p>
     </div>
   </ChapterCard>
 
@@ -195,19 +196,19 @@ const nextVol = { num: 4, title: 'Desert City Cygnus &amp; Gladiator Trials', hr
 
     <div class="chapter-walkthrough-prose">
       <Callout type="node" title="Historia Milestone: Battle of Gran Plain">
-        <p>Go north one screen, west two, and continue west until you get an update on the battle situation here. You will then have a decision to make. Choosing to "Go north" will unlock [The Lion General] ending.</p>
+        <p>Go north one screen, west two, and continue west until you get an update on the battle situation here. You will then have a decision to make. Choosing to &quot;Go north&quot; will unlock [The Lion General] ending.</p>
       </Callout>
       <Callout type="node" title="Historia Milestone: A Meeting Too Late">
-        <p>Before returning to this node, I would strongly recommend resting up in a bed on the second floor of the Sand Fortress. Then, return to the decision point, this time choosing to "Look for Rosch", and you will find him.</p>
+        <p>Before returning to this node, I would strongly recommend resting up in a bed on the second floor of the <Tag type="place">Sand Fortress</Tag>. Then, return to the decision point, this time choosing to &quot;Look for Rosch&quot;, and you will find him.</p>
       </Callout>
       <BossCard name="Blue Granorg Archer x3, Paelzan, Wood Shield x3" weakness="Sleep, None, Fire">
-        <p><strong>Strategy:</strong> During the first round, use Magic Boost on Raynie, cast Fire on the middle Wood Shield, and cast Magic Boost on Stocke.  In the second round, Push Assault Paelzan into the Blue Granorg Archer and two Fire spells should finish them off.  Next, have Marco heal as necessary, while Stocke and Raynie cast Fire on the Wood Shields.  Finally, use Right Assault and two Fire spells to finish off the remaining Blue Granorg Archers.</p>
+        <p><strong>Strategy:</strong> During the first round, use <Tag type="skill">Magic Boost</Tag> on <Tag type="char">Raynie</Tag>, cast <Tag type="skill">Fire</Tag> on the middle <Tag type="enemy">Wood Shield</Tag>, and cast Magic Boost on <Tag type="char">Stocke</Tag>. In the second round, <Tag type="skill">Push Assault</Tag> <Tag type="boss">Paelzan</Tag> into the <Tag type="enemy">Blue Granorg Archer</Tag> and two Fire spells should finish them off. Next, have <Tag type="char">Marco</Tag> heal as necessary, while Stocke and Raynie cast Fire on the Wood Shields. Finally, use <Tag type="skill">Right Assault</Tag> and two Fire spells to finish off the remaining Blue Granorg Archers.</p>
       </BossCard>
       <Callout type="node" title="Historia Milestone: Rosch in Crisis">
-        <p>[Wolf in the Fold node] Return to the "Alistel's Offensive" node and talk to Viola to unlock the [Viola's Decision] node. Return to the "A Meeting Too Late" node and proceed as before until you are prompted with another decision. Make sure to choose "I leave it to you.", as this is a requirement to unlocking the sidequest [At Journey's End] later.</p>
+        <p>[Wolf in the Fold node] Return to the &quot;Alistel&#x27;s Offensive&quot; node and talk to <Tag type="char">Viola</Tag> to unlock the [Viola&#x27;s Decision] node. Return to the &quot;A Meeting Too Late&quot; node and proceed as before until you are prompted with another decision. Make sure to choose &quot;I leave it to you.&quot;, as this is a requirement to unlocking the sidequest [At Journey&#x27;s End] later.</p>
       </Callout>
       <Callout type="node" title="Historia Milestone: Lives Entrusted">
-        <p>After the battle, the plot will return to Alistel.</p>
+        <p>After the battle, the plot will return to <Tag type="place">Alistel</Tag>.</p>
       </Callout>
     </div>
   </ChapterCard>
@@ -225,22 +226,22 @@ const nextVol = { num: 4, title: 'Desert City Cygnus &amp; Gladiator Trials', hr
 
     <div class="chapter-walkthrough-prose">
       <Callout type="node" title="Historia Milestone: Homecoming">
-        <p>Before inspecting Hugo's office, take the elevator down to the first floor. Talk to the receptionist behind the left desk to receive the [Swordsman Recuit] and [Mercenary Recruit] sidequests, though you won't be able to complete them for a very long time. Return to the third floor, and enter Hugo's office to the left where you will find someone other than Hugo.</p>
+        <p>Before inspecting Hugo&#x27;s office, take the elevator down to the first floor. Talk to the receptionist behind the left desk to receive the [Swordsman Recruit] and [Mercenary Recruit] sidequests, though you won&#x27;t be able to complete them for a very long time. Return to the third floor, and enter Hugo&#x27;s office to the left where you will find someone other than <Tag type="char">Hugo</Tag>.</p>
       </Callout>
       <BossCard name="Heiss" weakness="None">
-        <p><strong>Strategy:</strong> Use the Change command to string together four consecutive turns of Fire spells to defeat him.</p>
+        <p><strong>Strategy:</strong> Use the <Tag type="skill">Change</Tag> command to string together four consecutive turns of <Tag type="skill">Fire</Tag> spells to defeat him.</p>
       </BossCard>
       <Callout type="node" title="Historia Milestone: Parting Ways">
-        <p>For winning the battle, Stocke will learn the Vanish technique, that can allow him to sneak past enemies without being seen. This includes the guards back at Granorg Palace. If you want to go back there now, then skip to GPLC1, but I wouldn't do that right now.</p>
+        <p>For winning the battle, <Tag type="char">Stocke</Tag> will learn the <Tag type="skill">Vanish</Tag> technique, that can allow him to sneak past enemies without being seen. This includes the guards back at <Tag type="place">Granorg Palace</Tag>. If you want to go back there now, then skip to GPLC1, but I wouldn&#x27;t do that right now.</p>
       </Callout>
       <Callout type="node" title="Historia Milestone: Flight">
-        <p>Talk to Sonja in the infirmary to make your escape before you get caught.</p>
+        <p>Talk to <Tag type="char">Sonja</Tag> in the infirmary to make your escape before you get caught.</p>
       </Callout>
       <BossCard name="Special Forces x2" weakness="None">
-        <p><strong>Strategy:</strong> One of them will start with Power Zone.  Do everything you can to keep them off of it.  As long as you do that, they can't really hurt you much. Casting Fire two or three time is your best bet for killing each of them.</p>
+        <p><strong>Strategy:</strong> One of them will start with <Tag type="skill">Power Zone</Tag>. Do everything you can to keep them off of it. As long as you do that, they can&#x27;t really hurt you much. Casting <Tag type="skill">Fire</Tag> two or three times is your best bet for killing each of them.</p>
       </BossCard>
       <Callout type="node" title="Historia Milestone: Fiendish">
-        <p>After the battle, someone you haven't seen before finds you.</p>
+        <p>After the battle, someone you haven&#x27;t seen before finds you.</p>
       </Callout>
     </div>
   </ChapterCard>
@@ -258,20 +259,20 @@ const nextVol = { num: 4, title: 'Desert City Cygnus &amp; Gladiator Trials', hr
 
     <div class="chapter-walkthrough-prose">
       <ShopMatrix title="Celestia (Alternate Chapter 3) Merchant" items={[{"name": "|2   |             Soothing Balm", "price": 100}, {"name": "|__  |             First Aid Kit", "price": 400}, {"name": "| |             Herbal Tea", "price": 350}, {"name": "Healing Herb", "price": 500}, {"name": "_____| |_            Holy Water", "price": 500}, {"name": "|  _   _  | Plaza     Anti-Poison", "price": 50}, {"name": "|1|_   _| |_          Anti-Fear", "price": 50}, {"name": "|___  S_____|         Anti-Paralytic", "price": 50}, {"name": "| |               Anti-Curse", "price": 50}, {"name": "Anti-Sleep", "price": 50}, {"name": "__| |__             Anti-Stone", "price": 50}, {"name": "|3      | Celestia   Poison Wing", "price": 350}, {"name": "|       | Entrance   Paralysis Wing", "price": 350}, {"name": "Sleep Wing", "price": 500}, {"name": "S - Save Point           Curse Wing", "price": 350}, {"name": "1 - Crystal Charm        Sleep Wing", "price": 500}, {"name": "2 - Anti-Paralytic x2    Stone Wing", "price": 500}, {"name": "3 - 3000 G               Power Down", "price": 500}, {"name": "Might Herb", "price": 500}]} equipment={[{"name": "Iron Sword", "price": 2400}, {"name": "Rune Edge", "price": 5000}, {"name": "Iron Lance", "price": 2100}, {"name": "Rune Spear", "price": 2500}, {"name": "Copper Gauntlet", "price": 1700}, {"name": "Red Dagger", "price": 2000}, {"name": "Knife", "price": 1800}, {"name": "Custom Knife", "price": 2800}, {"name": "Heavy Mail", "price": 1500}, {"name": "Silver Mail", "price": 1100}, {"name": "Leather Cuirass", "price": 2000, "note": "buy 1"}, {"name": "Beast Skins", "price": 500}, {"name": "Reinforced Cape", "price": 1200, "note": "buy 1"}, {"name": "Silver Cape", "price": 2800}, {"name": "Hymnal Cape", "price": 3700}, {"name": "Silver Dress", "price": 2000}, {"name": "Charm", "price": 350}, {"name": "Horn Charm", "price": 1000, "note": "buy 4"}, {"name": "Fang Charm", "price": 1000, "note": "buy 3"}, {"name": "Pawn Stud", "price": 750}, {"name": "Knight Stud", "price": 1500}, {"name": "Bishop Stud", "price": 3000, "note": "buy 5"}, {"name": "Seed Ring", "price": 1000}, {"name": "Leaf Ring", "price": 2500}, {"name": "Wind Armlet", "price": 5000}, {"name": "Amber", "price": 1750}, {"name": "Amazonite", "price": 1750}]} itemTitle="Item Shop" equipmentTitle="Equipment Shop" />
-      <p>To complete the sidequest, return to "The Beginning" node and give the Flower Bud to the girl on the first floor to advance the [A Flower of Promise] sidequest.  Skip to the "A New Mission" node and talk to her again to complete the [A Flower of Promise] sidequest and receive a THAUMATECH ORB (MAG+5/MDF+5). Return to "The Beastkind Forest" node and head up to talk to Rosch.</p>
+      <p>To complete the sidequest, return to &quot;The Beginning&quot; node and give the <Tag type="key">Flower Bud</Tag> to the girl on the first floor to advance the [A Flower of Promise] sidequest. Skip to the &quot;A New Mission&quot; node and talk to her again to complete the [A Flower of Promise] sidequest and receive a <Tag type="acc">Thaumatech Orb</Tag> (MAG+5/MDF+5). Return to &quot;The Beastkind Forest&quot; node and head up to talk to <Tag type="char">Rosch</Tag>.</p>
       <Callout type="node" title="Historia Milestone: Unacceptable Loss">
-        <p>[Gauntlet node] You will then receive your next mission from Patriarch Barranca. Aht and Gafka will then join your party.</p>
+        <p>[Gauntlet node] You will then receive your next mission from Patriarch <Tag type="char">Barranca</Tag>. <Tag type="char">Aht</Tag> and <Tag type="char">Gafka</Tag> will then join your party.</p>
       </Callout>
       <Callout type="node" title="Historia Milestone: Beastkind's Favor">
-        <p>Equip the Rhapsody on Aht and Rune Claw on Gafka. Then, buy a Leather Cuirass for Gafka and buy a Reinforced Cape for Aht. At this point, I like keeping extra accessories around for different situations, and we have more money than we need, anyway. Buy 4 Horn Charms, 3 Fang Charms, and 5 Bishop Studs. I prefer defensive accessories on her on Aht for non-boss encounters, despite her Traps being magic-based, since they're already more than powerful enough, and she is rather frail. Stocke will need to be ready to use magic for the next area, so I like giving him magic-boosting accessories, while keeping Fang Charms in reserve. I'd also buy 5 Curse &amp; Sleep Wings at the item shop.</p>
+        <p>Equip the <Tag type="weapon">Rhapsody</Tag> on <Tag type="char">Aht</Tag> and <Tag type="weapon">Rune Claw</Tag> on <Tag type="char">Gafka</Tag>. Then, buy a <Tag type="armor">Leather Cuirass</Tag> for Gafka and buy a <Tag type="armor">Reinforced Cape</Tag> for Aht. At this point, I like keeping extra accessories around for different situations, and we have more money than we need, anyway. Buy <Tag type="acc">4 Horn Charms</Tag>, <Tag type="acc">3 Fang Charms</Tag>, and <Tag type="acc">5 Bishop Studs</Tag>. I prefer defensive accessories on Aht for non-boss encounters, despite her Traps being magic-based, since they&#x27;re already more than powerful enough, and she is rather frail. <Tag type="char">Stocke</Tag> will need to be ready to use magic for the next area, so I like giving him magic-boosting accessories, while keeping Fang Charms in reserve. I&#x27;d also buy 5 Curse &amp; Sleep Wings at the item shop.</p>
       </Callout>
-      <p>Go up to the Boundary Tree and search the left side for a hidden chest which contains 2 ANTI-PARALYTICS.  Leave the village via the south entrance, and search the left side for a hidden chest which contains 3000 G. When you are ready, leave Celestia and head for Lazvil Hills.</p>
+      <p>Go up to the <Tag type="place">Boundary Tree</Tag> and search the left side for a hidden chest which contains <Tag type="item">2 Anti-Paralytics</Tag>. Leave the village via the south entrance, and search the left side for a hidden chest which contains <Tag type="gold">3000 G</Tag>. When you are ready, leave <Tag type="place">Celestia</Tag> and head for <Tag type="place">Lazvil Hills</Tag>.</p>
       <Callout type="note" title="Recommended Equipment">
-        <p>Recommended Equipment at this point in the game<br/>
-        <strong>Stocke:</strong> Rune Edge, Heavy Mail, Crystal Charm, Thaumatech Orb, Horn Charm<br/>
-        <strong>Aht:</strong> Rhapsody, Reinforced Cape, Bishop Stud x3<br/>
-        <strong>Gafka:</strong> Rune Claw, Leather Cuirass, Fang Charm x3<br/>
-        <strong>Extra:</strong> Bishop Stud x2, Fang Charm x3, Horn Charm x3</p>
+        <p>Recommended Equipment at this point in the game:<br/>
+        <strong>Stocke:</strong> <Tag type="weapon">Rune Edge</Tag>, <Tag type="armor">Heavy Mail</Tag>, <Tag type="acc">Crystal Charm</Tag>, <Tag type="acc">Thaumatech Orb</Tag>, <Tag type="acc">Horn Charm</Tag><br/>
+        <strong>Aht:</strong> <Tag type="weapon">Rhapsody</Tag>, <Tag type="armor">Reinforced Cape</Tag>, <Tag type="acc">Bishop Stud x3</Tag><br/>
+        <strong>Gafka:</strong> <Tag type="weapon">Rune Claw</Tag>, <Tag type="armor">Leather Cuirass</Tag>, <Tag type="acc">Fang Charm x3</Tag><br/>
+        <strong>Extra:</strong> <Tag type="acc">Bishop Stud x2</Tag>, <Tag type="acc">Fang Charm x3</Tag>, <Tag type="acc">Horn Charm x3</Tag></p>
       </Callout>
     </div>
   </ChapterCard>
@@ -312,17 +313,17 @@ X - Roadblock      Road   |      __   point.  Equip Horn Charms on Stocke, give
                           |_____|     his accessories to Aht, and head west.</pre>
       </AsciiMap>
       <BossCard name="Forest Bear, Stompy x2" weakness="Ice, Fire">
-        <p><strong>Strategy:</strong> These monsters aren't a real threat, but your turn queue is probably screwed up.  Aht should start by laying an Ice Trap for later.  However, your first priority should be to take out the two Stompys, before they can summon more help.  A Push Assault from Gafka and Fire spell from Stocke will do the trick.  Push the Forest Bear onto the Ice Trap.  Then, use the Change command once to get enough turns to finish off the Forest Bear with two more Ice Traps.</p>
+        <p><strong>Strategy:</strong> These monsters aren&#x27;t a real threat, but your turn queue is probably screwed up. <Tag type="char">Aht</Tag> should start by laying an <Tag type="skill">Ice Trap</Tag> for later. However, your first priority should be to take out the two <Tag type="enemy">Stompys</Tag>, before they can summon more help. A <Tag type="skill">Push Assault</Tag> from <Tag type="char">Gafka</Tag> and <Tag type="skill">Fire</Tag> spell from <Tag type="char">Stocke</Tag> will do the trick. Push the <Tag type="boss">Forest Bear</Tag> onto the Ice Trap. Then, use the <Tag type="skill">Change</Tag> command once to get enough turns to finish off the Forest Bear with two more Ice Traps.</p>
       </BossCard>
       <Callout type="node" title="Historia Milestone: Report from Vanoss">
-        <p>You'll briefly return to Celestia. After talking to Barranca, head to the inn to talk to Vanoss, and depart for Alistel.</p>
+        <p>You&#x27;ll briefly return to <Tag type="place">Celestia</Tag>. After talking to <Tag type="char">Barranca</Tag>, head to the inn to talk to <Tag type="char">Vanoss</Tag>, and depart for <Tag type="place">Alistel</Tag>.</p>
       </Callout>
       <Callout type="note" title="Recommended Equipment">
-        <p>Recommended Equipment at this point in the game<br/>
-        <strong>Stocke:</strong> Rune Edge, Heavy Mail, Fang Charm x3<br/>
-        <strong>Aht:</strong> Rhapsody, Reinforced Cape, Bishop Stud x3<br/>
-        <strong>Gafka:</strong> Rune Claw, Leather Cuirass, Fang Charm x3<br/>
-        <strong>Extra:</strong> Bishop Stud x2, Crystal Charm, Thaumatech Orb, Horn Charm x4</p>
+        <p>Recommended Equipment at this point in the game:<br/>
+        <strong>Stocke:</strong> <Tag type="weapon">Rune Edge</Tag>, <Tag type="armor">Heavy Mail</Tag>, <Tag type="acc">Fang Charm x3</Tag><br/>
+        <strong>Aht:</strong> <Tag type="weapon">Rhapsody</Tag>, <Tag type="armor">Reinforced Cape</Tag>, <Tag type="acc">Bishop Stud x3</Tag><br/>
+        <strong>Gafka:</strong> <Tag type="weapon">Rune Claw</Tag>, <Tag type="armor">Leather Cuirass</Tag>, <Tag type="acc">Fang Charm x3</Tag><br/>
+        <strong>Extra:</strong> <Tag type="acc">Bishop Stud x2</Tag>, <Tag type="acc">Crystal Charm</Tag>, <Tag type="acc">Thaumatech Orb</Tag>, <Tag type="acc">Horn Charm x4</Tag></p>
       </Callout>
     </div>
   </ChapterCard>
@@ -340,34 +341,34 @@ X - Roadblock      Road   |      __   point.  Equip Horn Charms on Stocke, give
 
     <div class="chapter-walkthrough-prose">
       <ShopMatrix title="Alistel (Alternate Chapter 3) Merchant" items={[{"name": "Soothing Balm", "price": 100}, {"name": "First Aid Kit", "price": 400}, {"name": "Herbal Tea", "price": 350}, {"name": "Healing Herb", "price": 500}, {"name": "Holy Water", "price": 500}, {"name": "Anti-Poison", "price": 50}, {"name": "Anti-Fear", "price": 50}, {"name": "Anti-Paralytic", "price": 50}, {"name": "Anti-Curse", "price": 50}, {"name": "Anti-Sleep", "price": 50}, {"name": "Anti-Stone", "price": 50}, {"name": "Panacea", "price": 800}, {"name": "Poison Wing", "price": 350}, {"name": "Sleep Wing", "price": 500}, {"name": "Power Down", "price": 500}, {"name": "Might Herb", "price": 500}]} equipment={[{"name": "Silver Edge", "price": 3000}, {"name": "Iron Sword", "price": 2400}, {"name": "Sorcery Epee", "price": 4600, "note": "buy for Stocke"}, {"name": "Silver Spear", "price": 2000}, {"name": "Iron Lance", "price": 2100}, {"name": "Magic Spear", "price": 3200, "note": "buy for Raynie"}, {"name": "Knife", "price": 1800}, {"name": "Heavy Mail", "price": 1500}, {"name": "Silver Mail", "price": 1100}, {"name": "Silver Cape", "price": 2800}, {"name": "Reinforced Cape", "price": 1200}, {"name": "Gold Clothes", "price": 3200}, {"name": "Charm", "price": 350}, {"name": "Horn Charm", "price": 1000}, {"name": "Pawn Stud", "price": 750}, {"name": "Knight Stud", "price": 1500}, {"name": "Seed Ring", "price": 1000}, {"name": "Breeze Armlet", "price": 1500}]} itemTitle="Item Shop" equipmentTitle="Equipment Shop" />
-      <p>Head up, and Vanoss will arrive.</p>
+      <p>Head up, and <Tag type="char">Vanoss</Tag> will arrive.</p>
       <Callout type="node" title="Historia Milestone: Darkness in Alistel">
-        <p>Talk to Vanoss again to receive the [Wandering Soul] sidequest. Go up to the Second Ward, and climb the left stairs to the upper left. Talk to the woman above to receive the [Second Opinion] sidequest. Outside the weapon shop, on the right side of the Second Ward, is a boy to whom you can talk to receive the [Battlefield Missive] sidequest. You should buy a Sorcery Epee for Stocke and a Magic Spear for Raynie from the shop. Finally, return to the castle north to proceed with the plot.</p>
+        <p>Talk to <Tag type="char">Vanoss</Tag> again to receive the [Wandering Soul] sidequest. Go up to the <Tag type="place">Second Ward</Tag>, and climb the left stairs to the upper left. Talk to the woman above to receive the [Second Opinion] sidequest. Outside the weapon shop, on the right side of the Second Ward, is a boy to whom you can talk to receive the [Battlefield Missive] sidequest. You should buy a <Tag type="weapon">Sorcery Epee</Tag> for <Tag type="char">Stocke</Tag> and a <Tag type="weapon">Magic Spear</Tag> for <Tag type="char">Raynie</Tag> from the shop. Finally, return to the castle north to proceed with the plot.</p>
       </Callout>
       <Callout type="node" title="Historia Milestone: Reunion with Raul">
-        <p>After the meeting, I would continue using Aht and Gafka, and arrange your party as follow. Then, attempt to leave Alistel.</p>
+        <p>After the meeting, I would continue using <Tag type="char">Aht</Tag> and <Tag type="char">Gafka</Tag>, and arrange your party as follows. Then, attempt to leave <Tag type="place">Alistel</Tag>.</p>
       </Callout>
       <Callout type="note" title="Recommended Equipment">
-        <p>Recommended Equipment at this point in the game<br/>
-        <strong>Stocke:</strong> Sorcery Epee, Heavy Mail, Fang Charm x3<br/>
-        <strong>Raynie:</strong> Magic Spear, Heavy Mail, Horn Charm x3<br/>
-        <strong>Marco:</strong> Wisp Blade, Heavy Mail, Bishop Stud x3<br/>
-        <strong>Aht:</strong> Rhapsody, Reinforced Cape, Crystal Charm, Thaumatech Orb, Horn Charm<br/>
-        <strong>Gafka:</strong> Rune Claw, Leather Cuirass, Fang Charm x3<br/>
-        <strong>Extra:</strong> Bishop Stud x3, Horn Charm x3</p>
+        <p>Recommended Equipment at this point in the game:<br/>
+        <strong>Stocke:</strong> <Tag type="weapon">Sorcery Epee</Tag>, <Tag type="armor">Heavy Mail</Tag>, <Tag type="acc">Fang Charm x3</Tag><br/>
+        <strong>Raynie:</strong> <Tag type="weapon">Magic Spear</Tag>, <Tag type="armor">Heavy Mail</Tag>, <Tag type="acc">Horn Charm x3</Tag><br/>
+        <strong>Marco:</strong> <Tag type="weapon">Wisp Blade</Tag>, <Tag type="armor">Heavy Mail</Tag>, <Tag type="acc">Bishop Stud x3</Tag><br/>
+        <strong>Aht:</strong> <Tag type="weapon">Rhapsody</Tag>, <Tag type="armor">Reinforced Cape</Tag>, <Tag type="acc">Crystal Charm</Tag>, <Tag type="acc">Thaumatech Orb</Tag>, <Tag type="acc">Horn Charm</Tag><br/>
+        <strong>Gafka:</strong> <Tag type="weapon">Rune Claw</Tag>, <Tag type="armor">Leather Cuirass</Tag>, <Tag type="acc">Fang Charm x3</Tag><br/>
+        <strong>Extra:</strong> <Tag type="acc">Bishop Stud x3</Tag>, <Tag type="acc">Horn Charm x3</Tag></p>
       </Callout>
       <BossCard name="Shadow x3" weakness="None">
-        <p><strong>Strategy:</strong> Aht should lead with Polaris to protect against their Paralysis attack.  They may try to complete a formation, in which case, you should break it up with an assault.  Otherwise, two of any trap will kill them.  If you can, try to get two of them on a single trap to finish them off even more quickly.</p>
+        <p><strong>Strategy:</strong> <Tag type="char">Aht</Tag> should lead with <Tag type="skill">Polaris</Tag> to protect against their Paralysis attack. They may try to complete a formation, in which case, you should break it up with an assault. Otherwise, two of any trap will kill them. If you can, try to get two of them on a single trap to finish them off even more quickly.</p>
       </BossCard>
-      <p>Unless Raynie hasn't reached Level 30 yet to learn G-Fire, I would recommend keeping Aht around and equipping her with the Bishop Studs again.  Fight the soldiers on your way out of Alistel, head to Lazvil Hills, and follow the same path you took back to Celestia.</p>
+      <p>Unless <Tag type="char">Raynie</Tag> hasn&#x27;t reached Level 30 yet to learn <Tag type="skill">G-Fire</Tag>, I would recommend keeping <Tag type="char">Aht</Tag> around and equipping her with the <Tag type="acc">Bishop Studs</Tag> again. Fight the soldiers on your way out of <Tag type="place">Alistel</Tag>, head to <Tag type="place">Lazvil Hills</Tag>, and follow the same path you took back to <Tag type="place">Celestia</Tag>.</p>
       <Callout type="note" title="Recommended Equipment">
-        <p>Recommended Equipment at this point in the game<br/>
-        <strong>Stocke:</strong> Sorcery Epee, Heavy Mail, Horn Charm x3<br/>
-        <strong>Raynie:</strong> Magic Spear, Heavy Mail, Crystal Charm, Thaumatech Orb, Horn Charm<br/>
-        <strong>Marco:</strong> Wisp Blade, Heavy Mail, Bishop Stud x3<br/>
-        <strong>Aht:</strong> Rhapsody, Reinforced Cape, Bishop Stud x3<br/>
-        <strong>Gafka:</strong> Rune Claw, Leather Cuirass, Fang Charm x3<br/>
-        <strong>Extra:</strong> Fang Charm x3, Horn Charm x3</p>
+        <p>Recommended Equipment at this point in the game:<br/>
+        <strong>Stocke:</strong> <Tag type="weapon">Sorcery Epee</Tag>, <Tag type="armor">Heavy Mail</Tag>, <Tag type="acc">Horn Charm x3</Tag><br/>
+        <strong>Raynie:</strong> <Tag type="weapon">Magic Spear</Tag>, <Tag type="armor">Heavy Mail</Tag>, <Tag type="acc">Crystal Charm</Tag>, <Tag type="acc">Thaumatech Orb</Tag>, <Tag type="acc">Horn Charm</Tag><br/>
+        <strong>Marco:</strong> <Tag type="weapon">Wisp Blade</Tag>, <Tag type="armor">Heavy Mail</Tag>, <Tag type="acc">Bishop Stud x3</Tag><br/>
+        <strong>Aht:</strong> <Tag type="weapon">Rhapsody</Tag>, <Tag type="armor">Reinforced Cape</Tag>, <Tag type="acc">Bishop Stud x3</Tag><br/>
+        <strong>Gafka:</strong> <Tag type="weapon">Rune Claw</Tag>, <Tag type="armor">Leather Cuirass</Tag>, <Tag type="acc">Fang Charm x3</Tag><br/>
+        <strong>Extra:</strong> <Tag type="acc">Fang Charm x3</Tag>, <Tag type="acc">Horn Charm x3</Tag></p>
       </Callout>
     </div>
   </ChapterCard>
@@ -386,28 +387,28 @@ X - Roadblock      Road   |      __   point.  Equip Horn Charms on Stocke, give
     <div class="chapter-walkthrough-prose">
       <p>Upon entering, you will find that you are a little late to the party.</p>
       <BossCard name="Alistel Soldier x2, Auto Defender x2" weakness="Sleep, Fire">
-        <p><strong>Strategy:</strong> Use two Sleep Wings to crowd control the soldiers.  Sadly, the Auto Defenders cannot be moved.  Have Marco cast Magic Boost on Raynie and Stocke. Use Stocke's Air Assault on one Auto Defender, followed up by G-Fire from Raynie to finish it off, and repeat on the second one.  Finally, use the Change command to set up a Push Assault, Air Assault, G-Fire, and some attacks to finish off the rest.</p>
+        <p><strong>Strategy:</strong> Use two <Tag type="item">Sleep Wings</Tag> to crowd control the soldiers. Sadly, the <Tag type="boss">Auto Defenders</Tag> cannot be moved. Have <Tag type="char">Marco</Tag> cast <Tag type="skill">Magic Boost</Tag> on <Tag type="char">Raynie</Tag> and <Tag type="char">Stocke</Tag>. Use Stocke&#x27;s <Tag type="skill">Air Assault</Tag> on one Auto Defender, followed up by <Tag type="skill">G-Fire</Tag> from Raynie to finish it off, and repeat on the second one. Finally, use the <Tag type="skill">Change</Tag> command to set up a <Tag type="skill">Push Assault</Tag>, Air Assault, G-Fire, and some attacks to finish off the rest.</p>
       </BossCard>
       <Callout type="node" title="Historia Milestone: Premonition of War">
-        <p>After some scenes, talk to Rosch at the Boundary Tree, then return to talk to Raul. Talk to Barranca to decide what to do about Alistel and who should lead. Choosing to "Nominate Raul" will unlock the [Assassination of Raul] ending.</p>
+        <p>After some scenes, talk to <Tag type="char">Rosch</Tag> at the <Tag type="place">Boundary Tree</Tag>, then return to talk to <Tag type="char">Raul</Tag>. Talk to <Tag type="char">Barranca</Tag> to decide what to do about Alistel and who should lead. Choosing to &quot;Nominate Raul&quot; will unlock the [Assassination of Raul] ending.</p>
       </Callout>
       <Callout type="node" title="Historia Milestone: Shattered Steel Arm">
-        <p>Return to this node and advance the plot up to the same decision. However, choosing to "Nominate Rosch" will only lead to a dead end.</p>
+        <p>Return to this node and advance the plot up to the same decision. However, choosing to &quot;Nominate Rosch&quot; will only lead to a dead end.</p>
       </Callout>
       <Callout type="node" title="Historia Milestone: Rosch in Agony">
-        <p>If you've already resolved this roadblock, then skip to CLST3. Otherwise, you will need return to the "How to Disappear" node in Standard History to put the Vanish ability to use.</p>
+        <p>If you&#x27;ve already resolved this roadblock, then skip to CLST3. Otherwise, you will need to return to the &quot;How to Disappear&quot; node in Standard History to put the <Tag type="skill">Vanish</Tag> ability to use.</p>
       </Callout>
-      <p>Before doing that, this is as good a time as any to complete those sidequests we got back at Alistel.  Unfortunately, it will involve going through half of Chapter 3 to get back there to complete them.  However, the rewards are good.</p>
-      <p>Return to the "A New Mission" node.  Climb the stairs by the tavern and talk to the man above to advance the [Second Opinion] sidequest.  Return to "The Valkyrie" node and head up to Rosch and Viola in the middle room above. Talk to the soldier sitting on the bench to advance the [Battlefield Missive] sidequests and receive the DEATH PACT for Stocke later.  Now for the hard part.</p>
-      <p>The nearest node to complete these sidequests is "The Beastkind Forest" node. Advance the plot to the "Darkness in Alistel" node.  Talk to the boy by the weapon shop to complete the [Battlefield Missive] sidequest and receive a CELESTIAL OIL.  Head left to the bar. This time, the man will have survived. Talk to him to complete the [Second Opinion] sidequest and receive the SLUMBERING SCROLL for Raynie, which you should teach her immediately.  Finally, return to the "How to Disappear" node to continue the plot.</p>
+      <p>Before doing that, this is as good a time as any to complete those sidequests we got back at <Tag type="place">Alistel</Tag>. Unfortunately, it will involve going through half of Chapter 3 to get back there to complete them. However, the rewards are good.</p>
+      <p>Return to the &quot;A New Mission&quot; node. Climb the stairs by the tavern and talk to the man above to advance the [Second Opinion] sidequest. Return to &quot;The Valkyrie&quot; node and head up to <Tag type="char">Rosch</Tag> and <Tag type="char">Viola</Tag> in the middle room above. Talk to the soldier sitting on the bench to advance the [Battlefield Missive] sidequest and receive the <Tag type="key">Death Pact</Tag> for <Tag type="char">Stocke</Tag> later. Now for the hard part.</p>
+      <p>The nearest node to complete these sidequests is &quot;The Beastkind Forest&quot; node. Advance the plot to the &quot;Darkness in Alistel&quot; node. Talk to the boy by the weapon shop to complete the [Battlefield Missive] sidequest and receive a <Tag type="item">Celestial Oil</Tag>. Head left to the bar. This time, the man will have survived. Talk to him to complete the [Second Opinion] sidequest and receive the <Tag type="key">Slumbering Scroll</Tag> for <Tag type="char">Raynie</Tag>, which you should teach her immediately. Finally, return to the &quot;How to Disappear&quot; node to continue the plot.</p>
       <Callout type="note" title="Recommended Equipment">
-        <p>Recommended Equipment at this point in the game<br/>
-        <strong>Stocke:</strong> Sorcery Epee, Heavy Mail, Fang Charm x3<br/>
-        <strong>Raynie:</strong> Magic Spear, Heavy Mail, Crystal Charm, Thaumatech Orb, Horn Charm<br/>
-        <strong>Marco:</strong> Wisp Blade, Heavy Mail, Bishop Stud x3<br/>
-        <strong>Aht:</strong> Rhapsody, Reinforced Cape, Bishop Stud x3<br/>
-        <strong>Gafka:</strong> Rune Claw, Leather Cuirass, Fang Charm x3<br/>
-        <strong>Extra:</strong> Horn Charm x6</p>
+        <p>Recommended Equipment at this point in the game:<br/>
+        <strong>Stocke:</strong> <Tag type="weapon">Sorcery Epee</Tag>, <Tag type="armor">Heavy Mail</Tag>, <Tag type="acc">Fang Charm x3</Tag><br/>
+        <strong>Raynie:</strong> <Tag type="weapon">Magic Spear</Tag>, <Tag type="armor">Heavy Mail</Tag>, <Tag type="acc">Crystal Charm</Tag>, <Tag type="acc">Thaumatech Orb</Tag>, <Tag type="acc">Horn Charm</Tag><br/>
+        <strong>Marco:</strong> <Tag type="weapon">Wisp Blade</Tag>, <Tag type="armor">Heavy Mail</Tag>, <Tag type="acc">Bishop Stud x3</Tag><br/>
+        <strong>Aht:</strong> <Tag type="weapon">Rhapsody</Tag>, <Tag type="armor">Reinforced Cape</Tag>, <Tag type="acc">Bishop Stud x3</Tag><br/>
+        <strong>Gafka:</strong> <Tag type="weapon">Rune Claw</Tag>, <Tag type="armor">Leather Cuirass</Tag>, <Tag type="acc">Fang Charm x3</Tag><br/>
+        <strong>Extra:</strong> <Tag type="acc">Horn Charm x6</Tag></p>
       </Callout>
     </div>
   </ChapterCard>
@@ -446,14 +447,14 @@ Training      |_     _|            you can continue the plot from here.  Choose
   Area          |   |              to "Stick to stealth" when prompted.</pre>
       </AsciiMap>
       <Callout type="node" title="Historia Milestone: Successful Infiltration">
-        <p>Eerily enough, there are no enemies around the palace. Walk left, up the stairs, and into the Meeting Room to the right. On the right side is a hidden chest which contains 2000 G. Go back down the stairs and left two rooms to the Training Area where you will see a save point. In the lower left corner is a hidden chest which contains 2000 G. Head up to the save point to advance the plot and climb the vines to do so again.</p>
+        <p>Eerily enough, there are no enemies around the palace. Walk left, up the stairs, and into the <Tag type="place">Meeting Room</Tag> to the right. On the right side is a hidden chest which contains <Tag type="gold">2000 G</Tag>. Go back down the stairs and left two rooms to the <Tag type="place">Training Area</Tag> where you will see a save point. In the lower left corner is a hidden chest which contains <Tag type="gold">2000 G</Tag>. Head up to the save point to advance the plot and climb the vines to do so again.</p>
       </Callout>
       <BossCard name="Blue Granorg Archer x3, Granorg Defender x3" weakness="None">
-        <p><strong>Strategy:</strong> These guys seem to really screw up the turn order to prevent combos, so make heavy use of the Change command.  First, have Marco cast Magic Boost on Raynie.  She can one-shot the Archers with any spell, but you'll need G-Fire to one-shot the Defenders, or an Assault plus any spell.  Depending on the turn order, defeat any two of them with an Assault and a spell from Raynie.  Try to kill the ones that are breaking up your combos, if you can.  Otherwise, just keep taking them out two at a time.  You won't need to heal.</p>
+        <p><strong>Strategy:</strong> These guys seem to really screw up the turn order to prevent combos, so make heavy use of the <Tag type="skill">Change</Tag> command. First, have <Tag type="char">Marco</Tag> cast <Tag type="skill">Magic Boost</Tag> on <Tag type="char">Raynie</Tag>. She can one-shot the Archers with any spell, but you&#x27;ll need <Tag type="skill">G-Fire</Tag> to one-shot the Defenders, or an Assault plus any spell. Depending on the turn order, defeat any two of them with an Assault and a spell from Raynie. Try to kill the ones that are breaking up your combos, if you can. Otherwise, just keep taking them out two at a time. You won&#x27;t need to heal.</p>
       </BossCard>
-      <p>You'll need to retreat the way you came, fighting soldiers along the way, until you make it back to the Underground Passage.  This time, you can move around freely here.  Follow the hall up to a fork, where you should first go left to the Underground Library to find a chest which contains a COCKTAIL DRESS (DEF+6/MDF+15, sell).  Then, take the right path at the fork to escape.</p>
+      <p>You&#x27;ll need to retreat the way you came, fighting soldiers along the way, until you make it back to the <Tag type="place">Underground Passage</Tag>. This time, you can move around freely here. Follow the hall up to a fork, where you should first go left to the <Tag type="place">Underground Library</Tag> to find a chest which contains a <Tag type="armor">Cocktail Dress</Tag> (DEF+6/MDF+15, sell). Then, take the right path at the fork to escape.</p>
       <Callout type="node" title="Historia Milestone: Princess of Light">
-        <p>After some dialogue, you will return to Granorg.</p>
+        <p>After some dialogue, you will return to <Tag type="place">Granorg</Tag>.</p>
       </Callout>
     </div>
   </ChapterCard>
@@ -472,18 +473,18 @@ Training      |_     _|            you can continue the plot from here.  Choose
     <div class="chapter-walkthrough-prose">
       <ShopMatrix title="Granorg (Standard Chapter 3) Merchant" items={[{"name": "Soothing Balm", "price": 100}, {"name": "First Aid Kit", "price": 400}, {"name": "Herbal Tea", "price": 350}, {"name": "Healing Herb", "price": 500}, {"name": "Holy Water", "price": 500}, {"name": "Anti-Poison", "price": 50}, {"name": "Anti-Fear", "price": 50}, {"name": "Anti-Paralytic", "price": 50}, {"name": "Anti-Curse", "price": 50}, {"name": "Anti-Sleep", "price": 50}, {"name": "Anti-Stone", "price": 50}, {"name": "Poison Wing", "price": 350}, {"name": "Sleep Wing", "price": 500}]} equipment={[{"name": "Blitz Epee        2000           Bronze Mail", "price": 900}, {"name": "Silver Edge       3000           Silver Mail", "price": 1100}, {"name": "Rune Edge         5000           Silver Cape", "price": 2800}, {"name": "Soul Eater        4800 (buy 1)   Mail Vest", "price": 1200}, {"name": "Iron Spear        1800           Hymnal Cape", "price": 3700}, {"name": "Silver Spear      2000           Chainmail Dress", "price": 3800}, {"name": "Bloody Pike       3700 (buy 1)   Charm", "price": 350}, {"name": "Bronze Spear      1000           Horn Charm", "price": 1000}, {"name": "Red Dagger        2000           Fang Charm", "price": 1000}, {"name": "Knife             1800           Pawn Stud", "price": 750}, {"name": "Custom Shell      1400           Knight Stud", "price": 1500}, {"name": "Seed Ring", "price": 1000}]} itemTitle="Item Shop" equipmentTitle="Equipment Shop" />
       <Callout type="node" title="Historia Milestone: The Resistance">
-        <p>After some more dialogue, talk to Will at the bar to unlock the [Sand Sword] node. While not a mandatory event for now, you will eventually have to do it. Head east to the Downtown area. Somewhat hidden by a tree in the center, you will find Eruca in her cloak, and she will prompt you for a decision. Choosing "Don't push yourself" will unlock [Princess' Charge] ending. Otherwise, choosing "Fulfill your duty" will advance [The King's Daughter] sidequest.</p>
+        <p>After some more dialogue, talk to <Tag type="char">Will</Tag> at the bar to unlock the [Sand Sword] node. While not a mandatory event for now, you will eventually have to do it. Head east to the <Tag type="place">Downtown</Tag> area. Somewhat hidden by a tree in the center, you will find <Tag type="char">Eruca</Tag> in her cloak, and she will prompt you for a decision. Choosing &quot;Don&#x27;t push yourself&quot; will unlock [Princess&#x27; Charge] ending. Otherwise, choosing &quot;Fulfill your duty&quot; will advance [The King&#x27;s Daughter] sidequest.</p>
       </Callout>
-      <p>Go east and north one screen.  Talk to the woman in pink to receive the [Despairing Young Man] sidequest.  Head south and east one screen, and check out the shops with new wares for sale.  I would buy a Soul Eater for Stocke and a Bloody Pike for Rosch later.  The Soul Eater is great for Stocke's physical attacks, but you should hold onto his Sorcery Epee for when you want him to be casting magic instead.</p>
-      <p>Return to the "To Granorg" node.  Talk to Anna in the upper left corner of the Second Ward to complete [The King's Daughter] sidequest and to receive the RABBIT'S FOOT (MP+10/LUC+15).  The Luck stat improves your stealing ability, so you may want to hold onto it for later, but it's not critical at all.</p>
-      <p>Return to the "Castle Sewers" node and head up to the Palace-Front Plaza.  Talk to the man in the cloak to advance the [Despairing Young Man] sidequest. Return to "The Resistance" node and talk to him again to complete the [Despairing Young Man] sidequest and receive the LEFT-CUT SCROLL for Marco, which you should teach to him immediately.</p>
-      <p>Leave Granorg and head to the Gran Plain to reach Cornet Village.</p>
+      <p>Go east and north one screen. Talk to the woman in pink to receive the [Despairing Young Man] sidequest. Head south and east one screen, and check out the shops with new wares for sale. I would buy a <Tag type="weapon">Soul Eater</Tag> for <Tag type="char">Stocke</Tag> and a <Tag type="weapon">Bloody Pike</Tag> for <Tag type="char">Rosch</Tag> later. The Soul Eater is great for Stocke&#x27;s physical attacks, but you should hold onto his <Tag type="weapon">Sorcery Epee</Tag> for when you want him to be casting magic instead.</p>
+      <p>Return to the &quot;To Granorg&quot; node. Talk to <Tag type="char">Anna</Tag> in the upper left corner of the <Tag type="place">Second Ward</Tag> to complete [The King&#x27;s Daughter] sidequest and to receive the <Tag type="acc">Rabbit&#x27;s Foot</Tag> (MP+10/LUC+15). The Luck stat improves your stealing ability, so you may want to hold onto it for later, but it&#x27;s not critical at all.</p>
+      <p>Return to the &quot;Castle Sewers&quot; node and head up to the <Tag type="place">Palace-Front Plaza</Tag>. Talk to the man in the cloak to advance the [Despairing Young Man] sidequest. Return to &quot;The Resistance&quot; node and talk to him again to complete the [Despairing Young Man] sidequest and receive the <Tag type="key">Left-Cut Scroll</Tag> for <Tag type="char">Marco</Tag>, which you should teach to him immediately.</p>
+      <p>Leave <Tag type="place">Granorg</Tag> and head to the <Tag type="place">Gran Plain</Tag> to reach <Tag type="place">Cornet Village</Tag>.</p>
       <Callout type="note" title="Recommended Equipment">
-        <p>Recommended Equipment at this point in the game<br/>
-        <strong>Stocke:</strong> Soul Eater, Heavy Mail, Fang Charm x3<br/>
-        <strong>Raynie:</strong> Magic Spear, Heavy Mail, Crystal Charm, Thaumatech Orb, Horn Charm<br/>
-        <strong>Marco:</strong> Wisp Blade, Heavy Mail, Bishop Stud x3<br/>
-        <strong>Extra:</strong> Sorcery Epee, Bloody Pike, Horn Charm x6</p>
+        <p>Recommended Equipment at this point in the game:<br/>
+        <strong>Stocke:</strong> <Tag type="weapon">Soul Eater</Tag>, <Tag type="armor">Heavy Mail</Tag>, <Tag type="acc">Fang Charm x3</Tag><br/>
+        <strong>Raynie:</strong> <Tag type="weapon">Magic Spear</Tag>, <Tag type="armor">Heavy Mail</Tag>, <Tag type="acc">Crystal Charm</Tag>, <Tag type="acc">Thaumatech Orb</Tag>, <Tag type="acc">Horn Charm</Tag><br/>
+        <strong>Marco:</strong> <Tag type="weapon">Wisp Blade</Tag>, <Tag type="armor">Heavy Mail</Tag>, <Tag type="acc">Bishop Stud x3</Tag><br/>
+        <strong>Extra:</strong> <Tag type="weapon">Sorcery Epee</Tag>, <Tag type="weapon">Bloody Pike</Tag>, <Tag type="acc">Horn Charm x6</Tag></p>
       </Callout>
     </div>
   </ChapterCard>

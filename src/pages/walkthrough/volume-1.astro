@@ -6,6 +6,7 @@ import AsciiMap from '../../components/AsciiMap.astro';
 import BossCard from '../../components/BossCard.astro';
 import ShopMatrix from '../../components/ShopMatrix.astro';
 import Callout from '../../components/Callout.astro';
+import Tag from '../../components/Tag.astro';
 
 const baseUrl = import.meta.env.BASE_URL;
 
@@ -102,20 +103,20 @@ const nextVol = { num: 2, title: 'Specint Espionage & Underground Passages', hre
       </AsciiMap>
 
       <Callout type="node" title="Historia Milestone: Daydream">
-        <p>After receiving your first mission, let&#x27;s promptly ignore it and go treasure hunting first. To your left, you should find a chest which contains 2 SOOTHING BALMS. Take the central elevator up to the third floor and open the chest to the right which contains a CHARM (ATK+1/MAG+1/HP+3, equip on Raynie). Now, head down to the first floor. In the upper right room are two chests which contain a HOLY WATER and 2 HERBAL TEAS.</p>
+        <p>After receiving your first mission, let&#x27;s promptly ignore it and go treasure hunting first. To your left, you should find a chest which contains <Tag type="item">2 Soothing Balms</Tag>. Take the central elevator up to the <Tag type="place">3rd Floor</Tag> and open the chest to the right which contains a <Tag type="acc">Charm</Tag> (ATK+1/MAG+1/HP+3, equip on <Tag type="char">Raynie</Tag>). Now, head down to the <Tag type="place">1st Floor</Tag>. In the upper right room are two chests which contain a <Tag type="item">Holy Water</Tag> and <Tag type="item">2 Herbal Teas</Tag>.</p>
       </Callout>
 
-      <p>In the Second Ward, there is a tavern to the left and the equipment shop to the right. Climb both stairs on the right and run down to a chest which contains an HERBAL TEA. Return to the main corridor and head down to the First Ward.</p>
+      <p>In the <Tag type="place">Second Ward</Tag>, there is a <Tag type="place">Tavern</Tag> to the left and the <Tag type="place">Equipment Shop</Tag> to the right. Climb both stairs on the right and run down to a chest which contains an <Tag type="item">Herbal Tea</Tag>. Return to the main corridor and head down to the <Tag type="place">First Ward</Tag>.</p>
 
-      <p>Climb the stairs to your right and follow the path around to a chest which contains 300 G. Go back to the corridor. To the left is the item shop and the inn is to the right. Check out the inn&#x27;s second floor where you can find a chest which contains BEAST SKINS (DEF+9/MDF+12, equip on Stocke).</p>
+      <p>Climb the stairs to your right and follow the path around to a chest which contains <Tag type="gold">300 G</Tag>. Go back to the corridor. To the left is the <Tag type="place">Item Shop</Tag> and the <Tag type="place">Inn</Tag> is to the right. Check out the inn&#x27;s second floor where you can find a chest which contains <Tag type="armor">Beast Skins</Tag> (DEF+9/MDF+12, equip on <Tag type="char">Stocke</Tag>).</p>
 
-      <p>With the new money you found, return to the equipment shop and purchase a Custom Sword for Stocke. Hand down his old Bronze Sword to Marco and sell your excess equipment. As you leave the city, talk to Rosch, and continue to Lazvil Hills.</p>
+      <p>With the new money you found, return to the <Tag type="place">Equipment Shop</Tag> and purchase a <Tag type="weapon">Custom Sword</Tag> for <Tag type="char">Stocke</Tag>. Hand down his old <Tag type="weapon">Bronze Sword</Tag> to <Tag type="char">Marco</Tag> and sell your excess equipment. As you leave the city, talk to <Tag type="char">Rosch</Tag>, and continue to <Tag type="place">Lazvil Hills</Tag>.</p>
 
       <Callout type="note" title="Recommended Equipment">
         <p>Recommended Equipment at this point in the game:<br/>
-        <strong>Stocke:</strong> Custom Sword, Beast Skins<br/>
-        <strong>Raynie:</strong> Spear, Brigandine, Charm<br/>
-        <strong>Marco:</strong> Bronze Sword, Brigandine</p>
+        <strong>Stocke:</strong> <Tag type="weapon">Custom Sword</Tag>, <Tag type="armor">Beast Skins</Tag><br/>
+        <strong>Raynie:</strong> <Tag type="weapon">Spear</Tag>, <Tag type="armor">Brigandine</Tag>, <Tag type="acc">Charm</Tag><br/>
+        <strong>Marco:</strong> <Tag type="weapon">Bronze Sword</Tag>, <Tag type="armor">Brigandine</Tag></p>
       </Callout>
     </div>
   </ChapterCard>
@@ -138,7 +139,7 @@ const nextVol = { num: 2, title: 'Specint Espionage & Underground Passages', hre
 
     <div class="chapter-walkthrough-prose">
       <Callout type="node" title="Historia Milestone: Children of Historia">
-        <p>Your first expedition outside Alistel leads directly into the fog of Lazvil Hills.</p>
+        <p>Your first expedition outside <Tag type="place">Alistel</Tag> leads directly into the fog of <Tag type="place">Lazvil Hills</Tag>.</p>
       </Callout>
 
       <AsciiMap title="Lazvil Hills - Highway W & Woodland Path">
@@ -158,9 +159,9 @@ Woodland          | |                       2 - Royal Jelly x3
    |X|       /2_____X</pre>
       </AsciiMap>
 
-      <p>Immediately upon your arrival, you are thrown into some tutorial battles. The instruction manual and in-game tutorials go over this well enough, so I don&#x27;t feel the need to do so again. When you regain control of Stocke, head east to the Woodland Path. Below you, is a chest which contains 3 SOOTHING BALMS. Continue east to another scene.</p>
+      <p>Immediately upon your arrival, you are thrown into some tutorial battles. The instruction manual and in-game tutorials go over this well enough, so I don&#x27;t feel the need to do so again. When you regain control of <Tag type="char">Stocke</Tag>, head east to the <Tag type="place">Woodland Path</Tag>. Below you, is a chest which contains <Tag type="item">3 Soothing Balms</Tag>. Continue east to another scene.</p>
 
-      <p>Once again, promptly ignore where you are told to go, and head down to a chest which contains 3 ROYAL JELLIES. Now, head north and complete another tutorial battle. Proceed north to Highway West and you will gain the Strike ability. Use it to stun enemies on the field, so you can gain a preemptive strike. Remember the crates in the cave you just passed for later and proceed east to the Highway. You cannot reach the chest behind the brush above, so cross the bridge to the east.</p>
+      <p>Once again, promptly ignore where you are told to go, and head down to a chest which contains <Tag type="item">3 Royal Jellies</Tag>. Now, head north and complete another tutorial battle. Proceed north to <Tag type="place">Highway West</Tag> and you will gain the <Tag type="skill">Strike</Tag> ability. Use it to stun enemies on the field, so you can gain a preemptive strike. Remember the crates in the cave you just passed for later and proceed east to the <Tag type="place">Highway</Tag>. You cannot reach the chest behind the brush above, so cross the bridge to the east.</p>
 
       <BossCard
         name="Palomides, Granorg Archer x3"
@@ -169,21 +170,21 @@ Woodland          | |                       2 - Royal Jelly x3
         <p><strong>Strategy:</strong> None. This is a scripted battle that you cannot win. Stocke might as well have just stayed in bed this morning.</p>
       </BossCard>
 
-      <p>After some events, you will meet Lippti and Teo of Historia. When you regain control of Stocke, first head south to the blockade. Lippti and Teo will appear again to give you superhuman strength to move them. Again, ignore the blockade and head north to the Highway West. Enter the cave and move the crates to gain access to a chest which contains a BRONZE MAIL (DEF+14/MDF+10, equip on Marco). Return to the blockade, follow the path to another battle, and you will make it out alive this time.</p>
+      <p>After some events, you will meet <Tag type="char">Lippti</Tag> and <Tag type="char">Teo</Tag> of <Tag type="place">Historia</Tag>. When you regain control of <Tag type="char">Stocke</Tag>, first head south to the blockade. <Tag type="char">Lippti</Tag> and <Tag type="char">Teo</Tag> will appear again to give you superhuman strength to move them. Again, ignore the blockade and head north to the <Tag type="place">Highway West</Tag>. Enter the cave and move the crates to gain access to a chest which contains a <Tag type="armor">Bronze Mail</Tag> (DEF+14/MDF+10, equip on <Tag type="char">Marco</Tag>). Return to the blockade, follow the path to another battle, and you will make it out alive this time.</p>
 
       <Callout type="node" title="Historia Milestone: Awakening">
-        <p>Upon awakening back at Alistel, leave the infirmary and try to leave to the right. Afterwards, you will be given a critical decision to make.</p>
+        <p>Upon awakening back at <Tag type="place">Alistel</Tag>, leave the infirmary and try to leave to the right. Afterwards, you will be given a critical decision to make.</p>
       </Callout>
 
       <Callout type="node" title="Historia Milestone: The Beginning">
-        <p>Head upstairs and talk to Rosch. Now, you have a decision to make: to Join the Rosch Brigade or to Stay under Heiss. This is where the main timeline will split into Standard History (SH) by staying under Heiss and Alternate History (AH) by joining the Rosch Brigade. Eventually, you will need to use the White Chronicle to take both paths, so don&#x27;t worry about which path to take first. You&#x27;re not going to be locked out of anything. I would recommend joining the Rosch Brigade first, since it unlocks some sidequests. If you wish to proceed by staying under Heiss, then skip ahead to Chapter 06 (Alistel - Standard Prologue).</p>
+        <p>Head upstairs and talk to <Tag type="char">Rosch</Tag>. Now, you have a decision to make: to Join the Rosch Brigade or to Stay under <Tag type="char">Heiss</Tag>. This is where the main timeline will split into Standard History (SH) by staying under Heiss and Alternate History (AH) by joining the Rosch Brigade. Eventually, you will need to use the White Chronicle to take both paths, so don&#x27;t worry about which path to take first. You&#x27;re not going to be locked out of anything. I would recommend joining the Rosch Brigade first, since it unlocks some sidequests. If you wish to proceed by staying under Heiss, then skip ahead to Chapter 06 (Alistel - Standard Prologue).</p>
       </Callout>
 
       <Callout type="note" title="Recommended Equipment">
         <p>Recommended Equipment at this point in the game:<br/>
-        <strong>Stocke:</strong> Custom Sword, Beast Skins<br/>
-        <strong>Raynie:</strong> Spear, Brigandine, Charm<br/>
-        <strong>Marco:</strong> Bronze Sword, Bronze Mail</p>
+        <strong>Stocke:</strong> <Tag type="weapon">Custom Sword</Tag>, <Tag type="armor">Beast Skins</Tag><br/>
+        <strong>Raynie:</strong> <Tag type="weapon">Spear</Tag>, <Tag type="armor">Brigandine</Tag>, <Tag type="acc">Charm</Tag><br/>
+        <strong>Marco:</strong> <Tag type="weapon">Bronze Sword</Tag>, <Tag type="armor">Bronze Mail</Tag></p>
       </Callout>
     </div>
   </ChapterCard>
@@ -202,19 +203,19 @@ Woodland          | |                       2 - Royal Jelly x3
 
     <div class="chapter-walkthrough-prose">
       <Callout type="node" title="Historia Milestone: Joining Rosch Brigade">
-        <p>After talking with Rosch, Raul, and Kiel, Rosch will join your party. Since you can only use three party members at a time, use the Party command in the menu screen to switch in Rosch for Marco. This will leave you with a mage to use, while keeping Marco&#x27;s MP up for healing outside of battle. Also, give Marco&#x27;s Bronze Mail to Raynie, while he is inactive. You should also switch Raynie&#x27;s stronger Spear with Rosch&#x27;s Light Lance, since he&#x27;ll be using physical attacks far more often.</p>
+        <p>After talking with <Tag type="char">Rosch</Tag>, <Tag type="char">Raul</Tag>, and <Tag type="char">Kiel</Tag>, <Tag type="char">Rosch</Tag> will join your party. Since you can only use three party members at a time, use the Party command in the menu screen to switch in <Tag type="char">Rosch</Tag> for <Tag type="char">Marco</Tag>. This will leave you with a mage to use, while keeping Marco&#x27;s MP up for healing outside of battle. Also, give Marco&#x27;s <Tag type="armor">Bronze Mail</Tag> to <Tag type="char">Raynie</Tag>, while he is inactive. You should also switch Raynie&#x27;s stronger <Tag type="weapon">Spear</Tag> with Rosch&#x27;s <Tag type="weapon">Light Lance</Tag>, since he&#x27;ll be using physical attacks far more often.</p>
       </Callout>
 
-      <p>Before heading to your next mission, you can pick up your first sidequests now. Take the elevator down to the first floor and talk to the receptionist behind the desk to the left to receive the [Soldier Recruit] sidequest. Head down to the First Ward and talk to the soldier on the left to receive the [Night Watch] sidequest. You will eventually need to buy two Anti-Sleeps for him, but they&#x27;re not available right now.</p>
+      <p>Before heading to your next mission, you can pick up your first sidequests now. Take the elevator down to the <Tag type="place">1st Floor</Tag> and talk to the receptionist behind the desk to the left to receive the [Soldier Recruit] sidequest. Head down to the <Tag type="place">First Ward</Tag> and talk to the soldier on the left to receive the [Night Watch] sidequest. You will eventually need to buy <Tag type="item">2 Anti-Sleeps</Tag> for him, but they&#x27;re not available right now.</p>
 
-      <p>Check out the inn and talk to the two mercenaries there to advance the [Soldier Recruit] sidequest. Return to the receptionist to complete it and receive 1500 G for your reward. Instead of upgrading your equipment here, I would save it for now, as better equipment will become available in the very near future. Leave Alistel and head for Lazvil Hills again.</p>
+      <p>Check out the <Tag type="place">Inn</Tag> and talk to the two mercenaries there to advance the [Soldier Recruit] sidequest. Return to the receptionist to complete it and receive <Tag type="gold">1500 G</Tag> for your reward. Instead of upgrading your equipment here, I would save it for now, as better equipment will become available in the very near future. Leave <Tag type="place">Alistel</Tag> and head for <Tag type="place">Lazvil Hills</Tag> again.</p>
 
       <Callout type="note" title="Recommended Equipment">
         <p>Recommended Equipment at this point in the game:<br/>
-        <strong>Stocke:</strong> Custom Sword, Beast Skins<br/>
-        <strong>Raynie:</strong> Light Lance, Bronze Mail, Charm<br/>
-        <strong>Marco:</strong> Bronze Sword, Brigandine<br/>
-        <strong>Rosch:</strong> Spear, Brigandine</p>
+        <strong>Stocke:</strong> <Tag type="weapon">Custom Sword</Tag>, <Tag type="armor">Beast Skins</Tag><br/>
+        <strong>Raynie:</strong> <Tag type="weapon">Light Lance</Tag>, <Tag type="armor">Bronze Mail</Tag>, <Tag type="acc">Charm</Tag><br/>
+        <strong>Marco:</strong> <Tag type="weapon">Bronze Sword</Tag>, <Tag type="armor">Brigandine</Tag><br/>
+        <strong>Rosch:</strong> <Tag type="weapon">Spear</Tag>, <Tag type="armor">Brigandine</Tag></p>
       </Callout>
     </div>
   </ChapterCard>
@@ -272,9 +273,9 @@ Woodland          | |               \  |    | |             |X|
 S - Save Point   X - Inaccessible   Z - Cave-in   C - Chest you can&#x27;t get yet</pre>
       </AsciiMap>
 
-      <p>This time, the trip through Lazvil Hills is uneventful. There are two points of interest. First, the bridge is out, so you&#x27;ll have to take the long way around. Second, there is a cave under the bridge where a soldier is trapped by a cave-in. There&#x27;s nothing we can do to help him out for now, but remember that for later.</p>
+      <p>This time, the trip through <Tag type="place">Lazvil Hills</Tag> is uneventful. There are two points of interest. First, the bridge is out, so you&#x27;ll have to take the long way around. Second, there is a cave under the bridge where a soldier is trapped by a cave-in. There&#x27;s nothing we can do to help him out for now, but remember that for later.</p>
 
-      <p>The path to Alma Mine is fairly straight-forward. Head west, take the lower path south and west to the Woodland Path. Then, go north at the fork and west to the exit.</p>
+      <p>The path to <Tag type="place">Alma Mine</Tag> is fairly straight-forward. Head west, take the lower path south and west to the <Tag type="place">Woodland Path</Tag>. Then, go north at the fork and west to the exit.</p>
     </div>
   </ChapterCard>
 
@@ -327,17 +328,17 @@ S - Save Point   X - Inaccessible   Z - Cave-in   C - Chest you can&#x27;t get y
     | |</pre>
       </AsciiMap>
 
-      <p>Upon arriving at Alma Mine, you have your second decision to make. This time, there is a right and wrong answer. If you want to unlock every node in the game, you will want to choose the wrong answer, as this unlocks bad endings throughout the game. Choosing to &quot;Wait in ambush&quot; will unlock [The Fallen Capital] ending. Otherwise, choosing to &quot;Send scouts&quot; will prompt a roadblock in the story that can only be overcome in the other timeline.</p>
+      <p>Upon arriving at <Tag type="place">Alma Mine</Tag>, you have your second decision to make. This time, there is a right and wrong answer. If you want to unlock every node in the game, you will want to choose the wrong answer, as this unlocks bad endings throughout the game. Choosing to &quot;Wait in ambush&quot; will unlock [The Fallen Capital] ending. Otherwise, choosing to &quot;Send scouts&quot; will prompt a roadblock in the story that can only be overcome in the other timeline.</p>
 
       <Callout type="node" title="Historia Milestone: The Closed Mine">
         <p>If you chose to wait in ambush, then you will be sent back to the beginning of the chapter, so press Start to skip the cutscene. Fortunately, since this was a critical decision point, a travel node has been created, so you can just skip back to that decision. At a save point, choose &quot;Go to Historia&quot;, return to &quot;The Closed Mine&quot; node, and choose to &quot;Send Scouts&quot;. While you won&#x27;t get a bad ending this time, the plot cannot proceed on this timeline for now. If you have already resolved this roadblock, then skip ahead to Chapter 12 (Alma Mine - Alternate Prologue).</p>
       </Callout>
 
       <Callout type="node" title="Historia Milestone: Breaking Rocks">
-        <p>Before checking out the other timeline, there&#x27;s still things you can do here. Walk down to find a merchant outside of a house. Buy 3 Horn Charms for Raynie to receive a good boost to her Magic stat that will last a very long time. I would recommend saving your remaining funds for better purchases later. Inside the house is a chest which contains 3 SOOTHING BALMS. Go up the ramp to the left to find a chest which contains 200 G.</p>
+        <p>Before checking out the other timeline, there&#x27;s still things you can do here. Walk down to find a merchant outside of a house. Buy <Tag type="acc">3 Horn Charms</Tag> for <Tag type="char">Raynie</Tag> to receive a good boost to her Magic stat that will last a very long time. I would recommend saving your remaining funds for better purchases later. Inside the house is a chest which contains <Tag type="item">3 Soothing Balms</Tag>. Go up the ramp to the left to find a chest which contains <Tag type="gold">200 G</Tag>.</p>
       </Callout>
 
-      <p>Since you are unable to continue further, use Historia to return to &quot;The Beginning&quot; node. This time, talk to Rosch and tell him you are choosing to &quot;Stay under Heiss&quot;.</p>
+      <p>Since you are unable to continue further, use Historia to return to &quot;The Beginning&quot; node. This time, talk to <Tag type="char">Rosch</Tag> and tell him you are choosing to &quot;Stay under <Tag type="char">Heiss</Tag>&quot;.</p>
     </div>
   </ChapterCard>
 
@@ -354,23 +355,23 @@ S - Save Point   X - Inaccessible   Z - Cave-in   C - Chest you can&#x27;t get y
     />
 
     <div class="chapter-walkthrough-prose">
-      <p>Take the elevator up to the second floor where you will receive your next mission from Heiss.</p>
+      <p>Take the elevator up to the <Tag type="place">2nd Floor</Tag> where you will receive your next mission from <Tag type="char">Heiss</Tag>.</p>
 
       <Callout type="node" title="Historia Milestone: Specint Assignment">
-        <p>Go back down the elevator and south to the item shop in the First Ward. Talk to the item shop owner to learn that you need to head to the tavern to find your target. Head back up to the Second Ward, enter the bar, and watch the scene. When the robed man leaves, follow him, and confront him.</p>
+        <p>Go back down the elevator and south to the <Tag type="place">Item Shop</Tag> in the <Tag type="place">First Ward</Tag>. Talk to the item shop owner to learn that you need to head to the <Tag type="place">Tavern</Tag> to find your target. Head back up to the <Tag type="place">Second Ward</Tag>, enter the bar, and watch the scene. When the robed man leaves, follow him, and confront him.</p>
       </Callout>
 
       <BossCard
         name="Vlad"
         weakness="None"
       >
-        <p><strong>Strategy:</strong> If you have learned Power Wave, use it. Otherwise, stick to your normal attacks, and cast Heal when your HP falls below 50.</p>
+        <p><strong>Strategy:</strong> If you have learned <Tag type="skill">Power Wave</Tag>, use it. Otherwise, stick to your normal attacks, and cast <Tag type="skill">Heal</Tag> when your HP falls below 50.</p>
       </BossCard>
 
-      <p>After defeating Vlad, return to Heiss&#x27; office to receive your next mission.</p>
+      <p>After defeating <Tag type="enemy">Vlad</Tag>, return to <Tag type="char">Heiss</Tag>&#x27; office to receive your next mission.</p>
 
       <Callout type="node" title="Historia Milestone: Top Secret Mission">
-        <p>Head down to the first floor, and you will begin the first chapter.</p>
+        <p>Head down to the <Tag type="place">1st Floor</Tag>, and you will begin the first chapter.</p>
       </Callout>
     </div>
   </ChapterCard>
@@ -389,20 +390,20 @@ S - Save Point   X - Inaccessible   Z - Cave-in   C - Chest you can&#x27;t get y
 
     <div class="chapter-walkthrough-prose">
       <Callout type="node" title="Historia Milestone: To Granorg">
-        <p>You need to find Raynie and Marco, who can be found at the tavern.</p>
+        <p>You need to find <Tag type="char">Raynie</Tag> and <Tag type="char">Marco</Tag>, who can be found at the <Tag type="place">Tavern</Tag>.</p>
       </Callout>
 
       <Callout type="node" title="Historia Milestone: The Bridge at Lazvil">
-        <p>Shops will periodically sell new equipment from chapter to chapter, but not this time. Before heading to Lazvil again, let&#x27;s pick up some sidequests. Climb the stairs to the left of the tavern and talk to the girl, named Anna. Listen to her requests and accept [The King&#x27;s Daughter] sidequest from her.</p>
+        <p>Shops will periodically sell new equipment from chapter to chapter, but not this time. Before heading to <Tag type="place">Lazvil Hills</Tag> again, let&#x27;s pick up some sidequests. Climb the stairs to the left of the tavern and talk to the girl, named <Tag type="char">Anna</Tag>. Listen to her requests and accept [The King&#x27;s Daughter] sidequest from her.</p>
       </Callout>
 
-      <p>Go right to the weapon shop and talk to the kids to the right. Listen to their problem and accept the [What Was Inherited] sidequest. Climb the stairs and enter the upper right house. Talk to the kids&#x27; father to advance [What Was Inherited]. Rest up at the inn and head to Lazvil Hills.</p>
+      <p>Go right to the <Tag type="place">Weapon Shop</Tag> and talk to the kids to the right. Listen to their problem and accept the [What Was Inherited] sidequest. Climb the stairs and enter the upper right house. Talk to the kids&#x27; father to advance [What Was Inherited]. Rest up at the <Tag type="place">Inn</Tag> and head to <Tag type="place">Lazvil Hills</Tag>.</p>
 
       <Callout type="note" title="Recommended Equipment">
         <p>Recommended Equipment at this point in the game:<br/>
-        <strong>Stocke:</strong> Custom Sword, Beast Skins, Charm<br/>
-        <strong>Raynie:</strong> Light Lance, Brigandine, Horn Charm x3<br/>
-        <strong>Marco:</strong> Bronze Sword, Bronze Mail</p>
+        <strong>Stocke:</strong> <Tag type="weapon">Custom Sword</Tag>, <Tag type="armor">Beast Skins</Tag>, <Tag type="acc">Charm</Tag><br/>
+        <strong>Raynie:</strong> <Tag type="weapon">Light Lance</Tag>, <Tag type="armor">Brigandine</Tag>, <Tag type="acc">Horn Charm x3</Tag><br/>
+        <strong>Marco:</strong> <Tag type="weapon">Bronze Sword</Tag>, <Tag type="armor">Bronze Mail</Tag></p>
       </Callout>
     </div>
   </ChapterCard>
@@ -448,14 +449,14 @@ S - Save Point   X - Inaccessible   C - Chest you can&#x27;t get yet
 1 - Holy Water   2 - Breeze Armlet  3 - Celestial Tea (hidden behind tree)</pre>
       </AsciiMap>
 
-      <p>Feepos can randomly drop a Vital Sword, which would be really nice for Marco. You cannot procure any of the treasures yet. Go west to the Highway and down the ramp to revise your destination. Walk south to the Woodland Path East, west around the river, and north to the other side of the river. Choosing to &quot;Go to Alma Mine&quot; will unlock [The Queen Ascendant] ending.</p>
+      <p><Tag type="enemy">Feepos</Tag> can randomly drop a <Tag type="weapon">Vital Sword</Tag>, which would be really nice for <Tag type="char">Marco</Tag>. You cannot procure any of the treasures yet. Go west to the <Tag type="place">Highway</Tag> and down the ramp to revise your destination. Walk south to the <Tag type="place">Woodland Path East</Tag>, west around the river, and north to the other side of the river. Choosing to &quot;Go to <Tag type="place">Alma Mine</Tag>&quot; will unlock [The Queen Ascendant] ending.</p>
 
       <Callout type="node" title="Historia Milestone: The Messenger&#x27;s News">
-        <p>If you choose to stay with Heiss first, you will need to return to &quot;The Beginning&quot; node and choose to Join the Rosch Brigade. If you need to do that, then skip back to Chapter 03 (Alistel - Alternate Prologue). Otherwise, return to &quot;The Messenger&#x27;s News&quot; node, and choose to &quot;Wait for Informant&quot;.</p>
+        <p>If you choose to stay with <Tag type="char">Heiss</Tag> first, you will need to return to &quot;The Beginning&quot; node and choose to Join the Rosch Brigade. If you need to do that, then skip back to Chapter 03 (Alistel - Alternate Prologue). Otherwise, return to &quot;The Messenger&#x27;s News&quot; node, and choose to &quot;Wait for Informant&quot;.</p>
       </Callout>
 
       <Callout type="node" title="Historia Milestone: No-Show">
-        <p>Go south one screen and west to the Woodland Path. Along the way, you will hear something.</p>
+        <p>Go south one screen and west to the <Tag type="place">Woodland Path</Tag>. Along the way, you will hear something.</p>
       </Callout>
 
       <Callout type="node" title="Historia Milestone: Echoing Hills">
@@ -466,24 +467,24 @@ S - Save Point   X - Inaccessible   C - Chest you can&#x27;t get yet
         name="Desert Pirate Hertz, Red Sand Bram"
         weakness="None"
       >
-        <p><strong>Strategy:</strong> Ideally, you want everyone to take their turns in one round. Use Change, as needed. Have Marco Grapple Hertz, Raynie cast Thunder, and Stocke use Push Assault to reduce their damage output. In subsequent rounds, Stocke should finish the combo with Power Wave. Only heal if your HP drops below 100.</p>
+        <p><strong>Strategy:</strong> Ideally, you want everyone to take their turns in one round. Use <Tag type="skill">Change</Tag>, as needed. Have <Tag type="char">Marco</Tag> <Tag type="skill">Grapple</Tag> Hertz, <Tag type="char">Raynie</Tag> cast <Tag type="skill">Thunder</Tag>, and <Tag type="char">Stocke</Tag> use <Tag type="skill">Push Assault</Tag> to reduce their damage output. In subsequent rounds, Stocke should finish the combo with <Tag type="skill">Power Wave</Tag>. Only heal if your HP drops below 100.</p>
       </BossCard>
 
-      <p>For defeating them, you will have saved the merchant Tarquin. In return, he will teach you the Bomber Skill. This will also allow you to proceed back at Alma Mine in Alternate History. If you want to do so, then skip ahead to Chapter 12 (Alma Mine - Alternate Prologue).</p>
+      <p>For defeating them, you will have saved the merchant <Tag type="char">Tarquin</Tag>. In return, he will teach you the <Tag type="skill">Bomber Skill</Tag>. This will also allow you to proceed back at <Tag type="place">Alma Mine</Tag> in Alternate History. If you want to do so, then skip ahead to Chapter 12 (Alma Mine - Alternate Prologue).</p>
 
       <Callout type="node" title="Historia Milestone: Struggle with Bandits">
-        <p>Before proceeding with your mission, let&#x27;s put that new bomber skill to use. Remember all those barrels we&#x27;ve seen along the way? Apparently, people just leave them full of explosives in this world. Go back east to the next screen and north until you see some barrels on the right. Push one of them around to the rocks on the left. Press L to prime the explosive, back away, and press L again to detonate them and blow away the rocks. Behind them is a chest which contains a HOLY WATER.</p>
+        <p>Before proceeding with your mission, let&#x27;s put that new bomber skill to use. Remember all those barrels we&#x27;ve seen along the way? Apparently, people just leave them full of explosives in this world. Go back east to the next screen and north until you see some barrels on the right. Push one of them around to the rocks on the left. Press L to prime the explosive, back away, and press L again to detonate them and blow away the rocks. Behind them is a chest which contains a <Tag type="item">Holy Water</Tag>.</p>
       </Callout>
 
-      <p>Return north to where you met the spy and enter the cave. Sadly, the soldier trapped there has died. Fortunately, you can use the barrel to gain access to the chest next to him which contains a BREEZE ARMLET (SPD+1, equip on Stocke). Examine the corpse to receive the [Accident in the Cave] sidequest. If only we could have saved him before this occurred. It would be rather inconvenient to do so right now, and he&#x27;s not going anywhere for awhile.</p>
+      <p>Return north to where you met the spy and enter the cave. Sadly, the soldier trapped there has died. Fortunately, you can use the barrel to gain access to the chest next to him which contains a <Tag type="acc">Breeze Armlet</Tag> (SPD+1, equip on <Tag type="char">Stocke</Tag>). Examine the corpse to receive the [Accident in the Cave] sidequest. If only we could have saved him before this occurred. It would be rather inconvenient to do so right now, and he&#x27;s not going anywhere for awhile.</p>
 
-      <p>There is yet another barrel at the entrance by the right side of Highway East. Push it down and blow away the rocks to reach the Southern Path. Behind the tree on the right is a chest which contains CELESTIAL TEA. You may want to return to Alistel to rest up at the inn. Otherwise, return to the Woodland Path, go west and south to reach Judgement Cliff.</p>
+      <p>There is yet another barrel at the entrance by the right side of <Tag type="place">Highway East</Tag>. Push it down and blow away the rocks to reach the <Tag type="place">Southern Path</Tag>. Behind the tree on the right is a chest which contains <Tag type="item">Celestial Tea</Tag>. You may want to return to <Tag type="place">Alistel</Tag> to rest up at the <Tag type="place">Inn</Tag>. Otherwise, return to the <Tag type="place">Woodland Path</Tag>, go west and south to reach <Tag type="place">Judgement Cliff</Tag>.</p>
 
       <Callout type="note" title="Recommended Equipment">
         <p>Recommended Equipment at this point in the game:<br/>
-        <strong>Stocke:</strong> Custom Sword, Beast Skins, Charm, Breeze Armlet<br/>
-        <strong>Raynie:</strong> Light Lance, Brigandine, Horn Charm x3<br/>
-        <strong>Marco:</strong> Bronze Sword, Bronze Mail</p>
+        <strong>Stocke:</strong> <Tag type="weapon">Custom Sword</Tag>, <Tag type="armor">Beast Skins</Tag>, <Tag type="acc">Charm</Tag>, <Tag type="acc">Breeze Armlet</Tag><br/>
+        <strong>Raynie:</strong> <Tag type="weapon">Light Lance</Tag>, <Tag type="armor">Brigandine</Tag>, <Tag type="acc">Horn Charm x3</Tag><br/>
+        <strong>Marco:</strong> <Tag type="weapon">Bronze Sword</Tag>, <Tag type="armor">Bronze Mail</Tag></p>
       </Callout>
     </div>
   </ChapterCard>
@@ -534,15 +535,15 @@ S - Save Point   X - Inaccessible   C - Chest you can&#x27;t get yet
 Old Spring W   Old Spring   Old Spring E     Death Mountain.</pre>
       </AsciiMap>
 
-      <p>Head west two screens and you&#x27;ll see a path below you. Slowly take a step down and swing your sword periodically, hoping to reveal a hidden trap that would have otherwise damaged everyone. At the bottom is a chest which contains SNIPER ROUNDS (ATK+20/MAG+3) that you can sell. Push the nearby barrel around the winding path to the left and down to blow away the rocks blocking a chest which contains 3 HERBAL TEAs. In the cave above is a chest which contains 2 POWER DOWN PLUS.</p>
+      <p>Head west two screens and you&#x27;ll see a path below you. Slowly take a step down and swing your sword periodically, hoping to reveal a hidden trap that would have otherwise damaged everyone. At the bottom is a chest which contains <Tag type="weapon">Sniper Rounds</Tag> (ATK+20/MAG+3) that you can sell. Push the nearby barrel around the winding path to the left and down to blow away the rocks blocking a chest which contains <Tag type="item">3 Herbal Teas</Tag>. In the cave above is a chest which contains <Tag type="item">2 Power Down Plus</Tag>.</p>
 
-      <p>Return to the entrance at Old Spring East and take the north exit this time. Simply go straight north to reach the exit to the Sand Fortress. You should rest up back at Alistel before continuing to the Sand Fortress.</p>
+      <p>Return to the entrance at <Tag type="place">Old Spring East</Tag> and take the north exit this time. Simply go straight north to reach the exit to the <Tag type="place">Sand Fortress</Tag>. You should rest up back at <Tag type="place">Alistel</Tag> before continuing to the Sand Fortress.</p>
     </div>
   </ChapterCard>
 
   <!-- Chapter 10 -->
   <ChapterCard
-    id="ch10"
+    id="ch010"
     number={10}
     title="Sand Fortress (Standard Chapter 1)"
     timeline="Standard"
@@ -612,25 +613,25 @@ Old Spring W   Old Spring   Old Spring E     Death Mountain.</pre>
       </AsciiMap>
 
       <Callout type="node" title="Historia Milestone: Breakthrough">
-        <p>There is no treasure to be found here for now, so it&#x27;s very straight-forward. In the Sand Fortress South area, hug the west cliffs to avoid stepping on any traps on the main road. Before entering the fortress, you will also find a merchant. I would recommend buying 6 Fang Charms, giving 3 of each to Stocke and Marco. A Rune Spear will greatly boost Raynie&#x27;s magic stat. All of these will last you for a very long time. However, I&#x27;d save the remaining money for buying armor later. You can also buy 2 Anti-Sleeps for the [Night Watch] sidequest, which we&#x27;ll be completing soon enough. If you can afford it, I would also purchase a Rune Edge for Stocke. Maybe try buying it after looting some of the soldiers. Hand down his old Custom Sword to Marco.</p>
+        <p>There is no treasure to be found here for now, so it&#x27;s very straight-forward. In the <Tag type="place">Sand Fortress South</Tag> area, hug the west cliffs to avoid stepping on any traps on the main road. Before entering the fortress, you will also find a merchant. I would recommend buying <Tag type="acc">6 Fang Charms</Tag>, giving 3 of each to <Tag type="char">Stocke</Tag> and <Tag type="char">Marco</Tag>. A <Tag type="weapon">Rune Spear</Tag> will greatly boost <Tag type="char">Raynie</Tag>&#x27;s magic stat. All of these will last you for a very long time. However, I&#x27;d save the remaining money for buying armor later. You can also buy <Tag type="item">2 Anti-Sleeps</Tag> for the [Night Watch] sidequest, which we&#x27;ll be completing soon enough. If you can afford it, I would also purchase a <Tag type="weapon">Rune Edge</Tag> for <Tag type="char">Stocke</Tag>. Maybe try buying it after looting some of the soldiers. Hand down his old <Tag type="weapon">Custom Sword</Tag> to <Tag type="char">Marco</Tag>.</p>
       </Callout>
 
-      <p>The path through the Sand Fortress can be very short. If you just walk right up the middle staircases, you can make it up to the third floor without a fight. Then, walk around to the right and up the stairs to the exit. However, I&#x27;d strongly recommend fighting every soldier that you can, just for the gold and experience. Plus, you still might pick up a Vital Blade from the Feepos around here too. When you&#x27;re ready, go through the door atop the third floor for your last trial.</p>
+      <p>The path through the <Tag type="place">Sand Fortress</Tag> can be very short. If you just walk right up the middle staircases, you can make it up to the <Tag type="place">3rd Floor</Tag> without a fight. Then, walk around to the right and up the stairs to the exit. However, I&#x27;d strongly recommend fighting every soldier that you can, just for the gold and experience. Plus, you still might pick up a <Tag type="weapon">Vital Blade</Tag> from the <Tag type="enemy">Feepos</Tag> around here too. When you&#x27;re ready, go through the door atop the third floor for your last trial.</p>
 
       <BossCard
         name="Granorg Defender, Granorg Archer x2, Light Granorgite x2"
         weakness="None"
       >
-        <p><strong>Strategy:</strong> Marco should cast Magic Boost on Raynie and Stocke, while they use Push Assault and Thunder to take out a Light Granorgite and Granorg Archer. Once they&#x27;re all out of the way, I would use the Change command to string together six consecutive turns of alternating between physical attacks and spells to finish off the Granorg Defender.</p>
+        <p><strong>Strategy:</strong> <Tag type="char">Marco</Tag> should cast <Tag type="skill">Magic Boost</Tag> on <Tag type="char">Raynie</Tag> and <Tag type="char">Stocke</Tag>, while they use <Tag type="skill">Push Assault</Tag> and <Tag type="skill">Thunder</Tag> to take out a <Tag type="enemy">Light Granorgite</Tag> and <Tag type="enemy">Granorg Archer</Tag>. Once they&#x27;re all out of the way, I would use the <Tag type="skill">Change</Tag> command to string together six consecutive turns of alternating between physical attacks and spells to finish off the <Tag type="enemy">Granorg Defender</Tag>.</p>
       </BossCard>
 
-      <p>For defeating them, you will gain access to the Sand Fortress North area. The exit can be found to the northeast. Before continuing on to the Gran Plain, you should rest up back at Alistel.</p>
+      <p>For defeating them, you will gain access to the <Tag type="place">Sand Fortress North</Tag> area. The exit can be found to the northeast. Before continuing on to the <Tag type="place">Gran Plain</Tag>, you should rest up back at <Tag type="place">Alistel</Tag>.</p>
 
       <Callout type="note" title="Recommended Equipment">
         <p>Recommended Equipment at this point in the game:<br/>
-        <strong>Stocke:</strong> Rune Edge, Beast Skins, Fang Charm x3<br/>
-        <strong>Raynie:</strong> Rune Spear, Brigandine, Horn Charm x3<br/>
-        <strong>Marco:</strong> Custom Sword, Bronze Mail, Fang Charm x3</p>
+        <strong>Stocke:</strong> <Tag type="weapon">Rune Edge</Tag>, <Tag type="armor">Beast Skins</Tag>, <Tag type="acc">Fang Charm x3</Tag><br/>
+        <strong>Raynie:</strong> <Tag type="weapon">Rune Spear</Tag>, <Tag type="armor">Brigandine</Tag>, <Tag type="acc">Horn Charm x3</Tag><br/>
+        <strong>Marco:</strong> <Tag type="weapon">Custom Sword</Tag>, <Tag type="armor">Bronze Mail</Tag>, <Tag type="acc">Fang Charm x3</Tag></p>
       </Callout>
     </div>
   </ChapterCard>
