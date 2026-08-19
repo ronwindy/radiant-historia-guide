@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import nodesData from '../data/nodesData.json';
+import chapterMapsData from '../data/chapterMaps.json';
 
 const baseUrl = import.meta.env.BASE_URL;
 
@@ -17,15 +18,30 @@ const chaptersOrder = [
   'FINAL CHAPTER'
 ];
 
+interface ChapterMapItem {
+  subtitle: string;
+  map: string;
+}
+
 const groupedNodes = chaptersOrder.map((chap) => {
   return {
     chapter: chap,
+    maps: ((chapterMapsData as Record<string, ChapterMapItem[]>)[chap]) || [],
     nodes: nodesData.filter((n) => n.chapter === chap)
   };
 });
+
+function formatMapHtml(mapText: string) {
+  const escaped = mapText
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;');
+  
+  return escaped.replace(/\b(\d{3})\b/g, '<a href="#node-$1" class="map-node-pill" data-node="$1" title="Jump to Node #$1">$1</a>');
+}
 ---
 
-<BaseLayout title="236 Historia Node Completion List & Sidequests" description="Complete 100% checklist for all 236 White Chronicle nodes, sidequests, and bad endings in Radiant Historia with client-side progress tracking.">
+<BaseLayout title="236 Historia Node Completion List & Sidequests" description="Complete 100% checklist for all 236 White Chronicle nodes, sidequests, and bad endings in Radiant Historia with client-side progress tracking and ASCII timeline flowcharts.">
   <div class="container nodes-page-container">
     <Breadcrumbs
       items={[
@@ -79,6 +95,7 @@ const groupedNodes = chaptersOrder.map((chap) => {
             <button type="button" class="filter-pill" data-type="Plot">Main Plot</button>
             <button type="button" class="filter-pill" data-type="Sidequest">Sidequests</button>
             <button type="button" class="filter-pill" data-type="Bad Ending">Bad Endings</button>
+            <button type="button" class="filter-pill" data-type="Ending">Grand Endings</button>
           </div>
         </div>
       </div>
@@ -93,10 +110,30 @@ const groupedNodes = chaptersOrder.map((chap) => {
             <span class="chapter-node-count">{group.nodes.length} Nodes</span>
           </div>
 
+          {group.maps && group.maps.length > 0 && (
+            <div class="chapter-maps-container">
+              {group.maps.map((mapItem) => (
+                <div class="chapter-map-card glass-card">
+                  <div class="chapter-map-header">
+                    <div class="chapter-map-title-row">
+                      <span class="chapter-map-badge">⏳ Timeline Matrix</span>
+                      <span class="chapter-map-subtitle">{mapItem.subtitle}</span>
+                    </div>
+                    <span class="chapter-map-hint">💡 Click any node # to jump to its entry</span>
+                  </div>
+                  <div class="chapter-map-viewport">
+                    <pre class="ascii-map-code" set:html={formatMapHtml(mapItem.map)} />
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+
           <div class="nodes-grid">
             {group.nodes.map((n) => (
               <article
                 class={`node-card glass-card node-type-${n.type.toLowerCase().replace(' ', '-')}`}
+                id={`node-${n.num}`}
                 data-node-num={n.num}
                 data-timeline={n.timeline}
                 data-type={n.type}
@@ -312,7 +349,7 @@ const groupedNodes = chaptersOrder.map((chap) => {
 
   /* Nodes Listing */
   .chapter-node-group {
-    margin-bottom: 3rem;
+    margin-bottom: 3.5rem;
   }
 
   .chapter-node-header {
@@ -321,7 +358,7 @@ const groupedNodes = chaptersOrder.map((chap) => {
     align-items: center;
     border-bottom: 2px solid var(--gold-border);
     padding-bottom: 0.5rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.25rem;
   }
 
   .chapter-node-title {
@@ -335,6 +372,118 @@ const groupedNodes = chaptersOrder.map((chap) => {
     font-size: 0.85rem;
     color: var(--text-muted);
     font-weight: 600;
+  }
+
+  /* Chapter ASCII Timeline Flowcharts */
+  .chapter-maps-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .chapter-map-card {
+    background: rgba(8, 13, 25, 0.75);
+    border: 1px solid rgba(0, 229, 255, 0.2);
+    border-radius: var(--radius-md);
+    padding: 1.25rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+  }
+
+  .chapter-map-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem;
+    margin-bottom: 0.85rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .chapter-map-title-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .chapter-map-badge {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--mana-cyan, #00e5ff);
+    background: rgba(0, 229, 255, 0.12);
+    border: 1px solid rgba(0, 229, 255, 0.35);
+    padding: 0.2rem 0.55rem;
+    border-radius: var(--radius-sm);
+  }
+
+  .chapter-map-subtitle {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-bright);
+    font-family: var(--font-ui);
+  }
+
+  .chapter-map-hint {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-family: var(--font-ui);
+  }
+
+  .chapter-map-viewport {
+    background: rgba(3, 6, 14, 0.88);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: var(--radius-sm);
+    padding: 1rem 1.25rem;
+    overflow-x: auto;
+  }
+
+  .ascii-map-code {
+    font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', 'Consolas', monospace;
+    font-size: 0.88rem;
+    line-height: 1.5;
+    color: var(--text-secondary);
+    margin: 0;
+    white-space: pre;
+  }
+
+  :global(.map-node-pill) {
+    display: inline-block;
+    padding: 0.08rem 0.35rem;
+    font-family: var(--font-mono);
+    font-size: 0.86rem;
+    font-weight: 700;
+    color: var(--mana-cyan, #00e5ff);
+    background: rgba(0, 229, 255, 0.12);
+    border: 1px solid rgba(0, 229, 255, 0.35);
+    border-radius: 4px;
+    text-decoration: none;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  :global(.map-node-pill:hover) {
+    background: rgba(0, 229, 255, 0.28);
+    color: #ffffff;
+    border-color: var(--mana-cyan, #00e5ff);
+    box-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
+    transform: translateY(-1px);
+  }
+
+  :global(.map-node-pill.node-pill-completed) {
+    color: #34d399;
+    background: rgba(16, 185, 129, 0.15);
+    border-color: rgba(16, 185, 129, 0.45);
+    box-shadow: 0 0 6px rgba(16, 185, 129, 0.25);
+  }
+
+  :global(.map-node-pill.node-pill-completed:hover) {
+    background: rgba(16, 185, 129, 0.3);
+    color: #ffffff;
+    border-color: #34d399;
+    box-shadow: 0 0 12px rgba(16, 185, 129, 0.6);
   }
 
   .nodes-grid {
@@ -351,11 +500,26 @@ const groupedNodes = chaptersOrder.map((chap) => {
     border-left-width: 4px;
     margin-bottom: 0;
     transition: var(--transition);
+    scroll-margin-top: 5rem;
   }
 
   .node-card.completed {
     border-left-color: var(--mana-green) !important;
     background: rgba(16, 185, 129, 0.05);
+  }
+
+  .node-card.highlight-pulse {
+    animation: nodePulseGlow 2.2s ease-out;
+  }
+
+  @keyframes nodePulseGlow {
+    0% {
+      box-shadow: 0 0 25px rgba(0, 229, 255, 0.85), inset 0 0 15px rgba(0, 229, 255, 0.25);
+      border-color: var(--mana-cyan, #00e5ff) !important;
+    }
+    100% {
+      box-shadow: none;
+    }
   }
 
   .node-type-bad-ending {
@@ -462,6 +626,7 @@ const groupedNodes = chaptersOrder.map((chap) => {
     color: var(--text-secondary);
     line-height: 1.6;
     margin-top: 0.25rem;
+    white-space: pre-line;
   }
 
   .node-req-content p {
@@ -479,7 +644,20 @@ const groupedNodes = chaptersOrder.map((chap) => {
 
 <script>
   if (typeof document !== 'undefined') {
-    // 1. Checkboxes & localStorage synchronization
+    // 1. Synchronize ASCII map pills with completed nodes
+    function syncMapPills(completedList: string[]) {
+      const pills = document.querySelectorAll<HTMLElement>('.map-node-pill');
+      pills.forEach((pill) => {
+        const num = pill.getAttribute('data-node');
+        if (num && completedList.includes(num)) {
+          pill.classList.add('node-pill-completed');
+        } else {
+          pill.classList.remove('node-pill-completed');
+        }
+      });
+    }
+
+    // 2. Checkboxes & localStorage synchronization
     function setupNodeCheckboxes() {
       try {
         const stored = localStorage.getItem('rh-guide-completed-nodes');
@@ -509,6 +687,7 @@ const groupedNodes = chaptersOrder.map((chap) => {
               }
               localStorage.setItem('rh-guide-completed-nodes', JSON.stringify(curList));
               updateNodeCountDisplay(curList.length);
+              syncMapPills(curList);
               window.dispatchEvent(new Event('rh-progress-updated'));
             } catch (err) {
               console.error('Failed to update node in localStorage', err);
@@ -517,6 +696,7 @@ const groupedNodes = chaptersOrder.map((chap) => {
         });
 
         updateNodeCountDisplay(completed.length);
+        syncMapPills(completed);
       } catch (err) {
         console.error('Failed to init node checkboxes', err);
       }
@@ -534,7 +714,7 @@ const groupedNodes = chaptersOrder.map((chap) => {
 
     setupNodeCheckboxes();
 
-    // 2. Interactive Filtering & Search
+    // 3. Interactive Filtering & Search
     let activeTimeline = 'all';
     let activeType = 'all';
     let searchQuery = '';
@@ -602,6 +782,29 @@ const groupedNodes = chaptersOrder.map((chap) => {
     searchInput?.addEventListener('input', (e) => {
       searchQuery = (e.target as HTMLInputElement).value;
       applyFilters();
+    });
+
+    // 4. Map pill click handling to jump & pulse highlight card
+    document.querySelectorAll<HTMLAnchorElement>('.map-node-pill').forEach((pill) => {
+      pill.addEventListener('click', () => {
+        const num = pill.getAttribute('data-node');
+        if (!num) return;
+        const target = document.getElementById(`node-${num}`);
+        if (target) {
+          if (target.classList.contains('hidden')) {
+            activeTimeline = 'all';
+            activeType = 'all';
+            searchQuery = '';
+            if (searchInput) searchInput.value = '';
+            timelineBtns.forEach((b) => b.classList.toggle('active', b.getAttribute('data-filter') === 'all'));
+            typeBtns.forEach((b) => b.classList.toggle('active', b.getAttribute('data-type') === 'all'));
+            applyFilters();
+          }
+          target.classList.remove('highlight-pulse');
+          void target.offsetWidth;
+          target.classList.add('highlight-pulse');
+        }
+      });
     });
   }
 </script>

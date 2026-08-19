@@ -60,7 +60,7 @@
     "chapter": "PROLOGUE",
     "type": "Plot",
     "timeline": "Prologue",
-    "requirement": "You must defeat Rosch at Judgment Cliff in Standard Chapter 3 () to\nwin his BROKEN LIMB. Then, return to \"The Beginning\" node and talk to Sonja\nto receive the FORCE CORE."
+    "requirement": "You must defeat Rosch at Judgment Cliff in Standard Chapter 3 to\nwin his BROKEN LIMB.  Then, return to \"The Beginning\" node and talk to Sonja\nto receive the FORCE CORE."
   },
   {
     "num": "008",
@@ -114,7 +114,7 @@
     "chapter": "PROLOGUE",
     "type": "Sidequest",
     "timeline": "Prologue",
-    "requirement": "During \"The Beginning\" node, choose to \"Join the Rosch Brigade\". Head down to\nthe First Ward and talk to the soldier on the left to receive this sidequest.\nThe earliest opportunities you have to buy the two Anti-Sleeps are at the Sand\nFortress in Standard Chapter 1 () or in Alistel in Alternate Chapter 1\n(). Repeat the first step and give the two Anti-Sleeps to the soldier\nto complete this sidequest and receive the Alistel Edge (ATK+16/MAG+6)."
+    "requirement": "During \"The Beginning\" node, choose to \"Join the Rosch Brigade\".  Head down to\nthe First Ward and talk to the soldier on the left to receive this sidequest.\nThe earliest opportunities you have to buy the two Anti-Sleeps are at the Sand\nFortress in Standard Chapter 1 or in Alistel in Alternate Chapter 1.  Repeat the first step and give the two Anti-Sleeps to the soldier\nto complete this sidequest and receive the Alistel Edge (ATK+16/MAG+6)."
   },
   {
     "num": "014",
@@ -123,7 +123,7 @@
     "chapter": "PROLOGUE",
     "type": "Sidequest",
     "timeline": "Prologue",
-    "requirement": "During \"The Beginning\" node, choose to \"Join the Rosch Brigade\". Talk to the\nreceptionist behind the desk on the left side of the first floor of the castle\nto receive this sidequest. Head to the inn and talk to the two mercenaries.\nReturn to the receptionist to complete this sidequest and receive 1500 G.\n\n=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\n\n CHAPTER 1\n\n=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\n\n 032 - 033 018 036 021 025 028 030\n | | | | |\n--- 015 - 016 - 017 - 019 - 020 - 022 - 023 - 024 - 026 - 027 - 029 - 031 ---\n\n 050 - 051 034 - 035 057 037\n |\n--- 038 - 039 - 040 - 041 - 042 - 043 - 045 - 047 - 048 - 049 ---------------\n | |\n 052 - 053 054 055 - 056 044 046"
+    "requirement": "During \"The Beginning\" node, choose to \"Join the Rosch Brigade\".  Talk to the\nreceptionist behind the desk on the left side of the first floor of the castle\nto receive this sidequest.  Head to the inn and talk to the two mercenaries.\nReturn to the receptionist to complete this sidequest and receive 1500 G."
   },
   {
     "num": "015",
@@ -159,7 +159,7 @@
     "chapter": "CHAPTER 1",
     "type": "Bad Ending",
     "timeline": "Standard",
-    "requirement": "During \"The Bridge at Lazvil\" node, head to Lazvil Hills (). Go west\nto the Highway and down the ramp to revise your destination. Walk south to the\nWoodland Path East, west around the river, and north to the other side of the\nriver. Choose to \"Go to Alma Mine\" to unlock this ending."
+    "requirement": "During \"The Bridge at Lazvil\" node, head to Lazvil Hills.  Go west\nto the Highway and down the ramp to revise your destination.  Walk south to the\nWoodland Path East, west around the river, and north to the other side of the\nriver.  Choose to \"Go to Alma Mine\" to unlock this ending."
   },
   {
     "num": "019",
@@ -267,7 +267,7 @@
     "chapter": "CHAPTER 1",
     "type": "Plot",
     "timeline": "Standard",
-    "requirement": "During the \"Madness of Heiss\" node (), return to the \"Aht's Prayer\"\nnode. Defeat Heiss to unlock this node."
+    "requirement": "During the \"Madness of Heiss\" node, return to the \"Aht's Prayer\"\nnode.  Defeat Heiss to unlock this node."
   },
   {
     "num": "031",
@@ -285,7 +285,7 @@
     "chapter": "CHAPTER 1",
     "type": "Sidequest",
     "timeline": "Standard",
-    "requirement": "During \"The Bridge at Lazvil\" node at Alistel, head to the tavern at the Second\nWard. Climb the stairs to the left and in the upper left corner, talk to the\ngirl, named Anna, to receive this sidequest. During the \"An Ancient City\" node\nat Granorg, head to the item shop at the Commercial District, and talk to the\nmerchant there. During \"The Resistance\" node at Granorg, talk to Eruca. She\ncan be found wearing a cloak, by a tree at the center of the Downtown area.\nTell her to \"Fulfill your duty\". Return to the \"To Granorg\" node and talk to\nAnna to complete this sidequest and receive the RABBIT'S FOOT (MP+10/LUC+15).\nThis sidequest is also a prerequisite for unlocking \"The Show Goes On\" part of\nthe true ending."
+    "requirement": "During \"The Bridge at Lazvil\" node at Alistel, head to the tavern at the Second\nWard.  Climb the stairs to the left and in the upper left corner, talk to the\ngirl, named Anna, to receive this sidequest.  During the \"An Ancient City\" node\nat Granorg, head to the item shop at the Commercial District, and talk to the\nmerchant there.  During \"The Resistance\" node at Granorg, talk to Eruca.  She\ncan be found wearing a cloak, by a tree at the center of the Downtown area.\nTell her to \"Fulfill your duty\". Return to the \"To Granorg\" node and talk to\nAnna to complete this sidequest and receive the RABBIT'S FOOT (MP+10/LUC+15).\nThis sidequest is also a prerequisite for unlocking \"The Show Goes On\" part of\nthe true ending."
   },
   {
     "num": "033",
@@ -294,7 +294,7 @@
     "chapter": "CHAPTER 1",
     "type": "Bad Ending",
     "timeline": "Standard",
-    "requirement": "Follow the above steps up to talking to Eruca. Instead, tell her \"Don't push\nyourself\" to unlock this ending."
+    "requirement": "Follow the above steps up to talking to Eruca.  Instead, tell her \"Don't push\nyourself\" to unlock this ending."
   },
   {
     "num": "034",
@@ -302,8 +302,8 @@
     "rawTitle": "What Was Inherited (sidequest)",
     "chapter": "CHAPTER 1",
     "type": "Sidequest",
-    "timeline": "Standard",
-    "requirement": "During \"The Bridge at Lazvil\" node at Alistel, head to the weapon shop at the\nSecond Ward. Talk to the kids nearby to receive this sidequest. Climb the\nstairs and enter the upper right house. Talk to their father about the\nsidequest. During the \"An Ancient City\" node at Granorg, head to the merchant\non the left side of the Downtown area. I think you need to talk to the\nmerchant on the right to get some information, though I'm not sure if this is\nmandatory. During the \"To Cornet Village\" node at Cornet, talk to the farmer\nin the field on the right. Return to the \"To Granorg\" node and talk to the\nfather. Initially, choose \"Don't tell him\" about the conuts. This will unlock\nanother option. Return to the same node and choose \"Tell about reforestation\"\nto complete the sidequest and receive the PANDUR (ATK+4/MAG+24/SPD+1). This\nsidequest is also a prerequisite for unlocking the \"Overseers of Time\" part of\nthe true ending."
+    "timeline": "Alternate",
+    "requirement": "During \"The Bridge at Lazvil\" node at Alistel, head to the weapon shop at the\nSecond Ward.  Talk to the kids nearby to receive this sidequest. Climb the\nstairs and enter the upper right house.  Talk to their father about the\nsidequest.  During the \"An Ancient City\" node at Granorg, head to the merchant\non the left side of the Downtown area.  I think you need to talk to the\nmerchant on the right to get some information, though I'm not sure if this is\nmandatory.  During the \"To Cornet Village\" node at Cornet, talk to the farmer\nin the field on the right.  Return to the \"To Granorg\" node and talk to the\nfather.  Initially, choose \"Don't tell him\" about the conuts.  This will unlock\nanother option.  Return to the same node and choose \"Tell about reforestation\"\nto complete the sidequest and receive the PANDUR (ATK+4/MAG+24/SPD+1).  This\nsidequest is also a prerequisite for unlocking the \"Overseers of Time\" part of\nthe true ending."
   },
   {
     "num": "035",
@@ -311,8 +311,8 @@
     "rawTitle": "Distorted Hope (ending)",
     "chapter": "CHAPTER 1",
     "type": "Bad Ending",
-    "timeline": "Standard",
-    "requirement": "Follow the above steps up to talking to the father again. Instead, choose to\n\"Tell him\" about the conuts to unlock this ending."
+    "timeline": "Alternate",
+    "requirement": "Follow the above steps up to talking to the father again.  Instead, choose to\n\"Tell him\" about the conuts to unlock this ending."
   },
   {
     "num": "036",
@@ -320,8 +320,8 @@
     "rawTitle": "Accident in the Cave (sidequest)",
     "chapter": "CHAPTER 1",
     "type": "Sidequest",
-    "timeline": "Alternate",
-    "requirement": "After learning the Bomber skill at Lazvil Hills, return north to where you met\nthe spy and enter the cave. Use the barrel to blow away the rocks. Examine\nthe corpse to receive this sidequest. Return to \"The Beginning\" node and\nchoose to Join the Rosch Brigade. Continue on with the plot as before and\nreturn to the site of the cave-in. Use the barrel to blow away the rocks.\nTalk to the soldier to complete the sidequest and receive the RIGHT-CUT SCROLL\nfor Marco, needed for the \"Marco the Calm\" sidequest."
+    "timeline": "Standard",
+    "requirement": "After learning the Bomber skill at Lazvil Hills, return north to where you met\nthe spy and enter the cave.  Use the barrel to blow away the rocks.  Examine\nthe corpse to receive this sidequest.  Return to \"The Beginning\" node and\nchoose to Join the Rosch Brigade.  Continue on with the plot as before and\nreturn to the site of the cave-in.  Use the barrel to blow away the rocks.\nTalk to the soldier to complete the sidequest and receive the RIGHT-CUT SCROLL\nfor Marco, needed for the \"Marco the Calm\" sidequest."
   },
   {
     "num": "037",
@@ -329,8 +329,8 @@
     "rawTitle": "The Ultimate Dish (sidequest)",
     "chapter": "CHAPTER 1",
     "type": "Sidequest",
-    "timeline": "Standard",
-    "requirement": "During the \"An Ancient City\" node at Granorg (), head west to the\nCommercial District. Continue west to the merchants and talk to a man, named\nHilster, dressed in green, to receive this sidequest. Return to the\n\"A New Mission\" node at Lazvil Hills () and head to the Woodland Path.\nDefeat the Giant Boar to receive the SAVORY BOAR MEAT. Do NOT give this to\nHilster yet, or you will lose it and have to do this over again. During the\n\"To Cornet Village\" node at Cornet (), search the left field for a\nsparkle that is the SAVORY VEGGIES. Return to the \"Castle Sewers\" node and\ntalk to Hilster to complete this sidequest and receive the FIRELIGHT PACT for\nEruca, needed for \"The Light Trial\" sidequest."
+    "timeline": "Alternate",
+    "requirement": "During the \"An Ancient City\" node at Granorg, head west to the\nCommercial District.  Continue west to the merchants and talk to a man, named\nHilster, dressed in green, to receive this sidequest.  Return to the\n\"A New Mission\" node at Lazvil Hills and head to the Woodland Path.\nDefeat the Giant Boar to receive the SAVORY BOAR MEAT.  Do NOT give this to\nHilster yet, or you will lose it and have to do this over again.  During the\n\"To Cornet Village\" node at Cornet, search the left field for a\nsparkle that is the SAVORY VEGGIES.  Return to the \"Castle Sewers\" node and\ntalk to Hilster to complete this sidequest and receive the FIRELIGHT PACT for\nEruca, needed for \"The Light Trial\" sidequest."
   },
   {
     "num": "038",
@@ -338,7 +338,7 @@
     "rawTitle": "A New Mission",
     "chapter": "CHAPTER 1",
     "type": "Plot",
-    "timeline": "Standard",
+    "timeline": "Alternate",
     "requirement": "Automatically completed during the plot."
   },
   {
@@ -347,7 +347,7 @@
     "rawTitle": "Summoned by Raul",
     "chapter": "CHAPTER 1",
     "type": "Plot",
-    "timeline": "Standard",
+    "timeline": "Alternate",
     "requirement": "Automatically completed during the plot."
   },
   {
@@ -356,7 +356,7 @@
     "rawTitle": "Through Lazvil",
     "chapter": "CHAPTER 1",
     "type": "Plot",
-    "timeline": "Standard",
+    "timeline": "Alternate",
     "requirement": "Automatically completed during the plot."
   },
   {
@@ -365,7 +365,7 @@
     "rawTitle": "Heiss' Intentions",
     "chapter": "CHAPTER 1",
     "type": "Plot",
-    "timeline": "Standard",
+    "timeline": "Alternate",
     "requirement": "Automatically completed during the plot."
   },
   {
@@ -374,7 +374,7 @@
     "rawTitle": "Reporting to Viola",
     "chapter": "CHAPTER 1",
     "type": "Plot",
-    "timeline": "Standard",
+    "timeline": "Alternate",
     "requirement": "Automatically completed during the plot."
   },
   {
@@ -383,7 +383,7 @@
     "rawTitle": "The Valkyrie",
     "chapter": "CHAPTER 1",
     "type": "Plot",
-    "timeline": "Standard",
+    "timeline": "Alternate",
     "requirement": "Automatically completed during the plot."
   },
   {
@@ -392,8 +392,8 @@
     "rawTitle": "Kiel's Talent",
     "chapter": "CHAPTER 1",
     "type": "Plot",
-    "timeline": "Standard",
-    "requirement": "During \"The Valkyrie\" node, head up to the second floor of the Sand Fortress\n(). Talk to Kiel on the left end of the floor to learn sword-dancing,\nupgrade your Strike ability, and unlock this node."
+    "timeline": "Alternate",
+    "requirement": "During \"The Valkyrie\" node, head up to the second floor of the Sand Fortress.  Talk to Kiel on the left end of the floor to learn sword-dancing,\nupgrade your Strike ability, and unlock this node."
   },
   {
     "num": "045",
@@ -401,7 +401,7 @@
     "rawTitle": "Conditions Worsen",
     "chapter": "CHAPTER 1",
     "type": "Plot",
-    "timeline": "Standard",
+    "timeline": "Alternate",
     "requirement": "Automatically completed during the plot."
   },
   {
@@ -411,7 +411,7 @@
     "chapter": "CHAPTER 1",
     "type": "Bad Ending",
     "timeline": "Alternate",
-    "requirement": "During \"The Valkyrie\" node, head up to the mess hall at the Sand Fortress () in the upper middle room on the first floor, and talk to Rosch to\nadvance the plot. Choose to \"Send Reinforcements\" to unlock this ending."
+    "requirement": "During \"The Valkyrie\" node, head up to the mess hall at the Sand Fortress in the upper middle room on the first floor, and talk to Rosch to\nadvance the plot.  Choose to \"Send Reinforcements\" to unlock this ending."
   },
   {
     "num": "047",
@@ -419,7 +419,7 @@
     "rawTitle": "Ambush Tactics",
     "chapter": "CHAPTER 1",
     "type": "Plot",
-    "timeline": "Standard",
+    "timeline": "Alternate",
     "requirement": "Automatically completed during the plot."
   },
   {
@@ -428,7 +428,7 @@
     "rawTitle": "Sand Fortress Battle",
     "chapter": "CHAPTER 1",
     "type": "Plot",
-    "timeline": "Standard",
+    "timeline": "Alternate",
     "requirement": "Automatically completed during the plot."
   },
   {
@@ -437,7 +437,7 @@
     "rawTitle": "A Message From Home",
     "chapter": "CHAPTER 1",
     "type": "Plot",
-    "timeline": "Standard",
+    "timeline": "Alternate",
     "requirement": "Automatically completed during the plot."
   },
   {
@@ -446,8 +446,8 @@
     "rawTitle": "Marco the Calm (sidequest)",
     "chapter": "CHAPTER 1",
     "type": "Sidequest",
-    "timeline": "Standard",
-    "requirement": "During the \"A New Mission\" node at Alistel, on the right side of the first\nfloor are two doors. Enter the left door and talk to the blue soldier to\nreceive this sidequest. You need to find four scrolls for Marco.\n\n1) Right-Cut Scroll: Reward from \"Accident in the Cave\" sidequest (see 036).\n2) Left-Cut Scroll: Reward from \"Despairing Young Man\" sidequest (see 103).\n3) Sleep Gas Scroll: During \"To Cornet Village\" at Cornet, Standard Chapter 3,\n() check out the field to the right. Walk up between the upper row of\ncrops and the fence to find a hidden chest which contains this scroll.\n4) Roll-Cut Scroll: During \"To Holff Ruins\" at Abyssia Forest (), \nfollow the upper path to a large, open area. Search the upper right corner for\na hidden chest which contains this scroll.\n\nAfter you have obtained any of the scrolls, return to the soldier with them,\nand he will teach the new abilities to Marco. Learn all four abilities to\ncomplete this sidequest."
+    "timeline": "Alternate",
+    "requirement": "During the \"A New Mission\" node at Alistel, on the right side of the first\nfloor are two doors.  Enter the left door and talk to the blue soldier to\nreceive this sidequest.  You need to find four scrolls for Marco.\n\n1) Right-Cut Scroll: Reward from \"Accident in the Cave\" sidequest (see 036).\n2) Left-Cut Scroll: Reward from \"Despairing Young Man\" sidequest (see 103).\n3) Sleep Gas Scroll: During \"To Cornet Village\" at Cornet, Standard Chapter 3, check out the field to the right.  Walk up between the upper row of\ncrops and the fence to find a hidden chest which contains this scroll.\n4) Roll-Cut Scroll: During \"To Holff Ruins\" at Abyssia Forest, \nfollow the upper path to a large, open area.  Search the upper right corner for\na hidden chest which contains this scroll.\n\nAfter you have obtained any of the scrolls, return to the soldier with them,\nand he will teach the new abilities to Marco.  Learn all four abilities to\ncomplete this sidequest."
   },
   {
     "num": "051",
@@ -455,8 +455,8 @@
     "rawTitle": "Raynie the Active (sidequest)",
     "chapter": "CHAPTER 1",
     "type": "Sidequest",
-    "timeline": "Standard",
-    "requirement": "During the \"A New Mission\" node at Alistel, on the right side of the first\nfloor are two doors. Enter the left door and talk to the blue soldier to\nreceive this sidequest. You need to find four scrolls for Raynie.\n\n1) Darkshield Scroll: During \"The Valkyrie\" node at the Sand Fortress (), head up to the third floor. Walk around the right side, up the stairs,\nand through the door. Search the right side of the large room for a hidden\nchest which contains this scroll.\n2) Slumbering Scroll: Reward from \"Second Opinion\" sidequest (see 120).\n3) Poisoner's Scroll: This can be found as early as the \"Destroy the Ballistas\"\nnode in Standard Chapter 5 at the Itolia Wasteland (). From the\nsouthern entrance, head north one screen, east one, and north two. Search the\nupper wall for a hidden chest which contains this scroll.\n4) Piercing Scroll: Reward from \"The Good Thief's Way\" sidequest (see 190).\n\nAfter you have obtained any of the scrolls, return to the soldier with them,\nand he will teach the new abilities to Raynie. Learn all four abilities to\ncomplete this sidequest."
+    "timeline": "Alternate",
+    "requirement": "During the \"A New Mission\" node at Alistel, on the right side of the first\nfloor are two doors.  Enter the left door and talk to the blue soldier to\nreceive this sidequest.  You need to find four scrolls for Raynie.\n\n1) Darkshield Scroll: During \"The Valkyrie\" node at the Sand Fortress, head up to the third floor.  Walk around the right side, up the stairs,\nand through the door.  Search the right side of the large room for a hidden\nchest which contains this scroll.\n2) Slumbering Scroll: Reward from \"Second Opinion\" sidequest (see 120).\n3) Poisoner's Scroll: This can be found as early as the \"Destroy the Ballistas\"\nnode in Standard Chapter 5 at the Itolia Wasteland.  From the\nsouthern entrance, head north one screen, east one, and north two.  Search the\nupper wall for a hidden chest which contains this scroll.\n4) Piercing Scroll: Reward from \"The Good Thief's Way\" sidequest (see 190).\n\nAfter you have obtained any of the scrolls, return to the soldier with them,\nand he will teach the new abilities to Raynie.  Learn all four abilities to\ncomplete this sidequest."
   },
   {
     "num": "052",
@@ -465,7 +465,7 @@
     "chapter": "CHAPTER 1",
     "type": "Sidequest",
     "timeline": "Alternate",
-    "requirement": "During the \"A New Mission\" node at Alistel, head up to the castle and through\nthe right door. Enter the laboratory to the left and talk to the woman, named\nMeese, to receive this sidequest. If you're doing this as early as possible,\nyou will have to talk to Sonja and Raul, then come back down to talk to Sonja\nagain. Return to \"The Beginning\" node, talk to Rosch on the first floor, and\nchoose to \"Send Rosch\". Talk to Meese to complete this sidequest and receive\nthe P.Thauma Spear (ATK+23/DEF+2). This sidequest is also a prerequisite for\nunlocking the \"Iron-Armed General\" part of the true ending."
+    "requirement": "During the \"A New Mission\" node at Alistel, head up to the castle and through\nthe right door.  Enter the laboratory to the left and talk to the woman, named\nMeese, to receive this sidequest.  If you're doing this as early as possible,\nyou will have to talk to Sonja and Raul, then come back down to talk to Sonja\nagain.  Return to \"The Beginning\" node, talk to Rosch on the first floor, and\nchoose to \"Send Rosch\".  Talk to Meese to complete this sidequest and receive\nthe P.Thauma Spear (ATK+23/DEF+2).  This sidequest is also a prerequisite for\nunlocking the \"Iron-Armed General\" part of the true ending."
   },
   {
     "num": "053",
@@ -482,8 +482,8 @@
     "rawTitle": "Flower of Promise (sidequest)",
     "chapter": "CHAPTER 1",
     "type": "Sidequest",
-    "timeline": "Standard",
-    "requirement": "During the \"A New Mission\" node at Alistel, talk to the woman by the flowers in\nthe lower right corner on the first floor to receive this sidequest. Proceed\nto \"The Beastkind Forest\" node at Celestia. Talk to the Satyros above the save\npoint to receive a Celestian Flower Bud. Return to \"The Beginning\" node and\ngive it to the questgiver. Continue to the \"A New Mission\" node and talk to her\nagain to complete this sidequest and receive a THAUMATECH ORB (MAG+5/MDF+5)."
+    "timeline": "Alternate",
+    "requirement": "During the \"A New Mission\" node at Alistel, talk to the woman by the flowers in\nthe lower right corner on the first floor to receive this sidequest.  Proceed\nto \"The Beastkind Forest\" node at Celestia.  Talk to the Satyros above the save\npoint to receive a Celestian Flower Bud.  Return to \"The Beginning\" node and\ngive it to the questgiver. Continue to the \"A New Mission\" node and talk to her\nagain to complete this sidequest and receive a THAUMATECH ORB (MAG+5/MDF+5)."
   },
   {
     "num": "055",
@@ -491,8 +491,8 @@
     "rawTitle": "A Letter to Tomorrow (sidequest)",
     "chapter": "CHAPTER 1",
     "type": "Sidequest",
-    "timeline": "Standard",
-    "requirement": "During the \"A New Mission\" node at the Second Ward of Alistel, climb the stairs\nto the left of the tavern, and head all the way down to talk to the man named\nCedric to receive this sidequest. Proceed to \"The Valkyrie\" node at the first\nfloor of the Sand Fortress. Walk around to the right, into the upper middle\nroom, and talk to Viola. Continue to \"Alistel's Offensive\" node and talk to\nViola again. Return to Cedric and choose to \"Show journal\" to complete this\nsidequest. This sidequest is also a prerequisite for unlocking the\n\"Valkyrie in Repose\" part of the true ending."
+    "timeline": "Alternate",
+    "requirement": "During the \"A New Mission\" node at the Second Ward of Alistel, climb the stairs\nto the left of the tavern, and head all the way down to talk to the man named\nCedric to receive this sidequest.  Proceed to \"The Valkyrie\" node at the first\nfloor of the Sand Fortress.  Walk around to the right, into the upper middle\nroom, and talk to Viola.  Continue to \"Alistel's Offensive\" node and talk to\nViola again.  Return to Cedric and choose to \"Show journal\" to complete this\nsidequest.  This sidequest is also a prerequisite for unlocking the\n\"Valkyrie in Repose\" part of the true ending."
   },
   {
     "num": "056",
@@ -500,8 +500,8 @@
     "rawTitle": "A Voice Unheard (ending)",
     "chapter": "CHAPTER 1",
     "type": "Bad Ending",
-    "timeline": "Standard",
-    "requirement": "Follow the above steps up to returning to Cedric. Instead, choosing \"Don't\nshow journal\" will unlock this ending."
+    "timeline": "Alternate",
+    "requirement": "Follow the above steps up to returning to Cedric.  Instead, choosing \"Don't\nshow journal\" will unlock this ending."
   },
   {
     "num": "057",
@@ -509,8 +509,8 @@
     "rawTitle": "Engineer Recruit (sidequest)",
     "chapter": "CHAPTER 1",
     "type": "Sidequest",
-    "timeline": "Standard",
-    "requirement": "During the \"A New Mission\" node at Alistel, talk to the receptionist behind the\ndesk on the left side of the first floor of the castle to receive this\nsidequest. Return to \"The Closed Mine\" node, leave the mine, enter the\nhouse by the entrance, and talk to the engineer, Berman. Return to the\nreceptionist to complete this sidequest and receive 3000 G.\n\n=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\n\n CHAPTER 2\n\n=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\n\n 069 061 063\n | |\n--- 058 - 059 - 060 - 062 - 064 - 065 - 066 ---------------\n\n 067 - 068\n\n--- 070 - 072 - 073 - 075 - 077 - 078 - 079 - 080 - 081 ---\n | | |\n 071 074 076 082 083"
+    "timeline": "Alternate",
+    "requirement": "During the \"A New Mission\" node at Alistel, talk to the receptionist behind the\ndesk on the left side of the first floor of the castle to receive this\nsidequest.  Return to \"The Closed Mine\" node, leave the mine, enter the\nhouse by the entrance, and talk to the engineer, Berman.  Return to the\nreceptionist to complete this sidequest and receive 3000 G."
   },
   {
     "num": "058",
@@ -546,7 +546,7 @@
     "chapter": "CHAPTER 2",
     "type": "Plot",
     "timeline": "Standard",
-    "requirement": "During the \"Secret of the Sewers\" node at the Underground Waterway (),\nyou need to find Claire in the lower right area of the sewers. Escort her out\nof the sewers to unlock this node. This is a prerequisite to unlocking the\n\"Something Precious\" and \"The Impregnable\" nodes later."
+    "requirement": "During the \"Secret of the Sewers\" node at the Underground Waterway,\nyou need to find Claire in the lower right area of the sewers.  Escort her out\nof the sewers to unlock this node.  This is a prerequisite to unlocking the\n\"Something Precious\" and \"The Impregnable\" nodes later."
   },
   {
     "num": "062",
@@ -600,7 +600,7 @@
     "chapter": "CHAPTER 2",
     "type": "Sidequest",
     "timeline": "Standard",
-    "requirement": "During the \"Duty Revealed\" node at Granorg, talk to the guard by the save point\nat Main Street, to receive this sidequest. Go west to the inn, walk around its\nleft side, and up the stairs to the west fo find Liese and talk to her. Return\nto the soldier and talk to him again. Proceed to the \"To Holff Ruins\" node at\nAbyssia Forest. Head south, then east two screens and talk to Liese. Return\nto the entrance, and follow the northern path to the next screen until you\nreach an open area. Examine the corpse in the upper right corner. Head back\nto Liese to talk to her again. Return to the \"Castle Sewers\" node, talk to\nLiese, and tell her to \"Believe in him\". Talk to the soldier by the save point\nto complete this sidequest and receive the PROMISED KNIFE (ATK+27/MAG+75/HP-30)\nfor Aht. This sidequest is also a prerequisite for unlocking the\n\"Life of the Beastkind\" part of the true ending."
+    "requirement": "During the \"Duty Revealed\" node at Granorg, talk to the guard by the save point\nat Main Street, to receive this sidequest.  Go west to the inn, walk around its\nleft side, and up the stairs to the west fo find Liese and talk to her.  Return\nto the soldier and talk to him again.  Proceed to the \"To Holff Ruins\" node at\nAbyssia Forest.  Head south, then east two screens and talk to Liese.  Return\nto the entrance, and follow the northern path to the next screen until you\nreach an open area.  Examine the corpse in the upper right corner.  Head back\nto Liese to talk to her again.  Return to the \"Castle Sewers\" node, talk to\nLiese, and tell her to \"Believe in him\".  Talk to the soldier by the save point\nto complete this sidequest and receive the PROMISED KNIFE (ATK+27/MAG+75/HP-30)\nfor Aht.  This sidequest is also a prerequisite for unlocking the\n\"Life of the Beastkind\" part of the true ending."
   },
   {
     "num": "068",
@@ -618,7 +618,7 @@
     "chapter": "CHAPTER 2",
     "type": "Sidequest",
     "timeline": "Standard",
-    "requirement": "During the \"Duty Revealed\" node at Granorg, go west to the inn at the Downtown\narea. Head upstairs and into the right room. Talk the man, Kaizan, to receive\nthis sidequest. Return to \"The Closed Mine\" node and talk to the miner in the\nhouse. Return to \"The Beginning\" node, head to the second floor of the inn\nto find Kaizan and talk to him. Return to the \"Castle Sewers\" node and talk to\nKaizan again. Return to Alistel and talk to him again. Finally, return to\nGranorg and talk to him to complete this sidequest and receive the\nFirestar Pact for Aht, needed for \"The Starlit Trial\" sidequest."
+    "requirement": "During the \"Duty Revealed\" node at Granorg, go west to the inn at the Downtown\narea.  Head upstairs and into the right room.  Talk the man, Kaizan, to receive\nthis sidequest.  Return to \"The Closed Mine\" node and talk to the miner in the\nhouse.  Return to \"The Beginning\" node, head to the second floor of the inn\nto find Kaizan and talk to him.  Return to the \"Castle Sewers\" node and talk to\nKaizan again.  Return to Alistel and talk to him again.  Finally, return to\nGranorg and talk to him to complete this sidequest and receive the\nFirestar Pact for Aht, needed for \"The Starlit Trial\" sidequest."
   },
   {
     "num": "070",
@@ -626,7 +626,7 @@
     "rawTitle": "Alistel's Offensive",
     "chapter": "CHAPTER 2",
     "type": "Plot",
-    "timeline": "Standard",
+    "timeline": "Alternate",
     "requirement": "Automatically completed during the plot."
   },
   {
@@ -635,7 +635,7 @@
     "rawTitle": "Viola's Decision",
     "chapter": "CHAPTER 2",
     "type": "Plot",
-    "timeline": "Standard",
+    "timeline": "Alternate",
     "requirement": "After the \"Wolf in the Fold\" node, return to \"Alistel's Offensive and talk to\nViola to unlock this node."
   },
   {
@@ -644,7 +644,7 @@
     "rawTitle": "Battle of Gran Plain",
     "chapter": "CHAPTER 2",
     "type": "Plot",
-    "timeline": "Standard",
+    "timeline": "Alternate",
     "requirement": "Automatically completed during the plot."
   },
   {
@@ -653,7 +653,7 @@
     "rawTitle": "A Meeting Too Late",
     "chapter": "CHAPTER 2",
     "type": "Plot",
-    "timeline": "Standard",
+    "timeline": "Alternate",
     "requirement": "Automatically completed during the plot."
   },
   {
@@ -662,8 +662,8 @@
     "rawTitle": "The Lion General (ending)",
     "chapter": "CHAPTER 2",
     "type": "Bad Ending",
-    "timeline": "Standard",
-    "requirement": "During the \"Battle of Gran Plain\" node (), go north one screen and\nwest two. Choose to \"Go north\" to unlock this ending."
+    "timeline": "Alternate",
+    "requirement": "During the \"Battle of Gran Plain\" node, go north one screen and\nwest two.  Choose to \"Go north\" to unlock this ending."
   },
   {
     "num": "075",
@@ -671,7 +671,7 @@
     "rawTitle": "Rosch in Crisis",
     "chapter": "CHAPTER 2",
     "type": "Plot",
-    "timeline": "Standard",
+    "timeline": "Alternate",
     "requirement": "Automatically completed during the plot."
   },
   {
@@ -680,7 +680,7 @@
     "rawTitle": "Wolf in the Fold",
     "chapter": "CHAPTER 2",
     "type": "Plot",
-    "timeline": "Standard",
+    "timeline": "Alternate",
     "requirement": "Automatically completed during the plot."
   },
   {
@@ -689,7 +689,7 @@
     "rawTitle": "Lives Entrusted",
     "chapter": "CHAPTER 2",
     "type": "Plot",
-    "timeline": "Standard",
+    "timeline": "Alternate",
     "requirement": "Automatically completed during the plot."
   },
   {
@@ -698,7 +698,7 @@
     "rawTitle": "Homecoming",
     "chapter": "CHAPTER 2",
     "type": "Plot",
-    "timeline": "Standard",
+    "timeline": "Alternate",
     "requirement": "Automatically completed during the plot."
   },
   {
@@ -707,7 +707,7 @@
     "rawTitle": "Parting Ways",
     "chapter": "CHAPTER 2",
     "type": "Plot",
-    "timeline": "Standard",
+    "timeline": "Alternate",
     "requirement": "Automatically completed during the plot."
   },
   {
@@ -716,7 +716,7 @@
     "rawTitle": "Flight",
     "chapter": "CHAPTER 2",
     "type": "Plot",
-    "timeline": "Standard",
+    "timeline": "Alternate",
     "requirement": ""
   },
   {
@@ -725,7 +725,7 @@
     "rawTitle": "Fiendish",
     "chapter": "CHAPTER 2",
     "type": "Plot",
-    "timeline": "Standard",
+    "timeline": "Alternate",
     "requirement": "Automatically completed during the plot."
   },
   {
@@ -734,8 +734,8 @@
     "rawTitle": "Swordsman Recruit (sidequest)",
     "chapter": "CHAPTER 2",
     "type": "Sidequest",
-    "timeline": "Standard",
-    "requirement": "During the \"Homecoming\" node at Alistel, talk to the receptionist on first\nfloor, behind the left desk to receive this sidequest. Proceed to the\n\"A New Battle\" node (). You will need to complete \"The Next Foe\"\n(see 136) and \"The Road to Victory\" (see 137) sidequests. After doing so, talk\nto Gadeff to recruit him. Continue to the \"In Pursuit\" node at Alistel, and\ntalk to the receptionist to complete this sidequest and receive 8000 G."
+    "timeline": "Alternate",
+    "requirement": "During the \"Homecoming\" node at Alistel, talk to the receptionist on first\nfloor, behind the left desk to receive this sidequest.  Proceed to the\n\"A New Battle\" node.  You will need to complete \"The Next Foe\"\n(see 136) and \"The Road to Victory\" (see 137) sidequests.  After doing so, talk\nto Gadeff to recruit him.  Continue to the \"In Pursuit\" node at Alistel, and\ntalk to the receptionist to complete this sidequest and receive 8000 G."
   },
   {
     "num": "083",
@@ -743,8 +743,8 @@
     "rawTitle": "Mercenary Recruit (sidequest)",
     "chapter": "CHAPTER 2",
     "type": "Sidequest",
-    "timeline": "Standard",
-    "requirement": "During the \"Homecoming\" node at Alistel, talk to the receptionist on first\nfloor, behind the left desk to receive this sidequest. Proceed to\n\"An Introduction\" node at Skalla. After meeting with Tarquin, talk to him a\nfew times to get some information on the mercenary. Return to the\n\"Echoing Hills\" node, defeat the bandits again, and talk to Tarquin. Return to\nSkalla and talk to Tarquin again. Finally, continue to the \"In Pursuit\" node\nat Alistel, and talk to the receptionist to complete this sidequest and receive\n15000 G.\n\n=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\n\n CHAPTER 3\n\n=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\n\n085 103 --- 089 --- 093 --- 096 100\n | | | | | | | |"
+    "timeline": "Alternate",
+    "requirement": "During the \"Homecoming\" node at Alistel, talk to the receptionist on first\nfloor, behind the left desk to receive this sidequest.  Proceed to\n\"An Introduction\" node at Skalla.  After meeting with Tarquin, talk to him a\nfew times to get some information on the mercenary.  Return to the\n\"Echoing Hills\" node, defeat the bandits again, and talk to Tarquin.  Return to\nSkalla and talk to Tarquin again.  Finally, continue to the \"In Pursuit\" node\nat Alistel, and talk to the receptionist to complete this sidequest and receive\n15000 G."
   },
   {
     "num": "084",
@@ -762,7 +762,7 @@
     "chapter": "CHAPTER 3",
     "type": "Plot",
     "timeline": "Standard",
-    "requirement": "During \"The Resistance\" node at Granorg, talk to Will at the bar to unlock this\nnode. Proceed to \"An Introduction\" node. After arriving at Skalla, follow\nTarquin inside his shop to receive the Sand Sword. Return to \"The Resistance\"\nnode and give it to Will. This is a prerequisite for unlocking the\n\"Will's Sword\", \"Will to the Rescue\", and \"The Impregnable\" nodes later."
+    "requirement": "During \"The Resistance\" node at Granorg, talk to Will at the bar to unlock this\nnode.  Proceed to \"An Introduction\" node.  After arriving at Skalla, follow\nTarquin inside his shop to receive the Sand Sword.  Return to \"The Resistance\"\nnode and give it to Will.  This is a prerequisite for unlocking the\n\"Will's Sword\", \"Will to the Rescue\", and \"The Impregnable\" nodes later."
   },
   {
     "num": "086",
@@ -798,7 +798,7 @@
     "chapter": "CHAPTER 3",
     "type": "Plot",
     "timeline": "Standard",
-    "requirement": "Return to \"The Resistance\" node. Proceed with the plot up to the \"Capital in\nFlames\" node. If you gave the Sand Sword to Will (see 085), you will \nautomatically unlock this node."
+    "requirement": "Return to \"The Resistance\" node.  Proceed with the plot up to the \"Capital in\nFlames\" node.  If you gave the Sand Sword to Will (see 085), you will \nautomatically unlock this node."
   },
   {
     "num": "090",
@@ -834,7 +834,7 @@
     "chapter": "CHAPTER 3",
     "type": "Plot",
     "timeline": "Standard",
-    "requirement": "Return to the \"Pierre's Betrayal\" node. If you rescued Claire from the\nUnderground Waterway (see 061), then you will automatically unlock this node."
+    "requirement": "Return to the \"Pierre's Betrayal\" node.  If you rescued Claire from the\nUnderground Waterway (see 061), then you will automatically unlock this node."
   },
   {
     "num": "094",
@@ -861,7 +861,7 @@
     "chapter": "CHAPTER 3",
     "type": "Plot",
     "timeline": "Standard",
-    "requirement": "Return to the \"Wounded Otto\" node. Proceed with the plot normally. If you\ngave the Sand Sword to Will (see 085), you will automatically unlock this node."
+    "requirement": "Return to the \"Wounded Otto\" node.  Proceed with the plot normally.  If you\ngave the Sand Sword to Will (see 085), you will automatically unlock this node."
   },
   {
     "num": "097",
@@ -897,7 +897,7 @@
     "chapter": "CHAPTER 3",
     "type": "Bad Ending",
     "timeline": "Standard",
-    "requirement": "Return to the \"Death of a Friend\" node. Choose to \"Leave it to Marco\" to\nunlock this ending."
+    "requirement": "Return to the \"Death of a Friend\" node.  Choose to \"Leave it to Marco\" to\nunlock this ending."
   },
   {
     "num": "101",
@@ -924,7 +924,7 @@
     "chapter": "CHAPTER 3",
     "type": "Sidequest",
     "timeline": "Standard",
-    "requirement": "During \"The Resistance\" node at Granorg, go east two screens and up one. Talk\nto the woman dressed in pink to receive this sidequest. Return to the\n\"Duty Revealed\" node, head to the same area, and talk to the man in the cloak.\nReturn to \"The Resistance\" node to talk to him again to complete this\nsidequest and receive the Left-Cut Scroll for Marco, needed for the\n\"Marco the Calm\" sidequest."
+    "requirement": "During \"The Resistance\" node at Granorg, go east two screens and up one.  Talk\nto the woman dressed in pink to receive this sidequest.  Return to the\n\"Duty Revealed\" node, head to the same area, and talk to the man in the cloak.\nReturn to \"The Resistance\" node to talk to him again to complete this\nsidequest and receive the Left-Cut Scroll for Marco, needed for the\n\"Marco the Calm\" sidequest."
   },
   {
     "num": "104",
@@ -933,7 +933,7 @@
     "chapter": "CHAPTER 3",
     "type": "Sidequest",
     "timeline": "Standard",
-    "requirement": "During the \"Rescue the Princess\" node at Granorg, head to the Castle Gates.\nTalk to the man in the cloak to receive this sidequest. Return to the\n\"Aht's Prayer\" node and proceed to Granorg. Head to the second floor of the\ninn to find Dias. Talk to him, then choose to \"Leave\". Return to the\nquestgiver to complete this sidequest and receive the Rose Ring (HP+10/ATK+5).\nThis sidequest is also a prerequisite for unlocking \"The Lives of Humans\" part\nof the true ending."
+    "requirement": "During the \"Rescue the Princess\" node at Granorg, head to the Castle Gates.\nTalk to the man in the cloak to receive this sidequest.  Return to the\n\"Aht's Prayer\" node and proceed to Granorg.  Head to the second floor of the\ninn to find Dias.  Talk to him, then choose to \"Leave\".  Return to the\nquestgiver to complete this sidequest and receive the Rose Ring (HP+10/ATK+5).\nThis sidequest is also a prerequisite for unlocking \"The Lives of Humans\" part\nof the true ending."
   },
   {
     "num": "105",
@@ -942,7 +942,7 @@
     "chapter": "CHAPTER 3",
     "type": "Bad Ending",
     "timeline": "Standard",
-    "requirement": "Follow the above steps up to talking to Dias. Instead, choose to\n\"Accept invitation\" to unlock this ending."
+    "requirement": "Follow the above steps up to talking to Dias.  Instead, choose to\n\"Accept invitation\" to unlock this ending."
   },
   {
     "num": "106",
@@ -950,7 +950,7 @@
     "rawTitle": "The Beastkind Forest",
     "chapter": "CHAPTER 3",
     "type": "Plot",
-    "timeline": "Standard",
+    "timeline": "Alternate",
     "requirement": "Automatically completed during the plot."
   },
   {
@@ -959,7 +959,7 @@
     "rawTitle": "Unacceptable Loss",
     "chapter": "CHAPTER 3",
     "type": "Plot",
-    "timeline": "Standard",
+    "timeline": "Alternate",
     "requirement": "Automatically completed during the plot."
   },
   {
@@ -968,7 +968,7 @@
     "rawTitle": "Gauntlet",
     "chapter": "CHAPTER 3",
     "type": "Plot",
-    "timeline": "Standard",
+    "timeline": "Alternate",
     "requirement": "Automatically completed during the plot."
   },
   {
@@ -977,7 +977,7 @@
     "rawTitle": "Beastkind's Favor",
     "chapter": "CHAPTER 3",
     "type": "Plot",
-    "timeline": "Standard",
+    "timeline": "Alternate",
     "requirement": "Automatically completed during the plot."
   },
   {
@@ -986,7 +986,7 @@
     "rawTitle": "Report from Vanoss",
     "chapter": "CHAPTER 3",
     "type": "Plot",
-    "timeline": "Standard",
+    "timeline": "Alternate",
     "requirement": "Automatically completed during the plot."
   },
   {
@@ -995,7 +995,7 @@
     "rawTitle": "Darkness in Alistel",
     "chapter": "CHAPTER 3",
     "type": "Plot",
-    "timeline": "Standard",
+    "timeline": "Alternate",
     "requirement": "Automatically completed during the plot."
   },
   {
@@ -1004,7 +1004,7 @@
     "rawTitle": "Reunion with Raul",
     "chapter": "CHAPTER 3",
     "type": "Plot",
-    "timeline": "Standard",
+    "timeline": "Alternate",
     "requirement": "Automatically completed during the plot."
   },
   {
@@ -1013,7 +1013,7 @@
     "rawTitle": "Premonition of War",
     "chapter": "CHAPTER 3",
     "type": "Plot",
-    "timeline": "Standard",
+    "timeline": "Alternate",
     "requirement": "Automatically completed during the plot."
   },
   {
@@ -1022,7 +1022,7 @@
     "rawTitle": "Shattered Steel Arm",
     "chapter": "CHAPTER 3",
     "type": "Plot",
-    "timeline": "Standard",
+    "timeline": "Alternate",
     "requirement": "Automatically completed during the plot."
   },
   {
@@ -1032,7 +1032,7 @@
     "chapter": "CHAPTER 3",
     "type": "Bad Ending",
     "timeline": "Alternate",
-    "requirement": "During the \"Premonition of War\" node at Celestia, talk to Rosch at the\nBoundary Tree, then Raul, then Barranca. Choose to \"Nominate Raul\" to unlock\nthis ending."
+    "requirement": "During the \"Premonition of War\" node at Celestia, talk to Rosch at the\nBoundary Tree, then Raul, then Barranca.  Choose to \"Nominate Raul\" to unlock\nthis ending."
   },
   {
     "num": "116",
@@ -1040,7 +1040,7 @@
     "rawTitle": "Rosch in Agony",
     "chapter": "CHAPTER 3",
     "type": "Plot",
-    "timeline": "Standard",
+    "timeline": "Alternate",
     "requirement": "Automatically completed during the plot."
   },
   {
@@ -1049,7 +1049,7 @@
     "rawTitle": "Lion's Awakening",
     "chapter": "CHAPTER 3",
     "type": "Plot",
-    "timeline": "Standard",
+    "timeline": "Alternate",
     "requirement": "Automatically completed during the plot."
   },
   {
@@ -1058,8 +1058,8 @@
     "rawTitle": "Wandering Soul (sidequest)",
     "chapter": "CHAPTER 3",
     "type": "Sidequest",
-    "timeline": "Standard",
-    "requirement": "During the \"Darkness in Alistel\" node, head up and Vanoss will arrive. Talk to\nhim again to receive this sidequest. Proceed to the \"Road to Forgia\" node and\nmake your way to Skalla. Head to the middle house on the north side of town.\nSearch around the bed for a hidden soul and choose to \"Send soul to heavens\".\nContinue to the \"Skalla Liberated\" node and head to Skalla. Talk to Vanoss at\nthe northwest side of town to complete this sidequest and receive the\nCleansing Cape (DEF+30/MDF+36/MAG+5). This sidequest is also a prerequisite\nfor unlocking the \"Shaman\" part of the true ending."
+    "timeline": "Alternate",
+    "requirement": "During the \"Darkness in Alistel\" node, head up and Vanoss will arrive.  Talk to\nhim again to receive this sidequest.  Proceed to the \"Road to Forgia\" node and\nmake your way to Skalla.  Head to the middle house on the north side of town.\nSearch around the bed for a hidden soul and choose to \"Send soul to heavens\".\nContinue to the \"Skalla Liberated\" node and head to Skalla.  Talk to Vanoss at\nthe northwest side of town to complete this sidequest and receive the\nCleansing Cape (DEF+30/MDF+36/MAG+5).  This sidequest is also a prerequisite\nfor unlocking the \"Shaman\" part of the true ending."
   },
   {
     "num": "119",
@@ -1067,8 +1067,8 @@
     "rawTitle": "Fleeting Peace (ending)",
     "chapter": "CHAPTER 3",
     "type": "Bad Ending",
-    "timeline": "Standard",
-    "requirement": "Follow the above steps up to finding the hidden soul. Instead, choose to tell\nAht, \"Don't do anything\" to unlock this ending."
+    "timeline": "Alternate",
+    "requirement": "Follow the above steps up to finding the hidden soul.  Instead, choose to tell\nAht, \"Don't do anything\" to unlock this ending."
   },
   {
     "num": "120",
@@ -1076,8 +1076,8 @@
     "rawTitle": "Second Opinion (sidequest)",
     "chapter": "CHAPTER 3",
     "type": "Sidequest",
-    "timeline": "Standard",
-    "requirement": "During the \"Darkness in Alistel\" node, go up to the Second Ward and climb the\ntwo staircases to the left. Talk to the woman above to receive this sidequest.\nReturn to the \"A New Mission\" node and talk to the man in the same location.\nReturn to the \"Darkness\" in Alistel\" node and talk to him again to complete\nthis sidequest and receive the Slumbering Scroll for Raynie, needed for the\n\"Raynie the Active\" sidequest."
+    "timeline": "Alternate",
+    "requirement": "During the \"Darkness in Alistel\" node, go up to the Second Ward and climb the\ntwo staircases to the left.  Talk to the woman above to receive this sidequest.\nReturn to the \"A New Mission\" node and talk to the man in the same location.\nReturn to the \"Darkness\" in Alistel\" node and talk to him again to complete\nthis sidequest and receive the Slumbering Scroll for Raynie, needed for the\n\"Raynie the Active\" sidequest. "
   },
   {
     "num": "121",
@@ -1086,7 +1086,7 @@
     "chapter": "CHAPTER 3",
     "type": "Sidequest",
     "timeline": "Alternate",
-    "requirement": "During the \"Darkness in Alistel\" node, go up to the Second Ward and climb the\nstairs to the right. Talk to the boy by the weapon shop to receive this\nsidequest. Return to \"The Valkyrie\" node, head up to the mess hall where\nRosch and Viola were, and talk to the soldier sitting on the bench to receive\nthe Death Pact for Stocke, needed for \"The Blades Trial\" sidequest. Finally,\nreturn to the \"Darkness in Alistel\" node and talk to the boy to complete this\nsidequest and receive a Celestial Oil.\n\n=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\n\n CHAPTER 4\n\n=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\n\n 128 135 - 136 - 137 --- 134\n | | |\n--- 122 - 123 - 124 - 125 - 126 - 127 - 129 - 130 - 131 - 132 - 133 -----\n\n --- 139 - 140 145\n | |\n--- 138 ------------- 141 - 142 - 143 - 146 - 147 - 148 - 149 -----------\n |\n 150 144"
+    "requirement": "During the \"Darkness in Alistel\" node, go up to the Second Ward and climb the\nstairs to the right.  Talk to the boy by the weapon shop to receive this\nsidequest.  Return to \"The Valkyrie\" node, head up to the mess hall where\nRosch and Viola were, and talk to the soldier sitting on the bench to receive\nthe Death Pact for Stocke, needed for \"The Blades Trial\" sidequest.  Finally,\nreturn to the \"Darkness in Alistel\" node and talk to the boy to complete this\nsidequest and receive a Celestial Oil."
   },
   {
     "num": "122",
@@ -1149,7 +1149,7 @@
     "chapter": "CHAPTER 4",
     "type": "Bad Ending",
     "timeline": "Standard",
-    "requirement": "During \"The Tournament\" node at Cygnus, win the first two rounds of the\ntournament (). Talk to the mercenary again for round three and choose\nto \"Go with Aht's Plan\" to unlock this ending."
+    "requirement": "During \"The Tournament\" node at Cygnus, win the first two rounds of the\ntournament.  Talk to the mercenary again for round three and choose\nto \"Go with Aht's Plan\" to unlock this ending."
   },
   {
     "num": "129",
@@ -1221,7 +1221,7 @@
     "chapter": "CHAPTER 4",
     "type": "Sidequest",
     "timeline": "Standard",
-    "requirement": "During the \"A New Battle\" node, talk to the mercenary, Gadeff. Defeat the\nCrush Bear () to complete this sidequest and receive the Pieti Edge\n(ATK+30/MAG+39/SPD-2). This sidequest is also a prerequisite to the\n\"Swordsman Recruit\" and \"The Road to Victory\" sidequests."
+    "requirement": "During the \"A New Battle\" node, talk to the mercenary, Gadeff.  Defeat the\nCrush Bear to complete this sidequest and receive the Pieti Edge\n(ATK+30/MAG+39/SPD-2).  This sidequest is also a prerequisite to the\n\"Swordsman Recruit\" and \"The Road to Victory\" sidequests."
   },
   {
     "num": "137",
@@ -1230,7 +1230,7 @@
     "chapter": "CHAPTER 4",
     "type": "Sidequest",
     "timeline": "Standard",
-    "requirement": "After completing \"The Next Foe\" sidequest, talk to Gadeff again to receive this\nsidequest. Defeat the Mist Spider () to complete this sidequest and\nreceive the Moirae Manteau (DEF+48/MDF+41). This sidequest is also a\nprerequisite to the \"Swordsman Recruit\" sidequest."
+    "requirement": "After completing \"The Next Foe\" sidequest, talk to Gadeff again to receive this\nsidequest.  Defeat the Mist Spider to complete this sidequest and\nreceive the Moirae Manteau (DEF+48/MDF+41).  This sidequest is also a\nprerequisite to the \"Swordsman Recruit\" sidequest."
   },
   {
     "num": "138",
@@ -1238,7 +1238,7 @@
     "rawTitle": "Celestian War",
     "chapter": "CHAPTER 4",
     "type": "Plot",
-    "timeline": "Standard",
+    "timeline": "Alternate",
     "requirement": "Automatically completed during the plot."
   },
   {
@@ -1247,7 +1247,7 @@
     "rawTitle": "A Friend to Elm",
     "chapter": "CHAPTER 4",
     "type": "Plot",
-    "timeline": "Standard",
+    "timeline": "Alternate",
     "requirement": "During the \"Celestian War\" node, talk to Elm to unlock this node."
   },
   {
@@ -1256,7 +1256,7 @@
     "rawTitle": "Blade's Resurrection",
     "chapter": "CHAPTER 4",
     "type": "Plot",
-    "timeline": "Standard",
+    "timeline": "Alternate",
     "requirement": "During the \"Demigod\" node, defeat Hugo the first time to receive the Historica.\nReturn to the \"Celestian War\" node, and talk to Elm to unlock this node."
   },
   {
@@ -1265,7 +1265,7 @@
     "rawTitle": "Winds of War",
     "chapter": "CHAPTER 4",
     "type": "Plot",
-    "timeline": "Standard",
+    "timeline": "Alternate",
     "requirement": "Automatically completed during the plot."
   },
   {
@@ -1274,7 +1274,7 @@
     "rawTitle": "Call to Destruction",
     "chapter": "CHAPTER 4",
     "type": "Plot",
-    "timeline": "Standard",
+    "timeline": "Alternate",
     "requirement": "Automatically completed during the plot."
   },
   {
@@ -1283,7 +1283,7 @@
     "rawTitle": "A New Alliance",
     "chapter": "CHAPTER 4",
     "type": "Plot",
-    "timeline": "Standard",
+    "timeline": "Alternate",
     "requirement": "Automatically completed during the plot."
   },
   {
@@ -1292,8 +1292,8 @@
     "rawTitle": "The Eternal War (ending)",
     "chapter": "CHAPTER 4",
     "type": "Bad Ending",
-    "timeline": "Standard",
-    "requirement": "During the \"Call to Destruction\" node and talk to Raul. Choose to\n\"Join with someone else\" and \"Team up with Granorg\" to unlock this ending."
+    "timeline": "Alternate",
+    "requirement": "During the \"Call to Destruction\" node and talk to Raul.  Choose to\n\"Join with someone else\" and \"Team up with Granorg\" to unlock this ending."
   },
   {
     "num": "145",
@@ -1301,8 +1301,8 @@
     "rawTitle": "A Beastkind Warrior",
     "chapter": "CHAPTER 4",
     "type": "Plot",
-    "timeline": "Standard",
-    "requirement": "During \"The Tournament\" node at Cygnus, win the first two rounds of the\ntournament (). Talk to the mercenary again for round three and choose\nto \"Stop Aht\". Return to the \"A New Alliance\" node, talk to Raul, and choose\nto \"Team up with Forgia\" to unlock this node."
+    "timeline": "Alternate",
+    "requirement": "During \"The Tournament\" node at Cygnus, win the first two rounds of the\ntournament.  Talk to the mercenary again for round three and choose\nto \"Stop Aht\".  Return to the \"A New Alliance\" node, talk to Raul, and choose\nto \"Team up with Forgia\" to unlock this node."
   },
   {
     "num": "146",
@@ -1310,7 +1310,7 @@
     "rawTitle": "Gafka's Past",
     "chapter": "CHAPTER 4",
     "type": "Plot",
-    "timeline": "Standard",
+    "timeline": "Alternate",
     "requirement": "Automatically completed during the plot."
   },
   {
@@ -1319,7 +1319,7 @@
     "rawTitle": "Southbound",
     "chapter": "CHAPTER 4",
     "type": "Plot",
-    "timeline": "Standard",
+    "timeline": "Alternate",
     "requirement": "Automatically completed during the plot."
   },
   {
@@ -1328,7 +1328,7 @@
     "rawTitle": "Road to Forgia",
     "chapter": "CHAPTER 4",
     "type": "Plot",
-    "timeline": "Standard",
+    "timeline": "Alternate",
     "requirement": "Automatically completed during the plot."
   },
   {
@@ -1337,7 +1337,7 @@
     "rawTitle": "Gafka's Homeland",
     "chapter": "CHAPTER 4",
     "type": "Plot",
-    "timeline": "Standard",
+    "timeline": "Alternate",
     "requirement": "Automatically completed during the plot."
   },
   {
@@ -1347,7 +1347,7 @@
     "chapter": "CHAPTER 4",
     "type": "Sidequest",
     "timeline": "Alternate",
-    "requirement": "During the \"Celestian War\" node, enter the Patriarch's House and talk to Sonja\nto receive this sidequest. You need to find three cores for Rosch.\n\n1) Impale Core: After learning Mana sight, return to \"The Closed Mine\" node,\nleave the mine, and enter the house by the entrance. Search around for a\nhidden chest which contains this core.\n2) Blast Core: During the \"In Pursuit\" node at the Underground Lab (),\nmake your way down to the 5th basement level. Head up past the intersection\nand hug the left wall until you can go through a path that is rather hard to\nsee. Defeat the Special Thaumachine there to win this core.\n3) Haste Core: Reward from the \"A Scholar's Creed\" sidequest (see 207).\n\nAfter you have obtained any cores, return to Sonja at \"The Celestian War\" with\nthem, and she will install them in Rosch's Gauntlet. Learn all three abilities\nto complete this sidequest.\n\n=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\n\n CHAPTER 5\n\n=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\n\n 153\n |\n--- 151 - 152 - 154 - 155 - 156 - 157 - 158 - 159 - 160 ---\n\n 161 - 162 175 - 176\n\n--- 163 - 164 - 165 - 166 - 167 - 168 - 169 - 171 - 172 --- \n |\n 173 - 174 177 - 178 170"
+    "requirement": "During the \"Celestian War\" node, enter the Patriarch's House and talk to Sonja\nto receive this sidequest.  You need to find three cores for Rosch.\n\n1) Impale Core: After learning Mana sight, return to \"The Closed Mine\" node,\nleave the mine, and enter the house by the entrance.  Search around for a\nhidden chest which contains this core.\n2) Blast Core: During the \"In Pursuit\" node at the Underground Lab,\nmake your way down to the 5th basement level.  Head up past the intersection\nand hug the left wall until you can go through a path that is rather hard to\nsee.  Defeat the Special Thaumachine there to win this core.\n3) Haste Core: Reward from the \"A Scholar's Creed\" sidequest (see 207).\n\nAfter you have obtained any cores, return to Sonja at \"The Celestian War\" with\nthem, and she will install them in Rosch's Gauntlet.  Learn all three abilities\nto complete this sidequest."
   },
   {
     "num": "151",
@@ -1446,7 +1446,7 @@
     "chapter": "CHAPTER 5",
     "type": "Sidequest",
     "timeline": "Standard",
-    "requirement": "During the \"Scorched Battlefield\" node, head west of the inn to the Plaza.\nTalk to Ricky along the main road to receive this sidequest. Head to the\ntavern and talk to the green-haired girl, Mimel, twice. Return to the\n\"Chi-Clad Warrior\" node and talk to the bartender. Return to the\n\"Scorched Battlefield\" node, talk to Mimel again, and choose to \"Let Mimel go.\"\nTalk to Ricky again to complete this sidequest and receive the Sable Larme\n(DEF+33/MDF+25/MAG+5). This sidequest is also a prerequisite for unlocking the\n\"A Little Hero\" part of the true ending."
+    "requirement": "During the \"Scorched Battlefield\" node, head west of the inn to the Plaza.\nTalk to Ricky along the main road to receive this sidequest.  Head to the\ntavern and talk to the green-haired girl, Mimel, twice.  Return to the\n\"Chi-Clad Warrior\" node and talk to the bartender.  Return to the\n\"Scorched Battlefield\" node, talk to Mimel again, and choose to \"Let Mimel go.\"\nTalk to Ricky again to complete this sidequest and receive the Sable Larme\n(DEF+33/MDF+25/MAG+5).  This sidequest is also a prerequisite for unlocking the\n\"A Little Hero\" part of the true ending."
   },
   {
     "num": "162",
@@ -1455,7 +1455,7 @@
     "chapter": "CHAPTER 5",
     "type": "Bad Ending",
     "timeline": "Standard",
-    "requirement": "Follow the above steps until you confront Mimel the second time. Choose to\n\"Capture Mimel\" to unlock this ending."
+    "requirement": "Follow the above steps until you confront Mimel the second time.  Choose to\n\"Capture Mimel\" to unlock this ending."
   },
   {
     "num": "163",
@@ -1463,7 +1463,7 @@
     "rawTitle": "Battle for Skalla",
     "chapter": "CHAPTER 5",
     "type": "Plot",
-    "timeline": "Standard",
+    "timeline": "Alternate",
     "requirement": "Automatically completed during the plot."
   },
   {
@@ -1472,7 +1472,7 @@
     "rawTitle": "Rosch's Stratagem",
     "chapter": "CHAPTER 5",
     "type": "Plot",
-    "timeline": "Standard",
+    "timeline": "Alternate",
     "requirement": "Automatically completed during the plot."
   },
   {
@@ -1481,7 +1481,7 @@
     "rawTitle": "Skalla Liberated",
     "chapter": "CHAPTER 5",
     "type": "Plot",
-    "timeline": "Standard",
+    "timeline": "Alternate",
     "requirement": "Automatically completed during the plot."
   },
   {
@@ -1490,7 +1490,7 @@
     "rawTitle": "Sand Fortress Siege",
     "chapter": "CHAPTER 5",
     "type": "Plot",
-    "timeline": "Standard",
+    "timeline": "Alternate",
     "requirement": "Automatically completed during the plot."
   },
   {
@@ -1499,7 +1499,7 @@
     "rawTitle": "Commander's Fall",
     "chapter": "CHAPTER 5",
     "type": "Plot",
-    "timeline": "Standard",
+    "timeline": "Alternate",
     "requirement": "Automatically completed during the plot."
   },
   {
@@ -1508,7 +1508,7 @@
     "rawTitle": "Forbidden Weaponry",
     "chapter": "CHAPTER 5",
     "type": "Plot",
-    "timeline": "Standard",
+    "timeline": "Alternate",
     "requirement": "Automatically completed during the plot."
   },
   {
@@ -1517,7 +1517,7 @@
     "rawTitle": "Etherion",
     "chapter": "CHAPTER 5",
     "type": "Plot",
-    "timeline": "Standard",
+    "timeline": "Alternate",
     "requirement": "Automatically completed during the plot."
   },
   {
@@ -1535,7 +1535,7 @@
     "rawTitle": "Royal Talisman",
     "chapter": "CHAPTER 5",
     "type": "Plot",
-    "timeline": "Standard",
+    "timeline": "Alternate",
     "requirement": "Automatically completed during the plot."
   },
   {
@@ -1544,7 +1544,7 @@
     "rawTitle": "A Black Disciple",
     "chapter": "CHAPTER 5",
     "type": "Plot",
-    "timeline": "Standard",
+    "timeline": "Alternate",
     "requirement": "Automatically completed during the plot."
   },
   {
@@ -1553,7 +1553,7 @@
     "rawTitle": "Gafka & the Scrolls",
     "chapter": "CHAPTER 5",
     "type": "Plot",
-    "timeline": "Standard",
+    "timeline": "Alternate",
     "requirement": "During the \"Sand Fortress Siege\" node at Forgia, head to the village entrance\nand talk to Bergas to unlock this node."
   },
   {
@@ -1562,8 +1562,8 @@
     "rawTitle": "The Ultimate Skill (sidequest)",
     "chapter": "CHAPTER 5",
     "type": "Sidequest",
-    "timeline": "Standard",
-    "requirement": "During the \"Sand Fortress Siege\" node at Forgia, head to the village entrance\nand talk to Bergas to receive this sidequest. You will need to find four books\nfor Gafka.\n\n1) Strongman Book: Search the east side of the entrance of Forgia to find a\nhidden chest which contains this book.\n2) Tristrike Book: Reward from \"The Beast God's Birth\" sidequest (see 175).\n3) Wind God Book: On B4 of the Underground Lab, head up to a platform that you\nshould search for a hidden chest which contains this book.\n4) Omnipedia Book: Reward from the \"A Timely Warning\" sidequest (see 213).\n\nAfter you have obtained any books, return to Bergas at \"Gafka & the Scrolls\".\nDefeat him each time and learn all four abilities to complete this sidequest."
+    "timeline": "Alternate",
+    "requirement": "During the \"Sand Fortress Siege\" node at Forgia, head to the village entrance\nand talk to Bergas to receive this sidequest.  You will need to find four books\nfor Gafka.\n\n1) Strongman Book: Search the east side of the entrance of Forgia to find a\nhidden chest which contains this book.\n2) Tristrike Book: Reward from \"The Beast God's Birth\" sidequest (see 175).\n3) Wind God Book: On B4 of the Underground Lab, head up to a platform that you\nshould search for a hidden chest which contains this book.\n4) Omnipedia Book: Reward from the \"A Timely Warning\" sidequest (see 213).\n\nAfter you have obtained any books, return to Bergas at \"Gafka & the Scrolls\".\nDefeat him each time and learn all four abilities to complete this sidequest."
   },
   {
     "num": "175",
@@ -1571,8 +1571,8 @@
     "rawTitle": "The Beast God's Birth (sidequest)",
     "chapter": "CHAPTER 5",
     "type": "Sidequest",
-    "timeline": "Standard",
-    "requirement": "During the \"Sand Fortress Siege\" node at Forgia, talk to Galva to receive this\nsidequest. Proceed to \"The Royal Secret\" node and head to Gran Plain\n(). Go north, west, and south one screen to South Hill. In about the\nlower left corner, you will see a cross on the ground. Examine it to obtain\nthe Beast God's Nail. Return to \"Gafka & the Scrolls\", talk to Galva, choose\nto \"Wait\" and \"Stop the ceremony\" to complete this sidequest and receive the\nMagic Fist Forza (ATK+67) and TRISTRIKE BOOK for Gafka, needed for\n\"The Ultimate Skill\" sidequest. This sidequest is a prerequisite for unlocking\nthe \"Beast God at Rest\" part of the true ending."
+    "timeline": "Alternate",
+    "requirement": "During the \"Sand Fortress Siege\" node at Forgia, talk to Galva to receive this\nsidequest.  Proceed to \"The Royal Secret\" node and head to Gran Plain.  Go north, west, and south one screen to South Hill.  In about the\nlower left corner, you will see a cross on the ground.  Examine it to obtain\nthe Beast God's Nail.  Return to \"Gafka & the Scrolls\", talk to Galva, choose\nto \"Wait\" and \"Stop the ceremony\" to complete this sidequest and receive the\nMagic Fist Forza (ATK+67) and TRISTRIKE BOOK for Gafka, needed for\n\"The Ultimate Skill\" sidequest.  This sidequest is a prerequisite for unlocking\nthe \"Beast God at Rest\" part of the true ending."
   },
   {
     "num": "176",
@@ -1580,8 +1580,8 @@
     "rawTitle": "Beast God's Reign (ending)",
     "chapter": "CHAPTER 5",
     "type": "Bad Ending",
-    "timeline": "Standard",
-    "requirement": "Follow the above steps until you begin the ceremony. Choose\n\"Don't say anything\" to unlock this ending."
+    "timeline": "Alternate",
+    "requirement": "Follow the above steps until you begin the ceremony.  Choose\n\"Don't say anything\" to unlock this ending."
   },
   {
     "num": "177",
@@ -1589,8 +1589,8 @@
     "rawTitle": "At Journey's End (sidequest)",
     "chapter": "CHAPTER 5",
     "type": "Sidequest",
-    "timeline": "Standard",
-    "requirement": "This one is very tricky, as it has prerequisite choices to even access the\nsidequest, and the game doesn't tell you. There are three decisions you have\nto make over the course of the game.\n\n1) During the \"Breakthrough\" node at Gran Plain (), head north one\nscreen and west to the checkpoint. You will hear someone in distress back\neast. Make sure to choose \"Let's go save her now.\"\n2) After the \"Wolf in the Fold\" node (), return to \"Alistel's\nOffensive\" and talk to Viola. Return to the \"A Meeting Too Late\" node and\nproceed with the plot normally. Make sure to choose \"I leave it to you.\"\n3) During the \"Commander's Fall\" node at the Sand Fortress, defeat the\nThaumaton boss at the end. Afterwards, make sure to choose \"Bring back now.\"\n\nDespite that last decision occuring AFTER the time when you can access the\nsidequest, it is indeed a prerequisite. Return to the \"Gafka & the Scrolls\"\nnode and head to Skalla. Talk to Marco by the item shop. Then, talk to Raynie\nby the inn and choose \"I can't give up.\" Talk to Marco again to complete this\nsidequest and receive the Priere Bonheur (ATK+15/MAG+32/Fear Res+5). This\nsidequest is a prerequisite for unlocking the \"A Warrior in Love\" part of the\ntrue ending."
+    "timeline": "Alternate",
+    "requirement": "This one is very tricky, as it has prerequisite choices to even access the\nsidequest, and the game doesn't tell you.  There are three decisions you have\nto make over the course of the game.\n\n1) During the \"Breakthrough\" node at Gran Plain, head north one\nscreen and west to the checkpoint.  You will hear someone in distress back\neast.  Make sure to choose \"Let's go save her now.\"\n2) After the \"Wolf in the Fold\" node, return to \"Alistel's\nOffensive\" and talk to Viola.  Return to the \"A Meeting Too Late\" node and\nproceed with the plot normally.  Make sure to choose \"I leave it to you.\"\n3) During the \"Commander's Fall\" node at the Sand Fortress (SAND6), defeat the\nThaumaton boss at the end.  Afterwards, make sure to choose \"Bring back now.\"\n\nDespite that last decision occuring AFTER the time when you can access the\nsidequest, it is indeed a prerequisite.  Return to the \"Gafka & the Scrolls\"\nnode and head to Skalla.  Talk to Marco by the item shop.  Then, talk to Raynie\nby the inn and choose \"I can't give up.\"  Talk to Marco again to complete this\nsidequest and receive the Priere Bonheur (ATK+15/MAG+32/Fear Res+5).  This\nsidequest is a prerequisite for unlocking the \"A Warrior in Love\" part of the\ntrue ending."
   },
   {
     "num": "178",
@@ -1598,8 +1598,8 @@
     "rawTitle": "Oncoming Calamity (ending)",
     "chapter": "CHAPTER 5",
     "type": "Bad Ending",
-    "timeline": "Standard",
-    "requirement": "Follow the above steps until you talk to Raynie about Marco's concerns. Choose\n\"I'll stop fighting\" to unlock this ending.\n\n=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\n\n CHAPTER 6\n\n=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\n\n 181 189 190 186\n | |\n--- 179 - 180 - 182 - 183 - 184 - 185 - 187 - 188 ---\n |\n 191 - 192 - 193 - 194 - 195 - 196\n\n--- 197 - 198 - 199 - 200 - 201 - 202 - 204 - 205 ---\n |\n 203 206 207"
+    "timeline": "Alternate",
+    "requirement": "Follow the above steps until you talk to Raynie about Marco's concerns.  Choose\n\"I'll stop fighting\" to unlock this ending."
   },
   {
     "num": "179",
@@ -1698,7 +1698,7 @@
     "chapter": "CHAPTER 6",
     "type": "Sidequest",
     "timeline": "Standard",
-    "requirement": "During the \"Waiting at Skalla\" node, return to Cygnus and talk to Garland to\nreceive this sidequest. Head to the Itolia Wasteland, then go north one\nscreen, east one, and north two. You should see a small rock formation in the\nmiddle. Search around there for the hidden Moon Armlet. Return it to Garland\nto complete this sidequest and receive the Suna-Watari (ATK+42/SPD-4)."
+    "requirement": "During the \"Waiting at Skalla\" node, return to Cygnus and talk to Garland to\nreceive this sidequest.  Head to the Itolia Wasteland, then go north one\nscreen, east one, and north two.  You should see a small rock formation in the\nmiddle.  Search around there for the hidden Moon Armlet.  Return it to Garland\nto complete this sidequest and receive the Suna-Watari (ATK+42/SPD-4)."
   },
   {
     "num": "190",
@@ -1707,7 +1707,7 @@
     "chapter": "CHAPTER 6",
     "type": "Sidequest",
     "timeline": "Standard",
-    "requirement": "During the \"Waiting at Skalla\" node, return to Cygnus. Talk to Hertz & Bram by\nthe equipment shops to receive this sidequest. Return to \"The Beginning\" node\nat Alistel and talk to the child by the tavern. Return to the \"Castle Sewers\"\nnode at Granorg and talk to the boy to the left of the inn. Finally, return to\nHertz & Bram to complete this sidequest and receive the Piercing Scroll for\nRaynie, needed for the \"Raynie the Active\" sidequest."
+    "requirement": "During the \"Waiting at Skalla\" node, return to Cygnus.  Talk to Hertz & Bram by\nthe equipment shops to receive this sidequest.  Return to \"The Beginning\" node\nat Alistel and talk to the child by the tavern.  Return to the \"Castle Sewers\"\nnode at Granorg and talk to the boy to the left of the inn.  Finally, return to\nHertz & Bram to complete this sidequest and receive the Piercing Scroll for\nRaynie, needed for the \"Raynie the Active\" sidequest."
   },
   {
     "num": "191",
@@ -1716,7 +1716,7 @@
     "chapter": "CHAPTER 6",
     "type": "Sidequest",
     "timeline": "Standard",
-    "requirement": "During the \"Waiting at Skalla\" node at the Itolia Wasteland, go north one\nscreen, west one, and continue west and up to a well. Climb down the wall to\nmeet a man named Sword to receive this sidequest.\n\nReturn to \"The Beginning\" node at Alistel. Talk to Wand, the boy inside the\nweapon shop, and choose \"Hope.\" Return to \"The Messenger's News\" node and\nsearch the upper right corner to find the Shade Pact for Stocke. Return to the\n\"Castle Sewers\" node in Granorg. Talk to a man in the lower left corner named\nPentacle, and choose \"The past.\" Return to the \"How to Disappear\" node, go\ndown the sewers, and head west one screen. Search the left of the upper paths\nto find the hidden Sunlight Pact for Eruca. Return to \"The Beastkind Forest\"\nnode and talk to Chalice, the lady by the equipment shop and choose\n\"All things\". Search to the left of the sparkling bushes at the center of town\nto find the hidden Meteorite Pact for Aht. Talk to Sword again to complete\nthis sidequest."
+    "requirement": "During the \"Waiting at Skalla\" node at the Itolia Wasteland, go north one\nscreen, west one, and continue west and up to a well.  Climb down the wall to\nmeet a man named Sword to receive this sidequest.\n\nReturn to \"The Beginning\" node at Alistel.  Talk to Wand, the boy inside the\nweapon shop, and choose \"Hope.\"  Return to \"The Messenger's News\" node and\nsearch the upper right corner to find the Shade Pact for Stocke.  Return to the\n\"Castle Sewers\" node in Granorg.  Talk to a man in the lower left corner named\nPentacle, and choose \"The past.\"  Return to the \"How to Disappear\" node, go\ndown the sewers, and head west one screen.  Search the left of the upper paths\nto find the hidden Sunlight Pact for Eruca.  Return to \"The Beastkind Forest\"\nnode and talk to Chalice, the lady by the equipment shop and choose\n\"All things\".  Search to the left of the sparkling bushes at the center of town\nto find the hidden Meteorite Pact for Aht.  Talk to Sword again to complete\nthis sidequest."
   },
   {
     "num": "192",
@@ -1734,7 +1734,7 @@
     "chapter": "CHAPTER 6",
     "type": "Sidequest",
     "timeline": "Standard",
-    "requirement": "After completing \"The Living Legend\" sidequest, talk to Vainqueur to unlock\nthis sidequest. You will need to find four Pacts for Stocke.\n\n1) Fire Pact: After learning Mana Sight, return to \"The Beginning\" node at\nAlistel. Head down to the First Ward, and search the alley behind the item\nshop for a hidden chest which contains this Pact.\n2) Death Pact: Reward during the \"Battlefield Missive\" sidequest (see 121).\n3) Shade Pact: Found during \"The Living Legend\" sidequest (see 191).\n4) Soul Pact: During \"The Road Perilous\" node, defeat all the Floating Stones\nat the Royal Hall. In the upper right part of the area are hidden barrels.\nDrag one of them all the way down to the rocks at the beginning. Blow away the\nrocks in the upper right corner to get a hidden chest which contains this Pact.\n\nAfter you have obtained any Pacts, return to Vainqueur at \"The Three Contracts\"\nand he will teach the new abilities to Stocke. Learn all four abilities to\ncomplete this sidequest. This sidequest is also a prerequisite to gain access\nto \"The Final Trial\" sidequest."
+    "requirement": "After completing \"The Living Legend\" sidequest, talk to Vainqueur to unlock\nthis sidequest.  You will need to find four Pacts for Stocke.\n\n1) Fire Pact: After learning Mana Sight, return to \"The Beginning\" node at\nAlistel.  Head down to the First Ward, and search the alley behind the item\nshop for a hidden chest which contains this Pact.\n2) Death Pact: Reward during the \"Battlefield Missive\" sidequest (see 121).\n3) Shade Pact: Found during \"The Living Legend\" sidequest (see 191).\n4) Soul Pact: During \"The Road Perilous\" node, defeat all the Floating Stones\nat the Royal Hall.  In the upper right part of the area are hidden barrels.\nDrag one of them all the way down to the rocks at the beginning.  Blow away the\nrocks in the upper right corner to get a hidden chest which contains this Pact.\n\nAfter you have obtained any Pacts, return to Vainqueur at \"The Three Contracts\"\nand he will teach the new abilities to Stocke.  Learn all four abilities to\ncomplete this sidequest.  This sidequest is also a prerequisite to gain access\nto \"The Final Trial\" sidequest."
   },
   {
     "num": "194",
@@ -1743,7 +1743,7 @@
     "chapter": "CHAPTER 6",
     "type": "Sidequest",
     "timeline": "Standard",
-    "requirement": "After completing \"The Living Legend\" sidequest, talk to Vainqueur to unlock\nthis sidequest. You will need to find four Pacts for Aht.\n\n1) Firestar Pact: Reward from the \"One & Only\" sidequest (see 069).\n2) Meteorite Pact: Found during \"The Living Legend\" sidequest (see 191).\n3) Thunderstar Pact: During \"An Introduction\" node at Skalla, search below the\nweapon shop for a hidden chest which contains this Pact.\n4) Icestar Pact: During \"The Sacrifice\" node at the Imperial Ruins (),\nclimb down to the lowest level. In the upper right corner is a secret passage\nyou can walk through to a hidden room. Search for a hidden chest which\ncontains this Pact.\n\nAfter you have obtained any Pacts, return to Vainqueur at \"The Three Contracts\"\nand he will teach the new abilities to Aht. Learn all four abilities to\ncomplete this sidequest. This sidequest is also a prerequisite to gain access\nto \"The Final Trial\" sidequest."
+    "requirement": "After completing \"The Living Legend\" sidequest, talk to Vainqueur to unlock\nthis sidequest.  You will need to find four Pacts for Aht.\n\n1) Firestar Pact: Reward from the \"One & Only\" sidequest (see 069).\n2) Meteorite Pact: Found during \"The Living Legend\" sidequest (see 191).\n3) Thunderstar Pact: During \"An Introduction\" node at Skalla, search below the\nweapon shop for a hidden chest which contains this Pact.\n4) Icestar Pact: During \"The Sacrifice\" node at the Imperial Ruins,\nclimb down to the lowest level.  In the upper right corner is a secret passage\nyou can walk through to a hidden room.  Search for a hidden chest which\ncontains this Pact.\n\nAfter you have obtained any Pacts, return to Vainqueur at \"The Three Contracts\"\nand he will teach the new abilities to Aht.  Learn all four abilities to\ncomplete this sidequest.  This sidequest is also a prerequisite to gain access\nto \"The Final Trial\" sidequest."
   },
   {
     "num": "195",
@@ -1752,7 +1752,7 @@
     "chapter": "CHAPTER 6",
     "type": "Sidequest",
     "timeline": "Standard",
-    "requirement": "After completing \"The Living Legend\" sidequest, talk to Vainqueur to unlock\nthis sidequest. You will need to find four Pacts for Eruca.\n\n1) Firelight Pact: Reward from \"The Ultimate Dish\" sidequest (see 037).\n2) Protection Pact: During the \"Gladiator\" node at Cygnus (), head to\nthe Back Alley area by the tavern. Search behind the wall in the lower left\ncorner to find a hidden chest which contains this Pact.\n3) Sunlight Pact: Found during \"The Living Legend\" sidequest (see 191).\n4) Divine Pact: Found in a hidden chest at Holff Ruins ().\n\nAfter you have obtained any Pacts, return to Vainqueur at \"The Three Contracts\"\nand he will teach the new abilities to Eruca. Learn all four abilities to\ncomplete this sidequest. This sidequest is also a prerequisite to gain access\nto \"The Final Trial\" sidequest."
+    "requirement": "After completing \"The Living Legend\" sidequest, talk to Vainqueur to unlock\nthis sidequest.  You will need to find four Pacts for Eruca.\n\n1) Firelight Pact: Reward from \"The Ultimate Dish\" sidequest (see 037).\n2) Protection Pact: During the \"Gladiator\" node at Cygnus, head to\nthe Back Alley area by the tavern.  Search behind the wall in the lower left\ncorner to find a hidden chest which contains this Pact.\n3) Sunlight Pact: Found during \"The Living Legend\" sidequest (see 191).\n4) Divine Pact: Found in a hidden chest at Holff Ruins.\n\nAfter you have obtained any Pacts, return to Vainqueur at \"The Three Contracts\"\nand he will teach the new abilities to Eruca.  Learn all four abilities to\ncomplete this sidequest.  This sidequest is also a prerequisite to gain access\nto \"The Final Trial\" sidequest."
   },
   {
     "num": "196",
@@ -1761,7 +1761,7 @@
     "chapter": "CHAPTER 6",
     "type": "Sidequest",
     "timeline": "Standard",
-    "requirement": "After completing \"The Blades Trial\", \"The Starlit Trial\", and\n\"The Light Trial\", talk to Vainqueur again to receive this sidequest. Defeat\nhim () to complete this sidequest and receive the True Historica\n(ATK+70/MAG+34/SPD+5)."
+    "requirement": "After completing \"The Blades Trial\", \"The Starlit Trial\", and\n\"The Light Trial\", talk to Vainqueur again to receive this sidequest.  Defeat\nhim to complete this sidequest and receive the True Historica\n(ATK+70/MAG+34/SPD+5)."
   },
   {
     "num": "197",
@@ -1769,7 +1769,7 @@
     "rawTitle": "Flux War",
     "chapter": "CHAPTER 6",
     "type": "Plot",
-    "timeline": "Standard",
+    "timeline": "Alternate",
     "requirement": "Automatically completed during the plot."
   },
   {
@@ -1778,7 +1778,7 @@
     "rawTitle": "The Royal Secret",
     "chapter": "CHAPTER 6",
     "type": "Plot",
-    "timeline": "Standard",
+    "timeline": "Alternate",
     "requirement": "Automatically completed during the plot."
   },
   {
@@ -1787,7 +1787,7 @@
     "rawTitle": "Turning of the Tide",
     "chapter": "CHAPTER 6",
     "type": "Plot",
-    "timeline": "Standard",
+    "timeline": "Alternate",
     "requirement": "Automatically completed during the plot."
   },
   {
@@ -1796,7 +1796,7 @@
     "rawTitle": "Viola's Last Stand",
     "chapter": "CHAPTER 6",
     "type": "Plot",
-    "timeline": "Standard",
+    "timeline": "Alternate",
     "requirement": "Automatically completed during the plot."
   },
   {
@@ -1805,7 +1805,7 @@
     "rawTitle": "In Pursuit",
     "chapter": "CHAPTER 6",
     "type": "Plot",
-    "timeline": "Standard",
+    "timeline": "Alternate",
     "requirement": "Automatically completed during the plot."
   },
   {
@@ -1814,7 +1814,7 @@
     "rawTitle": "Demigod",
     "chapter": "CHAPTER 6",
     "type": "Plot",
-    "timeline": "Standard",
+    "timeline": "Alternate",
     "requirement": "Automatically completed during the plot."
   },
   {
@@ -1823,8 +1823,8 @@
     "rawTitle": "Hugo the Omnipotent (ending)",
     "chapter": "CHAPTER 6",
     "type": "Bad Ending",
-    "timeline": "Standard",
-    "requirement": "During the \"In Pursuit\" node at the Underground Lab (), make your way\ndown to the lowest basement level. Talk to Hugo and choose to \"Take the power\"\nto unlock this ending."
+    "timeline": "Alternate",
+    "requirement": "During the \"In Pursuit\" node at the Underground Lab, make your way\ndown to the lowest basement level.  Talk to Hugo and choose to \"Take the power\"\nto unlock this ending."
   },
   {
     "num": "204",
@@ -1832,7 +1832,7 @@
     "rawTitle": "Wielder of Infinity",
     "chapter": "CHAPTER 6",
     "type": "Plot",
-    "timeline": "Standard",
+    "timeline": "Alternate",
     "requirement": "Automatically completed during the plot."
   },
   {
@@ -1841,7 +1841,7 @@
     "rawTitle": "An End to Madness",
     "chapter": "CHAPTER 6",
     "type": "Plot",
-    "timeline": "Standard",
+    "timeline": "Alternate",
     "requirement": "Automatically completed during the plot."
   },
   {
@@ -1850,8 +1850,8 @@
     "rawTitle": "Thaumatech's End (sidequest)",
     "chapter": "CHAPTER 6",
     "type": "Sidequest",
-    "timeline": "Standard",
-    "requirement": "During the \"In Pursuit\" node at Alistel, talk to the old man just outside the\nUnderground Lab to receive this sidequest. Then, make your way down to the 5th\nbasement level. Head up past the intersection and hug the left wall until you\ncan go through a path that is rather hard to see. Defeat the Special\nThaumachine there. Walk all the way out of the Underground Lab and talk to the\nold man again to complet this sidequest and receive a Medibranch."
+    "timeline": "Alternate",
+    "requirement": "During the \"In Pursuit\" node at Alistel, talk to the old man just outside the\nUnderground Lab to receive this sidequest.  Then, make your way down to the 5th\nbasement level.  Head up past the intersection and hug the left wall until you\ncan go through a path that is rather hard to see.  Defeat the Special\nThaumachine there.  Walk all the way out of the Underground Lab and talk to the\nold man again to complet this sidequest and receive a Medibranch."
   },
   {
     "num": "207",
@@ -1860,267 +1860,267 @@
     "chapter": "CHAPTER 6",
     "type": "Sidequest",
     "timeline": "Alternate",
-    "requirement": "During the \"In Pursuit\" node at the Underground Lab, make your way down to the\n7th basement level. Hug the left wall until you can go through a path that is\nhard to see. Talk to the engineer there to receive this sidequest. Return to\n\"The Beginning\" node. Talk to Fennel in the lab next to the infirmary to\ncomplete this sidequest and receive the Haste Core for Rosch, needed for the\n\"Conversion\" sidequest.\n\n=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\n\n FINAL CHAPTER\n (except ending)\n\n=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\n\n----------------------------- --- 218\n | | |\n 214 - 215 - 216 - 217 219 221 - 222 - 223\n | | |\n--- 208 - 209 - 210 - 211 - 212 220 ---\n\n 213"
+    "requirement": "During the \"In Pursuit\" node at the Underground Lab, make your way down to the\n7th basement level.  Hug the left wall until you can go through a path that is\nhard to see.  Talk to the engineer there to receive this sidequest.  Return to\n\"The Beginning\" node.  Talk to Fennel in the lab next to the infirmary to\ncomplete this sidequest and receive the Haste Core for Rosch, needed for the\n\"Conversion\" sidequest."
   },
   {
     "num": "208",
     "title": "The Shadow Crown",
     "rawTitle": "The Shadow Crown",
-    "chapter": "CHAPTER 6",
+    "chapter": "FINAL CHAPTER",
     "type": "Plot",
-    "timeline": "Standard",
+    "timeline": "Final",
     "requirement": "Automatically completed during the plot."
   },
   {
     "num": "209",
     "title": "Heiss' Scheme",
     "rawTitle": "Heiss' Scheme",
-    "chapter": "CHAPTER 6",
+    "chapter": "FINAL CHAPTER",
     "type": "Plot",
-    "timeline": "Standard",
+    "timeline": "Final",
     "requirement": "Automatically completed during the plot."
   },
   {
     "num": "210",
     "title": "Call for Destruction",
     "rawTitle": "Call for Destruction",
-    "chapter": "CHAPTER 6",
+    "chapter": "FINAL CHAPTER",
     "type": "Plot",
-    "timeline": "Standard",
+    "timeline": "Final",
     "requirement": "Automatically completed during the plot."
   },
   {
     "num": "211",
     "title": "The Sacrifice",
     "rawTitle": "The Sacrifice",
-    "chapter": "CHAPTER 6",
+    "chapter": "FINAL CHAPTER",
     "type": "Plot",
-    "timeline": "Standard",
+    "timeline": "Final",
     "requirement": "Automatically completed during the plot."
   },
   {
     "num": "212",
     "title": "The Madness of Heiss",
     "rawTitle": "The Madness of Heiss",
-    "chapter": "CHAPTER 6",
+    "chapter": "FINAL CHAPTER",
     "type": "Plot",
-    "timeline": "Standard",
+    "timeline": "Final",
     "requirement": "Automatically completed during the plot."
   },
   {
     "num": "213",
     "title": "A Timely Warning",
     "rawTitle": "A Timely Warning (sidequest)",
-    "chapter": "CHAPTER 6",
+    "chapter": "FINAL CHAPTER",
     "type": "Sidequest",
-    "timeline": "Standard",
-    "requirement": "During the \"Shadow Crown\" node at Granorg, head east to the weapon shop. Talk\nto the nearby man in green to receive this sidequest. During the\n\"Royal Secret\" node at Granorg, talk to him again. Finally, return to the\n\"Shadow Crown\" node to talk to him to complete this sidequest and receive the\nOmnipedia Book for Gafka, needed for \"The Ultimate Skill\" sidequest."
+    "timeline": "Final",
+    "requirement": "During the \"Shadow Crown\" node at Granorg, head east to the weapon shop.  Talk\nto the nearby man in green to receive this sidequest.  During the\n\"Royal Secret\" node at Granorg, talk to him again.  Finally, return to the\n\"Shadow Crown\" node to talk to him to complete this sidequest and receive the\nOmnipedia Book for Gafka, needed for \"The Ultimate Skill\" sidequest."
   },
   {
     "num": "214",
     "title": "After Heiss",
     "rawTitle": "After Heiss",
-    "chapter": "CHAPTER 6",
+    "chapter": "FINAL CHAPTER",
     "type": "Plot",
-    "timeline": "Standard",
-    "requirement": "After \"The Madness of Heiss\" node, return to the \"Aht's Prayer\" node. Defeat\nHeiss to unlock this node."
+    "timeline": "Final",
+    "requirement": "After \"The Madness of Heiss\" node, return to the \"Aht's Prayer\" node.  Defeat\nHeiss to unlock this node."
   },
   {
     "num": "215",
     "title": "Warlord's Sword",
     "rawTitle": "Warlord's Sword",
-    "chapter": "CHAPTER 6",
+    "chapter": "FINAL CHAPTER",
     "type": "Plot",
-    "timeline": "Standard",
+    "timeline": "Final",
     "requirement": "Automatically completed during the plot."
   },
   {
     "num": "216",
     "title": "The Road Perilous",
     "rawTitle": "The Road Perilous",
-    "chapter": "CHAPTER 6",
+    "chapter": "FINAL CHAPTER",
     "type": "Plot",
-    "timeline": "Standard",
+    "timeline": "Final",
     "requirement": "Automatically completed during the plot."
   },
   {
     "num": "217",
     "title": "The Black Guardians",
     "rawTitle": "The Black Guardians",
-    "chapter": "CHAPTER 6",
+    "chapter": "FINAL CHAPTER",
     "type": "Plot",
-    "timeline": "Standard",
+    "timeline": "Final",
     "requirement": "Automatically completed during the plot."
   },
   {
     "num": "218",
     "title": "Death in Black",
     "rawTitle": "Death in Black",
-    "chapter": "CHAPTER 6",
+    "chapter": "FINAL CHAPTER",
     "type": "Plot",
-    "timeline": "Standard",
+    "timeline": "Final",
     "requirement": "Automatically completed during the plot."
   },
   {
     "num": "219",
     "title": "Warlord in Black",
     "rawTitle": "Warlord in Black",
-    "chapter": "CHAPTER 6",
+    "chapter": "FINAL CHAPTER",
     "type": "Plot",
-    "timeline": "Standard",
+    "timeline": "Final",
     "requirement": "Automatically completed during the plot."
   },
   {
     "num": "220",
     "title": "Monstrocity in Black",
     "rawTitle": "Monstrocity in Black",
-    "chapter": "CHAPTER 6",
+    "chapter": "FINAL CHAPTER",
     "type": "Plot",
-    "timeline": "Standard",
+    "timeline": "Final",
     "requirement": "Automatically completed during the plot."
   },
   {
     "num": "221",
     "title": "Valkyrie in Black",
     "rawTitle": "Valkyrie in Black",
-    "chapter": "CHAPTER 6",
+    "chapter": "FINAL CHAPTER",
     "type": "Plot",
-    "timeline": "Standard",
+    "timeline": "Final",
     "requirement": "Automatically completed during the plot."
   },
   {
     "num": "222",
     "title": "Death Knell",
     "rawTitle": "Death Knell",
-    "chapter": "CHAPTER 6",
+    "chapter": "FINAL CHAPTER",
     "type": "Plot",
-    "timeline": "Standard",
+    "timeline": "Final",
     "requirement": "Automatically completed during the plot."
   },
   {
     "num": "223",
     "title": "Final Battleground",
     "rawTitle": "Final Battleground",
-    "chapter": "CHAPTER 6",
+    "chapter": "FINAL CHAPTER",
     "type": "Plot",
-    "timeline": "Standard",
-    "requirement": "Automatically completed during the plot.\n\n=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\n\n FINAL CHAPTER\n (ending only)\n\n=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\n\n 227 228\n\n 229 230 231\n\n--- 224 - 225 ------------- 226\n\n 232 233 234\n\n 235 236"
+    "timeline": "Final",
+    "requirement": "Automatically completed during the plot."
   },
   {
     "num": "224",
     "title": "Aprocrypha",
     "rawTitle": "Aprocrypha",
-    "chapter": "CHAPTER 6",
-    "type": "Plot",
-    "timeline": "Standard",
+    "chapter": "FINAL CHAPTER",
+    "type": "Ending",
+    "timeline": "Final",
     "requirement": "Automatically completed during the plot."
   },
   {
     "num": "225",
     "title": "Ritual of Flux",
     "rawTitle": "Ritual of Flux",
-    "chapter": "CHAPTER 6",
-    "type": "Plot",
-    "timeline": "Standard",
+    "chapter": "FINAL CHAPTER",
+    "type": "Ending",
+    "timeline": "Final",
     "requirement": "Automatically completed during the plot."
   },
   {
     "num": "226",
     "title": "A Promise",
     "rawTitle": "A Promise",
-    "chapter": "CHAPTER 6",
-    "type": "Plot",
-    "timeline": "Standard",
+    "chapter": "FINAL CHAPTER",
+    "type": "Ending",
+    "timeline": "Final",
     "requirement": "Automatically completed during the plot."
   },
   {
     "num": "227",
     "title": "The Show Goes On",
     "rawTitle": "The Show Goes On",
-    "chapter": "CHAPTER 6",
-    "type": "Plot",
-    "timeline": "Standard",
+    "chapter": "FINAL CHAPTER",
+    "type": "Ending",
+    "timeline": "Final",
     "requirement": "Complete \"The King's Daughter\" sidequest (see 032) to unlock this part of the\nending."
   },
   {
     "num": "228",
     "title": "A Little Hero",
     "rawTitle": "A Little Hero",
-    "chapter": "CHAPTER 6",
-    "type": "Plot",
-    "timeline": "Standard",
+    "chapter": "FINAL CHAPTER",
+    "type": "Ending",
+    "timeline": "Final",
     "requirement": "Complete the \"An Unwanted Reunion\" sidequest (see 161) to unlock this part of\nthe ending."
   },
   {
     "num": "229",
     "title": "Iron-Armed General",
     "rawTitle": "Iron-Armed General",
-    "chapter": "CHAPTER 6",
-    "type": "Plot",
-    "timeline": "Standard",
+    "chapter": "FINAL CHAPTER",
+    "type": "Ending",
+    "timeline": "Final",
     "requirement": "Complete the \"Red-Letter Day\" sidequest (see 052) to unlock this part of the\nending."
   },
   {
     "num": "230",
     "title": "Shaman",
     "rawTitle": "Shaman",
-    "chapter": "CHAPTER 6",
-    "type": "Plot",
-    "timeline": "Standard",
+    "chapter": "FINAL CHAPTER",
+    "type": "Ending",
+    "timeline": "Final",
     "requirement": "Complete the \"Wandering Soul\" sidequest (see 118) to unlock this part of the\nending."
   },
   {
     "num": "231",
     "title": "Overseers of Time",
     "rawTitle": "Overseers of Time",
-    "chapter": "CHAPTER 6",
-    "type": "Plot",
-    "timeline": "Standard",
+    "chapter": "FINAL CHAPTER",
+    "type": "Ending",
+    "timeline": "Final",
     "requirement": "Complete the \"What Was Inherited\" sidequest (see 034) to unlock this part of\nthe ending."
   },
   {
     "num": "232",
     "title": "Valkyrie in Repose",
     "rawTitle": "Valkyrie in Repose",
-    "chapter": "CHAPTER 6",
-    "type": "Plot",
-    "timeline": "Standard",
+    "chapter": "FINAL CHAPTER",
+    "type": "Ending",
+    "timeline": "Final",
     "requirement": "Complete the \"A Letter to Tomorrow\" sidequest (see 055) to unlock this part of\nthe ending."
   },
   {
     "num": "233",
     "title": "Beast God at Rest",
     "rawTitle": "Beast God at Rest",
-    "chapter": "CHAPTER 6",
-    "type": "Plot",
-    "timeline": "Standard",
+    "chapter": "FINAL CHAPTER",
+    "type": "Ending",
+    "timeline": "Final",
     "requirement": "Complete \"The Beast God's Birth\" sidequest (see 175) to unlock this part of the\nending."
   },
   {
     "num": "234",
     "title": "Life of the Beastkind",
     "rawTitle": "Life of the Beastkind",
-    "chapter": "CHAPTER 6",
-    "type": "Plot",
-    "timeline": "Standard",
+    "chapter": "FINAL CHAPTER",
+    "type": "Ending",
+    "timeline": "Final",
     "requirement": "Complete the \"Mankind & Beastkind\" sidequest (see 067) to unlock this part of\nthe ending."
   },
   {
     "num": "235",
     "title": "A Warrrior in Love",
     "rawTitle": "A Warrrior in Love",
-    "chapter": "CHAPTER 6",
-    "type": "Plot",
-    "timeline": "Standard",
+    "chapter": "FINAL CHAPTER",
+    "type": "Ending",
+    "timeline": "Final",
     "requirement": "Complete the \"At Journey's End\" sidequest (see 177) to unlock this part of the\nending."
   },
   {
     "num": "236",
     "title": "The Lives of Humans",
     "rawTitle": "The Lives of Humans",
-    "chapter": "CHAPTER 6",
-    "type": "Plot",
-    "timeline": "Standard",
+    "chapter": "FINAL CHAPTER",
+    "type": "Ending",
+    "timeline": "Final",
     "requirement": "Complete the \"Assassination of Dias\" sidequest (see 104) to unlock this part of\nthe ending."
   }
 ]
