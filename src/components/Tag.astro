@@ -52,7 +52,4 @@ const resolvedIcon = icon !== undefined ? icon : meta.defaultIcon;
 const tooltip = title || meta.label;
 ---
 
-<span class={`hl-tag ${meta.cssClass} ${className}`.trim()} title={tooltip}>
-  {resolvedIcon && <span class="hl-icon" aria-hidden="true">{resolvedIcon}</span>}
-  <span class="hl-text"><slot>{name}</slot></span>
-</span>
+<span class={`hl-tag ${meta.cssClass} ${className}`.trim()} title={tooltip}>{resolvedIcon && <span class="hl-icon" aria-hidden="true">{resolvedIcon}</span>}<span class="hl-text"><slot>{name}</slot></span></span>

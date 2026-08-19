@@ -2,7 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import Tag from '../components/Tag.astro';
-import { parseNodeRequirement } from '../utils/nodeTagParser';
+import { parseNodeRequirement, splitRequirementBlocks } from '../utils/nodeTagParser';
 import nodesData from '../data/nodesData.json';
 import chapterMapsData from '../data/chapterMaps.json';
 
@@ -166,26 +166,58 @@ function formatMapHtml(mapText: string) {
                 </div>
 
                 <div class="node-req-content">
-                  <p>
-                    {parseNodeRequirement(n.requirement).map((token) => {
-                      if (token.type === 'tag') {
-                        return <Tag type={token.tagType}>{token.text}</Tag>;
-                      }
-                      if (token.type === 'node-link') {
-                        return (
-                          <a
-                            href={`#node-${token.nodeNum}`}
-                            class="map-node-pill"
-                            data-node={token.nodeNum}
-                            title={`Jump to Node #${token.nodeNum}`}
-                          >
-                            {token.text}
-                          </a>
-                        );
-                      }
-                      return token.text;
-                    })}
-                  </p>
+                  {splitRequirementBlocks(n.requirement).map((block) => {
+                    if (block.type === 'list' && block.items) {
+                      return (
+                        <ol class="node-req-list">
+                          {block.items.map((item) => (
+                            <li class="node-req-list-item">
+                              {parseNodeRequirement(item.replace(/^\d+\)\s*/, '')).map((token) => {
+                                if (token.type === 'tag') {
+                                  return <Tag type={token.tagType}>{token.text}</Tag>;
+                                }
+                                if (token.type === 'node-link') {
+                                  return (
+                                    <a
+                                      href={`#node-${token.nodeNum}`}
+                                      class="map-node-pill"
+                                      data-node={token.nodeNum}
+                                      title={`Jump to Node #${token.nodeNum}`}
+                                    >
+                                      {token.text}
+                                    </a>
+                                  );
+                                }
+                                return token.text;
+                              })}
+                            </li>
+                          ))}
+                        </ol>
+                      );
+                    }
+                    return (
+                      <p>
+                        {parseNodeRequirement(block.text || '').map((token) => {
+                          if (token.type === 'tag') {
+                            return <Tag type={token.tagType}>{token.text}</Tag>;
+                          }
+                          if (token.type === 'node-link') {
+                            return (
+                              <a
+                                href={`#node-${token.nodeNum}`}
+                                class="map-node-pill"
+                                data-node={token.nodeNum}
+                                title={`Jump to Node #${token.nodeNum}`}
+                              >
+                                {token.text}
+                              </a>
+                            );
+                          }
+                          return token.text;
+                        })}
+                      </p>
+                    );
+                  })}
                 </div>
               </article>
             ))}
@@ -645,13 +677,36 @@ function formatMapHtml(mapText: string) {
   .node-req-content {
     font-size: 0.98rem;
     color: var(--text-secondary);
-    line-height: 1.75;
+    line-height: 1.7;
     margin-top: 0.25rem;
-    white-space: pre-line;
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
   }
 
   .node-req-content p {
     margin: 0;
+    line-height: 1.7;
+  }
+
+  .node-req-list {
+    margin: 0;
+    padding-left: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+    font-size: 0.95rem;
+  }
+
+  .node-req-list-item {
+    line-height: 1.65;
+    color: var(--text-secondary);
+  }
+
+  .node-req-list-item::marker {
+    color: var(--mana-cyan);
+    font-weight: 700;
+    font-family: var(--font-mono);
   }
 
   .node-card.hidden {

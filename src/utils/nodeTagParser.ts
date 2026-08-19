@@ -34,6 +34,12 @@ export interface NodeLinkToken {
 
 export type RequirementToken = TextToken | TagToken | NodeLinkToken;
 
+export interface RequirementBlock {
+  type: 'paragraph' | 'list';
+  text?: string;
+  items?: string[];
+}
+
 interface EntityRule {
   pattern: RegExp;
   tagType?: TagType;
@@ -289,4 +295,16 @@ export function parseNodeRequirement(requirement: string): RequirementToken[] {
   }
 
   return tokens;
+}
+
+export function splitRequirementBlocks(requirement: string): RequirementBlock[] {
+  if (!requirement) return [];
+  const sections = requirement.split(/\n\s*\n/);
+  return sections.map((sec) => {
+    const lines = sec.split('\n').map((l) => l.trim()).filter(Boolean);
+    if (lines.length > 1 && lines.every((l) => /^\d+\)/.test(l))) {
+      return { type: 'list', items: lines };
+    }
+    return { type: 'paragraph', text: sec };
+  });
 }
