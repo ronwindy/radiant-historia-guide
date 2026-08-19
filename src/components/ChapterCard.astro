@@ -1,0 +1,276 @@
+---
+import TimelineBadge from './TimelineBadge.astro';
+
+interface Props {
+  id: string;
+  number: number;
+  title: string;
+  code: string;
+  timeline: string;
+  location?: string;
+}
+
+const { id, number, title, code, timeline, location } = Astro.props;
+const paddedNumber = String(number).padStart(2, '0');
+
+function getTimelineBorderClass(tl: string) {
+  const norm = tl.toLowerCase();
+  if (norm.includes('standard')) return 'timeline-border-standard';
+  if (norm.includes('alternate')) return 'timeline-border-alternate';
+  if (norm.includes('prologue')) return 'timeline-border-prologue';
+  if (norm.includes('final')) return 'timeline-border-final';
+  return '';
+}
+
+const borderClass = getTimelineBorderClass(timeline);
+---
+
+<article id={id} class={`glass-card chapter-card ${borderClass}`} data-chapter-num={number}>
+  <header class="chapter-header">
+    <div class="chapter-header-main">
+      <div class="chapter-num-badge">#{paddedNumber}</div>
+      <div class="chapter-title-group">
+        <h2 class="chapter-title">{title}</h2>
+        <div class="chapter-meta">
+          <TimelineBadge timeline={timeline} />
+          <span class="jump-code-badge" title="Jump Code">[{code}]</span>
+          {location && <span class="location-badge">📍 {location}</span>}
+        </div>
+      </div>
+    </div>
+
+    <div class="chapter-actions">
+      <label class="completion-toggle" title="Mark chapter as completed in your browser">
+        <input type="checkbox" class="chapter-checkbox" data-chapter-num={number} />
+        <span class="checkbox-custom"></span>
+        <span class="checkbox-label">Complete</span>
+      </label>
+    </div>
+  </header>
+
+  <div class="chapter-body">
+    <slot />
+  </div>
+</article>
+
+<style>
+  .chapter-card {
+    position: relative;
+    border-left-width: 5px;
+    padding: clamp(1.2rem, 3vw, 2.2rem);
+    margin-bottom: 3.5rem;
+    transition: var(--transition);
+  }
+
+  .timeline-border-standard {
+    border-left-color: var(--timeline-standard);
+  }
+
+  .timeline-border-alternate {
+    border-left-color: var(--timeline-alternate);
+  }
+
+  .timeline-border-prologue {
+    border-left-color: var(--timeline-prologue);
+  }
+
+  .timeline-border-final {
+    border-left-color: var(--timeline-final);
+  }
+
+  .chapter-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1.5rem;
+    padding-bottom: 1.25rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  .chapter-header-main {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    min-width: 0;
+  }
+
+  .chapter-num-badge {
+    background: var(--bg-surface-elevated);
+    color: var(--gold-primary);
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    font-weight: 700;
+    padding: 0.4rem 0.75rem;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--gold-border);
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .chapter-title-group {
+    min-width: 0;
+  }
+
+  .chapter-title {
+    font-size: clamp(1.35rem, 2.5vw, 1.85rem);
+    margin-bottom: 0.5rem;
+    word-break: break-word;
+  }
+
+  .chapter-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.6rem;
+    font-family: var(--font-ui);
+    font-size: 0.85rem;
+  }
+
+  .jump-code-badge {
+    font-family: var(--font-mono);
+    color: var(--mana-cyan);
+    font-weight: 700;
+    background: rgba(6, 182, 212, 0.1);
+    padding: 0.2rem 0.5rem;
+    border-radius: var(--radius-sm);
+    border: 1px solid rgba(6, 182, 212, 0.3);
+  }
+
+  .location-badge {
+    color: var(--text-secondary);
+    background: rgba(255, 255, 255, 0.05);
+    padding: 0.2rem 0.5rem;
+    border-radius: var(--radius-sm);
+  }
+
+  /* Completion Checkbox */
+  .completion-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-full);
+    padding: 0.4rem 0.9rem;
+    cursor: pointer;
+    font-family: var(--font-ui);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    transition: var(--transition);
+    user-select: none;
+  }
+
+  .completion-toggle:hover {
+    background: rgba(251, 191, 36, 0.1);
+    border-color: var(--gold-border);
+    color: var(--gold-primary);
+  }
+
+  .chapter-checkbox {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+
+  .checkbox-custom {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border: 2px solid var(--text-muted);
+    border-radius: 4px;
+    position: relative;
+    transition: var(--transition);
+  }
+
+  .chapter-checkbox:checked ~ .checkbox-custom {
+    background: var(--mana-green);
+    border-color: var(--mana-green);
+  }
+
+  .chapter-checkbox:checked ~ .checkbox-custom::after {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 2px;
+    width: 4px;
+    height: 9px;
+    border: solid #ffffff;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+
+  .chapter-checkbox:checked ~ .checkbox-label {
+    color: var(--mana-green);
+  }
+
+  .chapter-card.completed {
+    border-left-color: var(--mana-green) !important;
+    background: rgba(16, 185, 129, 0.04);
+  }
+
+  .chapter-body {
+    min-width: 0;
+  }
+
+  @media (max-width: 680px) {
+    .chapter-header {
+      flex-direction: column;
+      align-items: stretch;
+    }
+    .completion-toggle {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+</style>
+
+<script>
+  if (typeof document !== 'undefined') {
+    function setupChapterCheckboxes() {
+      try {
+        const stored = localStorage.getItem('rh-guide-completed-chapters');
+        const completed: number[] = stored ? JSON.parse(stored) : [];
+
+        const checkboxes = document.querySelectorAll<HTMLInputElement>('.chapter-checkbox');
+        checkboxes.forEach((cb) => {
+          const num = Number(cb.getAttribute('data-chapter-num'));
+          if (completed.includes(num)) {
+            cb.checked = true;
+            cb.closest('.chapter-card')?.classList.add('completed');
+          } else {
+            cb.checked = false;
+            cb.closest('.chapter-card')?.classList.remove('completed');
+          }
+
+          cb.addEventListener('change', () => {
+            try {
+              const currentStored = localStorage.getItem('rh-guide-completed-chapters');
+              let currentList: number[] = currentStored ? JSON.parse(currentStored) : [];
+              
+              if (cb.checked) {
+                if (!currentList.includes(num)) currentList.push(num);
+                cb.closest('.chapter-card')?.classList.add('completed');
+              } else {
+                currentList = currentList.filter(n => n !== num);
+                cb.closest('.chapter-card')?.classList.remove('completed');
+              }
+
+              localStorage.setItem('rh-guide-completed-chapters', JSON.stringify(currentList));
+              window.dispatchEvent(new Event('rh-progress-updated'));
+            } catch (err) {
+              console.error('Failed to update chapter completion in localStorage', err);
+            }
+          });
+        });
+      } catch (err) {
+        console.error('Failed to initialize chapter checkboxes', err);
+      }
+    }
+
+    setupChapterCheckboxes();
+  }
+</script>

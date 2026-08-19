@@ -1,0 +1,171 @@
+---
+interface ShopItem {
+  name: string;
+  price: number | string;
+  note?: string;
+}
+
+interface Props {
+  items?: ShopItem[];
+  equipment?: ShopItem[];
+  title?: string;
+}
+
+const { items, equipment, title = 'Local Merchant Inventory' } = Astro.props;
+---
+
+<div class="shop-matrix-card">
+  <div class="shop-header">
+    <span class="shop-icon">🪙</span>
+    <span class="shop-title">{title}</span>
+  </div>
+
+  <div class="shop-grid">
+    {items && items.length > 0 && (
+      <div class="shop-column">
+        <h4 class="shop-col-title">Item Shop</h4>
+        <div class="table-wrapper">
+          <table class="shop-table">
+            <thead>
+              <tr>
+                <th>Item</th>
+                <th>Price</th>
+                <th>Recommendation</th>
+              </tr>
+            </thead>
+            <tbody>
+              {items.map((item) => (
+                <tr>
+                  <td class="item-name">{item.name}</td>
+                  <td class="item-price">{item.price} G</td>
+                  <td class="item-note">{item.note && <span class="note-pill">{item.note}</span>}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    )}
+
+    {equipment && equipment.length > 0 && (
+      <div class="shop-column">
+        <h4 class="shop-col-title">Equipment Shop</h4>
+        <div class="table-wrapper">
+          <table class="shop-table">
+            <thead>
+              <tr>
+                <th>Equipment</th>
+                <th>Price</th>
+                <th>Recommendation</th>
+              </tr>
+            </thead>
+            <tbody>
+              {equipment.map((item) => (
+                <tr>
+                  <td class="item-name">{item.name}</td>
+                  <td class="item-price">{item.price} G</td>
+                  <td class="item-note">{item.note && <span class="note-pill">{item.note}</span>}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    )}
+  </div>
+
+  <slot />
+</div>
+
+<style>
+  .shop-matrix-card {
+    background: rgba(12, 18, 29, 0.75);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    padding: 1.25rem;
+    margin: 1.5rem 0;
+    font-family: var(--font-ui);
+  }
+
+  .shop-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-heading);
+    font-size: 0.95rem;
+    color: var(--gold-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 1rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid rgba(251, 191, 36, 0.15);
+  }
+
+  .shop-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .shop-column {
+    background: rgba(6, 9, 15, 0.5);
+    border: 1px solid rgba(148, 163, 184, 0.1);
+    border-radius: var(--radius-sm);
+    padding: 0.75rem;
+  }
+
+  .shop-col-title {
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    color: var(--text-bright);
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .shop-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.86rem;
+  }
+
+  .shop-table th {
+    text-align: left;
+    padding: 0.4rem 0.6rem;
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  .shop-table td {
+    padding: 0.45rem 0.6rem;
+    border-bottom: 1px solid rgba(148, 163, 184, 0.06);
+  }
+
+  .item-name {
+    color: var(--text-primary);
+    font-weight: 500;
+  }
+
+  .item-price {
+    color: var(--gold-primary);
+    font-family: var(--font-mono);
+    white-space: nowrap;
+  }
+
+  .note-pill {
+    background: rgba(251, 191, 36, 0.15);
+    color: var(--gold-primary);
+    border: 1px solid var(--gold-border);
+    padding: 0.15rem 0.45rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.75rem;
+    font-weight: 600;
+  }
+</style>

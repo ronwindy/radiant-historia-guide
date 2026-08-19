@@ -1,0 +1,177 @@
+---
+interface Props {
+  name: string;
+  hp?: string | number;
+  weakness?: string;
+  gridPosition?: string;
+  exp?: string | number;
+  gold?: string | number;
+  drops?: string;
+  steals?: string;
+}
+
+const { name, hp, weakness, gridPosition, exp, gold, drops, steals } = Astro.props;
+
+function getElemClass(w?: string) {
+  if (!w) return '';
+  const val = w.toLowerCase();
+  if (val.includes('fire')) return 'elem-fire';
+  if (val.includes('ice') || val.includes('frost')) return 'elem-ice';
+  if (val.includes('thunder') || val.includes('lightn')) return 'elem-thunder';
+  if (val.includes('poison')) return 'elem-poison';
+  if (val.includes('holy')) return 'elem-holy';
+  return 'elem-ice';
+}
+---
+
+<div class="boss-card">
+  <header class="boss-card-header">
+    <div class="boss-title-wrap">
+      <span class="boss-icon">💀</span>
+      <h3 class="boss-name">{name}</h3>
+    </div>
+    <span class="boss-badge">Boss Encounter</span>
+  </header>
+
+  <div class="boss-stats-grid">
+    {weakness && (
+      <div class="stat-cell">
+        <span class="stat-label">Elemental Weakness:</span>
+        <span class={`elem-pill ${getElemClass(weakness)}`}>{weakness}</span>
+      </div>
+    )}
+    {hp && (
+      <div class="stat-cell">
+        <span class="stat-label">Estimated HP:</span>
+        <span class="stat-val hp-val">{hp}</span>
+      </div>
+    )}
+    {gridPosition && (
+      <div class="stat-cell">
+        <span class="stat-label">Grid Formation:</span>
+        <span class="stat-val">{gridPosition}</span>
+      </div>
+    )}
+    {exp && (
+      <div class="stat-cell">
+        <span class="stat-label">EXP Reward:</span>
+        <span class="stat-val">{exp}</span>
+      </div>
+    )}
+    {gold && (
+      <div class="stat-cell">
+        <span class="stat-label">Gold Reward:</span>
+        <span class="stat-val">{gold} G</span>
+      </div>
+    )}
+    {steals && (
+      <div class="stat-cell">
+        <span class="stat-label">Steal Target:</span>
+        <span class="stat-val steal-val">{steals}</span>
+      </div>
+    )}
+    {drops && (
+      <div class="stat-cell">
+        <span class="stat-label">Item Drops:</span>
+        <span class="stat-val">{drops}</span>
+      </div>
+    )}
+  </div>
+
+  <div class="boss-tactics-content">
+    <slot />
+  </div>
+</div>
+
+<style>
+  .boss-card {
+    background: rgba(244, 63, 94, 0.06);
+    border: 1px solid rgba(244, 63, 94, 0.4);
+    border-radius: var(--radius-md);
+    padding: 1.25rem 1.5rem;
+    margin: 1.75rem 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  }
+
+  .boss-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(244, 63, 94, 0.25);
+    padding-bottom: 0.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .boss-title-wrap {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .boss-icon {
+    font-size: 1.3rem;
+  }
+
+  .boss-name {
+    font-size: 1.25rem;
+    color: #fda4af;
+    margin: 0;
+  }
+
+  .boss-badge {
+    font-family: var(--font-ui);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    background: rgba(244, 63, 94, 0.2);
+    color: #f43f5e;
+    border: 1px solid rgba(244, 63, 94, 0.5);
+    padding: 0.2rem 0.6rem;
+    border-radius: var(--radius-full);
+  }
+
+  .boss-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 0.75rem;
+    background: rgba(6, 9, 15, 0.6);
+    padding: 0.85rem;
+    border-radius: var(--radius-sm);
+    margin-bottom: 1rem;
+    font-family: var(--font-ui);
+    font-size: 0.85rem;
+  }
+
+  .stat-cell {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  .stat-label {
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  .stat-val {
+    color: var(--text-primary);
+    font-weight: 600;
+  }
+
+  .hp-val {
+    color: #f87171;
+    font-family: var(--font-mono);
+  }
+
+  .steal-val {
+    color: var(--gold-primary);
+  }
+
+  .boss-tactics-content {
+    color: var(--text-primary);
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
+</style>

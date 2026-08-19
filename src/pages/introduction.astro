@@ -1,0 +1,319 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import BattleGrid from '../components/BattleGrid.astro';
+import Callout from '../components/Callout.astro';
+
+const baseUrl = import.meta.env.BASE_URL;
+---
+
+<BaseLayout title="Game Systems & Battle Tactics" description="Comprehensive guide to Radiant Historia combat mechanics, 3x3 grid positioning, turn swapping, Mana Bursts, and time-travel rules.">
+  <div class="container intro-container">
+    <Breadcrumbs
+      items={[
+        { label: 'Compendium Hub', href: baseUrl },
+        { label: 'Systems & Battle Tactics' }
+      ]}
+    />
+
+    <header class="page-header glass-card">
+      <div class="header-badge">Core Gameplay &amp; Strategy</div>
+      <h1 class="page-title">Game Systems &amp; Battle Mechanics</h1>
+      <p class="page-subtitle">
+        Everything you need to master *Radiant Historia*: 3×3 grid maneuvers, turn swapping, combo stacking, Mana Bursts, and the temporal laws of The White Chronicle.
+      </p>
+    </header>
+
+    <!-- Author Preface -->
+    <section class="glass-card section-card">
+      <div class="card-header">
+        <span class="card-icon">📜</span>
+        <h2 class="card-title">Author's Preface &amp; Guide Philosophy</h2>
+      </div>
+
+      <div class="prose-content">
+        <p>
+          <em>Radiant Historia</em> is one of the most uniquely engaging RPGs of its era, featuring unforgettable music by Yoko Shimomura, an intricate geopolitical plot, and a brilliant tactical turn-based combat system.
+        </p>
+        <p>
+          This walkthrough is designed to provide information organized as cleanly and efficiently as possible:
+        </p>
+        <ul class="styled-list">
+          <li><strong>Zero Level Grinding:</strong> The recommended levels in this guide are calibrated for fighting natural random encounters without tedious grinding.</li>
+          <li><strong>Zero Item/Gold Farming:</strong> No reliance on low-percentage rare drops. Boss steal targets are guaranteed steals when using Stocke or Aht.</li>
+          <li><strong>Zero Missables Policy:</strong> Every single hidden chest, sidequest trigger window, node requirement, and shop inventory update is documented.</li>
+        </ul>
+
+        <Callout type="note" title="Plot Spoilers Notice">
+          Walkthrough chapters are written to avoid major narrative spoilers while giving clear tactical directions. However, the <strong>236 Node Completion List</strong> contains historical outcomes and ending summaries, so review it with caution if playing for the first time.
+        </Callout>
+      </div>
+    </section>
+
+    <!-- 3x3 Grid Battle Tactics -->
+    <section class="glass-card section-card">
+      <div class="card-header">
+        <span class="card-icon">📐</span>
+        <h2 class="card-title">The 3×3 Tactical Battle Arena</h2>
+      </div>
+
+      <div class="prose-content">
+        <p>
+          Unlike standard turn-based RPGs, enemies in <em>Radiant Historia</em> occupy specific tiles on a <strong>3 rows × 3 columns grid</strong>. Understanding row distance is vital:
+        </p>
+
+        <div class="grid-rules-cards">
+          <div class="rule-card rule-front">
+            <h4 class="rule-title">Front Row</h4>
+            <p>Enemies deal full physical damage but take <strong>+25% increased damage</strong> from all party attacks. Ideal target for early elimination.</p>
+          </div>
+          <div class="rule-card rule-center">
+            <h4 class="rule-title">Center Row</h4>
+            <p>Standard baseline damage dealt and received. Most human and medium-sized enemies spawn here.</p>
+          </div>
+          <div class="rule-card rule-back">
+            <h4 class="rule-title">Back Row</h4>
+            <p>Enemies take <strong>~40% reduced physical damage</strong> but deal less physical damage. Mages and ranged archers frequently position here.</p>
+          </div>
+        </div>
+
+        <h3>Positioning Skills &amp; Stacking Enemies</h3>
+        <p>
+          The true power of the battle system lies in <strong>pushing multiple enemies into the exact same tile</strong>. When multiple foes occupy one tile, every subsequent attack hits <em>all of them simultaneously</em>!
+        </p>
+
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th>Skill Name</th>
+                <th>User</th>
+                <th>Effect &amp; Grid Movement</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Push Assault</strong></td>
+                <td>Stocke, Raynie, Marco, Aht, Gafka, Eruca</td>
+                <td>Knocks the target 1 row backward into the tile behind them.</td>
+              </tr>
+              <tr>
+                <td><strong>Left Assault</strong></td>
+                <td>Stocke, Rosch</td>
+                <td>Knocks the target 1 column to the left.</td>
+              </tr>
+              <tr>
+                <td><strong>Right Assault</strong></td>
+                <td>Stocke</td>
+                <td>Knocks the target 1 column to the right.</td>
+              </tr>
+              <tr>
+                <td><strong>Grapple (Pull)</strong></td>
+                <td>Marco, Rosch</td>
+                <td>Pulls the target 1 row forward into the frontline.</td>
+              </tr>
+              <tr>
+                <td><strong>Air Assault</strong></td>
+                <td>Stocke, Aht, Gafka</td>
+                <td>Launches the enemy into the air, keeping them vulnerable for aerial juggling combos.</td>
+              </tr>
+              <tr>
+                <td><strong>Bedrock Smash</strong></td>
+                <td>Gafka</td>
+                <td>Gafka’s signature heavy impact: drags all surrounding enemies into the center tile.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Embedded Battle Grid -->
+      <BattleGrid interactive={true} />
+    </section>
+
+    <!-- Turn Manipulation & Trans-Turn -->
+    <section class="glass-card section-card">
+      <div class="card-header">
+        <span class="card-icon">⚡</span>
+        <h2 class="card-title">Turn Manipulation &amp; The Trans-Turn System</h2>
+      </div>
+
+      <div class="prose-content">
+        <p>
+          At the top of the combat screen, the upcoming turn order is displayed as a queue of character/enemy portraits. You can <strong>Change (Swap) Turns</strong> at any time:
+        </p>
+
+        <ul class="styled-list">
+          <li><strong>Turn Swapping:</strong> You can swap a party member's turn with any upcoming ally or enemy turn.</li>
+          <li><strong>Vulnerability Penalty:</strong> Swapping turns makes that character turn red (Vulnerable), causing them to take critical damage if attacked before their turn arrives.</li>
+          <li><strong>Consecutive Party Combos:</strong> By grouping all party turns together consecutively, you can execute unbroken 6-to-12 hit combo strings without enemy interruption.</li>
+          <li><strong>Trans-Turn Skill:</strong> Marco and Eruca learn <em>Trans-turn</em> (3 MP), which instantly transfers their active action to another ally without incurring the Vulnerability penalty!</li>
+        </ul>
+
+        <Callout type="warning" title="Boss Turn Swapping Strategy">
+          Against deadly bosses (like Palomides or Hugo), use turn swaps to align 6 party turns in a row. Have Stocke push the boss onto Aht’s elemental traps, follow up with Marco’s Trans-turn, and unleash Raynie's high-tier magic for over 2,000+ damage!
+        </Callout>
+      </div>
+    </section>
+
+    <!-- The White Chronicle Rules -->
+    <section class="glass-card section-card">
+      <div class="card-header">
+        <span class="card-icon">✨</span>
+        <h2 class="card-title">The White Chronicle &amp; Temporal Paradoxes</h2>
+      </div>
+
+      <div class="prose-content">
+        <p>
+          The White Chronicle allows Stocke to record pivotal historical events as <strong>Historia Nodes</strong>. Through Teo and Lippti at the realm of Historia, you can travel freely back to any visited node with your current levels, equipment, and abilities intact.
+        </p>
+
+        <div class="grid-rules-cards">
+          <div class="rule-card">
+            <h4 class="rule-title">Cross-Timeline Causality</h4>
+            <p>Obstacles in Standard History often require finding knowledge, skills, or items in Alternate History, and vice-versa.</p>
+          </div>
+          <div class="rule-card">
+            <h4 class="rule-title">Possible Histories (Bad Endings)</h4>
+            <p>Wrong choices lead to tragic historical conclusions. Experiencing a Bad Ending does not cause a Game Over; it simply unlocks a special White Chronicle node and returns you to the decision point.</p>
+          </div>
+          <div class="rule-card">
+            <h4 class="rule-title">Sidequest Progression</h4>
+            <p>Many sidequests span across multiple chapters and parallel timelines. Completing all sidequests is mandatory for the true grand ending.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</BaseLayout>
+
+<style>
+  .intro-container {
+    padding-bottom: 4rem;
+  }
+
+  .page-header {
+    border-top: 3px solid var(--gold-primary);
+    padding: clamp(1.5rem, 3vw, 2.5rem);
+    margin-bottom: 2.5rem;
+  }
+
+  .header-badge {
+    font-family: var(--font-ui);
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--gold-primary);
+    margin-bottom: 0.5rem;
+  }
+
+  .page-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.8rem, 4vw, 2.75rem);
+    margin-bottom: 0.75rem;
+  }
+
+  .page-subtitle {
+    color: var(--text-secondary);
+    font-size: 1.15rem;
+    line-height: 1.7;
+    max-width: 850px;
+  }
+
+  .section-card {
+    margin-bottom: 2.5rem;
+  }
+
+  .card-header {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    border-bottom: 1px solid var(--border-subtle);
+    padding-bottom: 0.75rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .card-icon {
+    font-size: 1.4rem;
+  }
+
+  .card-title {
+    font-size: 1.4rem;
+    color: var(--gold-primary);
+    margin: 0;
+  }
+
+  .prose-content {
+    font-size: 1.1rem;
+    line-height: 1.75;
+    color: var(--text-primary);
+  }
+
+  .prose-content p {
+    margin-bottom: 1.25rem;
+  }
+
+  .prose-content h3 {
+    font-size: 1.3rem;
+    color: var(--text-bright);
+    margin: 1.75rem 0 0.85rem 0;
+  }
+
+  .styled-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin: 1rem 0 1.5rem 0;
+    padding-left: 0.5rem;
+  }
+
+  .styled-list li {
+    position: relative;
+    padding-left: 1.5rem;
+  }
+
+  .styled-list li::before {
+    content: '◆';
+    position: absolute;
+    left: 0;
+    color: var(--gold-primary);
+    font-size: 0.8rem;
+    top: 0.2rem;
+  }
+
+  .grid-rules-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.25rem;
+    margin: 1.5rem 0;
+  }
+
+  .rule-card {
+    background: rgba(6, 9, 15, 0.6);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    padding: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .rule-front { border-top: 3px solid #ef4444; }
+  .rule-center { border-top: 3px solid #eab308; }
+  .rule-back { border-top: 3px solid #38bdf8; }
+
+  .rule-title {
+    font-family: var(--font-heading);
+    font-size: 1.05rem;
+    color: var(--text-bright);
+  }
+
+  .rule-card p {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    margin: 0;
+    line-height: 1.55;
+  }
+</style>

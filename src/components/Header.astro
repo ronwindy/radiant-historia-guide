@@ -1,0 +1,442 @@
+---
+interface Props {
+  currentPath?: string;
+}
+
+const { currentPath = '' } = Astro.props;
+const baseUrl = import.meta.env.BASE_URL;
+---
+
+<header class="site-header">
+  <div class="header-container">
+    <div class="brand-group">
+      <a href={baseUrl} class="logo-link" aria-label="Radiant Historia Compendium Home">
+        <img src={`${baseUrl}assets/logo.png`} alt="Radiant Historia Logo" class="brand-logo" width="160" height="48" />
+        <span class="brand-subtitle">The White Chronicle Compendium</span>
+      </a>
+    </div>
+
+    <!-- Desktop Navigation -->
+    <nav class="desktop-nav" aria-label="Main Navigation">
+      <a href={baseUrl} class={`nav-link ${currentPath === '/' || currentPath === '' ? 'active' : ''}`}>Hub</a>
+      <a href={`${baseUrl}introduction/`} class={`nav-link ${currentPath.includes('introduction') ? 'active' : ''}`}>Systems &amp; Tactics</a>
+      
+      <div class="nav-dropdown">
+        <button class={`nav-link dropdown-toggle ${currentPath.includes('walkthrough') ? 'active' : ''}`} aria-haspopup="true" aria-expanded="false">
+          Walkthrough ▾
+        </button>
+        <div class="dropdown-menu">
+          <a href={`${baseUrl}walkthrough/volume-1/`}>Vol I: Prologue &amp; Ch. 1 (01–10)</a>
+          <a href={`${baseUrl}walkthrough/volume-2/`}>Vol II: Specint &amp; Resistance (11–20)</a>
+          <a href={`${baseUrl}walkthrough/volume-3/`}>Vol III: Celestia &amp; Fortresses (21–30)</a>
+          <a href={`${baseUrl}walkthrough/volume-4/`}>Vol IV: Sand Fortress &amp; Cygnus (31–40)</a>
+          <a href={`${baseUrl}walkthrough/volume-5/`}>Vol V: Holff Ruins &amp; Forgia (41–50)</a>
+          <a href={`${baseUrl}walkthrough/volume-6/`}>Vol VI: Beastkind &amp; Lab (51–60)</a>
+          <a href={`${baseUrl}walkthrough/volume-7/`}>Vol VII: Final Chapters (61–66)</a>
+        </div>
+      </div>
+
+      <a href={`${baseUrl}nodes/`} class={`nav-link ${currentPath.includes('nodes') ? 'active' : ''}`}>236 Nodes</a>
+      <a href={`${baseUrl}abilities/`} class={`nav-link ${currentPath.includes('abilities') ? 'active' : ''}`}>Abilities</a>
+      <a href={`${baseUrl}credits/`} class={`nav-link ${currentPath.includes('credits') ? 'active' : ''}`}>Credits</a>
+    </nav>
+
+    <!-- Progress Badge & Mobile Toggle -->
+    <div class="header-actions">
+      <div class="nav-progress-badge" id="globalProgressBadge" title="Walkthrough Chapters Completed">
+        <span class="progress-icon">📜</span>
+        <span class="progress-text"><strong id="headerCompletedCount">0</strong> / 66</span>
+      </div>
+
+      <button class="mobile-toggle-btn" id="mobileMenuToggle" aria-label="Toggle Navigation Menu" aria-expanded="false">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+    <div class="mobile-drawer-content">
+      <div class="drawer-header">
+        <span class="drawer-title">Navigation Matrix</span>
+        <button class="drawer-close-btn" id="drawerCloseBtn" aria-label="Close menu">&times;</button>
+      </div>
+
+      <nav class="mobile-nav">
+        <a href={baseUrl} class="mobile-nav-link">🏛 Compendium Hub</a>
+        <a href={`${baseUrl}introduction/`} class="mobile-nav-link">⚔️ Systems &amp; Battle Tactics</a>
+        
+        <div class="mobile-section-title">Walkthrough Volumes</div>
+        <div class="mobile-vol-list">
+          <a href={`${baseUrl}walkthrough/volume-1/`} class="mobile-sublink">Vol I: Chapters 01–10</a>
+          <a href={`${baseUrl}walkthrough/volume-2/`} class="mobile-sublink">Vol II: Chapters 11–20</a>
+          <a href={`${baseUrl}walkthrough/volume-3/`} class="mobile-sublink">Vol III: Chapters 21–30</a>
+          <a href={`${baseUrl}walkthrough/volume-4/`} class="mobile-sublink">Vol IV: Chapters 31–40</a>
+          <a href={`${baseUrl}walkthrough/volume-5/`} class="mobile-sublink">Vol V: Chapters 41–50</a>
+          <a href={`${baseUrl}walkthrough/volume-6/`} class="mobile-sublink">Vol VI: Chapters 51–60</a>
+          <a href={`${baseUrl}walkthrough/volume-7/`} class="mobile-sublink">Vol VII: Chapters 61–66</a>
+        </div>
+
+        <a href={`${baseUrl}nodes/`} class="mobile-nav-link">✨ 236 Historia Nodes &amp; Quests</a>
+        <a href={`${baseUrl}abilities/`} class="mobile-nav-link">⚡ Ability Learning List</a>
+        <a href={`${baseUrl}credits/`} class="mobile-nav-link">📜 Credits &amp; Info</a>
+      </nav>
+    </div>
+  </div>
+  <div class="sidebar-overlay" id="mobileOverlay"></div>
+</header>
+
+<style>
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(6, 9, 15, 0.94);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--border-subtle);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+    font-family: var(--font-ui);
+  }
+
+  .header-container {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0.6rem clamp(1rem, 2.5vw, 2rem);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    min-height: 64px;
+  }
+
+  .brand-group {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+  }
+
+  .logo-link {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-decoration: none;
+  }
+
+  .brand-logo {
+    height: 38px;
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 0 6px rgba(251, 191, 36, 0.35));
+  }
+
+  .brand-subtitle {
+    font-size: 0.68rem;
+    font-family: var(--font-heading);
+    letter-spacing: 0.12em;
+    color: var(--gold-muted);
+    text-transform: uppercase;
+    margin-top: -2px;
+  }
+
+  /* Desktop Nav */
+  .desktop-nav {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .nav-link {
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    padding: 0.5rem 0.85rem;
+    border-radius: var(--radius-md);
+    transition: var(--transition);
+    white-space: nowrap;
+    text-decoration: none;
+  }
+
+  .nav-link:hover, .nav-link.active {
+    color: var(--gold-primary);
+    background: rgba(251, 191, 36, 0.08);
+  }
+
+  /* Dropdown */
+  .nav-dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  .dropdown-toggle {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+  }
+
+  .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: rgba(12, 18, 29, 0.98);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--border-active);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-card);
+    min-width: 280px;
+    padding: 0.5rem 0;
+    display: none;
+    z-index: 1010;
+  }
+
+  .nav-dropdown:hover .dropdown-menu,
+  .nav-dropdown:focus-within .dropdown-menu {
+    display: block;
+    animation: fadeIn 0.2s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-6px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .dropdown-menu a {
+    display: block;
+    padding: 0.6rem 1.2rem;
+    color: var(--text-primary);
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: var(--transition);
+    border-left: 2px solid transparent;
+  }
+
+  .dropdown-menu a:hover {
+    background: rgba(251, 191, 36, 0.1);
+    color: var(--gold-primary);
+    border-left-color: var(--gold-primary);
+  }
+
+  /* Header Actions */
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    flex-shrink: 0;
+  }
+
+  .nav-progress-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: rgba(6, 182, 212, 0.12);
+    border: 1px solid rgba(6, 182, 212, 0.4);
+    border-radius: var(--radius-full);
+    padding: 0.35rem 0.8rem;
+    font-size: 0.85rem;
+    color: var(--mana-cyan);
+    font-weight: 700;
+  }
+
+  .progress-icon {
+    font-size: 0.95rem;
+  }
+
+  .mobile-toggle-btn {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    background: transparent;
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    width: 44px;
+    height: 44px;
+    cursor: pointer;
+  }
+
+  .mobile-toggle-btn .bar {
+    width: 22px;
+    height: 2px;
+    background-color: var(--text-primary);
+    transition: var(--transition);
+  }
+
+  /* Mobile Drawer */
+  .mobile-drawer {
+    position: fixed;
+    top: 0;
+    right: -320px;
+    width: 300px;
+    height: 100vh;
+    background: #080c14;
+    border-left: 1px solid var(--gold-border);
+    box-shadow: -8px 0 30px rgba(0, 0, 0, 0.8);
+    transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1100;
+    overflow-y: auto;
+  }
+
+  .mobile-drawer.open {
+    right: 0;
+  }
+
+  .mobile-drawer-content {
+    padding: 1.5rem;
+  }
+
+  .drawer-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border-subtle);
+    padding-bottom: 1rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .drawer-title {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    color: var(--gold-primary);
+  }
+
+  .drawer-close-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    font-size: 1.8rem;
+    cursor: pointer;
+    line-height: 1;
+    width: 44px;
+    height: 44px;
+  }
+
+  .mobile-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .mobile-nav-link {
+    display: block;
+    padding: 0.75rem 1rem;
+    color: var(--text-primary);
+    font-weight: 600;
+    font-size: 0.95rem;
+    border-radius: var(--radius-md);
+    background: rgba(255, 255, 255, 0.03);
+    text-decoration: none;
+  }
+
+  .mobile-nav-link:hover {
+    background: rgba(251, 191, 36, 0.12);
+    color: var(--gold-primary);
+  }
+
+  .mobile-section-title {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--gold-muted);
+    margin: 1rem 0 0.4rem 0.5rem;
+    font-weight: 700;
+  }
+
+  .mobile-vol-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    padding-left: 0.75rem;
+  }
+
+  .mobile-sublink {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    padding: 0.45rem 0.75rem;
+    border-radius: var(--radius-sm);
+    text-decoration: none;
+  }
+
+  .mobile-sublink:hover {
+    color: var(--gold-primary);
+    background: rgba(251, 191, 36, 0.08);
+  }
+
+  .sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+    z-index: 1050;
+  }
+
+  .sidebar-overlay.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* Responsive Breakpoint */
+  @media (max-width: 980px) {
+    .desktop-nav {
+      display: none;
+    }
+    .mobile-toggle-btn {
+      display: flex;
+    }
+  }
+</style>
+
+<script>
+  if (typeof document !== 'undefined') {
+    const mobileToggle = document.getElementById('mobileMenuToggle');
+    const drawerClose = document.getElementById('drawerCloseBtn');
+    const drawer = document.getElementById('mobileDrawer');
+    const overlay = document.getElementById('mobileOverlay');
+
+    function openMenu() {
+      drawer?.classList.add('open');
+      overlay?.classList.add('active');
+      mobileToggle?.setAttribute('aria-expanded', 'true');
+      drawer?.setAttribute('aria-hidden', 'false');
+    }
+
+    function closeMenu() {
+      drawer?.classList.remove('open');
+      overlay?.classList.remove('active');
+      mobileToggle?.setAttribute('aria-expanded', 'false');
+      drawer?.setAttribute('aria-hidden', 'true');
+    }
+
+    mobileToggle?.addEventListener('click', openMenu);
+    drawerClose?.addEventListener('click', closeMenu);
+    overlay?.addEventListener('click', closeMenu);
+
+    // Synchronize Header Completed Count
+    function updateHeaderCount() {
+      try {
+        const stored = localStorage.getItem('rh-guide-completed-chapters');
+        const completed = stored ? JSON.parse(stored) : [];
+        const countElem = document.getElementById('headerCompletedCount');
+        if (countElem) {
+          countElem.textContent = String(completed.length || 0);
+        }
+      } catch (e) {
+        console.error('Failed to read completed chapters from localStorage', e);
+      }
+    }
+
+    updateHeaderCount();
+    window.addEventListener('storage', updateHeaderCount);
+    window.addEventListener('rh-progress-updated', updateHeaderCount);
+  }
+</script>

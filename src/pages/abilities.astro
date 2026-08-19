@@ -1,0 +1,488 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const baseUrl = import.meta.env.BASE_URL;
+
+const characters = [
+  {
+    name: 'Stocke',
+    role: 'Swordsman / Temporal Agent',
+    weapon: 'Sword',
+    color: '#3b82f6',
+    desc: 'The central protagonist. Versatile physical striker, fire elementalist, healer, and grid controller (Push, Left, Right, and Air Assaults).',
+    skills: [
+      { name: 'Push Assault', level: 1, mp: 3, effect: 'Knocks target 1 row back' },
+      { name: 'Left Assault', level: 2, mp: 3, effect: 'Knocks target 1 column left' },
+      { name: 'Power Wave', level: 4, mp: 8, effect: 'Physical shockwave attack' },
+      { name: 'Heal', level: 5, mp: 3, effect: 'Restores HP to single ally' },
+      { name: 'Recovery', level: 7, mp: 3, effect: 'Removes poison and paralysis' },
+      { name: 'Right Assault', level: 9, mp: 3, effect: 'Knocks target 1 column right' },
+      { name: 'Fire', level: 10, mp: 5, effect: 'Fire magic damage on 1 tile' },
+      { name: 'Air Assault', level: 13, mp: 3, effect: 'Launches target into the air' },
+      { name: 'Resurrection', level: 14, mp: 7, effect: 'Revives fallen ally' },
+      { name: 'Weakness Scan', level: 17, mp: 1, effect: 'Reveals enemy stats and weaknesses' },
+      { name: 'Double Slash', level: 21, mp: 10, effect: '2-hit physical combo' },
+      { name: 'Steal', level: 23, mp: 3, effect: 'Steals item/equipment from enemy' },
+      { name: 'Greater Heal', level: 25, mp: 6, effect: 'Large single-target HP recovery' },
+      { name: 'Area Heal', level: 31, mp: 8, effect: 'Restores HP to all active allies' },
+      { name: 'Head Crush', level: 37, mp: 5, effect: 'Physical attack with chance to stun' },
+      { name: 'Heat Blade', level: 42, mp: 14, effect: 'High-damage physical + fire attack' },
+      { name: 'G-Fire', level: 50, mp: 15, effect: 'Greater fire magic damage' },
+      { name: 'Fire Storm', level: 60, mp: 10, effect: 'Massive multi-hit fire blast' },
+    ],
+    scrollSkills: [
+      { name: 'Shadow Arts (Dancing Death)', quest: 'The Ultimate Team', effect: '7-hit physical blade combo' },
+      { name: 'Mana Feast', quest: 'The Mana Forge', effect: 'Drains enemy MP to restore party MP' }
+    ]
+  },
+  {
+    name: 'Raynie',
+    role: 'Spear Maiden / Elemental Mage',
+    weapon: 'Spear',
+    color: '#f59e0b',
+    desc: 'High magical power spanning Thunder, Fire, and Ice. Commands heavy single-tile nukes and rapid combo attacks.',
+    skills: [
+      { name: 'Push Assault', level: 2, mp: 3, effect: 'Knocks target 1 row back' },
+      { name: 'Thunder', level: 4, mp: 5, effect: 'Lightning magic damage' },
+      { name: 'Poison Break', level: 8, mp: 3, effect: 'Physical attack that inflicts Poison' },
+      { name: 'Frost', level: 11, mp: 5, effect: 'Ice magic damage' },
+      { name: 'Fire', level: 15, mp: 5, effect: 'Fire magic damage' },
+      { name: 'Regenerate', level: 20, mp: 3, effect: 'Grants continuous HP regeneration' },
+      { name: 'Rush', level: 25, mp: 12, effect: 'Multi-hit spear assault' },
+      { name: 'G-Fire', level: 30, mp: 15, effect: 'Greater fire magic nuke' },
+      { name: 'Mana Regen', level: 35, mp: 12, effect: 'Grants continuous MP regeneration' },
+      { name: 'G-Thunder', level: 41, mp: 15, effect: 'Greater lightning magic nuke' },
+      { name: 'G-Frost', level: 47, mp: 15, effect: 'Greater ice magic nuke' },
+      { name: 'Backfire', level: 53, mp: 12, effect: 'Magic attack that penalizes enemy magic' },
+      { name: 'Cross Thunder', level: 60, mp: 15, effect: 'Devastating lightning storm' },
+    ],
+    scrollSkills: [
+      { name: 'Mana Wave', quest: 'Raynie\'s Awakening', effect: 'All-target elemental burst' }
+    ]
+  },
+  {
+    name: 'Marco',
+    role: 'Tactician / Support Specialist',
+    weapon: 'Short Sword & Buckler',
+    color: '#10b981',
+    desc: 'The supreme buffer, healer, and turn manipulator. Trans-turn allows him to transfer actions to allies without penalties.',
+    skills: [
+      { name: 'Heal', level: 2, mp: 3, effect: 'Restores HP to single ally' },
+      { name: 'Grapple', level: 3, mp: 3, effect: 'Pulls target 1 row forward' },
+      { name: 'Weakness Scan', level: 4, mp: 1, effect: 'Reveals enemy stats and weaknesses' },
+      { name: 'Magic Boost', level: 8, mp: 4, effect: 'Increases ally Magic Attack' },
+      { name: 'Guard Boost', level: 11, mp: 4, effect: 'Increases ally Physical Defense' },
+      { name: 'Push Assault', level: 15, mp: 3, effect: 'Knocks target 1 row back' },
+      { name: 'Area Heal', level: 19, mp: 8, effect: 'Restores HP to all active allies' },
+      { name: 'Speed Break', level: 23, mp: 4, effect: 'Reduces enemy turn frequency' },
+      { name: 'Trans-turn', level: 26, mp: 3, effect: 'Passes active turn to chosen ally' },
+      { name: 'Resurrection', level: 29, mp: 7, effect: 'Revives fallen ally' },
+      { name: 'All Recovery', level: 33, mp: 7, effect: 'Cures all status ailments party-wide' },
+      { name: 'Greater Heal', level: 37, mp: 8, effect: 'Massive single-target HP recovery' },
+      { name: 'Guard Rise', level: 44, mp: 10, effect: 'Increases party Physical Defense' },
+      { name: 'Magic Rise', level: 47, mp: 10, effect: 'Increases party Magic Defense' },
+      { name: 'Super Heal', level: 52, mp: 10, effect: 'Fully restores single ally HP' },
+      { name: 'Area G-Heal', level: 60, mp: 12, effect: 'Massive party-wide HP restoration' },
+    ],
+    scrollSkills: [
+      { name: 'Sleep Gas', quest: 'Marco\'s Tactics', effect: 'Puts all enemies in tile to sleep' }
+    ]
+  },
+  {
+    name: 'Rosch',
+    role: 'Brigade Captain / Heavy Brawler',
+    weapon: 'Gauntlet (Magitech Arm)',
+    color: '#f43f5e',
+    desc: 'Exceptional physical durability and multi-tile cleave attacks. Dominates the frontline with massive crushing power.',
+    skills: [
+      { name: 'Grave Tuck', level: 7, mp: 8, effect: 'Heavy ground slam on target' },
+      { name: 'Left Assault', level: 7, mp: 3, effect: 'Knocks target 1 column left' },
+      { name: 'Gull Swing', level: 9, mp: 8, effect: 'Horizontal swipe hitting full row' },
+      { name: 'Grapple', level: 13, mp: 3, effect: 'Pulls target 1 row forward' },
+      { name: 'Belial Claw', level: 17, mp: 3, effect: 'Crushing magitech claw strike' },
+      { name: 'Cross Spike', level: 20, mp: 10, effect: 'Multi-hit piercing blow' },
+      { name: 'Big Air', level: 24, mp: 8, effect: 'Launches target into the air' },
+      { name: 'Power Up', level: 29, mp: 4, effect: 'Self-buff increasing Physical Attack' },
+      { name: 'Stun Blow', level: 40, mp: 5, effect: 'High chance to paralyze target' },
+      { name: 'Wind Thrust', level: 47, mp: 8, effect: 'Shockwave blast hitting full column' },
+      { name: 'Giant Push', level: 55, mp: 8, effect: 'Knocks entire row backward' },
+      { name: 'Spiral End', level: 60, mp: 18, effect: 'Devastating ultimate physical impact' },
+    ],
+    scrollSkills: [
+      { name: 'Buster Arm', quest: 'The Gauntlet Upgrade', effect: 'Breaks enemy armor and defenses' }
+    ]
+  },
+  {
+    name: 'Aht',
+    role: 'Shaman Child / Trap Tactician',
+    weapon: 'Dagger',
+    color: '#06b6d4',
+    desc: 'Unmatched boss killer when placing elemental traps (Electric, Bomb, Ice) that trigger when enemies are pushed into them.',
+    skills: [
+      { name: 'Steal', level: 15, mp: 3, effect: 'Steals item/equipment from target' },
+      { name: 'Weakness Scan', level: 15, mp: 1, effect: 'Reveals enemy stats and weaknesses' },
+      { name: 'Greater Heal', level: 15, mp: 6, effect: 'Large single-target HP recovery' },
+      { name: 'Polaris', level: 15, mp: 2, effect: 'Grants immunity to status ailments' },
+      { name: 'Electric Trap', level: 15, mp: 5, effect: 'Lays lightning rune on target tile' },
+      { name: 'Bomb Trap', level: 17, mp: 5, effect: 'Lays fire rune on target tile' },
+      { name: 'Ice Trap', level: 20, mp: 5, effect: 'Lays ice rune on target tile' },
+      { name: 'Starlight', level: 23, mp: 8, effect: 'Holy element light attack' },
+      { name: 'Poison Trap', level: 26, mp: 2, effect: 'Lays poison rune on target tile' },
+      { name: 'Meteora', level: 30, mp: 8, effect: 'Increases party Speed' },
+      { name: 'Area G-Heal', level: 33, mp: 12, effect: 'Large party-wide HP restoration' },
+      { name: 'Push Assault', level: 36, mp: 3, effect: 'Knocks target 1 row back' },
+      { name: 'Cross Star', level: 39, mp: 8, effect: 'Multi-hit holy starlight' },
+      { name: 'Sleep Trap', level: 42, mp: 3, effect: 'Lays sleep rune on target tile' },
+      { name: 'Super Heal', level: 45, mp: 10, effect: 'Full single-target HP restoration' },
+      { name: 'Lunatic', level: 48, mp: 10, effect: 'Greatly increases Magic Attack / drops Magic Def' },
+      { name: 'Air Assault', level: 51, mp: 3, effect: 'Launches target into the air' },
+      { name: 'Mana Regen', level: 54, mp: 12, effect: 'Continuous MP regeneration' },
+      { name: 'Guard Break', level: 57, mp: 4, effect: 'Lowers enemy Physical Defense' },
+      { name: 'Speed Break', level: 60, mp: 4, effect: 'Lowers enemy turn frequency' },
+      { name: 'Dreamless', level: 62, mp: 12, effect: 'Supreme non-elemental magic nuke' },
+    ],
+    scrollSkills: []
+  },
+  {
+    name: 'Gafka',
+    role: 'Beastkind Champion / Combo Breaker',
+    weapon: 'Qigong Fists',
+    color: '#a855f7',
+    desc: 'The ultimate combo starter. Bedrock Smash clusters all enemies into the center tile, priming them for party annihilations.',
+    skills: [
+      { name: 'Air Assault', level: 26, mp: 3, effect: 'Launches target into the air' },
+      { name: 'Push Assault', level: 26, mp: 3, effect: 'Knocks target 1 row back' },
+      { name: 'Elemental Beads', level: 26, mp: 6, effect: 'Imbues fists with random element' },
+      { name: 'Mushin', level: 26, mp: 2, effect: 'Stance increasing critical rate' },
+      { name: 'Qigong Wave', level: 28, mp: 6, effect: 'Chi blast hitting entire row' },
+      { name: 'Divine Spirit', level: 33, mp: 8, effect: 'Increases party Physical Attack' },
+      { name: 'Echoing Impulse', level: 39, mp: 10, effect: 'Multi-hit flurry strike' },
+      { name: 'Qigong', level: 45, mp: 3, effect: 'Concentrated chi strike' },
+      { name: 'Dohatsuten', level: 50, mp: 12, effect: 'Greatly increases attack while reducing defense' },
+      { name: 'Bedrock Smash', level: 55, mp: 12, effect: 'Pulls all enemies on field into center tile' },
+      { name: 'Waxing Rage', level: 60, mp: 1, effect: 'Fills Mana Burst gauge instantly' },
+    ],
+    scrollSkills: [
+      { name: 'Omnipedia Skills (Godstrike)', quest: 'The Beast God Scroll', effect: 'Single-target devastation strike' }
+    ]
+  },
+  {
+    name: 'Eruca',
+    role: 'Granorg Princess / Holy Marksman',
+    weapon: 'Pistol',
+    color: '#eab308',
+    desc: 'Commands peerless Holy magic, multi-hit gun combos, and Trans-turn support. Devastates undead and boss encounters.',
+    skills: [
+      { name: 'Mana-Shot', level: 31, mp: 5, effect: 'Magical bullet attack' },
+      { name: 'Holy Arrow', level: 31, mp: 20, effect: 'High-damage Holy light projectile' },
+      { name: 'Aim Bullet', level: 31, mp: 4, effect: 'Guaranteed critical gun strike' },
+      { name: 'Hard Shot', level: 31, mp: 5, effect: 'Heavy impact physical bullet' },
+      { name: 'Weakness Scan', level: 31, mp: 1, effect: 'Reveals enemy stats and weaknesses' },
+      { name: 'Power Rise', level: 31, mp: 10, effect: 'Increases party Physical Attack' },
+      { name: 'Regenerate', level: 31, mp: 3, effect: 'Continuous HP recovery' },
+      { name: 'Trans-turn', level: 31, mp: 3, effect: 'Passes active turn to chosen ally' },
+      { name: 'G-Frost', level: 32, mp: 15, effect: 'Greater ice magic nuke' },
+      { name: 'Deadline', level: 35, mp: 8, effect: 'Chance to instantly inflict Death' },
+      { name: 'Blizzard', level: 38, mp: 20, effect: 'All-target ice storm' },
+      { name: 'Judgement', level: 42, mp: 18, effect: 'Supreme Holy laser bombardment' },
+      { name: 'Magic Boost', level: 45, mp: 4, effect: 'Increases ally Magic Attack' },
+      { name: 'All Recovery', level: 48, mp: 7, effect: 'Cures all status ailments party-wide' },
+      { name: 'Push Assault', level: 51, mp: 3, effect: 'Knocks target 1 row back' },
+      { name: 'Chain Rave', level: 54, mp: 15, effect: '8-hit rapid gunshot combo' },
+      { name: 'Area G-Heal', level: 60, mp: 12, effect: 'Massive party-wide HP restoration' },
+    ],
+    scrollSkills: [
+      { name: 'Holy Nova', quest: 'The Royal Heritage', effect: 'Supreme full-screen Holy blast' }
+    ]
+  }
+];
+---
+
+<BaseLayout title="Character Abilities & Skills" description="Complete ability learning lists, level requirements, MP costs, and sidequest scrolls for all 7 party members in Radiant Historia.">
+  <div class="container abilities-container">
+    <Breadcrumbs
+      items={[
+        { label: 'Compendium Hub', href: baseUrl },
+        { label: 'Character Abilities & Skills' }
+      ]}
+    />
+
+    <header class="page-header glass-card">
+      <div class="header-badge">Combat Compendium</div>
+      <h1 class="page-title">Character Abilities &amp; Skill Learning Lists</h1>
+      <p class="page-subtitle">
+        Comprehensive level-by-level skill progression, MP costs, grid effects, and pact skill sidequest scrolls for all seven playable characters.
+      </p>
+
+      <!-- Quick Character Jump Pills -->
+      <div class="char-jump-pills">
+        {characters.map((c) => (
+          <a href={`#char-${c.name.toLowerCase()}`} class="char-pill" style={`border-left: 3px solid ${c.color}`}>
+            <span>{c.name}</span>
+          </a>
+        ))}
+      </div>
+    </header>
+
+    <!-- Character Skill Compendiums -->
+    <div class="characters-list">
+      {characters.map((c) => (
+        <article id={`char-${c.name.toLowerCase()}`} class="glass-card char-card" style={`border-top: 4px solid ${c.color}`}>
+          <div class="char-card-header">
+            <div class="char-name-group">
+              <h2 class="char-name">{c.name}</h2>
+              <span class="char-role-badge">{c.role}</span>
+            </div>
+            <div class="char-weapon-tag">Weapon: {c.weapon}</div>
+          </div>
+
+          <p class="char-desc">{c.desc}</p>
+
+          <h3 class="section-subtitle">Level-Up Skill Progression</h3>
+          <div class="table-responsive">
+            <table class="skills-table">
+              <thead>
+                <tr>
+                  <th>Ability Name</th>
+                  <th>Level</th>
+                  <th>MP Cost</th>
+                  <th>Tactical Effect &amp; Mechanics</th>
+                </tr>
+              </thead>
+              <tbody>
+                {c.skills.map((s) => (
+                  <tr>
+                    <td class="skill-name"><strong>{s.name}</strong></td>
+                    <td class="skill-level">Lv. {s.level}</td>
+                    <td class="skill-mp">{s.mp} MP</td>
+                    <td class="skill-effect">{s.effect}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          {c.scrollSkills && c.scrollSkills.length > 0 && (
+            <div class="scroll-skills-block">
+              <h4 class="scroll-skills-title">📜 Pact Skills (Sidequest Scrolls)</h4>
+              <div class="scroll-grid">
+                {c.scrollSkills.map((ss) => (
+                  <div class="scroll-card">
+                    <div class="scroll-header">
+                      <strong>{ss.name}</strong>
+                      <span class="scroll-quest">Quest: {ss.quest}</span>
+                    </div>
+                    <p class="scroll-desc">{ss.effect}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+        </article>
+      ))}
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .abilities-container {
+    padding-bottom: 4rem;
+  }
+
+  .page-header {
+    border-top: 3px solid var(--gold-primary);
+    padding: clamp(1.5rem, 3vw, 2.5rem);
+    margin-bottom: 2.5rem;
+  }
+
+  .header-badge {
+    font-family: var(--font-ui);
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--gold-primary);
+    margin-bottom: 0.5rem;
+  }
+
+  .page-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.8rem, 4vw, 2.75rem);
+    margin-bottom: 0.75rem;
+  }
+
+  .page-subtitle {
+    color: var(--text-secondary);
+    font-size: 1.15rem;
+    line-height: 1.7;
+    max-width: 850px;
+    margin-bottom: 1.5rem;
+  }
+
+  .char-jump-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-subtle);
+  }
+
+  .char-pill {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--border-subtle);
+    padding: 0.4rem 0.85rem;
+    border-radius: var(--radius-sm);
+    font-family: var(--font-ui);
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: var(--transition);
+  }
+
+  .char-pill:hover {
+    background: rgba(251, 191, 36, 0.12);
+    color: var(--gold-primary);
+    transform: translateY(-2px);
+  }
+
+  /* Character Cards */
+  .char-card {
+    padding: clamp(1.5rem, 3vw, 2.25rem);
+    margin-bottom: 3rem;
+  }
+
+  .char-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border-subtle);
+    padding-bottom: 0.85rem;
+    margin-bottom: 1rem;
+  }
+
+  .char-name-group {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .char-name {
+    font-size: 1.6rem;
+    color: var(--text-bright);
+    margin: 0;
+  }
+
+  .char-role-badge {
+    font-family: var(--font-ui);
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-weight: 600;
+    text-transform: uppercase;
+    background: rgba(255, 255, 255, 0.04);
+    padding: 0.2rem 0.6rem;
+    border-radius: var(--radius-sm);
+  }
+
+  .char-weapon-tag {
+    font-family: var(--font-ui);
+    font-size: 0.85rem;
+    color: var(--gold-primary);
+    font-weight: 600;
+  }
+
+  .char-desc {
+    color: var(--text-secondary);
+    font-size: 1.05rem;
+    line-height: 1.65;
+    margin-bottom: 1.5rem;
+  }
+
+  .section-subtitle {
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    color: var(--gold-primary);
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .skills-table th {
+    font-size: 0.82rem;
+  }
+
+  .skill-name {
+    color: var(--text-bright);
+  }
+
+  .skill-level {
+    color: var(--mana-cyan);
+    font-family: var(--font-mono);
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  .skill-mp {
+    color: var(--gold-primary);
+    font-family: var(--font-mono);
+    white-space: nowrap;
+  }
+
+  .skill-effect {
+    color: var(--text-secondary);
+  }
+
+  /* Scroll Skills Block */
+  .scroll-skills-block {
+    margin-top: 1.5rem;
+    background: rgba(6, 9, 15, 0.5);
+    border: 1px solid rgba(16, 185, 129, 0.25);
+    border-radius: var(--radius-md);
+    padding: 1.25rem;
+  }
+
+  .scroll-skills-title {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    color: #6ee7b7;
+    margin-bottom: 0.85rem;
+  }
+
+  .scroll-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+  }
+
+  .scroll-card {
+    background: rgba(16, 185, 129, 0.05);
+    border: 1px solid rgba(16, 185, 129, 0.2);
+    border-radius: var(--radius-sm);
+    padding: 0.75rem 1rem;
+    font-family: var(--font-ui);
+  }
+
+  .scroll-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.4rem;
+  }
+
+  .scroll-header strong {
+    color: var(--text-bright);
+    font-size: 0.92rem;
+  }
+
+  .scroll-quest {
+    font-size: 0.75rem;
+    color: var(--mana-cyan);
+  }
+
+  .scroll-desc {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin: 0;
+  }
+</style>

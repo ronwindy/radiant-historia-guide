@@ -1,0 +1,607 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import nodesData from '../data/nodesData.json';
+
+const baseUrl = import.meta.env.BASE_URL;
+
+// Group nodes by chapter
+const chaptersOrder = [
+  'PROLOGUE',
+  'CHAPTER 1',
+  'CHAPTER 2',
+  'CHAPTER 3',
+  'CHAPTER 4',
+  'CHAPTER 5',
+  'CHAPTER 6',
+  'FINAL CHAPTER'
+];
+
+const groupedNodes = chaptersOrder.map((chap) => {
+  return {
+    chapter: chap,
+    nodes: nodesData.filter((n) => n.chapter === chap)
+  };
+});
+---
+
+<BaseLayout title="236 Historia Node Completion List & Sidequests" description="Complete 100% checklist for all 236 White Chronicle nodes, sidequests, and bad endings in Radiant Historia with client-side progress tracking.">
+  <div class="container nodes-page-container">
+    <Breadcrumbs
+      items={[
+        { label: 'Compendium Hub', href: baseUrl },
+        { label: '236 Historia Node Tracker' }
+      ]}
+    />
+
+    <header class="page-header glass-card">
+      <div class="header-badge">The White Chronicle Matrix</div>
+      <h1 class="page-title">236 Historia Node Completion &amp; Sidequest Hub</h1>
+      <p class="page-subtitle">
+        Filter, search, and track all 236 White Chronicle timeline milestones, bad ending branches (Possible Histories), and cross-timeline sidequest solutions.
+      </p>
+
+      <!-- Live Node Progress Widget -->
+      <div class="node-progress-strip">
+        <div class="progress-info">
+          <span class="progress-lbl">White Chronicle Unlocked:</span>
+          <span class="progress-count"><strong id="nodeLiveCount">0</strong> / 236</span>
+        </div>
+        <div class="progress-bar-bg">
+          <div class="progress-bar-fill" id="nodeLiveBar" style="width: 0%;"></div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Filter & Search Controls -->
+    <div class="filter-controls glass-card">
+      <div class="search-bar-wrap">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="nodeSearchInput" class="node-search-input" placeholder="Search node # (e.g. 010), title (e.g. Night Watch), or keyword..." />
+      </div>
+
+      <div class="filter-groups-wrap">
+        <div class="filter-group">
+          <span class="filter-lbl">Timeline:</span>
+          <div class="filter-pills" id="timelineFilters">
+            <button type="button" class="filter-pill active" data-filter="all">All</button>
+            <button type="button" class="filter-pill" data-filter="Standard">Standard</button>
+            <button type="button" class="filter-pill" data-filter="Alternate">Alternate</button>
+            <button type="button" class="filter-pill" data-filter="Prologue">Prologue</button>
+            <button type="button" class="filter-pill" data-filter="Final">Final</button>
+          </div>
+        </div>
+
+        <div class="filter-group">
+          <span class="filter-lbl">Type:</span>
+          <div class="filter-pills" id="typeFilters">
+            <button type="button" class="filter-pill active" data-type="all">All</button>
+            <button type="button" class="filter-pill" data-type="Plot">Main Plot</button>
+            <button type="button" class="filter-pill" data-type="Sidequest">Sidequests</button>
+            <button type="button" class="filter-pill" data-type="Bad Ending">Bad Endings</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Grouped Nodes Listing -->
+    <div class="nodes-listing" id="nodesListing">
+      {groupedNodes.map((group) => (
+        <section class="chapter-node-group" data-chapter={group.chapter}>
+          <div class="chapter-node-header">
+            <h2 class="chapter-node-title">{group.chapter}</h2>
+            <span class="chapter-node-count">{group.nodes.length} Nodes</span>
+          </div>
+
+          <div class="nodes-grid">
+            {group.nodes.map((n) => (
+              <article
+                class={`node-card glass-card node-type-${n.type.toLowerCase().replace(' ', '-')}`}
+                data-node-num={n.num}
+                data-timeline={n.timeline}
+                data-type={n.type}
+              >
+                <div class="node-card-header">
+                  <div class="node-num-pill">#{n.num}</div>
+                  <h3 class="node-title">{n.title}</h3>
+                  <label class="node-check-label" title="Mark node as unlocked">
+                    <input type="checkbox" class="node-checkbox" data-node-num={n.num} />
+                    <span class="node-checkbox-custom"></span>
+                  </label>
+                </div>
+
+                <div class="node-badges-row">
+                  {n.type === 'Bad Ending' && (
+                    <span class="badge badge-alternate">⚠️ Possible History</span>
+                  )}
+                  {n.type === 'Sidequest' && (
+                    <span class="badge badge-green">📜 Sidequest</span>
+                  )}
+                  {n.type === 'Plot' && (
+                    <span class="badge badge-cyan">✨ Main Plot</span>
+                  )}
+                  {n.type === 'Ending' && (
+                    <span class="badge badge-gold">👑 Grand Ending</span>
+                  )}
+                  <span class="node-timeline-tag">{n.timeline}</span>
+                </div>
+
+                <div class="node-req-content">
+                  <p>{n.requirement}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+      ))}
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .nodes-page-container {
+    padding-bottom: 4rem;
+  }
+
+  .page-header {
+    border-top: 3px solid var(--gold-primary);
+    padding: clamp(1.5rem, 3vw, 2.5rem);
+    margin-bottom: 2rem;
+  }
+
+  .header-badge {
+    font-family: var(--font-ui);
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--gold-primary);
+    margin-bottom: 0.5rem;
+  }
+
+  .page-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.8rem, 4vw, 2.75rem);
+    margin-bottom: 0.75rem;
+  }
+
+  .page-subtitle {
+    color: var(--text-secondary);
+    font-size: 1.15rem;
+    line-height: 1.7;
+    max-width: 850px;
+    margin-bottom: 1.5rem;
+  }
+
+  .node-progress-strip {
+    background: rgba(6, 9, 15, 0.6);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    padding: 1rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    max-width: 600px;
+  }
+
+  .progress-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--font-ui);
+    font-size: 0.88rem;
+  }
+
+  .progress-lbl {
+    color: var(--text-secondary);
+    font-weight: 600;
+  }
+
+  .progress-count {
+    color: var(--text-bright);
+    font-family: var(--font-mono);
+  }
+
+  .progress-count strong {
+    color: var(--mana-cyan);
+    font-size: 1.1rem;
+  }
+
+  .progress-bar-bg {
+    width: 100%;
+    height: 8px;
+    background: #0f172a;
+    border-radius: var(--radius-full);
+    overflow: hidden;
+  }
+
+  .progress-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #06b6d4, #10b981);
+    box-shadow: 0 0 10px rgba(6, 182, 212, 0.5);
+    transition: width 0.3s ease;
+  }
+
+  /* Filter Controls */
+  .filter-controls {
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .search-bar-wrap {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: rgba(6, 9, 15, 0.7);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    padding: 0.6rem 1rem;
+  }
+
+  .search-icon {
+    font-size: 1.1rem;
+  }
+
+  .node-search-input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--text-bright);
+    font-family: var(--font-ui);
+    font-size: 1rem;
+  }
+
+  .node-search-input::placeholder {
+    color: var(--text-muted);
+  }
+
+  .filter-groups-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem 3rem;
+  }
+
+  .filter-group {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-family: var(--font-ui);
+  }
+
+  .filter-lbl {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+  .filter-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .filter-pill {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--border-subtle);
+    padding: 0.3rem 0.75rem;
+    border-radius: var(--radius-full);
+    font-family: var(--font-ui);
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: var(--transition);
+  }
+
+  .filter-pill:hover {
+    color: var(--gold-primary);
+    background: rgba(251, 191, 36, 0.1);
+  }
+
+  .filter-pill.active {
+    background: var(--gold-primary);
+    color: #06090f;
+    border-color: var(--gold-primary);
+    font-weight: 700;
+  }
+
+  /* Nodes Listing */
+  .chapter-node-group {
+    margin-bottom: 3rem;
+  }
+
+  .chapter-node-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--gold-border);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .chapter-node-title {
+    font-size: 1.4rem;
+    color: var(--gold-primary);
+    margin: 0;
+  }
+
+  .chapter-node-count {
+    font-family: var(--font-ui);
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-weight: 600;
+  }
+
+  .nodes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .node-card {
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    border-left-width: 4px;
+    margin-bottom: 0;
+    transition: var(--transition);
+  }
+
+  .node-card.completed {
+    border-left-color: var(--mana-green) !important;
+    background: rgba(16, 185, 129, 0.05);
+  }
+
+  .node-type-bad-ending {
+    border-left-color: var(--timeline-alternate);
+  }
+
+  .node-type-sidequest {
+    border-left-color: var(--mana-green);
+  }
+
+  .node-type-plot {
+    border-left-color: var(--mana-cyan);
+  }
+
+  .node-type-ending {
+    border-left-color: var(--gold-primary);
+  }
+
+  .node-card-header {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .node-num-pill {
+    font-family: var(--font-mono);
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: var(--mana-cyan);
+    background: rgba(6, 182, 212, 0.12);
+    border: 1px solid rgba(6, 182, 212, 0.3);
+    padding: 0.2rem 0.5rem;
+    border-radius: var(--radius-sm);
+    flex-shrink: 0;
+  }
+
+  .node-title {
+    font-size: 1.1rem;
+    color: var(--text-bright);
+    margin: 0;
+    flex-grow: 1;
+    line-height: 1.3;
+  }
+
+  .node-check-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+
+  .node-checkbox {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .node-checkbox-custom {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--text-muted);
+    border-radius: 4px;
+    position: relative;
+    transition: var(--transition);
+  }
+
+  .node-checkbox:checked ~ .node-checkbox-custom {
+    background: var(--mana-green);
+    border-color: var(--mana-green);
+  }
+
+  .node-checkbox:checked ~ .node-checkbox-custom::after {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: 2px;
+    width: 4px;
+    height: 10px;
+    border: solid #fff;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+
+  .node-badges-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .node-timeline-tag {
+    font-family: var(--font-ui);
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    background: rgba(255, 255, 255, 0.04);
+    padding: 0.15rem 0.45rem;
+    border-radius: var(--radius-sm);
+  }
+
+  .node-req-content {
+    font-size: 0.98rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-top: 0.25rem;
+  }
+
+  .node-req-content p {
+    margin: 0;
+  }
+
+  .node-card.hidden {
+    display: none !important;
+  }
+
+  .chapter-node-group.hidden {
+    display: none !important;
+  }
+</style>
+
+<script>
+  if (typeof document !== 'undefined') {
+    // 1. Checkboxes & localStorage synchronization
+    function setupNodeCheckboxes() {
+      try {
+        const stored = localStorage.getItem('rh-guide-completed-nodes');
+        const completed: string[] = stored ? JSON.parse(stored) : [];
+
+        const checkboxes = document.querySelectorAll<HTMLInputElement>('.node-checkbox');
+        checkboxes.forEach((cb) => {
+          const num = cb.getAttribute('data-node-num');
+          if (num && completed.includes(num)) {
+            cb.checked = true;
+            cb.closest('.node-card')?.classList.add('completed');
+          } else {
+            cb.checked = false;
+            cb.closest('.node-card')?.classList.remove('completed');
+          }
+
+          cb.addEventListener('change', () => {
+            try {
+              const curStored = localStorage.getItem('rh-guide-completed-nodes');
+              let curList: string[] = curStored ? JSON.parse(curStored) : [];
+              if (cb.checked) {
+                if (num && !curList.includes(num)) curList.push(num);
+                cb.closest('.node-card')?.classList.add('completed');
+              } else {
+                curList = curList.filter(n => n !== num);
+                cb.closest('.node-card')?.classList.remove('completed');
+              }
+              localStorage.setItem('rh-guide-completed-nodes', JSON.stringify(curList));
+              updateNodeCountDisplay(curList.length);
+              window.dispatchEvent(new Event('rh-progress-updated'));
+            } catch (err) {
+              console.error('Failed to update node in localStorage', err);
+            }
+          });
+        });
+
+        updateNodeCountDisplay(completed.length);
+      } catch (err) {
+        console.error('Failed to init node checkboxes', err);
+      }
+    }
+
+    function updateNodeCountDisplay(count: number) {
+      const countElem = document.getElementById('nodeLiveCount');
+      const barElem = document.getElementById('nodeLiveBar');
+      if (countElem) countElem.textContent = String(count);
+      if (barElem) {
+        const pct = Math.round((count / 236) * 100);
+        barElem.style.width = `${pct}%`;
+      }
+    }
+
+    setupNodeCheckboxes();
+
+    // 2. Interactive Filtering & Search
+    let activeTimeline = 'all';
+    let activeType = 'all';
+    let searchQuery = '';
+
+    const timelineBtns = document.querySelectorAll<HTMLButtonElement>('#timelineFilters .filter-pill');
+    const typeBtns = document.querySelectorAll<HTMLButtonElement>('#typeFilters .filter-pill');
+    const searchInput = document.getElementById('nodeSearchInput') as HTMLInputElement;
+
+    function applyFilters() {
+      const nodeCards = document.querySelectorAll<HTMLElement>('.node-card');
+      const groups = document.querySelectorAll<HTMLElement>('.chapter-node-group');
+
+      nodeCards.forEach((card) => {
+        const tl = card.getAttribute('data-timeline') || '';
+        const tp = card.getAttribute('data-type') || '';
+        const num = card.getAttribute('data-node-num') || '';
+        const title = card.querySelector('.node-title')?.textContent?.toLowerCase() || '';
+        const req = card.querySelector('.node-req-content')?.textContent?.toLowerCase() || '';
+
+        let matchesTl = (activeTimeline === 'all') || (tl.toLowerCase() === activeTimeline.toLowerCase());
+        let matchesTp = (activeType === 'all') || (tp.toLowerCase() === activeType.toLowerCase());
+        
+        let matchesSearch = true;
+        if (searchQuery.trim() !== '') {
+          const q = searchQuery.toLowerCase();
+          matchesSearch = num.includes(q) || title.includes(q) || req.includes(q);
+        }
+
+        if (matchesTl && matchesTp && matchesSearch) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+
+      // Hide empty chapter groups
+      groups.forEach((grp) => {
+        const visibleCards = grp.querySelectorAll('.node-card:not(.hidden)');
+        if (visibleCards.length === 0) {
+          grp.classList.add('hidden');
+        } else {
+          grp.classList.remove('hidden');
+        }
+      });
+    }
+
+    timelineBtns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        timelineBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        activeTimeline = btn.getAttribute('data-filter') || 'all';
+        applyFilters();
+      });
+    });
+
+    typeBtns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        typeBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        activeType = btn.getAttribute('data-type') || 'all';
+        applyFilters();
+      });
+    });
+
+    searchInput?.addEventListener('input', (e) => {
+      searchQuery = (e.target as HTMLInputElement).value;
+      applyFilters();
+    });
+  }
+</script>

@@ -1,0 +1,162 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const baseUrl = import.meta.env.BASE_URL;
+
+const contributors = [
+  { name: 'Henri "HC" Bailly', role: 'Original Author', note: 'Author of the definitive 100% Radiant Historia Walkthrough (v1.04, 2011).' },
+  { name: 'ShinoLia', role: 'Community Contributor', note: 'Discovered and detailed the alternate Pierre boss battle triggered by skipping the Escort quest.' },
+  { name: 'Kenthrem', role: 'Community Contributor', note: 'Noted that Forgia shops update their inventory mid-chapter after liberating Skalla.' },
+  { name: 'OLDHAG', role: 'GameFAQs Sidequest Specialist', note: 'Authored the comprehensive sidequest sticky detailing requirements for "At Journey\'s End".' },
+  { name: 'Dark_Seraphim', role: 'GameFAQs Equipment Specialist', note: 'Created the Equipment Guide and documented the traveling merchant’s Final Chapter inventory at Sand Fortress.' },
+  { name: 'supp', role: 'Community Contributor', note: 'Discovered the hidden treasure chest at Alma Mine.' },
+  { name: 'Acynder', role: 'Community Contributor', note: 'Located the hidden chest behind the stable in Cornet Village.' },
+  { name: 'justaguy', role: 'Combat Specialist', note: 'Devised optimal low-level strategies for defeating the Crush Bear and Mist Spider.' },
+  { name: 'Deraj626 & DoomSwell', role: 'Proofreaders', note: 'Assisted in correcting transcriptions and typos in early revisions.' },
+  { name: 'ATLUS & Headlock', role: 'Game Developers', note: 'Creators of Radiant Historia, its unforgettable narrative, and innovative combat mechanics.' }
+];
+---
+
+<BaseLayout title="Credits & Acknowledgments" description="Author credits, community contributors, and copyright notices for the Radiant Historia Walkthrough Compendium.">
+  <div class="container credits-container">
+    <Breadcrumbs
+      items={[
+        { label: 'Compendium Hub', href: baseUrl },
+        { label: 'Credits & Acknowledgments' }
+      ]}
+    />
+
+    <header class="page-header glass-card">
+      <div class="header-badge">Attribution &amp; History</div>
+      <h1 class="page-title">Credits &amp; Acknowledgments</h1>
+      <p class="page-subtitle">
+        Preserving the community wisdom, original authorship, and creative minds that brought *Radiant Historia* to life.
+      </p>
+    </header>
+
+    <div class="credits-grid">
+      {contributors.map((c) => (
+        <article class="glass-card credit-card">
+          <div class="credit-header">
+            <h3 class="contributor-name">{c.name}</h3>
+            <span class="contributor-role">{c.role}</span>
+          </div>
+          <p class="credit-note">{c.note}</p>
+        </article>
+      ))}
+    </div>
+
+    <section class="glass-card copyright-box">
+      <h3 class="copyright-heading">Copyright &amp; Distribution Information</h3>
+      <p>
+        The original walkthrough text is <strong>Copyright &copy; 2011 Henri C Bailly</strong>. All original game assets, character designs, logos, and narrative lore are <strong>&copy; ATLUS / SEGA</strong>.
+      </p>
+      <p>
+        This web compendium is an open, modern static tribute built with Astro, designed for game preservation, high legibility, and seamless mobile access.
+      </p>
+    </section>
+  </div>
+</BaseLayout>
+
+<style>
+  .credits-container {
+    padding-bottom: 4rem;
+  }
+
+  .page-header {
+    border-top: 3px solid var(--gold-primary);
+    padding: clamp(1.5rem, 3vw, 2.5rem);
+    margin-bottom: 2.5rem;
+  }
+
+  .header-badge {
+    font-family: var(--font-ui);
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--gold-primary);
+    margin-bottom: 0.5rem;
+  }
+
+  .page-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.8rem, 4vw, 2.75rem);
+    margin-bottom: 0.75rem;
+  }
+
+  .page-subtitle {
+    color: var(--text-secondary);
+    font-size: 1.15rem;
+    line-height: 1.7;
+    max-width: 850px;
+  }
+
+  .credits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .credit-card {
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 0;
+  }
+
+  .credit-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border-subtle);
+    padding-bottom: 0.5rem;
+  }
+
+  .contributor-name {
+    font-size: 1.15rem;
+    color: var(--gold-primary);
+    margin: 0;
+  }
+
+  .contributor-role {
+    font-family: var(--font-ui);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--mana-cyan);
+    background: rgba(6, 182, 212, 0.1);
+    padding: 0.2rem 0.5rem;
+    border-radius: var(--radius-sm);
+  }
+
+  .credit-note {
+    font-size: 0.98rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .copyright-box {
+    padding: 1.5rem 2rem;
+    background: rgba(6, 9, 15, 0.6);
+    border: 1px solid var(--border-subtle);
+  }
+
+  .copyright-heading {
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    color: var(--text-bright);
+    margin-bottom: 0.75rem;
+  }
+
+  .copyright-box p {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 0.5rem;
+  }
+</style>

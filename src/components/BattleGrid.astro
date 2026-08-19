@@ -1,0 +1,390 @@
+---
+interface Props {
+  interactive?: boolean;
+}
+
+const { interactive = true } = Astro.props;
+---
+
+<div class="battle-grid-widget" id="battleGridWidget">
+  <div class="widget-header">
+    <div class="header-title-group">
+      <span class="widget-icon">📐</span>
+      <h3 class="widget-title">Interactive 3×3 Battle Grid Arena</h3>
+    </div>
+    <span class="widget-badge">Tactical Visualizer</span>
+  </div>
+
+  <p class="widget-desc">
+    *Radiant Historia* combat unfolds on a 3×3 grid. Enemies in the front row deal more damage but have lower defense. Enemies in the back row take significantly reduced damage. Use positioning skills to push enemies into a single tile, then unleash massive combo chains!
+  </p>
+
+  <div class="grid-simulator-wrap">
+    <!-- 3x3 Enemy Arena -->
+    <div class="arena-section">
+      <div class="row-indicators">
+        <span class="row-tag back-tag">Back Row (-40% Dmg)</span>
+        <span class="row-tag mid-tag">Center Row (Baseline)</span>
+        <span class="row-tag front-tag">Front Row (+25% Dmg Taken)</span>
+      </div>
+
+      <div class="arena-grid" id="arenaGrid" role="grid" aria-label="3x3 Tactical Enemy Matrix">
+        <!-- Row 3 (Back) -->
+        <div class="grid-cell back-cell" data-row="3" data-col="1"><span class="cell-coord">[3,1]</span><div class="cell-occupant"></div></div>
+        <div class="grid-cell back-cell" data-row="3" data-col="2"><span class="cell-coord">[3,2]</span><div class="cell-occupant"></div></div>
+        <div class="grid-cell back-cell" data-row="3" data-col="3"><span class="cell-coord">[3,3]</span><div class="cell-occupant"></div></div>
+        
+        <!-- Row 2 (Mid) -->
+        <div class="grid-cell mid-cell" data-row="2" data-col="1"><span class="cell-coord">[2,1]</span><div class="cell-occupant"></div></div>
+        <div class="grid-cell mid-cell occupied" data-row="2" data-col="2"><span class="cell-coord">[2,2]</span><div class="cell-occupant enemy-token">👾 Target</div></div>
+        <div class="grid-cell mid-cell" data-row="2" data-col="3"><span class="cell-coord">[2,3]</span><div class="cell-occupant"></div></div>
+        
+        <!-- Row 1 (Front) -->
+        <div class="grid-cell front-cell" data-row="1" data-col="1"><span class="cell-coord">[1,1]</span><div class="cell-occupant"></div></div>
+        <div class="grid-cell front-cell" data-row="1" data-col="2"><span class="cell-coord">[1,2]</span><div class="cell-occupant"></div></div>
+        <div class="grid-cell front-cell" data-row="1" data-col="3"><span class="cell-coord">[1,3]</span><div class="cell-occupant"></div></div>
+      </div>
+    </div>
+
+    <!-- Skill Controls & Maneuvers -->
+    {interactive && (
+      <div class="skills-section">
+        <h4 class="skills-heading">Test Position Maneuvers:</h4>
+        <div class="skills-btn-grid">
+          <button type="button" class="skill-btn" data-move="push">
+            <span class="skill-icon">⬆️</span>
+            <div class="skill-info">
+              <strong>Push Assault</strong>
+              <small>Pushes target 1 row back</small>
+            </div>
+          </button>
+          <button type="button" class="skill-btn" data-move="pull">
+            <span class="skill-icon">⬇️</span>
+            <div class="skill-info">
+              <strong>Grapple (Pull)</strong>
+              <small>Pulls target 1 row forward</small>
+            </div>
+          </button>
+          <button type="button" class="skill-btn" data-move="left">
+            <span class="skill-icon">⬅️</span>
+            <div class="skill-info">
+              <strong>Left Assault</strong>
+              <small>Knocks target 1 column left</small>
+            </div>
+          </button>
+          <button type="button" class="skill-btn" data-move="right">
+            <span class="skill-icon">➡️</span>
+            <div class="skill-info">
+              <strong>Right Assault</strong>
+              <small>Knocks target 1 column right</small>
+            </div>
+          </button>
+          <button type="button" class="skill-btn" data-move="air">
+            <span class="skill-icon">🌪️</span>
+            <div class="skill-info">
+              <strong>Air Assault</strong>
+              <small>Launches target into the air</small>
+            </div>
+          </button>
+          <button type="button" class="skill-btn" data-move="reset">
+            <span class="skill-icon">🔄</span>
+            <div class="skill-info">
+              <strong>Reset Arena</strong>
+              <small>Return to center [2,2]</small>
+            </div>
+          </button>
+        </div>
+
+        <div class="maneuver-log" id="maneuverLog">
+          Current State: <strong>Target positioned at Center [Row 2, Col 2]</strong>
+        </div>
+      </div>
+    )}
+  </div>
+</div>
+
+<style>
+  .battle-grid-widget {
+    background: rgba(12, 18, 29, 0.9);
+    border: 1px solid var(--border-active);
+    border-radius: var(--radius-lg);
+    padding: clamp(1.25rem, 2.5vw, 2rem);
+    margin: 2rem 0;
+    box-shadow: var(--shadow-card);
+  }
+
+  .widget-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border-subtle);
+    padding-bottom: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .header-title-group {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .widget-icon {
+    font-size: 1.4rem;
+  }
+
+  .widget-title {
+    font-size: 1.25rem;
+    color: var(--gold-primary);
+    margin: 0;
+  }
+
+  .widget-badge {
+    font-family: var(--font-ui);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    background: rgba(251, 191, 36, 0.15);
+    color: var(--gold-primary);
+    border: 1px solid var(--gold-border);
+    padding: 0.2rem 0.6rem;
+    border-radius: var(--radius-full);
+  }
+
+  .widget-desc {
+    color: var(--text-secondary);
+    font-size: 0.98rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+
+  .grid-simulator-wrap {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 2rem;
+    align-items: start;
+  }
+
+  .arena-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .row-indicators {
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--font-ui);
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    padding: 0 0.5rem;
+  }
+
+  .back-tag { color: #93c5fd; }
+  .mid-tag { color: #cbd5e1; }
+  .front-tag { color: #fca5a5; }
+
+  .arena-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+    background: #05080f;
+    padding: 0.85rem;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-subtle);
+  }
+
+  .grid-cell {
+    aspect-ratio: 1 / 1;
+    background: rgba(19, 28, 45, 0.7);
+    border: 1px solid rgba(148, 163, 184, 0.15);
+    border-radius: var(--radius-sm);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0.4rem;
+    position: relative;
+    transition: var(--transition);
+  }
+
+  .back-cell { border-top: 2px solid #38bdf8; }
+  .mid-cell { border-top: 2px solid #eab308; }
+  .front-cell { border-top: 2px solid #ef4444; }
+
+  .cell-coord {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    color: var(--text-muted);
+  }
+
+  .cell-occupant {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    font-family: var(--font-ui);
+    font-size: 0.85rem;
+    font-weight: 700;
+  }
+
+  .enemy-token {
+    background: rgba(244, 63, 94, 0.25);
+    color: #fda4af;
+    border: 1px solid var(--timeline-alternate);
+    padding: 0.35rem 0.5rem;
+    border-radius: var(--radius-sm);
+    box-shadow: 0 0 10px rgba(244, 63, 94, 0.4);
+    animation: pulseToken 1.8s infinite alternate;
+  }
+
+  @keyframes pulseToken {
+    from { transform: scale(0.96); box-shadow: 0 0 6px rgba(244, 63, 94, 0.3); }
+    to { transform: scale(1.04); box-shadow: 0 0 14px rgba(244, 63, 94, 0.6); }
+  }
+
+  /* Skills Controls */
+  .skills-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+
+  .skills-heading {
+    font-family: var(--font-heading);
+    font-size: 0.95rem;
+    color: var(--text-bright);
+  }
+
+  .skills-btn-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.6rem;
+  }
+
+  .skill-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    padding: 0.5rem 0.75rem;
+    color: var(--text-primary);
+    cursor: pointer;
+    text-align: left;
+    font-family: var(--font-ui);
+    transition: var(--transition);
+  }
+
+  .skill-btn:hover {
+    background: rgba(251, 191, 36, 0.12);
+    border-color: var(--gold-border);
+    transform: translateY(-2px);
+  }
+
+  .skill-icon {
+    font-size: 1.2rem;
+  }
+
+  .skill-info strong {
+    display: block;
+    font-size: 0.82rem;
+    color: var(--gold-primary);
+  }
+
+  .skill-info small {
+    display: block;
+    font-size: 0.72rem;
+    color: var(--text-muted);
+  }
+
+  .maneuver-log {
+    background: rgba(6, 9, 15, 0.6);
+    border: 1px solid var(--border-subtle);
+    padding: 0.65rem 0.85rem;
+    border-radius: var(--radius-sm);
+    font-family: var(--font-ui);
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+  }
+
+  .maneuver-log strong {
+    color: var(--mana-cyan);
+  }
+
+  @media (max-width: 860px) {
+    .grid-simulator-wrap {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<script>
+  if (typeof document !== 'undefined') {
+    let curRow = 2;
+    let curCol = 2;
+    let isAirborne = false;
+
+    function renderEnemy() {
+      const cells = document.querySelectorAll('.arena-grid .grid-cell');
+      const log = document.getElementById('maneuverLog');
+      
+      cells.forEach(cell => {
+        const row = Number(cell.getAttribute('data-row'));
+        const col = Number(cell.getAttribute('data-col'));
+        const occupant = cell.querySelector('.cell-occupant');
+        
+        if (occupant) {
+          if (row === curRow && col === curCol) {
+            cell.classList.add('occupied');
+            occupant.innerHTML = `<div class="enemy-token">${isAirborne ? '🌪️ Airborne' : '👾 Target'}</div>`;
+          } else {
+            cell.classList.remove('occupied');
+            occupant.innerHTML = '';
+          }
+        }
+      });
+
+      if (log) {
+        let rowDesc = curRow === 1 ? 'Front Row (+25% Dmg Taken)' : curRow === 2 ? 'Center Row (Normal)' : 'Back Row (-40% Dmg Taken)';
+        let status = isAirborne ? ' (Airborne - Stacking Air Assault Combo!)' : '';
+        log.innerHTML = `Current State: <strong>Target at [Row ${curRow}, Col ${curCol}] — ${rowDesc}${status}</strong>`;
+      }
+    }
+
+    const buttons = document.querySelectorAll<HTMLButtonElement>('.skill-btn');
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const move = btn.getAttribute('data-move');
+        switch (move) {
+          case 'push':
+            if (curRow < 3) curRow++;
+            isAirborne = false;
+            break;
+          case 'pull':
+            if (curRow > 1) curRow--;
+            isAirborne = false;
+            break;
+          case 'left':
+            if (curCol > 1) curCol--;
+            isAirborne = false;
+            break;
+          case 'right':
+            if (curCol < 3) curCol++;
+            isAirborne = false;
+            break;
+          case 'air':
+            isAirborne = true;
+            break;
+          case 'reset':
+            curRow = 2;
+            curCol = 2;
+            isAirborne = false;
+            break;
+        }
+        renderEnemy();
+      });
+    });
+  }
+</script>

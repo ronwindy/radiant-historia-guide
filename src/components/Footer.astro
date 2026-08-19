@@ -1,0 +1,185 @@
+---
+const baseUrl = import.meta.env.BASE_URL;
+---
+
+<footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src={`${baseUrl}assets/logo.png`} alt="Radiant Historia Logo" class="footer-logo" width="140" height="42" />
+        <p class="footer-desc">
+          The definitive interactive compendium and strategy guide for <em>Radiant Historia</em>. Navigating the dual timelines of Vainqueur through The White Chronicle.
+        </p>
+      </div>
+
+      <div class="footer-links-grid">
+        <div class="footer-col">
+          <h4 class="col-title">Compendium</h4>
+          <ul>
+            <li><a href={baseUrl}>Hub Compendium</a></li>
+            <li><a href={`${baseUrl}introduction/`}>Systems &amp; Battle Grid</a></li>
+            <li><a href={`${baseUrl}nodes/`}>236 Historia Node Tracker</a></li>
+            <li><a href={`${baseUrl}abilities/`}>Ability Learning Lists</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="col-title">Walkthrough Volumes</h4>
+          <ul>
+            <li><a href={`${baseUrl}walkthrough/volume-1/`}>Vol I: Chapters 01–10</a></li>
+            <li><a href={`${baseUrl}walkthrough/volume-2/`}>Vol II: Chapters 11–20</a></li>
+            <li><a href={`${baseUrl}walkthrough/volume-3/`}>Vol III: Chapters 21–30</a></li>
+            <li><a href={`${baseUrl}walkthrough/volume-4/`}>Vol IV: Chapters 31–40</a></li>
+            <li><a href={`${baseUrl}walkthrough/volume-5/`}>Vol V: Chapters 41–50</a></li>
+            <li><a href={`${baseUrl}walkthrough/volume-6/`}>Vol VI: Chapters 51–60</a></li>
+            <li><a href={`${baseUrl}walkthrough/volume-7/`}>Vol VII: Chapters 61–66</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="col-title">Guide Utilities</h4>
+          <ul>
+            <li><a href={`${baseUrl}credits/`}>Credits &amp; Source Info</a></li>
+            <li><button id="resetProgressBtn" class="reset-link-btn">Reset Stored Progress</button></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="copyright-text">
+        Walkthrough text originally authored by <strong>Henri &quot;HC&quot; Bailly</strong> (Copyright &copy; 2011). Radiant Historia &copy; ATLUS. All rights reserved.
+      </p>
+      <p class="disclaimer-text">
+        Built with Astro. Zero server runtime, pure client-side persistence, and mobile-first design.
+      </p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background: #04060a;
+    border-top: 1px solid var(--border-subtle);
+    padding: 3.5rem 0 2rem 0;
+    margin-top: 4rem;
+    font-family: var(--font-ui);
+    color: var(--text-secondary);
+  }
+
+  .footer-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 clamp(1rem, 3vw, 2rem);
+  }
+
+  .footer-top {
+    display: grid;
+    grid-template-columns: 1.5fr 2.5fr;
+    gap: 3rem;
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+  }
+
+  .footer-brand {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .footer-logo {
+    height: 36px;
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 0 8px rgba(251, 191, 36, 0.3));
+  }
+
+  .footer-desc {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+  }
+
+  .footer-links-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 2rem;
+  }
+
+  .col-title {
+    font-family: var(--font-heading);
+    font-size: 0.95rem;
+    color: var(--gold-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 1rem;
+  }
+
+  .footer-col ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .footer-col a {
+    color: var(--text-secondary);
+    font-size: 0.88rem;
+    text-decoration: none;
+    transition: var(--transition);
+  }
+
+  .footer-col a:hover {
+    color: var(--gold-primary);
+    transform: translateX(3px);
+    display: inline-block;
+  }
+
+  .reset-link-btn {
+    background: transparent;
+    border: none;
+    color: #f87171;
+    font-size: 0.88rem;
+    cursor: pointer;
+    text-align: left;
+    padding: 0;
+    font-family: inherit;
+    transition: var(--transition);
+  }
+
+  .reset-link-btn:hover {
+    color: #fca5a5;
+    text-decoration: underline;
+  }
+
+  .footer-bottom {
+    padding-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    text-align: center;
+  }
+
+  @media (max-width: 860px) {
+    .footer-top {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+  }
+</style>
+
+<script>
+  if (typeof document !== 'undefined') {
+    const resetBtn = document.getElementById('resetProgressBtn');
+    resetBtn?.addEventListener('click', () => {
+      if (confirm('Are you sure you want to reset all tracked chapter and node progress in your browser?')) {
+        localStorage.removeItem('rh-guide-completed-chapters');
+        localStorage.removeItem('rh-guide-completed-nodes');
+        window.dispatchEvent(new Event('rh-progress-updated'));
+        window.location.reload();
+      }
+    });
+  }
+</script>

@@ -1,0 +1,581 @@
+---
+import WalkthroughLayout from '../../layouts/WalkthroughLayout.astro';
+import ChapterCard from '../../components/ChapterCard.astro';
+import TacticalBriefing from '../../components/TacticalBriefing.astro';
+import AsciiMap from '../../components/AsciiMap.astro';
+import Callout from '../../components/Callout.astro';
+
+const baseUrl = import.meta.env.BASE_URL;
+
+const quickJumps = [
+  {
+    "id": "ch31",
+    "number": 31,
+    "title": "Gran Plain (Standard Chapter 3)",
+    "code": "GRAN4",
+    "timeline": "Standard"
+  },
+  {
+    "id": "ch32",
+    "number": 32,
+    "title": "Cornet Village (Standard Chapter 3)",
+    "code": "CRNT1",
+    "timeline": "Standard"
+  },
+  {
+    "id": "ch33",
+    "number": 33,
+    "title": "Granorg (Standard Chapter 3)",
+    "code": "GRNG4",
+    "timeline": "Standard"
+  },
+  {
+    "id": "ch34",
+    "number": 34,
+    "title": "Sand Fortress (Standard Chapter 3)",
+    "code": "SAND5",
+    "timeline": "Standard"
+  },
+  {
+    "id": "ch35",
+    "number": 35,
+    "title": "Judgement Cliff (Standard Chapter 3)",
+    "code": "JUDG3",
+    "timeline": "Standard"
+  },
+  {
+    "id": "ch36",
+    "number": 36,
+    "title": "Celestia (Alternate Chapter 3)",
+    "code": "CLST3",
+    "timeline": "Alternate"
+  },
+  {
+    "id": "ch37",
+    "number": 37,
+    "title": "Celestia (Alternate Chapter 4)",
+    "code": "CLST4",
+    "timeline": "Alternate"
+  },
+  {
+    "id": "ch38",
+    "number": 38,
+    "title": "Lazvil Hills (Alternate Chapter 4)",
+    "code": "LZVL6",
+    "timeline": "Alternate"
+  },
+  {
+    "id": "ch39",
+    "number": 39,
+    "title": "Judgement Cliff (Standard Chapter 3)",
+    "code": "JUDG4",
+    "timeline": "Standard"
+  },
+  {
+    "id": "ch40",
+    "number": 40,
+    "title": "Cygnus (Standard Chapter 4)",
+    "code": "CGNS1",
+    "timeline": "Standard"
+  }
+];
+const stats = {
+  "chapters": 10,
+  "nodes": 22,
+  "endings": 3,
+  "sidequests": 8,
+  "bosses": 4
+};
+const prevVol = { num: 3, title: 'Celestia Alliance & Fortress Battles', href: `${baseUrl}walkthrough/volume-3/` };
+const nextVol = { num: 5, title: 'Ruins of Holff & The Forgia Pact', href: `${baseUrl}walkthrough/volume-5/` };
+---
+
+<WalkthroughLayout
+  volume={4}
+  volumeTitle="Desert Wastelands & The Wandering City"
+  chapterRange="Chapters 31–40"
+  description="Journey through Cornet Village, Judgement Cliff confrontations, and entering the independent desert haven of Cygnus."
+  stats={stats}
+  quickJumps={quickJumps}
+  prevVol={prevVol}
+  nextVol={nextVol}
+>
+
+  <!-- Chapter 31 -->
+  <ChapterCard
+    id="ch31"
+    number={31}
+    title="Gran Plain (Standard Chapter 3)"
+    code="GRAN4"
+    timeline="Standard"
+  >
+    <TacticalBriefing
+      level="35"
+      party="Stocke, Raynie, Marco"
+      
+      enemies={[{"name": "Blue Flame", "weakness": "Ice"}, {"name": "Fumble", "weakness": "Poison"}, {"name": "Goblin Foot", "weakness": "Lightning"}]}
+    />
+
+    <div class="chapter-walkthrough-prose">
+
+    </div>
+  </ChapterCard>
+
+  <!-- Chapter 32 -->
+  <ChapterCard
+    id="ch32"
+    number={32}
+    title="Cornet Village (Standard Chapter 3)"
+    code="CRNT1"
+    timeline="Standard"
+  >
+    <TacticalBriefing
+      level="35"
+      party="Stocke, Raynie, Marco"
+      
+      
+    />
+
+    <div class="chapter-walkthrough-prose">
+<div class="shop-ascii-wrap"><pre class="ascii-shop">Item Shop               Equipment Shop
+                         *********               **************
+     _________           Soothing Balm   100     Iron Sword       2400
+    |    S   4|          First Aid Kit   400     Iron Lance       2100
+    |5__    __|          Tourniquet     1000     Chain Gauntlet   2500
+     ___|  |__           Herbal Tea      350     Knife            1800
+    | *      3|          Special Tea    1200     Silver Dagger    6400 (buy 1)
+    |1__    _2|          Healing Herb    500     Brass Shell      2200 (buy 1)
+        |  |             Holy Water      500     Runic Mail       2200 (buy 4)
+                         Anti-Poison      50     Hymnal Cape      3700
+S - Save Point           Anti-Fear        50     Chain Byrnie     4200
+* - Savory Veggies       Anti-Paralytic   50     Holy Plate       2100
+1 - Fang Charm           Anti-Curse       50     Rune Dress       4900 (buy 1)
+2 - First Aid Kit        Anti-Sleep       50     Charm             350
+3 - Sleep Gas Scroll     Anti-Stone       50     Horn Charm       1000
+4 - Anti-Poison x2       Panacea         800     Fang Charm       1000
+5 - Sprig Ring           Poison Wing     350     Bishop Stud      3000
+                         Sleep Wing      500     Leaf Ring        2500
+                         Power Down      500
+                         Might Herb      500</pre></div>
+
+<p>Lots of good stuff to find and buy here.  In the fields to the left, you will see a sparkle that is the SAVORY VEGGIES which will advance [The Ultimate Dish] sidequest.  To the left is a hidden chest which contains a FANG CHARM (sell). Talk to the farmer in the right field to advance the [What Was Inherited] sidequest.  Open the chest next to him which contains a FIRST AID KIT.  Walk up between the upper row of crops and the fence to find a hidden chest which contains the SLEEP GAS SCROLL for Marco.  Finally, in the upper right corner of town, behind the wooden stable, is a chest which contains 2 ANTI-POISONS.</p>
+
+<p>The shops are to the left of the save point above.  I would buy a Silver Dagger for Aht, a Brass Shell, and a Rune Dress for later.  Buy 4 Runic Mails to ditch that speed handicap of the Heavy Mails, and save one for Rosch later.  You will see a barrel nearby.  Push it to the left to blow away the rocks blocking a hidden chest which contains a SPRIG RING (HP+30/MP+15, sell).  Enter the upper left house to talk to the mayor and advance the plot.</p>
+
+<Callout type="node" title="Historia Milestone: Evil Tidings">
+<p>Something has happened back at Granorg, so we&#x27;ll need to go back there. Fortunately, you won&#x27;t have to go through the Gran Plain again.  Just leave the village and return to Granorg.</p>
+</Callout>
+
+<Callout type="note" title="Recommended Equipment">
+<p>Recommended Equipment at this point in the game<br/>Stocke: Soul Eater, Runic Mail, Fang Charm x3<br/>Raynie: Magic Spear, Runic Mail, Crystal Charm, Thaumatech Orb, Horn Charm<br/>Marco: Wisp Blade, Runic Mail, Bishop Stud x3<br/>Extra: Sorcery Epee, Bloody Pike, Silver Dagger, Brass Shell, Runic Mail,<br/>     Rune Dress, Horn Charm x6</p>
+</Callout>
+
+<p>=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=</p>
+    </div>
+  </ChapterCard>
+
+  <!-- Chapter 33 -->
+  <ChapterCard
+    id="ch33"
+    number={33}
+    title="Granorg (Standard Chapter 3)"
+    code="GRNG4"
+    timeline="Standard"
+  >
+    <TacticalBriefing
+      level="35"
+      party="Stocke, Raynie, Marco"
+      
+      enemies={[{"name": "Blue Granorg Archer", "weakness": "Sleep"}, {"name": "Granorg Defender"}, {"name": "Sand Hunter", "weakness": "Sleep"}]}
+    />
+
+    <div class="chapter-walkthrough-prose">
+<Callout type="node" title="Historia Milestone: Capital in Flames">
+<p>Head north to where you will find Will, who tells you where Eruca is.</p>
+</Callout>
+
+<Callout type="node" title="Historia Milestone: Eruca&#x27;s Whereabouts">
+<p>Head west past the inn to find some old friends of yours.</p>
+</Callout>
+
+<p>******************************************************************************* BOSS TIME: Granorg Defender x4 WEAKNESS: None STRATEGY: These guys are so easy, I wouldn&#x27;t even bother with Magic Boost.  Use Push Assault on the middle Defender, Air Assault, and G-Fire to take out the first two.  Defeat the other two in a similar fashion. *******************************************************************************</p>
+
+<Callout type="node" title="Historia Milestone: Aht&#x27;s Fight">
+<p>Aht will give you the BLACK PAGE and rejoin the party.  Head west to the tavern where you will find Eruca and she will join the party.  At this point, I recommend using Aht and Eruca, arranging your equipment as follows.  Despite being a magic-heavy party, they&#x27;re pretty behind on levels, and Eruca gets the least screen time of all the characters to compensate for that.  Eruca at least has Trans-turn to help you get an extra assault in there.  Meteora and Holy Arrow can also be an effective combination.  You should also visit Historia with the Black Page to unlock your next Mana Burst.</p>
+</Callout>
+
+<Callout type="note" title="Recommended Equipment">
+<p>Recommended Equipment at this point in the game<br/>Stocke: Soul Eater, Runic Mail, Fang Charm x3<br/>Raynie: Magic Spear, Runic Mail, Horn Charm x3<br/>Marco: Wisp Blade, Runic Mail, Bishop Stud x3<br/>Aht: Silver Dagger, Reinforced Cape, Bishop Stud x3<br/>Eruca: Brass Shell, Rune Dress, Crystal Charm, Thaumatech Orb, Horn Charm<br/>Extra: Sorcery Epee, Bloody Pike, Runic Mail, Horn Charm x3</p>
+</Callout>
+
+<p>Leave the tavern.  If you saved Claire in the sewer earlier, you will bypass the next event and unlock the [Something Precious] node.  Otherwise, you&#x27;ll have to fight your way out.</p>
+
+<p>******************************************************************************* BOSS TIME: Blue Granorg Archer x3, Granorg Defender, Hermit Pierre WEAKNESS: Sleep, None, None STRATEGY: If you have Raynie or Marco in your party, you can use Sleep Break or Sleep Gas on the Archers to take them out of the action.  Otherwise, use Trans- turn, a couple Right Assaults, and a Sleep Wing to do so.  Have Aht finish off the lowest, weakest Archer with her Attack, and possibly heal, if necessary. Use the Change command to have Aht lay any Trap there and set up three consecutive turns of Stock or Eruca casting Trans-turn on him.  Use two Left Assaults and a Push Assault to kill the Defenders.  Again, use the Change command to string together four consecutive turns to use two Traps and Assaults on Pierre to defeat him.  You can then use the Change command to your heart&#x27;s content to defeat the remaining Archers. *******************************************************************************</p>
+
+<Callout type="node" title="Historia Milestone: Pierre&#x27;s Betrayal">
+<p>[Rescue the Princess node] Leave the same way you got in here.  I would strongly recommend fighting the enemies on your way out again, so that Aht &amp; Eruca can gain some much needed levels, even at the Commercial District to the east.  At the Castle Gates, talk to the man in the cloak to receive the [Assassination of Dias] sidequest.  We could complete a bunch of sidequests right now, but none of them have great rewards, so I&#x27;ll just save them for when it is more convenient.  Continue down to leave Granorg and head for the Sand Fortress.</p>
+</Callout>
+
+<p>=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=</p>
+    </div>
+  </ChapterCard>
+
+  <!-- Chapter 34 -->
+  <ChapterCard
+    id="ch34"
+    number={34}
+    title="Sand Fortress (Standard Chapter 3)"
+    code="SAND5"
+    timeline="Standard"
+  >
+    <TacticalBriefing
+      level="38"
+      party="Stocke, Aht, Eruca"
+      
+      enemies={[{"name": "Blue Granorg Archer", "weakness": "Sleep"}, {"name": "Granorg Defender"}, {"name": "Sand Hunter", "weakness": "Sleep"}]}
+    />
+
+    <div class="chapter-walkthrough-prose">
+
+    </div>
+  </ChapterCard>
+
+  <!-- Chapter 35 -->
+  <ChapterCard
+    id="ch35"
+    number={35}
+    title="Judgement Cliff (Standard Chapter 3)"
+    code="JUDG3"
+    timeline="Standard"
+  >
+    <TacticalBriefing
+      level="39"
+      party="Stocke, Aht, Eruca"
+      
+      enemies={[{"name": "Poison Crab"}, {"name": "Storm"}, {"name": "Sand Hunter", "weakness": "Sleep"}]}
+    />
+
+    <div class="chapter-walkthrough-prose">
+<AsciiMap>
+<pre>_____                         _| |_         S - Save Point
+|     | Starlit         Giant |     |        X - Roadblock
+|3    | Spring           Cave |     |        1 - Healing Fruit
+|_   _|                       |_   _|        2 - Life Robe
+  | |                           | |          3 - 2000 G</pre>
+</AsciiMap>
+
+<p>| |            |  |           | |          [Aht&#x27;s Camp node]  /   \ Cave      |XX|     Cave /   \         Steal a Feather Guard from Poison |    |          /    \_       |S   |         Crab for Gafka while you&#x27;re here.  \   /         |     X2|       \   /         There are a couple hidden barrels   | |          |     X |        | |          that you couldn&#x27;t see before.  Go                 \    _/                      down two screens to find one near   | |            |  |           | |          the rocks which block a chest that  _| |_______   __|  |___   _____| |____      contains a HEALING FRUIT.  Head | ____ _   _   __    ___   __   ______ |     left to the Old Spring to find a |___  | | |      \__/        |X|  |  __|     hidden barrel on the left.  Use it |_   _| | |                  |1|   \_  |     to blow away the rocks blocking a   | |   |_|                  |_|     | |     chest which contains the LIFE ROBE                                              (DEF+12/MDF+19/HP+50, equip on Old Spring W   Old Spring   Old Spring E     Aht).</p>
+
+<p>Continue left one screen where you will find a pursuit force.  Avoid them by heading up two screens to the Starlit Spring area.  Hopefully, by this point, Aht will have reached Level 36 and learned Push Assault, but don&#x27;t worry if she hasn&#x27;t yet.  Before talking to Aht again, inspect the left side for a hidden chest which contains 2000 G.  Talk to Aht and you will be prompted to make a decision.  Choosing to &quot;Leave it to Marco&quot; will unlock the [Stray Lion] ending.</p>
+
+<Callout type="node" title="Historia Milestone: Death of a Friend">
+<p>You may want to rest up at an inn at some other node before coming back here. Also, equip Stocke with the Sorcery Epee and your best magic-boosting accessories. Return to the same decision and choose to &quot;Deal with the fire&quot; this time.</p>
+</Callout>
+
+<p>******************************************************************************* BOSS TIME: Rosch WEAKNESS: None STRATEGY: Use Push Assault to mitigate his damage.  You should be able to use Change while taking minimal damage.  Keep using Change until you string together five turns where you can cast Fire to defeat him. *******************************************************************************</p>
+
+<Callout type="node" title="Historia Milestone: Rosch in Fury">
+<p>For defeating Rosch, you will receive his BROKEN LIMB, or rather, his Gauntlet. Remember what Sonja said about it?  Return to &quot;The Beginning&quot; node and talk to Sonja.  She will remove the Core Parts you need, unlocking the [Force Core] node.  Before putting it to use, let&#x27;s do some more sidquests.  If you haven&#x27;t done so already, this would also be a good time to use those scrolls for Marco.</p>
+</Callout>
+
+<p>Return to the &quot;To Granorg&quot; node.  Enter the house in the upper right corner by the weapon shop and talk to the man there to be prompted for a decision. Choosing to &quot;Tell him&quot; about the conuts will unlock the [Distorted Hope] node and receive a MANA CRYSTAL. Instead, return to the decision point and choose &quot;Don&#x27;t tell him&quot;.  This will unlock another option.  Do so again and choose &quot;Tell about reforestation.&quot; to complete the [What Was Inherited] sidequest and receive the PANDUR (ATK+4/MAG+24/SPD+1, sell).</p>
+
+<p>Return to &quot;Aht&#x27;s Prayer&quot; and proceed to Granorg.  Head to the second floor of the inn to find Dias where you are prompted for a decision.  Choosing to &quot;Accept Invitation&quot; will unlock [The World&#x27;s Betrayal] ending.  Instead, return to the decision point and choose to &quot;Leave&quot; the inn to advance the [Assassination of Dias] sidequest.</p>
+
+<p>Return to &quot;Castle Sewers&quot; and talk to Hilster at the Downtown area, southwest of the inn, to complete [The Ultimate Dish] sidequest and receive the FIRELIGHT PACT for Eruca later.  Return to &quot;Pierre&#x27;s Betrayal&quot;, advance the plot, and talk to the man by the gate to complete [Assassination of Dias] and receive the ROSE RING (HP+10/ATK+5, save for later).  At this point, we have to return to the &quot;Shattered Steel Arm&quot; node in the other timeline.</p>
+
+<p>=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=</p>
+    </div>
+  </ChapterCard>
+
+  <!-- Chapter 36 -->
+  <ChapterCard
+    id="ch36"
+    number={36}
+    title="Celestia (Alternate Chapter 3)"
+    code="CLST3"
+    timeline="Alternate"
+  >
+    <TacticalBriefing
+      level="40"
+      party="Stocke"
+      
+      
+    />
+
+    <div class="chapter-walkthrough-prose">
+<p>Talk to Sonja and give her the Core Parts.  Then, proceed with the plot, talking to Rosch, Raul, and choose to &quot;Nominate Rosch.&quot;  Stocke will then approach Rosch for a decision.</p>
+
+<p>******************************************************************************* BOSS TIME: Rosch WEAKNESS: None STRATEGY: I think this fight is mostly the same as before, except Rosch can deal slightly more damage, but has less HP. Use Push Assault to mitigate his damage.  Unless he moves to the front row, you should be able to use Change while taking minimal damage.  Keep using Change until you string together three or four turns where you can cast Fire to defeat him. *******************************************************************************</p>
+
+<Callout type="node" title="Historia Milestone: Lion&#x27;s Awakening">
+<p>Sonja will install the new Force Core into Rosch&#x27;s Gauntlet and he will learn Burn Strike.  At this point, you could proceed with the plot back in Standard History.  If you want to do so, then skip to JUDG4.  However, I would recommend sticking with Alternate History for now.</p>
+</Callout>
+
+<p>=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=</p>
+    </div>
+  </ChapterCard>
+
+  <!-- Chapter 37 -->
+  <ChapterCard
+    id="ch37"
+    number={37}
+    title="Celestia (Alternate Chapter 4)"
+    code="CLST4"
+    timeline="Alternate"
+  >
+    <TacticalBriefing
+      level="40"
+      party="Stocke, Gafka, Rosch"
+      
+      
+    />
+
+    <div class="chapter-walkthrough-prose">
+<Callout type="node" title="Historia Milestone: Celestian War">
+<p>After some introductory scenes, reenter the Patriarch&#x27;s House.  Talk to Sonja to receive the [Conversion] sidequest, and do so again with the Impale Core you found earlier.  If you talk to Elm, you will unlock the [A Friend to Elm] node.</p>
+</Callout>
+
+<p>The shops sell nothing new, but I would recommend buying up to 15 Sleep Wings, if you&#x27;re not going to use Raynie or Aht.  Arrange your party as follows, leave the village, and head to Lazvil Hills.</p>
+
+<Callout type="note" title="Recommended Equipment">
+<p>Recommended Equipment at this point in the game<br/>Stocke: Sorcery Epee, Runic Mail, Crystal Charm, Thaumatech Orb, Horn Charm<br/>Raynie: Magic Spear, Runic Mail, Horn Charm x3<br/>Marco: Wisp Blade, Runic Mail, Bishop Stud x3<br/>Rosch: Bloody Pike, Runic Mail, Fang Charm x2, Rose Ring<br/>Aht: Silver Dagger, Life Robe, Bishop Stud x3<br/>Gafka: Rune Claw, Feather Guard, Fang Charm x3</p>
+</Callout>
+
+<p>=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=</p>
+    </div>
+  </ChapterCard>
+
+  <!-- Chapter 38 -->
+  <ChapterCard
+    id="ch38"
+    number={38}
+    title="Lazvil Hills (Alternate Chapter 4)"
+    code="LZVL6"
+    timeline="Alternate"
+  >
+    <TacticalBriefing
+      level="40"
+      party="Stocke, Gafka, Rosch"
+      
+      enemies={[{"name": "Alistel Grunt", "weakness": "Sleep"}, {"name": "Alistel Soldier"}, {"name": "Iron Shield", "weakness": "Fire"}]}
+    />
+
+    <div class="chapter-walkthrough-prose">
+<p>This is where the difficulty really spikes in the game.  If you have not been fighting every enemy up to now, you&#x27;re probably underleveled.  Still, buying a ton of those Sleep Wings will help immensely.  I recommend using Gafka and Rosch, because they&#x27;re so far behind on levels, since we don&#x27;t have access to them in Standard History.  At the very least, give Rosch some time to gain experience in battle.</p>
+
+<Callout type="node" title="Historia Milestone: Winds of War">
+<p>The path is very straight-forward here.  Make sure that Rosch has a full Mana Burst gauge before wrapping things up.  Head north two screens, bring Aht in to replace Gafka, and proceed to find your mark.</p>
+</Callout>
+
+<p>******************************************************************************* BOSS TIME: Clockwork Thunder x4, Thaumachine WEAKNESS: Lightning STRATEGY: The Clockwork Thunders have little HP, but will explode for massive damage if they ever get a turn.  Rosch should lead with his Seyfried Mana Burst to destroy them first.  Then, simply use Electric Traps and assaults to deal with the Thaumachine.  He will continually summon more Clockwork Thunders, so make sure to have Rosch use Gull Swing to take them out. *******************************************************************************</p>
+
+<Callout type="node" title="Historia Milestone: Call to Destruction">
+<p>Back at Celestia, you may want to remove Rosch&#x27;s Rose Ring, as you won&#x27;t have an opportunity to do so later.  Talk to Raul and you will be prompted for a decision.  Choosing to &quot;Join with someone else&quot; and &quot;Team up with Granorg&quot; will unlock [The Eternal War] ending.</p>
+</Callout>
+
+<Callout type="node" title="Historia Milestone: A New Alliance">
+<p>Instead, return to this node and proceed to the same decision.  This time, choose to &quot;Team up with Forgia&quot; to proceed with the plot.  Head up to the Boundary Tree and talk to Gafka about your options.</p>
+</Callout>
+
+<Callout type="node" title="Historia Milestone: Gafka&#x27;s Past">
+<p>Unfortunately, there&#x27;s nothing you can do for now, as you cannot have obtained the Beast Mark.  Return to the &quot;Death of a Friend&quot; node in Standard History.</p>
+</Callout>
+
+<p>=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=</p>
+    </div>
+  </ChapterCard>
+
+  <!-- Chapter 39 -->
+  <ChapterCard
+    id="ch39"
+    number={39}
+    title="Judgement Cliff (Standard Chapter 3)"
+    code="JUDG4"
+    timeline="Standard"
+  >
+    <TacticalBriefing
+      level="41"
+      party="Stocke"
+      
+      
+    />
+
+    <div class="chapter-walkthrough-prose">
+
+    </div>
+  </ChapterCard>
+
+  <!-- Chapter 40 -->
+  <ChapterCard
+    id="ch40"
+    number={40}
+    title="Cygnus (Standard Chapter 4)"
+    code="CGNS1"
+    timeline="Standard"
+  >
+    <TacticalBriefing
+      level="41"
+      party="Stocke"
+      inn="FREE! (Yes, really)"
+      
+    />
+
+    <div class="chapter-walkthrough-prose">
+<div class="shop-ascii-wrap"><pre class="ascii-shop">Item Shop                  Equipment Shop
+*********                  **************
+Soothing Balm      100     Bastard Sword      4000
+First Aid Kit      400     Goldy Lance        4300
+Tourniquet        1000     Steel Gauntlet     3400
+Herbal Tea         350     Mueke Knife        3800
+Special Tea       1200     Solid Slugs        3800 (buy for Eruca)
+Holy Water         500     Iron Mail          2400 (buy for Stocke)
+Anti-Poison         50     Chain Kimono       1900
+Anti-Fear           50     Gold Clothes       3200
+Anti-Paralytic      50     Iron Breastplate   6500
+Anti-Curse          50     Gold Dress         5100
+Anti-Sleep          50     Horn Charm         1000
+Anti-Stone          50     Fang Charm         1000
+Panacea            800     Bishop Stud        3000
+Poison Wing        350     Sprig Ring         5000
+Sleep Wing         500
+Power Down         500
+Magic Down         500
+Power Down Plus   1200
+Might Herb         500
+Magic Herb         500 (buy up to 10)
+Manacloth         1000
+            __                 _______
+Garland&#x27;s  |  |        Back   |       |       S - Save Point
+  Room     |  |        Alley  |6____  |       X - Roadblock
+                                    | |       1 - First Aid Kit x4
+          _|  |_                              2 - 2000 G
+Cygnus   | S    |          _________| |       3 - Special Tea x2
+  HQ     |_    _|         |  _____   _|_      4 - Healing Fruit
+           |  |           | |       | S1|     5 - Feather Armlet
+       _          ___   __| |XX __  |___|     6 - Protection Pact
+      |5|__|  |__|  _   ____|34|  |____2|
+      |_XX_    ____|
+         __|  |__          Moon Mall
+Central |       S|
+ Plaza  |__    __|
+           |  |</pre></div>
+
+<Callout type="node" title="Historia Milestone: Imprisoned Stocke">
+<p>After some dialogue, talk to Ricky, and rest up for the next day.</p>
+</Callout>
+
+<p>******************************************************************************* BOSS TIME: Gladiator WEAKNESS: None STRATEGY: Use Push Assault to mitigate his damage.  You should be able to use Change while taking minimal damage.  Keep using Change until you string together five turns where you can cast Fire to defeat him. *******************************************************************************</p>
+
+<Callout type="node" title="Historia Milestone: Gladiator">
+<p>For defeating the Gladiator, you will get to meet King Garland, who also wants to have a word with you.</p>
+</Callout>
+
+<p>******************************************************************************* BOSS TIME: Garland WEAKNESS: None STRATEGY: Use Push Assault to mitigate his damage.  You should be able to use Change while taking minimal damage.  Keep using Change until you string together five turns where you can cast Fire to defeat him. *******************************************************************************</p>
+
+<p>Afterwards, you will be treated to the inn, where you should rest up.  Check out the right room with a chest which contains 4 FIRST AID KITS.  Leave the inn and search to the right for a hidden chest which contains 2000 G.  West of the inn are some crates.  Move those crates to access two chests which contain 2 SPECIAL TEAS and a HEALING FRUIT.  Walk around up to the shops where you should make the purchases listed above.</p>
+
+<p>Proceed west to the Central Plaza.  If you continue left, you will find some rocks blocking the road.  In the lower left and lower right corners of the plaza, you can find two hidden barrels that you can use to blow them up.  At the end of the path is a hidden chest which contains a FEATHER ARMLET.  If you like, you can explore the HQ to the north or the Castle Gates to the south, but there&#x27;s nothing interesting there.</p>
+
+<p>Return east and follow the path north.  Before entering the tavern, search behind the wall in the lower left corner to find a hidden chest which contains the PROTECTION PACT for Eruca.  Now, check out the tavern to find Aht and someone else.</p>
+
+<p>******************************************************************************* BOSS TIME: Bodyguard WEAKNESS: Beer STRATEGY: With Aht back, the strategy is simple.  First, use a Magic Herb on Aht.  Then, have her lay any elemental trap behind him and Push Assault him onto it.  Continue laying traps and using the appropriate Assault until you defeat him.  You shouldn&#x27;t even need to bother healing. *******************************************************************************</p>
+
+<Callout type="node" title="Historia Milestone: Saving Aht">
+<p>After rescuing Aht, leave the alley, and begin searching for Eruca.</p>
+</Callout>
+
+<Callout type="node" title="Historia Milestone: Inquiry in the Desert">
+<p>Rest up at the inn, then return to Cygnus HQ to the west and north.  Talk to the man by the left torch twice and choose &quot;I got it&quot; to learn what you need to do next.  Go south to the plaza.  In the lower right area, there are to men looking at each other, and a new man above them, a mercenary.  Talk to the mercenary to join the tournament.</p>
+</Callout>
+
+<p>******************************************************************************* BOSS TIME: Blue Sniper, Blue Soldier, Lizard Rider, Red Sniper, Red Soldier WEAKNESS: Lightning, Lightning, None, Ice, Ice STRATEGY: Use a Magic Herb on Aht and have her lay an Electric Trap in the middle back row.  Then, have Aht use Push Assault on the Blue Soldier and Stocke use Right Assault on him to defeat those two.  Have Aht lay an Ice Trap in the same spot while Stocke heals up.  Then, have Aht use Push Assault on the Res Soldier and Stocke use Left Assault to defeat those to.  Finally, lay any trap in the same spot and Push Assault to defeat the Lizard Rider. *******************************************************************************</p>
+
+<p>For winning the first round, you will receive an EMERALD (Poison Res +6, sell).</p>
+
+<Callout type="node" title="Historia Milestone: The Tournament">
+<p>Rest up at the inn and talk to the mercenary again for round two.</p>
+</Callout>
+
+<p>******************************************************************************* BOSS TIME: Desert Pirate Hertz, Red Sand Bram WEAKNESS: None STRATEGY: Use a Magic Herb on Aht and have Stocke use Push Assault on Bram. Then, lay any elemental Trap in the back row and Push Assault Hertz onto it. Lay one below him and use Left Assault to finish him off.  Keep Bram in the back row, using Traps and the appropriate Assaults to win the round. *******************************************************************************</p>
+
+<p>For winning the second round, you will receive the MADRE BLADE (ATK+24/MAG+19/ HP+75, equip on Stocke).  Rest up at the inn and talk to the mercenary again for round three, when you&#x27;ll be prompted for a decision.  Choosing to &quot;Go with Aht&#x27;s plan&quot; will unlock the [Aht&#x27;s Sacrifice] ending.</p>
+
+<Callout type="node" title="Historia Milestone: Chi-Clad Warrior">
+<p>Instead, return to this node and choose to &quot;Stop Aht.&quot;  However, this will only result in a roadblock that you cannot pass for now.</p>
+</Callout>
+
+<Callout type="node" title="Historia Milestone: Breaker of Chi">
+<p>Return to the &quot;A New Alliance&quot; node and choose to &quot;Team up with Forgia&quot; to talk to Gafka.  He will teach Stocke the power of Chi, which will unlock the [A Beastkind Warrior] node.  Return to the &quot;Chi-Clad Warrior&quot; node, choose to &quot;Stop Aht&quot;, and you will get a different result this time.</p>
+</Callout>
+
+<p>******************************************************************************* BOSS TIME: Gold Shell Gadeff WEAKNESS: Poison STRATEGY: Have Aht lay a Poison Trap behind him and Stocke use Push Assault. Then, use a Magic Herb on Aht.  Keep him in the back row, using any elemental Traps and the appropriate Assaults to defeat him. *******************************************************************************</p>
+
+<Callout type="node" title="Historia Milestone: Search for Friends">
+<p>[A New Battle node] For defeating Gadeff, you will have won the tournament and the GOSPEL ARMOR (DEF+33/MDF+23/LUC+20, equip on Stocke).  You can and are intended to continue with the plot at this point.  However, there are a couple optional rounds to the tournament in which you can participate.  These are end-game difficult fights, but with the right preparations, you can do so now.</p>
+</Callout>
+
+<p>First, rest up at the inn.  Buy 10 Tourniquets at the item shop.  Then, buy 3 Bishop Studs and equip them on Stocke.  Finally, make sure he has the Madre Blade and Aht has the Life Robe.  Both characters should also have maxed out their Mana Burst gauge.  Talk to Gadeff to receive [The Next Foe] sidequest and prepare to face it.</p>
+
+<p>******************************************************************************* BOSS TIME: Crush Bear WEAKNESS: Ice STRATEGY: Use two Sleep Wings on him and hope one of them sticks.  If you die or sleep doesn&#x27;t stick in the first round, just reset.  Once you do, use a Magic Herb on Aht, and use the Change command on him until you get 10 consecutive turns.  Place two Ice Traps behind him, Push Assault, two Ice Traps below him, Left Assault, and finish him off with Fire spells. *******************************************************************************</p>
+
+<p>For winning the fourth round, you will complete [The Next Foe] sidequest and win the PIETI EDGE (ATK+30/MAG+48/SPD-2), which you will definitely want to save for Stocke later.  Rest up at the inn, buy up to 30 Holy Waters, and make sure to have a Poison Wing.  Talk to Gadeff to receive [The Road to Victory] sidequest and prepare for your final foe.</p>
+
+<p>******************************************************************************* BOSS TIME: Mist Spider WEAKNESS: None STRATEGY: There are two keys to winning this battle: survival and damage.  This time, you won&#x27;t be able to rely on Sleep and he will be able to kill either character in one shot, but never both at once, fortunately.  If Stocke dies, use a Holy Water, or if Aht dies, cast Resurrection.  Always play it conservatively until he either tries to use Fear or Speed Break on you.  To kill him, you will need to rely on Curse and Poison Wings.  Use them on him until you inflict them both, which you can tell when you see two damage numbers after he attacks.  Afterwards, if you have a spare turn, only attack him, saving your MP for Resurrection.  Once his HP bar looks like it&#x27;s depleted, attack him for the win. *******************************************************************************</p>
+
+<p>For winning the final round, you will complete [The Road to Victory] sidequest and receive the MOIRAE MANTEAU (DEF+48/MDF+41, equip on Stocke).  Equip Stocke with the Pieti Edge too, and save his Gospel Armor for later.  Talk to Gadeff to advance the [Swordsman Recuit] sidequest.  This can only be done after completing &quot;The Next Foe&quot; and &quot;The Road to Victory&quot; sidequests.</p>
+
+<p>Rest up at the inn and return to Cygnus HQ.  Talk to the man by the left torch to learn where you need to go next.  Enter the prison and everyone will be reunited.  After a scene, return to the prison to break out Eruca and arrange your party as follows, bringing in Raynie and Eruca.</p>
+
+<Callout type="note" title="Recommended Equipment">
+<p>Recommended Equipment at this point in the game<br/>Stocke: Pieti Edge, Moirae Manteau, Horn Charm x3<br/>Raynie: Magic Spear, Gospel Armor, Crystal Charm, Thaumatech Orb, Horn Charm<br/>Marco: Madre Blade, Runic Mail, Bishop Stud x3<br/>Aht: Silver Dagger, Life Robe, Bishop Stud x3<br/>Eruca: Solid Slugs, Rune Dress, Horn Charm x3<br/>Extra: Iron Mail</p>
+</Callout>
+
+<Callout type="node" title="Historia Milestone: The Great Menace">
+<p>Head south out of the city to find out what&#x27;s going on.</p>
+</Callout>
+
+<p>******************************************************************************* BOSS TIME: Hell Spider WEAKNESSS: None STRATEGY: During the first round, use two Magic Herbs on the ladies. Then, use the Change command to string together nine consecutive turns with Raynie casting G-Fire, Stocke using Double Slash, and Eruca casting G-Frost.  Arrange your turns like so: G-Fire, Double Slash, G-Fire, Double Slash, G-Fire, Double Slash, G-Frost, G-Frost, G-Frost to maximize the combo bonus and defeat the Hell Spider. *******************************************************************************</p>
+
+<Callout type="node" title="Historia Milestone: Desert City Messiah">
+<p>After defeating the spider, head south to talk to Garland.</p>
+</Callout>
+
+<Callout type="node" title="Historia Milestone: A King&#x27;s Decision">
+<p>For saving the city, Garland makes a decision about Granorg, which leads into the next chapter.</p>
+</Callout>
+
+<p>=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=</p>
+    </div>
+  </ChapterCard>
+
+</WalkthroughLayout>
+
+<style>
+  .chapter-walkthrough-prose {
+    font-size: 1.1rem;
+    line-height: 1.75;
+    color: var(--text-primary);
+  }
+
+  .chapter-walkthrough-prose :global(p) {
+    margin-bottom: 1.25rem;
+  }
+
+  .chapter-walkthrough-prose :global(.shop-ascii-wrap) {
+    background: #05080f;
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    padding: 1rem;
+    margin: 1.5rem 0;
+    overflow-x: auto;
+  }
+
+  .chapter-walkthrough-prose :global(.ascii-shop) {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: #fde047;
+    margin: 0;
+    white-space: pre;
+  }
+</style>

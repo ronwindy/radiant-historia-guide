@@ -1,0 +1,152 @@
+---
+interface Props {
+  type: 'warning' | 'danger' | 'node' | 'quest' | 'note' | 'tip';
+  title?: string;
+  nodeCode?: string;
+}
+
+const { type, title, nodeCode } = Astro.props;
+
+function getCalloutMeta(t: string) {
+  switch (t) {
+    case 'warning':
+      return {
+        cssClass: 'callout-warning',
+        defaultTitle: 'Temporal Choice Point',
+        icon: '⏳'
+      };
+    case 'danger':
+      return {
+        cssClass: 'callout-danger',
+        defaultTitle: 'Possible History (Dead End Warning)',
+        icon: '⚠️'
+      };
+    case 'node':
+      return {
+        cssClass: 'callout-node',
+        defaultTitle: 'Historia Checkpoint',
+        icon: '✨'
+      };
+    case 'quest':
+      return {
+        cssClass: 'callout-quest',
+        defaultTitle: 'Sidequest Trigger / Objective',
+        icon: '📜'
+      };
+    case 'tip':
+    case 'note':
+    default:
+      return {
+        cssClass: 'callout-note',
+        defaultTitle: 'Tactical Strategy Note',
+        icon: '💡'
+      };
+  }
+}
+
+const meta = getCalloutMeta(type);
+const displayTitle = title || meta.defaultTitle;
+---
+
+<aside class={`callout ${meta.cssClass}`}>
+  <div class="callout-header">
+    <span class="callout-icon" aria-hidden="true">{meta.icon}</span>
+    <span class="callout-title">{displayTitle}</span>
+    {nodeCode && <span class="node-code-pill">Node #{nodeCode}</span>}
+  </div>
+  <div class="callout-content">
+    <slot />
+  </div>
+</aside>
+
+<style>
+  .callout {
+    border-radius: var(--radius-md);
+    padding: 1rem 1.25rem;
+    margin: 1.5rem 0;
+    border-left-width: 4px;
+    border-left-style: solid;
+    font-family: var(--font-body);
+    font-size: 1.05rem;
+    line-height: 1.65;
+  }
+
+  .callout-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-heading);
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+
+  .callout-icon {
+    font-size: 1.1rem;
+  }
+
+  .node-code-pill {
+    margin-left: auto;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 0.15rem 0.5rem;
+    border-radius: var(--radius-sm);
+    color: var(--mana-cyan);
+    border: 1px solid rgba(6, 182, 212, 0.3);
+  }
+
+  /* Specific Variants */
+  .callout-warning {
+    background: var(--callout-warning-bg);
+    border: 1px solid var(--callout-warning-border);
+    border-left: 4px solid var(--gold-primary);
+  }
+  .callout-warning .callout-title {
+    color: var(--gold-primary);
+  }
+
+  .callout-danger {
+    background: var(--callout-danger-bg);
+    border: 1px solid var(--callout-danger-border);
+    border-left: 4px solid var(--timeline-alternate);
+  }
+  .callout-danger .callout-title {
+    color: #fda4af;
+  }
+
+  .callout-node {
+    background: var(--callout-discovery-bg);
+    border: 1px solid var(--callout-discovery-border);
+    border-left: 4px solid var(--mana-cyan);
+  }
+  .callout-node .callout-title {
+    color: var(--mana-cyan);
+  }
+
+  .callout-quest {
+    background: var(--callout-quest-bg);
+    border: 1px solid var(--callout-quest-border);
+    border-left: 4px solid var(--mana-green);
+  }
+  .callout-quest .callout-title {
+    color: #6ee7b7;
+  }
+
+  .callout-note {
+    background: rgba(148, 163, 184, 0.08);
+    border: 1px solid rgba(148, 163, 184, 0.25);
+    border-left: 4px solid var(--text-secondary);
+  }
+  .callout-note .callout-title {
+    color: var(--text-bright);
+  }
+
+  .callout-content {
+    color: var(--text-primary);
+  }
+
+  .callout-content :global(p:last-child) {
+    margin-bottom: 0;
+  }
+</style>

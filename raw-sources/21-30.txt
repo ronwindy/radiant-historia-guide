@@ -1,0 +1,613 @@
+
+==============================================================================
+21) Sand Fortress (Alternate Chapter 1) [SAND3]
+==============================================================================
+
+SAND FORTRESS (Alternate Chapter 1) [SAND3]
+Recommended Level: 24
+Recommended Party: Stocke, Raynie, Rosch
+Enemies: Granorg Archer, Light Granorgite, Red Cap
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+                           _________________
+   Sand Fortress N     2F |     B           |     S - Save Point
+                          |   ___ ___ ___   |     X - Obstacle
+    __       |  |        _|  |   |   |   |  |_    B - Bomb
+   /  \     /    \      |    |   |   |B  |  X |   1 - Emerald
+  |    |   /      |     |    |   |___|   |  X4|   2 - 2000 G
+  |XXXX|  |      /      |_   | 3 |   |   |  X_|   3 - Panacea Plus
+  |    |__|     |___      |  |_ _|   |_ _|  |     4 - Mana Crystal x2
+  |                7\     |          S      |     5 - Leaf Ring
+   \_____     ______/     |______     ______|     6 - Darkshield Scroll
+         |   |                   |   |            7 - 2000 G
+
+      ___|   |___          _____ ___________
+  3F |           |     1F |   X2|     | B   |
+     |          6|        |__ X_|__ __|__ __|
+     |___     ___|        | B               |
+   ______|   |______      |_____________ ___|     If you have learned the Mana
+  |5X   _______     |     |     |     |     |     Sight ability, you can
+  |_X___ _____   ___|     |     |_| |_|     |     continue with the plot from
+  |B    |_____|     |     |      S        1 |     here.  In addition to the
+  |______     ______|     |______     ______|     bombs, you can also find much
+         |   |                   |   |            hidden treasure here.
+
+On the first floor, search the lower right corner for a chest which contains an
+EMERALD (Poison Res +6).  I'm not a fan of status resisting equipment, so I
+would just sell it.  Head to the upper right room and search the upper left
+corner for a white sparkle that is your first bomb to disarm.  Go left in the
+hallway until you find the second bomb.  In the upper left room, pull the
+crates out that block a hidden chest which contains 2000 G.  Now, head up to
+the second floor.
+
+Search the room on the right for a bomb in the upper left corner.  The room to
+the left holds a hidden chest which contains a PANACEA PLUS.  Leave the room
+and walk around the back side to find the fourth bomb.  On the right side of
+the floor are some crates that you can pull, blocking a hidden chest which
+contains 2 MANA CRYSTALS.  Head up to the third floor.
+
+In the upper left corner is the last bomb, but you should still collect some
+more treasure.  Walk around to the right, but don't go up the stairs.  Pull the
+crates to the left out of the way that are blocking a chest which contains a
+LEAF RING (HP+10/MP+10, sell).  Climb the stairs and go up to the large room.
+Search the right side for a hidden chest which contains the DARKSHIELD SCROLL
+for Raynie.  Don't teach to Raynie right now, or you will have the find the
+bombs all over again.
+
+Proceed up to the Sand Fortress North area.  In the lower right corner is a
+hidden chest which contains 2000 G.  Now, you should report to Rosch and choose
+to "Prioritize the Mission" to proceed with the plot, now that the bombs are
+out of the way.
+
+Recommended Equipment at this point in the game
+Stocke: Rune Edge, Heavy Mail, Fang Charm x3
+Raynie: Rune Spear, Heavy Mail, Horn Charm x3
+Marco: Wisp Blade, Heavy Mail, Bishop Stud, Knight Stud x2
+Rosch: P.Thauma Spear, Mail Vest, Wind Armlet, Fang Charm x2
+Extra: Rhapsody, Rune Claw
+
+[Sand Fortress Battle node]
+You should know your way around here pretty well by now.  I'd recommend
+fighting all the enemies you can find on all three floors.  Note the soldiers
+will never spawn in a room.  When you've killed enough of them to satisfy your
+bloodlust, make your way up to the upper room on the third floor to make your
+last stand.  I'd recommend giving Raynie's Horn Charms to Stocke, and having
+Marco replace her.  You may also want to remove Rosch's Wind Armlet, since you
+won't have a chance to equip it on someone else later.
+
+*******************************************************************************
+BOSS TIME: Grey Shadow, Granorg Archer x2, Light Granorgite
+WEAKNESS: None
+STRATEGY: The Grey Shadow will always start the battle with a Power Zone.  If
+anyone steps on it, absolutely get them off of it as quickly as possible or
+they will kill you.  Your first priority should be to take out the Grey Shadow,
+since that will clear the Power Zone.  If you have any full Mana Burst gauges,
+use Turn Break on the Grey Shadow, whenever his turn comes around.  In the
+first round, have Marco use Magic Boost on either Stocke or Raynie.  A couple
+spells and physical attacks should finish him off.  The rest can be handled
+easily without the need for further buffing or healing.
+*******************************************************************************
+
+[A Message from Home node]
+After some cutscenes, you will hear about your next mission.
+
+Recommended Equipment at this point in the game
+Stocke: Rune Edge, Heavy Mail, Fang Charm x3
+Raynie: Rune Spear, Heavy Mail, Horn Charm x3
+Marco: Wisp Blade, Heavy Mail, Bishop Stud, Knight Stud x2
+Extra: Rhapsody, Rune Claw
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+
+==============================================================================
+22) Sand Fortress (Alternate Chapter 2) [SAND4]
+==============================================================================
+
+SAND FORTRESS (Alternate Chapter 2) [SAND4]
+Recommended Level: 27
+Recommended Party: Stocke, Raynie, Marco
+Enemies: None
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+[Alistel's Offensive node]
+After receiving your objective and destination, talk to Viola again to advance
+the [A Letter to Tomorrow] sidequest.  Return to the "A New Mission" node.  As
+long as we're here, you can teach the Darkshield Scroll to Raynie.  Talk to
+Cedric, who is on the upper platform next to the tavern.  Choosing "Don't show
+journal" will unlock the the [A Voice Unheard] ending.  Otherwise, choosing to
+"Show Journal" will complete the [A Letter to Tomorrow] sidequest and you will
+receive the NOAH AMULET (Poison/Sleep/Paralysis Res+4, sell).
+
+Return to "Alistel's Offensive" node.  Climb up to the third floor and take the
+north exit to the Gran Plain.
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+
+==============================================================================
+23) Gran Plain (Alternate Chapter 2) [GRAN3]
+==============================================================================
+
+GRAN PLAIN (Alternate Chapter 2) [GRAN3]
+Recommended Level: 27
+Recommended Party: Stocke, Raynie, Marco
+Enemies: Blue Granorg Archer (Sleep), Granorg Defender, Hunter (Sleep),
+     Rose Balsam (Poison/Stone/Fire), Sabertooth Tiger, Wood Shield (Fire)
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+[Battle of Gran Plain node]
+Go north one screen, west two, and continue west until you get an update on the
+battle situation here.  You will then have a decision to make.  Choosing to
+"Go north" will unlock [The Lion General] ending.
+
+[A Meeting Too Late node]
+Before returning to this node, I would strongly recommend resting up in a bed
+on the second floor of the Sand Fortress.  Then, return to the decision point,
+this time choosing to "Look for Rosch", and you will find him.
+
+*******************************************************************************
+BOSS TIME: Blue Granorg Archer x3, Paelzan, Wood Shield x3
+WEAKNESS: Sleep, None, Fire
+STRATEGY: During the first round, use Magic Boost on Raynie, cast Fire on
+the middle Wood Shield, and cast Magic Boost on Stocke.  In the second round,
+Push Assault Paelzan into the Blue Granorg Archer and two Fire spells should
+finish them off.  Next, have Marco heal as necessary, while Stocke and Raynie
+cast Fire on the Wood Shields.  Finally, use Right Assault and two Fire spells
+to finish off the remaining Blue Granorg Archers.
+*******************************************************************************
+
+[Rosch in Crisis node]
+[Wolf in the Fold node]
+Return to the "Alistel's Offensive" node and talk to Viola to unlock the
+[Viola's Decision] node.  Return to the "A Meeting Too Late" node and proceed
+as before until you are prompted with another decision.  Make sure to choose
+"I leave it to you.", as this is a requirement to unlocking the sidequest
+[At Journey's End] later.
+
+[Lives Entrusted node]
+After the battle, the plot will return to Alistel.
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+
+==============================================================================
+24) Alistel (Alternate Chapter 2) [ALST6]
+==============================================================================
+
+ALISTEL (Alternate Chapter 2) [ALST6]
+Recommended Level: 30
+Recommended Party: Stocke
+Enemies: None
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+[Homecoming node]
+Before inspecting Hugo's office, take the elevator down to the first floor.
+Talk to the receptionist behind the left desk to receive the [Swordsman Recuit]
+and [Mercenary Recruit] sidequests, though you won't be able to complete them
+for a very long time.  Return to the third floor, and enter Hugo's office to
+the left where you will find someone other than Hugo.
+
+*******************************************************************************
+BOSS TIME: Heiss
+WEAKNESS: None
+STRATEGY: Use the Change command to string together four consecutive turns of
+Fire spells to defeat him.
+*******************************************************************************
+
+[Parting Ways node]
+For winning the battle, Stocke will learn the Vanish technique, that can allow
+him to sneak past enemies without being seen.  This includes the guards back at
+Granorg Palace.  If you want to go back there now, then skip to GPLC1, but I
+wouldn't do that right now.
+
+[Flight node]
+Talk to Sonja in the infirmary to make your escape before you get caught.
+
+*******************************************************************************
+BOSS TIME: Special Forces x2
+WEAKNESS: None
+STRATEGY: One of them will start with Power Zone.  Do everything you can to
+keep them off of it.  As long as you do that, they can't really hurt you much.
+Casting Fire two or three time is your best bet for killing each of them.
+*******************************************************************************
+
+[Fiendish node]
+After the battle, someone you haven't seen before finds you.
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+
+==============================================================================
+25) Celestia (Alternate Chapter 3) [CLST1]
+==============================================================================
+
+CELESTIA (Alternate Chapter 3) [CLST1]
+Recommended Level: 30
+Recommended Party: Stocke
+Enemies: None
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+   Boundary Tree         Item Shop               Equipment Shop
+       ____              *********               **************
+      |2   |             Soothing Balm    100    Iron Sword        2400
+      |__  |             First Aid Kit    400    Rune Edge         5000
+         | |             Herbal Tea       350    Iron Lance        2100
+                         Healing Herb     500    Rune Spear        2500
+    _____| |_            Holy Water       500    Copper Gauntlet   1700
+   |  _   _  | Plaza     Anti-Poison       50    Red Dagger        2000
+   |1|_   _| |_          Anti-Fear         50    Knife             1800
+   |___  S_____|         Anti-Paralytic    50    Custom Knife      2800
+       | |               Anti-Curse        50    Heavy Mail        1500
+                         Anti-Sleep        50    Silver Mail       1100
+     __| |__             Anti-Stone        50    Leather Cuirass   2000 (buy 1)
+    |3      | Celestia   Poison Wing      350    Beast Skins        500
+    |       | Entrance   Paralysis Wing   350    Reinforced Cape   1200 (buy 1)
+                         Sleep Wing       500    Silver Cape       2800
+S - Save Point           Curse Wing       350    Hymnal Cape       3700
+1 - Crystal Charm        Sleep Wing       500    Silver Dress      2000
+2 - Anti-Paralytic x2    Stone Wing       500    Charm              350
+3 - 3000 G               Power Down       500    Horn Charm        1000 (buy 4)
+                         Might Herb       500    Fang Charm        1000 (buy 3)
+[The Beastkind Forest]                           Pawn Stud          750
+Upon waking up in Celestia, leave the inn.       Knight Stud       1500
+Search the left side of the village for a        Bishop Stud       3000 (buy 5)
+hidden chest which contains a CRYSTAL CHARM      Seed Ring         1000
+(MAG+6) that you should save for later.          Leaf Ring         2500
+Talk to the Satyros above the save point to      Wind Armlet       5000
+receive a celestian FLOWER BUD to advance the    Amber             1750
+[A Flower of Promise] sidequest.                 Amazonite         1750
+
+To complete the sidequest, return to "The Beginning" node and give the Flower
+Bud to the girl on the first floor to advance the [A Flower of Promise]
+sidequest.  Skip to the "A New Mission" node and talk to her again to complete
+the [A Flower of Promise] sidequest and receive a THAUMATECH ORB (MAG+5/MDF+5).
+Return to "The Beastkind Forest" node and head up to talk to Rosch.
+
+[Unacceptable Loss node]
+[Gauntlet node]
+You will then receive your next mission from Patriarch Barranca.  Aht and Gafka
+will then join your party.
+
+[Beastkind's Favor node]
+Equip the Rhapsody on Aht and Rune Claw on Gafka.  Then, buy a Leather Cuirass
+for Gafka and buy a Reinforced Cape for Aht.  At this point, I like keeping
+extra accessories around for different situations, and we have more money than
+we need, anyway.  Buy 4 Horn Charms, 3 Fang Charms, and 5 Bishop Studs.  I
+prefer defensive accessories on her on Aht for non-boss encounters, despite her
+Traps being magic-based, since they're already more than powerful enough, and
+she is rather frail.  Stocke will need to be ready to use magic for the next
+area, so I like giving him magic-boosting accessories, while keeping Fang
+Charms in reserve.  I'd also buy 5 Curse & Sleep Wings at the item shop.
+
+Go up to the Boundary Tree and search the left side for a hidden chest which
+contains 2 ANTI-PARALYTICS.  Leave the village via the south entrance, and
+search the left side for a hidden chest which contains 3000 G. When you are
+ready, leave Celestia and head for Lazvil Hills.
+
+Recommended Equipment at this point in the game
+Stocke: Rune Edge, Heavy Mail, Crystal Charm, Thaumatech Orb, Horn Charm
+Aht: Rhapsody, Reinforced Cape, Bishop Stud x3
+Gafka: Rune Claw, Leather Cuirass, Fang Charm x3
+Extra: Bishop Stud x2, Fang Charm x3, Horn Charm x3
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+
+==============================================================================
+26) Lazvil Hills (Alternate Chapter 3) [LZVL5]
+==============================================================================
+
+LAZVIL HILLS (Alternate Chapter 3) [LZVL5]
+Recommended Level: 30
+Recommended Party: Stocke, Aht, Gafka
+Enemies: Cloudy (Lightning), Green Leech (Fire), Rafflesia (Fire),
+     Stompy (Fire)
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+         Highway         Highway E    Your goal is to defeat the monsters here
+                                      that threaten Celestia.  It's a little
+                            |X|       tricky, because Aht's speed is so high
+          ____________   __/   \      that she really throws off your combos
+         X_______   __   _      |     and she has no Assaults for quite some
+    ___   |    ____/      |     |     time.  In a pre-emptive strike, you can
+   |   |   \  |            \   /      use her extra turn to lay a trap to use
+    \  |    | |             |X|       during the following combo chain.  If you
+     | |    | |             | |       are fighting a group of Cloudys, have her
+                                      cast Polaris to protect against their
+    _| |    | |            _| |_      poison.  With magic-boosting accessories,
+   |   |   /  |Woodland   |     |     Stocke should be able to one-shot any
+    \  |__|   | Path E    | | | |     monster here with Fire.
+     |_   ____|          _|/   \|_
+_______| |      Southern|___   ___|   There's no more treasure here, if you've
+_________|        Path      |X|       already cleared it, as I did back to the
+                                      GRNG2 section.  Follow the path to an
+                           _| |_      open area, then go north two screens.
+S - Save Point    Seaside |     |__   Head west and south one screen to a save
+X - Roadblock      Road   |      __   point.  Equip Horn Charms on Stocke, give
+                          |_____|     his accessories to Aht, and head west.
+
+*******************************************************************************
+BOSS TIME: Forest Bear, Stompy x2
+WEAKNESS: Ice, Fire
+STRATEGY: These monsters aren't a real threat, but your turn queue is probably
+screwed up.  Aht should start by laying an Ice Trap for later.  However, your
+first priority should be to take out the two Stompys, before they can summon
+more help.  A Push Assault from Gafka and Fire spell from Stocke will do the
+trick.  Push the Forest Bear onto the Ice Trap.  Then, use the Change command
+once to get enough turns to finish off the Forest Bear with two more Ice Traps.
+*******************************************************************************
+
+[Report from Vanoss node]
+You'll briefly return to Celestia.  After talking to Barranca, head to the inn
+to talk to Vanoss, and depart for Alistel.
+
+Recommended Equipment at this point in the game
+Stocke: Rune Edge, Heavy Mail, Fang Charm x3
+Aht: Rhapsody, Reinforced Cape, Bishop Stud x3
+Gafka: Rune Claw, Leather Cuirass, Fang Charm x3
+Extra: Bishop Stud x2, Crystal Charm, Thaumatech Orb, Horn Charm x4
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+
+==============================================================================
+27) Alistel (Alternate Chapter 3) [ALST7]
+==============================================================================
+
+ALISTEL (Alternate Chapter 3) [ALST7]
+Recommended Level: 31
+Recommended Party: Stocke, Aht, Gafka
+Enemies: Alistel Grunt (Sleep)
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Item Shop               Equipment Shop
+*********               **************
+Soothing Balm   100     Silver Edge       3000
+First Aid Kit   400     Iron Sword        2400
+Herbal Tea      350     Sorcery Epee      4600 (buy for Stocke)
+Healing Herb    500     Silver Spear      2000
+Holy Water      500     Iron Lance        2100
+Anti-Poison      50     Magic Spear       3200 (buy for Raynie)
+Anti-Fear        50     Knife             1800
+Anti-Paralytic   50     Heavy Mail        1500
+Anti-Curse       50     Silver Mail       1100
+Anti-Sleep       50     Silver Cape       2800
+Anti-Stone       50     Reinforced Cape   1200
+Panacea         800     Gold Clothes      3200
+Poison Wing     350     Charm              350
+Sleep Wing      500     Horn Charm        1000
+Power Down      500     Pawn Stud          750
+Might Herb      500     Knight Stud       1500
+                        Seed Ring         1000
+                        Breeze Armlet     1500
+
+Head up, and Vanoss will arrive.
+
+[Darkness in Alistel node]
+Talk to Vanoss again to receive the [Wandering Soul] sidequest.  Go up to the
+Second Ward, and climb the left stairs to the upper left.  Talk to the woman
+above to receive the [Second Opinion] sidequest.  Outside the weapon shop, on
+the right side of the Second Ward, is a boy to whom you can talk to receive the
+[Battlefield Missive] sidequest.  You should buy a Sorcery Epee for Stocke and
+a Magic Spear for Raynie from the shop.  Finally, return to the castle north to
+proceed with the plot.
+
+[Reunion with Raul node]
+After the meeting, I would continue using Aht and Gafka, and arrange your party
+as follow.  Then, attempt to leave Alistel.
+
+Recommended Equipment at this point in the game
+Stocke: Sorcery Epee, Heavy Mail, Fang Charm x3
+Raynie: Magic Spear, Heavy Mail, Horn Charm x3
+Marco: Wisp Blade, Heavy Mail, Bishop Stud x3
+Aht: Rhapsody, Reinforced Cape, Crystal Charm, Thaumatech Orb, Horn Charm
+Gafka: Rune Claw, Leather Cuirass, Fang Charm x3
+Extra: Bishop Stud x3, Horn Charm x3
+
+*******************************************************************************
+BOSS TIME: Shadow x3
+WEAKNESS: None
+STRATEGY: Aht should lead with Polaris to protect against their Paralysis
+attack.  They may try to complete a formation, in which case, you should break
+it up with an assault.  Otherwise, two of any trap will kill them.  If you can,
+try to get two of them on a single trap to finish them off even more quickly.
+*******************************************************************************
+
+Unless Raynie hasn't reached Level 30 yet to learn G-Fire, I would recommend
+keeping Aht around and equipping her with the Bishop Studs again.  Fight the
+soldiers on your way out of Alistel, head to Lazvil Hills, and follow the same
+path you took back to Celestia.
+
+Recommended Equipment at this point in the game
+Stocke: Sorcery Epee, Heavy Mail, Horn Charm x3
+Raynie: Magic Spear, Heavy Mail, Crystal Charm, Thaumatech Orb, Horn Charm
+Marco: Wisp Blade, Heavy Mail, Bishop Stud x3
+Aht: Rhapsody, Reinforced Cape, Bishop Stud x3
+Gafka: Rune Claw, Leather Cuirass, Fang Charm x3
+Extra: Fang Charm x3, Horn Charm x3
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+
+==============================================================================
+28) Celestia (Alternate Chapter 3) [CLST2]
+==============================================================================
+
+CELESTIA (Alternate Chapter 3) [CLST2]
+Recommended Level: 33
+Recommended Party: Stocke, Raynie, Marco
+Enemies: None
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Upon entering, you will find that you are a little late to the party.
+
+*******************************************************************************
+BOSS TIME: Alistel Soldier x2, Auto Defender x2
+WEAKNESS: Sleep, Fire
+STRATEGY: Use two Sleep Wings to crowd control the soldiers.  Sadly, the Auto
+Defenders cannot be moved.  Have Marco cast Magic Boost on Raynie and Stocke.
+Use Stocke's Air Assault on one Auto Defender, followed up by G-Fire from
+Raynie to finish it off, and repeat on the second one.  Finally, use the Change
+command to set up a Push Assault, Air Assault, G-Fire, and some attacks to
+finish off the rest.
+*******************************************************************************
+
+[Premonition of War node]
+After some scenes, talk to Rosch at the Boundary Tree, then return to talk to
+Raul.  Talk to Barranca to decide what to do about Alistel and who should lead.
+Choosing to "Nominate Raul" will unlock the [Assassination of Raul] ending.
+
+[Shattered Steel Arm node]
+Return to this node and advance the plot up to the same decision.  However,
+choosing to "Nominate Rosch" will only lead to a dead end.
+
+[Rosch in Agony node]
+If you've already resolved this roadblock, then skip to CLST3.  Otherwise, you
+will need return to the "How to Disappear" node in Standard History to put the
+Vanish ability to use.
+
+Before doing that, this is as good a time as any to complete those sidequests
+we got back at Alistel.  Unfortunately, it will involve going through half of
+Chapter 3 to get back there to complete them.  However, the rewards are good.
+
+Return to the "A New Mission" node.  Climb the stairs by the tavern and talk to
+the man above to advance the [Second Opinion] sidequest.  Return to
+"The Valkyrie" node and head up to Rosch and Viola in the middle room above.
+Talk to the soldier sitting on the bench to advance the [Battlefield Missive]
+sidequests and receive the DEATH PACT for Stocke later.  Now for the hard part.
+
+The nearest node to complete these sidequests is "The Beastkind Forest" node.
+Advance the plot to the "Darkness in Alistel" node.  Talk to the boy by the
+weapon shop to complete the [Battlefield Missive] sidequest and receive a
+CELESTIAL OIL.  Head left to the bar. This time, the man will have survived.
+Talk to him to complete the [Second Opinion] sidequest and receive the
+SLUMBERING SCROLL for Raynie, which you should teach her immediately.  Finally,
+return to the "How to Disappear" node to continue the plot.
+
+Recommended Equipment at this point in the game
+Stocke: Sorcery Epee, Heavy Mail, Fang Charm x3
+Raynie: Magic Spear, Heavy Mail, Crystal Charm, Thaumatech Orb, Horn Charm
+Marco: Wisp Blade, Heavy Mail, Bishop Stud x3
+Aht: Rhapsody, Reinforced Cape, Bishop Stud x3
+Gafka: Rune Claw, Leather Cuirass, Fang Charm x3
+Extra: Horn Charm x6
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+
+==============================================================================
+29) Granorg Palace (Standard Chapter 2) [GPLC1]
+==============================================================================
+
+GRANORG PALACE (Standard Chapter 2) [GPLC1]
+Recommended Level: 33
+Recommended Party: Stocke, Raynie, Marco
+Enemies: Blue Granorg Archer (Sleep), Granorg Defender,
+     Heavy Granorgite (Poison/Lightning), Sand Hunter (Sleep)
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+                        Meeting   Underground   Underground
+                         Room       Library        Cell
+        Audience  _       ___      ______         ____
+          Hall   | |     /   \    |   _  |       |S __|     S - Save Point
+                 | |     |  1|    |  | | |       | |        A - Connects to A
+                 | |     \  _/    |_3|                      1 - 2000 G
+    Palace               / /           | |_______| |        2 - 2000 G
+   Interior    __| |_                  |____ S ____|        3 - Cocktail Dress
+      ____    /      \__| |                 | |
+     |    |  |          __|  Hall          _| |
+     |  _ |  |  _____  |                  |   |__
+     | | \ \ | |     | |  ____            |______A
+ ____                    A___ |
+|  S | | | |_| |_____| |_/ ___|         Underground
+|      | |______     _____/               Passage
+|2_____|       _|   |_
+              |       |  Hall      If you've learned the Vanish ability, then
+Training      |_     _|            you can continue the plot from here.  Choose
+  Area          |   |              to "Stick to stealth" when prompted.
+
+[Successful Infiltration node]
+Eerily enough, there are no enemies around the palace.  Walk left, up the
+stairs, and into the Meeting Room to the right.  On the right side is a hidden
+chest which contains 2000 G.  Go back down the stairs and left two rooms to the
+Training Area where you will see a save point.  In the lower left corner is a
+hidden chest which contains 2000 G. Head up to the save point to advance the
+plot and climb the vines to do so again.
+
+*******************************************************************************
+BOSS TIME: Blue Granorg Archer x3, Granorg Defender x3
+WEAKNESS: None
+STRATEGY: These guys seem to really screw up the turn order to prevent combos,
+so make heavy use of the Change command.  First, have Marco cast Magic Boost on
+Raynie.  She can one-shot the Archers with any spell, but you'll need G-Fire to
+one-shot the Defenders, or an Assault plus any spell.  Depending on the turn
+order, defeat any two of them with an Assault and a spell from Raynie.  Try to
+kill the ones that are breaking up your combos, if you can.  Otherwise, just
+keep taking them out two at a time.  You won't need to heal.
+*******************************************************************************
+
+You'll need to retreat the way you came, fighting soldiers along the way, until
+you make it back to the Underground Passage.  This time, you can move around
+freely here.  Follow the hall up to a fork, where you should first go left to
+the Underground Library to find a chest which contains a COCKTAIL DRESS
+(DEF+6/MDF+15, sell).  Then, take the right path at the fork to escape.
+
+[Princess of Light node]
+After some dialogue, you will return to Granorg.
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+
+==============================================================================
+30) Granorg (Standard Chapter 3) [GRNG3]
+==============================================================================
+
+GRANORG (Standard Chapter 3) [GRNG3]
+Recommended Level: 35
+Recommended Party: Stocke, Raynie, Marco
+Enemies: None
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Item Shop               Equipment Shop
+*********               **************
+Soothing Balm   100     Blitz Epee        2000           Bronze Mail        900
+First Aid Kit   400     Silver Edge       3000           Silver Mail       1100
+Herbal Tea      350     Rune Edge         5000           Silver Cape       2800
+Healing Herb    500     Soul Eater        4800 (buy 1)   Mail Vest         1200
+Holy Water      500     Iron Spear        1800           Hymnal Cape       3700
+Anti-Poison      50     Silver Spear      2000           Chainmail Dress   3800
+Anti-Fear        50     Bloody Pike       3700 (buy 1)   Charm              350
+Anti-Paralytic   50     Bronze Spear      1000           Horn Charm        1000
+Anti-Curse       50     Red Dagger        2000           Fang Charm        1000
+Anti-Sleep       50     Knife             1800           Pawn Stud          750
+Anti-Stone       50     Custom Shell      1400           Knight Stud       1500
+Poison Wing     350                                      Seed Ring         1000
+Sleep Wing      500
+
+[The Resistance node]
+After some more dialogue, talk to Will at the bar to unlock the [Sand Sword]
+node.  While not a mandatory event for now, you will eventually have to do it.
+Head east to the Downtown area.  Somewhat hidden by a tree in the center, you
+will find Eruca in her cloak, and she will prompt you for a decision.  Choosing
+"Don't push yourself" will unlock [Princess' Charge] ending.  Otherwise,
+choosing "Fulfill your duty" will advance [The King's Daughter] sidequest.
+
+Go east and north one screen.  Talk to the woman in pink to receive the
+[Despairing Young Man] sidequest.  Head south and east one screen, and check
+out the shops with new wares for sale.  I would buy a Soul Eater for Stocke and
+a Bloody Pike for Rosch later.  The Soul Eater is great for Stocke's physical
+attacks, but you should hold onto his Sorcery Epee for when you want him to be
+casting magic instead.
+
+Return to the "To Granorg" node.  Talk to Anna in the upper left corner of the
+Second Ward to complete [The King's Daughter] sidequest and to receive the
+RABBIT'S FOOT (MP+10/LUC+15).  The Luck stat improves your stealing ability, so
+you may want to hold onto it for later, but it's not critical at all.
+
+Return to the "Castle Sewers" node and head up to the Palace-Front Plaza.  Talk
+to the man in the cloak to advance the [Despairing Young Man] sidequest.
+Return to "The Resistance" node and talk to him again to complete the
+[Despairing Young Man] sidequest and receive the LEFT-CUT SCROLL for Marco,
+which you should teach to him immediately.
+
+Leave Granorg and head to the Gran Plain to reach Cornet Village.
+
+Recommended Equipment at this point in the game
+Stocke: Soul Eater, Heavy Mail, Fang Charm x3
+Raynie: Magic Spear, Heavy Mail, Crystal Charm, Thaumatech Orb, Horn Charm
+Marco: Wisp Blade, Heavy Mail, Bishop Stud x3
+Extra: Sorcery Epee, Bloody Pike, Horn Charm x6
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+

@@ -1,0 +1,58 @@
+---
+interface Props {
+  timeline: 'Standard' | 'Alternate' | 'Prologue' | 'Final' | string;
+  class?: string;
+}
+
+const { timeline, class: className = '' } = Astro.props;
+
+function getBadgeDetails(tl: string) {
+  const norm = tl.toLowerCase();
+  if (norm.includes('standard')) {
+    return {
+      cssClass: 'badge-standard',
+      icon: '⏳',
+      label: 'Standard History'
+    };
+  }
+  if (norm.includes('alternate')) {
+    return {
+      cssClass: 'badge-alternate',
+      icon: '🔀',
+      label: 'Alternate History'
+    };
+  }
+  if (norm.includes('prologue')) {
+    return {
+      cssClass: 'badge-prologue',
+      icon: '🌌',
+      label: 'Prologue / Shared'
+    };
+  }
+  if (norm.includes('final')) {
+    return {
+      cssClass: 'badge-final',
+      icon: '👑',
+      label: 'Final Climax'
+    };
+  }
+  return {
+    cssClass: 'badge-gold',
+    icon: '✨',
+    label: tl
+  };
+}
+
+const details = getBadgeDetails(timeline);
+---
+
+<span class={`badge ${details.cssClass} ${className}`}>
+  <span class="badge-icon" aria-hidden="true">{details.icon}</span>
+  <span class="badge-label">{details.label}</span>
+</span>
+
+<style>
+  .badge-icon {
+    font-size: 0.85em;
+  }
+</style>

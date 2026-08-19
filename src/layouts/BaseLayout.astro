@@ -1,0 +1,140 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+  image?: string;
+  currentPath?: string;
+}
+
+const {
+  title,
+  description = 'Complete 100% walkthrough, 3x3 battle strategies, dual timeline navigation, 236 Historia node completion guide, and secrets for Radiant Historia.',
+  image = 'assets/logo.png',
+  currentPath = Astro.url.pathname,
+} = Astro.props;
+
+const baseUrl = import.meta.env.BASE_URL;
+const fullTitle = `${title} | Radiant Historia Compendium`;
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site || 'https://ronwindy.github.io').href;
+const ogImageUrl = image.startsWith('http') ? image : `${Astro.site || 'https://ronwindy.github.io'}${baseUrl}${image.replace(/^\//, '')}`;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="generator" content={Astro.generator} />
+  
+  <title>{fullTitle}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonicalUrl} />
+
+  <!-- OpenGraph / Social Meta -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content={fullTitle} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={ogImageUrl} />
+  <meta property="og:url" content={canonicalUrl} />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={fullTitle} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={ogImageUrl} />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href={`${baseUrl}favicon.svg`} />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@500;600;700;800&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="site-wrapper">
+    <Header currentPath={currentPath} />
+
+    <main class="main-content" id="mainContent">
+      <slot />
+    </main>
+
+    <Footer />
+
+    <!-- Floating Scroll-To-Top Button -->
+    <button class="scroll-top-btn" id="scrollTopBtn" aria-label="Scroll back to top" title="Scroll to top">
+      ▲
+    </button>
+  </div>
+
+  <style>
+    .site-wrapper {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .main-content {
+      flex: 1 0 auto;
+      width: 100%;
+      min-width: 0;
+      padding-top: 1rem;
+    }
+
+    .scroll-top-btn {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-full);
+      background: rgba(12, 18, 29, 0.9);
+      border: 1px solid var(--gold-border);
+      color: var(--gold-primary);
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition);
+      z-index: 990;
+    }
+
+    .scroll-top-btn.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .scroll-top-btn:hover {
+      background: var(--gold-primary);
+      color: #06090f;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(251, 191, 36, 0.4);
+    }
+  </style>
+
+  <script>
+    if (typeof document !== 'undefined') {
+      const scrollBtn = document.getElementById('scrollTopBtn');
+
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 400) {
+          scrollBtn?.classList.add('visible');
+        } else {
+          scrollBtn?.classList.remove('visible');
+        }
+      }, { passive: true });
+
+      scrollBtn?.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
+  </script>
+</body>
+</html>

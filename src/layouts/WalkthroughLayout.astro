@@ -1,0 +1,369 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+interface QuickJump {
+  id: string;
+  number: number;
+  title: string;
+  code: string;
+  timeline: string;
+}
+
+interface VolumeStats {
+  chapters: number;
+  nodes?: number;
+  endings?: number;
+  sidequests?: number;
+  bosses?: number;
+}
+
+interface Props {
+  volume: number;
+  volumeTitle: string;
+  chapterRange: string;
+  description: string;
+  stats: VolumeStats;
+  quickJumps: QuickJump[];
+  prevVol?: { num: number; title: string; href: string };
+  nextVol?: { num: number; title: string; href: string };
+}
+
+const {
+  volume,
+  volumeTitle,
+  chapterRange,
+  description,
+  stats,
+  quickJumps,
+  prevVol,
+  nextVol,
+} = Astro.props;
+
+const baseUrl = import.meta.env.BASE_URL;
+const romanNumerals = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII'];
+const roman = romanNumerals[volume - 1] || String(volume);
+---
+
+<BaseLayout title={`Volume ${roman}: ${volumeTitle} (${chapterRange})`} description={description}>
+  <div class="container walkthrough-container">
+    <Breadcrumbs
+      items={[
+        { label: 'Compendium Hub', href: baseUrl },
+        { label: 'Walkthrough Volumes', href: `${baseUrl}#volumes` },
+        { label: `Volume ${roman}: ${chapterRange}` }
+      ]}
+    />
+
+    <!-- Hero Volume Banner -->
+    <header class="volume-hero glass-card">
+      <div class="hero-top">
+        <div class="volume-tag">Volume {roman} Walkthrough</div>
+        <div class="volume-range">{chapterRange}</div>
+      </div>
+
+      <h1 class="volume-title">{volumeTitle}</h1>
+      <p class="volume-desc">{description}</p>
+
+      <div class="volume-stats-row">
+        <div class="vol-stat-badge">
+          <span class="stat-num">{stats.chapters}</span>
+          <span class="stat-lbl">Chapters</span>
+        </div>
+        {stats.nodes !== undefined && (
+          <div class="vol-stat-badge">
+            <span class="stat-num">{stats.nodes}</span>
+            <span class="stat-lbl">Historia Nodes</span>
+          </div>
+        )}
+        {stats.endings !== undefined && (
+          <div class="vol-stat-badge stat-danger">
+            <span class="stat-num">{stats.endings}</span>
+            <span class="stat-lbl">Bad Endings</span>
+          </div>
+        )}
+        {stats.sidequests !== undefined && (
+          <div class="vol-stat-badge stat-green">
+            <span class="stat-num">{stats.sidequests}</span>
+            <span class="stat-lbl">Sidequests</span>
+          </div>
+        )}
+        {stats.bosses !== undefined && (
+          <div class="vol-stat-badge stat-boss">
+            <span class="stat-num">{stats.bosses}</span>
+            <span class="stat-lbl">Major Bosses</span>
+          </div>
+        )}
+      </div>
+
+      <!-- Quick-Jump Anchor Matrix -->
+      <div class="quick-jump-matrix">
+        <div class="matrix-header">
+          <span class="matrix-icon">⚡</span>
+          <span class="matrix-title">Chapter Quick-Jump Matrix</span>
+        </div>
+        <div class="quick-jump-pills">
+          {quickJumps.map((jump) => (
+            <a href={`#${jump.id}`} class="jump-pill">
+              <span class="jump-num">#{String(jump.number).padStart(2, '0')}</span>
+              <span class="jump-name">{jump.title}</span>
+              <span class="jump-code">[{jump.code}]</span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Walkthrough Content -->
+    <div class="walkthrough-content">
+      <slot />
+    </div>
+
+    <!-- Volume Navigation Footer -->
+    <nav class="volume-nav-footer" aria-label="Volume Pagination">
+      {prevVol ? (
+        <a href={prevVol.href} class="vol-nav-btn prev-btn">
+          <span class="nav-arrow">‹</span>
+          <div class="nav-info">
+            <span class="nav-sub">Previous Volume</span>
+            <span class="nav-main">Vol. {prevVol.num}: {prevVol.title}</span>
+          </div>
+        </a>
+      ) : <div />}
+
+      {nextVol ? (
+        <a href={nextVol.href} class="vol-nav-btn next-btn">
+          <div class="nav-info text-right">
+            <span class="nav-sub">Next Volume</span>
+            <span class="nav-main">Vol. {nextVol.num}: {nextVol.title}</span>
+          </div>
+          <span class="nav-arrow">›</span>
+        </a>
+      ) : <div />}
+    </nav>
+  </div>
+</BaseLayout>
+
+<style>
+  .walkthrough-container {
+    padding-bottom: 3rem;
+  }
+
+  .volume-hero {
+    border-top: 3px solid var(--gold-primary);
+    padding: clamp(1.5rem, 3.5vw, 2.5rem);
+    margin-bottom: 3rem;
+  }
+
+  .hero-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--font-ui);
+    margin-bottom: 0.75rem;
+  }
+
+  .volume-tag {
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--gold-primary);
+    background: rgba(251, 191, 36, 0.1);
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--radius-full);
+    border: 1px solid var(--gold-border);
+  }
+
+  .volume-range {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    font-weight: 600;
+  }
+
+  .volume-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.8rem, 4vw, 2.75rem);
+    color: var(--text-bright);
+    margin-bottom: 0.75rem;
+    text-shadow: 0 0 15px rgba(251, 191, 36, 0.25);
+  }
+
+  .volume-desc {
+    color: var(--text-secondary);
+    font-size: 1.15rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    max-width: 900px;
+  }
+
+  .volume-stats-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.85rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .vol-stat-badge {
+    display: flex;
+    align-items: baseline;
+    gap: 0.4rem;
+    background: rgba(6, 9, 15, 0.7);
+    border: 1px solid var(--border-subtle);
+    padding: 0.35rem 0.85rem;
+    border-radius: var(--radius-md);
+    font-family: var(--font-ui);
+  }
+
+  .stat-num {
+    font-family: var(--font-mono);
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--mana-cyan);
+  }
+
+  .stat-lbl {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  .stat-danger .stat-num { color: #f43f5e; }
+  .stat-green .stat-num { color: #10b981; }
+  .stat-boss .stat-num { color: #fbbf24; }
+
+  /* Quick-Jump Anchor Matrix */
+  .quick-jump-matrix {
+    background: rgba(6, 9, 15, 0.6);
+    border: 1px solid rgba(148, 163, 184, 0.15);
+    border-radius: var(--radius-md);
+    padding: 1.1rem;
+  }
+
+  .matrix-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    color: var(--gold-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 0.85rem;
+  }
+
+  .quick-jump-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .jump-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--border-subtle);
+    padding: 0.35rem 0.65rem;
+    border-radius: var(--radius-sm);
+    font-family: var(--font-ui);
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: var(--transition);
+  }
+
+  .jump-pill:hover {
+    background: rgba(251, 191, 36, 0.12);
+    border-color: var(--gold-border);
+    color: var(--gold-primary);
+    transform: translateY(-2px);
+  }
+
+  .jump-num {
+    color: var(--gold-primary);
+    font-weight: 700;
+    font-family: var(--font-mono);
+  }
+
+  .jump-name {
+    color: var(--text-primary);
+  }
+
+  .jump-code {
+    color: var(--mana-cyan);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+  }
+
+  /* Volume Footer Nav */
+  .volume-nav-footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 1.5rem;
+    margin-top: 3.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-subtle);
+    font-family: var(--font-ui);
+  }
+
+  .vol-nav-btn {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    padding: 1rem 1.5rem;
+    text-decoration: none;
+    transition: var(--transition);
+    max-width: 380px;
+    flex: 1;
+  }
+
+  .vol-nav-btn:hover {
+    background: rgba(251, 191, 36, 0.08);
+    border-color: var(--gold-border);
+    transform: translateY(-3px);
+  }
+
+  .nav-arrow {
+    font-size: 2rem;
+    color: var(--gold-primary);
+    line-height: 1;
+  }
+
+  .nav-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  .text-right {
+    text-align: right;
+    margin-left: auto;
+  }
+
+  .nav-sub {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  .nav-main {
+    font-size: 0.95rem;
+    color: var(--text-bright);
+    font-weight: 600;
+  }
+
+  @media (max-width: 680px) {
+    .volume-nav-footer {
+      flex-direction: column;
+    }
+    .vol-nav-btn {
+      max-width: 100%;
+    }
+  }
+</style>
