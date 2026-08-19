@@ -6,7 +6,6 @@ interface QuickJump {
   id: string;
   number: number;
   title: string;
-  code: string;
   timeline: string;
 }
 
@@ -107,7 +106,6 @@ const roman = romanNumerals[volume - 1] || String(volume);
             <a href={`#${jump.id}`} class="jump-pill">
               <span class="jump-num">#{String(jump.number).padStart(2, '0')}</span>
               <span class="jump-name">{jump.title}</span>
-              <span class="jump-code">[{jump.code}]</span>
             </a>
           ))}
         </div>
@@ -289,12 +287,6 @@ const roman = romanNumerals[volume - 1] || String(volume);
 
   .jump-name {
     color: var(--text-primary);
-  }
-
-  .jump-code {
-    color: var(--mana-cyan);
-    font-family: var(--font-mono);
-    font-size: 0.75rem;
   }
 
   /* Volume Footer Nav */

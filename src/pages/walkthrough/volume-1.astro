@@ -11,72 +11,52 @@ const quickJumps = [
   {
     "id": "ch01",
     "number": 1,
-    "title": "Alistel (Prologue)",
-    "code": "ALST1",
-    "timeline": "Prologue"
+    "title": "Alistel (Prologue)",    "timeline": "Prologue"
   },
   {
     "id": "ch02",
     "number": 2,
-    "title": "Lazvil Hills (Prologue)",
-    "code": "LZVL1",
-    "timeline": "Prologue"
+    "title": "Lazvil Hills (Prologue)",    "timeline": "Prologue"
   },
   {
     "id": "ch03",
     "number": 3,
-    "title": "Alistel (Alternate Prologue)",
-    "code": "ALST2",
-    "timeline": "Prologue"
+    "title": "Alistel (Alternate Prologue)",    "timeline": "Prologue"
   },
   {
     "id": "ch04",
     "number": 4,
-    "title": "Lazvil Hills (Alternate Prologue)",
-    "code": "LZVL2",
-    "timeline": "Prologue"
+    "title": "Lazvil Hills (Alternate Prologue)",    "timeline": "Prologue"
   },
   {
     "id": "ch05",
     "number": 5,
-    "title": "Alma Mine (Alternate Prologue)",
-    "code": "ALMA1",
-    "timeline": "Prologue"
+    "title": "Alma Mine (Alternate Prologue)",    "timeline": "Prologue"
   },
   {
     "id": "ch06",
     "number": 6,
-    "title": "Alistel (Standard Prologue)",
-    "code": "ALST3",
-    "timeline": "Prologue"
+    "title": "Alistel (Standard Prologue)",    "timeline": "Prologue"
   },
   {
     "id": "ch07",
     "number": 7,
-    "title": "Alistel (Standard Chapter 1)",
-    "code": "ALST4",
-    "timeline": "Standard"
+    "title": "Alistel (Standard Chapter 1)",    "timeline": "Standard"
   },
   {
     "id": "ch08",
     "number": 8,
-    "title": "Lazvil Hills (Standard Chapter 1)",
-    "code": "LZVL3",
-    "timeline": "Standard"
+    "title": "Lazvil Hills (Standard Chapter 1)",    "timeline": "Standard"
   },
   {
     "id": "ch09",
     "number": 9,
-    "title": "Judgement Cliff (Standard Chapter 1)",
-    "code": "JUDG1",
-    "timeline": "Standard"
+    "title": "Judgement Cliff (Standard Chapter 1)",    "timeline": "Standard"
   },
   {
     "id": "ch10",
     "number": 10,
-    "title": "Sand Fortress (Standard Chapter 1)",
-    "code": "SAND1",
-    "timeline": "Standard"
+    "title": "Sand Fortress (Standard Chapter 1)",    "timeline": "Standard"
   }
 ];
 const stats = {
@@ -106,7 +86,6 @@ const nextVol = { num: 2, title: 'Specint Espionage & Underground Passages', hre
     id="ch01"
     number={1}
     title="Alistel (Prologue)"
-    code="ALST1"
     timeline="Prologue"
   >
     <TacticalBriefing
@@ -172,7 +151,6 @@ Poison Wing     350     Bronze Mail     900
     id="ch02"
     number={2}
     title="Lazvil Hills (Prologue)"
-    code="LZVL1"
     timeline="Prologue"
   >
     <TacticalBriefing
@@ -217,7 +195,7 @@ Woodland          | |                       2 - Royal Jelly x3
 </Callout>
 
 <Callout type="node" title="Historia Milestone: The Beginning">
-<p>Head upstairs and talk to Rosch.  Now, you have a decision to make: to Join the Rosch Brigade or to Stay under Heiss.  This is where the main timeline will split into Standard History (SH) by staying under Heiss and Alternate History (AH) by joining the Rosch Brigade.  Eventually, you will need to use the White Chronicle to take both paths, so don&#x27;t worry about which path to take first. You&#x27;re not going to be locked out of anything.  I would recommend joining the Rosch Brigade first, since it unlocks some sidequests.  If you wish to proceed by staying under Heiss, then skip to ALST3.</p>
+<p>Head upstairs and talk to Rosch.  Now, you have a decision to make: to Join the Rosch Brigade or to Stay under Heiss.  This is where the main timeline will split into Standard History (SH) by staying under Heiss and Alternate History (AH) by joining the Rosch Brigade.  Eventually, you will need to use the White Chronicle to take both paths, so don&#x27;t worry about which path to take first. You&#x27;re not going to be locked out of anything.  I would recommend joining the Rosch Brigade first, since it unlocks some sidequests.  If you wish to proceed by staying under Heiss, then skip ahead to Chapter 06 (Alistel - Standard Prologue).</p>
 </Callout>
 
 <Callout type="note" title="Recommended Equipment">
@@ -233,7 +211,6 @@ Woodland          | |                       2 - Royal Jelly x3
     id="ch03"
     number={3}
     title="Alistel (Alternate Prologue)"
-    code="ALST2"
     timeline="Prologue"
   >
     <TacticalBriefing
@@ -265,7 +242,6 @@ Woodland          | |                       2 - Royal Jelly x3
     id="ch04"
     number={4}
     title="Lazvil Hills (Alternate Prologue)"
-    code="LZVL2"
     timeline="Prologue"
   >
     <TacticalBriefing
@@ -299,7 +275,6 @@ Woodland          | |                       2 - Royal Jelly x3
     id="ch05"
     number={5}
     title="Alma Mine (Alternate Prologue)"
-    code="ALMA1"
     timeline="Prologue"
   >
     <TacticalBriefing
@@ -328,7 +303,7 @@ Woodland          | |                       2 - Royal Jelly x3
 <p>Upon arriving at Alma Mine, you have your second decision to make.  This time, there is a right and wrong answer.  If you want to unlock every node in the game, you will want to choose the wrong answer, as this unlocks bad endings throughout the game.  Choosing to &quot;Wait in ambush&quot; will unlock [The Fallen Capital] ending.  Otherwise, choosing to &quot;Send scouts&quot; will prompt a roadblock in the story that can only be overcome in the other timeline.</p>
 
 <Callout type="node" title="Historia Milestone: The Closed Mine">
-<p>If you chose to wait in ambush, then you will be sent back to the beginning of the chapter, so press Start to skip the cutscene.  Fortunately, since this was a critical decision point, a travel node has been created, so you can just skip back to that decision.  At a save point, choose &quot;Go to Historia&quot;, return to &quot;The Closed Mine&quot; node, and choose to &quot;Send Scouts&quot;.  While you won&#x27;t get a bad ending this time, the plot cannot proceed on this timeline for now.  If you have already resolved this roadblock, then skip to ALMA2.</p>
+<p>If you chose to wait in ambush, then you will be sent back to the beginning of the chapter, so press Start to skip the cutscene.  Fortunately, since this was a critical decision point, a travel node has been created, so you can just skip back to that decision.  At a save point, choose &quot;Go to Historia&quot;, return to &quot;The Closed Mine&quot; node, and choose to &quot;Send Scouts&quot;.  While you won&#x27;t get a bad ending this time, the plot cannot proceed on this timeline for now.  If you have already resolved this roadblock, then skip ahead to Chapter 12 (Alma Mine - Alternate Prologue).</p>
 </Callout>
 
 <Callout type="node" title="Historia Milestone: Breaking Rocks">
@@ -346,7 +321,6 @@ Woodland          | |                       2 - Royal Jelly x3
     id="ch06"
     number={6}
     title="Alistel (Standard Prologue)"
-    code="ALST3"
     timeline="Prologue"
   >
     <TacticalBriefing
@@ -380,7 +354,6 @@ Woodland          | |                       2 - Royal Jelly x3
     id="ch07"
     number={7}
     title="Alistel (Standard Chapter 1)"
-    code="ALST4"
     timeline="Standard"
   >
     <TacticalBriefing
@@ -414,7 +387,6 @@ Woodland          | |                       2 - Royal Jelly x3
     id="ch08"
     number={8}
     title="Lazvil Hills (Standard Chapter 1)"
-    code="LZVL3"
     timeline="Standard"
   >
     <TacticalBriefing
@@ -436,7 +408,7 @@ Woodland          | |                       2 - Royal Jelly x3
 <p>Feepos can randomly drop a Vital Sword, which would be really nice for Marco. You cannot procure any of the treasures yet.  Go west to the Highway and down the ramp to revise your destination.  Walk south to the Woodland Path East, west around the river, and north to the other side of the river.  Choosing to &quot;Go to Alma Mine&quot; will unlock [The Queen Ascendant] ending.</p>
 
 <Callout type="node" title="Historia Milestone: The Messenger&#x27;s News">
-<p>If you choose to stay with Heiss first, you will need to return to &quot;The Beginning&quot; node and choose to Join the Rosch Brigade.  If you need to do that, then skip to ALST2.  Otherwise, return to &quot;The Messenger&#x27;s News&quot; node, and choose to &quot;Wait for Informant&quot;.</p>
+<p>If you choose to stay with Heiss first, you will need to return to &quot;The Beginning&quot; node and choose to Join the Rosch Brigade.  If you need to do that, then skip back to Chapter 03 (Alistel - Alternate Prologue).  Otherwise, return to &quot;The Messenger&#x27;s News&quot; node, and choose to &quot;Wait for Informant&quot;.</p>
 </Callout>
 
 <Callout type="node" title="Historia Milestone: No-Show">
@@ -449,7 +421,7 @@ Woodland          | |                       2 - Royal Jelly x3
 
 <p>******************************************************************************* BOSS TIME: Desert Pirate Hertz, Red Sand Bram WEAKNESS: None STRATEGY: Ideally, you want everyone to take their turns in one round.  Use Change, as needed.  Have Marco Grapple Hertz, Raynie cast Thunder, and Stocke use Push Assault to reduce their damage output.  In subsequent rounds, Stocke should finish the combo with Power Wave.  Only heal if your HP drops below 100. *******************************************************************************</p>
 
-<p>For defeating them, you will have saved the merchant Tarquin.  In return, he will teach you the Bomber Skill.  This will also allow you to proceed back at Alma Mine in Alternate History.  If you want to do so, then skip to ALMA2.</p>
+<p>For defeating them, you will have saved the merchant Tarquin.  In return, he will teach you the Bomber Skill.  This will also allow you to proceed back at Alma Mine in Alternate History.  If you want to do so, then skip ahead to Chapter 12 (Alma Mine - Alternate Prologue).</p>
 
 <Callout type="node" title="Historia Milestone: Struggle with Bandits">
 <p>Before proceeding with your mission, let&#x27;s put that new bomber skill to use. Remember all those barrels we&#x27;ve seen along the way?  Apparently, people just leave them full of explosives in this world.  Go back east to the next screen and north until you see some barrels on the right.  Push one of them around to the rocks on the left.  Press L to prime the explosive, back away, and press L again to detonate them and blow away the rocks.  Behind them is a chest which contains a HOLY WATER.</p>
@@ -470,7 +442,6 @@ Woodland          | |                       2 - Royal Jelly x3
     id="ch09"
     number={9}
     title="Judgement Cliff (Standard Chapter 1)"
-    code="JUDG1"
     timeline="Standard"
   >
     <TacticalBriefing
@@ -519,7 +490,6 @@ Old Spring W   Old Spring   Old Spring E     Death Mountain.</pre>
     id="ch10"
     number={10}
     title="Sand Fortress (Standard Chapter 1)"
-    code="SAND1"
     timeline="Standard"
   >
     <TacticalBriefing

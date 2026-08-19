@@ -12,7 +12,6 @@ const volumes = [
     roman: 'I',
     title: 'Prologue & First Assignments',
     range: 'Chapters 01–10',
-    codes: 'ALST1 – SAND1',
     desc: 'The fateful choice at Lazvil Hills. Inception of Standard History (Specint) and Alternate History (Rosch Brigade), Sand Fortress infiltration, and first Historia nodes.',
     stats: { chapters: 10, nodes: 14, endings: 2, sidequests: 5, bosses: 3 },
     href: `${baseUrl}walkthrough/volume-1/`,
@@ -23,7 +22,6 @@ const volumes = [
     roman: 'II',
     title: 'Specint Espionage & Underground Passages',
     range: 'Chapters 11–20',
-    codes: 'GRAN1 – UGWW1',
     desc: 'Deep covert operations across Gran Plain, infiltrating Granorg via the dangerous Underground Waterways, and early boss clashes with the Shadow and Granorg guards.',
     stats: { chapters: 10, nodes: 18, endings: 3, sidequests: 6, bosses: 4 },
     href: `${baseUrl}walkthrough/volume-2/`,
@@ -34,7 +32,6 @@ const volumes = [
     roman: 'III',
     title: 'Celestia Alliance & Fortress Battles',
     range: 'Chapters 21–30',
-    codes: 'SAND3 – GRNG3',
     desc: 'Rosch Brigade defense at the Sand Fortress, venturing into the mystical beastkind realm of Celestia, and palace uprisings in Granorg.',
     stats: { chapters: 10, nodes: 20, endings: 4, sidequests: 7, bosses: 5 },
     href: `${baseUrl}walkthrough/volume-3/`,
@@ -45,7 +42,6 @@ const volumes = [
     roman: 'IV',
     title: 'Desert Wastelands & The Wandering City',
     range: 'Chapters 31–40',
-    codes: 'GRAN4 – CGNS1',
     desc: 'Journey through Cornet Village, Judgement Cliff confrontations, and entering the independent desert haven of Cygnus.',
     stats: { chapters: 10, nodes: 22, endings: 3, sidequests: 8, bosses: 4 },
     href: `${baseUrl}walkthrough/volume-4/`,
@@ -56,7 +52,6 @@ const volumes = [
     roman: 'V',
     title: 'Ruins of Holff & The Forgia Pact',
     range: 'Chapters 41–50',
-    codes: 'CGNS2 – JUDG5',
     desc: 'Ancient secrets of Holff Ruins, treacherous traversals of Abyssia Forest, and securing the alliance with the Gutsize beastkind of Forgia.',
     stats: { chapters: 10, nodes: 25, endings: 4, sidequests: 6, bosses: 5 },
     href: `${baseUrl}walkthrough/volume-5/`,
@@ -67,7 +62,6 @@ const volumes = [
     roman: 'VI',
     title: 'The Underground Lab & Puppet Masters',
     range: 'Chapters 51–60',
-    codes: 'SKLA2 – UGWW2',
     desc: 'Unmasking Hugo’s dark experiments in the Underground Lab, liberating Skalla, and the climactic battles against thaumatech monstrosities.',
     stats: { chapters: 10, nodes: 28, endings: 5, sidequests: 9, bosses: 6 },
     href: `${baseUrl}walkthrough/volume-6/`,
@@ -78,7 +72,6 @@ const volumes = [
     roman: 'VII',
     title: 'The Convergent Climax & Imperial Ruins',
     range: 'Chapters 61–66',
-    codes: 'GPLC2 – HALL1',
     desc: 'The convergence of Standard and Alternate Histories, the descent into Imperial Ruins and the Royal Hall, and the final battle for the fate of Vainqueur.',
     stats: { chapters: 6, nodes: 32, endings: 6, sidequests: 8, bosses: 7 },
     href: `${baseUrl}walkthrough/volume-7/`,
@@ -197,8 +190,6 @@ const volumes = [
             <h3 class="vol-card-title">
               <a href={vol.href}>{vol.title}</a>
             </h3>
-
-            <div class="vol-codes-badge">Codes: {vol.codes}</div>
 
             <p class="vol-card-desc">{vol.desc}</p>
 
@@ -576,18 +567,6 @@ const volumes = [
 
   .vol-card-title a:hover {
     color: var(--gold-primary);
-  }
-
-  .vol-codes-badge {
-    font-family: var(--font-mono);
-    font-size: 0.78rem;
-    color: var(--mana-cyan);
-    background: rgba(6, 182, 212, 0.08);
-    padding: 0.2rem 0.5rem;
-    border-radius: var(--radius-sm);
-    display: inline-block;
-    margin-bottom: 0.75rem;
-    border: 1px solid rgba(6, 182, 212, 0.25);
   }
 
   .vol-card-desc {
