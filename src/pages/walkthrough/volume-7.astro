@@ -3,6 +3,8 @@ import WalkthroughLayout from '../../layouts/WalkthroughLayout.astro';
 import ChapterCard from '../../components/ChapterCard.astro';
 import TacticalBriefing from '../../components/TacticalBriefing.astro';
 import AsciiMap from '../../components/AsciiMap.astro';
+import BossCard from '../../components/BossCard.astro';
+import ShopMatrix from '../../components/ShopMatrix.astro';
 import Callout from '../../components/Callout.astro';
 
 const baseUrl = import.meta.env.BASE_URL;
@@ -11,50 +13,58 @@ const quickJumps = [
   {
     "id": "ch61",
     "number": 61,
-    "title": "Granorg Palace (Alternate Chapter 6)",    "timeline": "Alternate"
+    "title": "Granorg Palace (Alternate Chapter 6)",
+    "timeline": "Alternate"
   },
   {
     "id": "ch62",
     "number": 62,
-    "title": "Alistel (Alternate Chapter 6)",    "timeline": "Alternate"
+    "title": "Alistel (Alternate Chapter 6)",
+    "timeline": "Alternate"
   },
   {
     "id": "ch63",
     "number": 63,
-    "title": "Underground Lab (Alternate Chapter 6)",    "timeline": "Alternate"
+    "title": "Underground Lab (Alternate Chapter 6)",
+    "timeline": "Alternate"
   },
   {
     "id": "ch64",
     "number": 64,
-    "title": "Granorg (Alternate Final Chapter)",    "timeline": "Final"
+    "title": "Granorg (Alternate Final Chapter)",
+    "timeline": "Alternate"
   },
   {
     "id": "ch65",
     "number": 65,
-    "title": "Imperial Ruins (Alternate Final Chapter)",    "timeline": "Final"
+    "title": "Imperial Ruins (Alternate Final Chapter)",
+    "timeline": "Alternate"
   },
   {
     "id": "ch66",
     "number": 66,
-    "title": "Royal Hall (Standard Final Chapter)",    "timeline": "Final"
+    "title": "Royal Hall (Standard Final Chapter)",
+    "timeline": "Standard"
   }
 ];
+
 const stats = {
-  "chapters": 6,
-  "nodes": 32,
-  "endings": 6,
-  "sidequests": 8,
-  "bosses": 7
+  chapters: 6,
+  nodes: 14,
+  endings: 6,
+  sidequests: 8,
+  bosses: 14
 };
-const prevVol = { num: 6, title: 'The Underground Lab & Puppet Masters', href: `${baseUrl}walkthrough/volume-6/` };
+
+const prevVol = { num: 6, title: 'Granorg Liberation &amp; Shadow of Dias', href: `${baseUrl}walkthrough/volume-6/` };
 const nextVol = undefined;
 ---
 
 <WalkthroughLayout
   volume={7}
-  volumeTitle="The Convergent Climax & Imperial Ruins"
+  volumeTitle="The Final Battle &amp; True Epilogue"
   chapterRange="Chapters 61–66"
-  description="The convergence of Standard and Alternate Histories, the descent into Imperial Ruins and the Royal Hall, and the final battle for the fate of Vainqueur."
+  description="Infiltrating the Royal Hall, unraveling Heiss's destiny, confronting the Black Chronicle, and sealing the ultimate fate of Vainqueur."
   stats={stats}
   quickJumps={quickJumps}
   prevVol={prevVol}
@@ -69,14 +79,11 @@ const nextVol = undefined;
     timeline="Alternate"
   >
     <TacticalBriefing
-      level="61"
-      party="Stocke, Eruca, Gafka"
-      
-      enemies={[{"name": "Alistel Officer"}, {"name": "Cannon", "weakness": "Fire"}, {"name": "Heavy Granorgite", "weakness": "Lightning"}]}
+      level="61" party="Stocke, Eruca, Gafka" enemies={[{"name": "Alistel Officer"}, {"name": "Cannon", "weakness": "Fire"}, {"name": "Heavy Granorgite", "weakness": "Lightning"}, {"name": "Master Assassin", "weakness": "Sleep"}, {"name": "Thaumachine", "weakness": "Lightning"}]}
     />
 
     <div class="chapter-walkthrough-prose">
-<AsciiMap>
+      <AsciiMap>
 <pre>Meeting   Underground   Underground
                          Room       Library        Cell
         Audience  _       ___      ______         ____
@@ -96,31 +103,34 @@ const nextVol = undefined;
               |       |  Hall
 Training      |_     _|
   Area          |   |</pre>
-</AsciiMap>
-
-<p>For most of this area, I would recommend using Gafka.  However, I would replace him with Aht at the beginning, equip her with Raynie&#x27;s Thauma Charms, and equip Stocke with the Gospel Armor.  Head left two screens to the library and talk to Eruca to make your next move.</p>
-
-<p>******************************************************************************* BOSS TIME: Heavy Thautomaton WEAKNESS: Lightning STRATEGY: Lay a Volt Star Trap behind him, have Eruca use Push Assault, and Stocke Steal a La Tormenta (ATK+30/MAG+60/LUC+8) from it for Raynie. *******************************************************************************</p>
-
-<Callout type="node" title="Historia Milestone: Turning of the Tide">
-<p>After the plot takes you out of the palace and waterway, you have to make your way to the Castle Gates.  On your way there, you will encounter some Alistel Officers.  Make sure to have Stocke steal two items from them, the last of which will be the Glaux Dagger (ATK+31/MAG+85/HP-30, equip on Aht).  There are stationary Cannons on the map that have no items to steal.  However, if you encounter a Cannon in a battle where you originally saw another enemy on the map, steal a Freikugel Zamiel (ATK+18/MAG+75/DEF-12, equip on Eruca) from them for a huge magic boost!  Rest up at the inn, bring in Aht to replace Gafka, and continue east to run into an old friend.</p>
-</Callout>
-
-<p>******************************************************************************* BOSS TIME: Dias Guard x2, Gold, Sapphire WEAKNESS: None, Ice, Fire STRATEGY: Lay two Ice Traps behind Gold, and Push Assault him onto it.  Take out the Dias Guards with Burst Light and any Star Trap.  Then, steal twice from Sapphire to get the Beast Claw (ATK+80/HP-50, equip on Gafka).  Finally, use a Fire Star Trap to finish off Sapphire. *******************************************************************************</p>
-
-<p>If Eruca hasn&#x27;t reached Level 60 yet to learn her final spell, I&#x27;d recommend fighting some of the enemies below to do so.  Afterwards, I would use Stocke, Gafka, and probably Rosch could use the experience the most.  Equip Rosch with the Diamond Mail from earlier.  Head up to meet the final line of defense.</p>
-
-<p>******************************************************************************* BOSS TIME: Auto Defender x2, Viola WEAKNESS: None, Poison STRATEGY: This fight can be pretty hard without Gafka.  Viola&#x27;s uses Divine Protection, which negates the next 5 hits against her.  Luckily, she is sitting right at the center of the battlefield.  Musou will not only completely break down her Divine Protection, but also deal some good damage on its last hit. Use the Change command to string together five consecutive turns: two of Gafka and three of Stocke.  Use two Musous on Viola and three Will o&#x27; Wisps to defeat them all quickly. *******************************************************************************</p>
-
-<Callout type="node" title="Historia Milestone: Viola&#x27;s Last Stand">
-<p>After a brief respite, head up to the throne room and talk to Eruca, where the scene will shift back to Alistel.</p>
-</Callout>
-
-<Callout type="note" title="Recommended Equipment">
-<p>Recommended Equipment at this point in the game<br/>Stocke: Pieti Edge, Moirae Manteau, Thauma Charm x3<br/>Raynie: La Tormenta, Diamond Mail, Thauma Charm x3<br/>Marco: Gaia Blade, Diamond Mail, Queen Stud x3<br/>Rosch: Death Pike, Diamond Mail, Beast Charm x3<br/>Aht: Glaux Dagger, Giant Cape, Queen Stud x3<br/>Gafka: Beast Claw, Mighty Protector, Beast Charm x3<br/>Eruca: Freikugel Zamiel, Skull Dress, Thauma Charm x3</p>
-</Callout>
-
-<p>=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=</p>
+      </AsciiMap>
+      <p>For most of this area, I would recommend using Gafka.  However, I would replace him with Aht at the beginning, equip her with Raynie's Thauma Charms, and equip Stocke with the Gospel Armor.  Head left two screens to the library and talk to Eruca to make your next move.</p>
+      <BossCard name="Heavy Thautomaton" weakness="Lightning">
+        <p><strong>Strategy:</strong> Lay a Volt Star Trap behind him, have Eruca use Push Assault, and Stocke Steal a La Tormenta (ATK+30/MAG+60/LUC+8) from it for Raynie.</p>
+      </BossCard>
+      <Callout type="node" title="Historia Milestone: Turning of the Tide">
+        <p>After the plot takes you out of the palace and waterway, you have to make your way to the Castle Gates. On your way there, you will encounter some Alistel Officers. Make sure to have Stocke steal two items from them, the last of which will be the Glaux Dagger (ATK+31/MAG+85/HP-30, equip on Aht). There are stationary Cannons on the map that have no items to steal. However, if you encounter a Cannon in a battle where you originally saw another enemy on the map, steal a Freikugel Zamiel (ATK+18/MAG+75/DEF-12, equip on Eruca) from them for a huge magic boost! Rest up at the inn, bring in Aht to replace Gafka, and continue east to run into an old friend.</p>
+      </Callout>
+      <BossCard name="Dias Guard x2, Gold, Sapphire" weakness="None, Ice, Fire">
+        <p><strong>Strategy:</strong> Lay two Ice Traps behind Gold, and Push Assault him onto it.  Take out the Dias Guards with Burst Light and any Star Trap.  Then, steal twice from Sapphire to get the Beast Claw (ATK+80/HP-50, equip on Gafka).  Finally, use a Fire Star Trap to finish off Sapphire.</p>
+      </BossCard>
+      <p>If Eruca hasn't reached Level 60 yet to learn her final spell, I'd recommend fighting some of the enemies below to do so.  Afterwards, I would use Stocke, Gafka, and probably Rosch could use the experience the most.  Equip Rosch with the Diamond Mail from earlier.  Head up to meet the final line of defense.</p>
+      <BossCard name="Auto Defender x2, Viola" weakness="None, Poison">
+        <p><strong>Strategy:</strong> This fight can be pretty hard without Gafka.  Viola's uses Divine Protection, which negates the next 5 hits against her.  Luckily, she is sitting right at the center of the battlefield.  Musou will not only completely break down her Divine Protection, but also deal some good damage on its last hit. Use the Change command to string together five consecutive turns: two of Gafka and three of Stocke.  Use two Musous on Viola and three Will o' Wisps to defeat them all quickly.</p>
+      </BossCard>
+      <Callout type="node" title="Historia Milestone: Viola's Last Stand">
+        <p>After a brief respite, head up to the throne room and talk to Eruca, where the scene will shift back to Alistel.</p>
+      </Callout>
+      <Callout type="note" title="Recommended Equipment">
+        <p>Recommended Equipment at this point in the game<br/>
+        <strong>Stocke:</strong> Pieti Edge, Moirae Manteau, Thauma Charm x3<br/>
+        <strong>Raynie:</strong> La Tormenta, Diamond Mail, Thauma Charm x3<br/>
+        <strong>Marco:</strong> Gaia Blade, Diamond Mail, Queen Stud x3<br/>
+        <strong>Rosch:</strong> Death Pike, Diamond Mail, Beast Charm x3<br/>
+        <strong>Aht:</strong> Glaux Dagger, Giant Cape, Queen Stud x3<br/>
+        <strong>Gafka:</strong> Beast Claw, Mighty Protector, Beast Charm x3<br/>
+        <strong>Eruca:</strong> Freikugel Zamiel, Skull Dress, Thauma Charm x3</p>
+      </Callout>
     </div>
   </ChapterCard>
 
@@ -132,44 +142,14 @@ Training      |_     _|
     timeline="Alternate"
   >
     <TacticalBriefing
-      level="63"
-      party="Stocke, Aht, Rosch"
-      
-      
+      level="63" party="Stocke, Aht, Rosch"
     />
 
     <div class="chapter-walkthrough-prose">
-<div class="shop-ascii-wrap"><pre class="ascii-shop">Equipment Shop             Item Shop
-**************             *********
-Silver Edge       3000     Soothing Balm      100
-Iron Sword        2400     First Aid Kit      400
-Sorcery Epee      4600     Tourniquet        1000
-Silver Spear      2000     Herbal Tea         350
-Iron Lance        2100     Special Tea       1200
-Magic Spear       3200     Superior Tea      2500
-Knife             1800     Healing Herb       500
-Death Shell       9500     Holy Water         500
-Heavy Mail        1500     Anti-Poison         50
-Silver Mail       1100     Anti-Fear           50
-Silver Cape       2800     Anti-Paralytic      50
-Reinforced Cape   1200     Anti-Curse          50
-Gold Clothes      3200     Anti-Sleep          50
-Sunrise Cape      4800     Anti-Stone          50
-Elemental Plate   8100     Panacea            800
-Apollo Dress      9300     Panacea Plus      2000
-Charm              350     Poison Wing        350
-Horn Charm        1000     Sleep Wing         500
-Thauma Charm      5000     Power Down         500
-Pawn Stud          750     Guard Down         500
-Knight Stud       1500     Might Herb         500
-Breeze Armlet     1500     Shield Herb        500
-                           Divine Water      1500</pre></div>
-
-<Callout type="node" title="Historia Milestone: In Pursuit">
-<p>Before heading to the Underground Lab, talk to the receptionist at the castle to complete the [Swordsman Recruit] and [Mercenary Recruit] sidequests, receiving 8000 G and 15000 G for doing so.  Go through the door on the right and talk to the old man in the hall to receive the [Thaumatech&#x27;s End] sidequest from him.  When you&#x27;re ready, enter the left doorway and take the teleporter down to the Underground Lab.</p>
-</Callout>
-
-<p>=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=</p>
+      <ShopMatrix title="Alistel (Alternate Chapter 6) Merchant" items={[{"name": "Soothing Balm", "price": 100}, {"name": "First Aid Kit", "price": 400}, {"name": "Tourniquet", "price": 1000}, {"name": "Herbal Tea", "price": 350}, {"name": "Special Tea", "price": 1200}, {"name": "Superior Tea", "price": 2500}, {"name": "Healing Herb", "price": 500}, {"name": "Holy Water", "price": 500}, {"name": "Anti-Poison", "price": 50}, {"name": "Anti-Fear", "price": 50}, {"name": "Anti-Paralytic", "price": 50}, {"name": "Anti-Curse", "price": 50}, {"name": "Anti-Sleep", "price": 50}, {"name": "Anti-Stone", "price": 50}, {"name": "Panacea", "price": 800}, {"name": "Panacea Plus", "price": 2000}, {"name": "Poison Wing", "price": 350}, {"name": "Sleep Wing", "price": 500}, {"name": "Power Down", "price": 500}, {"name": "Guard Down", "price": 500}, {"name": "Might Herb", "price": 500}, {"name": "Shield Herb", "price": 500}, {"name": "Divine Water", "price": 1500}]} equipment={[{"name": "Silver Edge", "price": 3000}, {"name": "Iron Sword", "price": 2400}, {"name": "Sorcery Epee", "price": 4600}, {"name": "Silver Spear", "price": 2000}, {"name": "Iron Lance", "price": 2100}, {"name": "Magic Spear", "price": 3200}, {"name": "Knife", "price": 1800}, {"name": "Death Shell", "price": 9500}, {"name": "Heavy Mail", "price": 1500}, {"name": "Silver Mail", "price": 1100}, {"name": "Silver Cape", "price": 2800}, {"name": "Reinforced Cape", "price": 1200}, {"name": "Gold Clothes", "price": 3200}, {"name": "Sunrise Cape", "price": 4800}, {"name": "Elemental Plate", "price": 8100}, {"name": "Apollo Dress", "price": 9300}, {"name": "Charm", "price": 350}, {"name": "Horn Charm", "price": 1000}, {"name": "Thauma Charm", "price": 5000}, {"name": "Pawn Stud", "price": 750}, {"name": "Knight Stud", "price": 1500}, {"name": "Breeze Armlet", "price": 1500}]} itemTitle="Item Shop" equipmentTitle="Equipment Shop" />
+      <Callout type="node" title="Historia Milestone: In Pursuit">
+        <p>Before heading to the Underground Lab, talk to the receptionist at the castle to complete the [Swordsman Recruit] and [Mercenary Recruit] sidequests, receiving 8000 G and 15000 G for doing so. Go through the door on the right and talk to the old man in the hall to receive the [Thaumatech's End] sidequest from him. When you're ready, enter the left doorway and take the teleporter down to the Underground Lab.</p>
+      </Callout>
     </div>
   </ChapterCard>
 
@@ -181,19 +161,16 @@ Breeze Armlet     1500     Shield Herb        500
     timeline="Alternate"
   >
     <TacticalBriefing
-      level="63"
-      party="Stocke, Aht, Rosch"
-      
-      enemies={[{"name": "Alistel Officer", "weakness": "spear, Sleep"}, {"name": "Alistel Officer", "weakness": "sword, None"}]}
+      level="63" party="Stocke, Aht, Rosch" enemies={[{"name": "Alistel Officer", "weakness": "spear, Sleep"}, {"name": "Alistel Officer", "weakness": "sword, None"}, {"name": "Heavy Thaumachine", "weakness": "Lightning"}, {"name": "Prod. Thautomaton", "weakness": "Lightning"}]}
     />
 
     <div class="chapter-walkthrough-prose">
-<AsciiMap>
+      <AsciiMap>
 <pre>B1          B2            B3          B4
    _               _         _               _
  _|A|      _______| |_     _|B|      _______|4|_      S - Save Point
 |_  |     |A____ ____B|   |_  |     |D____ ____C|     X - Roadblock
- _| |_      |______2|      _| |_      |5X_____|       T - Thaumatech&#x27;s End
+ _| |_      |______2|      _| |_      |5X_____|       T - Thaumatech's End
 |_    |                   |_    |                     * - Floor panel
   | |1|                     | |3|                     1 - Superior Tea x2
   |_|                       |C|                       2 - Divine Water
@@ -206,53 +183,45 @@ Breeze Armlet     1500     Shield Herb        500
 |_    |   |E____ _XX_F|   |_    |   |_____ ____G|
   | |*|     |__   __|       | |_|     |7_   _*|
   |D|          |_|          |G|          |6|</pre>
-</AsciiMap>
-
-<p>B9             B10       _          _         _      |I|        | |   _   | |      | | _      |  \_| |_/  |  ____| || |_     \___   ___/ |*_XX_ _XX_8|        | |   |__   __|          | |          Each letter (A-I) on the map teleports to its      |H|             |I|          corresponding letter in the lab.</p>
-
-<p>The path through this area is very straight-forward.  Head up to an intersection and right to a chest which contains 2 SUPERIOR TEAS.  Then, walk up to the teleporter to the next floor.</p>
-
-<p>Head right to an intersection and take the lower right path to a chest which contains a DIVINE WATER.  Return to the intersection and follow the upper right path to the teleporter to the next floor.</p>
-
-<p>Go down to an intersection and search the area to the right for a hidden chest which contains the MANA CAPE (DEF+21/MDF+68/SPD-3, sell).  From the intersection, proceed down to the teleporter to the next floor.</p>
-
-<p>Walk left to a fork and search the upper area for a hidden chest which contains the WIND GOD BOOK for Gafka.  From the fork, head left to an intersection and take the lower left path.  Pull the barricade out of the way to access a chest which contains a MYTHRIL MAIL (DEF+38/MDF+64/SPD-2, sell).  Return to the intersection and continue left to the teleporter to the next floor.</p>
-
-<p>Proceed up to an intersection and search the right area for a hidden floor panel.  Step on the switch to activate the next teleporter.  From the intersection, head up, but hug the left wall until you can go through a path that is rather hard to see.  Equip Aht with Thauma Charms and examine the thaumachine there.</p>
-
-<p>******************************************************************************* BOSS TIME: Special Thaumachine WEAKNESS: Lightning STRATEGY: Lay a Volt Star Trap behind him and Push Assault him onto it. *******************************************************************************</p>
-
-<p>For defeating it, you will receive the BLAST CORE for Rosch and advance the [Thaumatech&#x27;s End] sidequest.  Sadly, there is never a better time to turn in the quest than now, so I&#x27;d just recommend getting it out of the way.  Walk all the way out of the lab and talk to the old man by the entrance to complete the [Thaumatech&#x27;s End] sidequest and receive a MEDIBRANCH.  It wouldn&#x27;t hurt to rest up at the inn, as long as you&#x27;re here.  When you&#x27;re ready, return to the Underground Lab B5 and take the upper teleporter to the next floor.</p>
-
-<p>Head right to an intersection.  Above and below you are two barrels that you will need to pull to blow away the blockade to the right.  Once you&#x27;ve gotten past them, continue right to the teleporter to the next floor.</p>
-
-<p>Hug the left wall until you can go through another hard to see path.  Talk to the engineer to receive the [A Scholar&#x27;s Creed] sidequest.  From the fork, go down and search the right path for a hidden barrel.  Pull it around to the main path to blow away the machine blocking the teleporter to the next floor.</p>
-
-<p>Go left to the intersection and down to a hidden chest which contains a CELESTIAL DEW.  Take the lower left path to find a chest which contains 2 TOURNIQUETS.  Finally, head down the lower right path to find a hidden floor panel.  Push the switch to activate the teleporter to the next floor up the center path.</p>
-
-<p>Along the lower left and lower right paths are two hidden barrels.  However, there are four barricades to use them on.  First, use them to blow up the right barricades to gain access to a chest which contains a MEDIBRANCH.  Teleport to the previous floor and back to make the barrels respawn.  This time, use them to blow away the left barricades.  Search the area beyond to find a hidden floor panel.  Push the switch to activate the teleporter to the next floor up the center path.</p>
-
-<p>Walk up and talk to Hugo to be prompted for a decision.  Choosing to &quot;Take the power&quot; will unlock the [Hugo the Omnipotent] ending.</p>
-
-<Callout type="node" title="Historia Milestone: Demigod">
-<p>Return to this node, and instead choose to &quot;Draw your sword.&quot;  You&#x27;ll fight Hugo, but it will be pitifully easy.  Use whatever you want.</p>
-</Callout>
-
-<Callout type="node" title="Historia Milestone: Wielder of Infinity">
-<p>Talk to Fennel and pick up the OLD MAGIC BLADE above the save point.  Before restoring the Historica, return to &quot;The Beginning&quot; node.  Talk to Fennel in the lab next door to complete the [A Scholar&#x27;s Creed] sidequest and receive the HASTE CORE for Rosch.</p>
-</Callout>
-
-<p>Return to the &quot;Celestian War&quot; node.  Talk to Sonja to install those new Core into Rosch&#x27;s Gauntlet and learn those new abilities.  Then, talk to Elm to restore the power of HISTORICA (ATK+58/MAG+28/SPD+2) and unlock the [Blade&#x27;s Resurrection] node].  I prefer having a better magic stat for Stocke, but hold onto the sword for later. You can also return to &quot;Gafka &amp; the Scrolls&quot; to have Bergas teach that new scroll to Gafka too.</p>
-
-<p>Return to the &quot;Demigod&quot; node.  I would bring in Aht and Gafka for this round. Talk to Hugo for a slightly more challenging battle.</p>
-
-<p>******************************************************************************* BOSS TIME: Hugo WEAKNESS: None STRATEGY: Hugo can summon two Alistel Officers, but they&#x27;re nothing to worry about.  Have Aht lay any Star Trap behind Hugo, then use Push Assault and Right Assault on him.  He&#x27;ll probably summon those officers now.  Lay any Star Trap at the center of grid.  Then, use your new Wind God Strike to drag everyone onto the trap and a Right Assault to finish off Hugo.  You could steal a Venus Ring (HP+70/MP+50) from him and repeat the fight to get an unlimited supply, but I don&#x27;t like HP/MP boosting rings. *******************************************************************************</p>
-
-<Callout type="node" title="Historia Milestone: An End to Madness">
-<p>After defeating Hugo, it appears that we have finally brought peace to Alistel. OR DID WE?!</p>
-</Callout>
-
-<p>=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=</p>
+      </AsciiMap>
+      <AsciiMap>
+<pre>B9             B10
+      _          _         _
+     |I|        | |   _   | |
+     | | _      |  \_| |_/  |
+ ____| || |_     \___   ___/
+|*_XX_ _XX_8|        | |
+  |__   __|          | |          Each letter (A-I) on the map teleports to its
+     |H|             |I|          corresponding letter in the lab.</pre>
+      </AsciiMap>
+      <p>The path through this area is very straight-forward.  Head up to an intersection and right to a chest which contains 2 SUPERIOR TEAS.  Then, walk up to the teleporter to the next floor.</p>
+      <p>Head right to an intersection and take the lower right path to a chest which contains a DIVINE WATER.  Return to the intersection and follow the upper right path to the teleporter to the next floor.</p>
+      <p>Go down to an intersection and search the area to the right for a hidden chest which contains the MANA CAPE (DEF+21/MDF+68/SPD-3, sell).  From the intersection, proceed down to the teleporter to the next floor.</p>
+      <p>Walk left to a fork and search the upper area for a hidden chest which contains the WIND GOD BOOK for Gafka.  From the fork, head left to an intersection and take the lower left path.  Pull the barricade out of the way to access a chest which contains a MYTHRIL MAIL (DEF+38/MDF+64/SPD-2, sell).  Return to the intersection and continue left to the teleporter to the next floor.</p>
+      <p>Proceed up to an intersection and search the right area for a hidden floor panel.  Step on the switch to activate the next teleporter.  From the intersection, head up, but hug the left wall until you can go through a path that is rather hard to see.  Equip Aht with Thauma Charms and examine the thaumachine there.</p>
+      <BossCard name="Special Thaumachine" weakness="Lightning">
+        <p><strong>Strategy:</strong> Lay a Volt Star Trap behind him and Push Assault him onto it.</p>
+      </BossCard>
+      <p>For defeating it, you will receive the BLAST CORE for Rosch and advance the [Thaumatech's End] sidequest.  Sadly, there is never a better time to turn in the quest than now, so I'd just recommend getting it out of the way.  Walk all the way out of the lab and talk to the old man by the entrance to complete the [Thaumatech's End] sidequest and receive a MEDIBRANCH.  It wouldn't hurt to rest up at the inn, as long as you're here.  When you're ready, return to the Underground Lab B5 and take the upper teleporter to the next floor.</p>
+      <p>Head right to an intersection.  Above and below you are two barrels that you will need to pull to blow away the blockade to the right.  Once you've gotten past them, continue right to the teleporter to the next floor.</p>
+      <p>Hug the left wall until you can go through another hard to see path.  Talk to the engineer to receive the [A Scholar's Creed] sidequest.  From the fork, go down and search the right path for a hidden barrel.  Pull it around to the main path to blow away the machine blocking the teleporter to the next floor.</p>
+      <p>Go left to the intersection and down to a hidden chest which contains a CELESTIAL DEW.  Take the lower left path to find a chest which contains 2 TOURNIQUETS.  Finally, head down the lower right path to find a hidden floor panel.  Push the switch to activate the teleporter to the next floor up the center path.</p>
+      <p>Along the lower left and lower right paths are two hidden barrels.  However, there are four barricades to use them on.  First, use them to blow up the right barricades to gain access to a chest which contains a MEDIBRANCH.  Teleport to the previous floor and back to make the barrels respawn.  This time, use them to blow away the left barricades.  Search the area beyond to find a hidden floor panel.  Push the switch to activate the teleporter to the next floor up the center path.</p>
+      <p>Walk up and talk to Hugo to be prompted for a decision.  Choosing to "Take the power" will unlock the [Hugo the Omnipotent] ending.</p>
+      <Callout type="node" title="Historia Milestone: Demigod">
+        <p>Return to this node, and instead choose to "Draw your sword." You'll fight Hugo, but it will be pitifully easy. Use whatever you want.</p>
+      </Callout>
+      <Callout type="node" title="Historia Milestone: Wielder of Infinity">
+        <p>Talk to Fennel and pick up the OLD MAGIC BLADE above the save point. Before restoring the Historica, return to "The Beginning" node. Talk to Fennel in the lab next door to complete the [A Scholar's Creed] sidequest and receive the HASTE CORE for Rosch.</p>
+      </Callout>
+      <p>Return to the "Celestian War" node.  Talk to Sonja to install those new Core into Rosch's Gauntlet and learn those new abilities.  Then, talk to Elm to restore the power of HISTORICA (ATK+58/MAG+28/SPD+2) and unlock the [Blade's Resurrection] node].  I prefer having a better magic stat for Stocke, but hold onto the sword for later. You can also return to "Gafka &amp; the Scrolls" to have Bergas teach that new scroll to Gafka too.</p>
+      <p>Return to the "Demigod" node.  I would bring in Aht and Gafka for this round. Talk to Hugo for a slightly more challenging battle.</p>
+      <BossCard name="Hugo" weakness="None">
+        <p><strong>Strategy:</strong> Hugo can summon two Alistel Officers, but they're nothing to worry about.  Have Aht lay any Star Trap behind Hugo, then use Push Assault and Right Assault on him.  He'll probably summon those officers now.  Lay any Star Trap at the center of grid.  Then, use your new Wind God Strike to drag everyone onto the trap and a Right Assault to finish off Hugo.  You could steal a Venus Ring (HP+70/MP+50) from him and repeat the fight to get an unlimited supply, but I don't like HP/MP boosting rings.</p>
+      </BossCard>
+      <Callout type="node" title="Historia Milestone: An End to Madness">
+        <p>After defeating Hugo, it appears that we have finally brought peace to Alistel. OR DID WE?!</p>
+      </Callout>
     </div>
   </ChapterCard>
 
@@ -261,33 +230,30 @@ Breeze Armlet     1500     Shield Herb        500
     id="ch64"
     number={64}
     title="Granorg (Alternate Final Chapter)"
-    timeline="Final"
+    timeline="Alternate"
   >
     <TacticalBriefing
-      level="65"
-      party="Stocke, Aht, Rosch"
-      
-      
+      level="65" party="Stocke, Aht, Rosch"
     />
 
     <div class="chapter-walkthrough-prose">
-<Callout type="node" title="Historia Milestone: The Shadow Crown">
-<p>While the shops don&#x27;t sell anything new, head east to the weapon shop.  Talk to the nearby man in green to receive the [A Timely Warning] sidequest.  Return to the &quot;Flux War&quot; node and advance the plot until you reach Granorg again.  Talk to him again to advance the [A Timely Warning] sidequest.  Return to &quot;The Shadow Crown&quot; node, talk to him again to complete the [A Timely Warning] sidequest, and receive the OMNIPEDIA BOOK for Gafka.  You can return to the &quot;Gafka &amp; the Scrolls&quot; node to teach that to him.  When you are ready, return to &quot;The Shadow Crown&quot; node, walk up to Granorg Palace, and talk to Eruca.</p>
-</Callout>
-
-<Callout type="node" title="Historia Milestone: Heiss&#x27; Scheme">
-<p>You will need to head to the Imperial Ruins via Judgement Cliff.  Along the way, make a pit stop at the South Fortress South, where the merchant has some new wares, including a Mythril Edge for Stocke.</p>
-</Callout>
-
-<p>Traveling Merchant ****************** Soothing Balm      100     Mythril Edge       12400 (buy for Stocke) First Aid Kit      400     Mythril Spear       8600 Tourniquet        1000     Prayer Claw         7600 Herbal Tea         350     Mythril Dagger     14500 Special Tea       1200     Freikugel Mistel   12000 Superior Tea      2500     Grace Mail          3100 Healing Herb       500     Moonlight Cape      4200 Holy Water         500     Diana Dress         7300 Anti-Poison         50     Beast Charm         5000 Anti-Fear           50     Thauma Charm        5000 Anti-Paralytic      50     Rook Stud           6000 Anti-Curse          50     Arbor Ring         25000 Anti-Sleep          50 Anti-Stone          50 Panacea            800 Panacea Plus      2000 Poison Wing        350 Sleep Wing         500 Power Down         500 Guard Down         500 Might Herb         500 Shield Herb        500 Divine Water      1500</p>
-
-<p>Continue on to Judgement Cliff.  Go south and west one screen.  Use the barrel to blow away the rocks above to the exit to the Imperial Ruins.</p>
-
-<Callout type="note" title="Recommended Equipment">
-<p>Recommended Equipment at this point in the game<br/>Stocke: Mythril Edge, Moirae Manteau, Thauma Charm x3<br/>Raynie: La Tormenta, Diamond Mail, Thauma Charm x3<br/>Marco: Gaia Blade, Diamond Mail, Queen Stud x3<br/>Rosch: Death Pike, Diamond Mail, Beast Charm x3<br/>Aht: Glaux Dagger, Giant Cape, Queen Stud x3<br/>Gafka: Beast Claw, Mighty Protector, Beast Charm x3</p>
-</Callout>
-
-<p>=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=</p>
+      <Callout type="node" title="Historia Milestone: The Shadow Crown">
+        <p>While the shops don't sell anything new, head east to the weapon shop. Talk to the nearby man in green to receive the [A Timely Warning] sidequest. Return to the "Flux War" node and advance the plot until you reach Granorg again. Talk to him again to advance the [A Timely Warning] sidequest. Return to "The Shadow Crown" node, talk to him again to complete the [A Timely Warning] sidequest, and receive the OMNIPEDIA BOOK for Gafka. You can return to the "Gafka &amp; the Scrolls" node to teach that to him. When you are ready, return to "The Shadow Crown" node, walk up to Granorg Palace, and talk to Eruca.</p>
+      </Callout>
+      <Callout type="node" title="Historia Milestone: Heiss' Scheme">
+        <p>You will need to head to the Imperial Ruins via Judgement Cliff. Along the way, make a pit stop at the South Fortress South, where the merchant has some new wares, including a Mythril Edge for Stocke.</p>
+      </Callout>
+      <ShopMatrix title="Traveling Merchant" items={[{"name": "Soothing Balm      100     Mythril Edge", "price": 12400, "note": "buy for Stocke"}, {"name": "First Aid Kit      400     Mythril Spear", "price": 8600}, {"name": "Tourniquet        1000     Prayer Claw", "price": 7600}, {"name": "Herbal Tea         350     Mythril Dagger", "price": 14500}, {"name": "Special Tea       1200     Freikugel Mistel", "price": 12000}, {"name": "Superior Tea      2500     Grace Mail", "price": 3100}, {"name": "Healing Herb       500     Moonlight Cape", "price": 4200}, {"name": "Holy Water         500     Diana Dress", "price": 7300}, {"name": "Anti-Poison         50     Beast Charm", "price": 5000}, {"name": "Anti-Fear           50     Thauma Charm", "price": 5000}, {"name": "Anti-Paralytic      50     Rook Stud", "price": 6000}, {"name": "Anti-Curse          50     Arbor Ring", "price": 25000}, {"name": "Anti-Sleep", "price": 50}, {"name": "Anti-Stone", "price": 50}, {"name": "Panacea", "price": 800}, {"name": "Panacea Plus", "price": 2000}, {"name": "Poison Wing", "price": 350}, {"name": "Sleep Wing", "price": 500}, {"name": "Power Down", "price": 500}, {"name": "Guard Down", "price": 500}, {"name": "Might Herb", "price": 500}, {"name": "Shield Herb", "price": 500}, {"name": "Divine Water", "price": 1500}]} itemTitle="Inventory" />
+      <p>Continue on to Judgement Cliff.  Go south and west one screen.  Use the barrel to blow away the rocks above to the exit to the Imperial Ruins.</p>
+      <Callout type="note" title="Recommended Equipment">
+        <p>Recommended Equipment at this point in the game<br/>
+        <strong>Stocke:</strong> Mythril Edge, Moirae Manteau, Thauma Charm x3<br/>
+        <strong>Raynie:</strong> La Tormenta, Diamond Mail, Thauma Charm x3<br/>
+        <strong>Marco:</strong> Gaia Blade, Diamond Mail, Queen Stud x3<br/>
+        <strong>Rosch:</strong> Death Pike, Diamond Mail, Beast Charm x3<br/>
+        <strong>Aht:</strong> Glaux Dagger, Giant Cape, Queen Stud x3<br/>
+        <strong>Gafka:</strong> Beast Claw, Mighty Protector, Beast Charm x3</p>
+      </Callout>
     </div>
   </ChapterCard>
 
@@ -296,17 +262,14 @@ Breeze Armlet     1500     Shield Herb        500
     id="ch65"
     number={65}
     title="Imperial Ruins (Alternate Final Chapter)"
-    timeline="Final"
+    timeline="Alternate"
   >
     <TacticalBriefing
-      level="65"
-      party="Stocke, Aht, Rosch"
-      
-      enemies={[{"name": "Assassin"}, {"name": "Butcher", "weakness": "Sleep"}, {"name": "Dark Jaguar"}, {"name": "Gigas", "weakness": "Lightning"}, {"name": "Hell Bird"}]}
+      level="65" party="Stocke, Aht, Rosch" enemies={[{"name": "Assassin"}, {"name": "Butcher", "weakness": "Sleep"}, {"name": "Dark Jaguar"}, {"name": "Gigas", "weakness": "Lightning"}, {"name": "Hell Bird"}, {"name": "Mana Storm"}, {"name": "Menas", "weakness": "Lightning"}, {"name": "Platinum Bear"}]}
     />
 
     <div class="chapter-walkthrough-prose">
-<AsciiMap>
+      <AsciiMap>
 <pre>_
                                    |H|      _    __    S - Save Point
  _  _____  ___    __      _   ___  | |_   _|I|  |KJ|   1 - Freikugel Mercy
@@ -326,41 +289,32 @@ Breeze Armlet     1500     Shield Herb        500
       | |         _      | |_| C S|_        _    __     /S   __   __9_|
       | |        |G|_   _|  ______  |__   _|B|  |MN|   |  N |
       | |        |6__   ___|      |____   ___|  |__|    \__/</pre>
-</AsciiMap>
-
-<p>Each letter (A-N) leads to its corresponding letter on the map.  At first, just head straight up to find the Black Chronicle.</p>
-
-<p>******************************************************************************* BOSS TIME: Shadow (panther), Shadow x2 (cube) WEAKNESS: None STRATEGY: Lead off with Cross Star and Will o&#x27; Wisp to quickly defeat the cubes.  However, the panther will take a few Star Traps and Assaults to defeat. *******************************************************************************</p>
-
-<p>From the intersection where you start, follow the left path to the end to find a hidden chest which contains the FREIKUGEL MERCY (ATK+25/MAG+90/DEF-15) for Eruca.  Return to the intersection and head up to a chest which contains a PANACEA PLUS.  Finally, go down the right path and climb down the vine to the next floor.</p>
-
-<p>Proceed north of the fork to a chest which contains the NIRVANA PLATE (DEF+22/MDF+45/SPD-4).  Head right from the fork and climb the vine down to the next floor.</p>
-
-<p>Walk left to the save point.  Climb two vines to an isolated platform.  Search above for a hidden chest which contains the DER LOWE (ATK+65/HP+100, equip on Rosch).  Return to the save point and continue left to a fork.</p>
-
-<Callout type="node" title="Historia Milestone: Call for Destruction">
-<p>Head up to a room with a vine to climb down to find a chest which contains 2 SHIELD SEED PLUS.  From the fork, head down to a room with a chest which contains a DIVINE WATER and climb the vine to the next floor.</p>
-</Callout>
-
-<p>Leave the room to the right, and head up to the end of the path.  Search for a hidden chest which contains the WING ARMLET (SPD+8).  Then, walk to the right.</p>
-
-<Callout type="node" title="Historia Milestone: The Sacrifice">
-<p>Continue right and climb the vine to a chest which contains a SUPERIOR TEA. Climb back down and head right to a vine to climb down.  Go left to a series of vines to climb down to a room with a save point.  In the upper right corner is a secret passage you can walk through to a hidden room.  Search for a hidden chest in addition to the visible one which contain a TOURNIQUET and the ICESTAR PACT for Aht.</p>
-</Callout>
-
-<p>Return to the save point and bring in Gafka to replace Rosch.  Then, head up to corner your adversary.</p>
-
-<p>******************************************************************************* BOSS TIME: Heiss, Shadow x2 WEAKNESS: None STRATEGY: Use Push Assault on Heiss and a Magic Herb on Aht.  Then, lay any Star Trap in the lower middle of the grid.  Have Gafka use Wind God Strike, followed by a Left Assault to take out the two Shadow cubes.  Another Star Trap and two Assaults will finish off Heiss.  You could steal a King Stud (DEF+20/MDF+20) from him and repeat the boss fight over and over again to get an unlimited supply of them, but I don&#x27;t think it&#x27;s worth the time. *******************************************************************************</p>
-
-<Callout type="node" title="Historia Milestone: The Madness of Heiss">
-<p>Return to the &quot;Aht&#x27;s Prayer&quot; node.  Bring in Aht to replace Raynie and head southeast to find Heiss again.</p>
-</Callout>
-
-<p>******************************************************************************* BOSS TIME: Heiss, Shadow WEAKNESS: None, Lightning STRATEGY: Use the Change command to string together three turns, if necessary. Push Assault the Shadow, lay a Volt Star Trap, and Grapple them on them to kill the Shadow.  Then, have Marco cast Magic Rise.  Four more of any Star Trap should finish off Heiss. *******************************************************************************</p>
-
-<p>For defeating Heiss, you will unlock [The Sister] node.</p>
-
-<p>=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=</p>
+      </AsciiMap>
+      <p>Each letter (A-N) leads to its corresponding letter on the map.  At first, just head straight up to find the Black Chronicle.</p>
+      <BossCard name="Shadow (panther), Shadow x2 (cube)" weakness="None">
+        <p><strong>Strategy:</strong> Lead off with Cross Star and Will o' Wisp to quickly defeat the cubes.  However, the panther will take a few Star Traps and Assaults to defeat.</p>
+      </BossCard>
+      <p>From the intersection where you start, follow the left path to the end to find a hidden chest which contains the FREIKUGEL MERCY (ATK+25/MAG+90/DEF-15) for Eruca.  Return to the intersection and head up to a chest which contains a PANACEA PLUS.  Finally, go down the right path and climb down the vine to the next floor.</p>
+      <p>Proceed north of the fork to a chest which contains the NIRVANA PLATE (DEF+22/MDF+45/SPD-4).  Head right from the fork and climb the vine down to the next floor.</p>
+      <p>Walk left to the save point.  Climb two vines to an isolated platform.  Search above for a hidden chest which contains the DER LOWE (ATK+65/HP+100, equip on Rosch).  Return to the save point and continue left to a fork.</p>
+      <Callout type="node" title="Historia Milestone: Call for Destruction">
+        <p>Head up to a room with a vine to climb down to find a chest which contains 2 SHIELD SEED PLUS. From the fork, head down to a room with a chest which contains a DIVINE WATER and climb the vine to the next floor.</p>
+      </Callout>
+      <p>Leave the room to the right, and head up to the end of the path.  Search for a hidden chest which contains the WING ARMLET (SPD+8).  Then, walk to the right.</p>
+      <Callout type="node" title="Historia Milestone: The Sacrifice">
+        <p>Continue right and climb the vine to a chest which contains a SUPERIOR TEA. Climb back down and head right to a vine to climb down. Go left to a series of vines to climb down to a room with a save point. In the upper right corner is a secret passage you can walk through to a hidden room. Search for a hidden chest in addition to the visible one which contain a TOURNIQUET and the ICESTAR PACT for Aht.</p>
+      </Callout>
+      <p>Return to the save point and bring in Gafka to replace Rosch.  Then, head up to corner your adversary.</p>
+      <BossCard name="Heiss, Shadow x2" weakness="None">
+        <p><strong>Strategy:</strong> Use Push Assault on Heiss and a Magic Herb on Aht.  Then, lay any Star Trap in the lower middle of the grid.  Have Gafka use Wind God Strike, followed by a Left Assault to take out the two Shadow cubes.  Another Star Trap and two Assaults will finish off Heiss.  You could steal a King Stud (DEF+20/MDF+20) from him and repeat the boss fight over and over again to get an unlimited supply of them, but I don't think it's worth the time.</p>
+      </BossCard>
+      <Callout type="node" title="Historia Milestone: The Madness of Heiss">
+        <p>Return to the "Aht's Prayer" node. Bring in Aht to replace Raynie and head southeast to find Heiss again.</p>
+      </Callout>
+      <BossCard name="Heiss, Shadow" weakness="None, Lightning">
+        <p><strong>Strategy:</strong> Use the Change command to string together three turns, if necessary. Push Assault the Shadow, lay a Volt Star Trap, and Grapple them on them to kill the Shadow.  Then, have Marco cast Magic Rise.  Four more of any Star Trap should finish off Heiss.</p>
+      </BossCard>
+      <p>For defeating Heiss, you will unlock [The Sister] node.</p>
     </div>
   </ChapterCard>
 
@@ -369,24 +323,21 @@ Breeze Armlet     1500     Shield Herb        500
     id="ch66"
     number={66}
     title="Royal Hall (Standard Final Chapter)"
-    timeline="Final"
+    timeline="Standard"
   >
     <TacticalBriefing
-      level="68"
-      party="Stocke, Aht, Rosch"
-      
-      enemies={[{"name": "Dark Jaguar"}, {"name": "Floating Stone"}, {"name": "Gigas", "weakness": "Lightning"}, {"name": "Hell Bird"}]}
+      level="68" party="Stocke, Aht, Rosch" enemies={[{"name": "Dark Jaguar"}, {"name": "Floating Stone"}, {"name": "Gigas", "weakness": "Lightning"}, {"name": "Hell Bird"}, {"name": "Heavy Thaumachine", "weakness": "Lightning"}, {"name": "Mana Storm"}, {"name": "Menas", "weakness": "Lightning"}, {"name": "Noble Flame", "weakness": "Ice"}, {"name": "Prod. Thautomaton", "weakness": "Lightning"}, {"name": "Pure Ice", "weakness": "Fire"}, {"name": "Rage Thunder", "weakness": "Fire"}, {"name": "Silent Soul"}]}
     />
 
     <div class="chapter-walkthrough-prose">
-<AsciiMap>
+      <AsciiMap>
 <pre>___| |___    S - Save Point       F - Floating Stone      H - Hole/Gap
  |7X_   _  |   X - Rocks            1 - Luminous Dress      2 - Celestial Oil
  |X|     | |   3 - Superior Tea     4 - Panacea Plus x2     5 - Sky Armlet
  |X|  S  | |   6 - Soul Pact        7 - Tourniquet x2       8 - Superior Tea x2
  | |_   _|X|
  |___   XX8|       [After Heiss node]
-     | |           [Warlord&#x27;s Sword node]
+     | |           [Warlord's Sword node]
                    After a lengthy scene, you will be back in Standard History
  _  _| |  ___      and find yourself in the Royal Hall.  You can leave to rest
 |4||F| |_|   |     up at the Granorg inn, if you so choose.  If Rosch is at
@@ -406,7 +357,7 @@ Breeze Armlet     1500     Shield Herb        500
    | F     XX|     gaps or hole in the floor to complete bridges.  Use any Star
    |___   _X5|     Trap and two Assault to disable them.  Then, just drag them
        | |         over to the nearest hole.  To the right of where you start
-                   are a ton of rocks that you&#x27;ll need some barrels to access.
+                   are a ton of rocks that you'll need some barrels to access.
        | |
        | |         Grab the stone to the left and drag it up to fill in the
   _____|X|___      hole.  Then, grab the upper stone and drag it to the right
@@ -419,777 +370,437 @@ Breeze Armlet     1500     Shield Herb        500
        | |         on the nearby gap.  Finally, in the upper left corner is the
        | |         last stone that you can use to the left to gain access to a
                    chest which contains 2 PANACEA PLUS.</pre>
-</AsciiMap>
-
-<p>In the upper right corner of the area are two barrels.  If you want to get the last of the treasure, you will have to drag both of them all the way to the beginning of the area.  I would use them on the rocks in the upper right corner first, to access a hidden chest which contains the SOUL PACT for Stocke.  There is another chest in the lower right corner which contains a SKY ARMLET (SPD+10) though you would have to leave and come back to make the barrels respawn.  When you are ready, head to the next area via the upper exit.</p>
-
-<Callout type="node" title="Historia Milestone: The Black Guardians">
-<p>Before taking on the boss gauntlet, there are two hidden barrels in the lower left corner.  Dragging them either directly up or right to blow away the rocks would prevent you from getting all the treasure in one go.  Instead drag one up the middle and left to blow away the rocks blocking a chest which contains 2 TOURNIQUETS.  Drag the other barrel up the middle and around to the right to blow away those rocks to gain access to a chest which contains 2 SUPERIOR TEAS.</p>
-</Callout>
-
-<p>Since unlocking a travel node, I would recommend finishing the last sidequest now.  Return to the &quot;Gafka &amp; the Scrolls&quot; node to purchase 9 Sky Drops (All resistances +2) and equip them on Stocke, Eruca, and Marco.  Rest up at an inn and return to &quot;The Three Contracts&quot; node.  Teach the last of the Pacts to Stocke and Aht.  Talk to Vainqueur again to receive [The Final Trial] sidequest.  For these next battles, I would recommend using Stocke, Eruca, and Marco.  Talk to Vainqueur to begin the battle.</p>
-
-<p>******************************************************************************* BOSS TIME: Master&#x27;s House WEAKNESS: None STRATEGY: This first test is very easy.  Use the Change command to string together 6 consecutive turns.  Then cast Magic Rise, Spin Strike, G-Fire, G-Fire, G-Frost, and G-Frost to defeat it. ******************************************************************************* BOSS TIME: Master x4 WEAKNESS: This is the hardest boss fight in the game.  They can inflict Sleep on your party members, Power Down, and deal massive damage with their spells. Having 9 Sky Drops is a must to resist sleep.  You pretty much need Eruca for Divine Light, in order to survive.  Always play on the defensive.  Your first priority should be to establish Divine Light on everyone, using Marco&#x27;s Trans-turn to help out.  Make sure to keep track of how many hits each characters&#x27; shield has left on it.  If the guys have at least one hit left, they should be fine.  However, with her low HP, Eruca needs to have a full Divine Light shield at all times.  You could use Star Traps with Aht to take them out one at a time.  However, I think it&#x27;s faster to hit them all at once with either Will o&#x27; Wisp and/or Burst Light, boosted by Magic Rise, if you ever have a spare turn. *******************************************************************************</p>
-
-<p>For defeating Vainqueur, you will have completed [The Final Trial] sidequest and receive the TRUE HISTORICA (ATK+70/MAG+34/SPD+5).  I still prefer the Mythril Edge for its far greater magic boost.  If you&#x27;re trying to complete every node, you should have completed 217/236 nodes.  The rest are all automatic, assuming you&#x27;ve completed all the sidequests up to now.</p>
-
-<p>Rest up at an inn and return to &quot;The Black Guardians&quot; node.  Bring in Aht and Marco, equipping the accessories you had before.  Examine the black glow in the lower right corner for your first final boss.</p>
-
-<p>******************************************************************************* BOSS TIME: Palomides, Pure Ice x2 WEAKNESS: Lightning, Fire (duh) STRATEGY: Have Marco use Magic Rise, Aht lay a Volt Star Trap behind Palomides, and Stocke use Push Assault to quickly defeat him.  Then, use two Will o&#x27; Wisps to defeat the Pure Ices. *******************************************************************************</p>
-
-<p>For defeating them, you will unlock the [Death in Black] node.  Examine the upper right black glow for your next challenge.</p>
-
-<p>******************************************************************************* BOSS TIME: Garland, Silent Soul x2 WEAKNESS: None STRATEGY: Have Marco use Magic Rise, Aht lay any Star Trap in the very back row between the two Silent Soul, and Stocke use Push Assault on Garland.  Then, use Cross Star and two Heat Blades on Garland, which will take out the two Silent Souls.  Dancing Death and a G-Fire should finish off Garland. *******************************************************************************</p>
-
-<p>For defeating them, you will unlock the [Warlord in Black] node.  Bring in Raynie and Gafka.  Then, examine the lower left black glow for another boss.</p>
-
-<p>******************************************************************************* BOSS TIME: Guardian WEAKNESS: None STRATEGY: Stocke and Raynie should use Magic Herbs on themselves, while Gafka uses Change on the Guardian&#x27;s turn.  Do so again to string together seven consecutive turns.  Use 3 Musous, 2 G-Fires, and 2 G-Thunders for the win. *******************************************************************************</p>
-
-<p>For defeating it, you will unlock the [Monstrocity in Black] node.  Examine the final black glow in the upper left corner for your final challenge.</p>
-
-<p>******************************************************************************* BOSS TIME: Floating Stone x2, Noble Flame x2, Viola WEAKNESS: None, Ice, None STRATEGY: Use the Change command to string together three turns: one for Gafka and two for Stocke.  One Musous and two Will o&#x27; Wisps should defeat everyone except Viola.  Another Musou and some G-elemental spells will defeat her. *******************************************************************************</p>
-
-<p>For defeating them, you will unlock the [Valkyrie in Black] node, as well as the door above, where you should go next.</p>
-
-<Callout type="note" title="Recommended Equipment">
-<p>Recommended Equipment at this point in the game<br/>Stocke: Mythril Edge, Moirae Manteau, Sky Drops x3<br/>Raynie: La Tormenta, Diamond Mail, Sky Drops x3<br/>Marco: Gaia Blade, Diamond Mail, Sky Drops x3<br/>Rosch: Der Lowe, Diamond Mail, Sky Drops x3<br/>Aht: Glaux Dagger, Giant Cape, Sky Drops x3<br/>Gafka: Beast Claw, Mighty Protector, Sky Drops x3<br/>Eruca: Freikugel Mercy, Luminous Dress, Sky Drops x3</p>
-</Callout>
-
-<Callout type="node" title="Historia Milestone: Death Knell">
-<p>[Final Battleground node] As a reminder, you should have completed 223/236 nodes up to this point. It&#x27;s time for the final boss gauntlet.  I would recommend using Stocke, Eruca, and Gafka, preferably all with full Mana Burst gauges and at least Level 60. Recover with a Mana Crystal at the save point and head up to save the world!</p>
-</Callout>
-
-<p>******************************************************************************* BOSS TIME: Black Chronicle, Shadow WEAKNESS: None STRATEGY: The real target is the Black Chronicle.  However, you cannot damage it, unless a Shadow is on the same tile with it.  Use a Magic Herb on Eruca, Push Assault the Shadow onto the Chronicle, and G-Frost for some decent damage. It will then summon more Shadows.  Use the Change command to string together five consecutive turns: two for Gafka and three for Eruca.  Have Gafka use Wind God Strike, Musou, and Eruca cast three G-Frosts to defeat the Black Chronicle. ******************************************************************************* FINAL BOSS TIME: Apocrypha WEAKNESS: None STRATEGY: This boss has three forms with no rest in between. Use either Magic Herbs or Magic Boost on Stocke and Eruca.  Two Musous, a G-Fire, and G-Frost should defeat its first form.  Its second form is probably the most dangerous, due to its variety of statuses it can inflict, which is why I have the Sky Drops equipped.  Recover from any statuses first.  Then, use a Turn Break to string together at least 6 consecutive turns of at least two Musous and four G-elemental spells to defeat it.  Its final form can blow away your Mana Burst gauges and deal massive damage, so use your remaining two Turn Breaks the Change command to string together ten consecutive turns of Musous, followed by G-elemental spells for the final victory. *******************************************************************************</p>
-
-<p>For defeating Apocrypha, you will unlock the following nodes:</p>
-
-<Callout type="node" title="Historia Milestone: Apocrypha">
-<p>[Ritual of Flux node] [A Promise node]</p>
-</Callout>
-
-<p>If you completed all of the sidequests, you will get some extra cutscenes during the ending and unlock even more nodes.  I&#x27;ll go over them in more detail in the Node Completion List.</p>
-
-<Callout type="node" title="Historia Milestone: Iron-Armed General">
-<p>[Shaman node] [The Show Goes On node] [A Little Hero node] [Overseers of Time node] [Valkyrie in Repose node] [Beast God at Rest node] [A Warrior in Love node] [The Lives of Humans node] [Life of the Beastkind node]</p>
-</Callout>
-
-<p>Congratulation on beating this awesome game!  Sit back and enjoy the ending and well-deserved credits.</p>
-
-<p>=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= III. Node Completion List</p>
-
-<p>The following is a complete list of how to unlock all 236 nodes in the game. They are sorted by chapter to make it easier to figure out which one(s) you are missing.  This is probably best viewed when you are at the end of the game, as many of the node titles and their requirements contain extreme spoilers to the plot, and it would be difficult to sift through the entire main walkthrough for a handful of nodes.  Furthermore, while you may get some sidequests very early in the game, they may not be completable until much later in the game. Finally, I will assume roadblocks are automatically resolved during the plot, as in that case, it&#x27;s simply easier to look up that section in the walkthrough.</p>
-
-<p>=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=</p>
-
-<p>PROLOGUE</p>
-
-<p>=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=</p>
-
-<AsciiMap>
+      </AsciiMap>
+      <p>In the upper right corner of the area are two barrels.  If you want to get the last of the treasure, you will have to drag both of them all the way to the beginning of the area.  I would use them on the rocks in the upper right corner first, to access a hidden chest which contains the SOUL PACT for Stocke.  There is another chest in the lower right corner which contains a SKY ARMLET (SPD+10) though you would have to leave and come back to make the barrels respawn.  When you are ready, head to the next area via the upper exit.</p>
+      <Callout type="node" title="Historia Milestone: The Black Guardians">
+        <p>Before taking on the boss gauntlet, there are two hidden barrels in the lower left corner. Dragging them either directly up or right to blow away the rocks would prevent you from getting all the treasure in one go. Instead drag one up the middle and left to blow away the rocks blocking a chest which contains 2 TOURNIQUETS. Drag the other barrel up the middle and around to the right to blow away those rocks to gain access to a chest which contains 2 SUPERIOR TEAS.</p>
+      </Callout>
+      <p>Since unlocking a travel node, I would recommend finishing the last sidequest now.  Return to the "Gafka &amp; the Scrolls" node to purchase 9 Sky Drops (All resistances +2) and equip them on Stocke, Eruca, and Marco.  Rest up at an inn and return to "The Three Contracts" node.  Teach the last of the Pacts to Stocke and Aht.  Talk to Vainqueur again to receive [The Final Trial] sidequest.  For these next battles, I would recommend using Stocke, Eruca, and Marco.  Talk to Vainqueur to begin the battle.</p>
+      <BossCard name="Master's House" weakness="None">
+        <p><strong>Strategy:</strong> This first test is very easy.  Use the Change command to string together 6 consecutive turns.  Then cast Magic Rise, Spin Strike, G-Fire, G-Fire, G-Frost, and G-Frost to defeat it.</p>
+      </BossCard>
+      <p>For defeating Vainqueur, you will have completed [The Final Trial] sidequest and receive the TRUE HISTORICA (ATK+70/MAG+34/SPD+5).  I still prefer the Mythril Edge for its far greater magic boost.  If you're trying to complete every node, you should have completed 217/236 nodes.  The rest are all automatic, assuming you've completed all the sidequests up to now.</p>
+      <p>Rest up at an inn and return to "The Black Guardians" node.  Bring in Aht and Marco, equipping the accessories you had before.  Examine the black glow in the lower right corner for your first final boss.</p>
+      <BossCard name="Palomides, Pure Ice x2" weakness="Lightning, Fire (duh)">
+        <p><strong>Strategy:</strong> Have Marco use Magic Rise, Aht lay a Volt Star Trap behind Palomides, and Stocke use Push Assault to quickly defeat him.  Then, use two Will o' Wisps to defeat the Pure Ices.</p>
+      </BossCard>
+      <p>For defeating them, you will unlock the [Death in Black] node.  Examine the upper right black glow for your next challenge.</p>
+      <BossCard name="Garland, Silent Soul x2" weakness="None">
+        <p><strong>Strategy:</strong> Have Marco use Magic Rise, Aht lay any Star Trap in the very back row between the two Silent Soul, and Stocke use Push Assault on Garland.  Then, use Cross Star and two Heat Blades on Garland, which will take out the two Silent Souls.  Dancing Death and a G-Fire should finish off Garland.</p>
+      </BossCard>
+      <p>For defeating them, you will unlock the [Warlord in Black] node.  Bring in Raynie and Gafka.  Then, examine the lower left black glow for another boss.</p>
+      <BossCard name="Guardian" weakness="None">
+        <p><strong>Strategy:</strong> Stocke and Raynie should use Magic Herbs on themselves, while Gafka uses Change on the Guardian's turn.  Do so again to string together seven consecutive turns.  Use 3 Musous, 2 G-Fires, and 2 G-Thunders for the win.</p>
+      </BossCard>
+      <p>For defeating it, you will unlock the [Monstrocity in Black] node.  Examine the final black glow in the upper left corner for your final challenge.</p>
+      <BossCard name="Floating Stone x2, Noble Flame x2, Viola" weakness="None, Ice, None">
+        <p><strong>Strategy:</strong> Use the Change command to string together three turns: one for Gafka and two for Stocke.  One Musous and two Will o' Wisps should defeat everyone except Viola.  Another Musou and some G-elemental spells will defeat her.</p>
+      </BossCard>
+      <p>For defeating them, you will unlock the [Valkyrie in Black] node, as well as the door above, where you should go next.</p>
+      <Callout type="note" title="Recommended Equipment">
+        <p>Recommended Equipment at this point in the game<br/>
+        <strong>Stocke:</strong> Mythril Edge, Moirae Manteau, Sky Drops x3<br/>
+        <strong>Raynie:</strong> La Tormenta, Diamond Mail, Sky Drops x3<br/>
+        <strong>Marco:</strong> Gaia Blade, Diamond Mail, Sky Drops x3<br/>
+        <strong>Rosch:</strong> Der Lowe, Diamond Mail, Sky Drops x3<br/>
+        <strong>Aht:</strong> Glaux Dagger, Giant Cape, Sky Drops x3<br/>
+        <strong>Gafka:</strong> Beast Claw, Mighty Protector, Sky Drops x3<br/>
+        <strong>Eruca:</strong> Freikugel Mercy, Luminous Dress, Sky Drops x3</p>
+      </Callout>
+      <Callout type="node" title="Historia Milestone: Death Knell">
+        <p>[Final Battleground node] As a reminder, you should have completed 223/236 nodes up to this point. It's time for the final boss gauntlet. I would recommend using Stocke, Eruca, and Gafka, preferably all with full Mana Burst gauges and at least Level 60. Recover with a Mana Crystal at the save point and head up to save the world!</p>
+      </Callout>
+      <BossCard name="Black Chronicle, Shadow" weakness="None">
+        <p><strong>Strategy:</strong> The real target is the Black Chronicle.  However, you cannot damage it, unless a Shadow is on the same tile with it.  Use a Magic Herb on Eruca, Push Assault the Shadow onto the Chronicle, and G-Frost for some decent damage. It will then summon more Shadows.  Use the Change command to string together five consecutive turns: two for Gafka and three for Eruca.  Have Gafka use Wind God Strike, Musou, and Eruca cast three G-Frosts to defeat the Black Chronicle.</p>
+      </BossCard>
+      <p>For defeating Apocrypha, you will unlock the following nodes:</p>
+      <Callout type="node" title="Historia Milestone: Apocrypha">
+        <p>[Ritual of Flux node] [A Promise node]</p>
+      </Callout>
+      <p>If you completed all of the sidequests, you will get some extra cutscenes during the ending and unlock even more nodes.  I'll go over them in more detail in the Node Completion List.</p>
+      <AsciiMap>
+<pre>[Iron-Armed General node]
+[Shaman node]
+[The Show Goes On node]
+[A Little Hero node]
+[Overseers of Time node]
+[Valkyrie in Repose node]
+[Beast God at Rest node]
+[A Warrior in Love node]
+[The Lives of Humans node]
+[Life of the Beastkind node]</pre>
+      </AsciiMap>
+      <p>Congratulation on beating this awesome game!  Sit back and enjoy the ending and well-deserved credits.</p>
+      <p>The following is a complete list of how to unlock all 236 nodes in the game. They are sorted by chapter to make it easier to figure out which one(s) you are missing.  This is probably best viewed when you are at the end of the game, as many of the node titles and their requirements contain extreme spoilers to the plot, and it would be difficult to sift through the entire main walkthrough for a handful of nodes.  Furthermore, while you may get some sidequests very early in the game, they may not be completable until much later in the game. Finally, I will assume roadblocks are automatically resolved during the plot, as in that case, it's simply easier to look up that section in the walkthrough.</p>
+      <p>PROLOGUE</p>
+      <AsciiMap>
 <pre>--- 005 - 006 -------------
                    |
 001 - 002 - 003 - 004 - 007   010
                    |           |
                     --- 008 - 009 - 011 - 012 -</pre>
-</AsciiMap>
-
-<p>013   014</p>
-
-<p>001 - Daydream ************** Automatically completed during the plot.</p>
-
-<p>002 - Children of Historia ************************** Automatically completed during the plot.</p>
-
-<p>003 - Awakening *************** Automatically completed during the plot.</p>
-
-<p>004 - The Beginning ******************* Automatically completed during the plot.</p>
-
-<p>005 - Specint Assignment ************************ Automatically completed during the plot.</p>
-
-<p>006 - Top Secret Mission ************************ Automatically completed during the plot.</p>
-
-<p>007 - Force Core **************** You must defeat Rosch at Judgment Cliff in Standard Chapter 3 to win his BROKEN LIMB.  Then, return to &quot;The Beginning&quot; node and talk to Sonja to receive the FORCE CORE.</p>
-
-<p>008 - Joining Rosch Brigade *************************** Automatically completed during the plot.</p>
-
-<p>009 - The Closed Mine ********************* Automatically completed during the plot.</p>
-
-<p>010 - The Fallen Capital (ending) ************************ Upon arriving at Alma Mine, choose to &quot;Wait in Ambush&quot; to unlock this ending.</p>
-
-<p>011 - Breaking Rocks ******************** Automatically completed during the plot.</p>
-
-<p>012 - Duel in the Dark ********************** Automatically completed during the plot.</p>
-
-<p>013 - Night Watch (sidequest) ***************** During &quot;The Beginning&quot; node, choose to &quot;Join the Rosch Brigade&quot;.  Head down to the First Ward and talk to the soldier on the left to receive this sidequest. The earliest opportunities you have to buy the two Anti-Sleeps are at the Sand Fortress in Standard Chapter 1 or in Alistel in Alternate Chapter 1.  Repeat the first step and give the two Anti-Sleeps to the soldier to complete this sidequest and receive the Alistel Edge (ATK+16/MAG+6).</p>
-
-<p>014 - Soldier Recruit (sidequest) ********************* During &quot;The Beginning&quot; node, choose to &quot;Join the Rosch Brigade&quot;.  Talk to the receptionist behind the desk on the left side of the first floor of the castle to receive this sidequest.  Head to the inn and talk to the two mercenaries. Return to the receptionist to complete this sidequest and receive 1500 G.</p>
-
-<p>=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=</p>
-
-<p>CHAPTER 1</p>
-
-<p>=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=</p>
-
-<AsciiMap>
+      </AsciiMap>
+      <p>013   014</p>
+      <p>001 - Daydream ************** Automatically completed during the plot.</p>
+      <p>002 - Children of Historia ************************** Automatically completed during the plot.</p>
+      <p>003 - Awakening *************** Automatically completed during the plot.</p>
+      <p>004 - The Beginning ******************* Automatically completed during the plot.</p>
+      <p>005 - Specint Assignment ************************ Automatically completed during the plot.</p>
+      <p>006 - Top Secret Mission ************************ Automatically completed during the plot.</p>
+      <p>007 - Force Core **************** You must defeat Rosch at Judgment Cliff in Standard Chapter 3 (see JUDG3) to win his BROKEN LIMB.  Then, return to "The Beginning" node and talk to Sonja to receive the FORCE CORE.</p>
+      <p>008 - Joining Rosch Brigade *************************** Automatically completed during the plot.</p>
+      <p>009 - The Closed Mine ********************* Automatically completed during the plot.</p>
+      <p>010 - The Fallen Capital (ending) ************************ Upon arriving at Alma Mine, choose to "Wait in Ambush" to unlock this ending.</p>
+      <p>011 - Breaking Rocks ******************** Automatically completed during the plot.</p>
+      <p>012 - Duel in the Dark ********************** Automatically completed during the plot.</p>
+      <p>013 - Night Watch (sidequest) ***************** During "The Beginning" node, choose to "Join the Rosch Brigade".  Head down to the First Ward and talk to the soldier on the left to receive this sidequest. The earliest opportunities you have to buy the two Anti-Sleeps are at the Sand Fortress in Standard Chapter 1 (see SAND1) or in Alistel in Alternate Chapter 1 (see ALST5).  Repeat the first step and give the two Anti-Sleeps to the soldier to complete this sidequest and receive the Alistel Edge (ATK+16/MAG+6).</p>
+      <p>014 - Soldier Recruit (sidequest) ********************* During "The Beginning" node, choose to "Join the Rosch Brigade".  Talk to the receptionist behind the desk on the left side of the first floor of the castle to receive this sidequest.  Head to the inn and talk to the two mercenaries. Return to the receptionist to complete this sidequest and receive 1500 G.</p>
+      <p>CHAPTER 1</p>
+      <AsciiMap>
 <pre>032 - 033   018   036   021               025         028   030
                  |           |                 |           |     |
 --- 015 - 016 - 017 - 019 - 020 - 022 - 023 - 024 - 026 - 027 - 029 - 031 ---</pre>
-</AsciiMap>
-
-<AsciiMap>
+      </AsciiMap>
+      <AsciiMap>
 <pre>050 - 051   034 - 035   057                                       037
      |
 --- 038 - 039 - 040 - 041 - 042 - 043 - 045 - 047 - 048 - 049 ---------------
                                    |     |
     052 - 053   054   055 - 056   044   046</pre>
-</AsciiMap>
-
-<p>015 - To Granorg **************** Automatically completed during the plot.</p>
-
-<p>016 - The Bridge at Lazvil ************************** Automatically completed during the plot.</p>
-
-<p>017 - The Messenger&#x27;s News ************************** Automatically completed during the plot.</p>
-
-<p>018 - The Queen Ascendant (ending) ************************* During &quot;The Bridge at Lazvil&quot; node, head to Lazvil Hills.  Go west to the Highway and down the ramp to revise your destination.  Walk south to the Woodland Path East, west around the river, and north to the other side of the river.  Choose to &quot;Go to Alma Mine&quot; to unlock this ending.</p>
-
-<p>019 - No-Show ************* Automatically completed during the plot.</p>
-
-<p>020 - Echoing Hills ******************* Automatically completed during the plot.</p>
-
-<p>021 - Struggle with Bandits *************************** Automatically completed during the plot.</p>
-
-<p>022 - Breakthrough ****************** Automatically completed during the plot.</p>
-
-<p>023 - Beastkind *************** Automatically completed during the plot.</p>
-
-<p>024 - Stocke&#x27;s Display ********************** Automatically completed during the plot.</p>
-
-<p>025 - A Sealed Path (ending) ******************* During the &quot;Beastkind&quot; node, head west to the guard checkpoint at Gran Plain. Choose to &quot;Force your way through&quot; to unlock this ending.</p>
-
-<p>026 - Sword Dancing ******************* Automatically completed during the plot.</p>
-
-<p>027 - Collecting Wood ********************* Automatically completed during the plot.</p>
-
-<p>028 - Preparing a Meal ********************** Automatically completed during the plot.</p>
-
-<p>029 - Aht&#x27;s Prayer ****************** Automatically completed during the plot.</p>
-
-<p>030 - The Sister **************** During the &quot;Madness of Heiss&quot; node, return to the &quot;Aht&#x27;s Prayer&quot; node.  Defeat Heiss to unlock this node.</p>
-
-<p>031 - An Ancient City ********************* Automatically completed during the plot.</p>
-
-<p>032 - The King&#x27;s Daughter (sidequest) ************************* During &quot;The Bridge at Lazvil&quot; node at Alistel, head to the tavern at the Second Ward.  Climb the stairs to the left and in the upper left corner, talk to the girl, named Anna, to receive this sidequest.  During the &quot;An Ancient City&quot; node at Granorg, head to the item shop at the Commercial District, and talk to the merchant there.  During &quot;The Resistance&quot; node at Granorg, talk to Eruca.  She can be found wearing a cloak, by a tree at the center of the Downtown area. Tell her to &quot;Fulfill your duty&quot;. Return to the &quot;To Granorg&quot; node and talk to Anna to complete this sidequest and receive the RABBIT&#x27;S FOOT (MP+10/LUC+15). This sidequest is also a prerequisite for unlocking &quot;The Show Goes On&quot; part of the true ending.</p>
-
-<p>033 - Princess&#x27; Charge (ending) ********************** Follow the above steps up to talking to Eruca.  Instead, tell her &quot;Don&#x27;t push yourself&quot; to unlock this ending.</p>
-
-<p>034 - What Was Inherited (sidequest) ************************ During &quot;The Bridge at Lazvil&quot; node at Alistel, head to the weapon shop at the Second Ward.  Talk to the kids nearby to receive this sidequest. Climb the stairs and enter the upper right house.  Talk to their father about the sidequest.  During the &quot;An Ancient City&quot; node at Granorg, head to the merchant on the left side of the Downtown area.  I think you need to talk to the merchant on the right to get some information, though I&#x27;m not sure if this is mandatory.  During the &quot;To Cornet Village&quot; node at Cornet, talk to the farmer in the field on the right.  Return to the &quot;To Granorg&quot; node and talk to the father.  Initially, choose &quot;Don&#x27;t tell him&quot; about the conuts.  This will unlock another option.  Return to the same node and choose &quot;Tell about reforestation&quot; to complete the sidequest and receive the PANDUR (ATK+4/MAG+24/SPD+1).  This sidequest is also a prerequisite for unlocking the &quot;Overseers of Time&quot; part of the true ending.</p>
-
-<p>035 - Distorted Hope (ending) ******************** Follow the above steps up to talking to the father again.  Instead, choose to &quot;Tell him&quot; about the conuts to unlock this ending.</p>
-
-<p>036 - Accident in the Cave (sidequest) ************************** After learning the Bomber skill at Lazvil Hills, return north to where you met the spy and enter the cave.  Use the barrel to blow away the rocks.  Examine the corpse to receive this sidequest.  Return to &quot;The Beginning&quot; node and choose to Join the Rosch Brigade.  Continue on with the plot as before and return to the site of the cave-in.  Use the barrel to blow away the rocks. Talk to the soldier to complete the sidequest and receive the RIGHT-CUT SCROLL for Marco, needed for the &quot;Marco the Calm&quot; sidequest.</p>
-
-<p>037 - The Ultimate Dish (sidequest) *********************** During the &quot;An Ancient City&quot; node at Granorg, head west to the Commercial District.  Continue west to the merchants and talk to a man, named Hilster, dressed in green, to receive this sidequest.  Return to the &quot;A New Mission&quot; node at Lazvil Hills and head to the Woodland Path. Defeat the Giant Boar to receive the SAVORY BOAR MEAT.  Do NOT give this to Hilster yet, or you will lose it and have to do this over again.  During the &quot;To Cornet Village&quot; node at Cornet, search the left field for a sparkle that is the SAVORY VEGGIES.  Return to the &quot;Castle Sewers&quot; node and talk to Hilster to complete this sidequest and receive the FIRELIGHT PACT for Eruca, needed for &quot;The Light Trial&quot; sidequest.</p>
-
-<p>038 - A New Mission ******************* Automatically completed during the plot.</p>
-
-<p>039 - Summoned by Raul ********************** Automatically completed during the plot.</p>
-
-<p>040 - Through Lazvil ******************** Automatically completed during the plot.</p>
-
-<p>041 - Heiss&#x27; Intentions *********************** Automatically completed during the plot.</p>
-
-<p>042 - Reporting to Viola ************************ Automatically completed during the plot.</p>
-
-<p>043 - The Valkyrie ****************** Automatically completed during the plot.</p>
-
-<p>044 - Kiel&#x27;s Talent ******************* During &quot;The Valkyrie&quot; node, head up to the second floor of the Sand Fortress.  Talk to Kiel on the left end of the floor to learn sword-dancing, upgrade your Strike ability, and unlock this node.</p>
-
-<p>045 - Conditions Worsen *********************** Automatically completed during the plot.</p>
-
-<p>046 - Front of Despair (ending) ********************** During &quot;The Valkyrie&quot; node, head up to the mess hall at the Sand Fortress in the upper middle room on the first floor, and talk to Rosch to advance the plot.  Choose to &quot;Send Reinforcements&quot; to unlock this ending.</p>
-
-<p>047 - Ambush Tactics ******************** Automatically completed during the plot.</p>
-
-<p>048 - Sand Fortress Battle ************************** Automatically completed during the plot.</p>
-
-<p>049 - A Message From Home ************************* Automatically completed during the plot.</p>
-
-<p>050 - Marco the Calm (sidequest) ******************** During the &quot;A New Mission&quot; node at Alistel, on the right side of the first floor are two doors.  Enter the left door and talk to the blue soldier to receive this sidequest.  You need to find four scrolls for Marco.</p>
-
-<p>1) Right-Cut Scroll: Reward from &quot;Accident in the Cave&quot; sidequest (see 036). 2) Left-Cut Scroll: Reward from &quot;Despairing Young Man&quot; sidequest (see 103). 3) Sleep Gas Scroll: During &quot;To Cornet Village&quot; at Cornet, Standard Chapter 3, check out the field to the right.  Walk up between the upper row of crops and the fence to find a hidden chest which contains this scroll. 4) Roll-Cut Scroll: During &quot;To Holff Ruins&quot; at Abyssia Forest, follow the upper path to a large, open area.  Search the upper right corner for a hidden chest which contains this scroll.</p>
-
-<p>After you have obtained any of the scrolls, return to the soldier with them, and he will teach the new abilities to Marco.  Learn all four abilities to complete this sidequest.</p>
-
-<p>051 - Raynie the Active (sidequest) *********************** During the &quot;A New Mission&quot; node at Alistel, on the right side of the first floor are two doors.  Enter the left door and talk to the blue soldier to receive this sidequest.  You need to find four scrolls for Raynie.</p>
-
-<p>1) Darkshield Scroll: During &quot;The Valkyrie&quot; node at the Sand Fortress, head up to the third floor.  Walk around the right side, up the stairs, and through the door.  Search the right side of the large room for a hidden chest which contains this scroll. 2) Slumbering Scroll: Reward from &quot;Second Opinion&quot; sidequest (see 120). 3) Poisoner&#x27;s Scroll: This can be found as early as the &quot;Destroy the Ballistas&quot; node in Standard Chapter 5 at the Itolia Wasteland.  From the southern entrance, head north one screen, east one, and north two.  Search the upper wall for a hidden chest which contains this scroll. 4) Piercing Scroll: Reward from &quot;The Good Thief&#x27;s Way&quot; sidequest (see 190).</p>
-
-<p>After you have obtained any of the scrolls, return to the soldier with them, and he will teach the new abilities to Raynie.  Learn all four abilities to complete this sidequest.</p>
-
-<p>052 - Red-Letter Day (sidequest) ******************** During the &quot;A New Mission&quot; node at Alistel, head up to the castle and through the right door.  Enter the laboratory to the left and talk to the woman, named Meese, to receive this sidequest.  If you&#x27;re doing this as early as possible, you will have to talk to Sonja and Raul, then come back down to talk to Sonja again.  Return to &quot;The Beginning&quot; node, talk to Rosch on the first floor, and choose to &quot;Send Rosch&quot;.  Talk to Meese to complete this sidequest and receive the P.Thauma Spear (ATK+23/DEF+2).  This sidequest is also a prerequisite for unlocking the &quot;Iron-Armed General&quot; part of the true ending.</p>
-
-<p>053 - A Knight&#x27;s End (ending) ******************** Follow the above steps up to talking to Rosch. Instead, choose to &quot;Chase after&quot; Sonja to unlock this ending.</p>
-
-<p>054 - Flower of Promise (sidequest) *********************** During the &quot;A New Mission&quot; node at Alistel, talk to the woman by the flowers in the lower right corner on the first floor to receive this sidequest.  Proceed to &quot;The Beastkind Forest&quot; node at Celestia.  Talk to the Satyros above the save point to receive a Celestian Flower Bud.  Return to &quot;The Beginning&quot; node and give it to the questgiver. Continue to the &quot;A New Mission&quot; node and talk to her again to complete this sidequest and receive a THAUMATECH ORB (MAG+5/MDF+5).</p>
-
-<p>055 - A Letter to Tomorrow (sidequest) ************************** During the &quot;A New Mission&quot; node at the Second Ward of Alistel, climb the stairs to the left of the tavern, and head all the way down to talk to the man named Cedric to receive this sidequest.  Proceed to &quot;The Valkyrie&quot; node at the first floor of the Sand Fortress.  Walk around to the right, into the upper middle room, and talk to Viola.  Continue to &quot;Alistel&#x27;s Offensive&quot; node and talk to Viola again.  Return to Cedric and choose to &quot;Show journal&quot; to complete this sidequest.  This sidequest is also a prerequisite for unlocking the &quot;Valkyrie in Repose&quot; part of the true ending.</p>
-
-<p>056 - A Voice Unheard (ending) ********************* Follow the above steps up to returning to Cedric.  Instead, choosing &quot;Don&#x27;t show journal&quot; will unlock this ending.</p>
-
-<p>057 - Engineer Recruit (sidequest) ********************** During the &quot;A New Mission&quot; node at Alistel, talk to the receptionist behind the desk on the left side of the first floor of the castle to receive this sidequest.  Return to &quot;The Closed Mine&quot; node, leave the mine, enter the house by the entrance, and talk to the engineer, Berman.  Return to the receptionist to complete this sidequest and receive 3000 G.</p>
-
-<p>=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=</p>
-
-<p>CHAPTER 2</p>
-
-<p>=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=</p>
-
-<p>069   061   063                  |     | --- 058 - 059 - 060 - 062 - 064 - 065 - 066 ---------------</p>
-
-<p>067 - 068</p>
-
-<AsciiMap>
+      </AsciiMap>
+      <p>015 - To Granorg **************** Automatically completed during the plot.</p>
+      <p>016 - The Bridge at Lazvil ************************** Automatically completed during the plot.</p>
+      <p>017 - The Messenger's News ************************** Automatically completed during the plot.</p>
+      <p>018 - The Queen Ascendant (ending) ************************* During "The Bridge at Lazvil" node, head to Lazvil Hills (see LZVL3).  Go west to the Highway and down the ramp to revise your destination.  Walk south to the Woodland Path East, west around the river, and north to the other side of the river.  Choose to "Go to Alma Mine" to unlock this ending.</p>
+      <p>019 - No-Show ************* Automatically completed during the plot.</p>
+      <p>020 - Echoing Hills ******************* Automatically completed during the plot.</p>
+      <p>021 - Struggle with Bandits *************************** Automatically completed during the plot.</p>
+      <p>022 - Breakthrough ****************** Automatically completed during the plot.</p>
+      <p>023 - Beastkind *************** Automatically completed during the plot.</p>
+      <p>024 - Stocke's Display ********************** Automatically completed during the plot.</p>
+      <p>025 - A Sealed Path (ending) ******************* During the "Beastkind" node, head west to the guard checkpoint at Gran Plain. Choose to "Force your way through" to unlock this ending.</p>
+      <p>026 - Sword Dancing ******************* Automatically completed during the plot.</p>
+      <p>027 - Collecting Wood ********************* Automatically completed during the plot.</p>
+      <p>028 - Preparing a Meal ********************** Automatically completed during the plot.</p>
+      <p>029 - Aht's Prayer ****************** Automatically completed during the plot.</p>
+      <p>030 - The Sister **************** During the "Madness of Heiss" node (see IMPR1), return to the "Aht's Prayer" node.  Defeat Heiss to unlock this node.</p>
+      <p>031 - An Ancient City ********************* Automatically completed during the plot.</p>
+      <p>032 - The King's Daughter (sidequest) ************************* During "The Bridge at Lazvil" node at Alistel, head to the tavern at the Second Ward.  Climb the stairs to the left and in the upper left corner, talk to the girl, named Anna, to receive this sidequest.  During the "An Ancient City" node at Granorg, head to the item shop at the Commercial District, and talk to the merchant there.  During "The Resistance" node at Granorg, talk to Eruca.  She can be found wearing a cloak, by a tree at the center of the Downtown area. Tell her to "Fulfill your duty". Return to the "To Granorg" node and talk to Anna to complete this sidequest and receive the RABBIT'S FOOT (MP+10/LUC+15). This sidequest is also a prerequisite for unlocking "The Show Goes On" part of the true ending.</p>
+      <p>033 - Princess' Charge (ending) ********************** Follow the above steps up to talking to Eruca.  Instead, tell her "Don't push yourself" to unlock this ending.</p>
+      <p>034 - What Was Inherited (sidequest) ************************ During "The Bridge at Lazvil" node at Alistel, head to the weapon shop at the Second Ward.  Talk to the kids nearby to receive this sidequest. Climb the stairs and enter the upper right house.  Talk to their father about the sidequest.  During the "An Ancient City" node at Granorg, head to the merchant on the left side of the Downtown area.  I think you need to talk to the merchant on the right to get some information, though I'm not sure if this is mandatory.  During the "To Cornet Village" node at Cornet, talk to the farmer in the field on the right.  Return to the "To Granorg" node and talk to the father.  Initially, choose "Don't tell him" about the conuts.  This will unlock another option.  Return to the same node and choose "Tell about reforestation" to complete the sidequest and receive the PANDUR (ATK+4/MAG+24/SPD+1).  This sidequest is also a prerequisite for unlocking the "Overseers of Time" part of the true ending.</p>
+      <p>035 - Distorted Hope (ending) ******************** Follow the above steps up to talking to the father again.  Instead, choose to "Tell him" about the conuts to unlock this ending.</p>
+      <p>036 - Accident in the Cave (sidequest) ************************** After learning the Bomber skill at Lazvil Hills, return north to where you met the spy and enter the cave.  Use the barrel to blow away the rocks.  Examine the corpse to receive this sidequest.  Return to "The Beginning" node and choose to Join the Rosch Brigade.  Continue on with the plot as before and return to the site of the cave-in.  Use the barrel to blow away the rocks. Talk to the soldier to complete the sidequest and receive the RIGHT-CUT SCROLL for Marco, needed for the "Marco the Calm" sidequest.</p>
+      <p>037 - The Ultimate Dish (sidequest) *********************** During the "An Ancient City" node at Granorg (see GRNG1), head west to the Commercial District.  Continue west to the merchants and talk to a man, named Hilster, dressed in green, to receive this sidequest.  Return to the "A New Mission" node at Lazvil Hills (see GRNG2) and head to the Woodland Path. Defeat the Giant Boar to receive the SAVORY BOAR MEAT.  Do NOT give this to Hilster yet, or you will lose it and have to do this over again.  During the "To Cornet Village" node at Cornet (see CRNT1), search the left field for a sparkle that is the SAVORY VEGGIES.  Return to the "Castle Sewers" node and talk to Hilster to complete this sidequest and receive the FIRELIGHT PACT for Eruca, needed for "The Light Trial" sidequest.</p>
+      <p>038 - A New Mission ******************* Automatically completed during the plot.</p>
+      <p>039 - Summoned by Raul ********************** Automatically completed during the plot.</p>
+      <p>040 - Through Lazvil ******************** Automatically completed during the plot.</p>
+      <p>041 - Heiss' Intentions *********************** Automatically completed during the plot.</p>
+      <p>042 - Reporting to Viola ************************ Automatically completed during the plot.</p>
+      <p>043 - The Valkyrie ****************** Automatically completed during the plot.</p>
+      <p>044 - Kiel's Talent ******************* During "The Valkyrie" node, head up to the second floor of the Sand Fortress (see SAND2).  Talk to Kiel on the left end of the floor to learn sword-dancing, upgrade your Strike ability, and unlock this node.</p>
+      <p>045 - Conditions Worsen *********************** Automatically completed during the plot.</p>
+      <p>046 - Front of Despair (ending) ********************** During "The Valkyrie" node, head up to the mess hall at the Sand Fortress (see SAND2) in the upper middle room on the first floor, and talk to Rosch to advance the plot.  Choose to "Send Reinforcements" to unlock this ending.</p>
+      <p>047 - Ambush Tactics ******************** Automatically completed during the plot.</p>
+      <p>048 - Sand Fortress Battle ************************** Automatically completed during the plot.</p>
+      <p>049 - A Message From Home ************************* Automatically completed during the plot.</p>
+      <p>050 - Marco the Calm (sidequest) ******************** During the "A New Mission" node at Alistel, on the right side of the first floor are two doors.  Enter the left door and talk to the blue soldier to receive this sidequest.  You need to find four scrolls for Marco.</p>
+      <p>1) Right-Cut Scroll: Reward from "Accident in the Cave" sidequest (see 036). 2) Left-Cut Scroll: Reward from "Despairing Young Man" sidequest (see 103). 3) Sleep Gas Scroll: During "To Cornet Village" at Cornet, Standard Chapter 3, (see CRNT1) check out the field to the right.  Walk up between the upper row of crops and the fence to find a hidden chest which contains this scroll. 4) Roll-Cut Scroll: During "To Holff Ruins" at Abyssia Forest (see ABYS1), follow the upper path to a large, open area.  Search the upper right corner for a hidden chest which contains this scroll.</p>
+      <p>After you have obtained any of the scrolls, return to the soldier with them, and he will teach the new abilities to Marco.  Learn all four abilities to complete this sidequest.</p>
+      <p>051 - Raynie the Active (sidequest) *********************** During the "A New Mission" node at Alistel, on the right side of the first floor are two doors.  Enter the left door and talk to the blue soldier to receive this sidequest.  You need to find four scrolls for Raynie.</p>
+      <p>1) Darkshield Scroll: During "The Valkyrie" node at the Sand Fortress (see SAND3), head up to the third floor.  Walk around the right side, up the stairs, and through the door.  Search the right side of the large room for a hidden chest which contains this scroll. 2) Slumbering Scroll: Reward from "Second Opinion" sidequest (see 120). 3) Poisoner's Scroll: This can be found as early as the "Destroy the Ballistas" node in Standard Chapter 5 at the Itolia Wasteland (see ITOL1).  From the southern entrance, head north one screen, east one, and north two.  Search the upper wall for a hidden chest which contains this scroll. 4) Piercing Scroll: Reward from "The Good Thief's Way" sidequest (see 190).</p>
+      <p>After you have obtained any of the scrolls, return to the soldier with them, and he will teach the new abilities to Raynie.  Learn all four abilities to complete this sidequest.</p>
+      <p>052 - Red-Letter Day (sidequest) ******************** During the "A New Mission" node at Alistel, head up to the castle and through the right door.  Enter the laboratory to the left and talk to the woman, named Meese, to receive this sidequest.  If you're doing this as early as possible, you will have to talk to Sonja and Raul, then come back down to talk to Sonja again.  Return to "The Beginning" node, talk to Rosch on the first floor, and choose to "Send Rosch".  Talk to Meese to complete this sidequest and receive the P.Thauma Spear (ATK+23/DEF+2).  This sidequest is also a prerequisite for unlocking the "Iron-Armed General" part of the true ending.</p>
+      <p>053 - A Knight's End (ending) ******************** Follow the above steps up to talking to Rosch. Instead, choose to "Chase after" Sonja to unlock this ending.</p>
+      <p>054 - Flower of Promise (sidequest) *********************** During the "A New Mission" node at Alistel, talk to the woman by the flowers in the lower right corner on the first floor to receive this sidequest.  Proceed to "The Beastkind Forest" node at Celestia.  Talk to the Satyros above the save point to receive a Celestian Flower Bud.  Return to "The Beginning" node and give it to the questgiver. Continue to the "A New Mission" node and talk to her again to complete this sidequest and receive a THAUMATECH ORB (MAG+5/MDF+5).</p>
+      <p>055 - A Letter to Tomorrow (sidequest) ************************** During the "A New Mission" node at the Second Ward of Alistel, climb the stairs to the left of the tavern, and head all the way down to talk to the man named Cedric to receive this sidequest.  Proceed to "The Valkyrie" node at the first floor of the Sand Fortress.  Walk around to the right, into the upper middle room, and talk to Viola.  Continue to "Alistel's Offensive" node and talk to Viola again.  Return to Cedric and choose to "Show journal" to complete this sidequest.  This sidequest is also a prerequisite for unlocking the "Valkyrie in Repose" part of the true ending.</p>
+      <p>056 - A Voice Unheard (ending) ********************* Follow the above steps up to returning to Cedric.  Instead, choosing "Don't show journal" will unlock this ending.</p>
+      <p>057 - Engineer Recruit (sidequest) ********************** During the "A New Mission" node at Alistel, talk to the receptionist behind the desk on the left side of the first floor of the castle to receive this sidequest.  Return to "The Closed Mine" node, leave the mine, enter the house by the entrance, and talk to the engineer, Berman.  Return to the receptionist to complete this sidequest and receive 3000 G.</p>
+      <p>CHAPTER 2</p>
+      <AsciiMap>
+<pre>069   061   063
+                 |     |
+--- 058 - 059 - 060 - 062 - 064 - 065 - 066 ---------------</pre>
+      </AsciiMap>
+      <p>067 - 068</p>
+      <AsciiMap>
 <pre>--- 070 - 072 - 073 - 075 - 077 - 078 - 079 - 080 - 081 ---
      |           |     |
     071         074   076         082   083</pre>
-</AsciiMap>
-
-<p>058 - Duty Revealed ******************* Automatically completed during the plot.</p>
-
-<p>059 - Castle Sewers ******************* Automatically completed during the plot.</p>
-
-<p>060 - Secret of the Sewers ************************** Automatically completed during the plot.</p>
-
-<p>061 - Escort ************ During the &quot;Secret of the Sewers&quot; node at the Underground Waterway, you need to find Claire in the lower right area of the sewers.  Escort her out of the sewers to unlock this node.  This is a prerequisite to unlocking the &quot;Something Precious&quot; and &quot;The Impregnable&quot; nodes later.</p>
-
-<p>062 - How to Disappear ********************** Automatically completed during the plot.</p>
-
-<p>063 - Fated Assassination (ending) ************************* During the &quot;Secret of the Sewers&quot; node, having infiltrated Granorg Palace, choosing &quot;I&#x27;ll be the decoy&quot; will unlock this ending.</p>
-
-<p>064 - High Alert **************** Automatically completed during the plot.</p>
-
-<p>065 - Successful Infiltration ***************************** Automatically completed during the plot.</p>
-
-<p>066 - Princess of Light *********************** Automatically completed during the plot.</p>
-
-<p>067 - Mankind &amp; Beastkind (sidequest) ************************* During the &quot;Duty Revealed&quot; node at Granorg, talk to the guard by the save point at Main Street, to receive this sidequest.  Go west to the inn, walk around its left side, and up the stairs to the west fo find Liese and talk to her.  Return to the soldier and talk to him again.  Proceed to the &quot;To Holff Ruins&quot; node at Abyssia Forest.  Head south, then east two screens and talk to Liese.  Return to the entrance, and follow the northern path to the next screen until you reach an open area.  Examine the corpse in the upper right corner.  Head back to Liese to talk to her again.  Return to the &quot;Castle Sewers&quot; node, talk to Liese, and tell her to &quot;Believe in him&quot;.  Talk to the soldier by the save point to complete this sidequest and receive the PROMISED KNIFE (ATK+27/MAG+75/HP-30) for Aht.  This sidequest is also a prerequisite for unlocking the &quot;Life of the Beastkind&quot; part of the true ending.</p>
-
-<p>068 - Chains of Hatred (ending) ********************** Follow the above steps up to talking to Liese at Granorg the second time. Choose to &quot;Leave it to her&quot; to unlock this ending.</p>
-
-<p>069 - One &amp; Only (sidequest) **************** During the &quot;Duty Revealed&quot; node at Granorg, go west to the inn at the Downtown area.  Head upstairs and into the right room.  Talk the man, Kaizan, to receive this sidequest.  Return to &quot;The Closed Mine&quot; node and talk to the miner in the house.  Return to &quot;The Beginning&quot; node, head to the second floor of the inn to find Kaizan and talk to him.  Return to the &quot;Castle Sewers&quot; node and talk to Kaizan again.  Return to Alistel and talk to him again.  Finally, return to Granorg and talk to him to complete this sidequest and receive the Firestar Pact for Aht, needed for &quot;The Starlit Trial&quot; sidequest.</p>
-
-<p>070 - Alistel&#x27;s Offensive ************************* Automatically completed during the plot.</p>
-
-<p>071 - Viola&#x27;s Decision ********************** After the &quot;Wolf in the Fold&quot; node, return to &quot;Alistel&#x27;s Offensive and talk to Viola to unlock this node.</p>
-
-<p>072 - Battle of Gran Plain ************************** Automatically completed during the plot.</p>
-
-<p>073 - A Meeting Too Late ************************ Automatically completed during the plot.</p>
-
-<p>074 - The Lion General (ending) ********************** During the &quot;Battle of Gran Plain&quot; node, go north one screen and west two.  Choose to &quot;Go north&quot; to unlock this ending.</p>
-
-<p>075 - Rosch in Crisis ********************* Automatically completed during the plot.</p>
-
-<p>076 - Wolf in the Fold ********************** Automatically completed during the plot.</p>
-
-<p>077 - Lives Entrusted ********************* Automatically completed during the plot.</p>
-
-<p>078 - Homecoming **************** Automatically completed during the plot.</p>
-
-<p>079 - Parting Ways ****************** Automatically completed during the plot.</p>
-
-<p>080 - Flight ************</p>
-
-<p>081 - Fiendish ************** Automatically completed during the plot.</p>
-
-<p>082 - Swordsman Recruit (sidequest) *********************** During the &quot;Homecoming&quot; node at Alistel, talk to the receptionist on first floor, behind the left desk to receive this sidequest.  Proceed to the &quot;A New Battle&quot; node.  You will need to complete &quot;The Next Foe&quot; (see 136) and &quot;The Road to Victory&quot; (see 137) sidequests.  After doing so, talk to Gadeff to recruit him.  Continue to the &quot;In Pursuit&quot; node at Alistel, and talk to the receptionist to complete this sidequest and receive 8000 G.</p>
-
-<p>083 - Mercenary Recruit (sidequest) *********************** During the &quot;Homecoming&quot; node at Alistel, talk to the receptionist on first floor, behind the left desk to receive this sidequest.  Proceed to &quot;An Introduction&quot; node at Skalla.  After meeting with Tarquin, talk to him a few times to get some information on the mercenary.  Return to the &quot;Echoing Hills&quot; node, defeat the bandits again, and talk to Tarquin.  Return to Skalla and talk to Tarquin again.  Finally, continue to the &quot;In Pursuit&quot; node at Alistel, and talk to the receptionist to complete this sidequest and receive 15000 G.</p>
-
-<p>=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=</p>
-
-<p>CHAPTER 3</p>
-
-<p>=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=</p>
-
-<AsciiMap>
+      </AsciiMap>
+      <p>058 - Duty Revealed ******************* Automatically completed during the plot.</p>
+      <p>059 - Castle Sewers ******************* Automatically completed during the plot.</p>
+      <p>060 - Secret of the Sewers ************************** Automatically completed during the plot.</p>
+      <p>061 - Escort ************ During the "Secret of the Sewers" node at the Underground Waterway (see UGWW1), you need to find Claire in the lower right area of the sewers.  Escort her out of the sewers to unlock this node.  This is a prerequisite to unlocking the "Something Precious" and "The Impregnable" nodes later.</p>
+      <p>062 - How to Disappear ********************** Automatically completed during the plot.</p>
+      <p>063 - Fated Assassination (ending) ************************* During the "Secret of the Sewers" node, having infiltrated Granorg Palace, choosing "I'll be the decoy" will unlock this ending.</p>
+      <p>064 - High Alert **************** Automatically completed during the plot.</p>
+      <p>065 - Successful Infiltration ***************************** Automatically completed during the plot.</p>
+      <p>066 - Princess of Light *********************** Automatically completed during the plot.</p>
+      <p>067 - Mankind &amp; Beastkind (sidequest) ************************* During the "Duty Revealed" node at Granorg, talk to the guard by the save point at Main Street, to receive this sidequest.  Go west to the inn, walk around its left side, and up the stairs to the west fo find Liese and talk to her.  Return to the soldier and talk to him again.  Proceed to the "To Holff Ruins" node at Abyssia Forest.  Head south, then east two screens and talk to Liese.  Return to the entrance, and follow the northern path to the next screen until you reach an open area.  Examine the corpse in the upper right corner.  Head back to Liese to talk to her again.  Return to the "Castle Sewers" node, talk to Liese, and tell her to "Believe in him".  Talk to the soldier by the save point to complete this sidequest and receive the PROMISED KNIFE (ATK+27/MAG+75/HP-30) for Aht.  This sidequest is also a prerequisite for unlocking the "Life of the Beastkind" part of the true ending.</p>
+      <p>068 - Chains of Hatred (ending) ********************** Follow the above steps up to talking to Liese at Granorg the second time. Choose to "Leave it to her" to unlock this ending.</p>
+      <p>069 - One &amp; Only (sidequest) **************** During the "Duty Revealed" node at Granorg, go west to the inn at the Downtown area.  Head upstairs and into the right room.  Talk the man, Kaizan, to receive this sidequest.  Return to "The Closed Mine" node and talk to the miner in the house.  Return to "The Beginning" node, head to the second floor of the inn to find Kaizan and talk to him.  Return to the "Castle Sewers" node and talk to Kaizan again.  Return to Alistel and talk to him again.  Finally, return to Granorg and talk to him to complete this sidequest and receive the Firestar Pact for Aht, needed for "The Starlit Trial" sidequest.</p>
+      <p>070 - Alistel's Offensive ************************* Automatically completed during the plot.</p>
+      <p>071 - Viola's Decision ********************** After the "Wolf in the Fold" node, return to "Alistel's Offensive and talk to Viola to unlock this node.</p>
+      <p>072 - Battle of Gran Plain ************************** Automatically completed during the plot.</p>
+      <p>073 - A Meeting Too Late ************************ Automatically completed during the plot.</p>
+      <p>074 - The Lion General (ending) ********************** During the "Battle of Gran Plain" node (see GRAN3), go north one screen and west two.  Choose to "Go north" to unlock this ending.</p>
+      <p>075 - Rosch in Crisis ********************* Automatically completed during the plot.</p>
+      <p>076 - Wolf in the Fold ********************** Automatically completed during the plot.</p>
+      <p>077 - Lives Entrusted ********************* Automatically completed during the plot.</p>
+      <p>078 - Homecoming **************** Automatically completed during the plot.</p>
+      <p>079 - Parting Ways ****************** Automatically completed during the plot.</p>
+      <p>080 - Flight ************</p>
+      <p>081 - Fiendish ************** Automatically completed during the plot.</p>
+      <p>082 - Swordsman Recruit (sidequest) *********************** During the "Homecoming" node at Alistel, talk to the receptionist on first floor, behind the left desk to receive this sidequest.  Proceed to the "A New Battle" node (see CGNS1).  You will need to complete "The Next Foe" (see 136) and "The Road to Victory" (see 137) sidequests.  After doing so, talk to Gadeff to recruit him.  Continue to the "In Pursuit" node at Alistel, and talk to the receptionist to complete this sidequest and receive 8000 G.</p>
+      <p>083 - Mercenary Recruit (sidequest) *********************** During the "Homecoming" node at Alistel, talk to the receptionist on first floor, behind the left desk to receive this sidequest.  Proceed to "An Introduction" node at Skalla.  After meeting with Tarquin, talk to him a few times to get some information on the mercenary.  Return to the "Echoing Hills" node, defeat the bandits again, and talk to Tarquin.  Return to Skalla and talk to Tarquin again.  Finally, continue to the "In Pursuit" node at Alistel, and talk to the receptionist to complete this sidequest and receive 15000 G.</p>
+      <p>CHAPTER 3</p>
+      <AsciiMap>
 <pre>085   103           --- 089           --- 093     --- 096         100
  |                 |     |           |     |     |     |           |
 084 - 086 - 087 - 088 - 090 - 091 - 092 - 094 - 095 - 097 - 098 - 099 - 101-102</pre>
-</AsciiMap>
-
-<p>120   121         104 - 105</p>
-
-<AsciiMap>
+      </AsciiMap>
+      <p>120   121         104 - 105</p>
+      <AsciiMap>
 <pre>106 - 107 - 109 - 110 - 111 - 112 - 113 - 114 - 116 - 117 ---------------------
        |                                   |
       108               118 - 119         115</pre>
-</AsciiMap>
-
-<p>084 - The Resistance ******************** Automatically completed during the plot.</p>
-
-<p>085 - Sand Sword **************** During &quot;The Resistance&quot; node at Granorg, talk to Will at the bar to unlock this node.  Proceed to &quot;An Introduction&quot; node.  After arriving at Skalla, follow Tarquin inside his shop to receive the Sand Sword.  Return to &quot;The Resistance&quot; node and give it to Will.  This is a prerequisite for unlocking the &quot;Will&#x27;s Sword&quot;, &quot;Will to the Rescue&quot;, and &quot;The Impregnable&quot; nodes later.</p>
-
-<p>086 - To Cornet Village *********************** Automatically completed during the plot.</p>
-
-<p>087 - Evil Tidings ****************** Automatically completed during the plot.</p>
-
-<p>088 - Capital in Flames *********************** Automatically completed during the plot.</p>
-
-<p>089 - Will&#x27;s Sword ****************** Return to &quot;The Resistance&quot; node.  Proceed with the plot up to the &quot;Capital in Flames&quot; node.  If you gave the Sand Sword to Will (see 085), you will automatically unlock this node.</p>
-
-<p>090 - Eruca&#x27;s Whereabouts ************************* Automatically completed during the plot.</p>
-
-<p>091 - Aht&#x27;s Fight ***************** Automatically completed during the plot.</p>
-
-<p>092 - Pierre&#x27;s Betrayal *********************** Automatically completed during the plot.</p>
-
-<p>093 - Something Precious ************************ Return to the &quot;Pierre&#x27;s Betrayal&quot; node.  If you rescued Claire from the Underground Waterway (see 061), then you will automatically unlock this node.</p>
-
-<p>094 - Rescue the Princess ************************* Automatically completed during the plot.</p>
-
-<p>095 - Wounded Otto ****************** Automatically completed during the plot.</p>
-
-<p>096 - Will to the Rescue ************************ Return to the &quot;Wounded Otto&quot; node.  Proceed with the plot normally.  If you gave the Sand Sword to Will (see 085), you will automatically unlock this node.</p>
-
-<p>097 - Breakthrough ****************** Automatically completed during the plot.</p>
-
-<p>098 - Aht&#x27;s Camp **************** Automatically completed during the plot.</p>
-
-<p>099 - Death of a Friend *********************** Automatically completed during the plot.</p>
-
-<p>100 - Stray Lion (ending) **************** Return to the &quot;Death of a Friend&quot; node.  Choose to &quot;Leave it to Marco&quot; to unlock this ending.</p>
-
-<p>101 - Rosch in Fury ******************* Automatically completed during the plot.</p>
-
-<p>102 - East and West Battle ************************** Automatically completed during the plot.</p>
-
-<p>103 - Despairing Young Man (sidequest) ************************** During &quot;The Resistance&quot; node at Granorg, go east two screens and up one.  Talk to the woman dressed in pink to receive this sidequest.  Return to the &quot;Duty Revealed&quot; node, head to the same area, and talk to the man in the cloak. Return to &quot;The Resistance&quot; node to talk to him again to complete this sidequest and receive the Left-Cut Scroll for Marco, needed for the &quot;Marco the Calm&quot; sidequest.</p>
-
-<p>104 - Assassination of Dias (sidequest) *************************** During the &quot;Rescue the Princess&quot; node at Granorg, head to the Castle Gates. Talk to the man in the cloak to receive this sidequest.  Return to the &quot;Aht&#x27;s Prayer&quot; node and proceed to Granorg.  Head to the second floor of the inn to find Dias.  Talk to him, then choose to &quot;Leave&quot;.  Return to the questgiver to complete this sidequest and receive the Rose Ring (HP+10/ATK+5). This sidequest is also a prerequisite for unlocking &quot;The Lives of Humans&quot; part of the true ending.</p>
-
-<p>105 - The World&#x27;s Betrayal (ending) ************************** Follow the above steps up to talking to Dias.  Instead, choose to &quot;Accept invitation&quot; to unlock this ending.</p>
-
-<p>106 - The Beastkind Forest ************************** Automatically completed during the plot.</p>
-
-<p>107 - Unacceptable Loss *********************** Automatically completed during the plot.</p>
-
-<p>108 - Gauntlet ************** Automatically completed during the plot.</p>
-
-<p>109 - Beastkind&#x27;s Favor *********************** Automatically completed during the plot.</p>
-
-<p>110 - Report from Vanoss ************************ Automatically completed during the plot.</p>
-
-<p>111 - Darkness in Alistel ************************* Automatically completed during the plot.</p>
-
-<p>112 - Reunion with Raul *********************** Automatically completed during the plot.</p>
-
-<p>113 - Premonition of War ************************ Automatically completed during the plot.</p>
-
-<p>114 - Shattered Steel Arm ************************* Automatically completed during the plot.</p>
-
-<p>115 - Assassination of Raul (ending) *************************** During the &quot;Premonition of War&quot; node at Celestia, talk to Rosch at the Boundary Tree, then Raul, then Barranca.  Choose to &quot;Nominate Raul&quot; to unlock this ending.</p>
-
-<p>116 - Rosch in Agony ******************** Automatically completed during the plot.</p>
-
-<p>117 - Lion&#x27;s Awakening ********************** Automatically completed during the plot.</p>
-
-<p>118 - Wandering Soul (sidequest) ******************** During the &quot;Darkness in Alistel&quot; node, head up and Vanoss will arrive.  Talk to him again to receive this sidequest.  Proceed to the &quot;Road to Forgia&quot; node and make your way to Skalla.  Head to the middle house on the north side of town. Search around the bed for a hidden soul and choose to &quot;Send soul to heavens&quot;. Continue to the &quot;Skalla Liberated&quot; node and head to Skalla.  Talk to Vanoss at the northwest side of town to complete this sidequest and receive the Cleansing Cape (DEF+30/MDF+36/MAG+5).  This sidequest is also a prerequisite for unlocking the &quot;Shaman&quot; part of the true ending.</p>
-
-<p>119 - Fleeting Peace (ending) ******************** Follow the above steps up to finding the hidden soul.  Instead, choose to tell Aht, &quot;Don&#x27;t do anything&quot; to unlock this ending.</p>
-
-<p>120 - Second Opinion (sidequest) ******************** During the &quot;Darkness in Alistel&quot; node, go up to the Second Ward and climb the two staircases to the left.  Talk to the woman above to receive this sidequest. Return to the &quot;A New Mission&quot; node and talk to the man in the same location. Return to the &quot;Darkness&quot; in Alistel&quot; node and talk to him again to complete this sidequest and receive the Slumbering Scroll for Raynie, needed for the &quot;Raynie the Active&quot; sidequest.</p>
-
-<p>121 - Battlefield Missive (sidequest) ************************* During the &quot;Darkness in Alistel&quot; node, go up to the Second Ward and climb the stairs to the right.  Talk to the boy by the weapon shop to receive this sidequest.  Return to &quot;The Valkyrie&quot; node, head up to the mess hall where Rosch and Viola were, and talk to the soldier sitting on the bench to receive the Death Pact for Stocke, needed for &quot;The Blades Trial&quot; sidequest.  Finally, return to the &quot;Darkness in Alistel&quot; node and talk to the boy to complete this sidequest and receive a Celestial Oil.</p>
-
-<p>=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=</p>
-
-<p>CHAPTER 4</p>
-
-<p>=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=</p>
-
-<AsciiMap>
+      </AsciiMap>
+      <p>084 - The Resistance ******************** Automatically completed during the plot.</p>
+      <p>085 - Sand Sword **************** During "The Resistance" node at Granorg, talk to Will at the bar to unlock this node.  Proceed to "An Introduction" node.  After arriving at Skalla, follow Tarquin inside his shop to receive the Sand Sword.  Return to "The Resistance" node and give it to Will.  This is a prerequisite for unlocking the "Will's Sword", "Will to the Rescue", and "The Impregnable" nodes later.</p>
+      <p>086 - To Cornet Village *********************** Automatically completed during the plot.</p>
+      <p>087 - Evil Tidings ****************** Automatically completed during the plot.</p>
+      <p>088 - Capital in Flames *********************** Automatically completed during the plot.</p>
+      <p>089 - Will's Sword ****************** Return to "The Resistance" node.  Proceed with the plot up to the "Capital in Flames" node.  If you gave the Sand Sword to Will (see 085), you will automatically unlock this node.</p>
+      <p>090 - Eruca's Whereabouts ************************* Automatically completed during the plot.</p>
+      <p>091 - Aht's Fight ***************** Automatically completed during the plot.</p>
+      <p>092 - Pierre's Betrayal *********************** Automatically completed during the plot.</p>
+      <p>093 - Something Precious ************************ Return to the "Pierre's Betrayal" node.  If you rescued Claire from the Underground Waterway (see 061), then you will automatically unlock this node.</p>
+      <p>094 - Rescue the Princess ************************* Automatically completed during the plot.</p>
+      <p>095 - Wounded Otto ****************** Automatically completed during the plot.</p>
+      <p>096 - Will to the Rescue ************************ Return to the "Wounded Otto" node.  Proceed with the plot normally.  If you gave the Sand Sword to Will (see 085), you will automatically unlock this node.</p>
+      <p>097 - Breakthrough ****************** Automatically completed during the plot.</p>
+      <p>098 - Aht's Camp **************** Automatically completed during the plot.</p>
+      <p>099 - Death of a Friend *********************** Automatically completed during the plot.</p>
+      <p>100 - Stray Lion (ending) **************** Return to the "Death of a Friend" node.  Choose to "Leave it to Marco" to unlock this ending.</p>
+      <p>101 - Rosch in Fury ******************* Automatically completed during the plot.</p>
+      <p>102 - East and West Battle ************************** Automatically completed during the plot.</p>
+      <p>103 - Despairing Young Man (sidequest) ************************** During "The Resistance" node at Granorg, go east two screens and up one.  Talk to the woman dressed in pink to receive this sidequest.  Return to the "Duty Revealed" node, head to the same area, and talk to the man in the cloak. Return to "The Resistance" node to talk to him again to complete this sidequest and receive the Left-Cut Scroll for Marco, needed for the "Marco the Calm" sidequest.</p>
+      <p>104 - Assassination of Dias (sidequest) *************************** During the "Rescue the Princess" node at Granorg, head to the Castle Gates. Talk to the man in the cloak to receive this sidequest.  Return to the "Aht's Prayer" node and proceed to Granorg.  Head to the second floor of the inn to find Dias.  Talk to him, then choose to "Leave".  Return to the questgiver to complete this sidequest and receive the Rose Ring (HP+10/ATK+5). This sidequest is also a prerequisite for unlocking "The Lives of Humans" part of the true ending.</p>
+      <p>105 - The World's Betrayal (ending) ************************** Follow the above steps up to talking to Dias.  Instead, choose to "Accept invitation" to unlock this ending.</p>
+      <p>106 - The Beastkind Forest ************************** Automatically completed during the plot.</p>
+      <p>107 - Unacceptable Loss *********************** Automatically completed during the plot.</p>
+      <p>108 - Gauntlet ************** Automatically completed during the plot.</p>
+      <p>109 - Beastkind's Favor *********************** Automatically completed during the plot.</p>
+      <p>110 - Report from Vanoss ************************ Automatically completed during the plot.</p>
+      <p>111 - Darkness in Alistel ************************* Automatically completed during the plot.</p>
+      <p>112 - Reunion with Raul *********************** Automatically completed during the plot.</p>
+      <p>113 - Premonition of War ************************ Automatically completed during the plot.</p>
+      <p>114 - Shattered Steel Arm ************************* Automatically completed during the plot.</p>
+      <p>115 - Assassination of Raul (ending) *************************** During the "Premonition of War" node at Celestia, talk to Rosch at the Boundary Tree, then Raul, then Barranca.  Choose to "Nominate Raul" to unlock this ending.</p>
+      <p>116 - Rosch in Agony ******************** Automatically completed during the plot.</p>
+      <p>117 - Lion's Awakening ********************** Automatically completed during the plot.</p>
+      <p>118 - Wandering Soul (sidequest) ******************** During the "Darkness in Alistel" node, head up and Vanoss will arrive.  Talk to him again to receive this sidequest.  Proceed to the "Road to Forgia" node and make your way to Skalla.  Head to the middle house on the north side of town. Search around the bed for a hidden soul and choose to "Send soul to heavens". Continue to the "Skalla Liberated" node and head to Skalla.  Talk to Vanoss at the northwest side of town to complete this sidequest and receive the Cleansing Cape (DEF+30/MDF+36/MAG+5).  This sidequest is also a prerequisite for unlocking the "Shaman" part of the true ending.</p>
+      <p>119 - Fleeting Peace (ending) ******************** Follow the above steps up to finding the hidden soul.  Instead, choose to tell Aht, "Don't do anything" to unlock this ending.</p>
+      <p>120 - Second Opinion (sidequest) ******************** During the "Darkness in Alistel" node, go up to the Second Ward and climb the two staircases to the left.  Talk to the woman above to receive this sidequest. Return to the "A New Mission" node and talk to the man in the same location. Return to the "Darkness" in Alistel" node and talk to him again to complete this sidequest and receive the Slumbering Scroll for Raynie, needed for the "Raynie the Active" sidequest.</p>
+      <p>121 - Battlefield Missive (sidequest) ************************* During the "Darkness in Alistel" node, go up to the Second Ward and climb the stairs to the right.  Talk to the boy by the weapon shop to receive this sidequest.  Return to "The Valkyrie" node, head up to the mess hall where Rosch and Viola were, and talk to the soldier sitting on the bench to receive the Death Pact for Stocke, needed for "The Blades Trial" sidequest.  Finally, return to the "Darkness in Alistel" node and talk to the boy to complete this sidequest and receive a Celestial Oil.</p>
+      <p>CHAPTER 4</p>
+      <AsciiMap>
 <pre>128         135 - 136 - 137     --- 134
                                    |           |                 |
 --- 122 - 123 - 124 - 125 - 126 - 127 - 129 - 130 - 131 - 132 - 133 -----</pre>
-</AsciiMap>
-
-<AsciiMap>
+      </AsciiMap>
+      <AsciiMap>
 <pre>--- 139 - 140               145
      |                             |
 --- 138 ------------- 141 - 142 - 143 - 146 - 147 - 148 - 149 -----------
                                    |
     150                           144</pre>
-</AsciiMap>
-
-<p>122 - Imprisoned Stocke *********************** Automatically completed during the plot.</p>
-
-<p>123 - Gladiator *************** Automatically completed during the plot.</p>
-
-<p>124 - Saving Aht **************** Automatically completed during the plot.</p>
-
-<p>125 - Inquiry in the Desert *************************** Automatically completed during the plot.</p>
-
-<p>126 - The Tournament ******************** Automatically completed during the plot.</p>
-
-<p>127 - Chi-Clad Warrior ********************** Automatically completed during the plot.</p>
-
-<p>128 - Aht&#x27;s Sacrifice (ending) ********************* During &quot;The Tournament&quot; node at Cygnus, win the first two rounds of the tournament.  Talk to the mercenary again for round three and choose to &quot;Go with Aht&#x27;s Plan&quot; to unlock this ending.</p>
-
-<p>129 - Breaker of Chi ******************** Automatically completed during the plot.</p>
-
-<p>130 - Search for Friends ************************ Automatically completed during the plot.</p>
-
-<p>131 - The Great Menace ********************** Automatically completed during the plot.</p>
-
-<p>132 - Desert City Messiah ************************* Automatically completed during the plot.</p>
-
-<p>133 - A King&#x27;s Decision *********************** Automatically completed during the plot.</p>
-
-<p>134 - Hedge in Exile ******************** During the &quot;Warlord&#x27;s Request&quot; node, you will receive the Bloodied Armlet. Return to the &quot;Desert City Messiah&quot; node and with the Armlet, you will automatically unlock this node.</p>
-
-<p>135 - A New Battle ****************** Automatically completed during the plot.</p>
-
-<p>136 - The Next Foe (sidequest) ****************** During the &quot;A New Battle&quot; node, talk to the mercenary, Gadeff.  Defeat the Crush Bear to complete this sidequest and receive the Pieti Edge (ATK+30/MAG+39/SPD-2).  This sidequest is also a prerequisite to the &quot;Swordsman Recruit&quot; and &quot;The Road to Victory&quot; sidequests.</p>
-
-<p>137 - The Road to Victory (sidequest) ************************* After completing &quot;The Next Foe&quot; sidequest, talk to Gadeff again to receive this sidequest.  Defeat the Mist Spider to complete this sidequest and receive the Moirae Manteau (DEF+48/MDF+41).  This sidequest is also a prerequisite to the &quot;Swordsman Recruit&quot; sidequest.</p>
-
-<p>138 - Celestian War ******************* Automatically completed during the plot.</p>
-
-<p>139 - A Friend to Elm ********************* During the &quot;Celestian War&quot; node, talk to Elm to unlock this node.</p>
-
-<p>140 - Blade&#x27;s Resurrection ************************** During the &quot;Demigod&quot; node, defeat Hugo the first time to receive the Historica. Return to the &quot;Celestian War&quot; node, and talk to Elm to unlock this node.</p>
-
-<p>141 - Winds of War ****************** Automatically completed during the plot.</p>
-
-<p>142 - Call to Destruction ************************* Automatically completed during the plot.</p>
-
-<p>143 - A New Alliance ******************** Automatically completed during the plot.</p>
-
-<p>144 - The Eternal War (ending) ********************* During the &quot;Call to Destruction&quot; node and talk to Raul.  Choose to &quot;Join with someone else&quot; and &quot;Team up with Granorg&quot; to unlock this ending.</p>
-
-<p>145 - A Beastkind Warrior ************************* During &quot;The Tournament&quot; node at Cygnus, win the first two rounds of the tournament.  Talk to the mercenary again for round three and choose to &quot;Stop Aht&quot;.  Return to the &quot;A New Alliance&quot; node, talk to Raul, and choose to &quot;Team up with Forgia&quot; to unlock this node.</p>
-
-<p>146 - Gafka&#x27;s Past ****************** Automatically completed during the plot.</p>
-
-<p>147 - Southbound **************** Automatically completed during the plot.</p>
-
-<p>148 - Road to Forgia ******************** Automatically completed during the plot.</p>
-
-<p>149 - Gafka&#x27;s Homeland ********************** Automatically completed during the plot.</p>
-
-<p>150 - Conversion (sidequest) **************** During the &quot;Celestian War&quot; node, enter the Patriarch&#x27;s House and talk to Sonja to receive this sidequest.  You need to find three cores for Rosch.</p>
-
-<p>1) Impale Core: After learning Mana sight, return to &quot;The Closed Mine&quot; node, leave the mine, and enter the house by the entrance.  Search around for a hidden chest which contains this core. 2) Blast Core: During the &quot;In Pursuit&quot; node at the Underground Lab, make your way down to the 5th basement level.  Head up past the intersection and hug the left wall until you can go through a path that is rather hard to see.  Defeat the Special Thaumachine there to win this core. 3) Haste Core: Reward from the &quot;A Scholar&#x27;s Creed&quot; sidequest (see 207).</p>
-
-<p>After you have obtained any cores, return to Sonja at &quot;The Celestian War&quot; with them, and she will install them in Rosch&#x27;s Gauntlet.  Learn all three abilities to complete this sidequest.</p>
-
-<p>=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=</p>
-
-<p>CHAPTER 5</p>
-
-<p>=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=</p>
-
-<AsciiMap>
+      </AsciiMap>
+      <p>122 - Imprisoned Stocke *********************** Automatically completed during the plot.</p>
+      <p>123 - Gladiator *************** Automatically completed during the plot.</p>
+      <p>124 - Saving Aht **************** Automatically completed during the plot.</p>
+      <p>125 - Inquiry in the Desert *************************** Automatically completed during the plot.</p>
+      <p>126 - The Tournament ******************** Automatically completed during the plot.</p>
+      <p>127 - Chi-Clad Warrior ********************** Automatically completed during the plot.</p>
+      <p>128 - Aht's Sacrifice (ending) ********************* During "The Tournament" node at Cygnus, win the first two rounds of the tournament (see CGNS1).  Talk to the mercenary again for round three and choose to "Go with Aht's Plan" to unlock this ending.</p>
+      <p>129 - Breaker of Chi ******************** Automatically completed during the plot.</p>
+      <p>130 - Search for Friends ************************ Automatically completed during the plot.</p>
+      <p>131 - The Great Menace ********************** Automatically completed during the plot.</p>
+      <p>132 - Desert City Messiah ************************* Automatically completed during the plot.</p>
+      <p>133 - A King's Decision *********************** Automatically completed during the plot.</p>
+      <p>134 - Hedge in Exile ******************** During the "Warlord's Request" node, you will receive the Bloodied Armlet. Return to the "Desert City Messiah" node and with the Armlet, you will automatically unlock this node.</p>
+      <p>135 - A New Battle ****************** Automatically completed during the plot.</p>
+      <p>136 - The Next Foe (sidequest) ****************** During the "A New Battle" node, talk to the mercenary, Gadeff.  Defeat the Crush Bear (see CGNS1) to complete this sidequest and receive the Pieti Edge (ATK+30/MAG+39/SPD-2).  This sidequest is also a prerequisite to the "Swordsman Recruit" and "The Road to Victory" sidequests.</p>
+      <p>137 - The Road to Victory (sidequest) ************************* After completing "The Next Foe" sidequest, talk to Gadeff again to receive this sidequest.  Defeat the Mist Spider (see CGNS1) to complete this sidequest and receive the Moirae Manteau (DEF+48/MDF+41).  This sidequest is also a prerequisite to the "Swordsman Recruit" sidequest.</p>
+      <p>138 - Celestian War ******************* Automatically completed during the plot.</p>
+      <p>139 - A Friend to Elm ********************* During the "Celestian War" node, talk to Elm to unlock this node.</p>
+      <p>140 - Blade's Resurrection ************************** During the "Demigod" node, defeat Hugo the first time to receive the Historica. Return to the "Celestian War" node, and talk to Elm to unlock this node.</p>
+      <p>141 - Winds of War ****************** Automatically completed during the plot.</p>
+      <p>142 - Call to Destruction ************************* Automatically completed during the plot.</p>
+      <p>143 - A New Alliance ******************** Automatically completed during the plot.</p>
+      <p>144 - The Eternal War (ending) ********************* During the "Call to Destruction" node and talk to Raul.  Choose to "Join with someone else" and "Team up with Granorg" to unlock this ending.</p>
+      <p>145 - A Beastkind Warrior ************************* During "The Tournament" node at Cygnus, win the first two rounds of the tournament (see CGNS1).  Talk to the mercenary again for round three and choose to "Stop Aht".  Return to the "A New Alliance" node, talk to Raul, and choose to "Team up with Forgia" to unlock this node.</p>
+      <p>146 - Gafka's Past ****************** Automatically completed during the plot.</p>
+      <p>147 - Southbound **************** Automatically completed during the plot.</p>
+      <p>148 - Road to Forgia ******************** Automatically completed during the plot.</p>
+      <p>149 - Gafka's Homeland ********************** Automatically completed during the plot.</p>
+      <p>150 - Conversion (sidequest) **************** During the "Celestian War" node, enter the Patriarch's House and talk to Sonja to receive this sidequest.  You need to find three cores for Rosch.</p>
+      <p>1) Impale Core: After learning Mana sight, return to "The Closed Mine" node, leave the mine, and enter the house by the entrance.  Search around for a hidden chest which contains this core. 2) Blast Core: During the "In Pursuit" node at the Underground Lab (see ULAB1), make your way down to the 5th basement level.  Head up past the intersection and hug the left wall until you can go through a path that is rather hard to see.  Defeat the Special Thaumachine there to win this core. 3) Haste Core: Reward from the "A Scholar's Creed" sidequest (see 207).</p>
+      <p>After you have obtained any cores, return to Sonja at "The Celestian War" with them, and she will install them in Rosch's Gauntlet.  Learn all three abilities to complete this sidequest.</p>
+      <p>CHAPTER 5</p>
+      <AsciiMap>
 <pre>153
            |
 --- 151 - 152 - 154 - 155 - 156 - 157 - 158 - 159 - 160 ---</pre>
-</AsciiMap>
-
-<p>161 - 162         175 - 176</p>
-
-<AsciiMap>
+      </AsciiMap>
+      <p>161 - 162         175 - 176</p>
+      <AsciiMap>
 <pre>--- 163 - 164 - 165 - 166 - 167 - 168 - 169 - 171 - 172 ---
                                          |
                 173 - 174   177 - 178   170</pre>
-</AsciiMap>
-
-<p>151 - Scorching Battlefield *************************** Automatically completed during the plot.</p>
-
-<p>152 - Warlord&#x27;s Request *********************** Automatically completed during the plot.</p>
-
-<p>153 - A Mighty King&#x27;s Death (ending) *************************** During the &quot;Scorched Battlefield&quot; node at Cygnus, talk to Garland at his room. Choose to &quot;Stay in Cygnus&quot; to unlock this ending.</p>
-
-<p>154 - Dias Strikes ****************** Automatically completed during the plot.</p>
-
-<p>155 - Stocke Strikes ******************** Automatically completed during the plot.</p>
-
-<p>156 - Secret Weapons ******************** Automatically completed during the plot.</p>
-
-<p>157 - Garland&#x27;s Arrival *********************** Automatically completed during the plot.</p>
-
-<p>158 - Destroy the Ballistas *************************** Automatically completed during the plot.</p>
-
-<p>159 - Terrain Advantage *********************** Automatically completed during the plot.</p>
-
-<p>160 - A New Journey ******************* Automatically completed during the plot.</p>
-
-<p>161 - An Unwanted Reunion (sidequest) ************************* During the &quot;Scorched Battlefield&quot; node, head west of the inn to the Plaza. Talk to Ricky along the main road to receive this sidequest.  Head to the tavern and talk to the green-haired girl, Mimel, twice.  Return to the &quot;Chi-Clad Warrior&quot; node and talk to the bartender.  Return to the &quot;Scorched Battlefield&quot; node, talk to Mimel again, and choose to &quot;Let Mimel go.&quot; Talk to Ricky again to complete this sidequest and receive the Sable Larme (DEF+33/MDF+25/MAG+5).  This sidequest is also a prerequisite for unlocking the &quot;A Little Hero&quot; part of the true ending.</p>
-
-<p>162 - Simmering Fury (ending) ******************** Follow the above steps until you confront Mimel the second time.  Choose to &quot;Capture Mimel&quot; to unlock this ending.</p>
-
-<p>163 - Battle for Skalla *********************** Automatically completed during the plot.</p>
-
-<p>164 - Rosch&#x27;s Stratagem *********************** Automatically completed during the plot.</p>
-
-<p>165 - Skalla Liberated ********************** Automatically completed during the plot.</p>
-
-<p>166 - Sand Fortress Siege ************************* Automatically completed during the plot.</p>
-
-<p>167 - Commander&#x27;s Fall ********************** Automatically completed during the plot.</p>
-
-<p>168 - Forbidden Weaponry ************************ Automatically completed during the plot.</p>
-
-<p>169 - Etherion ************** Automatically completed during the plot.</p>
-
-<p>170 - Divine Judgement (ending) ********************** During the &quot;Forbidden Weaponry&quot; node, talk to Rosch and join the meeting. Choose to &quot;Accept the truce&quot; to unlock this ending.</p>
-
-<p>171 - Royal Talisman ******************** Automatically completed during the plot.</p>
-
-<p>172 - A Black Disciple ********************** Automatically completed during the plot.</p>
-
-<p>173 - Gafka &amp; the Scrolls ************************* During the &quot;Sand Fortress Siege&quot; node at Forgia, head to the village entrance and talk to Bergas to unlock this node.</p>
-
-<p>174 - The Ultimate Skill (sidequest) *********************** During the &quot;Sand Fortress Siege&quot; node at Forgia, head to the village entrance and talk to Bergas to receive this sidequest.  You will need to find four books for Gafka.</p>
-
-<p>1) Strongman Book: Search the east side of the entrance of Forgia to find a hidden chest which contains this book. 2) Tristrike Book: Reward from &quot;The Beast God&#x27;s Birth&quot; sidequest (see 175). 3) Wind God Book: On B4 of the Underground Lab, head up to a platform that you should search for a hidden chest which contains this book. 4) Omnipedia Book: Reward from the &quot;A Timely Warning&quot; sidequest (see 213).</p>
-
-<p>After you have obtained any books, return to Bergas at &quot;Gafka &amp; the Scrolls&quot;. Defeat him each time and learn all four abilities to complete this sidequest.</p>
-
-<p>175 - The Beast God&#x27;s Birth (sidequest) *************************** During the &quot;Sand Fortress Siege&quot; node at Forgia, talk to Galva to receive this sidequest.  Proceed to &quot;The Royal Secret&quot; node and head to Gran Plain.  Go north, west, and south one screen to South Hill.  In about the lower left corner, you will see a cross on the ground.  Examine it to obtain the Beast God&#x27;s Nail.  Return to &quot;Gafka &amp; the Scrolls&quot;, talk to Galva, choose to &quot;Wait&quot; and &quot;Stop the ceremony&quot; to complete this sidequest and receive the Magic Fist Forza (ATK+67) and TRISTRIKE BOOK for Gafka, needed for &quot;The Ultimate Skill&quot; sidequest.  This sidequest is a prerequisite for unlocking the &quot;Beast God at Rest&quot; part of the true ending.</p>
-
-<p>176 - Beast God&#x27;s Reign (ending) *********************** Follow the above steps until you begin the ceremony.  Choose &quot;Don&#x27;t say anything&quot; to unlock this ending.</p>
-
-<p>177 - At Journey&#x27;s End (sidequest) ********************** This one is very tricky, as it has prerequisite choices to even access the sidequest, and the game doesn&#x27;t tell you.  There are three decisions you have to make over the course of the game.</p>
-
-<p>1) During the &quot;Breakthrough&quot; node at Gran Plain, head north one screen and west to the checkpoint.  You will hear someone in distress back east.  Make sure to choose &quot;Let&#x27;s go save her now.&quot; 2) After the &quot;Wolf in the Fold&quot; node, return to &quot;Alistel&#x27;s Offensive&quot; and talk to Viola.  Return to the &quot;A Meeting Too Late&quot; node and proceed with the plot normally.  Make sure to choose &quot;I leave it to you.&quot; 3) During the &quot;Commander&#x27;s Fall&quot; node at the Sand Fortress, defeat the Thaumaton boss at the end.  Afterwards, make sure to choose &quot;Bring back now.&quot;</p>
-
-<p>Despite that last decision occuring AFTER the time when you can access the sidequest, it is indeed a prerequisite.  Return to the &quot;Gafka &amp; the Scrolls&quot; node and head to Skalla.  Talk to Marco by the item shop.  Then, talk to Raynie by the inn and choose &quot;I can&#x27;t give up.&quot;  Talk to Marco again to complete this sidequest and receive the Priere Bonheur (ATK+15/MAG+32/Fear Res+5).  This sidequest is a prerequisite for unlocking the &quot;A Warrior in Love&quot; part of the true ending.</p>
-
-<p>178 - Oncoming Calamity (ending) *********************** Follow the above steps until you talk to Raynie about Marco&#x27;s concerns.  Choose &quot;I&#x27;ll stop fighting&quot; to unlock this ending.</p>
-
-<p>=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=</p>
-
-<p>CHAPTER 6</p>
-
-<p>=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=</p>
-
-<AsciiMap>
+      </AsciiMap>
+      <p>151 - Scorching Battlefield *************************** Automatically completed during the plot.</p>
+      <p>152 - Warlord's Request *********************** Automatically completed during the plot.</p>
+      <p>153 - A Mighty King's Death (ending) *************************** During the "Scorched Battlefield" node at Cygnus, talk to Garland at his room. Choose to "Stay in Cygnus" to unlock this ending.</p>
+      <p>154 - Dias Strikes ****************** Automatically completed during the plot.</p>
+      <p>155 - Stocke Strikes ******************** Automatically completed during the plot.</p>
+      <p>156 - Secret Weapons ******************** Automatically completed during the plot.</p>
+      <p>157 - Garland's Arrival *********************** Automatically completed during the plot.</p>
+      <p>158 - Destroy the Ballistas *************************** Automatically completed during the plot.</p>
+      <p>159 - Terrain Advantage *********************** Automatically completed during the plot.</p>
+      <p>160 - A New Journey ******************* Automatically completed during the plot.</p>
+      <p>161 - An Unwanted Reunion (sidequest) ************************* During the "Scorched Battlefield" node, head west of the inn to the Plaza. Talk to Ricky along the main road to receive this sidequest.  Head to the tavern and talk to the green-haired girl, Mimel, twice.  Return to the "Chi-Clad Warrior" node and talk to the bartender.  Return to the "Scorched Battlefield" node, talk to Mimel again, and choose to "Let Mimel go." Talk to Ricky again to complete this sidequest and receive the Sable Larme (DEF+33/MDF+25/MAG+5).  This sidequest is also a prerequisite for unlocking the "A Little Hero" part of the true ending.</p>
+      <p>162 - Simmering Fury (ending) ******************** Follow the above steps until you confront Mimel the second time.  Choose to "Capture Mimel" to unlock this ending.</p>
+      <p>163 - Battle for Skalla *********************** Automatically completed during the plot.</p>
+      <p>164 - Rosch's Stratagem *********************** Automatically completed during the plot.</p>
+      <p>165 - Skalla Liberated ********************** Automatically completed during the plot.</p>
+      <p>166 - Sand Fortress Siege ************************* Automatically completed during the plot.</p>
+      <p>167 - Commander's Fall ********************** Automatically completed during the plot.</p>
+      <p>168 - Forbidden Weaponry ************************ Automatically completed during the plot.</p>
+      <p>169 - Etherion ************** Automatically completed during the plot.</p>
+      <p>170 - Divine Judgement (ending) ********************** During the "Forbidden Weaponry" node, talk to Rosch and join the meeting. Choose to "Accept the truce" to unlock this ending.</p>
+      <p>171 - Royal Talisman ******************** Automatically completed during the plot.</p>
+      <p>172 - A Black Disciple ********************** Automatically completed during the plot.</p>
+      <p>173 - Gafka &amp; the Scrolls ************************* During the "Sand Fortress Siege" node at Forgia, head to the village entrance and talk to Bergas to unlock this node.</p>
+      <p>174 - The Ultimate Skill (sidequest) *********************** During the "Sand Fortress Siege" node at Forgia, head to the village entrance and talk to Bergas to receive this sidequest.  You will need to find four books for Gafka.</p>
+      <p>1) Strongman Book: Search the east side of the entrance of Forgia to find a hidden chest which contains this book. 2) Tristrike Book: Reward from "The Beast God's Birth" sidequest (see 175). 3) Wind God Book: On B4 of the Underground Lab, head up to a platform that you should search for a hidden chest which contains this book. 4) Omnipedia Book: Reward from the "A Timely Warning" sidequest (see 213).</p>
+      <p>After you have obtained any books, return to Bergas at "Gafka &amp; the Scrolls". Defeat him each time and learn all four abilities to complete this sidequest.</p>
+      <p>175 - The Beast God's Birth (sidequest) *************************** During the "Sand Fortress Siege" node at Forgia, talk to Galva to receive this sidequest.  Proceed to "The Royal Secret" node and head to Gran Plain (see GRAN5).  Go north, west, and south one screen to South Hill.  In about the lower left corner, you will see a cross on the ground.  Examine it to obtain the Beast God's Nail.  Return to "Gafka &amp; the Scrolls", talk to Galva, choose to "Wait" and "Stop the ceremony" to complete this sidequest and receive the Magic Fist Forza (ATK+67) and TRISTRIKE BOOK for Gafka, needed for "The Ultimate Skill" sidequest.  This sidequest is a prerequisite for unlocking the "Beast God at Rest" part of the true ending.</p>
+      <p>176 - Beast God's Reign (ending) *********************** Follow the above steps until you begin the ceremony.  Choose "Don't say anything" to unlock this ending.</p>
+      <p>177 - At Journey's End (sidequest) ********************** This one is very tricky, as it has prerequisite choices to even access the sidequest, and the game doesn't tell you.  There are three decisions you have to make over the course of the game.</p>
+      <p>1) During the "Breakthrough" node at Gran Plain (see GRAN1), head north one screen and west to the checkpoint.  You will hear someone in distress back east.  Make sure to choose "Let's go save her now." 2) After the "Wolf in the Fold" node (see GRAN3), return to "Alistel's Offensive" and talk to Viola.  Return to the "A Meeting Too Late" node and proceed with the plot normally.  Make sure to choose "I leave it to you." 3) During the "Commander's Fall" node at the Sand Fortress (SAND6), defeat the Thaumaton boss at the end.  Afterwards, make sure to choose "Bring back now."</p>
+      <p>Despite that last decision occuring AFTER the time when you can access the sidequest, it is indeed a prerequisite.  Return to the "Gafka &amp; the Scrolls" node and head to Skalla.  Talk to Marco by the item shop.  Then, talk to Raynie by the inn and choose "I can't give up."  Talk to Marco again to complete this sidequest and receive the Priere Bonheur (ATK+15/MAG+32/Fear Res+5).  This sidequest is a prerequisite for unlocking the "A Warrior in Love" part of the true ending.</p>
+      <p>178 - Oncoming Calamity (ending) *********************** Follow the above steps until you talk to Raynie about Marco's concerns.  Choose "I'll stop fighting" to unlock this ending.</p>
+      <p>CHAPTER 6</p>
+      <AsciiMap>
 <pre>181   189   190         186
            |                       |
 --- 179 - 180 - 182 - 183 - 184 - 185 - 187 - 188 ---
      |
     191 - 192 - 193 - 194 - 195 - 196</pre>
-</AsciiMap>
-
-<AsciiMap>
-<pre>--- 197 - 198 - 199 - 200 - 201 - 202 - 204 - 205 ---
-                                   |
-                                  203   206   207</pre>
-</AsciiMap>
-
-<p>179 - Waiting at Skalla *********************** Automatically completed during the plot.</p>
-
-<p>180 - An Introduction ********************* Automatically completed during the plot.</p>
-
-<p>181 - Merchant Tarquin ********************** During &quot;An Introduction&quot; node, enter Tarquin&#x27;s shop and talk to him to unlock this node.</p>
-
-<p>182 - To Holff Ruins ******************** Automatically completed during the plot.</p>
-
-<p>183 - The Beast Mark Trial ************************** Automatically completed during the plot.</p>
-
-<p>184 - Overcoming the Trial ************************** Automatically completed during the plot.</p>
-
-<p>185 - The Final Defense *********************** Automatically completed during the plot.</p>
-
-<p>186 - Premature Invasion (ending) ************************ During the &quot;Overcoming the Trial&quot; node, talk to Bergas and choose to &quot;Lead the way&quot; to unlock this ending.</p>
-
-<p>187 - The Impregnable ********************* If you have already unlocked the Escort (see 061) and Sand Sword (see 085) nodes, then this will be automatically completed during the plot.</p>
-
-<p>188 - The Royal Throne ********************** Automatically completed during the plot.</p>
-
-<p>189 - Moon Armlet (sidequest) ***************** During the &quot;Waiting at Skalla&quot; node, return to Cygnus and talk to Garland to receive this sidequest.  Head to the Itolia Wasteland, then go north one screen, east one, and north two.  You should see a small rock formation in the middle.  Search around there for the hidden Moon Armlet.  Return it to Garland to complete this sidequest and receive the Suna-Watari (ATK+42/SPD-4).</p>
-
-<p>190 - The Good Thief&#x27;s Way (sidequest) ************************** During the &quot;Waiting at Skalla&quot; node, return to Cygnus.  Talk to Hertz &amp; Bram by the equipment shops to receive this sidequest.  Return to &quot;The Beginning&quot; node at Alistel and talk to the child by the tavern.  Return to the &quot;Castle Sewers&quot; node at Granorg and talk to the boy to the left of the inn.  Finally, return to Hertz &amp; Bram to complete this sidequest and receive the Piercing Scroll for Raynie, needed for the &quot;Raynie the Active&quot; sidequest.</p>
-
-<p>191 - The Living Legend (sidequest) *********************** During the &quot;Waiting at Skalla&quot; node at the Itolia Wasteland, go north one screen, west one, and continue west and up to a well.  Climb down the wall to meet a man named Sword to receive this sidequest.</p>
-
-<p>Return to &quot;The Beginning&quot; node at Alistel.  Talk to Wand, the boy inside the weapon shop, and choose &quot;Hope.&quot;  Return to &quot;The Messenger&#x27;s News&quot; node and search the upper right corner to find the Shade Pact for Stocke.  Return to the &quot;Castle Sewers&quot; node in Granorg.  Talk to a man in the lower left corner named Pentacle, and choose &quot;The past.&quot;  Return to the &quot;How to Disappear&quot; node, go down the sewers, and head west one screen.  Search the left of the upper paths to find the hidden Sunlight Pact for Eruca.  Return to &quot;The Beastkind Forest&quot; node and talk to Chalice, the lady by the equipment shop and choose &quot;All things&quot;.  Search to the left of the sparkling bushes at the center of town to find the hidden Meteorite Pact for Aht.  Talk to Sword again to complete this sidequest.</p>
-
-<p>192 - The Three Contracts ************************* After completing &quot;The Living Legend&quot; sidequest, talk to Vainqueur to unlock this node.</p>
-
-<p>193 - The Blades Trial (sidequest) ********************** After completing &quot;The Living Legend&quot; sidequest, talk to Vainqueur to unlock this sidequest.  You will need to find four Pacts for Stocke.</p>
-
-<p>1) Fire Pact: After learning Mana Sight, return to &quot;The Beginning&quot; node at Alistel.  Head down to the First Ward, and search the alley behind the item shop for a hidden chest which contains this Pact. 2) Death Pact: Reward during the &quot;Battlefield Missive&quot; sidequest (see 121). 3) Shade Pact: Found during &quot;The Living Legend&quot; sidequest (see 191). 4) Soul Pact: During &quot;The Road Perilous&quot; node, defeat all the Floating Stones at the Royal Hall.  In the upper right part of the area are hidden barrels. Drag one of them all the way down to the rocks at the beginning.  Blow away the rocks in the upper right corner to get a hidden chest which contains this Pact.</p>
-
-<p>After you have obtained any Pacts, return to Vainqueur at &quot;The Three Contracts&quot; and he will teach the new abilities to Stocke.  Learn all four abilities to complete this sidequest.  This sidequest is also a prerequisite to gain access to &quot;The Final Trial&quot; sidequest.</p>
-
-<p>194 - The Starlit Trial (sidequest) *********************** After completing &quot;The Living Legend&quot; sidequest, talk to Vainqueur to unlock this sidequest.  You will need to find four Pacts for Aht.</p>
-
-<p>1) Firestar Pact: Reward from the &quot;One &amp; Only&quot; sidequest (see 069). 2) Meteorite Pact: Found during &quot;The Living Legend&quot; sidequest (see 191). 3) Thunderstar Pact: During &quot;An Introduction&quot; node at Skalla, search below the weapon shop for a hidden chest which contains this Pact. 4) Icestar Pact: During &quot;The Sacrifice&quot; node at the Imperial Ruins, climb down to the lowest level.  In the upper right corner is a secret passage you can walk through to a hidden room.  Search for a hidden chest which contains this Pact.</p>
-
-<p>After you have obtained any Pacts, return to Vainqueur at &quot;The Three Contracts&quot; and he will teach the new abilities to Aht.  Learn all four abilities to complete this sidequest.  This sidequest is also a prerequisite to gain access to &quot;The Final Trial&quot; sidequest.</p>
-
-<p>195 - The Light Trial (sidequest) ********************* After completing &quot;The Living Legend&quot; sidequest, talk to Vainqueur to unlock this sidequest.  You will need to find four Pacts for Eruca.</p>
-
-<p>1) Firelight Pact: Reward from &quot;The Ultimate Dish&quot; sidequest (see 037). 2) Protection Pact: During the &quot;Gladiator&quot; node at Cygnus, head to the Back Alley area by the tavern.  Search behind the wall in the lower left corner to find a hidden chest which contains this Pact. 3) Sunlight Pact: Found during &quot;The Living Legend&quot; sidequest (see 191). 4) Divine Pact: Found in a hidden chest at Holff Ruins.</p>
-
-<p>After you have obtained any Pacts, return to Vainqueur at &quot;The Three Contracts&quot; and he will teach the new abilities to Eruca.  Learn all four abilities to complete this sidequest.  This sidequest is also a prerequisite to gain access to &quot;The Final Trial&quot; sidequest.</p>
-
-<p>196 - The Final Trial (sidequest) ********************* After completing &quot;The Blades Trial&quot;, &quot;The Starlit Trial&quot;, and &quot;The Light Trial&quot;, talk to Vainqueur again to receive this sidequest.  Defeat him to complete this sidequest and receive the True Historica (ATK+70/MAG+34/SPD+5).</p>
-
-<p>197 - Flux War ************** Automatically completed during the plot.</p>
-
-<p>198 - The Royal Secret ********************** Automatically completed during the plot.</p>
-
-<p>199 - Turning of the Tide ************************* Automatically completed during the plot.</p>
-
-<p>200 - Viola&#x27;s Last Stand ************************ Automatically completed during the plot.</p>
-
-<p>201 - In Pursuit **************** Automatically completed during the plot.</p>
-
-<p>202 - Demigod ************* Automatically completed during the plot.</p>
-
-<p>203 - Hugo the Omnipotent (ending) ************************* During the &quot;In Pursuit&quot; node at the Underground Lab, make your way down to the lowest basement level.  Talk to Hugo and choose to &quot;Take the power&quot; to unlock this ending.</p>
-
-<p>204 - Wielder of Infinity ************************* Automatically completed during the plot.</p>
-
-<p>205 - An End to Madness *********************** Automatically completed during the plot.</p>
-
-<p>206 - Thaumatech&#x27;s End (sidequest) ********************** During the &quot;In Pursuit&quot; node at Alistel, talk to the old man just outside the Underground Lab to receive this sidequest.  Then, make your way down to the 5th basement level.  Head up past the intersection and hug the left wall until you can go through a path that is rather hard to see.  Defeat the Special Thaumachine there.  Walk all the way out of the Underground Lab and talk to the old man again to complet this sidequest and receive a Medibranch.</p>
-
-<p>207 - A Scholar&#x27;s Creed (sidequest) *********************** During the &quot;In Pursuit&quot; node at the Underground Lab, make your way down to the 7th basement level.  Hug the left wall until you can go through a path that is hard to see.  Talk to the engineer there to receive this sidequest.  Return to &quot;The Beginning&quot; node.  Talk to Fennel in the lab next to the infirmary to complete this sidequest and receive the Haste Core for Rosch, needed for the &quot;Conversion&quot; sidequest.</p>
-
-<p>=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=</p>
-
-<p>FINAL CHAPTER                                (except ending)</p>
-
-<p>=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=</p>
-
-<AsciiMap>
+      </AsciiMap>
+      <p>--- 197 - 198 - 199 - 200 - 201 - 202 - 204 - 205 --- | 203   206   207</p>
+      <p>179 - Waiting at Skalla *********************** Automatically completed during the plot.</p>
+      <p>180 - An Introduction ********************* Automatically completed during the plot.</p>
+      <p>181 - Merchant Tarquin ********************** During "An Introduction" node, enter Tarquin's shop and talk to him to unlock this node.</p>
+      <p>182 - To Holff Ruins ******************** Automatically completed during the plot.</p>
+      <p>183 - The Beast Mark Trial ************************** Automatically completed during the plot.</p>
+      <p>184 - Overcoming the Trial ************************** Automatically completed during the plot.</p>
+      <p>185 - The Final Defense *********************** Automatically completed during the plot.</p>
+      <p>186 - Premature Invasion (ending) ************************ During the "Overcoming the Trial" node, talk to Bergas and choose to "Lead the way" to unlock this ending.</p>
+      <p>187 - The Impregnable ********************* If you have already unlocked the Escort (see 061) and Sand Sword (see 085) nodes, then this will be automatically completed during the plot.</p>
+      <p>188 - The Royal Throne ********************** Automatically completed during the plot.</p>
+      <p>189 - Moon Armlet (sidequest) ***************** During the "Waiting at Skalla" node, return to Cygnus and talk to Garland to receive this sidequest.  Head to the Itolia Wasteland, then go north one screen, east one, and north two.  You should see a small rock formation in the middle.  Search around there for the hidden Moon Armlet.  Return it to Garland to complete this sidequest and receive the Suna-Watari (ATK+42/SPD-4).</p>
+      <p>190 - The Good Thief's Way (sidequest) ************************** During the "Waiting at Skalla" node, return to Cygnus.  Talk to Hertz &amp; Bram by the equipment shops to receive this sidequest.  Return to "The Beginning" node at Alistel and talk to the child by the tavern.  Return to the "Castle Sewers" node at Granorg and talk to the boy to the left of the inn.  Finally, return to Hertz &amp; Bram to complete this sidequest and receive the Piercing Scroll for Raynie, needed for the "Raynie the Active" sidequest.</p>
+      <p>191 - The Living Legend (sidequest) *********************** During the "Waiting at Skalla" node at the Itolia Wasteland, go north one screen, west one, and continue west and up to a well.  Climb down the wall to meet a man named Sword to receive this sidequest.</p>
+      <p>Return to "The Beginning" node at Alistel.  Talk to Wand, the boy inside the weapon shop, and choose "Hope."  Return to "The Messenger's News" node and search the upper right corner to find the Shade Pact for Stocke.  Return to the "Castle Sewers" node in Granorg.  Talk to a man in the lower left corner named Pentacle, and choose "The past."  Return to the "How to Disappear" node, go down the sewers, and head west one screen.  Search the left of the upper paths to find the hidden Sunlight Pact for Eruca.  Return to "The Beastkind Forest" node and talk to Chalice, the lady by the equipment shop and choose "All things".  Search to the left of the sparkling bushes at the center of town to find the hidden Meteorite Pact for Aht.  Talk to Sword again to complete this sidequest.</p>
+      <p>192 - The Three Contracts ************************* After completing "The Living Legend" sidequest, talk to Vainqueur to unlock this node.</p>
+      <p>193 - The Blades Trial (sidequest) ********************** After completing "The Living Legend" sidequest, talk to Vainqueur to unlock this sidequest.  You will need to find four Pacts for Stocke.</p>
+      <p>1) Fire Pact: After learning Mana Sight, return to "The Beginning" node at Alistel.  Head down to the First Ward, and search the alley behind the item shop for a hidden chest which contains this Pact. 2) Death Pact: Reward during the "Battlefield Missive" sidequest (see 121). 3) Shade Pact: Found during "The Living Legend" sidequest (see 191). 4) Soul Pact: During "The Road Perilous" node, defeat all the Floating Stones at the Royal Hall.  In the upper right part of the area are hidden barrels. Drag one of them all the way down to the rocks at the beginning.  Blow away the rocks in the upper right corner to get a hidden chest which contains this Pact.</p>
+      <p>After you have obtained any Pacts, return to Vainqueur at "The Three Contracts" and he will teach the new abilities to Stocke.  Learn all four abilities to complete this sidequest.  This sidequest is also a prerequisite to gain access to "The Final Trial" sidequest.</p>
+      <p>194 - The Starlit Trial (sidequest) *********************** After completing "The Living Legend" sidequest, talk to Vainqueur to unlock this sidequest.  You will need to find four Pacts for Aht.</p>
+      <p>1) Firestar Pact: Reward from the "One &amp; Only" sidequest (see 069). 2) Meteorite Pact: Found during "The Living Legend" sidequest (see 191). 3) Thunderstar Pact: During "An Introduction" node at Skalla, search below the weapon shop for a hidden chest which contains this Pact. 4) Icestar Pact: During "The Sacrifice" node at the Imperial Ruins (see IMPR1), climb down to the lowest level.  In the upper right corner is a secret passage you can walk through to a hidden room.  Search for a hidden chest which contains this Pact.</p>
+      <p>After you have obtained any Pacts, return to Vainqueur at "The Three Contracts" and he will teach the new abilities to Aht.  Learn all four abilities to complete this sidequest.  This sidequest is also a prerequisite to gain access to "The Final Trial" sidequest.</p>
+      <p>195 - The Light Trial (sidequest) ********************* After completing "The Living Legend" sidequest, talk to Vainqueur to unlock this sidequest.  You will need to find four Pacts for Eruca.</p>
+      <p>1) Firelight Pact: Reward from "The Ultimate Dish" sidequest (see 037). 2) Protection Pact: During the "Gladiator" node at Cygnus (see CGNS1), head to the Back Alley area by the tavern.  Search behind the wall in the lower left corner to find a hidden chest which contains this Pact. 3) Sunlight Pact: Found during "The Living Legend" sidequest (see 191). 4) Divine Pact: Found in a hidden chest at Holff Ruins (see HOLF1).</p>
+      <p>After you have obtained any Pacts, return to Vainqueur at "The Three Contracts" and he will teach the new abilities to Eruca.  Learn all four abilities to complete this sidequest.  This sidequest is also a prerequisite to gain access to "The Final Trial" sidequest.</p>
+      <p>196 - The Final Trial (sidequest) ********************* After completing "The Blades Trial", "The Starlit Trial", and "The Light Trial", talk to Vainqueur again to receive this sidequest.  Defeat him (see HALL1) to complete this sidequest and receive the True Historica (ATK+70/MAG+34/SPD+5).</p>
+      <p>197 - Flux War ************** Automatically completed during the plot.</p>
+      <p>198 - The Royal Secret ********************** Automatically completed during the plot.</p>
+      <p>199 - Turning of the Tide ************************* Automatically completed during the plot.</p>
+      <p>200 - Viola's Last Stand ************************ Automatically completed during the plot.</p>
+      <p>201 - In Pursuit **************** Automatically completed during the plot.</p>
+      <p>202 - Demigod ************* Automatically completed during the plot.</p>
+      <p>203 - Hugo the Omnipotent (ending) ************************* During the "In Pursuit" node at the Underground Lab (see ULAB1), make your way down to the lowest basement level.  Talk to Hugo and choose to "Take the power" to unlock this ending.</p>
+      <p>204 - Wielder of Infinity ************************* Automatically completed during the plot.</p>
+      <p>205 - An End to Madness *********************** Automatically completed during the plot.</p>
+      <p>206 - Thaumatech's End (sidequest) ********************** During the "In Pursuit" node at Alistel, talk to the old man just outside the Underground Lab to receive this sidequest.  Then, make your way down to the 5th basement level.  Head up past the intersection and hug the left wall until you can go through a path that is rather hard to see.  Defeat the Special Thaumachine there.  Walk all the way out of the Underground Lab and talk to the old man again to complet this sidequest and receive a Medibranch.</p>
+      <p>207 - A Scholar's Creed (sidequest) *********************** During the "In Pursuit" node at the Underground Lab, make your way down to the 7th basement level.  Hug the left wall until you can go through a path that is hard to see.  Talk to the engineer there to receive this sidequest.  Return to "The Beginning" node.  Talk to Fennel in the lab next to the infirmary to complete this sidequest and receive the Haste Core for Rosch, needed for the "Conversion" sidequest.</p>
+      <p>FINAL CHAPTER (except ending)</p>
+      <AsciiMap>
 <pre>-----------------------------                   --- 218
                              |                 |     |
                             214 - 215 - 216 - 217   219   221 - 222 - 223
                              |                       |     |
 --- 208 - 209 - 210 - 211 - 212                     220 ---</pre>
-</AsciiMap>
-
-<p>213</p>
-
-<p>208 - The Shadow Crown ********************** Automatically completed during the plot.</p>
-
-<p>209 - Heiss&#x27; Scheme ******************* Automatically completed during the plot.</p>
-
-<p>210 - Call for Destruction ************************** Automatically completed during the plot.</p>
-
-<p>211 - The Sacrifice ******************* Automatically completed during the plot.</p>
-
-<p>212 - The Madness of Heiss ************************** Automatically completed during the plot.</p>
-
-<p>213 - A Timely Warning (sidequest) ********************** During the &quot;Shadow Crown&quot; node at Granorg, head east to the weapon shop.  Talk to the nearby man in green to receive this sidequest.  During the &quot;Royal Secret&quot; node at Granorg, talk to him again.  Finally, return to the &quot;Shadow Crown&quot; node to talk to him to complete this sidequest and receive the Omnipedia Book for Gafka, needed for &quot;The Ultimate Skill&quot; sidequest.</p>
-
-<p>214 - After Heiss ***************** After &quot;The Madness of Heiss&quot; node, return to the &quot;Aht&#x27;s Prayer&quot; node.  Defeat Heiss to unlock this node.</p>
-
-<p>215 - Warlord&#x27;s Sword ********************* Automatically completed during the plot.</p>
-
-<p>216 - The Road Perilous *********************** Automatically completed during the plot.</p>
-
-<p>217 - The Black Guardians ************************* Automatically completed during the plot.</p>
-
-<p>218 - Death in Black ******************** Automatically completed during the plot.</p>
-
-<p>219 - Warlord in Black ********************** Automatically completed during the plot.</p>
-
-<p>220 - Monstrocity in Black ************************** Automatically completed during the plot.</p>
-
-<p>221 - Valkyrie in Black *********************** Automatically completed during the plot.</p>
-
-<p>222 - Death Knell ***************** Automatically completed during the plot.</p>
-
-<p>223 - Final Battleground ************************ Automatically completed during the plot.</p>
-
-<p>=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=</p>
-
-<p>FINAL CHAPTER                                 (ending only)</p>
-
-<p>=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=</p>
-
-<p>227   228</p>
-
-<p>229   230   231</p>
-
-<p>--- 224 - 225 ------------- 226</p>
-
-<p>232   233   234</p>
-
-<p>235   236</p>
-
-<p>224 - Aprocrypha **************** Automatically completed during the plot.</p>
-
-<p>225 - Ritual of Flux ******************** Automatically completed during the plot.</p>
-
-<p>226 - A Promise *************** Automatically completed during the plot.</p>
-
-<p>227 - The Show Goes On ********************** Complete &quot;The King&#x27;s Daughter&quot; sidequest (see 032) to unlock this part of the ending.</p>
-
-<p>228 - A Little Hero ******************* Complete the &quot;An Unwanted Reunion&quot; sidequest (see 161) to unlock this part of the ending.</p>
-
-<p>229 - Iron-Armed General ************************ Complete the &quot;Red-Letter Day&quot; sidequest (see 052) to unlock this part of the ending.</p>
-
-<p>230 - Shaman ************ Complete the &quot;Wandering Soul&quot; sidequest (see 118) to unlock this part of the ending.</p>
-
-<p>231 - Overseers of Time *********************** Complete the &quot;What Was Inherited&quot; sidequest (see 034) to unlock this part of the ending.</p>
-
-<p>232 - Valkyrie in Repose ************************ Complete the &quot;A Letter to Tomorrow&quot; sidequest (see 055) to unlock this part of the ending.</p>
-
-<p>233 - Beast God at Rest *********************** Complete &quot;The Beast God&#x27;s Birth&quot; sidequest (see 175) to unlock this part of the ending.</p>
-
-<p>234 - Life of the Beastkind *************************** Complete the &quot;Mankind &amp; Beastkind&quot; sidequest (see 067) to unlock this part of the ending.</p>
-
-<p>235 - A Warrrior in Love ************************ Complete the &quot;At Journey&#x27;s End&quot; sidequest (see 177) to unlock this part of the ending.</p>
-
-<p>236 - The Lives of Humans ************************* Complete the &quot;Assassination of Dias&quot; sidequest (see 104) to unlock this part of the ending.</p>
-
-<p>=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= IV. ABILITY LEARNING LIST</p>
-
-<p>The following is a list of all the abilities that characters can learn and at what level.  There are other abilities that can be learned by completing sidequest, which can be found in the previous section or the walkthrough.</p>
-
-<p>Stocke ****** Push Assault (Level 1, 3 MP) Left Assault (Level 2, 3 MP) Power Wave (Level 4, 8 MP) Heal (Level 5, 3 MP) Recovery (Level 7, 3 MP) Right Assault (Level 9, 3 MP) Fire (Level 10, 5 MP) Air Assault (Level 13, 3 MP) Resurrection (Level 14, 7 MP) Weakness Scan (Level 17, 1 MP) Double Slash (Level 21, 10 MP) Steal (Level 23, 3 MP) Greater Heal (Level 25, 6 MP) Area Heal (Level 31, 8 MP) Head Crush (Level 37, 5 MP) Heat Blade (Level 42, 14 MP) G-Fire (Level 50, 15 MP) Fire Storm (Level 60, 10 MP)</p>
-
-<p>Raynie ****** Push Assault (Level 2, 3 MP) Thunder (Level 4, 5 MP) Poison Break (Level 8, 3 MP) Frost (Level 11, 5 MP) Fire (Level 15, 5 MP) Regenerate (Level 20, 3 MP) Rush (Level 25, 12 MP) G-Fire (Level 30, 15 MP) Mana Regen (Level 35, 12 MP) G-Thunder (Level 41, 15 MP) G-Frost (Level 47, 15 MP) Backfire (Level 53, 12 MP) Cross Thunder (Level 60, 15 MP)</p>
-
-<p>Marco ***** Heal (Level 2, 3 MP) Grapple (Level 3, 3 MP) Weakness Scan (Level 4, 1 MP) Magic Boost (Level 8, 4 MP) Guard Boost (Level 11, 4 MP) Push Assault (Level 15, 3 MP) Area Heal (Level 19, 8 MP) Speed Break (Level 23, 4 MP) Trans-turn (Level 26, 3 MP) Resurrection (Level 29, 7 MP) All Recovery (Level 33, 7 MP) Greater Heal (Level 37, 8 MP) Guard Rise (Level 44, 10 MP) Magic Rise (Level 47, 10 MP) Super Heal (Level 52, 10 MP) Area G-Heal (Level 60, 12 MP)</p>
-
-<p>Rosch ***** Grave Tuck (Level 7, 8 MP) Left Assault (Level 7, 3 MP) Gull Swing (Level 9, 8 MP) Grapple (Level 13, 3 MP) Belial Claw (Level 17, 3 MP) Cross Spike (Level 20, 10 MP) Big Air (Level 24, 8 MP) Power Up (Level 29, 4 MP) Stun Blow (Level 40, 5 MP) Wind Thrust (Level 47, 8 MP) Giant Push (Level 55, 8 MP) Spiral End (Level 60, 18 MP)</p>
-
-<p>Aht *** Steal (Level 15, 3 MP) Weakness Scan (Level 15, 1 MP) Greater Heal (Level 15, 6 MP) Polaris (Level 15, 2 MP) Electric Trap (Level 15, 5 MP) Bomb Trap (Level 17, 5 MP) Ice Trap (Level 20, 5 MP) Starlight (Level 23, 8 MP) Poison Trap (Level 26, 2 MP) Meteora (Level 30, 8 MP) Area G-Heal (Level 33, 12 MP) Push Assault (Level 36, 3 MP) Cross Star (Level 39, 8 MP) Sleep Trap (Level 42, 3 MP) Super Heal (Level 45, 10 MP) Lunatic (Level 48, 10 MP) Air Assault (Level 51, 3 MP) Mana Regen (Level 54, 12 MP) Guard Break (Level 57, 4 MP) Speed Break (Level 60, 4 MP) Dreamless (Level 62, 12 MP)</p>
-
-<p>Gafka ***** Air Assault (Level 26, 3 MP) Push Assault (Level 26, 3 MP) Elemental Beads (Level 26, 6 MP) Mushin (Level 26, 2 MP) Qigong Wave (Level 28, 6 MP) Divine Spirit (Level 33, 8 MP) Echoing Impulse (Level 39, 10 MP) Qigong (Level 45, 3 MP) Dohatsuten (Level 50, 12 MP) Bedrock Smash (Level 55, 12 MP) Waxing Rage (Level 60, 1 MP)</p>
-
-<p>Eruca ***** Mana-Shot (Level 31, 5 MP) Holy Arrow (Level 31, 20 MP) Aim Bullet (Level 31, 4 MP) Hard Shot (Level 31, 5 MP) Weakness Scan (Level 31, 1 MP) Power Rise (Level 31, 10 MP) Regenerate (Level 31, 3 MP) Trans-turn (Level 31, 3 MP) G-Frost (Level 32, 15 MP) Deadline (Level 35, 8 MP) Blizzard (Level 38, 20 MP) Judgement (Level 42, 18 MP) Magic Boost (Level 45, 4 MP) All Recovery (Level 48, 7 MP) Push Assault (Level 51, 3 MP) Chain Rave (Level 54, 15 MP) Area G-Heal (Level 60, 12MP)</p>
-
-<p>=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= V. CREDITS &amp; COPYRIGHT INFORMATION</p>
-
-<p>Thanks to ShinoLia on my forums for telling me about the boss fight with Pierre if you skip the Escort quest.</p>
-
-<p>Thanks to Kenthrem on my forums for informing me that the shops at Forgia change their wares after liberating Skalla, mid-chapter.</p>
-
-<p>Thanks to OLDHAG on GameFAQs for creating the sidequest sticky topic. Specifically, for detailing the requirements for the &quot;At Journey&#x27;s End&quot; sidequest.</p>
-
-<p>Thanks to Dark_Seraphim on GameFAQs for creating the Equipment Guide. Specifically, for noting that the traveling merchant at the Sand Fortress sells new wares during the Final Chapter.</p>
-
-<p>Thanks to Deraj626 and DoomSwell on my forums for correcting some typos I made.</p>
-
-<p>Thanks to supp on my forums for telling me about a hidden chest at Alma Mine.</p>
-
-<p>Thanks to Acynder on my forums for telling me about a chest I missed back at Cornet Village.</p>
-
-<p>Thanks to justaguy on my forums for suggesting much more efficient ways of defeating the Crush Bear and Mist Spider at low levels.</p>
-
-<p>Thanks to everyone who suggested that I play this game, easily the best one that I have played in years.</p>
-
-<p>Thanks GameFAQs for hosting this walkthrough and for creating the most awesome website on the planet!</p>
-
-<p>This Walkthrough is Copyright 2011 Henri C Bailly.  You are welcome to distribute it as you like, as long as you give credit to me for writing it, and do not take credit for my work. Restore Page</p>
+      </AsciiMap>
+      <p>213</p>
+      <p>208 - The Shadow Crown ********************** Automatically completed during the plot.</p>
+      <p>209 - Heiss' Scheme ******************* Automatically completed during the plot.</p>
+      <p>210 - Call for Destruction ************************** Automatically completed during the plot.</p>
+      <p>211 - The Sacrifice ******************* Automatically completed during the plot.</p>
+      <p>212 - The Madness of Heiss ************************** Automatically completed during the plot.</p>
+      <p>213 - A Timely Warning (sidequest) ********************** During the "Shadow Crown" node at Granorg, head east to the weapon shop.  Talk to the nearby man in green to receive this sidequest.  During the "Royal Secret" node at Granorg, talk to him again.  Finally, return to the "Shadow Crown" node to talk to him to complete this sidequest and receive the Omnipedia Book for Gafka, needed for "The Ultimate Skill" sidequest.</p>
+      <p>214 - After Heiss ***************** After "The Madness of Heiss" node, return to the "Aht's Prayer" node.  Defeat Heiss to unlock this node.</p>
+      <p>215 - Warlord's Sword ********************* Automatically completed during the plot.</p>
+      <p>216 - The Road Perilous *********************** Automatically completed during the plot.</p>
+      <p>217 - The Black Guardians ************************* Automatically completed during the plot.</p>
+      <p>218 - Death in Black ******************** Automatically completed during the plot.</p>
+      <p>219 - Warlord in Black ********************** Automatically completed during the plot.</p>
+      <p>220 - Monstrocity in Black ************************** Automatically completed during the plot.</p>
+      <p>221 - Valkyrie in Black *********************** Automatically completed during the plot.</p>
+      <p>222 - Death Knell ***************** Automatically completed during the plot.</p>
+      <p>223 - Final Battleground ************************ Automatically completed during the plot.</p>
+      <p>FINAL CHAPTER (ending only)</p>
+      <p>227   228</p>
+      <p>229   230   231</p>
+      <AsciiMap>
+<pre>--- 224 - 225 ------------- 226</pre>
+      </AsciiMap>
+      <p>232   233   234</p>
+      <p>235   236</p>
+      <p>224 - Aprocrypha **************** Automatically completed during the plot.</p>
+      <p>225 - Ritual of Flux ******************** Automatically completed during the plot.</p>
+      <p>226 - A Promise *************** Automatically completed during the plot.</p>
+      <p>227 - The Show Goes On ********************** Complete "The King's Daughter" sidequest (see 032) to unlock this part of the ending.</p>
+      <p>228 - A Little Hero ******************* Complete the "An Unwanted Reunion" sidequest (see 161) to unlock this part of the ending.</p>
+      <p>229 - Iron-Armed General ************************ Complete the "Red-Letter Day" sidequest (see 052) to unlock this part of the ending.</p>
+      <p>230 - Shaman ************ Complete the "Wandering Soul" sidequest (see 118) to unlock this part of the ending.</p>
+      <p>231 - Overseers of Time *********************** Complete the "What Was Inherited" sidequest (see 034) to unlock this part of the ending.</p>
+      <p>232 - Valkyrie in Repose ************************ Complete the "A Letter to Tomorrow" sidequest (see 055) to unlock this part of the ending.</p>
+      <p>233 - Beast God at Rest *********************** Complete "The Beast God's Birth" sidequest (see 175) to unlock this part of the ending.</p>
+      <p>234 - Life of the Beastkind *************************** Complete the "Mankind &amp; Beastkind" sidequest (see 067) to unlock this part of the ending.</p>
+      <p>235 - A Warrrior in Love ************************ Complete the "At Journey's End" sidequest (see 177) to unlock this part of the ending.</p>
+      <p>236 - The Lives of Humans ************************* Complete the "Assassination of Dias" sidequest (see 104) to unlock this part of the ending.</p>
+      <p>The following is a list of all the abilities that characters can learn and at what level.  There are other abilities that can be learned by completing sidequest, which can be found in the previous section or the walkthrough.</p>
+      <p>Stocke ****** Push Assault (Level 1, 3 MP) Left Assault (Level 2, 3 MP) Power Wave (Level 4, 8 MP) Heal (Level 5, 3 MP) Recovery (Level 7, 3 MP) Right Assault (Level 9, 3 MP) Fire (Level 10, 5 MP) Air Assault (Level 13, 3 MP) Resurrection (Level 14, 7 MP) Weakness Scan (Level 17, 1 MP) Double Slash (Level 21, 10 MP) Steal (Level 23, 3 MP) Greater Heal (Level 25, 6 MP) Area Heal (Level 31, 8 MP) Head Crush (Level 37, 5 MP) Heat Blade (Level 42, 14 MP) G-Fire (Level 50, 15 MP) Fire Storm (Level 60, 10 MP)</p>
+      <p>Raynie ****** Push Assault (Level 2, 3 MP) Thunder (Level 4, 5 MP) Poison Break (Level 8, 3 MP) Frost (Level 11, 5 MP) Fire (Level 15, 5 MP) Regenerate (Level 20, 3 MP) Rush (Level 25, 12 MP) G-Fire (Level 30, 15 MP) Mana Regen (Level 35, 12 MP) G-Thunder (Level 41, 15 MP) G-Frost (Level 47, 15 MP) Backfire (Level 53, 12 MP) Cross Thunder (Level 60, 15 MP)</p>
+      <p>Marco ***** Heal (Level 2, 3 MP) Grapple (Level 3, 3 MP) Weakness Scan (Level 4, 1 MP) Magic Boost (Level 8, 4 MP) Guard Boost (Level 11, 4 MP) Push Assault (Level 15, 3 MP) Area Heal (Level 19, 8 MP) Speed Break (Level 23, 4 MP) Trans-turn (Level 26, 3 MP) Resurrection (Level 29, 7 MP) All Recovery (Level 33, 7 MP) Greater Heal (Level 37, 8 MP) Guard Rise (Level 44, 10 MP) Magic Rise (Level 47, 10 MP) Super Heal (Level 52, 10 MP) Area G-Heal (Level 60, 12 MP)</p>
+      <p>Rosch ***** Grave Tuck (Level 7, 8 MP) Left Assault (Level 7, 3 MP) Gull Swing (Level 9, 8 MP) Grapple (Level 13, 3 MP) Belial Claw (Level 17, 3 MP) Cross Spike (Level 20, 10 MP) Big Air (Level 24, 8 MP) Power Up (Level 29, 4 MP) Stun Blow (Level 40, 5 MP) Wind Thrust (Level 47, 8 MP) Giant Push (Level 55, 8 MP) Spiral End (Level 60, 18 MP)</p>
+      <p>Aht *** Steal (Level 15, 3 MP) Weakness Scan (Level 15, 1 MP) Greater Heal (Level 15, 6 MP) Polaris (Level 15, 2 MP) Electric Trap (Level 15, 5 MP) Bomb Trap (Level 17, 5 MP) Ice Trap (Level 20, 5 MP) Starlight (Level 23, 8 MP) Poison Trap (Level 26, 2 MP) Meteora (Level 30, 8 MP) Area G-Heal (Level 33, 12 MP) Push Assault (Level 36, 3 MP) Cross Star (Level 39, 8 MP) Sleep Trap (Level 42, 3 MP) Super Heal (Level 45, 10 MP) Lunatic (Level 48, 10 MP) Air Assault (Level 51, 3 MP) Mana Regen (Level 54, 12 MP) Guard Break (Level 57, 4 MP) Speed Break (Level 60, 4 MP) Dreamless (Level 62, 12 MP)</p>
+      <p>Gafka ***** Air Assault (Level 26, 3 MP) Push Assault (Level 26, 3 MP) Elemental Beads (Level 26, 6 MP) Mushin (Level 26, 2 MP) Qigong Wave (Level 28, 6 MP) Divine Spirit (Level 33, 8 MP) Echoing Impulse (Level 39, 10 MP) Qigong (Level 45, 3 MP) Dohatsuten (Level 50, 12 MP) Bedrock Smash (Level 55, 12 MP) Waxing Rage (Level 60, 1 MP)</p>
+      <p>Eruca ***** Mana-Shot (Level 31, 5 MP) Holy Arrow (Level 31, 20 MP) Aim Bullet (Level 31, 4 MP) Hard Shot (Level 31, 5 MP) Weakness Scan (Level 31, 1 MP) Power Rise (Level 31, 10 MP) Regenerate (Level 31, 3 MP) Trans-turn (Level 31, 3 MP) G-Frost (Level 32, 15 MP) Deadline (Level 35, 8 MP) Blizzard (Level 38, 20 MP) Judgement (Level 42, 18 MP) Magic Boost (Level 45, 4 MP) All Recovery (Level 48, 7 MP) Push Assault (Level 51, 3 MP) Chain Rave (Level 54, 15 MP) Area G-Heal (Level 60, 12MP)</p>
+      <p>Thanks to ShinoLia on my forums for telling me about the boss fight with Pierre if you skip the Escort quest.</p>
+      <p>Thanks to Kenthrem on my forums for informing me that the shops at Forgia change their wares after liberating Skalla, mid-chapter.</p>
+      <p>Thanks to OLDHAG on GameFAQs for creating the sidequest sticky topic. Specifically, for detailing the requirements for the "At Journey's End" sidequest.</p>
+      <p>Thanks to Dark_Seraphim on GameFAQs for creating the Equipment Guide. Specifically, for noting that the traveling merchant at the Sand Fortress sells new wares during the Final Chapter.</p>
+      <p>Thanks to Deraj626 and DoomSwell on my forums for correcting some typos I made.</p>
+      <p>Thanks to supp on my forums for telling me about a hidden chest at Alma Mine.</p>
+      <p>Thanks to Acynder on my forums for telling me about a chest I missed back at Cornet Village.</p>
+      <p>Thanks to justaguy on my forums for suggesting much more efficient ways of defeating the Crush Bear and Mist Spider at low levels.</p>
+      <p>Thanks to everyone who suggested that I play this game, easily the best one that I have played in years.</p>
+      <p>Thanks GameFAQs for hosting this walkthrough and for creating the most awesome website on the planet!</p>
+      <p>This Walkthrough is Copyright 2011 Henri C Bailly.  You are welcome to distribute it as you like, as long as you give credit to me for writing it, and do not take credit for my work. Restore Page</p>
     </div>
   </ChapterCard>
 
@@ -1204,22 +815,5 @@ Breeze Armlet     1500     Shield Herb        500
 
   .chapter-walkthrough-prose :global(p) {
     margin-bottom: 1.25rem;
-  }
-
-  .chapter-walkthrough-prose :global(.shop-ascii-wrap) {
-    background: #05080f;
-    border: 1px solid var(--border-subtle);
-    border-radius: var(--radius-md);
-    padding: 1rem;
-    margin: 1.5rem 0;
-    overflow-x: auto;
-  }
-
-  .chapter-walkthrough-prose :global(.ascii-shop) {
-    font-family: var(--font-mono);
-    font-size: 0.85rem;
-    color: #fde047;
-    margin: 0;
-    white-space: pre;
   }
 </style>

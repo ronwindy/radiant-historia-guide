@@ -3,6 +3,8 @@ import WalkthroughLayout from '../../layouts/WalkthroughLayout.astro';
 import ChapterCard from '../../components/ChapterCard.astro';
 import TacticalBriefing from '../../components/TacticalBriefing.astro';
 import AsciiMap from '../../components/AsciiMap.astro';
+import BossCard from '../../components/BossCard.astro';
+import ShopMatrix from '../../components/ShopMatrix.astro';
 import Callout from '../../components/Callout.astro';
 
 const baseUrl = import.meta.env.BASE_URL;
@@ -11,70 +13,82 @@ const quickJumps = [
   {
     "id": "ch51",
     "number": 51,
-    "title": "Skalla (Alternate Chapter 4)",    "timeline": "Alternate"
+    "title": "Skalla (Alternate Chapter 4)",
+    "timeline": "Alternate"
   },
   {
     "id": "ch52",
     "number": 52,
-    "title": "Itolia Wasteland (Alternate Chapter 4)",    "timeline": "Alternate"
+    "title": "Itolia Wasteland (Alternate Chapter 4)",
+    "timeline": "Alternate"
   },
   {
     "id": "ch53",
     "number": 53,
-    "title": "Abyssia Forest (Alternate Chapter 4)",    "timeline": "Alternate"
+    "title": "Abyssia Forest (Alternate Chapter 4)",
+    "timeline": "Alternate"
   },
   {
     "id": "ch54",
     "number": 54,
-    "title": "Forgia (Alternate Chapter 4)",    "timeline": "Alternate"
+    "title": "Forgia (Alternate Chapter 4)",
+    "timeline": "Alternate"
   },
   {
     "id": "ch55",
     "number": 55,
-    "title": "Skalla (Alternate Chapter 5)",    "timeline": "Alternate"
+    "title": "Skalla (Alternate Chapter 5)",
+    "timeline": "Alternate"
   },
   {
     "id": "ch56",
     "number": 56,
-    "title": "Forgia (Alternate Chapter 5)",    "timeline": "Alternate"
+    "title": "Forgia (Alternate Chapter 5)",
+    "timeline": "Alternate"
   },
   {
     "id": "ch57",
     "number": 57,
-    "title": "Sand Fortress (Alternate Chapter 5)",    "timeline": "Alternate"
+    "title": "Sand Fortress (Alternate Chapter 5)",
+    "timeline": "Alternate"
   },
   {
     "id": "ch58",
     "number": 58,
-    "title": "Gran Plain (Alternate Chapter 6)",    "timeline": "Alternate"
+    "title": "Gran Plain (Alternate Chapter 6)",
+    "timeline": "Alternate"
   },
   {
     "id": "ch59",
     "number": 59,
-    "title": "Granorg (Alternate Chapter 6)",    "timeline": "Alternate"
+    "title": "Granorg (Alternate Chapter 6)",
+    "timeline": "Alternate"
   },
   {
     "id": "ch60",
     "number": 60,
-    "title": "Underground Waterway (Alternate Chapter 6)",    "timeline": "Alternate"
+    "title": "Underground Waterway (Alternate Chapter 6)",
+    "timeline": "Alternate"
   }
 ];
+
 const stats = {
-  "chapters": 10,
-  "nodes": 28,
-  "endings": 5,
-  "sidequests": 9,
-  "bosses": 6
+  chapters: 10,
+  nodes: 7,
+  endings: 2,
+  sidequests: 4,
+  bosses: 3
 };
-const prevVol = { num: 5, title: 'Ruins of Holff & The Forgia Pact', href: `${baseUrl}walkthrough/volume-5/` };
-const nextVol = { num: 7, title: 'The Convergent Climax & Imperial Ruins', href: `${baseUrl}walkthrough/volume-7/` };
+
+const prevVol = { num: 5, title: 'Beastkind Stronghold &amp; Skalla Infiltration', href: `${baseUrl}walkthrough/volume-5/` };
+const nextVol = { num: 7, title: 'The Final Battle &amp; True Epilogue', href: `${baseUrl}walkthrough/volume-7/` };
 ---
 
 <WalkthroughLayout
   volume={6}
-  volumeTitle="The Underground Lab & Puppet Masters"
+  volumeTitle="Granorg Liberation &amp; Shadow of Dias"
   chapterRange="Chapters 51–60"
-  description="Unmasking Hugo’s dark experiments in the Underground Lab, liberating Skalla, and the climactic battles against thaumatech monstrosities."
+  description="Assault on Granorg Castle, overthrowing Protean Queen Protea, confronting Field Marshal Viola, and unmasking Hugo's fanatical plot."
   stats={stats}
   quickJumps={quickJumps}
   prevVol={prevVol}
@@ -89,51 +103,22 @@ const nextVol = { num: 7, title: 'The Convergent Climax & Imperial Ruins', href:
     timeline="Alternate"
   >
     <TacticalBriefing
-      level="55"
-      party="Stocke, Gafka, Rosch"
-      inn="100 G"
-      
+      level="55" party="Stocke, Gafka, Rosch" inn="100 G"
     />
 
     <div class="chapter-walkthrough-prose">
-<div class="shop-ascii-wrap"><pre class="ascii-shop">Equipment Shop                              Item Shop
-**************                              *********
-Bastard Sword      4000                     Soothing Balm      100
-Alchemy Edge       9500                     First Aid Kit      400
-Goldy Lance        4300                     Tourniquet        1000
-Witch Spear        4800                     Herbal Tea         350
-Steel Gauntlet     3400                     Special Tea       1200
-Mueke Knife        3800                     Healing Herb       500
-Death Dagger       5200                     Holy Water         500
-Rune Dagger       12000                     Anti-Poison         50
-Solid Slugs        3800                     Anti-Fear           50
-Freikugel Argent   6500 (buy for Eruca)     Anti-Paralytic      50
-Iron Mail          2400                     Anti-Curse          50
-Bloody Armor       4800 (buy for Rosch)     Anti-Sleep          50
-Gold Clothes       3200                     Anti-Stone          50
-White Gold Wear    8600                     Panacea            800
-Iron Breastplate   6500                     Poison Wing        350
-Running Sand       3800                     Sleep Wing         500
-Bestial Soul       7600 (buy for Gafka)     Power Down         500
-Gold Dress         5100                     Magic Down         500
-Shadowrun Dress    5600                     Might Herb         500
-Thorned Dress      6900                     Magic Herb         500
-Iron Charm         2500
-Crystal Charm      2500     Despite Stocke&#x27;s earlier warnings, you can safely
-Bishop Stud        3000     make a pit stop at Skalla.  Buy some new armor for
-Sprig Ring         5000     Gafka &amp; Rosch to boost their attack power.  Then,
-Flower Ring       10000     head up to the middle house on the north side of
-Feather Armlet    30000     town.  Search around the bed for a hidden soul to
-Peridot            1750     be prompted for a decision.  Choosing &quot;Don&#x27;t do
-Amazonite          1750     anything&quot; will unlock the [Fleeting Peace] ending.</pre></div>
-
-<p>Unfortunately, if you do that, the nearest node is the &quot;A New Alliance&quot; node, and you will have to go all the way through Lazvil Hills and Judgement Cliff again.  However, if you use Stocke&#x27;s Vanish ability and bypass all the enemies, you can make it back to Skalla in a couple minutes.  Return to the same decision and choose to &quot;Send soul to heavens&quot; to advance the [Wandering Soul] sidequest.  When you are ready, rest up at the inn, leave Skalla, and head for the Itolia Wasteland.</p>
-
-<Callout type="note" title="Recommended Equipment">
-<p>Recommended Equipment at this point in the game<br/>Stocke: Pieti Edge, Moirae Manteau, Crystal Charm x3<br/>Raynie: Witch Spear, Sable Larme, Crystal Charm x3<br/>Marco: Gaia Blade, Tungsten Mail, Bishop Stud x3<br/>Rosch: Titanium Lance, Bloody Armor, Beast Charm, Iron Charm x2<br/>Aht: Promised Knife, Life Robe, Bishop Stud x3<br/>Gafka: Alloy Gauntlet, Bestial Soul, Iron Charm x3<br/>Extra: Freikugel Argent, Gospel Armor</p>
-</Callout>
-
-<p>=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=</p>
+      <ShopMatrix title="Skalla (Alternate Chapter 4) Merchant" items={[{"name": "Soothing Balm", "price": 100}, {"name": "First Aid Kit", "price": 400}, {"name": "Tourniquet", "price": 1000}, {"name": "Herbal Tea", "price": 350}, {"name": "Special Tea", "price": 1200}, {"name": "Healing Herb", "price": 500}, {"name": "Holy Water", "price": 500}, {"name": "Anti-Poison", "price": 50}, {"name": "Anti-Fear", "price": 50}, {"name": "Anti-Paralytic", "price": 50}, {"name": "Anti-Curse", "price": 50}, {"name": "Anti-Sleep", "price": 50}, {"name": "Anti-Stone", "price": 50}, {"name": "Panacea", "price": 800}, {"name": "Poison Wing", "price": 350}, {"name": "Sleep Wing", "price": 500}, {"name": "Power Down", "price": 500}, {"name": "Magic Down", "price": 500}, {"name": "Might Herb", "price": 500}, {"name": "Magic Herb", "price": 500}]} equipment={[{"name": "Bastard Sword", "price": 4000}, {"name": "Alchemy Edge", "price": 9500}, {"name": "Goldy Lance", "price": 4300}, {"name": "Witch Spear", "price": 4800}, {"name": "Steel Gauntlet", "price": 3400}, {"name": "Mueke Knife", "price": 3800}, {"name": "Death Dagger", "price": 5200}, {"name": "Rune Dagger", "price": 12000}, {"name": "Solid Slugs", "price": 3800}, {"name": "Freikugel Argent", "price": 6500, "note": "buy for Eruca"}, {"name": "Iron Mail", "price": 2400}, {"name": "Bloody Armor", "price": 4800, "note": "buy for Rosch"}, {"name": "Gold Clothes", "price": 3200}, {"name": "White Gold Wear", "price": 8600}, {"name": "Iron Breastplate", "price": 6500}, {"name": "Running Sand", "price": 3800}, {"name": "Bestial Soul", "price": 7600, "note": "buy for Gafka"}, {"name": "Gold Dress", "price": 5100}, {"name": "Shadowrun Dress", "price": 5600}, {"name": "Thorned Dress", "price": 6900}, {"name": "Iron Charm", "price": 2500}]} itemTitle="Item Shop" equipmentTitle="Equipment Shop" />
+      <p>Unfortunately, if you do that, the nearest node is the "A New Alliance" node, and you will have to go all the way through Lazvil Hills and Judgement Cliff again.  However, if you use Stocke's Vanish ability and bypass all the enemies, you can make it back to Skalla in a couple minutes.  Return to the same decision and choose to "Send soul to heavens" to advance the [Wandering Soul] sidequest.  When you are ready, rest up at the inn, leave Skalla, and head for the Itolia Wasteland.</p>
+      <Callout type="note" title="Recommended Equipment">
+        <p>Recommended Equipment at this point in the game<br/>
+        <strong>Stocke:</strong> Pieti Edge, Moirae Manteau, Crystal Charm x3<br/>
+        <strong>Raynie:</strong> Witch Spear, Sable Larme, Crystal Charm x3<br/>
+        <strong>Marco:</strong> Gaia Blade, Tungsten Mail, Bishop Stud x3<br/>
+        <strong>Rosch:</strong> Titanium Lance, Bloody Armor, Beast Charm, Iron Charm x2<br/>
+        <strong>Aht:</strong> Promised Knife, Life Robe, Bishop Stud x3<br/>
+        <strong>Gafka:</strong> Alloy Gauntlet, Bestial Soul, Iron Charm x3<br/>
+        <strong>Extra:</strong> Freikugel Argent, Gospel Armor</p>
+      </Callout>
     </div>
   </ChapterCard>
 
@@ -145,14 +130,11 @@ Amazonite          1750     anything&quot; will unlock the [Fleeting Peace] endi
     timeline="Alternate"
   >
     <TacticalBriefing
-      level="55"
-      party="Stocke, Gafka, Rosch"
-      
-      enemies={[{"name": "Blood Panther"}, {"name": "Cygnus Archer", "weakness": "Sleep"}, {"name": "Cygnus Soldier"}, {"name": "Red Storm"}]}
+      level="55" party="Stocke, Gafka, Rosch" enemies={[{"name": "Blood Panther"}, {"name": "Cygnus Archer", "weakness": "Sleep"}, {"name": "Cygnus Soldier"}, {"name": "Red Storm"}]}
     />
 
     <div class="chapter-walkthrough-prose">
-<AsciiMap>
+      <AsciiMap>
 <pre>__                          ________
                |  |         | |            |        |    S - Save Point
                /XX|       __| |            |        |    X - Roadblock
@@ -178,11 +160,8 @@ Amazonite          1750     anything&quot; will unlock the [Fleeting Peace] endi
                            \       /
                             \   __/
                             |  |</pre>
-</AsciiMap>
-
-<p>There&#x27;s only one exit you can use here.  Go east one screen, south two, and east one.  Take the eastern exit to reach the Abyssia Forest.</p>
-
-<p>=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=</p>
+      </AsciiMap>
+      <p>There's only one exit you can use here.  Go east one screen, south two, and east one.  Take the eastern exit to reach the Abyssia Forest.</p>
     </div>
   </ChapterCard>
 
@@ -194,16 +173,19 @@ Amazonite          1750     anything&quot; will unlock the [Fleeting Peace] endi
     timeline="Alternate"
   >
     <TacticalBriefing
-      level="55"
-      party="Stocke, Gafka, Rosch"
-      
-      enemies={[{"name": "Blue Climb", "weakness": "Lightning"}, {"name": "Deep Eyes", "weakness": "Lightning"}, {"name": "Grand Bear", "weakness": "Fire"}]}
+      level="55" party="Stocke, Gafka, Rosch" enemies={[{"name": "Blue Climb", "weakness": "Lightning"}, {"name": "Deep Eyes", "weakness": "Lightning"}, {"name": "Grand Bear", "weakness": "Fire"}, {"name": "Wizard", "weakness": "Sleep"}]}
     />
 
     <div class="chapter-walkthrough-prose">
-<p>|X|      X - Roadblock                   Head east one screen to find a Grand __| |                             ____     Bear.  Bring in Aht &amp; Marco, then __  |                            |  __     use the Change command to string   | |___   ____  |X|        __   | |       together 10 turns to steal a   |_____   __  | | |__   __/  \__| |       Master Fist ATK+50/MP+30/LUC+15) for              | |_|  __   __________/       Gafka.  Otherwise, keep heading east              |_____|                       until you reach Forgia.</p>
-
-<p>=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=</p>
+      <AsciiMap>
+<pre>|X|      X - Roadblock                   Head east one screen to find a Grand
+__| |                             ____     Bear.  Bring in Aht &amp; Marco, then
+__  |                            |  __     use the Change command to string
+  | |___   ____  |X|        __   | |       together 10 turns to steal a
+  |_____   __  | | |__   __/  \__| |       Master Fist ATK+50/MP+30/LUC+15) for
+             | |_|  __   __________/       Gafka.  Otherwise, keep heading east
+             |_____|                       until you reach Forgia.</pre>
+      </AsciiMap>
     </div>
   </ChapterCard>
 
@@ -215,47 +197,15 @@ Amazonite          1750     anything&quot; will unlock the [Fleeting Peace] endi
     timeline="Alternate"
   >
     <TacticalBriefing
-      level="56"
-      party="Stocke, Gafka, Rosch"
-      
-      
+      level="56" party="Stocke, Gafka, Rosch"
     />
 
     <div class="chapter-walkthrough-prose">
-<div class="shop-ascii-wrap"><pre class="ascii-shop">Equipment Shop (closed until Chapter 5)     Item Shop (closed until Chapter 5)
-**************                              *********
-Iron Sword       2400                       Soothing Balm      100
-Sorcery Epee     4600                       First Aid Kit      400
-Rune Edge        5000                       Tourniquet        1000
-Iron Lance       2100                       Herbal Tea         350
-Magic Spear      3200                       Special Tea       1200
-Bloody Pike      3700                       Holy Water         500
-Phase Spear      6800 (buy for Raynie)      Anti-Poison         50
-Bloody Claw      2500                       Anti-Fear           50
-Knife            1800                       Anti-Paralytic      50
-Red Dagger       2000                       Anti-Curse          50
-Vega             9000                       Anti-Sleep          50
-Elemental Mail   4700                       Anti-Stone          50
-Gold Clothes     3200                       Panacea            800
-Hymnal Cape      3700                       Poison Wing        350
-Blessed Plate    7200                       Sleep Wing         500
-Rune Dress       4900                       Power Down         500
-Fang Charm       1000                       Might Herb         500
-Iron Charm       2500                   ________
-Beast Charm      5000 (buy 6)          |4______ |     X - Obstacle
-Rook Stud        6000 (buy 6)           __|   __|     1 - 4000 G
-Flower Ring     10000                  |3X    _|      2 - Strongman Book
-Emerald          3600                    _|  |_       3 - Tourniquet x2
-Amethyst         3600                   |1    2|      4 - Giant Cape
-Sapphire         3600                     |  |</pre></div>
-
-<Callout type="node" title="Historia Milestone: Gafka&#x27;s Homeland">
-<p>The shops are not open yet, but I figured I&#x27;d list them here anyway.  To the left of the entrance is a hidden chest which contains 4000 G.  On the opposite side to the right is another hidden chest which contains the STRONGMAN BOOK for Gafka later.  In the northern half of the village, search the right side for a slightly concealed barrel.  Drag it to the left to blow away the rocks to gain access to a chest which contains 2 TOURNIQUETS.  Finally, climb up to the wooden deck and pass up the houses to the left.  Search the upper left corner for a chest which contains the GIANT CAPE (DEF+45/MDF+33/SPD-3, equip on Aht).</p>
-</Callout>
-
-<p>Enter the upper house and talk to the elder, Galva, to discuss what you will need to do next.</p>
-
-<p>=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=</p>
+      <ShopMatrix title="Forgia (Alternate Chapter 4) Merchant" items={[{"name": "Soothing Balm", "price": 100}, {"name": "First Aid Kit", "price": 400}, {"name": "Tourniquet", "price": 1000}, {"name": "Herbal Tea", "price": 350}, {"name": "Special Tea", "price": 1200}, {"name": "Holy Water", "price": 500}, {"name": "Anti-Poison", "price": 50}, {"name": "Anti-Fear", "price": 50}, {"name": "Anti-Paralytic", "price": 50}, {"name": "Anti-Curse", "price": 50}, {"name": "Anti-Sleep", "price": 50}, {"name": "Anti-Stone", "price": 50}, {"name": "Panacea", "price": 800}, {"name": "Poison Wing", "price": 350}, {"name": "Sleep Wing", "price": 500}, {"name": "Power Down", "price": 500}, {"name": "Might Herb", "price": 500}]} equipment={[{"name": "Iron Sword", "price": 2400}, {"name": "Sorcery Epee", "price": 4600}, {"name": "Rune Edge", "price": 5000}, {"name": "Iron Lance", "price": 2100}, {"name": "Magic Spear", "price": 3200}, {"name": "Bloody Pike", "price": 3700}, {"name": "Phase Spear", "price": 6800, "note": "buy for Raynie"}, {"name": "Bloody Claw", "price": 2500}, {"name": "Knife", "price": 1800}, {"name": "Red Dagger", "price": 2000}, {"name": "Vega", "price": 9000}, {"name": "Elemental Mail", "price": 4700}, {"name": "Gold Clothes", "price": 3200}, {"name": "Hymnal Cape", "price": 3700}, {"name": "Blessed Plate", "price": 7200}, {"name": "Rune Dress", "price": 4900}, {"name": "Fang Charm", "price": 1000}]} itemTitle="Item Shop" equipmentTitle="Equipment Shop" />
+      <Callout type="node" title="Historia Milestone: Gafka's Homeland">
+        <p>The shops are not open yet, but I figured I'd list them here anyway. To the left of the entrance is a hidden chest which contains 4000 G. On the opposite side to the right is another hidden chest which contains the STRONGMAN BOOK for Gafka later. In the northern half of the village, search the right side for a slightly concealed barrel. Drag it to the left to blow away the rocks to gain access to a chest which contains 2 TOURNIQUETS. Finally, climb up to the wooden deck and pass up the houses to the left. Search the upper left corner for a chest which contains the GIANT CAPE (DEF+45/MDF+33/SPD-3, equip on Aht).</p>
+      </Callout>
+      <p>Enter the upper house and talk to the elder, Galva, to discuss what you will need to do next.</p>
     </div>
   </ChapterCard>
 
@@ -267,57 +217,19 @@ Sapphire         3600                     |  |</pre></div>
     timeline="Alternate"
   >
     <TacticalBriefing
-      level="56"
-      party="Stocke, Raynie, Marco"
-      
-      
+      level="56" party="Stocke, Raynie, Marco"
     />
 
     <div class="chapter-walkthrough-prose">
-<div class="shop-ascii-wrap"><pre class="ascii-shop">Equipment Shop              Item Shop
-**************              *********
-Alchemy Edge       9500     Soothing Balm      100
-Adamantine Sword   9500     First Aid Kit      400
-Witch Spear        4800     Tourniquet        1000
-Diamun Lance       9600     Herbal Tea         350
-Diamond Gauntlet   3400     Special Tea       1200
-Death Dagger       5200     Healing Herb       500
-Rune Dagger       12000     Holy Water         500
-Diamond Knife      9900     Anti-Poison         50
-Freikugel Argent   6500     Anti-Fear           50
-Hollowpoints       8400     Anti-Paralytic      50
-Bloody Armor       4800     Anti-Curse          50
-Adamantine Mail    9700     Anti-Sleep          50
-Gold Clothes       3200     Anti-Stone          50
-White Gold Wear    8600     Panacea            800
-Running Sand       3800     Poison Wing        350
-Bestial Soul       7600     Paralysis Wing     350
-Diamond Lorica    11300     Curse Wing         350
-Shadowrun Dress    5600     Sleep Wing         500
-Thorned Dress      6900     Stone Wing         500
-Platinum Dress     8200     Power Down         500
-Iron Charm         2500     Magic Down         500
-Crystal Charm      2500     M.Def Down         500
-Rook Stud          6000     Might Herb         500
-Mistel Ring       20000     Magic Herb         500
-Feather Armlet    30000     M.Def Herb         500
-Obsidian           2500     Medicloth         1000
-Celestine          1750
-Peridot            1750
-Amazonite          1750
-Amber              1750</pre></div>
-
-<Callout type="node" title="Historia Milestone: Battle for Skalla">
-<p>[Rosch&#x27;s Stratagem node] Although the plot automatically takes you to Skalla, you can indeed leave and return to Forgia, which you should do to make the recommended purchases listed above.  The Beast Charms should go to Gafka and Rosch.  The Rook Studs should go to Aht and Marco.</p>
-</Callout>
-
-<p>Back at Skalla, the only new thing here is the cage with the Gutrals in it. Head to the inn to discuss your plan.  Afterwards, some soldiers will appear to the left of the inn.  Talk to them to initiate the plan.</p>
-
-<p>******************************************************************************* BOSS TIME: Alistel Officer, Alistel Soldier x2 WEAKNESS: None STRATEGY: Alistel Officer has a Fidele Epee (ATK+58) that Stocke could use, but I prefer keeping him as a magic user.  Do not use Push Assaults on them, because this will put them in formation.  Instead, have Marco use Magic Rise to boost everyone&#x27;s magic.  Use the Change command to string together at least five consecutive turns, then use two Right Assault and any three G-elemental spells to defeat the Soldiers.  Two more G-spells should finish the Officer. *******************************************************************************</p>
-
-<p>After defeating them, talk to Rosch again and tell him that you&#x27;re ready to begin the next phase of the plan.</p>
-
-<p>=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=</p>
+      <ShopMatrix title="Skalla (Alternate Chapter 5) Merchant" items={[{"name": "Soothing Balm", "price": 100}, {"name": "First Aid Kit", "price": 400}, {"name": "Tourniquet", "price": 1000}, {"name": "Herbal Tea", "price": 350}, {"name": "Special Tea", "price": 1200}, {"name": "Healing Herb", "price": 500}, {"name": "Holy Water", "price": 500}, {"name": "Anti-Poison", "price": 50}, {"name": "Anti-Fear", "price": 50}, {"name": "Anti-Paralytic", "price": 50}, {"name": "Anti-Curse", "price": 50}, {"name": "Anti-Sleep", "price": 50}, {"name": "Anti-Stone", "price": 50}, {"name": "Panacea", "price": 800}, {"name": "Poison Wing", "price": 350}, {"name": "Paralysis Wing", "price": 350}, {"name": "Curse Wing", "price": 350}, {"name": "Sleep Wing", "price": 500}, {"name": "Stone Wing", "price": 500}, {"name": "Power Down", "price": 500}, {"name": "Magic Down", "price": 500}, {"name": "M.Def Down", "price": 500}, {"name": "Might Herb", "price": 500}, {"name": "Magic Herb", "price": 500}, {"name": "M.Def Herb", "price": 500}, {"name": "Medicloth", "price": 1000}]} equipment={[{"name": "Alchemy Edge", "price": 9500}, {"name": "Adamantine Sword", "price": 9500}, {"name": "Witch Spear", "price": 4800}, {"name": "Diamun Lance", "price": 9600}, {"name": "Diamond Gauntlet", "price": 3400}, {"name": "Death Dagger", "price": 5200}, {"name": "Rune Dagger", "price": 12000}, {"name": "Diamond Knife", "price": 9900}, {"name": "Freikugel Argent", "price": 6500}, {"name": "Hollowpoints", "price": 8400}, {"name": "Bloody Armor", "price": 4800}, {"name": "Adamantine Mail", "price": 9700}, {"name": "Gold Clothes", "price": 3200}, {"name": "White Gold Wear", "price": 8600}, {"name": "Running Sand", "price": 3800}, {"name": "Bestial Soul", "price": 7600}, {"name": "Diamond Lorica", "price": 11300}, {"name": "Shadowrun Dress", "price": 5600}, {"name": "Thorned Dress", "price": 6900}, {"name": "Platinum Dress", "price": 8200}, {"name": "Iron Charm", "price": 2500}, {"name": "Crystal Charm", "price": 2500}, {"name": "Rook Stud", "price": 6000}, {"name": "Mistel Ring", "price": 20000}, {"name": "Feather Armlet", "price": 30000}, {"name": "Obsidian", "price": 2500}, {"name": "Celestine", "price": 1750}, {"name": "Peridot", "price": 1750}, {"name": "Amazonite", "price": 1750}, {"name": "Amber", "price": 1750}]} itemTitle="Item Shop" equipmentTitle="Equipment Shop" />
+      <Callout type="node" title="Historia Milestone: Battle for Skalla">
+        <p>[Rosch's Stratagem node] Although the plot automatically takes you to Skalla, you can indeed leave and return to Forgia, which you should do to make the recommended purchases listed above. The Beast Charms should go to Gafka and Rosch. The Rook Studs should go to Aht and Marco.</p>
+      </Callout>
+      <p>Back at Skalla, the only new thing here is the cage with the Gutrals in it. Head to the inn to discuss your plan.  Afterwards, some soldiers will appear to the left of the inn.  Talk to them to initiate the plan.</p>
+      <BossCard name="Alistel Officer, Alistel Soldier x2" weakness="None">
+        <p><strong>Strategy:</strong> Alistel Officer has a Fidele Epee (ATK+58) that Stocke could use, but I prefer keeping him as a magic user.  Do not use Push Assaults on them, because this will put them in formation.  Instead, have Marco use Magic Rise to boost everyone's magic.  Use the Change command to string together at least five consecutive turns, then use two Right Assault and any three G-elemental spells to defeat the Soldiers.  Two more G-spells should finish the Officer.</p>
+      </BossCard>
+      <p>After defeating them, talk to Rosch again and tell him that you're ready to begin the next phase of the plan.</p>
     </div>
   </ChapterCard>
 
@@ -329,63 +241,26 @@ Amber              1750</pre></div>
     timeline="Alternate"
   >
     <TacticalBriefing
-      level="56"
-      party="Stocke, Gafka, Rosch"
-      
-      
+      level="56" party="Stocke, Gafka, Rosch"
     />
 
     <div class="chapter-walkthrough-prose">
-<div class="shop-ascii-wrap"><pre class="ascii-shop">Equipment Shop                              Item Shop
-**************                              *********
-Iron Sword       2400                       Soothing Balm      100
-Sorcery Epee     4600                       First Aid Kit      400
-Rune Edge        5000                       Tourniquet        1000
-Slayer Sword    13000                       Herbal Tea         350
-Iron Lance       2100                       Special Tea       1200
-Magic Spear      3200                       Healing Fruit     1500
-Bloody Pike      3700                       Holy Water         500
-Phase Spear      6800                       Anti-Poison         50
-Death Pike      11200 (buy for Rosch)       Anti-Fear           50
-Bloody Claw      2500                       Anti-Paralytic      50
-Death Claw       4100 (buy for Gafka)       Anti-Curse          50
-Knife            1800                       Anti-Sleep          50
-Red Dagger       2000                       Anti-Stone          50
-Vega             9000                       Panacea            800
-Elemental Mail   4700                       Poison Wing        350
-Tungsten Mail    6400 (buy for Raynie)      Sleep Wing         500
-Gold Clothes     3200                       Power Down         500
-Hymnal Cape      3700                       Magic Down         500
-Skull Cape       4500                       M.Def Down         500
-Blessed Plate    7200                       Might Herb         500
-Binding Plate    5300                       Magic Herb         500
-Rune Dress       4900                       M.Def Herb         500
-Skull Dress      4300 (buy for Eruca)       Medicloth         1000
-Fang Charm       1000
-Iron Charm       2500
-Beast Charm      5000
-Rook Stud        6000
-Flower Ring     10000
-Mistel Ring     20000
-Emerald          3600
-Amethyst         3600
-Sapphire         3600
-Earth Drops      4000
-Sky Drops        4000</pre></div>
-
-<Callout type="node" title="Historia Milestone: Skalla Liberated">
-<p>[Sand Fortress Siege node] After a lengthy scene, you will be back at Forgia.  Talk to Galva to receive [The Beast God&#x27;s Birth] sidequest.  Unlike any other shop in the game, Forgia&#x27;s shops change their inventory mid-chapter, where you should make the recommended purchased listed above.</p>
-</Callout>
-
-<p>Back at the village entrance, talk to Bergas to the right to receive the [Gafka &amp; the Scrolls] and [The Ultimate Skill] sidequests.  With the Strongman Book you found earlier, talk to him again and have Gafka fight him.  One shot of Gafka&#x27;s Sky Hammer Mana Burst will defeat him.  For doing so, Gafka will learn Musou, which deals 10 hits per use, and is incredible for creating massive combos, though it only works on the center enemy.  If only there were another ability that would move all enemies to the center panel...</p>
-
-<p>Leave the village and head back to Skalla for some more scenes.  Before heading to the Sand Fortress, find Vanoss on the upper left side of town.  Talk to him to complete the [Wandering Soul] sidequest and receive the CLEANSING CAPE (DEF+30/MDF+36/MAG+5, sell).  Then, talk to Rosch to begin the invasion of the Sand Fortress.</p>
-
-<Callout type="note" title="Recommended Equipment">
-<p>Recommended Equipment at this point in the game<br/>Stocke: Pieti Edge, Moirae Manteau, Crystal Charm x3<br/>Raynie: Phase Spear, Tungsten Mail, Crystal Charm x3<br/>Marco: Gaia Blade, Tungsten Mail, Rook Stud x3<br/>Rosch: Death Pike, Bloody Armor, Beast Charm x3<br/>Aht: Promised Knife, Giant Cape, Rooks Stud x3<br/>Gafka: Death Claw, Bestial Soul, Beast Charm x3<br/>Extra: Freikugel Argent, Gospel Armor, Skull Dress</p>
-</Callout>
-
-<p>=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=</p>
+      <ShopMatrix title="Forgia (Alternate Chapter 5) Merchant" items={[{"name": "Soothing Balm", "price": 100}, {"name": "First Aid Kit", "price": 400}, {"name": "Tourniquet", "price": 1000}, {"name": "Herbal Tea", "price": 350}, {"name": "Special Tea", "price": 1200}, {"name": "Healing Fruit", "price": 1500}, {"name": "Holy Water", "price": 500}, {"name": "Anti-Poison", "price": 50}, {"name": "Anti-Fear", "price": 50}, {"name": "Anti-Paralytic", "price": 50}, {"name": "Anti-Curse", "price": 50}, {"name": "Anti-Sleep", "price": 50}, {"name": "Anti-Stone", "price": 50}, {"name": "Panacea", "price": 800}, {"name": "Poison Wing", "price": 350}, {"name": "Sleep Wing", "price": 500}, {"name": "Power Down", "price": 500}, {"name": "Magic Down", "price": 500}, {"name": "M.Def Down", "price": 500}, {"name": "Might Herb", "price": 500}, {"name": "Magic Herb", "price": 500}, {"name": "M.Def Herb", "price": 500}, {"name": "Medicloth", "price": 1000}]} equipment={[{"name": "Iron Sword", "price": 2400}, {"name": "Sorcery Epee", "price": 4600}, {"name": "Rune Edge", "price": 5000}, {"name": "Slayer Sword", "price": 13000}, {"name": "Iron Lance", "price": 2100}, {"name": "Magic Spear", "price": 3200}, {"name": "Bloody Pike", "price": 3700}, {"name": "Phase Spear", "price": 6800}, {"name": "Death Pike", "price": 11200, "note": "buy for Rosch"}, {"name": "Bloody Claw", "price": 2500}, {"name": "Death Claw", "price": 4100, "note": "buy for Gafka"}, {"name": "Knife", "price": 1800}, {"name": "Red Dagger", "price": 2000}, {"name": "Vega", "price": 9000}, {"name": "Elemental Mail", "price": 4700}, {"name": "Tungsten Mail", "price": 6400, "note": "buy for Raynie"}, {"name": "Gold Clothes", "price": 3200}, {"name": "Hymnal Cape", "price": 3700}, {"name": "Skull Cape", "price": 4500}, {"name": "Blessed Plate", "price": 7200}, {"name": "Binding Plate", "price": 5300}, {"name": "Rune Dress", "price": 4900}, {"name": "Skull Dress", "price": 4300, "note": "buy for Eruca"}, {"name": "Fang Charm", "price": 1000}, {"name": "Iron Charm", "price": 2500}, {"name": "Beast Charm", "price": 5000}, {"name": "Rook Stud", "price": 6000}, {"name": "Flower Ring", "price": 10000}, {"name": "Mistel Ring", "price": 20000}, {"name": "Emerald", "price": 3600}, {"name": "Amethyst", "price": 3600}, {"name": "Sapphire", "price": 3600}, {"name": "Earth Drops", "price": 4000}, {"name": "Sky Drops", "price": 4000}]} itemTitle="Item Shop" equipmentTitle="Equipment Shop" />
+      <Callout type="node" title="Historia Milestone: Skalla Liberated">
+        <p>[Sand Fortress Siege node] After a lengthy scene, you will be back at Forgia. Talk to Galva to receive [The Beast God's Birth] sidequest. Unlike any other shop in the game, Forgia's shops change their inventory mid-chapter, where you should make the recommended purchased listed above.</p>
+      </Callout>
+      <p>Back at the village entrance, talk to Bergas to the right to receive the [Gafka &amp; the Scrolls] and [The Ultimate Skill] sidequests.  With the Strongman Book you found earlier, talk to him again and have Gafka fight him.  One shot of Gafka's Sky Hammer Mana Burst will defeat him.  For doing so, Gafka will learn Musou, which deals 10 hits per use, and is incredible for creating massive combos, though it only works on the center enemy.  If only there were another ability that would move all enemies to the center panel...</p>
+      <p>Leave the village and head back to Skalla for some more scenes.  Before heading to the Sand Fortress, find Vanoss on the upper left side of town.  Talk to him to complete the [Wandering Soul] sidequest and receive the CLEANSING CAPE (DEF+30/MDF+36/MAG+5, sell).  Then, talk to Rosch to begin the invasion of the Sand Fortress.</p>
+      <Callout type="note" title="Recommended Equipment">
+        <p>Recommended Equipment at this point in the game<br/>
+        <strong>Stocke:</strong> Pieti Edge, Moirae Manteau, Crystal Charm x3<br/>
+        <strong>Raynie:</strong> Phase Spear, Tungsten Mail, Crystal Charm x3<br/>
+        <strong>Marco:</strong> Gaia Blade, Tungsten Mail, Rook Stud x3<br/>
+        <strong>Rosch:</strong> Death Pike, Bloody Armor, Beast Charm x3<br/>
+        <strong>Aht:</strong> Promised Knife, Giant Cape, Rooks Stud x3<br/>
+        <strong>Gafka:</strong> Death Claw, Bestial Soul, Beast Charm x3<br/>
+        <strong>Extra:</strong> Freikugel Argent, Gospel Armor, Skull Dress</p>
+      </Callout>
     </div>
   </ChapterCard>
 
@@ -397,44 +272,41 @@ Sky Drops        4000</pre></div>
     timeline="Alternate"
   >
     <TacticalBriefing
-      level="56"
-      party="Stocke, Gafka, Rosch"
-      
-      enemies={[{"name": "Alistel Soldier"}, {"name": "Auto Defender"}, {"name": "Prod. Thaumachine", "weakness": "Lightning"}]}
+      level="56" party="Stocke, Gafka, Rosch" enemies={[{"name": "Alistel Soldier"}, {"name": "Auto Defender"}, {"name": "Prod. Thaumachine", "weakness": "Lightning"}]}
     />
 
     <div class="chapter-walkthrough-prose">
-<Callout type="node" title="Historia Milestone: Commander&#x27;s Fall">
-<p>I&#x27;d recommend fighting every enemy you can around here to get some much-needed experience for Rosch &amp; Gafka.  If necessary, Rosch&#x27;s Cross Spike can be useful for taking out those Auto Defenders.  Otherwise, just head straight up the middle to the third floor.  Then, walk around the right side and up the stairs. Bring in Aht to replace Gafka and continue up to meet the commander.</p>
-</Callout>
-
-<p>******************************************************************************* BOSS TIME: Cannon x2, Thaumaton WEAKNESS: Fire, Lightning STRATEGY: Use a Magic Herb on Stocke and have him cast Heat Blade to take out the two Cannons.  Then, use a Magic Herb on Aht, lay out a couple Volt Star Traps, and Grapple the Thaumaton onto them for a quick victory. *******************************************************************************</p>
-
-<p>After the battle, Bergas will arrive to prompt you for a decision on your next move.  Make sure to choose &quot;Bring back now&quot;, as this is a requirement to unlocking the [At Journey&#x27;s End] sidequest.  Either way, the plot will proceed the same way.</p>
-
-<Callout type="node" title="Historia Milestone: Forbidden Weaponry">
-<p>Talk to Rosch and join the meeting.  After some dialogue, you will be prompted for a decision.  Choosing to &quot;Accept the truce&quot; will unlock the [Divine Judgement] ending.</p>
-</Callout>
-
-<Callout type="node" title="Historia Milestone: Etherion">
-<p>Before moving on, return to the &quot;Gafka &amp; the Scrolls&quot; node and head to Skalla. Talk to Marco by the item shop.  If you have been following the walkthrough, you will finally receive the [At Journey&#x27;s End] sidequest.  If not, search for &quot;At Journey&#x27;s End&quot; in the walkthrough to find the three prerequisites you need to make.  Oddly enough, one of the choices occurs AFTER this point in the plot, yet affects it retroactively.</p>
-</Callout>
-
-<p>Talk to Raynie by the inn to be prompted for a decision.  Choosing &quot;I&#x27;ll stop fighting&quot; will unlock the [Oncoming Calamity] ending.  Return to the same decision point and choose &quot;I can&#x27;t give up&quot; to advance the [At Journey&#x27;s End] sidequest.  Talk to Marco again to complete the [At Journey&#x27;s End] sidequest and receive the PRIERE BONHEUR (ATK+15/MAG+52/Fear Res+5, equip on Raynie).</p>
-
-<p>When you are ready, return to the &quot;Etherion&quot; node and choose to &quot;Reject the truce.&quot;  However, someone else has different ideas.</p>
-
-<p>******************************************************************************* BOSS TIME: Shadow x3 WEAKNESS: Poison STRATEGY: Start by using Right Assault on the Shadow in the back row.  Then, use the Change command to string together five consecutive turns.  Lay any Star Trap in the lower left corner.  Finally, from the lower right Shadow, use Right Assault, Push Assault, Left Assault, and Left Assault to defeat them all, using Eruca&#x27;s Trans-turn, as needed. *******************************************************************************</p>
-
-<Callout type="node" title="Historia Milestone: Royal Talisman">
-<p>[A Black Disciple node] After surviving the battle, everyone will discuss the assault on Granorg.</p>
-</Callout>
-
-<Callout type="note" title="Recommended Equipment">
-<p>Recommended Equipment at this point in the game<br/>Stocke: Pieti Edge, Moirae Manteau, Crystal Charm x3<br/>Raynie: Priere Bonheur, Tungsten Mail, Crystal Charm x3<br/>Marco: Gaia Blade, Tungsten Mail, Rook Stud x3<br/>Aht: Promised Knife, Giant Cape, Rook Stud x3<br/>Gafka: Death Claw, Bestial Soul, Beast Charm x3<br/>Eruca: Freikugel Argent, Skull Dress, Crystal Charm x3<br/>Extra: Gospel Armor</p>
-</Callout>
-
-<p>=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=</p>
+      <Callout type="node" title="Historia Milestone: Commander's Fall">
+        <p>I'd recommend fighting every enemy you can around here to get some much-needed experience for Rosch &amp; Gafka. If necessary, Rosch's Cross Spike can be useful for taking out those Auto Defenders. Otherwise, just head straight up the middle to the third floor. Then, walk around the right side and up the stairs. Bring in Aht to replace Gafka and continue up to meet the commander.</p>
+      </Callout>
+      <BossCard name="Cannon x2, Thaumaton" weakness="Fire, Lightning">
+        <p><strong>Strategy:</strong> Use a Magic Herb on Stocke and have him cast Heat Blade to take out the two Cannons.  Then, use a Magic Herb on Aht, lay out a couple Volt Star Traps, and Grapple the Thaumaton onto them for a quick victory.</p>
+      </BossCard>
+      <p>After the battle, Bergas will arrive to prompt you for a decision on your next move.  Make sure to choose "Bring back now", as this is a requirement to unlocking the [At Journey's End] sidequest.  Either way, the plot will proceed the same way.</p>
+      <Callout type="node" title="Historia Milestone: Forbidden Weaponry">
+        <p>Talk to Rosch and join the meeting. After some dialogue, you will be prompted for a decision. Choosing to "Accept the truce" will unlock the [Divine Judgement] ending.</p>
+      </Callout>
+      <Callout type="node" title="Historia Milestone: Etherion">
+        <p>Before moving on, return to the "Gafka &amp; the Scrolls" node and head to Skalla. Talk to Marco by the item shop. If you have been following the walkthrough, you will finally receive the [At Journey's End] sidequest. If not, search for "At Journey's End" in the walkthrough to find the three prerequisites you need to make. Oddly enough, one of the choices occurs AFTER this point in the plot, yet affects it retroactively.</p>
+      </Callout>
+      <p>Talk to Raynie by the inn to be prompted for a decision.  Choosing "I'll stop fighting" will unlock the [Oncoming Calamity] ending.  Return to the same decision point and choose "I can't give up" to advance the [At Journey's End] sidequest.  Talk to Marco again to complete the [At Journey's End] sidequest and receive the PRIERE BONHEUR (ATK+15/MAG+52/Fear Res+5, equip on Raynie).</p>
+      <p>When you are ready, return to the "Etherion" node and choose to "Reject the truce."  However, someone else has different ideas.</p>
+      <BossCard name="Shadow x3" weakness="Poison">
+        <p><strong>Strategy:</strong> Start by using Right Assault on the Shadow in the back row.  Then, use the Change command to string together five consecutive turns.  Lay any Star Trap in the lower left corner.  Finally, from the lower right Shadow, use Right Assault, Push Assault, Left Assault, and Left Assault to defeat them all, using Eruca's Trans-turn, as needed.</p>
+      </BossCard>
+      <Callout type="node" title="Historia Milestone: Royal Talisman">
+        <p>[A Black Disciple node] After surviving the battle, everyone will discuss the assault on Granorg.</p>
+      </Callout>
+      <Callout type="note" title="Recommended Equipment">
+        <p>Recommended Equipment at this point in the game<br/>
+        <strong>Stocke:</strong> Pieti Edge, Moirae Manteau, Crystal Charm x3<br/>
+        <strong>Raynie:</strong> Priere Bonheur, Tungsten Mail, Crystal Charm x3<br/>
+        <strong>Marco:</strong> Gaia Blade, Tungsten Mail, Rook Stud x3<br/>
+        <strong>Aht:</strong> Promised Knife, Giant Cape, Rook Stud x3<br/>
+        <strong>Gafka:</strong> Death Claw, Bestial Soul, Beast Charm x3<br/>
+        <strong>Eruca:</strong> Freikugel Argent, Skull Dress, Crystal Charm x3<br/>
+        <strong>Extra:</strong> Gospel Armor</p>
+      </Callout>
     </div>
   </ChapterCard>
 
@@ -446,14 +318,11 @@ Sky Drops        4000</pre></div>
     timeline="Alternate"
   >
     <TacticalBriefing
-      level="58"
-      party="Stocke, Eruca, Gafka"
-      
-      enemies={[{"name": "Elderly Goblin"}, {"name": "Iron Knight"}, {"name": "Sniper"}]}
+      level="58" party="Stocke, Eruca, Gafka" enemies={[{"name": "Elderly Goblin"}, {"name": "Iron Knight"}, {"name": "Sniper"}]}
     />
 
     <div class="chapter-walkthrough-prose">
-<AsciiMap>
+      <AsciiMap>
 <pre>| |    S - Save Point      [Flux War node]
                    /  |    X - Obstacle        [The Royal Secret node]
          Gran    _|   |_   G - Grave           You will need to walk through
@@ -465,29 +334,26 @@ Sky Drops        4000</pre></div>
              Plain | |___| |      |     X |    In about the lower left corner,
                    |  X X  |      |__   X_|    you will see a cross in the
  Gran Plain W      |  / \   \__   ___| |__     ground.  Examine it to advance
- ___      ____   __| |   |          S     |    [The Beast God&#x27;s Birth]
+ ___      ____   __| |   |          S     |    [The Beast God's Birth]
 |   |    /   _   __   \_/   ___   _       |    sidequest.
 |   |__ /   /      \  S    /       \     /
-|_____   __/        \_    /         \   /      Return to the &quot;Gafka &amp; the
-      | |             |  |           | |       Scrolls&quot; node and talk to Galva
+|_____   __/        \_    /         \   /      Return to the "Gafka &amp; the
+      | |             |  |           | |       Scrolls" node and talk to Galva
                                                to be prompted for a decision.
-   ___| |__        ___|  |___        | |__     Choose &quot;Don&#x27;t say anything&quot; to
-  |      S |      |          |      /     |    unlock the [Beast God&#x27;s Reign]
+   ___| |__        ___|  |___        | |__     Choose "Don't say anything" to
+  |      S |      |          |      /     |    unlock the [Beast God's Reign]
   |___   __|      |          |     /    __|    ending.  Return to the same
-   ___| |         |_G________|    |    |___    decision, choosing to &quot;Wait&quot;
-  |      |                        |        |   and &quot;Stop the ceremony&quot; to
-  |______|           South        |     ___|   complete [The Beast God&#x27;s Birth]
+   ___| |         |_G________|    |    |___    decision, choosing to "Wait"
+  |      |                        |        |   and "Stop the ceremony" to
+  |______|           South        |     ___|   complete [The Beast God's Birth]
                      Hill         |    |       sidequest.  You will also
    Forest                                      receive the MAGIC FIST FORZA
   Clearing                     Gran Plain SE   (ATK+67, equip on Gafka) and
                                                TRISTRIKE BOOK for him.  Talk to
 Bergas at the village entrance to duel him again.  This time, you have access
 to Musou, two of which can defeat him.</pre>
-</AsciiMap>
-
-<p>When you are ready, return to the &quot;Flux War&quot; node.  I&#x27;d recommend clearing every enemy in the area for some good experience.  Otherwise, simply head north, west, and north one screen to reach to the exit to Granorg.</p>
-
-<p>=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=</p>
+      </AsciiMap>
+      <p>When you are ready, return to the "Flux War" node.  I'd recommend clearing every enemy in the area for some good experience.  Otherwise, simply head north, west, and north one screen to reach to the exit to Granorg.</p>
     </div>
   </ChapterCard>
 
@@ -499,44 +365,22 @@ to Musou, two of which can defeat him.</pre>
     timeline="Alternate"
   >
     <TacticalBriefing
-      level="59"
-      party="Stocke, Eruca,"
-      
-      
+      level="59" party="Stocke, Eruca,"
     />
 
     <div class="chapter-walkthrough-prose">
-<div class="shop-ascii-wrap"><pre class="ascii-shop">Equipment Shop                       Item Shop
-**************                       *********
-Titanium Sword      6500             Soothing Balm      100
-Titanium Lance      6700             First Aid Kit      400
-Diable Spear       13450             Tourniquet        1000
-General            14500             Herbal Tea         350
-Titanium Knife      7200             Special Tea       1200
-Last Knife         15000             Superior Tea      2500
-Alloy Gauntlet      5800             Healing Herb       500
-World Gauntlet     11000             Holy Water         500
-FMJ Rounds          5300             Anti-Poison         50
-Peacemakers        15000             Anti-Fear           50
-Titanium Mail       5300             Anti-Paralytic      50
-Diamond Mail       13000 (buy 3)     Anti-Curse          50
-Alloy Plate         8640             Anti-Sleep          50
-Mighty Protector   14200 (buy 1)     Anti-Stone          50
-Hymnal Cape         3700             Panacea            800
-Clergy Raiment     11200             Panacea Plus      2000
-Jeweled Gown        6900             Poison Wing        350
-Charisma Dress     10100             Sleep Wing         500
-Beast Charm         5000             Power Down         500
-Thauma Charm        5000 (buy 9)     Might Herb         500
-Queen Stud         12000 (buy 6)     Divine Water      1500</pre></div>
-
-<p>While your destination is the Underground Waterway, they sell some great new equipment hear.  Head east to the equipment shop to make the purchases listed above.  The Diamond Mails should go to Raynie and Marco, saving one for Rosch later.  The Mighty Protector is for Gafka.  Everyone can upgrade their accessories, except Gafka.  When you&#x27;re ready, head west to the inn to rest up. Continue west to the tavern and search behind it for the entrance to the Underground Waterway.</p>
-
-<Callout type="note" title="Recommended Equipment">
-<p>Recommended Equipment at this point in the game<br/>Stocke: Pieti Edge, Moirae Manteau, Thauma Charm x3<br/>Raynie: Priere Bonheur, Diamond Mail, Thauma Charm x3<br/>Marco: Gaia Blade, Diamond Mail, Queen Stud x3<br/>Aht: Promised Knife, Giant Cape, Queen Stud x3<br/>Gafka: Magic Fist Forza, Mighty Protector, Beast Charm x3<br/>Eruca: Freikugel Argent, Skull Dress, Thauma Charm x3<br/>Extra: Diamond Mail, Gospel Armor</p>
-</Callout>
-
-<p>=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=</p>
+      <ShopMatrix title="Granorg (Alternate Chapter 6) Merchant" items={[{"name": "Soothing Balm", "price": 100}, {"name": "First Aid Kit", "price": 400}, {"name": "Tourniquet", "price": 1000}, {"name": "Herbal Tea", "price": 350}, {"name": "Special Tea", "price": 1200}, {"name": "Superior Tea", "price": 2500}, {"name": "Healing Herb", "price": 500}, {"name": "Holy Water", "price": 500}, {"name": "Anti-Poison", "price": 50}, {"name": "Anti-Fear", "price": 50}, {"name": "Anti-Paralytic", "price": 50}, {"name": "Anti-Curse", "price": 50}, {"name": "Anti-Sleep", "price": 50}, {"name": "Anti-Stone", "price": 50}, {"name": "Panacea", "price": 800}, {"name": "Panacea Plus", "price": 2000}, {"name": "Poison Wing", "price": 350}, {"name": "Sleep Wing", "price": 500}, {"name": "Power Down", "price": 500}, {"name": "Might Herb", "price": 500}, {"name": "Divine Water", "price": 1500}]} equipment={[{"name": "Titanium Sword", "price": 6500}, {"name": "Titanium Lance", "price": 6700}, {"name": "Diable Spear", "price": 13450}, {"name": "General", "price": 14500}, {"name": "Titanium Knife", "price": 7200}, {"name": "Last Knife", "price": 15000}, {"name": "Alloy Gauntlet", "price": 5800}, {"name": "World Gauntlet", "price": 11000}, {"name": "FMJ Rounds", "price": 5300}, {"name": "Peacemakers", "price": 15000}, {"name": "Titanium Mail", "price": 5300}, {"name": "Diamond Mail", "price": 13000, "note": "buy 3"}, {"name": "Alloy Plate", "price": 8640}, {"name": "Mighty Protector", "price": 14200, "note": "buy 1"}, {"name": "Hymnal Cape", "price": 3700}, {"name": "Clergy Raiment", "price": 11200}, {"name": "Jeweled Gown", "price": 6900}, {"name": "Charisma Dress", "price": 10100}, {"name": "Beast Charm", "price": 5000}, {"name": "Thauma Charm", "price": 5000, "note": "buy 9"}, {"name": "Queen Stud", "price": 12000, "note": "buy 6"}]} itemTitle="Item Shop" equipmentTitle="Equipment Shop" />
+      <p>While your destination is the Underground Waterway, they sell some great new equipment hear.  Head east to the equipment shop to make the purchases listed above.  The Diamond Mails should go to Raynie and Marco, saving one for Rosch later.  The Mighty Protector is for Gafka.  Everyone can upgrade their accessories, except Gafka.  When you're ready, head west to the inn to rest up. Continue west to the tavern and search behind it for the entrance to the Underground Waterway.</p>
+      <Callout type="note" title="Recommended Equipment">
+        <p>Recommended Equipment at this point in the game<br/>
+        <strong>Stocke:</strong> Pieti Edge, Moirae Manteau, Thauma Charm x3<br/>
+        <strong>Raynie:</strong> Priere Bonheur, Diamond Mail, Thauma Charm x3<br/>
+        <strong>Marco:</strong> Gaia Blade, Diamond Mail, Queen Stud x3<br/>
+        <strong>Aht:</strong> Promised Knife, Giant Cape, Queen Stud x3<br/>
+        <strong>Gafka:</strong> Magic Fist Forza, Mighty Protector, Beast Charm x3<br/>
+        <strong>Eruca:</strong> Freikugel Argent, Skull Dress, Thauma Charm x3<br/>
+        <strong>Extra:</strong> Diamond Mail, Gospel Armor</p>
+      </Callout>
     </div>
   </ChapterCard>
 
@@ -548,20 +392,17 @@ Queen Stud         12000 (buy 6)     Divine Water      1500</pre></div>
     timeline="Alternate"
   >
     <TacticalBriefing
-      level="59"
-      party="Stocke, Eruca, Gafka"
-      
-      enemies={[{"name": "Chaotic Leech", "weakness": "Fire"}, {"name": "Death Wasp", "weakness": "Ice"}, {"name": "Grindy", "weakness": "Fire"}]}
+      level="59" party="Stocke, Eruca, Gafka" enemies={[{"name": "Chaotic Leech", "weakness": "Fire"}, {"name": "Death Wasp", "weakness": "Ice"}, {"name": "Grindy", "weakness": "Fire"}, {"name": "Poppy", "weakness": "Lightning"}, {"name": "Vamy", "weakness": "Ice"}, {"name": "Yellow Skin"}]}
     />
 
     <div class="chapter-walkthrough-prose">
-<AsciiMap>
-<pre>_   _         _   _          Even though there&#x27;s no new
-                    | |_| |       | | | |         treasure to be found, I&#x27;d
+      <AsciiMap>
+<pre>_   _         _   _          Even though there's no new
+                    | |_| |       | | | |         treasure to be found, I'd
                    /       \__   _| |_| |_|E|_    recommend exploring the area
                   |         __   _____________|   and killing everything for
 B - Begin here    |      * |__   _____________    the experience.  Otherwise,
-S - Save Point    |         __   _____________|   make extensive use of Eruca&#x27;s
+S - Save Point    |         __   _____________|   make extensive use of Eruca's
 * - Sneak attacks  \   _   /                      Burst Light to annihilate
 E - End here        | | | |                       everything.
                     |_| | |
@@ -572,13 +413,33 @@ E - End here        | | | |                       everything.
                                   __| |  _____    Granorg Palace.
                                  |__  | |  ___|
                                     | | | |</pre>
-</AsciiMap>
-
-<p>| |_| |  ____________   ______________   __/       \__ |_ * ___   __   _   _____*____   __*        __|  _| |_  | |__   _| |__   _____   __|       |__ |___  | |  __   ____  | |  ___   __        S__|     | | | |         | | | |        \ _   _ /     | | | |         | | | |         | | | |</p>
-
-<p>| | | |         |_| |_|         | | | | |B|_| | | |__   ___/       \__   ___| |_| |___ |_____| |____   ___  *      __   ____*________|          ____   ___|       |__   _____________         |____   ___         __   _____________|                    \   _   /                     | | | |                                      _   _                     | | | |         | |_| |                  ___| | | |___   __/       \__                 |___  | |_____   __|        __|                  ___| |_______   __|       |__                 |_____________   __         __|                                    \   _   /                                     |_| |_|</p>
-
-<p>=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=</p>
+      </AsciiMap>
+      <AsciiMap>
+<pre>| |_| |
+ ____________   ______________   __/       \__
+|_ * ___   __   _   _____*____   __*        __|
+ _| |_  | |__   _| |__   _____   __|       |__
+|___  | |  __   ____  | |  ___   __        S__|
+    | | | |         | | | |        \ _   _ /
+    | | | |         | | | |         | | | |</pre>
+      </AsciiMap>
+      <AsciiMap>
+<pre>| | | |         |_| |_|         | | | |
+|B|_| | | |__   ___/       \__   ___| |_| |___
+|_____| |____   ___  *      __   ____*________|
+         ____   ___|       |__   _____________
+        |____   ___         __   _____________|
+                   \   _   /
+                    | | | |
+                                     _   _
+                    | | | |         | |_| |
+                 ___| | | |___   __/       \__
+                |___  | |_____   __|        __|
+                 ___| |_______   __|       |__
+                |_____________   __         __|
+                                   \   _   /
+                                    |_| |_|</pre>
+      </AsciiMap>
     </div>
   </ChapterCard>
 
@@ -593,22 +454,5 @@ E - End here        | | | |                       everything.
 
   .chapter-walkthrough-prose :global(p) {
     margin-bottom: 1.25rem;
-  }
-
-  .chapter-walkthrough-prose :global(.shop-ascii-wrap) {
-    background: #05080f;
-    border: 1px solid var(--border-subtle);
-    border-radius: var(--radius-md);
-    padding: 1rem;
-    margin: 1.5rem 0;
-    overflow-x: auto;
-  }
-
-  .chapter-walkthrough-prose :global(.ascii-shop) {
-    font-family: var(--font-mono);
-    font-size: 0.85rem;
-    color: #fde047;
-    margin: 0;
-    white-space: pre;
   }
 </style>

@@ -9,9 +9,17 @@ interface Props {
   items?: ShopItem[];
   equipment?: ShopItem[];
   title?: string;
+  itemTitle?: string;
+  equipmentTitle?: string;
 }
 
-const { items, equipment, title = 'Local Merchant Inventory' } = Astro.props;
+const {
+  items,
+  equipment,
+  title = 'Local Merchant Inventory',
+  itemTitle = 'Item Shop',
+  equipmentTitle = 'Equipment Shop'
+} = Astro.props;
 ---
 
 <div class="shop-matrix-card">
@@ -23,7 +31,7 @@ const { items, equipment, title = 'Local Merchant Inventory' } = Astro.props;
   <div class="shop-grid">
     {items && items.length > 0 && (
       <div class="shop-column">
-        <h4 class="shop-col-title">Item Shop</h4>
+        <h4 class="shop-col-title">{itemTitle}</h4>
         <div class="table-wrapper">
           <table class="shop-table">
             <thead>
@@ -49,7 +57,7 @@ const { items, equipment, title = 'Local Merchant Inventory' } = Astro.props;
 
     {equipment && equipment.length > 0 && (
       <div class="shop-column">
-        <h4 class="shop-col-title">Equipment Shop</h4>
+        <h4 class="shop-col-title">{equipmentTitle}</h4>
         <div class="table-wrapper">
           <table class="shop-table">
             <thead>
