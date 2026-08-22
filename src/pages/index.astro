@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ProgressTracker from '../components/ProgressTracker.astro';
 import TimelineBadge from '../components/TimelineBadge.astro';
+import MediaCard from '../components/MediaCard.astro';
 
 const baseUrl = import.meta.env.BASE_URL;
 
@@ -104,6 +105,37 @@ const volumes = [
   <div class="container main-hub-container">
     <!-- Real-time Progress Dashboard -->
     <ProgressTracker />
+
+    <!-- Collector's Physical Media & Game Release Showcase -->
+    <section class="glass-card game-media-card">
+      <div class="card-header">
+        <span class="card-icon">🎮</span>
+        <h2 class="card-title">Original Nintendo DS Release</h2>
+      </div>
+
+      <div class="game-media-body">
+        <MediaCard
+          src={`${baseUrl}cart-front.png`}
+          alt="Radiant Historia Nintendo DS Game Cartridge"
+          caption="Nintendo DS Cartridge (Front)"
+          width={190}
+          height={190}
+        />
+
+        <div class="game-media-info">
+          <p class="game-media-lead">
+            <strong>Radiant Historia</strong> was originally developed by <strong>Atlus</strong> and released on the <strong>Nintendo DS</strong> handheld system.
+          </p>
+          <ul class="game-specs-grid">
+            <li><span class="spec-label">Developer / Publisher:</span> <strong class="hl-gold">Atlus</strong></li>
+            <li><span class="spec-label">Platform:</span> <strong class="hl-gold">Nintendo DS</strong></li>
+            <li><span class="spec-label">Music Composer:</span> <strong class="hl-gold">Yoko Shimomura</strong></li>
+            <li><span class="spec-label">Character Design:</span> <strong class="hl-gold">Hiroshi Konishi</strong></li>
+            <li><span class="spec-label">Key Gameplay Mechanics:</span> <strong class="hl-gold">3×3 Battle Grid</strong> &amp; <strong class="hl-gold">White Chronicle Time Travel</strong></li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
     <!-- Walkthrough Volumes Section -->
     <section id="volumes" class="volumes-section">
@@ -639,5 +671,69 @@ const volumes = [
     font-size: 0.85rem;
     font-weight: 700;
     color: var(--gold-primary);
+  }
+
+  /* Game Media Showcase Card */
+  .game-media-card {
+    margin: 3rem 0;
+    padding: clamp(1.5rem, 3vw, 2.25rem);
+  }
+
+  .game-media-body {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 1rem;
+  }
+
+  @media (max-width: 640px) {
+    .game-media-body {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  }
+
+  .game-media-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .game-media-lead {
+    font-size: 1.05rem;
+    color: var(--text-primary);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .game-specs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0.75rem 1.25rem;
+    list-style: none;
+    padding: 1rem 1.25rem;
+    margin: 0;
+    font-family: var(--font-ui);
+    font-size: 0.9rem;
+    background: rgba(6, 9, 15, 0.5);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+  }
+
+  .game-specs-grid li {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  .spec-label {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 600;
   }
 </style>
