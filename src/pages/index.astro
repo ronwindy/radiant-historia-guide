@@ -84,13 +84,8 @@ const volumes = [
   <section class="hero-section">
     <div class="container hero-container">
       <div class="hero-content">
-        <div class="hero-badge">
-          <span class="pulse-dot"></span>
-          <span>Complete 100% Strategy Compendium</span>
-        </div>
-
         <div class="hero-logo-wrap">
-          <img src={`${baseUrl}assets/logo.png`} alt="Radiant Historia" class="hero-logo" width="340" height="102" loading="eager" />
+          <img src={`${baseUrl}assets/logo.png`} alt="Radiant Historia" class="hero-logo" width="260" height="78" loading="eager" />
         </div>
 
         <h1 class="hero-title">
@@ -246,37 +241,6 @@ const volumes = [
     max-width: 1000px;
   }
 
-  .hero-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    background: rgba(251, 191, 36, 0.1);
-    border: 1px solid var(--gold-border);
-    padding: 0.35rem 1rem;
-    border-radius: var(--radius-full);
-    font-family: var(--font-ui);
-    font-size: 0.85rem;
-    font-weight: 700;
-    color: var(--gold-primary);
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    margin-bottom: 1.5rem;
-  }
-
-  .pulse-dot {
-    width: 8px;
-    height: 8px;
-    background-color: var(--gold-primary);
-    border-radius: 50%;
-    box-shadow: 0 0 8px var(--gold-glow);
-    animation: pulse 2s infinite;
-  }
-
-  @keyframes pulse {
-    0%, 100% { opacity: 1; transform: scale(1); }
-    50% { opacity: 0.4; transform: scale(0.85); }
-  }
-
   .hero-logo-wrap {
     display: flex;
     justify-content: center;
@@ -285,7 +249,7 @@ const volumes = [
   }
 
   .hero-logo {
-    max-width: 380px;
+    max-width: 260px;
     width: 85%;
     height: auto;
     object-fit: contain;
