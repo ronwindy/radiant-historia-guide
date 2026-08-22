@@ -12,7 +12,7 @@ const baseUrl = import.meta.env.BASE_URL;
     <div class="brand-group">
       <a href={baseUrl} class="logo-link" aria-label="Radiant Historia Compendium Home">
         <img src={`${baseUrl}assets/logo.png`} alt="Radiant Historia Logo" class="brand-logo" width="160" height="48" />
-        <span class="brand-subtitle">The White Chronicle Compendium</span>
+        <span class="brand-subtitle">The White Chronicle</span>
       </a>
     </div>
 
@@ -301,7 +301,7 @@ const baseUrl = import.meta.env.BASE_URL;
   .logo-link {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     text-decoration: none;
   }
 
@@ -313,12 +313,14 @@ const baseUrl = import.meta.env.BASE_URL;
   }
 
   .brand-subtitle {
-    font-size: 0.68rem;
+    font-size: 0.65rem;
     font-family: var(--font-heading);
     letter-spacing: 0.12em;
     color: var(--gold-muted);
     text-transform: uppercase;
     margin-top: -2px;
+    text-align: center;
+    white-space: nowrap;
   }
 
   /* Desktop Nav */
