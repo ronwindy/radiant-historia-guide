@@ -1,6 +1,7 @@
 ---
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import ImageLightbox from '../components/ImageLightbox.astro';
 import '../styles/global.css';
 
 interface Props {
@@ -67,6 +68,9 @@ const ogImageUrl = image.startsWith('http') ? image : `${Astro.site || 'https://
     <button class="scroll-top-btn" id="scrollTopBtn" aria-label="Scroll back to top" title="Scroll to top">
       ▲
     </button>
+
+    <!-- Global Image Lightbox Modal -->
+    <ImageLightbox />
   </div>
 
   <style>

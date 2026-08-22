@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import BattleGrid from '../components/BattleGrid.astro';
 import Callout from '../components/Callout.astro';
+import MediaCard from '../components/MediaCard.astro';
 
 const baseUrl = import.meta.env.BASE_URL;
 ---
@@ -31,22 +32,32 @@ const baseUrl = import.meta.env.BASE_URL;
         <h2 class="card-title">Author's Preface &amp; Guide Philosophy</h2>
       </div>
 
-      <div class="prose-content">
-        <p>
-          <em>Radiant Historia</em> is one of the most uniquely engaging RPGs of its era, featuring unforgettable music by Yoko Shimomura, an intricate geopolitical plot, and a brilliant tactical turn-based combat system.
-        </p>
-        <p>
-          This walkthrough is designed to provide information organized as cleanly and efficiently as possible:
-        </p>
-        <ul class="styled-list">
-          <li><strong>Zero Level Grinding:</strong> The recommended levels in this guide are calibrated for fighting natural random encounters without tedious grinding.</li>
-          <li><strong>Zero Item/Gold Farming:</strong> No reliance on low-percentage rare drops. Boss steal targets are guaranteed steals when using Stocke or Aht.</li>
-          <li><strong>Zero Missables Policy:</strong> Every single hidden chest, sidequest trigger window, node requirement, and shop inventory update is documented.</li>
-        </ul>
+      <div class="side-by-side-container media-left">
+        <MediaCard
+          src={`${baseUrl}box-front.jpg`}
+          alt="Radiant Historia Box Art Front"
+          caption="DS Game Package (Front)"
+          width={200}
+          height={280}
+        />
 
-        <Callout type="note" title="Plot Spoilers Notice">
-          Walkthrough chapters are written to avoid major narrative spoilers while giving clear tactical directions. However, the <strong>236 Node Completion List</strong> contains historical outcomes and ending summaries, so review it with caution if playing for the first time.
-        </Callout>
+        <div class="prose-content">
+          <p>
+            <em>Radiant Historia</em> is one of the most uniquely engaging RPGs of its era, featuring unforgettable music by Yoko Shimomura, an intricate geopolitical plot, and a brilliant tactical turn-based combat system.
+          </p>
+          <p>
+            This walkthrough is designed to provide information organized as cleanly and efficiently as possible:
+          </p>
+          <ul class="styled-list">
+            <li><strong>Zero Level Grinding:</strong> The recommended levels in this guide are calibrated for fighting natural random encounters without tedious grinding.</li>
+            <li><strong>Zero Item/Gold Farming:</strong> No reliance on low-percentage rare drops. Boss steal targets are guaranteed steals when using Stocke or Aht.</li>
+            <li><strong>Zero Missables Policy:</strong> Every single hidden chest, sidequest trigger window, node requirement, and shop inventory update is documented.</li>
+          </ul>
+
+          <Callout type="note" title="Plot Spoilers Notice">
+            Walkthrough chapters are written to avoid major narrative spoilers while giving clear tactical directions. However, the <strong>236 Node Completion List</strong> contains historical outcomes and ending summaries, so review it with caution if playing for the first time.
+          </Callout>
+        </div>
       </div>
     </section>
 
@@ -163,25 +174,35 @@ const baseUrl = import.meta.env.BASE_URL;
         <h2 class="card-title">The White Chronicle &amp; Temporal Paradoxes</h2>
       </div>
 
-      <div class="prose-content">
-        <p>
-          The White Chronicle allows Stocke to record pivotal historical events as <strong>Historia Nodes</strong>. Through Teo and Lippti at the realm of Historia, you can travel freely back to any visited node with your current levels, equipment, and abilities intact.
-        </p>
+      <div class="side-by-side-container media-right">
+        <div class="prose-content">
+          <p>
+            The White Chronicle allows Stocke to record pivotal historical events as <strong>Historia Nodes</strong>. Through Teo and Lippti at the realm of Historia, you can travel freely back to any visited node with your current levels, equipment, and abilities intact.
+          </p>
 
-        <div class="grid-rules-cards">
-          <div class="rule-card">
-            <h4 class="rule-title">Cross-Timeline Causality</h4>
-            <p>Obstacles in Standard History often require finding knowledge, skills, or items in Alternate History, and vice-versa.</p>
-          </div>
-          <div class="rule-card">
-            <h4 class="rule-title">Possible Histories (Bad Endings)</h4>
-            <p>Wrong choices lead to tragic historical conclusions. Experiencing a Bad Ending does not cause a Game Over; it simply unlocks a special White Chronicle node and returns you to the decision point.</p>
-          </div>
-          <div class="rule-card">
-            <h4 class="rule-title">Sidequest Progression</h4>
-            <p>Many sidequests span across multiple chapters and parallel timelines. Completing all sidequests is mandatory for the true grand ending.</p>
+          <div class="grid-rules-cards">
+            <div class="rule-card">
+              <h4 class="rule-title">Cross-Timeline Causality</h4>
+              <p>Obstacles in Standard History often require finding knowledge, skills, or items in Alternate History, and vice-versa.</p>
+            </div>
+            <div class="rule-card">
+              <h4 class="rule-title">Possible Histories (Bad Endings)</h4>
+              <p>Wrong choices lead to tragic historical conclusions. Experiencing a Bad Ending does not cause a Game Over; it simply unlocks a special White Chronicle node and returns you to the decision point.</p>
+            </div>
+            <div class="rule-card">
+              <h4 class="rule-title">Sidequest Progression</h4>
+              <p>Many sidequests span across multiple chapters and parallel timelines. Completing all sidequests is mandatory for the true grand ending.</p>
+            </div>
           </div>
         </div>
+
+        <MediaCard
+          src={`${baseUrl}box-back.jpg`}
+          alt="Radiant Historia Box Art Back"
+          caption="DS Game Package (Back)"
+          width={200}
+          height={280}
+        />
       </div>
     </section>
   </div>
@@ -315,5 +336,68 @@ const baseUrl = import.meta.env.BASE_URL;
     color: var(--text-secondary);
     margin: 0;
     line-height: 1.55;
+  }
+
+  /* Side-by-Side Layout & Compact Media Cards */
+  .side-by-side-container {
+    display: grid;
+    gap: 1.75rem;
+    align-items: start;
+  }
+
+  .side-by-side-container.media-left {
+    grid-template-columns: minmax(180px, 210px) 1fr;
+  }
+
+  .side-by-side-container.media-right {
+    grid-template-columns: 1fr minmax(180px, 210px);
+  }
+
+  .guide-media-col {
+    background: rgba(6, 9, 15, 0.75);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    padding: 0.6rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+    transition: var(--transition);
+  }
+
+  .guide-media-col:hover {
+    border-color: var(--gold-border);
+    box-shadow: 0 6px 24px rgba(251, 191, 36, 0.2);
+  }
+
+  .guide-media-col img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-sm);
+    object-fit: cover;
+    border: 1px solid rgba(251, 191, 36, 0.25);
+  }
+
+  .guide-media-caption {
+    font-family: var(--font-ui);
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    text-align: center;
+    margin-top: 0.45rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+  }
+
+  @media (max-width: 768px) {
+    .side-by-side-container.media-left,
+    .side-by-side-container.media-right {
+      grid-template-columns: 1fr;
+    }
+
+    .side-by-side-container.media-right .guide-media-col {
+      order: -1;
+    }
+
+    .guide-media-col {
+      max-width: 220px;
+      margin: 0 auto 1rem auto;
+    }
   }
 </style>

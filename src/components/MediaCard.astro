@@ -1,0 +1,96 @@
+---
+interface Props {
+  src: string;
+  alt: string;
+  caption?: string;
+  width?: number | string;
+  height?: number | string;
+  class?: string;
+}
+
+const { src, alt, caption, width = 200, height = 280, class: className = '' } = Astro.props;
+---
+
+<div class={`guide-media-col zoomable-card ${className}`}>
+  <div class="media-img-wrap">
+    <img
+      src={src}
+      alt={alt}
+      width={width}
+      height={height}
+      loading="eager"
+      class="zoomable-img"
+      data-caption={caption || alt}
+    />
+    <span class="zoom-badge" title="Click to enlarge">🔍</span>
+  </div>
+  {caption && <div class="guide-media-caption">{caption}</div>}
+</div>
+
+<style>
+  .guide-media-col {
+    background: rgba(6, 9, 15, 0.75);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    padding: 0.6rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+    transition: var(--transition);
+  }
+
+  .guide-media-col:hover {
+    border-color: var(--gold-border);
+    box-shadow: 0 6px 24px rgba(251, 191, 36, 0.2);
+  }
+
+  .media-img-wrap {
+    position: relative;
+    cursor: zoom-in;
+    overflow: hidden;
+    border-radius: var(--radius-sm);
+  }
+
+  .media-img-wrap img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: var(--radius-sm);
+    object-fit: cover;
+    border: 1px solid rgba(251, 191, 36, 0.25);
+    transition: transform 0.3s ease;
+  }
+
+  .media-img-wrap:hover img {
+    transform: scale(1.03);
+  }
+
+  .zoom-badge {
+    position: absolute;
+    bottom: 0.4rem;
+    right: 0.4rem;
+    background: rgba(6, 9, 15, 0.85);
+    border: 1px solid var(--gold-border);
+    color: var(--gold-primary);
+    font-size: 0.75rem;
+    padding: 0.2rem 0.4rem;
+    border-radius: var(--radius-sm);
+    opacity: 0;
+    transform: translateY(4px);
+    transition: var(--transition);
+    pointer-events: none;
+  }
+
+  .media-img-wrap:hover .zoom-badge {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .guide-media-caption {
+    font-family: var(--font-ui);
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    text-align: center;
+    margin-top: 0.45rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+  }
+</style>
