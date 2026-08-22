@@ -97,6 +97,8 @@ function getElemClass(w?: string) {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 0.75rem 1rem;
     border-bottom: 1px solid rgba(244, 63, 94, 0.25);
     padding-bottom: 0.75rem;
     margin-bottom: 1rem;
@@ -105,7 +107,9 @@ function getElemClass(w?: string) {
   .boss-title-wrap {
     display: flex;
     align-items: center;
-    gap: 0.6rem;
+    flex-wrap: wrap;
+    gap: 0.5rem 0.75rem;
+    min-width: 0;
   }
 
   .boss-icon {
@@ -116,6 +120,7 @@ function getElemClass(w?: string) {
     font-size: 1.25rem;
     color: #fda4af;
     margin: 0;
+    line-height: 1.3;
   }
 
   .boss-badge {
@@ -128,6 +133,8 @@ function getElemClass(w?: string) {
     border: 1px solid rgba(244, 63, 94, 0.5);
     padding: 0.2rem 0.6rem;
     border-radius: var(--radius-full);
+    white-space: nowrap;
+    flex-shrink: 0;
   }
 
   .boss-stats-grid {
